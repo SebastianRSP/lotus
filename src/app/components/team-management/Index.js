@@ -20,10 +20,10 @@ export const TeamManagement = () => {
                         A longstanding and trusted
                         data management team
                         comprised ex filecoin
-                        veterans - the world's
+                        veterans - the world&#39;s
                         leading decentralised data
                         storage protocol, and
-                        one of the world’s largest
+                        one of the world&rsquo;s largest
                         crypto assets.
                     </div>
                     <DefaultBtn
