@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import teamImage from '../../../../public/images/team.png';
-import { DefaultBtn } from '../buttons/defaultBtn';
+import { DefaultBtn } from '../buttons/DefaultBtn';
 
 export const TeamManagement = () => {
     return (
