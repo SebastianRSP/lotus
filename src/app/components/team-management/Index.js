@@ -10,6 +10,7 @@ export const TeamManagement = () => {
                 <div className="col-span-2">
                     <Image
                         src={teamImage}
+                        alt='team image'
                         width={1068}
                         height={670}
                     />

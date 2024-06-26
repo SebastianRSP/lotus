@@ -32,8 +32,9 @@ export const Navbar = () => {
     return (
         <nav className="mx-40 my-6 shadow-outer bg-yellowLight grid grid-cols-3 items-center text-center h-14 border border-black z-50">
             <div className="grid grid-cols-3 items-center h-inherit divide-x divide-black">
-                {navLinksBefore.map((navLink) => (
+                {navLinksBefore.map((navLink, index) => (
                     <NavLink
+                        key={index}
                         navLinkName={navLink.navLinkName}
                         navLink={navLink.navLink}
                         extras={navLink.extras}
@@ -53,16 +54,18 @@ export const Navbar = () => {
                 </div>
             </div>
             <div className="grid grid-cols-3 items-center h-inherit divide-x divide-black">
-                {navLinksAfter.map((navLink) => (
+                {navLinksAfter.map((navLink, index) => (
                     <NavLink
+                        key={index}
                         navLinkName={navLink.navLinkName}
                         navLink={navLink.navLink}
                         extras={navLink.extras}
                     />
                 ))}
                 <div className="grid grid-cols-3 items-center h-inherit divide-x divide-black">
-                    {navIcons.map((navIcon) => (
+                    {navIcons.map((navIcon, index) => (
                         <NavLink
+                            key={index}
                             navLinkName={navIcon.navLinkName}
                             navLink={navIcon.navLink}
                             icon={navIcon.icon}
