@@ -4,4 +4,4 @@ export const DefaultBtn = ({btnText, btnType}) => {
             {btnText}
         </button>
     )
-}
+} 
