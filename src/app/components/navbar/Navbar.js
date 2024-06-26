@@ -30,7 +30,7 @@ export const Navbar = () => {
     const [hovered, setHovered] = useState(false);
 
     return (
-        <nav className="mx-40 my-6 shadow-outer bg-yellowLight grid grid-cols-3 items-center text-center h-14 border border-black z-50">
+        <nav className="xl:mx-40 xl:my-6 lg:mx-20 lg:my-3 mx-10 my-3 shadow-outer bg-yellowLight grid grid-cols-3 items-center text-center h-14 border border-black z-50">
             <div className="grid grid-cols-3 items-center h-inherit divide-x divide-black">
                 {navLinksBefore.map((navLink, index) => (
                     <NavLink

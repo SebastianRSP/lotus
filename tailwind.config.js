@@ -14,6 +14,7 @@ module.exports = {
         '123': '123px',
         '142': '142px',
         '100': '100px',
+        '90': '90px',
       },
       boxShadow: {
         'outer': '6px 6px 0px #00000041',
@@ -41,6 +42,7 @@ module.exports = {
       lineHeight: {
         '66': '66px',
         '100': '100px',
+        '90': '90px',
         '142': '142px',
       },
       padding: {

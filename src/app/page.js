@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <div className="px-40 my-6">
+      <div className=" xl:px-40 xl:my-6 lg:px-32 lg:my-3 px-10 py-3">
         <Hero />
       </div>
       <TextSlider />
