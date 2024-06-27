@@ -11,10 +11,12 @@ module.exports = {
         'plus-jakarta-sans': ['var(--font-plus-jakarta-sans)'],
       },
       fontSize: {
+        '30': '30px',
+        '32': '32px',
+        '90': '90px',
+        '100': '100px',
         '123': '123px',
         '142': '142px',
-        '100': '100px',
-        '90': '90px',
       },
       boxShadow: {
         'outer': '6px 6px 0px #00000041',
@@ -23,12 +25,14 @@ module.exports = {
       },
       borderColor: {
         'black': '#000000',
+        'dark-gray': '#0D0D0D',
       },
       colors: {
         'yellowLight': '#FFFCEB',
         'yellowDark': '#F7EDB8',
         'purple': '#D869F3',
         'black': '#000000',
+        'gray': '#252525',
         'green': '#00FF00',
       },
       height: {
@@ -40,13 +44,23 @@ module.exports = {
         'space90': '0.9px',
       },
       lineHeight: {
+        '32': '32px',
+        '40': '40px',
         '66': '66px',
-        '100': '100px',
+        '78': '78px',
         '90': '90px',
+        '100': '100px',
         '142': '142px',
       },
       padding: {
         '74': '74px',
+        '186': '186px',
+      },
+      borderWidth: {
+        '3': '3px',
+        '6': '6px',
+        '9': '9px',
+        '12': '12px',
       }
     },
   },

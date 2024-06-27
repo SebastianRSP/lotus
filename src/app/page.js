@@ -2,6 +2,10 @@ import { Navbar } from "./components/navbar/Navbar";
 import { Hero } from "./components/hero/Index";
 import { TextSlider } from "./components/text-slider/Index";
 import { TeamManagement } from "./components/team-management/Index";
+import { Bridge } from "./components/bridge/Index";
+import { ProblemSolution } from "./components/problem-solution/Index";
+import { BorderDivider } from "./components/borders-divider/Index";
+import { LottieAnimation } from "./components/animation/Index";
 
 export default function Home() {
   return (
@@ -12,6 +16,10 @@ export default function Home() {
       </div>
       <TextSlider />
       <TeamManagement />
+      <Bridge />
+      <ProblemSolution />
+      <BorderDivider />
+      <LottieAnimation />
     </>
   );
 }
