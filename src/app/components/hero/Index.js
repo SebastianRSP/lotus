@@ -11,7 +11,7 @@ export const Hero = () => {
                 </h1>
             </div>
         
-            <div className="absolute right-48 bottom-36 flex justify-end items-end pl-6 z-0">
+            <div className="absolute right-52 bottom-20 flex justify-end items-end pl-6 z-0">
                 <div className="w-full md:w-1/2 xl:w-5/6">
                     <Image
                         src={circle}
