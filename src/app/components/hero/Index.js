@@ -3,7 +3,7 @@ import circle from '../../../../public/images/circle.png';
 
 export const Hero = () => {
     return (
-        <>
+        <section>
             <div className="h-screen content-center z-30 grid lg:mb-5">
                 <h1 className="xl:text-100 lg:text-90 font-normal xl:leading-100 lg:leading-90 text-left tracking-space00 pt-60 z-20">
                     IN THE DIGITAL <br />ECONOMY, DATA IS OIL. <br />
@@ -23,5 +23,5 @@ export const Hero = () => {
                     />
                 </div>
             </div>
-        </>
+        </section>
 )}

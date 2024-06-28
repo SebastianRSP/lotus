@@ -7,6 +7,10 @@ body {
   @apply font-plus-jakarta-sans bg-white;
 }
 
+
+
+/* Navbar CSS */
+
 @keyframes scroll {
   0% {
     transform: translateX(0);
@@ -39,7 +43,6 @@ body {
   }
 }
 
-
 nav{
   height: 60px;
   position: fixed;
@@ -53,7 +56,6 @@ nav{
   top: 40px;
   transform: translateY(-100%); /* Move nav bar up when scrolled */
 }
-
 .transition-animation {
   transition: all 0.1s ease-in-out;
 }
@@ -68,7 +70,6 @@ nav{
   display: flex;
   justify-content: center;
 }
-
 .logo{
   position: absolute;
   width: 36px;
@@ -97,6 +98,20 @@ nav{
   opacity: 1;
   transform: translateY(0);
 }
+
+
+/* Folding Cards */
+
+.folding-card{
+  translate: none;
+  rotate: none;
+  scale: none;
+  transform: translate(0px, -100px);
+}
+
+
+/* General CSS */
+
 .text-center {
   text-align: -webkit-center;
 }

@@ -3,8 +3,7 @@ import { WeAreLotus } from "./WeAreLotus"
 
 export const TextSlider = () => {
     return (
-        <>
-        <div className="text-green uppercase items-center py-11 flex text-123 font-extrabold bg-black overflow-hidden">
+        <section className="text-green uppercase items-center py-11 flex text-123 font-extrabold bg-black overflow-hidden">
             <div className="scroll flex-none flex items-center">
                 <div className="flex-none flex items-center">
                     <WeAreLotus />
@@ -29,7 +28,6 @@ export const TextSlider = () => {
                 </div>
                 <DotDivider />
             </div>
-        </div>
-        </>
+        </section>
     )
 }

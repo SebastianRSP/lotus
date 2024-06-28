@@ -5,7 +5,7 @@ import { DefaultBtn } from '../buttons/DefaultBtn';
 
 export const TeamManagement = () => {
     return (
-        <div className="bg-yellowLight py-74 px-28">
+        <section className="bg-yellowLight py-74 px-28">
             <div className="grid grid-cols-3 gap-4">
                 <div className="col-span-2">
                     <Image
@@ -32,6 +32,6 @@ export const TeamManagement = () => {
                     />
                 </div>
             </div>
-        </div>
+        </section>
     )
 }

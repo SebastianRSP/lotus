@@ -8,7 +8,7 @@ import { BridgeCardParagraph } from './BridgeCardParagraph';
 
 export const Bridge = () => {
     return (
-        <div className="px-40 pt-186 pb-32 bg-black">
+        <section className="px-40 pt-186 pb-32 bg-black">
             <div className="text-left">
                 <h2 className="text-7xl text-yellowLight font-bold">
                     WE’RE BUILDING <br />
@@ -145,6 +145,6 @@ export const Bridge = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }

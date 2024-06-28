@@ -6,6 +6,9 @@ import { Bridge } from "./components/bridge/Index";
 import { ProblemSolution } from "./components/problem-solution/Index";
 import { BorderDivider } from "./components/borders-divider/Index";
 import { LottieAnimation } from "./components/animation/Index";
+import { CardSection } from "./components/card-section/CardSections";
+import { FoldingCard } from "./components/folding-cards/Index";
+import { SliderCard } from "./components/slider-card/Index";
 
 export default function Home() {
   return (
@@ -20,6 +23,9 @@ export default function Home() {
       <ProblemSolution />
       <BorderDivider />
       <LottieAnimation />
+      <CardSection />
+      <SliderCard />
+      <div className="h-[1000px]"></div>
     </>
   );
 }

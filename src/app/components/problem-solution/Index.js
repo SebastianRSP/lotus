@@ -8,7 +8,7 @@ import Image from "next/image";
 
 export const ProblemSolution = () => {
     return (
-        <div className="w-full">
+        <section className="w-full">
             <div className="grid grid-cols-2">
                 <div className="flex justify-center items-center">
                     <Image
@@ -18,14 +18,14 @@ export const ProblemSolution = () => {
                         height={130}
                     />
                 </div>
-                <Card>
+                <Card index={'1'}>
                     <div className="w-7/12 py-40 content-center">
                         <SmallHeading heading={'THE PROBLEM'} />
                         <Heading heading={`THE WEB2 DATA DILEMMA`} />
                         <Paragraph paragraph={'Institutional data, a vast untapped digital asset, remains largely confined to outdated Web2 networks. As institutions and governments seek to leverage decentralized solutions, the transition process is often complex and daunting, hindering progress and innovation.'} />
                     </div>
                 </Card>
-                <Card>
+                <Card index={'2'}>
                     <div className="w-7/12 py-40 content-center">
                         <SmallHeading heading={'THE SOLUTION'} />
                         <Heading heading={`TRANSFORMING STORAGE WITH WEB3`} />
@@ -41,6 +41,6 @@ export const ProblemSolution = () => {
                     />
                 </div>
             </div>
-        </div>
+        </section>
     )
 }

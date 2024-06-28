@@ -1,6 +1,6 @@
-export const Card = ({children}) => {
+export const Card = ({children, extras, index}) => {
     return (
-        <div className="bg-yellowLight w-full flex justify-center items-center">
+        <div key={index} className={`bg-yellowLight w-full flex justify-center items-center ${extras}`}>
             {children}
         </div>
     )
