@@ -20,7 +20,7 @@ export const SliderCard = () => {
           <div className="flex">
                 <SlickSlider>
                     {list.map((list, index) => (
-                        <div className="px-20">
+                        <div key={index} className="px-20">
                             <SingleCard
                                 key={index}
                                 name={list}
