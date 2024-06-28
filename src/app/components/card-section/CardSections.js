@@ -20,8 +20,8 @@ export const CardSection = () => {
                 <div className="grid grid-cols-3 gap-8">
                     {cardContent.map((detail, index) => (
                         <Card
+                            key={index}
                             extras={'border border-black shadow-card-outer'}
-                            index={index}
                         >
                             <div key={index} className="flex flex-col text-black items-center px-38 my-20">
                                 <Image

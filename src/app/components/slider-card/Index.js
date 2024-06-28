@@ -22,8 +22,9 @@ export const SliderCard = () => {
                     {list.map((list, index) => (
                         <div className="px-20">
                             <SingleCard
+                                key={index}
                                 name={list}
-                                /> 
+                            /> 
                         </div>
                     ))}
                 </SlickSlider>

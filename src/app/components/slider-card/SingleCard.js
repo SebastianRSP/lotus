@@ -2,9 +2,9 @@ import { Card } from "../shared-components/Card";
 import defaultImage from '../../../../public/icons/defaultImg.svg';
 import Image from "next/image";
 
-export const SingleCard = () => {
+export const SingleCard = ({key}) => {
     return (
-        <article className="relative w-full">
+        <article key={key} className="relative w-full">
             <div className="w-121 h-121 absolute bg-green -top-14 -left-14 rounded-full z-10"/>
             <Card extras={'border border-black shadow-card-outer py-16 px-78 relative z-20'}>
                 <div className="flex flex-col w-full gap-20">
