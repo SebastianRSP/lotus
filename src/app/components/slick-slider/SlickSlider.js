@@ -7,11 +7,12 @@ import './SlickSlider.css'
 import React from "react";
 
 const NextArrow = (props) => {
-    const { className, style, onClick } = props;
+    const { className, style, onClick, index } = props;
 
     return (
 
         <div
+            key={index}
             className={className}
             style={{ ...style}}
             onClick={onClick}
@@ -21,9 +22,10 @@ const NextArrow = (props) => {
 }
 
 const PrevArrow = (props) => {
-    const { className, style, onClick } = props;
+    const { className, style, onClick, index } = props;
     return (
         <div
+            key={index}
             className={className}
             style={{ ...style}}
             onClick={onClick}
@@ -85,10 +87,10 @@ var settings = {
     ]
 };
 
-export const SlickSlider = ({ children }) => {
+export const SlickSlider = ({ children, index }) => {
     return (
     
-            <Slider className='w-full' {...settings}>
+            <Slider className='w-full' key={index} {...settings}>
                     {children}
             </Slider>
       

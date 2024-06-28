@@ -10,7 +10,7 @@ const cardContent = [
 
 export const CardSection = () => {
     return (
-        <section className="px-40 py-125 w-full text-center">
+        <section  className="px-40 py-125 w-full text-center">
             <div className="w-9/12">
                 <h3 className=" text-7xl font-bold leading-84 text-black">
                     EXPERIENCE SEAMLESS MIGRATION TO FUTURE-READY PLATFORMS
@@ -21,7 +21,7 @@ export const CardSection = () => {
                     {cardContent.map((detail, index) => (
                         <Card
                             extras={'border border-black shadow-card-outer'}
-                            index={'1'}
+                            index={index}
                         >
                             <div key={index} className="flex flex-col text-black items-center px-38 my-20">
                                 <Image
