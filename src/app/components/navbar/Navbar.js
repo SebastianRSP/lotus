@@ -49,7 +49,7 @@ export const Navbar = () => {
             <div className="grid grid-cols-3 items-center h-inherit divide-x divide-black">
                 {navLinksBefore.map((navLink, index) => (
                     <NavLink
-                        key={index}
+                        index={index}
                         navLinkName={navLink.navLinkName}
                         navLink={navLink.navLink}
                         extras={navLink.extras}

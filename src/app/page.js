@@ -9,6 +9,8 @@ import { LottieAnimation } from "./components/animation/Index";
 import { CardSection } from "./components/card-section/CardSections";
 import { FoldingCard } from "./components/folding-cards/Index";
 import { SliderCard } from "./components/slider-card/Index";
+import { CaseStudy } from "./components/case-study/Index";
+import { DataTool } from "./components/data-tool/Index";
 
 export default function Home() {
   return (
@@ -25,6 +27,8 @@ export default function Home() {
       <LottieAnimation />
       <CardSection />
       <SliderCard />
+      <CaseStudy />
+      <DataTool />
       <div className="h-[1000px]"></div>
     </>
   );

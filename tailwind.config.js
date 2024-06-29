@@ -21,7 +21,9 @@ module.exports = {
       boxShadow: {
         'outer': '6px 6px 0px #00000041',
         'card-outer': '12px 12px 0px #00000040',
+        'card-outer-green': '12px 12px 0px #03FF00',
         'button': '6px 6px 0px #00000040',
+        'button-green': '6px 6px 0px #03FF00',
         'inner': 'inset 4px 4px 0px #00000040',
       },
       borderColor: {
@@ -56,10 +58,12 @@ module.exports = {
         '66': '66px',
         '74': '74px',
         '78': '78px',
+        '80': '80px',
         '84': '84px',
         '90': '90px',
         '100': '100px',
         '142': '142px',
+        '154': '154px',
       },
       padding: {
         '38': '38px',

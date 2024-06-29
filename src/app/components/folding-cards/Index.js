@@ -27,18 +27,18 @@ export const FoldingCard = ({ children, topText, bottomText }) => {
   }, []);
 
   return (
-    <section className="relative uppercase" ref={cardRef}>
+    <section className="relative bg-gray-light uppercase" ref={cardRef}>
       <div className="relative bg-green px-40 font-medium items-start w-full -mb-4">
         <span className="text-123">{topText}</span>
       </div>
       <div
         className="relative bg-gray-light px-40 font-medium items-start w-full folding-card overflow-hidden"
-        style={{ transform: `translate(0px, -${scrollY}px)`, transition: 'transform 0.1s ease' }}
+        style={{
+          transform: `translate(0px, -${scrollY}px)`, 
+          transition: 'transform 0.1s ease'
+        }}
       >
         <span className="text-123">{bottomText}</span>
-        <div className='py-16'>
-            {children}
-        </div>
       </div>
     </section>
   );
