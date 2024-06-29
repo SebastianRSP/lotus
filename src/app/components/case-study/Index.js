@@ -20,7 +20,7 @@ export const CaseStudy = () => {
             </div>
             <div className="grid grid-cols-2 gap-8 mt-16">
                 {caseStudies.map((caseStudy, index) => (
-                    <Card extras={'bg-white shadow-card-outer-green'}>
+                    <Card key={index} extras={'bg-white shadow-card-outer-green'}>
                         <div key={index} className="flex flex-col gap-12 w-full bg-white">
                             <div className="bg-gray-light flex justify-center items-center py-32">
                                 <Image

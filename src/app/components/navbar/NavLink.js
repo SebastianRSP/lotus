@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 
-export const NavLink = ({ navLinkName, navLink, extras, icon, iconImage, index, font }) => {
+export const NavLink = ({ navLinkName, navLink, extras, icon, iconImage, key, font }) => {
     const [isToggled, setIsToggled] = useState(false);
 
     const handleClick = () => {
@@ -13,7 +13,7 @@ export const NavLink = ({ navLinkName, navLink, extras, icon, iconImage, index, 
     return (
         <a 
             href={navLink} 
-            key={index} 
+            key={key} 
             onClick={handleClick} 
             className={`${extras} ${isToggled ? '!bg-black text-green ring-1 ring-green' : ''} h-inherit flex items-center justify-center transition-animation hover:shadow-inner`}
         >
