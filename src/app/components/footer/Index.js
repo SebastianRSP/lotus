@@ -37,7 +37,7 @@ export const Footer = () => {
                             height={38}
                         />
                     </div>
-                    <p className='text-xs font-normal leading-4 w-4/6'>
+                    <p className='text-xs font-normal leading-4 w-5/6'>
                         The Bridge streamlines the migration from
                         traditional Web2 data storage systems like AWS and
                         Google Cloud to cutting-edge Web3 platforms such as Filecoin,
