@@ -17,6 +17,7 @@ module.exports = {
         '100': '100px',
         '123': '123px',
         '142': '142px',
+        '144': '144px',
       },
       boxShadow: {
         'outer': '6px 6px 0px #00000041',
@@ -29,6 +30,8 @@ module.exports = {
       borderColor: {
         'black': '#000000',
         'dark-gray': '#0D0D0D',
+        'light-gray': '#00000040',
+        'light': '#ffffff40',
       },
       colors: {
         'yellowLight': '#FFFCEB',
@@ -41,20 +44,25 @@ module.exports = {
       },
       height: {
         'inherit': '-webkit-fill-available',
-        '121': '121px'
+        '121': '121px',
+        '43': '43rem'
       },
       width: {
-        '121': '121px'
+        '121': '121px',
+        '21r': '21rem',
+        '160': '16rem'
       },
       letterSpacing: {
         'space60': '0.6px',
         'space00': '0px',
         'space90': '0.9px',
+        'space-25': '-25px',
       },
       lineHeight: {
         '30': '30px',
         '32': '32px',
         '40': '40px',
+        '50': '50px',
         '66': '66px',
         '74': '74px',
         '78': '78px',
@@ -67,6 +75,7 @@ module.exports = {
       },
       padding: {
         '38': '38px',
+        '70': '70px',
         '74': '74px',
         '78': '78px',
         '86': '86px',
@@ -74,6 +83,9 @@ module.exports = {
         '125': '125px',
         '138': '138px',
         '186': '186px',
+      },
+      margin: {
+        '70': '70px'
       },
       borderWidth: {
         '3': '3px',

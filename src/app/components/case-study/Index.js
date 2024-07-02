@@ -5,10 +5,26 @@ import { ArrowBtn } from "../buttons/ArrowBtn";
 import { DefaultBtn } from "../buttons/DefaultBtn";
 
 const caseStudies = [
-    {caseStudyImage: defaultImage, caseStudyHeading: 'Fintech', caseStudyDescription: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.'},
-    {caseStudyImage: defaultImage, caseStudyHeading: 'Cybersecurity', caseStudyDescription: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.'},
-    {caseStudyImage: defaultImage, caseStudyHeading: 'Pharmaceutical', caseStudyDescription: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.'},
-    {caseStudyImage: defaultImage, caseStudyHeading: 'Genomics', caseStudyDescription: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.'},
+    {
+        caseStudyImage: defaultImage,
+        caseStudyHeading: 'Fintech',
+        caseStudyDescription: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.'
+    },
+    {
+        caseStudyImage: defaultImage,
+        caseStudyHeading: 'Cybersecurity',
+        caseStudyDescription: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.'
+    },
+    {
+        caseStudyImage: defaultImage,
+        caseStudyHeading: 'Pharmaceutical',
+        caseStudyDescription: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.'
+    },
+    {
+        caseStudyImage: defaultImage,
+        caseStudyHeading: 'Genomics',
+        caseStudyDescription: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.'
+    },
 ]
 
 export const CaseStudy = () => {

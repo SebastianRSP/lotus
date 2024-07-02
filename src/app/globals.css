@@ -127,3 +127,30 @@ nav{
   margin-left: 40px;
   margin-right: 40px;
 }
+
+/* Partner Section */
+
+.partner-row-image {
+  -webkit-clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+  clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+  transition: -webkit-clip-path .5s cubic-bezier(.3,.86,.36,.95);
+  transition: clip-path .5s cubic-bezier(.3,.86,.36,.95);
+  transition: clip-path .5s cubic-bezier(.3,.86,.36,.95), -webkit-clip-path .5s cubic-bezier(.3,.86,.36,.95);
+}
+.partner-row-element:hover .partner-row-image {
+  -webkit-clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+  clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+}
+.lazyload {
+  opacity: 0;
+  transition: opacity .35s cubic-bezier(.3,.86,.36,.95);
+}
+.lazyloaded {
+  opacity: 1;
+}
+
+
+/* Faq section */
+.transition-max-height {
+  transition: max-height 0.5s ease-in-out;
+}

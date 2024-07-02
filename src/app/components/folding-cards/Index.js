@@ -28,7 +28,7 @@ export const FoldingCard = ({ children, topText, bottomText }) => {
 
   return (
     <section className="relative bg-gray-light uppercase" ref={cardRef}>
-      <div className="relative bg-green px-40 font-medium items-start w-full -mb-4">
+      <div className="relative bg-green px-40 -mb-4 font-medium items-start w-full">
         <span className="text-123">{topText}</span>
       </div>
       <div

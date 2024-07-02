@@ -11,6 +11,11 @@ import { FoldingCard } from "./components/folding-cards/Index";
 import { SliderCard } from "./components/slider-card/Index";
 import { CaseStudy } from "./components/case-study/Index";
 import { DataTool } from "./components/data-tool/Index";
+import { AITool } from "./components/ai-tool/Index";
+import { FoldingCardXScroll } from "./components/folding-cards/FoldingCard";
+import { OurPartner } from "./components/partners/Index";
+import { FrequentlyAsked } from "./components/frequently-asked/Index";
+import { Footer } from "./components/footer/Index";
 
 export default function Home() {
   return (
@@ -28,8 +33,14 @@ export default function Home() {
       <CardSection />
       <SliderCard />
       <CaseStudy />
-      <DataTool />
-      <div className="h-[1000px]"></div>
+      <section className="relative bg-gray-light uppercase">
+        <DataTool />
+        <AITool />
+        <FoldingCardXScroll />
+      </section>
+      <OurPartner />
+      <FrequentlyAsked />
+      <Footer />
     </>
   );
 }
