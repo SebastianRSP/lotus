@@ -64,8 +64,8 @@ export const FrequentlyAsked = () => {
             </div>
             <div className='bg-white my-2'>
                 {faqs.map((faq, index) => (
-                    <div className="accordion-group">
-                        <div key={index} className={`${openFAQ === index ? 'bg-black text-green' : ''} accordion border-black divide-y`}>
+                    <div key={index} className="accordion-group">
+                        <div className={`${openFAQ === index ? 'bg-black text-green' : ''} accordion border-black divide-y`}>
                             <button
                                 className="pl-40 text-30 font-normal leading-8 flex justify-between items-center w-full"
                                 onClick={() => toggleAccordion(index)}

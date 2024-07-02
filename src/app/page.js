@@ -20,7 +20,6 @@ import { Footer } from "./components/footer/Index";
 export default function Home() {
   return (
     <>
-      <Navbar />
       <div className=" xl:px-40 xl:my-6 lg:px-32 lg:my-3 px-10 py-3">
         <Hero />
       </div>
@@ -40,7 +39,6 @@ export default function Home() {
       </section>
       <OurPartner />
       <FrequentlyAsked />
-      <Footer />
     </>
   );
 }
