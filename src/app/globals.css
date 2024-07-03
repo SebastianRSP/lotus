@@ -7,8 +7,6 @@ body {
   @apply font-plus-jakarta-sans bg-white;
 }
 
-
-
 /* Navbar CSS */
 
 @keyframes scroll {
@@ -99,6 +97,25 @@ nav{
   transform: translateY(0);
 }
 
+
+/* Navbar Mobile Toggle Transition Green for Screen */
+
+.transition-transform {
+  transition: transform 0.2s ease-in-out;
+}
+.translate-x-full {
+  transform: translateX(100%);
+}
+.translate-x-0 {
+  transform: translateX(0);
+}
+
+/* Text Slider */
+.text-slider {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+}
 
 /* Folding Cards */
 

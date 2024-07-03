@@ -18,9 +18,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={plusJakartaSans.variable}>
-        <Navbar />
-          {children}
-        <Footer />
+          <header>
+            <Navbar />
+          </header>
+          <main className="xl:mx-40 mx-9 my-6">
+            {children}
+          </main>
+          <footer>
+            {/* <Footer /> */}
+          </footer>
       </body>
     </html>
   );

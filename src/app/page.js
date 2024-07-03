@@ -20,11 +20,9 @@ import { Footer } from "./components/footer/Index";
 export default function Home() {
   return (
     <>
-      <div className=" xl:px-40 xl:my-6 lg:px-32 lg:my-3 px-10 py-3">
-        <Hero />
-      </div>
+      <Hero />
       <TextSlider />
-      <TeamManagement />
+      {/* <TeamManagement />
       <Bridge />
       <ProblemSolution />
       <BorderDivider />
@@ -38,7 +36,7 @@ export default function Home() {
         <FoldingCardXScroll />
       </section>
       <OurPartner />
-      <FrequentlyAsked />
+      <FrequentlyAsked /> */}
     </>
   );
 }

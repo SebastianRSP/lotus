@@ -1,6 +1,7 @@
 'use client'
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 export const NavLink = ({ navLinkName, navLink, extras, icon, iconImage, key, font }) => {
@@ -11,7 +12,7 @@ export const NavLink = ({ navLinkName, navLink, extras, icon, iconImage, key, fo
     };
 
     return (
-        <a 
+        <Link
             href={navLink} 
             key={key} 
             onClick={handleClick} 
@@ -23,13 +24,13 @@ export const NavLink = ({ navLinkName, navLink, extras, icon, iconImage, key, fo
                     alt="icons"
                     width={18}
                     height={15}
-                    className={`fill-current ${isToggled ? 'text-green' : ''}`}
+                    className={`fill-current w-6 h-6 md:w-4 md:h-4 ${isToggled ? 'text-green' : ''}`}
                 />
             ) : (
-                <span className={`${font} uppercase text-sm font-semibold tracking-space60 inner-text`}>
+                <span className={`${font} uppercase lg:text-sm md:text-xs font-semibold tracking-space60 inner-text`}>
                     {navLinkName}
                 </span>
             )}
-        </a>
+        </Link>
     );
 };

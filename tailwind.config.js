@@ -7,17 +7,25 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        'xs': '480px',
+        'sm': '640px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px',
+        '2xl': '1536px',
+      },
       fontFamily: {
         'plus-jakarta-sans': ['var(--font-plus-jakarta-sans)'],
       },
       fontSize: {
-        '30': '30px',
-        '32': '32px',
-        '90': '90px',
-        '100': '100px',
-        '123': '123px',
-        '142': '142px',
-        '144': '144px',
+        '30': '1.875rem',
+        '32': '2rem',
+        '90': '5rem',
+        '100': '6.25rem',
+        '123': '7.6875rem',
+        '142': '8.875rem',
+        '144': '9rem',
       },
       boxShadow: {
         'outer': '6px 6px 0px #00000041',
@@ -92,7 +100,7 @@ module.exports = {
         '6': '6px',
         '9': '9px',
         '12': '12px',
-      }
+      },
     }
   },
   plugins: [],
