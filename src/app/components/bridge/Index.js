@@ -17,12 +17,12 @@ export const Bridge = () => {
                         CONTENT DELIVERY NETWORK
                     </h2>
                 </div>
-                <div className='flex justify-center items-center text-center text-green md:my-36 my-20 relative'>
-                    <div className="md:w-9/12 w-full relative ">
+                <div className='flex justify-center forced-full-width items-center text-center text-green md:my-36 my-20 relative'>
+                    <div className="w-full relative overflow-hidden contents">
                         <Image
                             src={bridgeImage}
                             alt="circle image"
-                            // className="md:w-full max-w-fit object-cover"
+                            className="bridge-img relative opacity-90"
                             width={1096}
                             height={650}
                         />
@@ -32,7 +32,7 @@ export const Bridge = () => {
                             src={bridgeText}
                             layout="responsive"
                             alt="circle image"
-                            className="w-full h-auto"
+                            className="w-full md:px-0 px-6 h-auto"
                             width={1096}
                             height={650}
                         />

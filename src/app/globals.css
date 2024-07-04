@@ -128,15 +128,10 @@ nav{
 
 /* Bridge Section */
 .bridge-img {
-  max-width: 100%;
-  height: auto;
+  min-width: 1096px;
+  min-height: 650px;
 }
 
-@media (min-width: 640px) and (max-width: 767px) {
-  .sm\:bridge-img {
-    max-width: none;
-  }
-}
 
 /* Folding Cards */
 
