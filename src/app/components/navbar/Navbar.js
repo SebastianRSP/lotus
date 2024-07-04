@@ -177,7 +177,7 @@ export const Navbar = () => {
                                 />
                             ))}
                         </div>
-                        <div className="flex items-center divider-x divide-green">
+                        <div className="flex items-center divider-x divide-green mb-28">
                             {mobileNavIcons.map((navIcon, index) => (
                                 <NavLink
                                     key={index}
