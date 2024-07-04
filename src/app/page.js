@@ -22,9 +22,9 @@ export default function Home() {
     <>
       <Hero />
       <TextSlider />
-      {/* <TeamManagement />
+      <TeamManagement />
       <Bridge />
-      <ProblemSolution />
+      {/* <ProblemSolution />
       <BorderDivider />
       <LottieAnimation />
       <CardSection />

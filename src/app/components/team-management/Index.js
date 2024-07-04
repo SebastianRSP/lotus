@@ -5,9 +5,9 @@ import { DefaultBtn } from '../buttons/DefaultBtn';
 
 export const TeamManagement = () => {
     return (
-        <section className="bg-yellowLight py-74 px-28">
-            <div className="grid grid-cols-3 gap-4">
-                <div className="col-span-2">
+        <section className="bg-yellowLight forced-full-width">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-4 py-74 px-10">
+                <div className="lg:col-span-2 sm:forced-full-width px-2">
                     <Image
                         src={teamImage}
                         alt='team image'
@@ -15,8 +15,8 @@ export const TeamManagement = () => {
                         height={670}
                     />
                 </div>
-                <div className='text-left content-center w-5/6'>
-                    <div className='text-4xl tracking-space00 mb-12 font-normal'>
+                <div className='text-left content-center w-full sm:w-5/6 md:pt-0 pt-14'>
+                    <div className='2xl:text-4xl xl:text-3xl text-2xl tracking-space00 mb-12 font-normal'>
                         A longstanding and trusted
                         data management team
                         comprised ex filecoin

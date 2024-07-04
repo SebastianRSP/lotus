@@ -5,6 +5,7 @@
 
 body {
   @apply font-plus-jakarta-sans bg-white;
+  overflow-x: hidden;
 }
 
 /* Navbar CSS */
@@ -111,10 +112,30 @@ nav{
 }
 
 /* Text Slider */
-.text-slider {
+.forced-full-width {
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
+}
+
+@media (min-width: 640px) and (max-width: 767px) {
+  .sm\:forced-full-width {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+  }
+}
+
+/* Bridge Section */
+.bridge-img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (min-width: 640px) and (max-width: 767px) {
+  .sm\:bridge-img {
+    max-width: none;
+  }
 }
 
 /* Folding Cards */
@@ -125,6 +146,9 @@ nav{
   scale: none;
   transform: translate(0px, -100px);
 }
+.scroll {
+  animation: scroll 50s linear infinite;
+}
 
 
 /* General CSS */
@@ -132,9 +156,7 @@ nav{
 .text-center {
   text-align: -webkit-center;
 }
-.scroll {
-  animation: scroll 30s linear infinite;
-}
+
 .dot-divider{
   border-radius: 50%;
   flex: none;

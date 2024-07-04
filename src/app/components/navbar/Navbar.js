@@ -143,7 +143,7 @@ export const Navbar = () => {
                 </div>
                 {/* Toggle Green Screen */}
                 <div className={`md:hidden fixed top-0 left-0 right-0 bottom-0 w-full h-screen bg-green z-30 transform transition-transform duration-300 ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-                    <div className='flex justify-start xl:mx-40 mx-9 my-8'>
+                    <div className='flex justify-start xl:mx-40 mx-9 mt-14'>
                         <div className="logo-container">
                             <Image
                                 className="logo"
@@ -163,7 +163,7 @@ export const Navbar = () => {
                     </div>
                 </div>
                 {/* Toggle Black Menu Screen for Mobile Device */}
-                <div className={`md:hidden fixed top-0 left-0 right-0 bottom-0 mt-20 mr-6 h-[90vh] bg-black z-30 transform transition-transform duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+                <div className={`md:hidden fixed top-0 left-0 right-0 bottom-0 mt-28 mr-6 h-screen bg-black z-30 transform transition-transform duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
                     <div className='flex flex-col h-full justify-between px-8 py-14 text-white'>
                         <div className='grid'>
                             {mobileMenu.map((mobileLink, index) => (
