@@ -56,55 +56,57 @@ export const Navbar = () => {
         <>
             <nav className={`xl:mx-40 mx-9 my-6`}>
                 {/* Desktop Vesion */}
-                <div className='w-full shadow-outer bg-yellowLight sm:hidden md:grid grid-cols-3 items-center text-center h-14 border border-black relative z-50'>
-                    <div className="grid grid-cols-3 items-center h-inherit divide-x divide-black">
-                        {navLinksBefore.map((navLink, index) => (
-                            <NavLink
-                                key={index}
-                                navLinkName={navLink.navLinkName}
-                                navLink={navLink.navLink}
-                                extras={navLink.extras}
-                            />
-                        ))}
-                    </div>
-                    <div className="flex items-center justify-center h-inherit w-full border border-y-0 border-x-black">
-                        <div className="logo-container">
-                            <Image
-                                className="logo"
-                                src={logo}
-                                alt="Logo"
-                                width={32}
-                                height={17}
-                            />
-                            <Image
-                                className="lotus"
-                                src={lotus}
-                                alt="Lotus"
-                                width={76}
-                                height={18}
-                            />
-                        </div>
-                    </div>
-                    <div className="grid grid-cols-3 items-center h-inherit divide-x divide-black">
-                        {navLinksAfter.map((navLink, index) => (
-                            <NavLink
-                                key={index}
-                                navLinkName={navLink.navLinkName}
-                                navLink={navLink.navLink}
-                                extras={navLink.extras}
-                            />
-                        ))}
+                <div className='hidden md:!block'>
+                    <div className='w-full shadow-outer bg-yellowLight grid grid-cols-3 items-center text-center h-14 border border-black relative z-50'>
                         <div className="grid grid-cols-3 items-center h-inherit divide-x divide-black">
-                            {navIcons.map((navIcon, index) => (
+                            {navLinksBefore.map((navLink, index) => (
                                 <NavLink
                                     key={index}
-                                    navLinkName={navIcon.navLinkName}
-                                    navLink={navIcon.navLink}
-                                    icon={navIcon.icon}
-                                    iconImage={navIcon.iconImage}
-                                    font={navIcon.font}
+                                    navLinkName={navLink.navLinkName}
+                                    navLink={navLink.navLink}
+                                    extras={navLink.extras}
                                 />
                             ))}
+                        </div>
+                        <div className="flex items-center justify-center h-inherit w-full border border-y-0 border-x-black">
+                            <div className="logo-container">
+                                <Image
+                                    className="logo"
+                                    src={logo}
+                                    alt="Logo"
+                                    width={32}
+                                    height={17}
+                                />
+                                <Image
+                                    className="lotus"
+                                    src={lotus}
+                                    alt="Lotus"
+                                    width={76}
+                                    height={18}
+                                />
+                            </div>
+                        </div>
+                        <div className="grid grid-cols-3 items-center h-inherit divide-x divide-black">
+                            {navLinksAfter.map((navLink, index) => (
+                                <NavLink
+                                    key={index}
+                                    navLinkName={navLink.navLinkName}
+                                    navLink={navLink.navLink}
+                                    extras={navLink.extras}
+                                />
+                            ))}
+                            <div className="grid grid-cols-3 items-center h-inherit divide-x divide-black">
+                                {navIcons.map((navIcon, index) => (
+                                    <NavLink
+                                        key={index}
+                                        navLinkName={navIcon.navLinkName}
+                                        navLink={navIcon.navLink}
+                                        icon={navIcon.icon}
+                                        iconImage={navIcon.iconImage}
+                                        font={navIcon.font}
+                                    />
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </div>
