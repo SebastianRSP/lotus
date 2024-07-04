@@ -56,7 +56,7 @@ export const Navbar = () => {
         <>
             <nav className={`xl:mx-40 mx-9 my-6`}>
                 {/* Desktop Vesion */}
-                <div className='w-full shadow-outer bg-yellowLight hidden md:grid grid-cols-3 items-center text-center h-14 border border-black relative z-50'>
+                <div className='w-full shadow-outer bg-yellowLight sm:hidden md:grid grid-cols-3 items-center text-center h-14 border border-black relative z-50'>
                     <div className="grid grid-cols-3 items-center h-inherit divide-x divide-black">
                         {navLinksBefore.map((navLink, index) => (
                             <NavLink
