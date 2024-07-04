@@ -22,7 +22,7 @@ export const Bridge = () => {
                         <Image
                             src={bridgeImage}
                             alt="circle image"
-                            className="bridge-img relative opacity-90"
+                            className="bridge-img relative md:opacity-100 opacity-90"
                             width={1096}
                             height={650}
                         />
@@ -32,7 +32,7 @@ export const Bridge = () => {
                             src={bridgeText}
                             layout="responsive"
                             alt="circle image"
-                            className="w-full md:px-0 px-6 h-auto"
+                            className="md:w-9/12 w-full md:px-0 px-6 h-auto"
                             width={1096}
                             height={650}
                         />
