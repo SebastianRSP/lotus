@@ -29,7 +29,7 @@ export default function Home() {
       <LottieAnimation /> */}
       <CardSection />
       <SliderCard />
-      <CaseStudy />
+      {/* <CaseStudy /> */}
       {/* <section className="relative bg-gray-light uppercase">
         <DataTool />
         <AITool />
