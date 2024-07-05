@@ -52,6 +52,8 @@ var settings = {
                 slidesToScroll: 1,
                 initialSlide: 0,
                 variableWidth: false,
+                nextArrow: <NextArrow />,
+                prevArrow: <PrevArrow />
             }
         },
         {
@@ -62,6 +64,8 @@ var settings = {
                 slidesToScroll: 1,
                 initialSlide: 0,
                 variableWidth: false,
+                nextArrow: <NextArrow />,
+                prevArrow: <PrevArrow />
             }
         },
         {
@@ -72,6 +76,20 @@ var settings = {
                 slidesToScroll: 1,
                 initialSlide: 0,
                 variableWidth: false,
+                nextArrow: <NextArrow />,
+                prevArrow: <PrevArrow />
+            }
+        },
+        {
+            breakpoint: 768,
+            settings: {
+                speed: 1000,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                initialSlide: 0,
+                variableWidth: false,
+                dots: true,
+                arrows: false // Disable arrows for this breakpoint
             }
         },
         {
@@ -82,10 +100,13 @@ var settings = {
                 slidesToScroll: 1,
                 initialSlide: 0,
                 variableWidth: false,
+                dots: true,
+                arrows: false // Disable arrows for this breakpoint
             }
         }
     ]
 };
+
 
 export const SlickSlider = ({ children, index }) => {
     return (

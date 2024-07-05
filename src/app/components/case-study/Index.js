@@ -29,7 +29,7 @@ const caseStudies = [
 
 export const CaseStudy = () => {
     return (
-        <div className="bg-black px-40 py-36">
+        <div className="bg-black px-40 py-36 forced-full-width">
             <div className="text-start text-white">
                 <h3 className="text-123 font-medium leading-154 uppercase">OUR IMPACT</h3>
                 <h5 className="text-6xl font-normal leading-80 capitalize">Featured Case Studies</h5>

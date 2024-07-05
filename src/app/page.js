@@ -24,13 +24,13 @@ export default function Home() {
       <TextSlider />
       <TeamManagement />
       <Bridge />
-      {/* <ProblemSolution />
-      <BorderDivider />
-      <LottieAnimation />
+      <ProblemSolution />
+      {/* <BorderDivider />
+      <LottieAnimation /> */}
       <CardSection />
       <SliderCard />
       <CaseStudy />
-      <section className="relative bg-gray-light uppercase">
+      {/* <section className="relative bg-gray-light uppercase">
         <DataTool />
         <AITool />
         <FoldingCardXScroll />

@@ -53,8 +53,8 @@ export const MultiAnimatedCards = ({ cardAnimationData }) => {
     return (
         <div ref={cardRef}>
             {cardAnimationData.length > 0 && (
-                <div className={`relative font-medium items-start ${cardAnimationData[0].padding} w-full -mb-4 ${cardAnimationData[0].backgroundColor}`}>
-                    <span className="text-123">{cardAnimationData[0].cardHeading}</span>
+                <div className={`relative font-medium items-start ${cardAnimationData[0].padding} w-full xl:h-full lg:h-32 md:h-28 h-32 lg:-mb-4 ${cardAnimationData[0].backgroundColor}`}>
+                    <span className="xl:text-123 md:text-7xl text-4xl">{cardAnimationData[0].cardHeading}</span>
                 </div>
             )}
             {renderNestedCards(cardAnimationData.slice(1), scrollY)}

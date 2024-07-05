@@ -1,6 +1,6 @@
 export const Paragraph = ({paragraph}) => {
     return (
-        <p className="text-30 font-normal leading-32 w-5/6">
+        <p className="md:text-30 text-2xl font-normal leading-32 w-full">
             {paragraph}
         </p>
     )

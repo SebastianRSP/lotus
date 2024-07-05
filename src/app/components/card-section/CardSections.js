@@ -10,23 +10,23 @@ const cardContent = [
 
 export const CardSection = () => {
     return (
-        <section  className="px-40 py-125 w-full text-center">
-            <div className="w-9/12">
-                <h3 className=" text-7xl font-bold leading-84 text-black">
+        <section  className="xl:px-40 md:px-9 px-7 2xl:py-125 lg:py-20 py-16 w-full text-center forced-full-width">
+            <div className="xl:w-9/12 lg:w-10/12 md:w-9/12 w-full">
+                <h3 className="xl:text-5xl lg:text-5xl text-4xl font-bold  xl:leading-50  leading-43 text-black">
                     EXPERIENCE SEAMLESS MIGRATION TO FUTURE-READY PLATFORMS
                 </h3>
             </div>
             <div className="w-full mt-28">
-                <div className="grid grid-cols-3 gap-8">
+                <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8">
                     {cardContent.map((detail, index) => (
                         <Card
                             key={index}
                             extras={'border border-black shadow-card-outer'}
                         >
-                            <div key={index} className="flex flex-col text-black items-center px-38 my-20">
+                            <div key={index} className="flex flex-col text-black items-center px-38 lg:my-20 my-10">
                                 <Image
                                     src={defaultImage}
-                                    className="pb-105"
+                                    className="lg:mb-20 mb-10"
                                     alt="default image icon"
                                     width={100}
                                     height={100}

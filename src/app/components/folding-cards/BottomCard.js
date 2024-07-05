@@ -12,7 +12,7 @@ export const BottomCard = ({text, scrollY, padding, backgroundColor, textColor, 
             }}
             
         >
-            <span className={`${padding} text-123`}>{text}</span>
+            <span className={`${padding} xl:text-123 md:text-7xl text-4xl`}>{text}</span>
             {children}
         </div>
     )
