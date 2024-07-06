@@ -59,7 +59,8 @@ module.exports = {
       width: {
         '121': '121px',
         '21r': '21rem',
-        '160': '16rem'
+        '160': '16rem',
+        '50' : '50rem'
       },
       letterSpacing: {
         'space60': '0.6px',

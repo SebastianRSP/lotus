@@ -29,14 +29,14 @@ export default function Home() {
       <LottieAnimation /> */}
       <CardSection />
       <SliderCard />
-      {/* <CaseStudy /> */}
-      {/* <section className="relative bg-gray-light uppercase">
+      <CaseStudy />
+      <section className="relative bg-gray-light uppercase forced-full-width ">
         <DataTool />
         <AITool />
         <FoldingCardXScroll />
       </section>
       <OurPartner />
-      <FrequentlyAsked /> */}
+      {/* <FrequentlyAsked /> */}
     </>
   );
 }

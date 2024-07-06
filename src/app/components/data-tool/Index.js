@@ -4,32 +4,32 @@ import cardAnimationBackground from '../../../../public/images/card-animation-ba
 const cardAnimationData = [
     {
         cardHeading: 'SUPERCHARGE',
-        padding: 'pl-16',
-        height: '',
+        padding: 'md:pl-16 pl-7',
+        height: '!h-32',
         backgroundColor: 'bg-gray-light',
         textColor: '',
         backgroundImage: ''
     },
     {
         cardHeading: 'YOUR DATA',
-        padding: 'pl-16',
-        height: 'h-48',
+        padding: 'md:pl-16 pl-7',
+        height: 'xl:h-48 lg:h-32 md:h-28 h-24',
         backgroundColor: 'bg-green',
         textColor: '',
         backgroundImage: ''
     },
     {
         cardHeading: 'WITH',
-        padding: 'pl-16',
-        height: 'h-48',
+        padding: 'md:pl-16 pl-7',
+        height: 'xl:h-48 lg:h-32 md:h-28 h-24',
         backgroundColor: 'bg-purple',
         textColor: '',
         backgroundImage: cardAnimationBackground
     },
     {
         cardHeading: 'AI TOOLS',
-        padding: 'pl-16',
-        height: 'h-48',
+        padding: 'md:pl-16 pl-7',
+        height: 'xl:h-48 lg:h-32 md:h-28 h-32',
         backgroundColor: 'bg-gray-light',
         textColor: '',
         backgroundImage: ''

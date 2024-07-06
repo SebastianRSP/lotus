@@ -29,16 +29,16 @@ const caseStudies = [
 
 export const CaseStudy = () => {
     return (
-        <div className="bg-black px-40 py-36 forced-full-width">
+        <section className="xl:px-40 md:px-9 px-7 xl:py-36 md:py-9 py-7 bg-black  forced-full-width">
             <div className="text-start text-white">
-                <h3 className="text-123 font-medium leading-154 uppercase">OUR IMPACT</h3>
-                <h5 className="text-6xl font-normal leading-80 capitalize">Featured Case Studies</h5>
+                <h3 className="lg:text-123 md:text-100 sm:text-6xl text-5xl font-medium md:leading-154 leading-50 uppercase">OUR IMPACT</h3>
+                <h5 className="lg:text-6xl md:text-5xl text-2xl font-normal leading-80 capitalize">Featured Case Studies</h5>
             </div>
-            <div className="grid grid-cols-2 gap-8 mt-16">
+            <div className="grid md:grid-cols-2 grid-cols-1 gap-8 mt-16">
                 {caseStudies.map((caseStudy, index) => (
                     <Card key={index} extras={'bg-white shadow-card-outer-green'}>
-                        <div key={index} className="flex flex-col gap-12 w-full bg-white">
-                            <div className="bg-gray-light flex justify-center items-center py-32">
+                        <div key={index} className="flex flex-col md:gap-12 gap-8 w-full bg-white">
+                            <div className="bg-gray-light flex justify-center items-center md:py-20 py-16">
                                 <Image
                                     src={caseStudy.caseStudyImage}
                                     className=""
@@ -47,24 +47,24 @@ export const CaseStudy = () => {
                                     height={100}
                                 />
                             </div>
-                            <div className="px-9 py-9 w-10/12">
+                            <div className="px-9 md:py-5 py-3 md:w-10/12 w-full">
                                 <h4 className="text-3xl font-bold leading-74">{caseStudy.caseStudyHeading}</h4>
                                 <p className="text-base font-semibold leading-7">{caseStudy.caseStudyDescription}</p>
                             </div>
-                            <div className="px-9 pb-9 w-11/12 flex justify-end">
+                            <div className="px-9 md:pb-9 pb-5  w-11/12 flex justify-end">
                                 <ArrowBtn />
                             </div>
                         </div>
                     </Card>
                 ))}
             </div>
-            <div className="flex justify-center flex-row mt-32">
+            <div className="flex justify-center flex-row md:mt-24 mt-16">
                 <DefaultBtn
                     extras={'bg-white !shadow-button-green'}
                     btnText={'VIEW MORE'}
                     btnType={'button'}
                 />
             </div>
-        </div>
+        </section>
     )
 }

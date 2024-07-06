@@ -5,7 +5,7 @@ import Image from "next/image";
 export const SingleCard = ({key}) => {
     return (
         <article key={key} className="relative w-full">
-            <div className="w-121 h-121 absolute bg-green -top-14 -left-14 rounded-full z-10"/>
+            <div className="md:w-121 w-20 md:h-121 h-20 absolute bg-green md:-top-14 -top-6 md:-left-14 -left-6 rounded-full z-10"/>
             <Card extras={'border border-black shadow-card-outer md:py-16 py-5 md:px-78 px-5 relative z-20'}>
                 <div className="flex flex-col w-full gap-20">
                     <p className="text-base md:font-semibold font-medium leading-40 xl:w-7/12 w-full capitalize">
@@ -29,7 +29,7 @@ export const SingleCard = ({key}) => {
                     </div>
                 </div>
             </Card>
-            <div className="w-121 h-121 absolute bg-green -bottom-14 -right-14 rounded-full z-10"/>
+            <div className="md:w-121 w-20 md:h-121 h-20 absolute bg-green md:-bottom-14 -bottom-6 md:-right-14 -right-6 rounded-full z-10"/>
         </article>
     )
 }

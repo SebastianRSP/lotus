@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { BottomCard } from './BottomCard';
-import { AITool } from '../ai-tool/Index';
 
 export const MultiAnimatedCards = ({ cardAnimationData }) => {
     const [scrollY, setScrollY] = useState(0);
@@ -14,7 +13,7 @@ export const MultiAnimatedCards = ({ cardAnimationData }) => {
             const windowHeight = window.innerHeight;
 
             if (cardTop < windowHeight && cardTop > -windowHeight) {
-                const newY = Math.max(0, (windowHeight - cardTop) / 10);
+                const newY = Math.max(0, (windowHeight - cardTop) / 20);
                 setScrollY(newY);
             } else {
                 setScrollY(0);
@@ -51,9 +50,9 @@ export const MultiAnimatedCards = ({ cardAnimationData }) => {
     };
 
     return (
-        <div ref={cardRef}>
+        <div ref={cardRef} className='h-full'>
             {cardAnimationData.length > 0 && (
-                <div className={`relative font-medium items-start ${cardAnimationData[0].padding} w-full xl:h-full lg:h-32 md:h-28 h-32 lg:-mb-4 ${cardAnimationData[0].backgroundColor}`}>
+                <div className={`relative font-medium items-start ${cardAnimationData[0].padding} w-full xl:h-full lg:h-24 md:h-28 h-12 lg:-mb-4 ${cardAnimationData[0].backgroundColor}`}>
                     <span className="xl:text-123 md:text-7xl text-4xl">{cardAnimationData[0].cardHeading}</span>
                 </div>
             )}

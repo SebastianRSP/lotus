@@ -66,7 +66,7 @@ export const OurPartner = () => {
     };
 
     return (
-        <section className="relative bg-black uppercase pt-2">
+        <section className="relative bg-black uppercase pt-2 forced-full-width">
             <MultiAnimatedCards
                 cardAnimationData={cardAnimationData}
             />

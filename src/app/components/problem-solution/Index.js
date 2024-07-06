@@ -10,7 +10,7 @@ export const ProblemSolution = () => {
     return (
         <section className="w-full forced-full-width">
             <div className="grid md:grid-cols-2 grid-cols-1">
-                <div className="flex justify-center items-center order-first md:py-0 py-52">
+                <div className="flex justify-center items-center order-first md:py-0 py-16">
                     <Image
                         src={defaultImageIcon}
                         alt="default image icon"
@@ -32,7 +32,7 @@ export const ProblemSolution = () => {
                         <Paragraph paragraph={'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.'} />
                     </div>
                 </Card>
-                <div className="flex justify-center items-center w-full">
+                <div className="flex justify-center items-center w-full md:py-0 py-16">
                     <Image
                         src={solutionImage}
                         className="w-8/12"
