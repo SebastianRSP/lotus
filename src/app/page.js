@@ -35,7 +35,7 @@ export default function Home() {
         <AITool />
         <FoldingCardXScroll />
       </section>
-      <OurPartner />
+      {/* <OurPartner /> */}
       {/* <FrequentlyAsked /> */}
     </>
   );
