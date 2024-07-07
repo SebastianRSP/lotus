@@ -94,7 +94,7 @@ export const FoldingCardXScroll = () => {
     }, [viewportHeight, isLgScreen]); // Ensure handleScroll updates when viewportHeight changes
 
     return (
-        <div ref={sectionRef} className={`lg:h-[3335vh] h-auto lg:px-0 md:px-9 px-7 lg:pb-0 pb-20`}>
+        <div ref={sectionRef} className={`lg:h-[3335vh] h-auto lg:px-0 md:px-9 px-7 lg:pb-0 xl:pb-0 2xl:pb-0 pb-20`}>
             <div className="overflow-hidden mt-32 lg:sticky top-20">
                 <div 
                     className='grid md:grid-cols-2 lg:grid-flow-col lg:grid-cols-none lg:gap-0 md:gap-16 gap-4' 

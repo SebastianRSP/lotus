@@ -21,11 +21,11 @@ export default function RootLayout({ children }) {
           <header>
             <Navbar />
           </header>
-          <main className="xl:mx-40 mx-9 my-6">
+          <main className="xl:mx-40 mx-9">
             {children}
           </main>
-          <footer>
-            {/* <Footer /> */}
+          <footer className="bg-gray-light">
+            <Footer />
           </footer>
       </body>
     </html>

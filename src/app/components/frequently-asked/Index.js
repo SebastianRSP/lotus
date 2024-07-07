@@ -52,11 +52,12 @@ export const FrequentlyAsked = () => {
     };
 
     return (
-        <section className="bg-black border-2 border-black">
-            <div className="px-40 pt-14 bg-white pb-44 flex justify-between items-center border-2 border-black">
-                <h4 className="text-144 font-medium leading-74">FAQs</h4>
+        <section className="bg-black border-2 border-black forced-full-width">
+            <div className="xl:px-40 md:px-9 px-7 md:pt-14 pt-7 lg:pb-44 md:pb-14 pb-7  bg-white  flex justify-between items-center border-2 border-black">
+                <h4 className="lg:text-144 md:text-7xl text-3xl lg:font-medium font-bold leading-74">FAQs</h4>
                 <Image
                     src={logo}
+                    className='w-1/6'
                     alt="Logo"
                     width={69}
                     height={37}
@@ -65,15 +66,15 @@ export const FrequentlyAsked = () => {
             <div className='bg-white my-2'>
                 {faqs.map((faq, index) => (
                     <div key={index} className="accordion-group">
-                        <div className={`${openFAQ === index ? 'bg-black text-green' : ''} accordion border-black divide-y`}>
+                        <div className={`${openFAQ === index ? 'bg-black text-green border-b' : ''} accordion border-black divide-y`}>
                             <button
-                                className="pl-40 text-30 font-normal leading-8 flex justify-between items-center w-full"
+                                className="xl:pl-40 md:pl-9 pl-5 flex justify-between items-center w-full"
                                 onClick={() => toggleAccordion(index)}
                             >
-                                <div className={`border-black border-r w-full text-left py-5`}>
+                                <div className={`border-black border-r md:text-30 text-2xl font-normal leading-8 w-full text-left py-5`}>
                                     <h5>{faq.question}</h5>
                                 </div>
-                                <div className='pr-24 pl-48 h-full'>
+                                <div className='xl:pr-24 md:pr-9 pr-7 xl:pl-48 md:pl-9 pl-7 h-full'>
                                     <Image
                                         src={arrowBottomRight}
                                         alt='bottom right'
@@ -83,14 +84,14 @@ export const FrequentlyAsked = () => {
                                     <FontAwesomeIcon icon="fa-solid fa-arrow-right" size='lg'/>
                                 </div>
                             </button>
-                            <div className={`bg-white text-black transition-max-height duration-500 ease-in-out ${openFAQ === index ? 'max-h-screen' : 'max-h-0 overflow-hidden'}`}>
-                                <div className="px-40 py-28">
-                                    <div className='flex justify-between w-full'>
-                                        <div className='w-4/12'>
-                                            <h4 className='text-4xl font-bold leading-40'>{faq.innderHeading}</h4>
+                            <div className={`bg-white text-black transition-all duration-500 ease-in-out overflow-hidden ${openFAQ === index ? 'max-h-screen' : 'max-h-0'}`}>
+                                <div className="xl:px-40 md:px-9 px-7 xl:py-28 md:py-9 py-7">
+                                    <div className='md:flex justify-between w-full'>
+                                        <div className='lg:w-5/12 md:w-6/12 w-full'>
+                                            <h4 className='md:text-4xl text-2xl md:font-bold font-semibold leading-30 md:pb-0 pb-10'>{faq.innderHeading}</h4>
                                         </div>
-                                        <div className='w-4/12 flex flex-col gap-4'>
-                                            <p className='text-30 font-normal leading-32'>
+                                        <div className='lg:w-6/12 md:w-6/12 w-full flex flex-col gap-4'>
+                                            <p className='md:text-30 text-base font-normal leading-32'>
                                                 {faq.innderDescription}
                                             </p>
                                             <div className='flex justify-end'>

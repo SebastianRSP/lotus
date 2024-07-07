@@ -26,18 +26,19 @@ const footerMenu2 = [
 
 export const Footer = () => {
     return (
-        <footer className="bg-gray-light">
-            <div className="grid grid-cols-3 mx-auto w-full ">
-                <div className="flex flex-col gap-16 px-40 py-44">
+        <>
+            <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 mx-auto w-full relative">
+                <div className="xl:px-32 lg:px-20 md:px-9 px-7 xl:py-44 py-14 flex flex-col md:gap-16 gap-8 ">
                     <div className="w-full h-auto">
                         <Image
                             src={footerLogo}
+                            className='lg:w-10/12 md:w-8/12 w-6/12'
                             alt='footer logo'
                             width={240}
                             height={38}
                         />
                     </div>
-                    <p className='text-xs font-normal leading-4 w-5/6'>
+                    <p className='text-xs font-normal leading-4 w-full'>
                         The Bridge streamlines the migration from
                         traditional Web2 data storage systems like AWS and
                         Google Cloud to cutting-edge Web3 platforms such as Filecoin,
@@ -46,54 +47,54 @@ export const Footer = () => {
                     </p>
                     <div className='flex flex-col gap-1'>
                         {sociaLinks.map((sociaLink, index) => (
-                            <Link className='text-2xl font-light leading-32' href={sociaLink.socialLinkAddress} key={index}>
+                            <Link className='md:text-2xl text-xl font-light leading-32' href={sociaLink.socialLinkAddress} key={index}>
                                 {sociaLink.socialLinkName}
                             </Link>
                         ))}
                     </div>
                 </div>
-                <div className='grid grid-cols-2'>
-                    <div className='border-x border-light-gray py-44 px-5'>
+                <div className='grid md:grid-cols-2 grid-cols-1'>
+                    <div className='md:border-x md:border-y-0 border-y border-light-gray xl:py-44 py-7 px-5'>
                         <div className='flex flex-col gap-1'>
                             {footerMenu1.map((footerLink, index) => (
-                                <Link className='text-2xl uppercase font-normal hover:font-bold leading-32' href={footerLink.goTo} key={index}>
+                                <Link className='md:text-2xl text-xl uppercase font-normal hover:font-bold leading-32' href={footerLink.goTo} key={index}>
                                     {footerLink.linkName}
                                 </Link>
                             ))}
                         </div>
                     </div>
-                    <div className='border-x border-light-gray py-44 px-5'>
+                    <div className='md:border-x md:border-y-0 border-y border-light-gray xl:py-44 py-7 px-5'>
                         <div className='flex flex-col gap-1'>
                             {footerMenu2.map((footerLink, index) => (
-                                <Link className='text-2xl uppercase font-normal hover:font-bold leading-32' href={footerLink.goTo} key={index}>
+                                <Link className='md:text-2xl text-xl uppercase font-normal hover:font-bold leading-32' href={footerLink.goTo} key={index}>
                                     {footerLink.linkName}
                                 </Link>
                             ))}
                         </div>
                     </div>
                 </div>
-                <div className='px-40 py-44'></div>
+                <div className='xl:px-40 lg:px-20 md:px-9 px-7 xl:py-44 py-14'></div>
             </div>
-            <div className='relative -top-10 flex justify-between px-40 '>
+            <div className='w-full relative bottom-10 flex justify-between xl:px-40 lg:px-20 md:px-9 px-7 '>
                 <LinkToGo
                     linkText={'TERMS & CONDITIONS'}
                     href={'#'}
                     icon={false}
-                    extras={'!font-bold'}
+                    extras={'md:!font-bold font-normal md:text-lg text-xs'}
                 />
                 <LinkToGo
                     linkText={'NEWSLETTER'}
                     href={'#'}
                     icon={false}
-                    extras={'!font-bold'}
+                    extras={'md:!font-bold font-normal md:text-lg text-xs'}
                 />
                 <LinkToGo
                     linkText={'LEGAL'}
                     href={'#'}
                     icon={false}
-                    extras={'!font-bold'}
+                    extras={'md:!font-bold font-normal md:text-lg text-xs'}
                 />
             </div>
-        </footer>
+        </>
     )
 }
