@@ -29,7 +29,7 @@ const caseStudies = [
 
 export const CaseStudy = () => {
     return (
-        <section className="xl:px-40 md:px-9 px-7 xl:py-36 md:py-9 py-7 bg-black  forced-full-width">
+        <section data-scroll-section className="xl:px-40 md:px-9 px-7 xl:py-36 md:py-9 py-7 bg-black  forced-full-width">
             <div className="text-start text-white">
                 <h3 className="lg:text-123 md:text-100 sm:text-6xl text-5xl font-medium md:leading-154 leading-50 uppercase">OUR IMPACT</h3>
                 <h5 className="lg:text-6xl md:text-5xl text-2xl font-normal leading-80 capitalize">Featured Case Studies</h5>

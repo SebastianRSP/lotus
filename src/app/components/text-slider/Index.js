@@ -3,7 +3,7 @@ import { WeAreLotus } from "./WeAreLotus";
 
 export const TextSlider = () => {
   return (
-    <section className="forced-full-width text-green uppercase items-center py-11 flex text-123 font-extrabold bg-black overflow-hidden">
+    <section data-scroll-section className="forced-full-width text-green uppercase items-center py-8 flex text-123 font-extrabold bg-black overflow-hidden">
       <div className="scroll flex-none flex items-center">
         <div className="flex-none flex items-center">
           <WeAreLotus />

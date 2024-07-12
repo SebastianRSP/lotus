@@ -1,14 +1,13 @@
 'use client'
 
-import { MultiAnimatedCards } from "../folding-cards/MultiAnimatedCards";
 import defaultImage from '../../../../public/icons/defaultImageIcon.svg';
 import Image from "next/image";
-import { useEffect, useState } from 'react';
+import { FoldingCard } from "../folding-cards/Index";
 
 const cardAnimationData = [
     {
         cardHeading: 'OUR',
-        padding: 'xl:px-40 md:px-9 px-7',
+        padding: 'lg:py-4 py-1 xl:px-28 md:px-9 px-7',
         height: '',
         backgroundColor: 'bg-yellowLight',
         textColor: '',
@@ -16,8 +15,8 @@ const cardAnimationData = [
     },
     {
         cardHeading: 'PARTNERS',
-        padding: 'xl:px-40 md:px-9 px-7',
-        height: 'xl:h-full lg:h-32 md:h-28 h-24',
+        padding: 'lg:py-4 py-1 xl:px-28 md:px-9 px-7',
+        height: '', 
         backgroundColor: 'bg-black',
         textColor: 'text-purple',
         backgroundImage: ''
@@ -88,9 +87,14 @@ export const OurPartner = () => {
         }
     };
 
+    // lg:mt-[230rem]
+
     return (
-        <section className="relative bg-black uppercase pt-2 forced-full-width">
-            <MultiAnimatedCards
+        <>
+        <div className="relative bg-black uppercase pt-2 forced-full-width -extra-padding-top ">
+            <FoldingCard
+                extras={'lg:h-44 md:h-28 h-20'}
+                otherComponents={false}
                 cardAnimationData={cardAnimationData}
             />
             <div className="xl:px-40 md:px-9 px-7 lg:pt-10 pt-0 md:pb-40 pb-10 md:gap-x-20 md:grid md:grid-cols-2 ">
@@ -126,6 +130,7 @@ export const OurPartner = () => {
                     ))}
                 </div>
             </div>
-        </section>
+        </div>
+        </>
     );
 };

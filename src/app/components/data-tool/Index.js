@@ -1,35 +1,36 @@
 import { MultiAnimatedCards } from "../folding-cards/MultiAnimatedCards";
 import cardAnimationBackground from '../../../../public/images/card-animation-background.png';
+import { FoldingCard } from "../folding-cards/Index";
 
 const cardAnimationData = [
     {
         cardHeading: 'SUPERCHARGE',
-        padding: 'md:pl-16 pl-7',
-        height: '!h-32',
+        padding: 'lg:p-4 p-10',
+        height: '',
         backgroundColor: 'bg-gray-light',
         textColor: '',
         backgroundImage: ''
     },
     {
         cardHeading: 'YOUR DATA',
-        padding: 'md:pl-16 pl-7',
-        height: 'xl:h-48 lg:h-32 md:h-28 h-24',
+        padding: 'lg:p-4 p-10',
+        height: '',
         backgroundColor: 'bg-green',
         textColor: '',
         backgroundImage: ''
     },
     {
         cardHeading: 'WITH',
-        padding: 'md:pl-16 pl-7',
-        height: 'xl:h-48 lg:h-32 md:h-28 h-24',
+        padding: 'lg:p-4 p-10',
+        height: '',
         backgroundColor: 'bg-purple',
         textColor: '',
         backgroundImage: cardAnimationBackground
     },
     {
         cardHeading: 'AI TOOLS',
-        padding: 'md:pl-16 pl-7',
-        height: 'xl:h-48 lg:h-32 md:h-28 h-32',
+        padding: 'lg:p-4 p-10',
+        height: '',
         backgroundColor: 'bg-gray-light',
         textColor: '',
         backgroundImage: ''
@@ -39,7 +40,7 @@ const cardAnimationData = [
 export const DataTool = () => {
     return (
         <>
-            <MultiAnimatedCards
+            <FoldingCard
                 cardAnimationData={cardAnimationData}
             />
         </>

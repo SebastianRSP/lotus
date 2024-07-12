@@ -57,7 +57,7 @@ export const Navbar = () => {
             <nav className={`xl:mx-40 mx-9 my-6`}>
                 {/* Desktop Vesion */}
                 <div className='hidden md:!block'>
-                    <div className='w-full shadow-outer bg-yellowLight grid grid-cols-3 items-center text-center h-14 border border-black relative z-50'>
+                    <div className='w-full shadow-outer bg-yellowLight grid grid-flow-col auto-cols-auto items-center text-center h-14 border border-black relative z-50'>
                         <div className="grid grid-cols-3 items-center h-inherit divide-x divide-black">
                             {navLinksBefore.map((navLink, index) => (
                                 <NavLink
@@ -68,7 +68,7 @@ export const Navbar = () => {
                                 />
                             ))}
                         </div>
-                        <div className="flex items-center justify-center h-inherit w-full border border-y-0 border-x-black">
+                        <div className="flex items-center col-span-3 justify-center h-inherit w-auto border border-y-0 border-x-black">
                             <div className="logo-container">
                                 <Image
                                     className="logo"

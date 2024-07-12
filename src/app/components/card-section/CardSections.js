@@ -10,7 +10,7 @@ const cardContent = [
 
 export const CardSection = () => {
     return (
-        <section  className="xl:px-40 md:px-9 px-7 2xl:py-125 lg:py-20 py-16 w-full text-center forced-full-width">
+        <section data-scroll-section className="xl:px-40 md:px-9 px-7 2xl:py-125 lg:py-20 py-16 w-full text-center forced-full-width">
             <div className="xl:w-9/12 lg:w-10/12 md:w-9/12 w-full">
                 <h3 className="xl:text-5xl lg:text-5xl text-4xl font-bold  xl:leading-50  leading-43 text-black">
                     EXPERIENCE SEAMLESS MIGRATION TO FUTURE-READY PLATFORMS

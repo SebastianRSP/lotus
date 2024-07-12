@@ -52,7 +52,7 @@ export const FrequentlyAsked = () => {
     };
 
     return (
-        <section className="bg-black border-2 border-black forced-full-width">
+        <section data-scroll-section className="bg-black border-2 border-black forced-full-width">
             <div className="xl:px-40 md:px-9 px-7 md:pt-14 pt-7 lg:pb-44 md:pb-14 pb-7  bg-white  flex justify-between items-center border-2 border-black">
                 <h4 className="lg:text-144 md:text-7xl text-3xl lg:font-medium font-bold leading-74">FAQs</h4>
                 <Image
@@ -81,7 +81,7 @@ export const FrequentlyAsked = () => {
                                         width={28}
                                         height={28}
                                     />
-                                    <FontAwesomeIcon icon="fa-solid fa-arrow-right" size='lg'/>
+                                    {/* <FontAwesomeIcon icon="fa-solid fa-arrow-right" size='lg'/> */}
                                 </div>
                             </button>
                             <div className={`bg-white text-black transition-all duration-500 ease-in-out overflow-hidden ${openFAQ === index ? 'max-h-screen' : 'max-h-0'}`}>

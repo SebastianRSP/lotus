@@ -8,10 +8,10 @@ import { BridgeCardParagraph } from './BridgeCardParagraph';
 
 export const Bridge = () => {
     return (
-        <section className="bg-black forced-full-width overflow-hidden">
+        <section id='bridge' className="bg-white forced-full-width overflow-hidden">
             <div className='lg:px-40 md:px-20 px-8 lg:pt-186 md:pt-20 pt-16'>
                 <div className="text-left">
-                    <h2 className="2xl:text-7xl md:text-4xl text-6xl text-yellowLight font-bold">
+                    <h2 className="2xl:text-7xl md:text-4xl text-6xl font-bold">
                         WE’RE BUILDING <br />
                         THE WORLD’S LARGEST <br />
                         CONTENT DELIVERY NETWORK
@@ -44,7 +44,7 @@ export const Bridge = () => {
                     </div>
                 </div>
                 <div className='w-full text-center'>
-                    <div className='2xl:w-10/12 xl:w-10/12 lg:w-full md:w-9/12 w-full text-yellowLight'>
+                    <div className='2xl:w-10/12 xl:w-10/12 lg:w-full md:w-9/12 w-full  '>
                         <h2 className='2xl:text-7xl xl:text-6xl lg:text-5xl text-4xl font-bold 2xl:leading-78 leading-43'>
                             A SINGLE PANE OF GLASS CONNECTING WEB2 & WEB3
                         </h2>
@@ -55,7 +55,7 @@ export const Bridge = () => {
                 </div>
             </div>
             <div className='xl:px-40 md:px-9 px-7 lg:pb-32 md:pb-32 pb-16'>
-                <div className='w-full mt-28 md:border-x md:border-y-0 border-0 border-y-yellowLight text-yellowLight'>
+                <div className='w-full mt-28 md:border-x md:border-y-0 border-0 border-y-yellowLight  '>
                     {/* previosu 2xl:px-36 */}
                     <div className='2xl:px-12 md:px-8 px-0 pt-20'>
                         <div className='md:flex justify-between grid gap-9 my-auto'>

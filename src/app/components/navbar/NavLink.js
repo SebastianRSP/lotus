@@ -27,7 +27,7 @@ export const NavLink = ({ navLinkName, navLink, extras, icon, iconImage, key, fo
                     className={`fill-current w-6 h-6 md:w-4 md:h-4 ${isToggled ? 'text-green' : ''}`}
                 />
             ) : (
-                <span className={`${font} uppercase lg:text-sm md:text-xs font-semibold tracking-space60 inner-text`}>
+                <span className={`${font} uppercase lg:text-sm md:text-xs font-medium leading-66 tracking-space60 inner-text`}>
                     {navLinkName}
                 </span>
             )}
