@@ -16,7 +16,7 @@ const cardAnimationData = [
     {
         cardHeading: 'PARTNERS',
         padding: 'lg:py-4 py-1 xl:px-28 md:px-9 px-7',
-        height: '', 
+        height: 'lg:h-auto h-32', 
         backgroundColor: 'bg-black',
         textColor: 'text-purple',
         backgroundImage: ''
@@ -97,7 +97,7 @@ export const OurPartner = () => {
                 otherComponents={false}
                 cardAnimationData={cardAnimationData}
             />
-            <div className="xl:px-40 md:px-9 px-7 lg:pt-10 pt-0 md:pb-40 pb-10 md:gap-x-20 md:grid md:grid-cols-2 ">
+            <div className="xl:px-40 md:px-9 px-7 mt-10 md:pb-40 pb-10 md:gap-x-20 md:grid md:grid-cols-2 ">
                 <div className="md:col-start-2 text-yellowLight lg:pb-0 pb-4 md:overflow-visible overflow-hidden">
                     {partners.map((partner, index) => (
                         <div

@@ -26,7 +26,7 @@ const cardAnimationData = [
   {
       cardHeading: 'YOUR DATA',
       padding: 'lg:py-4 py-1 xl:px-28 md:px-9 px-7',
-      height: '', //lg:h-44 md:h-28 h-20
+      height: 'lg:h-auto h-20', //lg:h-44 md:h-28 h-20
       backgroundColor: 'bg-green',
       textColor: '',
       backgroundImage: ''
@@ -34,7 +34,7 @@ const cardAnimationData = [
   {
       cardHeading: 'WITH',
       padding: 'lg:py-4 py-1 xl:px-28 md:px-9 px-7',
-      height: '', 
+      height: 'lg:h-auto h-20', 
       backgroundColor: 'bg-purple',
       textColor: '',
       backgroundImage: cardAnimationBackground
@@ -42,7 +42,7 @@ const cardAnimationData = [
   {
       cardHeading: 'AI TOOLS',
       padding: 'lg:py-4 py-2 xl:px-28 md:px-9 px-7',
-      height: '',
+      height: 'lg:h-auto h-20',
       backgroundColor: 'bg-gray-light',
       textColor: '',
       backgroundImage: ''

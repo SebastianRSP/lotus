@@ -32,9 +32,9 @@ export const FoldingCard = ({ cardAnimationData, otherComponents, extras }) => {
     animatedCards.forEach((card, index) => {
       tl.fromTo(
         card,
-        { y: 20 }, // Starting position of cards
-        { y: otherComponents ? -150 : -60 , opacity: 1, duration: otherComponents ? 2 : 2 }, // Ending position of cards
-        (index * (otherComponents ? 0.1 : 0.5)) // Staggering effect for each card
+        { y: otherComponents ? 0 : 20 }, // Starting position of cards
+        { y: otherComponents ? -150 : -60 , opacity: 1, duration: otherComponents ? 1 : 1 }, // Ending position of cards
+        (index * (otherComponents ? 0.1 : 0.1)) // Staggering effect for each card
       );
     });
 
@@ -78,7 +78,7 @@ export const FoldingCard = ({ cardAnimationData, otherComponents, extras }) => {
       className={`${extras} relative bg-gray-light uppercase forced-full-width`}
     >
       {cardAnimationData.length > 0 && (
-        <div className={`relative font-medium items-start ${cardAnimationData[0].padding} lg:-mb-4 w-full ${cardAnimationData[0].backgroundColor}`}>
+        <div className={`relative font-medium items-start ${cardAnimationData[0].padding} lg:-mb-4 w-full lg:h-auto h-24 ${cardAnimationData[0].backgroundColor}`}>
           <span className="xl:text-123 md:text-7xl text-4xl">{cardAnimationData[0].cardHeading}</span>
         </div>
       )}
