@@ -8,7 +8,7 @@ export const initAnimations = (container) => {
         wrapper: '#wrapper',
         content: '#smooth-content',
         smooth: 2.5,
-        smoothTouch: 0.3,
+        smoothTouch: 0.1,
         effects: true,
     });
 
