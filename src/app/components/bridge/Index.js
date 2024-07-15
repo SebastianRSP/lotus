@@ -13,17 +13,17 @@ export const Bridge = () => {
             <section id='bridge' className=" forced-full-width overflow-hidden fade-in-out">
                 <div className='lg:px-40 md:px-20 px-8 lg:pt-186 md:pt-20 pt-16'>
                     <div className="text-left">
-                        <h2 className="2xl:text-7xl md:text-4xl text-6xl font-bold">
+                        <h2 id='bridge-heading' className="2xl:text-7xl md:text-4xl text-6xl font-bold">
                             WE’RE BUILDING <br />
                             THE WORLD’S LARGEST <br />
                             CONTENT DELIVERY NETWORK
                         </h2>
                     </div>
                     <div className='flex justify-center forced-full-width items-center text-center text-green md:mt-36 mt-20 md:mb-48 mb-44 relative'>
-                        <div className="w-full forced-full-width h-screen relative">
+                        <div id='bridge-donut' className="w-full forced-full-width h-screen relative">
                             <IsometricDonut />
                         </div>
-                        <div className='absolute w-12/12 text-left flex items-start'>
+                        <div id='bridge-donut-text' className='absolute w-12/12 text-left flex items-start'>
                             <Image
                                 src={bridgeText}
                                 layout="responsive"
