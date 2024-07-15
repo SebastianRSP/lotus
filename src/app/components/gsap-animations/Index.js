@@ -7,7 +7,7 @@ export const initAnimations = (container) => {
     ScrollSmoother.create({
         wrapper: '#wrapper',
         content: '#smooth-content',
-        smooth: 1,
+        smooth: 2,
         smoothTouch: 0.1,
         effects: true,
     });
