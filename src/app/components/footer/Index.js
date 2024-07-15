@@ -32,7 +32,7 @@ export const Footer = () => {
                     <div className="w-full h-auto">
                         <Image
                             src={footerLogo}
-                            className='lg:w-10/12 md:w-8/12 w-6/12'
+                            className='lg:w-10/12 md:w-8/12 w-8/12'
                             alt='footer logo'
                             width={240}
                             height={38}
