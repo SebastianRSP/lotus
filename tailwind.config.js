@@ -53,7 +53,7 @@ module.exports = {
         'green': '#00FF00',
       },
       height: {
-        'inherit': '-webkit-fill-available',
+        'inherit': 'inherit',
         '121': '121px',
         '43': '43rem'
       },
