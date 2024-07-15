@@ -35,13 +35,13 @@ export const initAnimations = (container) => {
         gsap.to('body', {
             backgroundColor: '',
             color: '',
-            duration: 1
+            duration: 0.5
         });
         fadeInSections.forEach((card) => {
             gsap.to(card, {
                 backgroundColor: '',
                 color: '',
-                duration: 1
+                duration: 0.5
             });
         });
     };
