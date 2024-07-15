@@ -51,13 +51,13 @@ export const Bridge = () => {
                     </div>
                 </div>
                 <div className='xl:px-40 md:px-9 px-7 lg:pb-32 md:pb-32 pb-16'>
-                    <div className='w-full mt-28 md:border-x md:border-y-0 border-0 border-y-yellowLight  '>
+                    <div className='w-full mt-28 md:border-x md:border-y-0 border-0'>
                         {/* previosu 2xl:px-36 */}
                         <div className='2xl:px-12 md:px-8 px-0 pt-20'>
                             <div className='md:flex justify-between grid gap-9 my-auto'>
                                 <div className='md:w-8/12 w-full'>
                                     <BridgeCard
-                                        borders={'md:border-b md:border-r md:border-t-0 md:border-l-0 border-0  border-yellowLight'}
+                                        borders={'md:border-b md:border-r md:border-t-0 md:border-l-0 border-0'}
                                         paddings={'2xl:pr-5 2xl:pb-5 md:pr-3 md:pb-3 p-0 h-full grid sm:justify-between gap-9'}
                                     >
                                         <div className='grid md:grid-cols-2 grid-cols-1 gap-11 w-full text-left'>
@@ -78,7 +78,7 @@ export const Bridge = () => {
                                 </div>
                                 <div className='md:w-4/12 w-full'>
                                     <BridgeCard
-                                        borders={'md:border-b md:border-r-0  md:border-t-0  md:border-l-0 border-0 border-yellowLight'}
+                                        borders={'md:border-b md:border-r-0  md:border-t-0  md:border-l-0 border-0'}
                                         paddings={'2xl:pl-5 2xl:pb-5 md:pl-3 md:pb-3 p-0 h-full'}
                                     >
                                         <div className='flex flex-col h-full justify-between text-left gap-9'>
@@ -101,7 +101,7 @@ export const Bridge = () => {
                             <div className='md:flex justify-between grid mt-14 gap-9'>
                                 <div className='md:w-4/12 w-full'>
                                     <BridgeCard
-                                        borders={'md:border-b md:border-r  md:border-t-0  md:border-l-0 border-0 border-yellowLight'}
+                                        borders={'md:border-b md:border-r  md:border-t-0  md:border-l-0 border-0'}
                                         paddings={'2xl:pr-5 2xl:pb-5 md:pr-3 md:pb-3 p-0 2xl:pt-6 h-full'}
                                     >
                                         <div className='flex flex-col h-full justify-between text-left gap-9'>
@@ -122,7 +122,7 @@ export const Bridge = () => {
                                 </div>
                                 <div className='md:w-8/12 w-full'>
                                     <BridgeCard
-                                        borders={'md:border-b md:border-r-0  md:border-t-0  md:border-l-0 border-0 border-yellowLight'}
+                                        borders={'md:border-b md:border-r-0  md:border-t-0  md:border-l-0 border-0'}
                                         paddings={'2xl:pl-5 2xl:pb-5 md:pl-3 md:pb-3 p-0 2xl:pt-6 h-full'}
                                     >
                                         <div className='mb-7 w-full'>
