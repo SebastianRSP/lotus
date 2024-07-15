@@ -10,9 +10,9 @@ const cardContent = [
 
 export const CardSection = () => {
     return (
-        <section data-scroll-section className="xl:px-40 md:px-9 px-7 2xl:py-125 lg:py-20 py-16 w-full text-center forced-full-width">
+        <section className="xl:px-40 md:px-9 px-7 2xl:py-125 lg:py-20 py-16 w-full text-center forced-full-width fade-in-out">
             <div className="xl:w-9/12 lg:w-10/12 md:w-9/12 w-full">
-                <h3 className="xl:text-5xl lg:text-5xl text-4xl font-bold  xl:leading-50  leading-43 text-black">
+                <h3 className="xl:text-5xl lg:text-5xl text-4xl font-bold  xl:leading-50  leading-43 ">
                     EXPERIENCE SEAMLESS MIGRATION TO FUTURE-READY PLATFORMS
                 </h3>
             </div>
@@ -23,7 +23,7 @@ export const CardSection = () => {
                             key={index}
                             extras={'border border-black shadow-card-outer'}
                         >
-                            <div key={index} className="flex flex-col text-black items-center px-38 lg:my-20 my-10">
+                            <div key={index} className="flex flex-col  items-center px-38 lg:my-20 my-10">
                                 <Image
                                     src={defaultImage}
                                     className="lg:mb-20 mb-10"

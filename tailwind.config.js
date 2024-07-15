@@ -34,6 +34,7 @@ module.exports = {
         'card-outer-green': '12px 12px 0px #03FF00',
         'button': '6px 6px 0px #00000040',
         'button-green': '6px 6px 0px #03FF00',
+        'button-green-hover': '3px 3px 0px #03FF00',
         'inner': 'inset 4px 4px 0px #00000040',
       },
       borderColor: {

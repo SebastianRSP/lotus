@@ -4,7 +4,7 @@ export const BottomCard2 = ({ text, padding, backgroundColor, textColor, backgro
       ref={innerRef}
       className={` animated-card forced-full-width font-medium items-start w-full`}
     >
-      <div className={`${padding} ${height} ${backgroundColor} ${textColor}`}
+      <div className={`${padding} ${height} ${backgroundColor} ${textColor} text-black`}
         
         style={{
             backgroundImage: backgroundImage ? `url(${backgroundImage.src})` : 'none',

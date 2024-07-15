@@ -3,7 +3,7 @@ import circle from '../../../../public/images/circle.png';
 
 export const Hero = () => {
     return (
-        <section id="home" className="relative">
+        <section id="home" className="relative fade-in-out">
             <div className="md:h-screen h-[700px] md:py-32 py-20 content-end z-10 grid justify-start lg:mb-5">
                 <h1 className="2xl:text-100 xl:text-90 lg:text-90 md:text-6xl sm:text-5xl xs:text-3xl text-2xl font-normal xl:leading-100 lg:leading-90 text-left tracking-space00 z-20">
                     IN THE DIGITAL <br />ECONOMY, DATA IS OIL. <br />

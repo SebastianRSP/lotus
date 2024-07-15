@@ -7,6 +7,12 @@ body {
   @apply font-plus-jakarta-sans bg-white;
   overflow-x: hidden;
   cursor: none;
+  margin: 0; 
+}
+
+/* Canvas */
+canvas { 
+  display: block;
 }
 
 /* Navbar CSS */
@@ -38,7 +44,6 @@ body {
     opacity: 1;
   }
 }
-
 nav{
   height: 60px;
   position: fixed;
@@ -108,11 +113,6 @@ nav{
 }
 
 /* Text Slider */
-.forced-full-width {
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
-}
 @media (min-width: 640px) and (max-width: 767px) {
   .sm\:forced-full-width {
     width: 100vw;
@@ -126,7 +126,10 @@ nav{
   min-width: 1096px;
   min-height: 650px;
 }
-
+.bridge div {
+  width: 4192px !important;
+  height: 2468px !important;
+}
 
 /* Folding Cards */
 /* .folding-card{
@@ -142,27 +145,6 @@ nav{
   transition-duration: .15s;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-timing-function: cubic-bezier(.4,0,.2,1);
-}
-/* [data-folding-parent]{
-  height: 270rem;
-} */
-/* [data-folding-card]{
-  position: sticky !important;
-  top: 5rem !important;
-} */
-
-/* General CSS */
-.text-center {
-  text-align: -webkit-center;
-}
-.dot-divider{
-  border-radius: 50%;
-  flex: none;
-  width: 36px;
-  height: 36px;
-  margin-top: -1rem;
-  margin-left: 40px;
-  margin-right: 40px;
 }
 
 /* Partner Section */
@@ -193,10 +175,6 @@ nav{
   transition: max-height 0.5s ease-in-out;
 }
 
-
-
-
-
 /* Custom Cursor */
 .circle-cursor {
   position: fixed;
@@ -210,17 +188,34 @@ nav{
   pointer-events: none;
   z-index: 9999;
 }
-
 .circle-cursor.hovered {
   transform: translate(-50%, -50%) scale(1.25);
   opacity: 1;
 }
-
 .circle-cursor.other-hovered {
   transform: translate(-50%, -50%) scale(1.25);
   opacity: 1;
 }
-
 .circle-cursor.visible {
   visibility: visible;
+}
+
+
+/* General CSS */
+.text-center {
+  text-align: -webkit-center;
+}
+.dot-divider{
+  border-radius: 50%;
+  flex: none;
+  width: 36px;
+  height: 36px;
+  margin-top: -1rem;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+.forced-full-width {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
 }

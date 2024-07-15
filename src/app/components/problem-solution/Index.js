@@ -8,7 +8,7 @@ import Image from "next/image";
 
 export const ProblemSolution = () => {
     return (
-        <section data-scroll-section className="w-full forced-full-width">
+        <section className="w-full forced-full-width fade-in-out">
             <div className="grid md:grid-cols-2 grid-cols-1">
                 <div className="flex justify-center items-center order-first md:py-0 py-16">
                     <Image

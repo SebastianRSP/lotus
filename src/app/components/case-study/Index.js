@@ -29,8 +29,8 @@ const caseStudies = [
 
 export const CaseStudy = () => {
     return (
-        <section data-scroll-section className="xl:px-40 md:px-9 px-7 xl:py-36 md:py-9 py-7 bg-black  forced-full-width">
-            <div className="text-start text-white">
+        <section id="casestudy" className="xl:px-40 md:px-9 px-7 xl:py-36 md:py-9 py-7 fade-in-out  forced-full-width">
+            <div className="text-start">
                 <h3 className="lg:text-123 md:text-100 sm:text-6xl text-5xl font-medium md:leading-154 leading-50 uppercase">OUR IMPACT</h3>
                 <h5 className="lg:text-6xl md:text-5xl text-2xl font-normal leading-80 capitalize">Featured Case Studies</h5>
             </div>
@@ -47,7 +47,7 @@ export const CaseStudy = () => {
                                     height={100}
                                 />
                             </div>
-                            <div className="px-9 md:py-5 py-3 md:w-10/12 w-full">
+                            <div className="px-9 md:py-5 py-3 md:w-10/12 w-full text-black">
                                 <h4 className="text-3xl font-bold leading-74">{caseStudy.caseStudyHeading}</h4>
                                 <p className="text-base font-semibold leading-7">{caseStudy.caseStudyDescription}</p>
                             </div>

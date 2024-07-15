@@ -12,18 +12,64 @@ export const initAnimations = (container) => {
         effects: true,
     });
 
-    // Bridge Animation
-    gsap.to('#bridge', {
-        scrollTrigger: {
-            trigger: '#bridge',
-            start: '-10% 0%',
-            end: "+=500",
-            scrub: 1,
+    const fadeInSections = document.querySelectorAll('.fade-in-out');
+
+    // Function to apply styles
+    const applyStyles = () => {
+        gsap.to('body', {
+            backgroundColor: 'black',
+            color: '#FFFCEB',
+            duration: 0.5
+        });
+        fadeInSections.forEach((card) => {
+            gsap.to(card, {
+                backgroundColor: 'black',
+                color: '#FFFCEB',
+                duration: 0.5
+            });
+        });
+    };
+
+    // Function to revert styles
+    const revertStyles = () => {
+        gsap.to('body', {
+            backgroundColor: '',
+            color: '',
             duration: 1
-        },
-        backgroundColor: 'black',
-        duration: 0.1,
-        color: '#FFFCEB',
+        });
+        fadeInSections.forEach((card) => {
+            gsap.to(card, {
+                backgroundColor: '',
+                color: '',
+                duration: 1
+            });
+        });
+    };
+
+    // ScrollTrigger setup For Bridge
+    ScrollTrigger.create({
+        trigger: "#bridge",
+        start: "top center",
+        end: "bottom center", // Use bottom center to detect the end
+        scrub: 1,
+        markers: false,
+        onEnter: applyStyles,
+        onLeaveBack: revertStyles,
+        onLeave: revertStyles,
+        onEnterBack: applyStyles,
+    });
+
+    // ScrollTrigger setup For CaseStudies
+    ScrollTrigger.create({
+        trigger: "#casestudy",
+        start: "top center",
+        end: "bottom center", // Use bottom center to detect the end
+        scrub: 1,
+        markers: false,
+        onEnter: applyStyles,
+        onLeaveBack: revertStyles,
+        onLeave: revertStyles,
+        onEnterBack: applyStyles,
     });
 
 };

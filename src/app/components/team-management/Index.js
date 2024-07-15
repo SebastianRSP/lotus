@@ -5,7 +5,7 @@ import { DefaultBtn } from '../buttons/DefaultBtn';
 
 export const TeamManagement = () => {
     return (
-        <section id='teammanagement' className="bg-yellowLight forced-full-width">
+        <section id='teammanagement' className="bg-yellowLight forced-full-width fade-in-out">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-4 py-74 px-10">
                 <div className="lg:col-span-2 sm:forced-full-width px-2">
                     <Image
