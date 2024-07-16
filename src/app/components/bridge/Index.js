@@ -23,12 +23,12 @@ export const Bridge = () => {
                         <div id='bridge-donut' className="w-full forced-full-width h-screen relative">
                             <IsometricDonut />
                         </div>
-                        <div id='bridge-donut-text' className='absolute w-12/12 text-left flex items-start'>
+                        <div id='bridge-donut-text' className='absolute w-12/12 text-left flex justify-center items-start'>
                             <Image
                                 src={bridgeText}
                                 layout="responsive"
                                 alt="circle image"
-                                className="md:w-9/12 w-full md:px-0 px-6 h-auto"
+                                className="md:!w-10/12 w-full md:px-0 px-6 h-auto"
                                 width={1096}
                                 height={650}
                             />
