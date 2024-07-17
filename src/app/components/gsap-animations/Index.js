@@ -245,14 +245,14 @@ export const initAnimations = (container) => {
 
             // Process each line
             split.lines.forEach(line => {
-                line.classList.add('anim-line');
+                line.classList.add('line-animation');
                 line.style.display = 'block';
                 line.style.position = 'relative';
             });
 
             // Append each character in the line to the lineWrapper
             split.chars.forEach(char => {
-                char.classList.add('anim-char');
+                char.classList.add('character-animation');
                 char.style.position = 'relative';
                 char.style.display = 'inline-block';
                 char.style.transitionDelay = `${Math.random() * 1}s`; 

@@ -210,24 +210,24 @@ nav{
   opacity: 1;
 }
 
-.anim-line {
+.line-animation {
   opacity: 0;
   transform: translateY(4rem);
   transition: opacity 1s linear,transform .8s cubic-bezier(.05,.02,0,1)
 }
 
-.is-visible .anim-line {
+.is-visible .line-animation {
   opacity: 1;
   transform: translateY(0)
 }
 
-.anim-char {
+.character-animation {
   opacity: 0;
   transform: translateY(2rem);
   transition: opacity .6s cubic-bezier(.77,0,.18,1),transform 1s cubic-bezier(.05,.02,0,1)
 }
 
-.is-visible .anim-char {
+.is-visible .character-animation {
   opacity: 1;
   transform: translateY(0)
 }
