@@ -27,12 +27,12 @@ const footerMenu2 = [
 export const Footer = () => {
     return (
         <>
-            <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 mx-auto w-full relative">
+            <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 mx-auto w-full relative text-black">
                 <div className="xl:px-32 lg:px-20 md:px-9 px-7 xl:py-44 py-14 flex flex-col md:gap-16 gap-8 ">
                     <div className="w-full h-auto">
                         <Image
                             src={footerLogo}
-                            className='md:w-5/12 w-4/12'
+                            className='lg:w-9/12 md:w-7/12  w-4/12'
                             alt='footer logo'
                             width={240}
                             height={38}
@@ -75,7 +75,7 @@ export const Footer = () => {
                 </div>
                 <div className='xl:px-40 lg:px-20 md:px-9 px-7 xl:py-44 py-14'></div>
             </div>
-            <div className='w-full relative bottom-10 flex justify-between xl:px-40 lg:px-20 md:px-9 px-7 '>
+            <div className='w-full relative bottom-10 flex justify-between xl:px-40 lg:px-20 md:px-9 px-7 text-black'>
                 <LinkToGo
                     linkText={'TERMS & CONDITIONS'}
                     href={'#'}

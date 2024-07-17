@@ -13,11 +13,11 @@ export const Bridge = () => {
             <section id='bridge' className=" forced-full-width overflow-hidden fade-in-out">
                 <div className='lg:px-40 md:px-20 px-8 lg:pt-186 md:pt-20 pt-16'>
                     <div className="text-left">
-                        <h2 id='bridge-heading' className="2xl:text-7xl md:text-4xl text-6xl font-bold">
+                        <div id='bridge-heading' className="text-animated 2xl:text-7xl md:text-4xl text-6xl font-bold">
                             WE’RE BUILDING <br />
                             THE WORLD’S LARGEST <br />
                             CONTENT DELIVERY NETWORK
-                        </h2>
+                        </div>
                     </div>
                     <div className='flex justify-center forced-full-width items-center text-center text-green md:mt-36 mt-20 md:mb-48 mb-44 relative'>
                         <div id='bridge-donut' className="w-full forced-full-width h-screen relative">
@@ -41,12 +41,12 @@ export const Bridge = () => {
                     </div>
                     <div className='w-full text-center'>
                         <div className='2xl:w-10/12 xl:w-10/12 lg:w-full md:w-9/12 w-full  '>
-                            <h2 className='2xl:text-7xl xl:text-6xl lg:text-5xl text-4xl font-bold 2xl:leading-78 leading-43'>
+                            <div className='text-animated 2xl:text-7xl xl:text-6xl lg:text-5xl text-4xl font-bold 2xl:leading-78 leading-43'>
                                 A SINGLE PANE OF GLASS CONNECTING WEB2 & WEB3
-                            </h2>
-                            <p className='md:text-32 text-26 font-bold md:leading-40 leading-32 md:mt-5 mt-12'>
+                            </div>
+                            <div className='text-animated md:text-32 text-26 font-bold md:leading-40 leading-32 md:mt-5 mt-12'>
                                 Backed by AI enabled data management tools.
-                            </p>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -78,7 +78,7 @@ export const FoldingCard = ({ cardAnimationData, otherComponents, extras }) => {
       className={`${extras} relative bg-gray-light uppercase forced-full-width`}
     >
       {cardAnimationData.length > 0 && (
-        <div className={`relative font-medium items-start text-black ${cardAnimationData[0].padding} lg:-mb-4 w-full lg:h-auto h-24 ${cardAnimationData[0].backgroundColor}`}>
+        <div className={`relative font-medium items-start text-black ${cardAnimationData[0].padding} lg:-mb-4 w-full lg:h-48 md:h-32 h-24 ${cardAnimationData[0].backgroundColor}`}>
           <span className="xl:text-123 md:text-7xl text-4xl">{cardAnimationData[0].cardHeading}</span>
         </div>
       )}

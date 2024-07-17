@@ -12,9 +12,9 @@ export const CardSection = () => {
     return (
         <section className="xl:px-40 md:px-9 px-7 2xl:py-125 lg:py-20 py-16 w-full text-center forced-full-width fade-in-out">
             <div className="xl:w-9/12 lg:w-10/12 md:w-9/12 w-full">
-                <h3 className="xl:text-5xl lg:text-5xl text-4xl font-bold  xl:leading-50  leading-43 ">
+                <div className="text-animated xl:text-5xl lg:text-5xl text-4xl font-bold  xl:leading-50  leading-43 ">
                     EXPERIENCE SEAMLESS MIGRATION TO FUTURE-READY PLATFORMS
-                </h3>
+                </div>
             </div>
             <div className="w-full mt-28">
                 <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8">

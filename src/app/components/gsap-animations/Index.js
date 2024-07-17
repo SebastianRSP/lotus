@@ -1,6 +1,6 @@
 import gsap from 'gsap';
-import { ScrollSmoother, ScrollTrigger } from "gsap/all";
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+import { ScrollSmoother, ScrollTrigger, SplitText } from "gsap/all";
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
 
 export const initAnimations = (container) => {
     // ScrollSmoother
@@ -12,57 +12,79 @@ export const initAnimations = (container) => {
         effects: true,
     });
 
+    
+    ///////////////////////////////////////////////////////////
+    ///////////////CaseStudy Animations Starts/////////////////
+    ///////////////////////////////////////////////////////////
+
     const fadeInSections = document.querySelectorAll('.fade-in-out');
+    const caseStudyText = document.querySelector('.case-heading');
+
+    
+    // Hide the elements initially
+    gsap.set(caseStudyText, { autoAlpha: 0 });
+
+
+    // Create a timeline for the body and fade-in sections animations
+    const caseStudyScrollTimeline = gsap.timeline({
+        scrollTrigger: {
+            trigger: "#casestudy",
+            start: "top center+=100",
+            end: "top+=250 center+=100",
+            scrub: true, // Smooth transition
+            markers: false,
+        }
+    });
+
+    // Animate the body background and text color over the specified scroll positions
+    caseStudyScrollTimeline.to('body', {
+        backgroundColor: 'black',
+        color: '#FFFCEB',
+        duration: 0.5,
+    });
+
+    // Animate the fade-in sections background and text color over the specified scroll positions
+    fadeInSections.forEach((card) => {
+        caseStudyScrollTimeline.to(card, {
+            backgroundColor: 'black',
+            color: '#FFFCEB',
+            duration: 0.5,
+        }, "<"); // "<" makes the animation run concurrently with the previous one
+    });
+
+    ScrollTrigger.create({
+        trigger: "#casestudy",
+        start: "top+=350 center+=100", // Adjust start point after the background transition
+        end: "top+=400 center+=100",
+        scrub: true, // Smooth transition
+        markers: false,
+        onEnter: () => gsap.to(caseStudyText, {
+            autoAlpha: 1,
+            duration: 1.5,
+            ease: "power2.inOut"
+        }),
+        onLeaveBack: () => gsap.to(caseStudyText, { 
+            autoAlpha: 0,
+            duration: 1.5,
+            ease: "power2.out"
+        })
+    });
+
+    
+    ///////////////////////////////////////////////////////////
+    ////////////CaseStudy Animations Ends//////////////////////
+    ///////////////////////////////////////////////////////////
+    
+    ///////////////////////////////////////////////////////////
+    ///////////////Bridge Animations Starts////////////////////
+    ///////////////////////////////////////////////////////////
+
+    
     const bridgeHeading = document.querySelector('#bridge-heading');
     const bridgeDonut = document.querySelector('#bridge-donut');
     const bridgeDonutText = document.querySelector('#bridge-donut-text');
 
-    // Function to apply styles
-    const applyStyles = () => {
-        gsap.to('body', {
-            backgroundColor: 'black',
-            color: '#FFFCEB',
-            duration: 0.5,
-        });
-        fadeInSections.forEach((card) => {
-            gsap.to(card, {
-                backgroundColor: 'black',
-                color: '#FFFCEB',
-                duration: 0.5
-            });
-        });
-    };
-
-    // Function to revert styles
-    const revertStyles = () => {
-        gsap.to('body', {
-            backgroundColor: '',
-            color: '',
-            duration: 0.5
-        });
-        fadeInSections.forEach((card) => {
-            gsap.to(card, {
-                backgroundColor: '',
-                color: '',
-                duration: 0.5
-            });
-        });
-    };
-
-    // ScrollTrigger setup For CaseStudies
-    ScrollTrigger.create({
-        trigger: "#casestudy",
-        start: "top center",
-        end: "bottom center", // Use bottom center to detect the end
-        scrub: 1,
-        markers: false,
-        onEnter: applyStyles,
-        onLeaveBack: revertStyles,
-        onLeave: applyStyles,
-        onEnterBack: applyStyles,
-    });
-
-    // Hide the elements initially
+    
     gsap.set(bridgeHeading, { autoAlpha: 0 });
     gsap.set(bridgeDonut, { autoAlpha: 0 });
     gsap.set(bridgeDonutText, { autoAlpha: 0 });
@@ -94,28 +116,28 @@ export const initAnimations = (container) => {
         }, "<"); // "<" makes the animation run concurrently with the previous one
     });
 
-    // Create a timeline to show the bridge heading after the background transition
-    const headingTimeline = gsap.timeline({
-        scrollTrigger: {
-            trigger: "#bridge",
-            start: "top+=350 center+=100", // Adjust start point after the background transition
-            end: "top+=400 center+=100",
-            scrub: true, // Smooth transition
-            markers: false,
-        }
-    });
-
-    // Show the bridge heading with smooth fade-in effect
-    headingTimeline.to(bridgeHeading, {
-        autoAlpha: 1,
-        duration: 1,
-        ease: "power2.inOut",
+    ScrollTrigger.create({
+        trigger: "#bridge",
+        start: "top+=400 center+=100", // Adjust start point after the background transition
+        end: "top+=500 center+=100",
+        scrub: true, // Smooth transition
+        markers: false,
+        onEnter: () => gsap.to(bridgeHeading, {
+            autoAlpha: 1,
+            duration: 1.5,
+            ease: "power2.inOut"
+        }),
+        onLeaveBack: () => gsap.to(bridgeHeading, { 
+            autoAlpha: 0,
+            duration: 1.5,
+            ease: "power2.out"
+        })
     });
 
     // ScrollTrigger to show the donut with smooth fade-in effect
     ScrollTrigger.create({
         trigger: bridgeDonut,
-        start: "top center-=150",
+        start: "top center-=100",
         end: "top center",
         scrub: true,
         markers: false,
@@ -189,6 +211,62 @@ export const initAnimations = (container) => {
 
     // Ensure smooth scrolling and better user experience
     gsap.registerPlugin(ScrollTrigger);
+    
+    ///////////////////////////////////////////////////////////
+    ///////////////Bridge Animations End///////////////////////
+    ///////////////////////////////////////////////////////////
 
+
+    ///////////////////////////////////////////////////////////
+    ///////////////Text Animations Starts//////////////////////
+    ///////////////////////////////////////////////////////////
+    const animatedTexts = document.querySelectorAll('.text-animated');
+
+    animatedTexts.forEach(animatedText => {
+
+        ScrollTrigger.create({
+            trigger: animatedText,
+            start: "top+=205 center+=100", // End of the previous animations
+            end: "top center", // End of the bridge section
+            scrub: true,
+            markers: false,
+            onEnter: () => animatedText.classList.add('is-visible'),
+        });
+
+        // Check if the element is already processed
+        if (!animatedText.classList.contains('processed')) {
+            // Mark the element as processed
+            animatedText.classList.add('processed');
+
+            // Split text into lines and characters using SplitText
+            const split = new SplitText(animatedText, {
+                type: "lines,chars"
+            });
+
+            // Process each line
+            split.lines.forEach(line => {
+                line.classList.add('anim-line');
+                line.style.display = 'block';
+                line.style.position = 'relative';
+            });
+
+            // Append each character in the line to the lineWrapper
+            split.chars.forEach(char => {
+                char.classList.add('anim-char');
+                char.style.position = 'relative';
+                char.style.display = 'inline-block';
+                char.style.transitionDelay = `${Math.random() * 1}s`; 
+            });
+
+            // Animate each character from 100px above, fading in
+            gsap.from(split.chars, {
+                stagger: 0.05
+            });
+        }
+    });
+
+    ///////////////////////////////////////////////////////////
+    ///////////////Text Animations Ends////////////////////////
+    ///////////////////////////////////////////////////////////
 
 };

@@ -67,9 +67,9 @@ export const StaticFoldingCard = () => {
       
           timeline.to(card, {
             x: xPos,
-            duration: 0.7,
+            duration: 4,
             ease: 'none',
-          }, (index === 1 ? index * 0.15 : index* 0.1)); // Use index to stagger the start times with a delay
+          }, (index === 1 ? index * 0.2 : index* 0.1)); // Use index to stagger the start times with a delay
         });
       }, []);
     

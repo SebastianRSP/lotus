@@ -30,7 +30,7 @@ const caseStudies = [
 export const CaseStudy = () => {
     return (
         <section id="casestudy" className="xl:px-40 md:px-9 px-7 xl:py-36 md:py-9 py-7 fade-in-out  forced-full-width">
-            <div className="text-start">
+            <div className="text-start case-heading">
                 <h3 className="lg:text-123 md:text-100 sm:text-6xl text-5xl font-medium md:leading-154 leading-50 uppercase">OUR IMPACT</h3>
                 <h5 className="lg:text-6xl md:text-5xl text-2xl font-normal leading-80 capitalize">Featured Case Studies</h5>
             </div>
@@ -60,7 +60,7 @@ export const CaseStudy = () => {
             </div>
             <div className="flex justify-center flex-row md:mt-24 mt-16">
                 <DefaultBtn
-                    extras={'bg-white !shadow-button-green'}
+                    extras={''}
                     btnText={'VIEW MORE'}
                     btnType={'button'}
                 />

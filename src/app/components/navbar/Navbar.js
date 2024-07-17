@@ -61,7 +61,7 @@ export const Navbar = () => {
                         <div className="grid grid-cols-3 items-center h-inherit divide-x divide-black">
                             {navLinksBefore.map((navLink, index) => (
                                 <NavLink
-                                    key={index}
+                                    index={index}
                                     navLinkName={navLink.navLinkName}
                                     navLink={navLink.navLink}
                                     extras={navLink.extras}
@@ -89,7 +89,7 @@ export const Navbar = () => {
                         <div className="grid grid-cols-3 items-center h-inherit divide-x divide-black">
                             {navLinksAfter.map((navLink, index) => (
                                 <NavLink
-                                    key={index}
+                                    index={index}
                                     navLinkName={navLink.navLinkName}
                                     navLink={navLink.navLink}
                                     extras={navLink.extras}
@@ -98,7 +98,7 @@ export const Navbar = () => {
                             <div className="grid grid-cols-3 items-center h-inherit divide-x divide-black">
                                 {navIcons.map((navIcon, index) => (
                                     <NavLink
-                                        key={index}
+                                        index={index}
                                         navLinkName={navIcon.navLinkName}
                                         navLink={navIcon.navLink}
                                         icon={navIcon.icon}
@@ -173,14 +173,14 @@ export const Navbar = () => {
                                     navLinkName={mobileLink.navLinkName}
                                     navLink={mobileLink.navLink}
                                     extras={''}
-                                    key={index}
+                                    index={index}
                                 />
                             ))}
                         </div>
                         <div className="flex items-center divider-x divide-green mb-28">
                             {mobileNavIcons.map((navIcon, index) => (
                                 <NavLink
-                                    key={index}
+                                    index={index}
                                     navLinkName={navIcon.navLinkName}
                                     navLink={navIcon.navLink}
                                     icon={navIcon.icon}
