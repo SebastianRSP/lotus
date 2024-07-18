@@ -13,7 +13,7 @@ export const Bridge = () => {
             <section id='bridge' className=" forced-full-width overflow-hidden fade-in-out">
                 <div className='lg:px-40 md:px-20 px-8 lg:pt-186 md:pt-20 pt-16'>
                     <div className="text-left">
-                        <div id='bridge-heading' className="text-animated 2xl:text-7xl md:text-4xl text-6xl font-bold">
+                        <div id='bridge-heading' className="bridge-text-animated 2xl:text-7xl md:text-4xl text-6xl font-bold">
                             WE’RE BUILDING <br />
                             THE WORLD’S LARGEST <br />
                             CONTENT DELIVERY NETWORK

@@ -38,7 +38,7 @@ export const SliderCard = () => {
                 otherComponents={false}
                 cardAnimationData={cardAnimationData}
             />
-            <div className='py-16 lg:px-40 px-0 bg-gray-light overflow-hidden forced-full-width fade-in-out'>
+            <div className='pb-16 pt-32 lg:px-40 px-0 bg-gray-light overflow-hidden forced-full-width fade-in-out'>
                 <div className="flex">
                     <SlickSlider >
                         {list.map((list, index) => (
