@@ -51,7 +51,7 @@ export const Bridge = () => {
                     </div>
                 </div>
                 <div className='xl:px-40 md:px-9 px-7 lg:pb-32 md:pb-32 pb-16'>
-                    <div className='w-full mt-28 md:border-x md:border-y-0 border-0'>
+                    <div className='w-full md:mt-28 mt-0 md:border-x md:border-y-0 border-0'>
                         {/* previosu 2xl:px-36 */}
                         <div className='2xl:px-12 md:px-8 px-0 pt-20'>
                             <div className='md:flex justify-between grid gap-9 my-auto'>

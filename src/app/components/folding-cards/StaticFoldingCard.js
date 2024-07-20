@@ -50,14 +50,17 @@ export const StaticFoldingCard = () => {
       
         // Ensure there are no duplicate elements
         const uniqueCards = [...new Set(cards)];
+        console.log(window.innerHeight);
+        console.log(uniqueCards.length);
       
           let timeline = gsap.timeline({
               scrollTrigger: {
                   trigger: foldingContainer,
-                  start: 'top-=500 top',
-                  end: () => `+=${((window.innerHeight * uniqueCards.length))}`,
+                  start: 'top center+=200',
+                //   end: () => `+=${((800 * uniqueCards.length))}`,
                   scrub: true,
-                  pin: true
+                  pin: true,
+                  markers: false
               }
           });
       

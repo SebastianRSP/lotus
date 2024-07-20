@@ -5,11 +5,11 @@
 .slick-bg{
     box-shadow: 20px 20px 50px white;
 }
-.slick-list{
+/* .slick-list{
     position: relative;
     z-index: 10;
     pointer-events: none;
-}
+} */
 
 .slick-prev, .slick-next {
     z-index: 1; 

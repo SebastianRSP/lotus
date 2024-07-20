@@ -1,5 +1,9 @@
 import Image from "next/image";
 import circle from '../../../../public/images/circle.png';
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { SplitText } from 'gsap/all';
+gsap.registerPlugin(SplitText);
 
 export const Hero = () => {
     return (
@@ -23,4 +27,5 @@ export const Hero = () => {
                 </div>
             </div>
         </section>
-)}
+    );
+}

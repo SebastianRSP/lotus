@@ -13,6 +13,7 @@ import { FrequentlyAsked } from './components/frequently-asked/Index';
 import { FoldingCard } from './components/folding-cards/Index';
 
 import cardAnimationBackground from '../../public/images/card-animation-background.png';
+import { StaticFoldingCard } from './components/folding-cards/StaticFoldingCard';
 
 const cardAnimationData = [
   {
@@ -67,6 +68,7 @@ export default function Home() {
           otherComponents={true}
           cardAnimationData={cardAnimationData}
         />
+        {/* <StaticFoldingCard /> */}
         <OurPartner />
         <FrequentlyAsked />
       </div>

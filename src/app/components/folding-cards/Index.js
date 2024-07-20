@@ -85,7 +85,6 @@ export const FoldingCard = ({ cardAnimationData, otherComponents, extras }) => {
       {renderNestedCards(cardAnimationData.slice(1))}
       {/* {otherComponents && (
         <>
-          <AITool />
           <StaticFoldingCard />
         </>
       )} */}

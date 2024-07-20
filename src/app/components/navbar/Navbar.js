@@ -29,9 +29,9 @@ const navIcons = [
 ];
 
 const mobileNavIcons = [
-    { navLinkName: '', navLink: '#', extras: 'p-6 border border-green', icon: true, iconImage: greenTelegram, font: '' },
-    { navLinkName: 'M', navLink: '#', extras: 'p-6 border border-green', icon: false, iconImage: null, font: 'font-serif' },
-    { navLinkName: 'EN', navLink: '#', extras: 'p-6 border border-green', icon: false, iconImage: null, font: '' },
+    { navLinkName: '', navLink: '#', extras: 'p-5 border border-green', icon: true, iconImage: greenTelegram, font: '' },
+    { navLinkName: 'M', navLink: '#', extras: 'p-6 border border-green', icon: false, iconImage: null, font: 'text-green font-serif' },
+    { navLinkName: 'EN', navLink: '#', extras: 'p-6 border border-green', icon: false, iconImage: null, font: 'text-green ' },
 ];
 
 const mobileMenu = [
@@ -145,7 +145,7 @@ export const Navbar = () => {
                 </div>
                 {/* Toggle Green Screen */}
                 <div className={`md:hidden fixed top-0 left-0 right-0 bottom-0 w-full h-screen bg-green z-30 transform transition-transform duration-300 ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-                    <div className='flex justify-start xl:mx-40 mx-9 mt-14'>
+                    <div className='flex justify-start xl:mx-40 mx-9 mt-8'>
                         <div className="logo-container">
                             <Image
                                 className="logo"

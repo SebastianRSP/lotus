@@ -30,7 +30,7 @@ export const initAnimations = (container) => {
         scrollTrigger: {
             trigger: "#casestudy",
             start: "top center+=100",
-            end: "top+=250 center+=100",
+            end: "top+=300 center+=100",
             scrub: true, // Smooth transition
             markers: false,
         }
@@ -54,8 +54,8 @@ export const initAnimations = (container) => {
 
     ScrollTrigger.create({
         trigger: "#casestudy",
-        start: "top+=350 center+=150", // Adjust start point after the background transition
-        end: "top+=400 center+=150",
+        start: "top+=400 center+=200", // Adjust start point after the background transition
+        end: "top+=500 center+=100",
         scrub: true, // Smooth transition
         markers: false,
         onEnter: () => gsap.to(caseStudyText, {
@@ -181,8 +181,8 @@ export const initAnimations = (container) => {
         markers: false,
         onLeave: () => {
             gsap.to('body', {
-                backgroundColor: '',
-                color: '',
+                backgroundColor: 'white',
+                color: 'black',
                 duration: 0.5,
             });
             fadeInSections.forEach((card) => {
@@ -219,7 +219,7 @@ export const initAnimations = (container) => {
 
     ///////////////////////////////////////////////////////////
     ///////////////Text Animations Starts//////////////////////
-    ///////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////
     const animatedTexts = document.querySelectorAll('.text-animated');
     const bridgeTextAnimation = document.querySelectorAll('.bridge-text-animated');
 
@@ -227,7 +227,7 @@ export const initAnimations = (container) => {
 
         ScrollTrigger.create({
             trigger: animatedText,
-            start: "top center+=100", // End of the previous animations
+            start: "top center+=250", // End of the previous animations
             end: "top center", // End of the bridge section
             scrub: true,
             markers: false,
