@@ -29,8 +29,8 @@ export const initAnimations = (container) => {
     const caseStudyScrollTimeline = gsap.timeline({
         scrollTrigger: {
             trigger: "#casestudy",
-            start: "top center+=100",
-            end: "top+=300 center+=100",
+            start: "top center+=250",
+            end: "top+=300 center+=250",
             scrub: true, // Smooth transition
             markers: false,
         }
