@@ -112,7 +112,6 @@ export const initAnimations = (container) => {
     fadeInSections.forEach((card) => {
         bridgeScrollTimeline.to(card, {
             backgroundColor: 'black',
-            borderColor: '#00FF00',
             color: '#FFFCEB',
             duration: 0.5,
         }, "<"); // "<" makes the animation run concurrently with the previous one
@@ -190,7 +189,6 @@ export const initAnimations = (container) => {
             fadeInSections.forEach((card) => {
                 gsap.to(card, {
                     backgroundColor: '',
-                    borderColor: '',
                     color: '',
                     duration: 0.5,
                 });
@@ -205,7 +203,6 @@ export const initAnimations = (container) => {
             fadeInSections.forEach((card) => {
                 gsap.to(card, {
                     backgroundColor: 'black',
-                    borderColor: '#00FF00',
                     color: '#FFFCEB',
                     duration: 0.5,
                 });
