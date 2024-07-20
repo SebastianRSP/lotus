@@ -50,8 +50,6 @@ export const StaticFoldingCard = () => {
       
         // Ensure there are no duplicate elements
         const uniqueCards = [...new Set(cards)];
-        console.log(window.innerHeight);
-        console.log(uniqueCards.length);
       
           let timeline = gsap.timeline({
               scrollTrigger: {
@@ -63,17 +61,43 @@ export const StaticFoldingCard = () => {
                   markers: false
               }
           });
-      
+
+        const screenWidth = window.innerWidth;
+        const totalCards = uniqueCards.length;
+
+        const eachCardDeserve = screenWidth / totalCards;
+        
+        // Calculate the width of one card
+        const cardWidth = uniqueCards[0].offsetWidth;
+
+        // Calculate the percentage of eachCardDeserve relative to cardWidth
+        const movePercentage = (eachCardDeserve / cardWidth) * 100;
+
+        const finalXPos = 100 - movePercentage;
+
+
+        console.log(finalXPos, 'movePercentage')
+        
+        // // Calculate the move distance
+        // const moveDistance = totalCardsWidth / (screenWidth * 10);
+        
+        // // Calculate the move percentage based on card width
+        // const movePercentage = moveDistance * 100;
+
+
         uniqueCards.forEach((card, index) => {
-          // Calculate the x position based on the index
-          let xPos = index === 0 ? 0 : `-${index * 75}%`; // Adjust the percentage as needed
-      
-          timeline.to(card, {
-            x: xPos,
-            duration: 4,
-            ease: 'none',
-          }, (index === 1 ? index * 0.2 : index* 0.1)); // Use index to stagger the start times with a delay
+            // Calculate the x position based on the index and calculated percentage
+            let xPos = index === 0 ? 0 : `-${index * (finalXPos + 10)}%`;
+            
+            // Animate the card using GSAP
+            timeline.to(card, {
+                x: xPos,
+                duration: 4,
+                ease: 'none',
+            }, (index === 1 ? index * 0.2 : index * 0.1)); // Use index to stagger the start times with a delay
         });
+
+
       }, []);
     
     
