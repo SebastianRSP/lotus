@@ -47,6 +47,7 @@ export const initAnimations = (container) => {
     fadeInSections.forEach((card) => {
         caseStudyScrollTimeline.to(card, {
             backgroundColor: 'black',
+            borderColor: '#00FF00',
             color: '#FFFCEB',
             duration: 0.5,
         }, "<"); // "<" makes the animation run concurrently with the previous one
