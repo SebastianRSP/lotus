@@ -54,8 +54,8 @@ export const initAnimations = (container) => {
 
     ScrollTrigger.create({
         trigger: "#casestudy",
-        start: "top center+=250", // Adjust start point after the background transition
-        end: "top center",
+        start: "top+=400 center+=250", // Adjust start point after the background transition
+        end: "top+=500 center+=100",
         scrub: true, // Smooth transition
         markers: false,
         onEnter: () => gsap.to(caseStudyText, {
