@@ -53,14 +53,14 @@ export const Bridge = () => {
                 <div className='xl:px-40 md:px-9 px-7 lg:pb-32 md:pb-32 pb-16'>
                     <div className='w-full md:mt-28 mt-0 md:border-x md:border-y-0 border-0'>
                         {/* previosu 2xl:px-36 */}
-                        <div className='2xl:px-12 md:px-8 px-0 pt-20'>
-                            <div className='md:flex justify-between grid gap-9 my-auto'>
+                        <div className='md:px-8 px-0 pt-1'>
+                            <div className='md:flex justify-between grid gap-4 my-auto'>
                                 <div className='md:w-8/12 w-full'>
                                     <BridgeCard
                                         borders={'md:border-b md:border-r md:border-t-0 md:border-l-0 border-0'}
-                                        paddings={'2xl:pr-5 2xl:pb-5 md:pr-3 md:pb-3 p-0 h-full grid sm:justify-between gap-9'}
+                                        paddings={'2xl:pr-5 2xl:pb-5 md:pr-3 md:pb-3 p-0 h-full grid sm:justify-between gap-4'}
                                     >
-                                        <div className='grid md:grid-cols-2 grid-cols-1 gap-11 w-full text-left'>
+                                        <div className='grid md:grid-cols-2 grid-cols-1 gap-4 w-full text-left'>
                                             <BridgeCardHeading heading={'Seamlessly Connecting Web2 and Web3.'} />
                                             <BridgeCardParagraph paragraph={'Our high-tech layer, composed of SenData and Pegasus stack, serves as the raw foundation for this AI-enhanced bridge. Experience unprecedented data movement and analysis as The Bridge transforms the way you connect and utilize data.'} />
                                         </div>
@@ -81,7 +81,7 @@ export const Bridge = () => {
                                         borders={'md:border-b md:border-r-0  md:border-t-0  md:border-l-0 border-0'}
                                         paddings={'2xl:pl-5 2xl:pb-5 md:pl-3 md:pb-3 p-0 h-full'}
                                     >
-                                        <div className='flex flex-col h-full justify-between text-left gap-9'>
+                                        <div className='flex flex-col h-full justify-between text-left gap-4'>
                                             <BridgeCardHeading heading={'Simplifying Industry Applications'} />
                                             <div className='w-full md:order-none sm:order-first'>
                                                 <Image
@@ -98,13 +98,13 @@ export const Bridge = () => {
                                     </BridgeCard>
                                 </div>
                             </div>
-                            <div className='md:flex justify-between grid mt-14 gap-9'>
+                            <div className='md:flex justify-between grid mt-14 gap-4'>
                                 <div className='md:w-4/12 w-full'>
                                     <BridgeCard
                                         borders={'md:border-b md:border-r  md:border-t-0  md:border-l-0 border-0'}
                                         paddings={'2xl:pr-5 2xl:pb-5 md:pr-3 md:pb-3 p-0 2xl:pt-6 h-full'}
                                     >
-                                        <div className='flex flex-col h-full justify-between text-left gap-9'>
+                                        <div className='flex flex-col h-full justify-between text-left gap-4'>
                                             <BridgeCardHeading heading={'Connecting the World’s Data With Unmatched Efficiency'} />
                                             <div className='w-full md:order-none sm:order-first'>
                                                 <Image
@@ -135,7 +135,7 @@ export const Bridge = () => {
                                                 height={217}
                                             />
                                         </div>
-                                        <div className='md:flex justify-between grid gap-12 w-full text-left'>
+                                        <div className='md:flex justify-between grid gap-4 w-full text-left'>
                                             <BridgeCardHeading heading={'Robust Data Aggregation &Integration'} />
                                             <BridgeCardParagraph paragraph={'At the core of The Bridge are SenData and Pegasus. SenData connects on-premise, Web2, and Web3 data sources, using AI for superior data movement and analysis. Pegasus integrates decentralized and centralized storage solutions, offering an AI-powered analytic framework. Together, they ensure robust and efficient data management.'} />
                                         </div>

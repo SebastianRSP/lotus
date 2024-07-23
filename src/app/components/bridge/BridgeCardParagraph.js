@@ -1,6 +1,6 @@
 export const BridgeCardParagraph = ({paragraph}) => {
     return (
-        <p className='2xl:text-xl text-lg font-normal leading-26'>
+        <p className='2xl:text-xl text-lg font-light leading-26'>
             {paragraph}
         </p>
     )

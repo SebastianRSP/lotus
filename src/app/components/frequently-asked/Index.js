@@ -91,7 +91,7 @@ export const FrequentlyAsked = () => {
                                             <h4 className='md:text-4xl text-2xl md:font-bold font-semibold leading-30 md:pb-0 pb-10'>{faq.innderHeading}</h4>
                                         </div>
                                         <div className='lg:w-6/12 md:w-6/12 w-full flex flex-col gap-4'>
-                                            <p className='md:text-2xl text-base font-normal leading-32'>
+                                            <p className='md:text-1.5xl text-base font-light leading-32'>
                                                 {faq.innderDescription}
                                             </p>
                                             <div className='flex justify-end'>

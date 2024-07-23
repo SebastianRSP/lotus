@@ -19,6 +19,7 @@ module.exports = {
         'plus-jakarta-sans': ['var(--font-plus-jakarta-sans)'],
       },
       fontSize: {
+        '8':'.8rem',
         '30': '1.875rem',
         '26': '1.625rem',
         '32': '2rem',
@@ -27,6 +28,10 @@ module.exports = {
         '123': '7.6875rem',
         '142': '8.875rem',
         '144': '9rem',
+        '1.5xl': '1.3rem',
+      },
+      fontWeight: {
+        'light' : '200',
       },
       boxShadow: {
         'outer': '6px 6px 0px #00000041',
@@ -45,6 +50,7 @@ module.exports = {
         'light': '#ffffff40',
       },
       colors: {
+        'white': '#FFFFFF',
         'yellowLight': '#FFFCEB',
         'yellowDark': '#F7EDB8',
         'purple': '#D869F3',
@@ -88,6 +94,7 @@ module.exports = {
         '154': '154px',
       },
       padding: {
+        '1': '1rem',
         '38': '38px',
         '70': '70px',
         '74': '74px',
@@ -109,6 +116,9 @@ module.exports = {
       },
       translate: {
         '2px': '2px',
+      },
+      gap: {
+        '4': '1rem', // Custom gap size
       }
     }
   },

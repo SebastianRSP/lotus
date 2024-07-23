@@ -13,7 +13,7 @@ import { MobileLink } from './MobileLink';
 
 const navLinksBefore = [
     { navLinkName: 'HOME', navLink: '#', extras: '' },
-    { navLinkName: 'WHITEPAPER', navLink: '#', extras: '' },
+    { navLinkName: 'LIGHTPAPER', navLink: '#', extras: '' },
     { navLinkName: 'INVESTORS', navLink: '#', extras: '' },
 ];
 

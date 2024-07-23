@@ -119,7 +119,7 @@ export const initAnimations = (container) => {
 
     ScrollTrigger.create({
         trigger: "#bridge",
-        start: "top+=400 center+=200", // Adjust start point after the background transition
+        start: "top center", // Adjust start point after the background transition
         end: "top+=500 center+=100",
         scrub: true, // Smooth transition
         markers: false,
@@ -138,7 +138,7 @@ export const initAnimations = (container) => {
     // ScrollTrigger to show the donut with smooth fade-in effect
     ScrollTrigger.create({
         trigger: bridgeDonut,
-        start: "top center-=100",
+        start: "top-=100 center-=100",
         end: "top center",
         scrub: true,
         markers: false,
@@ -157,7 +157,7 @@ export const initAnimations = (container) => {
     // ScrollTrigger to show the bridge donut text with smooth fade-in effect
     ScrollTrigger.create({
         trigger: bridgeDonutText,
-        start: "top center+=10",
+        start: "top-=100 center+=10",
         end: "top center",
         scrub: true,
         markers: false,

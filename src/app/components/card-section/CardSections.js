@@ -17,13 +17,13 @@ export const CardSection = () => {
                 </div>
             </div>
             <div className="w-full mt-28">
-                <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8">
+                <div className=" grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8">
                     {cardContent.map((detail, index) => (
                         <Card
                             key={index}
                             extras={'border border-black shadow-card-outer'}
                         >
-                            <div key={index} className="flex flex-col  items-center px-38 lg:my-20 my-10">
+                            <div key={index} className="bg-yellowLight flex flex-col  items-center px-38 lg:my-0 my-5 py-10">
                                 <Image
                                     src={defaultImage}
                                     className="lg:mb-20 mb-10"
@@ -34,7 +34,7 @@ export const CardSection = () => {
                                 <h4 className="text-3xl font-bold leading-74 mb-6">
                                     {detail.cardHeading}
                                 </h4>
-                                <p className="text-base font-semibold leading-6">
+                                <p className="text-base font-light leading-6">
                                     {detail.cardContentDetail}
                                 </p>
                             </div>
