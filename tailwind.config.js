@@ -95,6 +95,7 @@ module.exports = {
       },
       padding: {
         '1': '1rem',
+        '18': '4.5rem',
         '38': '38px',
         '70': '70px',
         '74': '74px',

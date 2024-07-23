@@ -11,6 +11,7 @@ import { useEffect, useRef } from "react";
 
 // GSAP Imports
 import { initAnimations } from './components/gsap-animations/Index';
+import { ScrollTrigger } from "gsap/all";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -25,6 +26,12 @@ export default function RootLayout({ children }) {
     if (containerRef.current) {
       initAnimations(containerRef.current);
     }
+
+     // Clean up ScrollTrigger instances on component unmount
+     return () => {
+        ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+
   }, [pathname]);
 
   return (

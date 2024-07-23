@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import logo from '../../../../public/icons/logo.svg';
 import lotus from '../../../../public/icons/lotus.svg';
 import telegram from '../../../../public/icons/telegram.svg';
@@ -19,7 +19,8 @@ const navLinksBefore = [
 
 const navLinksAfter = [
     { navLinkName: 'About Us', navLink: '#', extras: '' },
-    { navLinkName: 'Book a Demo', navLink: '#', extras: 'bg-yellowDark' },
+    { navLinkName: 'Book a Demo', navLink: '#', extras: '' },  
+    // {/* bg-yellowDark */}
 ];
 
 const navIcons = [
@@ -49,16 +50,20 @@ export const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const handleToggle = () => {
-      setIsOpen(!isOpen);
+        setIsOpen(!isOpen);
     };
 
     return (
         <>
-            <nav className={`xl:mx-40 mx-9 my-6`}>
+            {/* xl:mx-40 mx-9 my-6 */}
+            <nav className={``}>
                 {/* Desktop Vesion */}
-                <div className='hidden md:!block'>
-                    <div className='w-full shadow-outer bg-yellowLight grid grid-flow-col auto-cols-auto items-center text-center h-14 border border-black relative z-50 overflow-hidden'>
-                        <div className="grid grid-cols-3 items-center h-inherit divide-x divide-black">
+                <div className={`hidden md:!block desktop-nav pt-6 px-8 `}>
+                    {/* border border-black bg-yellowLight shadow-outer*/}
+                    <div className='absolute bg-yellowLight shadow-sm inset-0 origin-top z-10 desktop-nav-bg'></div>
+                    <div className=' w-full grid grid-flow-col auto-cols-auto items-center text-center h-14  relative z-50 overflow-hidden'>
+                        {/* divide-x divide-black */}
+                        <div className="grid grid-cols-3 items-center h-inherit ">
                             {navLinksBefore.map((navLink, index) => (
                                 <NavLink
                                     key={index}
@@ -68,7 +73,8 @@ export const Navbar = () => {
                                 />
                             ))}
                         </div>
-                        <div className="flex items-center col-span-3 justify-center h-inherit w-auto border border-y-0 border-x-black">
+                        {/* border border-y-0 border-x-black */}
+                        <div className="flex items-center col-span-3 justify-center h-inherit w-auto  ">
                             <div className="logo-container">
                                 <Image
                                     className="logo"
@@ -86,7 +92,8 @@ export const Navbar = () => {
                                 />
                             </div>
                         </div>
-                        <div className="grid grid-cols-3 items-center h-inherit divide-x divide-black">
+                        {/* divide-x divide-black */}
+                        <div className="grid grid-cols-3 items-center h-inherit ">
                             {navLinksAfter.map((navLink, index) => (
                                 <NavLink
                                     key={index}
@@ -95,7 +102,8 @@ export const Navbar = () => {
                                     extras={navLink.extras}
                                 />
                             ))}
-                            <div className="grid grid-cols-3 items-center h-inherit divide-x divide-black">
+                            {/* divide-x divide-black */}
+                            <div className="grid grid-cols-3 items-center h-inherit ">
                                 {navIcons.map((navIcon, index) => (
                                     <NavLink
                                         key={index}

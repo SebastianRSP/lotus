@@ -100,6 +100,53 @@ nav{
   transform: translateY(0);
 }
 
+.link-hover {
+  position: relative; /* Make sure the pseudo-element is positioned relative to the link */
+  display: inline-flex;
+  white-space: nowrap;
+}
+
+.link-hover:before {
+  background-color: #00FF00;
+  content: "";
+  height: 0.05em; /* Adjust height as needed */
+  left: 0;
+  min-height: 1px;
+  position: absolute;
+  right: 0;
+  bottom: -0.1em; /* Adjust positioning as needed */
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.75s cubic-bezier(.19,1,.22,1);
+}
+
+.link-hover.link-exact-active:before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+
+/* Navbar Desktop Animation */
+
+.desktop-nav {
+  transition: transform 1s cubic-bezier(.19,1,.22,1);
+}
+.desktop-nav.is-scrolled {
+  transform: translateY(-1.5rem);
+}
+
+.desktop-nav-bg {
+  transform: scaleY(0);
+  transition: transform 1s cubic-bezier(.19,1,.22,1);
+}
+.is-scrolled .desktop-nav-bg {
+  transform: scaleY(1);
+}
+.desktop-nav.is-not-active {
+  pointer-events: none;
+  transform: translateY(-100%);
+}
+
 
 /* Navbar Mobile Toggle Transition Green for Screen */
 .transition-transform {
