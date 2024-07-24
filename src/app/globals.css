@@ -107,7 +107,7 @@ nav{
 }
 
 .link-hover:before {
-  background-color: #00FF00;
+  background-color: #000000;
   content: "";
   height: 0.05em; /* Adjust height as needed */
   left: 0;

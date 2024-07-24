@@ -26,19 +26,19 @@ export const initAnimations = (container) => {
     // ScrollTrigger to manage "is-scrolled" class
     ScrollTrigger.create({
         scroller: window,
-        start: "top top+=50",
-        end: "bottom top+=50",
+        start: "top top+=100",
+        end: "bottom top+=100",
         onUpdate: (self) => {
             const scrollY = self.scroll();
             // Handle "is-scrolled" class
-            if (scrollY > 50) {
+            if (scrollY > 100) {
                 navRef.classList.add('is-scrolled');
             } else {
                 navRef.classList.remove('is-scrolled');
             }
 
             // Handle "is-not-active" class
-            if (scrollY > 450) {
+            if (scrollY > 650) {
                 if (scrollY > lastScrollY) {
                     // Scrolling down
                     navRef.classList.add('is-not-active');

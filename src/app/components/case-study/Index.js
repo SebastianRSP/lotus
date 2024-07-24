@@ -15,16 +15,6 @@ const caseStudies = [
         caseStudyHeading: 'Cybersecurity',
         caseStudyDescription: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.'
     },
-    {
-        caseStudyImage: defaultImage,
-        caseStudyHeading: 'Pharmaceutical',
-        caseStudyDescription: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.'
-    },
-    {
-        caseStudyImage: defaultImage,
-        caseStudyHeading: 'Genomics',
-        caseStudyDescription: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.'
-    },
 ]
 
 export const CaseStudy = () => {
@@ -58,13 +48,15 @@ export const CaseStudy = () => {
                     </Card>
                 ))}
             </div>
-            <div className="flex justify-center flex-row md:mt-24 mt-16">
+            
+            {/*<div className="flex justify-center flex-row md:mt-24 mt-16">
                 <DefaultBtn
                     extras={''}
                     btnText={'VIEW MORE'}
                     btnType={'button'}
                 />
             </div>
+            */}
         </section>
     )
 }

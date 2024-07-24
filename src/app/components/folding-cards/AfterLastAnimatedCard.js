@@ -4,7 +4,7 @@ import { StaticFoldingCard } from "./StaticFoldingCard"
 export const AfterLastAnimatedCard = () => {
     return (
         <>
-            <AITool />
+           
             <StaticFoldingCard />
         </>
     )
