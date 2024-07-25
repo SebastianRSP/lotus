@@ -2,11 +2,12 @@ import Image from 'next/image';
 import footerLogo from '../../../../public/footer-logo.png';
 import Link from 'next/link';
 import { LinkToGo } from '../shared-components/LinkToGo';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const sociaLinks = [
-    {socialLinkName: 'Telegram', socialLinkAddress: '#', socialLinkIcon: ''},
-    {socialLinkName: 'Medium', socialLinkAddress: '#', socialLinkIcon: ''},
-    {socialLinkName: 'Instagram', socialLinkAddress: '#', socialLinkIcon: ''},
+    {socialLinkName: 'Telegram', socialLinkAddress: '#', socialLinkIcon: 'fa-brands fa-telegram'},
+    {socialLinkName: 'Medium', socialLinkAddress: '#', socialLinkIcon: 'fa-brands fa-medium'},
+    {socialLinkName: 'Instagram', socialLinkAddress: '#', socialLinkIcon: 'fa-brands fa-instagram'},
 ]
 
 const footerMenu1 = [
@@ -48,6 +49,7 @@ export const Footer = () => {
                     <div className='flex flex-col gap-1'>
                         {sociaLinks.map((sociaLink, index) => (
                             <Link className='text-s font-normal hover:font-bold leading-32' href={sociaLink.socialLinkAddress} key={index}>
+                                <FontAwesomeIcon size='sm' icon={sociaLink.socialLinkIcon} className='mr-2'/>
                                 {sociaLink.socialLinkName}
                             </Link>
                         ))}
@@ -78,25 +80,25 @@ export const Footer = () => {
                     linkText={'TERMS & CONDITIONS'}
                     href={'#'}
                     icon={false}
-                    extras={'text-s uppercase font-normal hover:font-bold leading-32'}
+                    extras={'text-s uppercase !no-underline font-normal hover:font-bold leading-32'}
                 />
                 <LinkToGo
                     linkText={'NEWSLETTER'}
                     href={'#'}
                     icon={false}
-                    extras={'text-s uppercase font-normal hover:font-bold leading-32'}
+                    extras={'text-s uppercase !no-underline font-normal hover:font-bold leading-32'}
                 />
                 <LinkToGo
                     linkText={'LEGAL'}
                     href={'#'}
                     icon={false}
-                    extras={'text-s uppercase font-normal hover:font-bold leading-32'}
+                    extras={'text-s uppercase !no-underline font-normal hover:font-bold leading-32'}
                 />
                 </div>
             </div>
-            <div className='w-full relative bottom-10 flex justify-between xl:px-40 lg:px-20 md:px-9 px-7 text-black'>
+            {/* <div className='w-full relative bottom-10 flex justify-between xl:px-40 lg:px-20 md:px-9 px-7 text-black'>
 
-            </div>
+            </div> */}
         </>
     )
 }

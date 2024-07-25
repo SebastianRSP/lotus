@@ -3,7 +3,8 @@ import Link from "next/link"
 
 export const LinkToGo = ({extras, href, linkText, arrowTopRight, icon}) => {
     return (
-        <Link href={href} className={`${extras} flex underline uppercase text-lg font-medium left-16`}>
+        <Link href={href} className={`${extras} flex underline uppercase left-16`}>
+            {/* text-lg font-medium */}
             {linkText}
             {icon && (
                 <Image

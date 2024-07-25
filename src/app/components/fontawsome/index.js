@@ -1,8 +1,11 @@
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faTelegram } from '@fortawesome/free-brands-svg-icons';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
+import {faTelegram, faInstagram, faMedium} from '@fortawesome/free-brands-svg-icons';
+
 library.add(
-    faTelegram,
-    faArrowRight
-) 
+    faArrowRight,
+    faTelegram, 
+    faInstagram, 
+    faMedium
+); 
