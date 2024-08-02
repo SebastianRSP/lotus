@@ -56,7 +56,7 @@ export const Navbar = () => {
     return (
         <>
             {/* xl:mx-40 mx-9 my-6 */}
-            <nav className={``}>
+            <nav >
                 {/* Desktop Vesion */}
                 <div className={`hidden md:!block desktop-nav pt-6 px-8 `}>
                     {/* border border-black bg-yellowLight shadow-outer*/}
@@ -119,7 +119,7 @@ export const Navbar = () => {
                     </div>
                 </div>
                 {/* Mobile Version */}
-                <div className='md:hidden flex justify-between items-center'>
+                <div className='md:hidden flex justify-between items-center pt-6 px-8'>
                     <div className="logo-container">
                         <Image
                             className="logo"
@@ -136,7 +136,7 @@ export const Navbar = () => {
                             height={18}
                         />
                     </div>
-                    <div className='border border-black shadow-outer bg-yellowLight w-9 h-9 p-1 relative z-50'>
+                    <div className='border border-black shadow-outer bg-yellowLight w-9 h-9 p-0.3 relative z-50'>
                         <div
                             className='bg-green flex justify-center items-center w-full h-full'
                             onClick={handleToggle}
@@ -144,7 +144,7 @@ export const Navbar = () => {
                             <Image
                                 src={isOpen ? cross : navToggle}
                                 alt='toggle icon'
-                                className='p-1'
+                                className='p-0.2'
                                 width={24}
                                 height={24}
                             />

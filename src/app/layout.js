@@ -12,6 +12,7 @@ import { useEffect, useRef } from "react";
 // GSAP Imports
 import { initAnimations } from './components/gsap-animations/Index';
 import { ScrollTrigger } from "gsap/all";
+import { Loading } from "./components/loading/Index";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -23,34 +24,36 @@ export default function RootLayout({ children }) {
   const containerRef = useRef();
 
   useEffect(() => {
-    if (containerRef.current) {
-      initAnimations(containerRef.current);
-    }
-
-     // Clean up ScrollTrigger instances on component unmount
-     return () => {
+    if (typeof window !== 'undefined') {
+      if (containerRef.current) {
+        initAnimations(containerRef.current);
+      }
+  
+      // Clean up ScrollTrigger instances on component unmount
+      return () => {
         ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-    };
-
+      };
+    }
   }, [pathname]);
 
   return (
     <html lang="en">
       <body className={plusJakartaSans.variable}>
-        <header>
-          <Navbar />
-        </header>
-        <div id="wrapper">
-          <div id="smooth-content">
-            <main ref={containerRef}>
-              {children}
-              <Cursor />
-            </main>
-            <footer className="bg-gray-light">
-              <Footer />
-            </footer>
+          <header>
+            <Navbar />
+          </header>
+          <div id="wrapper">
+            <Loading />
+            <div id="smooth-content">
+              <main ref={containerRef}>
+                {children}
+                <Cursor />
+              </main>
+              <footer className="bg-gray-light">
+                <Footer />
+              </footer>
+            </div>
           </div>
-        </div>
       </body>
     </html>
   );
