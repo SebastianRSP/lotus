@@ -5,28 +5,46 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
 export const initAnimations = () => {
 
     // Loading animation
-    const notice = document.querySelector('.notice');
-    const noticeWrapper = document.querySelector('.notice__wrapper');
-    const animLinePercentage = notice.querySelector('.anim-line-percentage');
-    const loader = document.querySelector('.loader');
+const notice = document.querySelector('.notice');
+const noticeWrapper = document.querySelector('.notice__wrapper');
+const animLinePercentage = notice.querySelector('.anim-line-percentage');
+const loader = document.querySelector('.loader');
 
-    // Create a GSAP timeline for loading animation
-    const loadingTimeline = gsap.timeline({
-        onComplete: () => {
-            gsap.delayedCall(2.4, () => {
-                // Initialize main animations after loading completes
-                initMainAnimations();
+// Create a GSAP timeline for loading animation
+const loadingTimeline = gsap.timeline({
+    onComplete: () => {
+        gsap.delayedCall(2.4, () => {
+            // Initialize main animations after loading completes
+            initMainAnimations();
+        });
+    }
+});
+
+// Loading progress animation
+loadingTimeline
+    .to(notice, { '--horizontal': '0%', duration: 0.8, ease: 'power2.inOut' })
+    .to(notice, { '--vertical': '0%', duration: 0.8, ease: 'power2.inOut' })
+    .add(() => {
+        // Create a GSAP timeline for shadow effect
+        gsap.timeline()
+            .add(() => {
+                // Ensure the shadow class is added
+                noticeWrapper.classList.add('notice__wrapper-shadow');
             })
-        }
-    });
-
-    // Loading progress animation
-    loadingTimeline
-        .to(notice, { '--horizontal': '0%', duration: 0.8, ease: 'power2.inOut' })
-        .to(notice, { '--vertical': '0%', duration: 0.8, ease: 'power2.inOut' })
-        .add(() => {
-            notice.classList.add('is-visible');
-        })
+            .to(noticeWrapper, {
+                opacity: 1,
+                delay: 1, // Delay before starting the fade-in
+                duration: 0.8, // Duration for fade-in
+                ease: 'power2.inOut',
+                onStart: () => {
+                    // Ensure that opacity changes are visible with the shadow effect
+                    noticeWrapper.style.transition = 'opacity 0.8s ease-in-out, box-shadow 0.8s ease-in-out';
+                }
+            });
+    })
+    .add(() => {
+        notice.classList.add('is-visible');
+    })
     .to(animLinePercentage, {
         innerHTML: "100%",
         delay: 2,
@@ -39,13 +57,17 @@ export const initAnimations = () => {
         opacity: 0,
         delay: 0.5,
         duration: 0.5, // Duration for fade out
+        ease: 'power2.inOut', // Smooth transition for fade-out
         onComplete: () => {
+            // Remove the visibility class after fade-out completes
             noticeWrapper.classList.remove('is-visible');
+            // Remove shadow effect after fade-out completes
+            noticeWrapper.classList.remove('notice__wrapper-shadow');
         }
     })
     .add(() => {
         // Wait for 1 second before starting the revert animation
-        gsap.delayedCall(.5, () => {
+        gsap.delayedCall(0.5, () => {
             // Revert to original styles, increasing vertical first and then horizontal
             gsap.timeline()
                 .to(notice, { '--vertical': '48%', duration: 0.8, ease: 'power2.inOut' })
@@ -58,6 +80,7 @@ export const initAnimations = () => {
                 });
         });
     });
+
 
 
     const initMainAnimations = () => {
