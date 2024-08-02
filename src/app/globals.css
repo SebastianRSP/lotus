@@ -327,7 +327,9 @@ nav{
   transition: opacity .4s cubic-bezier(.32,.94,.6,1);
   width: 100%
 }
-
+.loader::after {
+  display: none !important;
+}
 .loader--no-bg:before {
   opacity: 0
 }
