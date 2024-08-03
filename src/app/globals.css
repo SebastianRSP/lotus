@@ -341,7 +341,7 @@ nav{
 }
 .loader .notice {
   white-space: nowrap;
-  width: 17rem
+  width: 15rem
 }
 
 /* Loader Text */
@@ -517,8 +517,8 @@ nav{
 }
 @media(max-width: 1023px) {
   .notice__label {
-      font-size:1.5rem;
-      font-weight: 400;
+      font-size:1rem;
+      font-weight: 300;
       line-height: 1.4
   }
 }
