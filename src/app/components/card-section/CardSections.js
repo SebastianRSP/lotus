@@ -23,7 +23,7 @@ export const CardSection = () => {
                             key={index}
                             extras={'border border-black shadow-card-outer'}
                         >
-                            <div key={index} className="bg-yellowLight flex flex-col  items-center px-38 lg:my-0 my-5 py-10">
+                            <div key={index} className="bg-yellowLight flex flex-col  items-center px-38 py-10">
                                 <Image
                                     src={defaultImage}
                                     className="lg:mb-20 mb-10"
