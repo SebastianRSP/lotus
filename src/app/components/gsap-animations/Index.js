@@ -155,7 +155,7 @@ export const initAnimations = () => {
     
             ScrollTrigger.create({
                 trigger: animatedText,
-                start: "top center+=250", // End of the previous animations
+                start: "top-=50 center+=250", // End of the previous animations
                 end: "top center", // End of the bridge section
                 scrub: true,
                 markers: false,

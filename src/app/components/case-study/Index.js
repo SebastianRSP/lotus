@@ -2,7 +2,7 @@ import { Card } from "../shared-components/Card";
 import defaultImage from '../../../../public/icons/defaultImg.svg';
 import Image from "next/image";
 import { ArrowBtn } from "../buttons/ArrowBtn";
-import { DefaultBtn } from "../buttons/DefaultBtn";
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 const caseStudies = [
     {
@@ -42,7 +42,7 @@ export const CaseStudy = () => {
                                 <p className="text-base font-semibold leading-7">{caseStudy.caseStudyDescription}</p>
                             </div>
                             <div className="px-9 md:pb-9 pb-5  w-11/12 flex justify-end">
-                                <ArrowBtn />
+                                <ArrowBtn arrow={faArrowRight}/>
                             </div>
                         </div>
                     </Card>
