@@ -341,7 +341,8 @@ nav{
 }
 .loader .notice {
   white-space: nowrap;
-  width: 15rem
+  width: 14rem;
+  height: 3rem;
 }
 
 /* Loader Text */
