@@ -5,27 +5,29 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
 export const initAnimations = () => {
 
     // Loading animation
-const notice = document.querySelector('.notice');
-const noticeWrapper = document.querySelector('.notice__wrapper');
-const animLinePercentage = notice.querySelector('.anim-line-percentage');
-const loader = document.querySelector('.loader');
+    const notice = document.querySelector('.notice');
+    const noticeWrapper = document.querySelector('.notice__wrapper');
+    const animLinePercentage = notice.querySelector('.anim-line-percentage');
+    const loader = document.querySelector('.loader');
+    // Text Fade-in
+    const fadeInSections = document.querySelectorAll('.fade-in-out');
 
-// Create a GSAP timeline for loading animation
-const loadingTimeline = gsap.timeline({
-    onComplete: () => {
-        gsap.delayedCall(2.4, () => {
-            // Initialize main animations after loading completes
-            initMainAnimations();
-        });
-    }
-});
+    // Create a GSAP timeline for loading animation
+    const loadingTimeline = gsap.timeline({
+        onComplete: () => {
+            gsap.delayedCall(2.4, () => {
+                // Initialize main animations after loading completes
+                initMainAnimations();
+            });
+        }
+    });
 
-// Loading progress animation
-loadingTimeline
+    // Loading progress animation
+    loadingTimeline
     .to(notice, { '--horizontal': '0%', duration: 0.8, ease: 'power2.inOut' })
     .to(notice, { '--vertical': '0%', duration: 0.8, ease: 'power2.inOut' })
     .add(() => {
-        // Create a GSAP timeline for shadow effect
+    // Create a GSAP timeline for shadow effect
         gsap.timeline()
             .add(() => {
                 // Ensure the shadow class is added
@@ -142,69 +144,100 @@ loadingTimeline
         ///////////////////////////////////////////////////////////
         ///////////////Navbar Desktop Animations Ends//////////////
         ///////////////////////////////////////////////////////////
-    
-        
+
         ///////////////////////////////////////////////////////////
-        ///////////////CaseStudy Animations Starts/////////////////
-        ///////////////////////////////////////////////////////////
+        ///////////////Text Animations Starts//////////////////////
+        //////////////////////////////////////////////////////////
+        const animatedTexts = document.querySelectorAll('.text-animated');
+        const bridgeTextAnimation = document.querySelectorAll('.bridge-text-animated');
     
-        const fadeInSections = document.querySelectorAll('.fade-in-out');
-        const caseStudyText = document.querySelector('.case-heading');
+        animatedTexts.forEach(animatedText => {
     
-        
-        // Hide the elements initially
-        gsap.set(caseStudyText, { autoAlpha: 0 });
-    
-    
-        // Create a timeline for the body and fade-in sections animations
-        const caseStudyScrollTimeline = gsap.timeline({
-            scrollTrigger: {
-                trigger: "#casestudy",
-                start: "top center+=250",
-                end: "top+=300 center+=250",
-                scrub: true, // Smooth transition
+            ScrollTrigger.create({
+                trigger: animatedText,
+                start: "top center+=250", // End of the previous animations
+                end: "top center", // End of the bridge section
+                scrub: true,
                 markers: false,
+                onEnter: () => animatedText.classList.add('is-visible'),
+            });
+    
+            // Check if the element is already processed
+            if (!animatedText.classList.contains('processed')) {
+                // Mark the element as processed
+                animatedText.classList.add('processed');
+    
+                // Split text into lines and characters using SplitText
+                const split = new SplitText(animatedText, {
+                    type: "lines,chars"
+                });
+    
+                // Process each line
+                split.lines.forEach(line => {
+                    line.classList.add('line-animation');
+                    line.style.display = 'block';
+                    line.style.position = 'relative';
+                });
+    
+                // Append each character in the line to the lineWrapper
+                split.chars.forEach(char => {
+                    char.classList.add('character-animation');
+                    char.style.position = 'relative';
+                    char.style.display = 'inline-block';
+                    char.style.transitionDelay = `${Math.random() * 1}s`; 
+                });
+    
+                // Animate each character from 100px above, fading in
+                gsap.from(split.chars, {
+                    stagger: 0.05
+                });
             }
         });
     
-        // Animate the body background and text color over the specified scroll positions
-        caseStudyScrollTimeline.to('body', {
-            backgroundColor: 'black',
-            color: '#FFFCEB',
-            duration: 0.5,
-        });
+        bridgeTextAnimation.forEach(animatedText => {
     
-        // Animate the fade-in sections background and text color over the specified scroll positions
-        fadeInSections.forEach((card) => {
-            caseStudyScrollTimeline.to(card, {
-                backgroundColor: 'black',
-                borderColor: '#00FF00',
-                color: '#FFFCEB',
-                duration: 0.5,
-            }, "<"); // "<" makes the animation run concurrently with the previous one
-        });
+            ScrollTrigger.create({
+                trigger: animatedText,
+                start: "top+=350 center+=200", // End of the previous animations
+                end: "top center", // End of the bridge section
+                scrub: true,
+                markers: false,
+                onEnter: () => animatedText.classList.add('is-visible'),
+            });
     
-        ScrollTrigger.create({
-            trigger: "#casestudy",
-            start: "top+=400 center+=350", // Adjust start point after the background transition
-            end: "top center",
-            scrub: true, // Smooth transition
-            markers: false,
-            onEnter: () => gsap.to(caseStudyText, {
-                autoAlpha: 1,
-                duration: 1.5,
-                ease: "power2.inOut"
-            }),
-            onLeaveBack: () => gsap.to(caseStudyText, { 
-                autoAlpha: 0,
-                duration: 1.5,
-                ease: "power2.out"
-            })
-        });
+            // Check if the element is already processed
+            if (!animatedText.classList.contains('processed')) {
+                // Mark the element as processed
+                animatedText.classList.add('processed');
     
-        
+                // Split text into lines and characters using SplitText
+                const split = new SplitText(animatedText, {
+                    type: "lines,chars"
+                });
+    
+                // Process each line
+                split.lines.forEach(line => {
+                    line.classList.add('line-animation');
+                    line.style.display = 'block';
+                    line.style.position = 'relative';
+                });
+    
+                // Append each character in the line to the lineWrapper
+                split.chars.forEach(char => {
+                    char.classList.add('character-animation');
+                    char.style.position = 'relative';
+                    char.style.display = 'inline-block';
+                    char.style.transitionDelay = `${Math.random() * 1}s`; 
+                });
+    
+                // Animate each character from 100px above, fading in
+                gsap.from(split.chars, {
+                    stagger: 0.05
+                });
+            }
+        });
         ///////////////////////////////////////////////////////////
-        ////////////CaseStudy Animations Ends//////////////////////
+        ///////////////Text Animations Ends////////////////////////
         ///////////////////////////////////////////////////////////
         
         ///////////////////////////////////////////////////////////
@@ -229,6 +262,13 @@ loadingTimeline
                 end: "top+=300 center+=100",
                 scrub: true, // Smooth transition
                 markers: false,
+                onEnterBack: () => {
+                    gsap.to('body', {
+                        backgroundColor: 'white',
+                        color: 'black',
+                        duration: 0.5,
+                    });
+                }
             }
         });
     
@@ -333,115 +373,76 @@ loadingTimeline
                 });
                 fadeInSections.forEach((card) => {
                     gsap.to(card, {
-                        backgroundColor: 'black',
-                        color: '#FFFCEB',
+                        backgroundColor: '',
+                        color: '',
                         duration: 0.5,
                     });
                 });
             }
         });
-    
-        // Ensure smooth scrolling and better user experience
-        gsap.registerPlugin(ScrollTrigger);
         
         ///////////////////////////////////////////////////////////
         ///////////////Bridge Animations End///////////////////////
         ///////////////////////////////////////////////////////////
-    
-    
+
         ///////////////////////////////////////////////////////////
-        ///////////////Text Animations Starts//////////////////////
-        //////////////////////////////////////////////////////////
-        const animatedTexts = document.querySelectorAll('.text-animated');
-        const bridgeTextAnimation = document.querySelectorAll('.bridge-text-animated');
+        ///////////////CaseStudy Animations Starts/////////////////
+        ///////////////////////////////////////////////////////////
+
+        const caseStudyText = document.querySelector('.case-heading');
+        // Hide the elements initially
+        gsap.set(caseStudyText, { autoAlpha: 0 });
     
-        animatedTexts.forEach(animatedText => {
     
-            ScrollTrigger.create({
-                trigger: animatedText,
-                start: "top center+=250", // End of the previous animations
-                end: "top center", // End of the bridge section
-                scrub: true,
+        // Create a timeline for the body and fade-in sections animations
+        const caseStudyScrollTimeline = gsap.timeline({
+            scrollTrigger: {
+                trigger: "#casestudy",
+                start: "top center+=250",
+                end: "top+=300 center+=250",
+                scrub: true, // Smooth transition
                 markers: false,
-                onEnter: () => animatedText.classList.add('is-visible'),
-            });
-    
-            // Check if the element is already processed
-            if (!animatedText.classList.contains('processed')) {
-                // Mark the element as processed
-                animatedText.classList.add('processed');
-    
-                // Split text into lines and characters using SplitText
-                const split = new SplitText(animatedText, {
-                    type: "lines,chars"
-                });
-    
-                // Process each line
-                split.lines.forEach(line => {
-                    line.classList.add('line-animation');
-                    line.style.display = 'block';
-                    line.style.position = 'relative';
-                });
-    
-                // Append each character in the line to the lineWrapper
-                split.chars.forEach(char => {
-                    char.classList.add('character-animation');
-                    char.style.position = 'relative';
-                    char.style.display = 'inline-block';
-                    char.style.transitionDelay = `${Math.random() * 1}s`; 
-                });
-    
-                // Animate each character from 100px above, fading in
-                gsap.from(split.chars, {
-                    stagger: 0.05
-                });
             }
         });
     
-        bridgeTextAnimation.forEach(animatedText => {
-    
-            ScrollTrigger.create({
-                trigger: animatedText,
-                start: "top+=350 center+=200", // End of the previous animations
-                end: "top center", // End of the bridge section
-                scrub: true,
-                markers: false,
-                onEnter: () => animatedText.classList.add('is-visible'),
-            });
-    
-            // Check if the element is already processed
-            if (!animatedText.classList.contains('processed')) {
-                // Mark the element as processed
-                animatedText.classList.add('processed');
-    
-                // Split text into lines and characters using SplitText
-                const split = new SplitText(animatedText, {
-                    type: "lines,chars"
-                });
-    
-                // Process each line
-                split.lines.forEach(line => {
-                    line.classList.add('line-animation');
-                    line.style.display = 'block';
-                    line.style.position = 'relative';
-                });
-    
-                // Append each character in the line to the lineWrapper
-                split.chars.forEach(char => {
-                    char.classList.add('character-animation');
-                    char.style.position = 'relative';
-                    char.style.display = 'inline-block';
-                    char.style.transitionDelay = `${Math.random() * 1}s`; 
-                });
-    
-                // Animate each character from 100px above, fading in
-                gsap.from(split.chars, {
-                    stagger: 0.05
-                });
-            }
+        // Animate the body background and text color over the specified scroll positions
+        caseStudyScrollTimeline.to('body', {
+            backgroundColor: 'black',
+            color: '#FFFCEB',
+            duration: 0.5,
         });
+    
+        // Animate the fade-in sections background and text color over the specified scroll positions
+        fadeInSections.forEach((card) => {
+            caseStudyScrollTimeline.to(card, {
+                backgroundColor: 'black',
+                borderColor: '#00FF00',
+                color: '#FFFCEB',
+                duration: 0.5,
+            }, "<"); // "<" makes the animation run concurrently with the previous one
+        });
+    
+        ScrollTrigger.create({
+            trigger: "#casestudy",
+            start: "top+=400 center+=350", // Adjust start point after the background transition
+            end: "top center",
+            scrub: true, // Smooth transition
+            markers: false,
+            onEnter: () => gsap.to(caseStudyText, {
+                autoAlpha: 1,
+                duration: 1.5,
+                ease: "power2.inOut"
+            }),
+            onLeaveBack: () => gsap.to(caseStudyText, { 
+                autoAlpha: 0,
+                duration: 1.5,
+                ease: "power2.out"
+            })
+        });
+    
+        
         ///////////////////////////////////////////////////////////
-        ///////////////Text Animations Ends////////////////////////
+        ////////////CaseStudy Animations Ends//////////////////////
         ///////////////////////////////////////////////////////////
     }
 
