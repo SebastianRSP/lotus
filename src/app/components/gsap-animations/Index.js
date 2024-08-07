@@ -15,7 +15,7 @@ export const initAnimations = () => {
     // Create a GSAP timeline for loading animation
     const loadingTimeline = gsap.timeline({
         onComplete: () => {
-            gsap.delayedCall(2.4, () => {
+            gsap.delayedCall(3.8, () => {
                 // Initialize main animations after loading completes
                 initMainAnimations();
             });
@@ -26,6 +26,8 @@ export const initAnimations = () => {
     loadingTimeline
     .to(notice, { '--horizontal': '0%', duration: 0.8, ease: 'power2.inOut' })
     .to(notice, { '--vertical': '0%', duration: 0.8, ease: 'power2.inOut' })
+    .to(notice, { '--width': '100%', duration: 0.8, ease: 'power2.inOut' })
+    .to(notice, { '--height': '100%', duration: 0.8, ease: 'power2.inOut' })
     .add(() => {
     // Create a GSAP timeline for shadow effect
         gsap.timeline()
@@ -72,6 +74,8 @@ export const initAnimations = () => {
         gsap.delayedCall(0.5, () => {
             // Revert to original styles, increasing vertical first and then horizontal
             gsap.timeline()
+                .to(notice, { '--height': '0%', duration: 0.8, ease: 'power2.inOut' })
+                .to(notice, { '--width': '0%', duration: 0.8, ease: 'power2.inOut' })
                 .to(notice, { '--vertical': '48%', duration: 0.8, ease: 'power2.inOut' })
                 .to(notice, { '--horizontal': '50%', duration: 0.8, ease: 'power2.inOut' })
                 .add(() => {

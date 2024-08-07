@@ -4,7 +4,7 @@ import logo from '../../../../public/icons/logo.svg';
 export const Loading = ( ) => {
     return (
         <div className="loader">
-            <div className="notice notice--animated"  style={{ '--horizontal': '50%', '--vertical': '48%' }}>
+            <div className="notice notice--animated"  style={{ '--horizontal': '50%', '--vertical': '48%', '--width': '0%', '--height': '0%' }}>
                 <div className="notice__wrapper">
                     <div className="loader-animation-logo logo--dark logo--animated">
                         <Image 
@@ -20,9 +20,6 @@ export const Loading = ( ) => {
                             Loading <span className="anim-line-percentage">0%</span>
                         </div>
                     </span>
-                    {/* <span className="text-splitter text-splitter--splitted">
-                        Loading 100%
-                    </span> */}
                     </span>
                 </div>
             </div>
