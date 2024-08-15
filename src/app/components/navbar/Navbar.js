@@ -12,9 +12,9 @@ import Image from "next/image";
 import { MobileLink } from './MobileLink';
 
 const navLinksBefore = [
-    { navLinkName: 'HOME', navLink: '#', extras: '' },
+    { navLinkName: 'HOME', navLink: '/', extras: '' },
     { navLinkName: 'LIGHTPAPER', navLink: '#', extras: '' },
-    { navLinkName: 'INVESTORS', navLink: '#', extras: '' },
+    { navLinkName: 'INVESTORS', navLink: '/investors', extras: '' },
 ];
 
 const navLinksAfter = [
@@ -77,14 +77,14 @@ export const Navbar = () => {
                         <div className="flex items-center col-span-3 justify-center h-inherit w-auto  ">
                             <div className="logo-container">
                                 <Image
-                                    className="logo"
+                                    className="lotus"
                                     src={logo}
                                     alt="Logo"
                                     width={32}
                                     height={17}
                                 />
                                 <Image
-                                    className="lotus"
+                                    className="logo"
                                     src={lotus}
                                     alt="Lotus"
                                     width={76}
@@ -122,14 +122,14 @@ export const Navbar = () => {
                 <div className='md:hidden flex justify-between items-center pt-6 px-8'>
                     <div className="logo-container">
                         <Image
-                            className="logo"
+                            className="lotus"
                             src={logo}
                             alt="Logo"
                             width={32}
                             height={17}
                         />
                         <Image
-                            className="lotus"
+                            className="logo"
                             src={lotus}
                             alt="Lotus"
                             width={76}
@@ -156,14 +156,14 @@ export const Navbar = () => {
                     <div className='flex justify-start xl:mx-40 mx-9 mt-8'>
                         <div className="logo-container">
                             <Image
-                                className="logo"
+                                className="lotus"
                                 src={logo}
                                 alt="Logo"
                                 width={32}
                                 height={17}
                             />
                             <Image
-                                className="lotus"
+                                className="logo"
                                 src={lotus}
                                 alt="Lotus"
                                 width={76}
