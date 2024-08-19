@@ -25,6 +25,7 @@ module.exports = {
         '32': '2rem',
         '90': '5rem',
         '100': '6.25rem',
+        '118': '7.375rem',
         '123': '7.6875rem',
         '142': '8.875rem',
         '144': '9rem',
@@ -39,6 +40,7 @@ module.exports = {
         'card-outer-green': '12px 12px 0px #03FF00',
         'button': '6px 6px 0px #00000040',
         'button-green': '6px 6px 0px #03FF00',
+        'white': '2px 2px 0px #fff',
         'wrapper-button-green': '7px 7px 0px #03FF00',
         'button-green-hover': '4px 4px 0px #03ff00;',
         'inner': 'inset 4px 4px 0px #00000040',
@@ -48,6 +50,7 @@ module.exports = {
         'dark-gray': '#0D0D0D',
         'light-gray': '#00000040',
         'light': '#ffffff40',
+        'hr': '#BFBFBF'
       },
       colors: {
         'white': '#FFFFFF',
@@ -57,6 +60,7 @@ module.exports = {
         'black': '#000000',
         'gray': '#252525',
         'gray-light': '#F2F2F2',
+        'gray-circle': '#404240',
         'green': '#00FF00',
       },
       height: {
@@ -75,6 +79,7 @@ module.exports = {
         'space00': '0px',
         'space90': '0.9px',
         'space-25': '-25px',
+        'space-346': '3.46px'
       },
       lineHeight: {
         '26': '26px',

@@ -1,5 +1,6 @@
-import { InvestmentHero } from "../components/hero/InvestmentHero";
-import { InvesterBannerText } from "../components/invester-banner-text/Index";
+import { InvertmentBridgeGrowth } from "../components/investor/investment-bridge-growth/Index";
+import { InvestmentHero } from "../components/investor/investment-hero/InvestmentHero";
+import { InvesterBannerText } from "../components/investor/investor-banner-text/Index";
 
 export default function Investors() {
     return (
@@ -8,6 +9,7 @@ export default function Investors() {
                 <InvestmentHero />
             </div>
             <InvesterBannerText />
+            <InvertmentBridgeGrowth />
         </>
     )
 }

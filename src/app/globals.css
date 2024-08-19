@@ -576,4 +576,23 @@ nav{
     #000000 130%, 
     #000000 100%);
 }
+.investment-bridge-growth-bg {
+  background: transparent conic-gradient(from 66deg at 50% 0%, #000000 0.00%, #000000 34.82%, #017600 73.26%, #03FF00 100.00%) 0% 0% no-repeat padding-box;
+}
+.circle {
+  position: relative;
+}
+
+.circle::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  width: 300px; /* Adjust the size */
+  height: 300px; /* Adjust the size */
+  border: 5px solid #00ff03; /* Change border color based on tab */
+  z-index: -1;
+}
 /* Investors Page CSS Ends */
