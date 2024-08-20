@@ -29,7 +29,7 @@ export const StorageSolution = () => {
                 </div>
                 {storageSolutions.map((storageSolution, index) => (
                     <SolutinoDetails
-                        index={index}
+                        key={index}
                         count={storageSolution.count}
                         heading={storageSolution.heading}
                         description={storageSolution.description}
