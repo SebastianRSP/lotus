@@ -41,6 +41,7 @@ module.exports = {
         'button': '6px 6px 0px #00000040',
         'button-green': '6px 6px 0px #03FF00',
         'white': '2px 2px 0px #fff',
+        'black': '2px 2px 0px #000',
         'wrapper-button-green': '7px 7px 0px #03FF00',
         'button-green-hover': '4px 4px 0px #03ff00;',
         'inner': 'inset 4px 4px 0px #00000040',
@@ -78,6 +79,8 @@ module.exports = {
         'space60': '0.6px',
         'space00': '0px',
         'space90': '0.9px',
+        'space12': '1.2px',
+        'space18': '1.8px',
         'space-25': '-25px',
         'space-346': '3.46px'
       },

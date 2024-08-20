@@ -51,7 +51,7 @@ export const InvertmentBridgeGrowth = () => {
                     </div>
                     <div className="py-32 px-40 w-auto">
                         <div>
-                            <div className="bg-black relative bg-no-repeat border border-white shadow-white">
+                            <div className="bg-black relative w-fit bg-no-repeat border border-white shadow-white">
                                 <div className="flex ">
                                     {growthTabs.map((growthtab, index) => (
                                         <div key={index}
