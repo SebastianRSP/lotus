@@ -7,8 +7,8 @@ import candleChart from "../../../../../public/animations/candle-chart.json";
 
 export const MessageForInvestors = () => {
     return (
-        <div className="bg-black px-24 py-24">
-            <div className="relative">
+        <div className="bg-black px-24">
+            <div className="relative -top-60">
                 <div className="absolute inset-0 bg-black border border-white translate-x-[3.5px] translate-y-[3.5px]" ></div>
                 <div className="bg-white relative h-auto z-10">
                     <div className="grid grid-cols-2 px-16 py-16">

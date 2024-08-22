@@ -5,12 +5,16 @@ import puzzleAnimation from '../../../../../public/animations/puzzle.json';
 import boxesAnimation from '../../../../../public/animations/boxes.json';
 import mountainAnimation from '../../../../../public/animations/mountain.json';
 import premiumFeaturesAnimation from '../../../../../public/animations/premium-features.json';
+import bubbleBg from '../../../../../public/animations/bubbles-bg.json';
 
 
 export const DetailCards = () => {
     return (
-        <div className="bg-black text-white h-auto bg-opacity-100 bg-no-repeat bg-origin-padding filter backdrop-blur-lg">
-            <div className="px-40 py-20">
+        <div className="relative bg-black text-white h-auto bg-opacity-100 bg-no-repeat bg-origin-padding filter backdrop-blur-lg">
+            <div className="absolute inset-0 z-0 filter backdrop-blur-lg">
+                <Lottie animationData={bubbleBg} loop={true}/>
+            </div>
+            <div className="relative px-40 pt-20 pb-96 z-10 filter backdrop-blur-lg">
                 <div className="grid grid-cols-2 items-center py-20">
                     <div className="w-48 h-48 relative flex justify-center items-end justify-self-center">
                         <div className="absolute">
