@@ -306,6 +306,12 @@ nav{
 .h-100ch {
   height: 110ch;
 }
+.h-120ch {
+  height: 120ch;
+}
+.h-150ch {
+  height: 150ch;
+}
 .w-available{
   width: -webkit-fill-available;
 }

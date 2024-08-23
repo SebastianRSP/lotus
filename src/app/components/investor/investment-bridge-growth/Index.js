@@ -155,7 +155,7 @@ export const InvertmentBridgeGrowth = () => {
 
     return (
         <div className="investment-bridge-growth-bg h-auto relative">
-            <div className="flex justify-center h-100ch relative py-11">
+            <div className="flex justify-center lg:h-100ch md:h-120ch h-150ch relative py-11">
                 <div className="w-11/12 bg-transparent relative overflow-hidden">
                     <Lottie animationData={bridgeGrowthMap} loop={true} className="opacity-10 absolute w-available h-fit" />
                 </div>
@@ -181,31 +181,31 @@ export const InvertmentBridgeGrowth = () => {
                             <span className="font-normal text-green">2,000,000,000 $SEND</span>
                         </h4>
                     </div>
-                    <div className="py-16 md:px-40 px-9 w-auto">
-                        <div >
-                            <div className="lg:bg-black bg-transparent relative w-fit bg-no-repeat lg:border border-0 border-white lg:shadow-white shadow-none">
-                                <div className="flex lg:flex-nowrap flex-wrap justify-center lg:gap-0 gap-2">
-                                    {growthTabs.map((growthtab, index) => (
-                                        <div key={index}
-                                            onClick={() => setActiveIndex(index)}
-                                            className={`
+                    <div className="py-16 lg:px-40 md:px-20 px-9 w-auto">
+                        <div className="lg:bg-black bg-transparent relative w-fit bg-no-repeat lg:border border-0 border-white lg:shadow-white shadow-none">
+                            <div className="flex lg:flex-nowrap flex-wrap justify-center lg:gap-0 gap-2">
+                                {growthTabs.map((growthtab, index) => (
+                                    <div key={index}
+                                        onClick={() => setActiveIndex(index)}
+                                        className={`
                                                 ${activeIndex === index ? 'bg-green border-black border' : 'text-white'} 
                                                 xl:py-3 lg:py-2 py-0.5 xl:px-5 lg:px-3 px-5 text-black border lg:border-black border-white lg:shadow-none shadow-white cursor-pointer xl:text-lg lg:text-base text-sm tracking-space90
                                             `}>
-                                            <span className="uppercase ">
-                                                {growthtab}
-                                            </span>
-                                        </div>
-                                    ))}
-                                </div>
+                                        <span className="uppercase ">
+                                            {growthtab}
+                                        </span>
+                                    </div>
+                                ))}
                             </div>
-                            {/* <div className="pt-40 pb-10">
-                                <div className="grid grid-cols-2 justify-center items-start">
+                        </div>
+                        <div className="">
+                            <div className="lg:pt-40 pt-20 pb-10">
+                                <div className="grid lg:grid-cols-2 grid-cols-1 justify-center items-start">
                                     <div className="flex justify-center">
                                         <div className="relative w-96 h-96 flex justify-center items-center">
                                             <Chart
                                                 chartType="PieChart"
-                                                className="bg-transparent w-43 h-43"
+                                                className="bg-transparent lg:w-43 lg:h-43 w-35 h-35"
                                                 data={[
                                                     ["", "Percentage"],
                                                     ["", 20],
@@ -228,32 +228,32 @@ export const InvertmentBridgeGrowth = () => {
                                                     slices: generateSlices(),
                                                 }}
                                             />
-                                            <div className="absolute w-80 h-80 bg-transparent rounded-full flex justify-center items-center border-[5px] border-black">
+                                            <div className="absolute lg:w-80 w-64 lg:h-80 h-64 bg-transparent rounded-full flex justify-center items-center border-[5px] border-black">
                                                 <div className="absolute inset-0 bg-gray-circle opacity-25 rounded-full"></div>
-                                                <h4 className="uppercase text-7xl font-bold flex flex-col relative">
+                                                <h4 className="uppercase lg:text-7xl text-5xl font-bold flex flex-col relative">
                                                     {percentage}%
-                                                    <span className="text-4xl font-normal text-green">{title}</span>
+                                                    <span className="lg:text-4xl text-2xl font-normal text-green">{title}</span>
                                                 </h4>
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="border-l-2 border-green px-8 flex flex-col justify-between gap-5 h-fit">
+                                    <div className="lg:border-l-2 border-l-0 border-green lg:px-8 px-0 flex lg:flex-col md:flex-row flex-col justify-between gap-5 h-fit ">
                                         {detail.map((item, index) => (
-                                            <div key={index} className="grid grid-cols-5 text-left">
-                                                <div className="col-span-2">
-                                                    <h4 className="text-32 w-5/6 leading-10 text-green flex flex-col">
+                                            <div key={index} className="lg:border-none border-l-2 lg:px-0 px-3 border-green grid lg:grid-cols-5 grid-cols-1 lg:gap-0 gap-3 text-left">
+                                                <div className="lg:col-span-2">
+                                                    <h4 className="text-32 xl:w-5/6 w-full leading-10 text-green flex flex-col">
                                                         {item.title}
                                                         <span className="font-bold text-white">{item.percentage}</span>
                                                     </h4>
                                                 </div>
-                                                <p className="col-span-3">{item.description}</p>
+                                                <p className="lg:col-span-3">{item.description}</p>
                                             </div>
                                         ))}
                                     </div>
                                 </div>
-                            </div> */}
+                            </div>
                         </div>
-                        {/* <DefaultBlack btnType={'button'} btnText={'Load More'} /> */}
+                        <DefaultBlack btnType={'button'} btnText={'Load More'} />
                     </div>
                 </div>
             </div>

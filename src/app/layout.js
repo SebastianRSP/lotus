@@ -41,7 +41,7 @@ export default function RootLayout({ children }) {
             <Navbar />
           </header>
           <div id="wrapper">
-            <Loading />
+            {/* <Loading /> */}
             <div id="smooth-content">
               <main ref={containerRef}>
                 {children}

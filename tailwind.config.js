@@ -68,12 +68,14 @@ module.exports = {
       height: {
         'inherit': 'inherit',
         '121': '121px',
+        '35': '35rem',
         '43': '43rem',
       },
       width: {
         '121': '121px',
         '21r': '21rem',
         '160': '16rem',
+        '35': '35rem',
         '43': '43rem',
         '50' : '50rem'
       },

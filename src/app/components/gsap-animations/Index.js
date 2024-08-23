@@ -13,7 +13,7 @@ export const initAnimations = () => {
 
     console.log(hasPlayed, 'hasPlayed')
 
-    // if (loader) {
+    if (loader) {
         if (!hasPlayed) {
             sessionStorage.setItem('isLoaderPlayed', true);
 
@@ -108,17 +108,17 @@ export const initAnimations = () => {
             })
         }
 
-    // }else{
-    //     console.log('No Loader')
-    //     gsap.timeline({
-    //         onComplete: () => {
-    //             gsap.delayedCall(0, () => {
-    //                 // Initialize main animations after loading completes
-    //                 initMainAnimations();
-    //             });
-    //         }
-    //     })
-    // }
+    }else{
+        console.log('No Loader')
+        gsap.timeline({
+            onComplete: () => {
+                gsap.delayedCall(0, () => {
+                    // Initialize main animations after loading completes
+                    initMainAnimations();
+                });
+            }
+        })
+    }
 
 
 
