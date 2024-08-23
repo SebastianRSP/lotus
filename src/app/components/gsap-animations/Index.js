@@ -13,99 +13,113 @@ export const initAnimations = () => {
 
     console.log(hasPlayed, 'hasPlayed')
 
-    if (!hasPlayed) {
-        sessionStorage.setItem('isLoaderPlayed', true);
+    if (loader) {
+        if (!hasPlayed) {
+            sessionStorage.setItem('isLoaderPlayed', true);
 
-        // Loading animation
-        const notice = document.querySelector('.notice');
-        const noticeWrapper = document.querySelector('.notice__wrapper');
-        const animLinePercentage = notice.querySelector('.anim-line-percentage');
+            // Loading animation
+            const notice = document.querySelector('.notice');
+            const noticeWrapper = document.querySelector('.notice__wrapper');
+            const animLinePercentage = notice.querySelector('.anim-line-percentage');
 
-        // Create a GSAP timeline for loading animation
-        const loadingTimeline = gsap.timeline({
-            onComplete: () => {
-                gsap.delayedCall(3.8, () => {
-                    // Initialize main animations after loading completes
-                    initMainAnimations();
-                });
-            }
-        });
-
-        // Loading progress animation
-        loadingTimeline
-            .to(notice, { '--horizontal': '0%', duration: 0.8, ease: 'power2.inOut' })
-            .to(notice, { '--vertical': '0%', duration: 0.8, ease: 'power2.inOut' })
-            .to(notice, { '--width': '100%', duration: 0.8, ease: 'power2.inOut' })
-            .to(notice, { '--height': '100%', duration: 0.8, ease: 'power2.inOut' })
-            .add(() => {
-                // Create a GSAP timeline for shadow effect
-                gsap.timeline()
-                    .add(() => {
-                        // Ensure the shadow class is added
-                        noticeWrapper.classList.add('notice__wrapper-shadow');
-                    })
-                    .to(noticeWrapper, {
-                        opacity: 1,
-                        delay: 1, // Delay before starting the fade-in
-                        duration: 0.8, // Duration for fade-in
-                        ease: 'power2.inOut',
-                        onStart: () => {
-                            // Ensure that opacity changes are visible with the shadow effect
-                            noticeWrapper.style.transition = 'opacity 0.8s ease-in-out, box-shadow 0.8s ease-in-out';
-                        }
-                    });
-            })
-            .add(() => {
-                notice.classList.add('is-visible');
-            })
-            .to(animLinePercentage, {
-                innerHTML: "100%",
-                delay: 2,
-                duration: 2,
-                onUpdate: function () {
-                    animLinePercentage.innerHTML = `${Math.round(this.progress() * 100)}%`;
-                }
-            })
-            .to(noticeWrapper, {
-                opacity: 0,
-                delay: 0.5,
-                duration: 0.5, // Duration for fade out
-                ease: 'power2.inOut', // Smooth transition for fade-out
+            // Create a GSAP timeline for loading animation
+            const loadingTimeline = gsap.timeline({
                 onComplete: () => {
-                    // Remove the visibility class after fade-out completes
-                    noticeWrapper.classList.remove('is-visible');
-                    // Remove shadow effect after fade-out completes
-                    noticeWrapper.classList.remove('notice__wrapper-shadow');
+                    gsap.delayedCall(3.8, () => {
+                        // Initialize main animations after loading completes
+                        initMainAnimations();
+                    });
+                }
+            });
+
+            // Loading progress animation
+            loadingTimeline
+                .to(notice, { '--horizontal': '0%', duration: 0.8, ease: 'power2.inOut' })
+                .to(notice, { '--vertical': '0%', duration: 0.8, ease: 'power2.inOut' })
+                .to(notice, { '--width': '100%', duration: 0.8, ease: 'power2.inOut' })
+                .to(notice, { '--height': '100%', duration: 0.8, ease: 'power2.inOut' })
+                .add(() => {
+                    // Create a GSAP timeline for shadow effect
+                    gsap.timeline()
+                        .add(() => {
+                            // Ensure the shadow class is added
+                            noticeWrapper.classList.add('notice__wrapper-shadow');
+                        })
+                        .to(noticeWrapper, {
+                            opacity: 1,
+                            delay: 1, // Delay before starting the fade-in
+                            duration: 0.8, // Duration for fade-in
+                            ease: 'power2.inOut',
+                            onStart: () => {
+                                // Ensure that opacity changes are visible with the shadow effect
+                                noticeWrapper.style.transition = 'opacity 0.8s ease-in-out, box-shadow 0.8s ease-in-out';
+                            }
+                        });
+                })
+                .add(() => {
+                    notice.classList.add('is-visible');
+                })
+                .to(animLinePercentage, {
+                    innerHTML: "100%",
+                    delay: 2,
+                    duration: 2,
+                    onUpdate: function () {
+                        animLinePercentage.innerHTML = `${Math.round(this.progress() * 100)}%`;
+                    }
+                })
+                .to(noticeWrapper, {
+                    opacity: 0,
+                    delay: 0.5,
+                    duration: 0.5, // Duration for fade out
+                    ease: 'power2.inOut', // Smooth transition for fade-out
+                    onComplete: () => {
+                        // Remove the visibility class after fade-out completes
+                        noticeWrapper.classList.remove('is-visible');
+                        // Remove shadow effect after fade-out completes
+                        noticeWrapper.classList.remove('notice__wrapper-shadow');
+                    }
+                })
+                .add(() => {
+                    // Wait for 1 second before starting the revert animation
+                    gsap.delayedCall(0.5, () => {
+                        // Revert to original styles, increasing vertical first and then horizontal
+                        gsap.timeline()
+                            .to(notice, { '--height': '0%', duration: 0.8, ease: 'power2.inOut' })
+                            .to(notice, { '--width': '0%', duration: 0.8, ease: 'power2.inOut' })
+                            .to(notice, { '--vertical': '48%', duration: 0.8, ease: 'power2.inOut' })
+                            .to(notice, { '--horizontal': '50%', duration: 0.8, ease: 'power2.inOut' })
+                            .add(() => {
+                                // Hide the loader and show the main content with a delay of 1 second
+                                gsap.delayedCall(0.5, () => {
+                                    loader.classList.add('loader--no-bg');
+                                });
+                            });
+                    });
+                });
+        } else {
+            gsap.timeline({
+                onComplete: () => {
+                    gsap.delayedCall(0, () => {
+                        // Initialize main animations after loading completes
+                        loader.classList.add('loader--no-bg');
+                        initMainAnimations();
+                    });
                 }
             })
-            .add(() => {
-                // Wait for 1 second before starting the revert animation
-                gsap.delayedCall(0.5, () => {
-                    // Revert to original styles, increasing vertical first and then horizontal
-                    gsap.timeline()
-                        .to(notice, { '--height': '0%', duration: 0.8, ease: 'power2.inOut' })
-                        .to(notice, { '--width': '0%', duration: 0.8, ease: 'power2.inOut' })
-                        .to(notice, { '--vertical': '48%', duration: 0.8, ease: 'power2.inOut' })
-                        .to(notice, { '--horizontal': '50%', duration: 0.8, ease: 'power2.inOut' })
-                        .add(() => {
-                            // Hide the loader and show the main content with a delay of 1 second
-                            gsap.delayedCall(0.5, () => {
-                                loader.classList.add('loader--no-bg');
-                            });
-                        });
-                });
-            });
-    } else {
+        }
+
+    }else{
+        console.log('No Loader')
         gsap.timeline({
             onComplete: () => {
                 gsap.delayedCall(0, () => {
                     // Initialize main animations after loading completes
-                    loader.classList.add('loader--no-bg');
                     initMainAnimations();
                 });
             }
         })
     }
+
 
 
 

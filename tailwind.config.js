@@ -23,6 +23,7 @@ module.exports = {
         '30': '1.875rem',
         '26': '1.625rem',
         '32': '2rem',
+        '80': '4rem',
         '90': '5rem',
         '100': '6.25rem',
         '118': '7.375rem',
@@ -67,12 +68,13 @@ module.exports = {
       height: {
         'inherit': 'inherit',
         '121': '121px',
-        '43': '43rem'
+        '43': '43rem',
       },
       width: {
         '121': '121px',
         '21r': '21rem',
         '160': '16rem',
+        '43': '43rem',
         '50' : '50rem'
       },
       letterSpacing: {
@@ -105,6 +107,7 @@ module.exports = {
       padding: {
         '0.2': '0.2rem',
         '0.3': '0.3rem',
+        '0.5': '0.5rem',
         '1': '1rem',
         '18': '4.5rem',
         '38': '38px',

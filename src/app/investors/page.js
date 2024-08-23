@@ -9,17 +9,14 @@ import { StorageSolution } from "../components/investor/storage-solution/Index";
 export default function Investors() {
     return (
         <>
-            <div className="xl:px-40 px-9 investor-hero-bg opacity-100">
-                <InvestmentHero />
-            </div>
-            <InvesterBannerText />
+            <InvestmentHero />
             <InvertmentBridgeGrowth />
-            <StorageSolution />
+            {/* <StorageSolution />
             <PoweredBySend />
             <hr className=" border-green border-[2.5px]"/>
             <DetailCards />
             <hr className=" border-green border-[2.5px]"/>
-            <MessageForInvestors />
+            <MessageForInvestors /> */}
         </>
     )
 }

@@ -12,7 +12,7 @@ export const DetailCards = () => {
     return (
         <div className="relative bg-black text-white h-auto bg-opacity-100 bg-no-repeat bg-origin-padding filter backdrop-blur-lg">
             <div className="absolute inset-0 z-0 filter backdrop-blur-lg">
-                <Lottie animationData={bubbleBg} loop={true}/>
+                <Lottie animationData={bubbleBg} loop={true} className="h-available"/>
             </div>
             <div className="relative px-40 pt-20 pb-96 z-10 filter backdrop-blur-lg">
                 <div className="grid grid-cols-2 items-center py-20">

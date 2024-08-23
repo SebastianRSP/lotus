@@ -303,6 +303,9 @@ nav{
 .h-available {
   height: -webkit-fill-available;
 }
+.h-100ch {
+  height: 110ch;
+}
 .w-available{
   width: -webkit-fill-available;
 }
@@ -600,5 +603,13 @@ nav{
   height: 300px; /* Adjust the size */
   border: 5px solid #00ff03; /* Change border color based on tab */
   z-index: -1;
+}
+#reactgooglegraph-1 svg g path{
+  stroke: transparent;
+  stroke-width: 0px;
+}
+#reactgooglegraph-1 svg{
+  height: inherit;
+  width: inherit;
 }
 /* Investors Page CSS Ends */

@@ -2,6 +2,8 @@
 
 import Lottie from "lottie-react";
 import LoadingBar from '../../../../../public/animations/loading-bar.json';
+import sendataLogo from '../../../../../public/investor-assets/sendata-logo.png';
+import Image from "next/image";
 
 export const PoweredBySend = () => {
     return (
@@ -17,8 +19,15 @@ export const PoweredBySend = () => {
                     </div>
                     <div className="text-xl font-extralight w-full">
                         Powered by
-                        <span className="font-medium">
-                            {" "}Send<sup>TM</sup>
+                        <span className="font-medium relative">
+                            {" "}Send
+                            <sup className="absolute -top-1 w-full">
+                                <Image
+                                    src={sendataLogo}
+                                    width={39}
+                                    height={31}
+                                />
+                            </sup>
                         </span>
                     </div>
                 </div>
