@@ -16,7 +16,7 @@ export const DetailCards = () => {
             </div>
             <div className="relative xl:px-40 lg:px-20 px-9 lg:pt-20 pt-28 lg:pb-96 pb-30 z-10 filter backdrop-blur-lg">
                 <div className="grid md:grid-cols-2 grid-cols-1 lg:gap-0 gap-10 items-center md:py-20 py-10">
-                    <div className="w-48 h-48 md:my-0 my-32 relative flex justify-center items-end justify-self-center lg:order-1 md:order-2 order-2">
+                    <div className="w-48 h-48 md:my-0 sm:my-32 my-3 relative flex justify-center items-end justify-self-center lg:order-1 md:order-2 order-2">
                         <div className="absolute">
                             <Lottie animationData={puzzleAnimation} loop={true} />
                         </div>
@@ -35,14 +35,14 @@ export const DetailCards = () => {
                             <p className="text-lg font-light">Access to advanced tools and services that enable users to fully participate in the data economy. This includes an the AI Refinement Engine for data analysis and engaging in the Monetization Marketplace, where data can be transformed into valuable assets.</p>
                         </div>
                     </div>
-                    <div className="w-48 h-48 md:my-0 my-32 relative flex justify-center items-end justify-self-center lg:order-2 md:order-1 order-2">
+                    <div className="w-48 h-48 md:my-0 sm:my-32 my-3 relative flex justify-center items-end justify-self-center lg:order-2 md:order-1 order-2">
                         <div className="absolute">
                             <Lottie animationData={boxesAnimation} loop={true} />
                         </div>
                     </div>
                 </div>
                 <div className="grid md:grid-cols-2 grid-cols-1 lg:gap-0 gap-10 items-center md:py-20 py-0">
-                    <div className="w-48 h-48 md:my-0 my-32 relative flex justify-center items-end justify-self-center lg:order-1 md:order-2 order-2">
+                    <div className="w-48 h-48 md:my-0 sm:my-32 my-3 relative flex justify-center items-end justify-self-center lg:order-1 md:order-2 order-2">
                         <div className="absolute">
                             <Lottie animationData={mountainAnimation} loop={true} />
                         </div>
@@ -61,7 +61,7 @@ export const DetailCards = () => {
                             <p className="text-lg font-light">Elevate your engagement with $SEND by unlocking premium tools and gaining exclusive access to special webinars, advanced analytics, and unique events, enhancing both value and experience.</p>
                         </div>
                     </div>
-                    <div className="w-48 h-48 md:my-0 my-32 relative flex justify-center items-end justify-self-center lg:order-2 md:order-1 order-2">
+                    <div className="w-48 h-48 md:my-0 sm:my-32 my-3 relative flex justify-center items-end justify-self-center lg:order-2 md:order-1 order-2">
                         <div className="absolute">
                             <Lottie animationData={premiumFeaturesAnimation} loop={true} />
                         </div>

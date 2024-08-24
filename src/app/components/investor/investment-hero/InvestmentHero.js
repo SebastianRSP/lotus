@@ -16,7 +16,7 @@ export const InvestmentHero = () => {
                         <span className="bg-green box-border uppercase font-bold text-black">$Send</span>
                         {" "}token  <br /> is the lifeblood <br />of 
                         <span className="font-bold">
-                            {" "}The Bridge <sup>TM</sup>
+                            {" "}The Bridge<sup>TM</sup>
                         </span><br />  ecosystem
                     </h1>
                     <p className="2xl:text-xl lg:text-lg text-md xl:font-light font-extralight 2xl:w-10/12 xl:w-full lg:w-10/12 md:w-full w-11/12">
