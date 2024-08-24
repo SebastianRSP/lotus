@@ -1,6 +1,5 @@
 'use client'
 
-import { DefaultBtn } from "../../buttons/DefaultBtn";
 import Lottie from "lottie-react";
 import investerHero from '../../../../../public/animations/investor-hero.json';
 import { InvesterBannerText } from "../investor-banner-text/Index";

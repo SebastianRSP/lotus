@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
-export const NavLink = ({ navLinkName, navLink, extras, icon, iconImage, key, font }) => {
+export const NavLink = ({ navLinkName, navLink, extras, icon, iconImage, id, font }) => {
     const [isToggled, setIsToggled] = useState(false);
 
     const handleMouseEnter = () => {
@@ -21,7 +21,7 @@ export const NavLink = ({ navLinkName, navLink, extras, icon, iconImage, key, fo
             {/* ${isToggled ? '!bg-black text-green ring-1 ring-green' : ''}  */}
             <Link
                 href={navLink} 
-                key={key}
+                key={id}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
                 className={`${extras} h-inherit flex items-center justify-center`}

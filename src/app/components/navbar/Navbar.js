@@ -67,6 +67,7 @@ export const Navbar = () => {
                             {navLinksBefore.map((navLink, index) => (
                                 <NavLink
                                     key={index}
+                                    id={index}
                                     navLinkName={navLink.navLinkName}
                                     navLink={navLink.navLink}
                                     extras={navLink.extras}
@@ -97,6 +98,7 @@ export const Navbar = () => {
                             {navLinksAfter.map((navLink, index) => (
                                 <NavLink
                                     key={index}
+                                    id={index}
                                     navLinkName={navLink.navLinkName}
                                     navLink={navLink.navLink}
                                     extras={navLink.extras}
@@ -107,6 +109,7 @@ export const Navbar = () => {
                                 {navIcons.map((navIcon, index) => (
                                     <NavLink
                                         key={index}
+                                        id={index}
                                         navLinkName={navIcon.navLinkName}
                                         navLink={navIcon.navLink}
                                         icon={navIcon.icon}
@@ -189,6 +192,7 @@ export const Navbar = () => {
                             {mobileNavIcons.map((navIcon, index) => (
                                 <NavLink
                                     key={index}
+                                    id={index}
                                     navLinkName={navIcon.navLinkName}
                                     navLink={navIcon.navLink}
                                     icon={navIcon.icon}

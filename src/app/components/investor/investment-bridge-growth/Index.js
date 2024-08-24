@@ -4,7 +4,7 @@ import Lottie from "lottie-react";
 import Image from "next/image";
 import investerHero from '../../../../../public/animations/ethereum-crypto.json';
 import sendataLogo from '../../../../../public/investor-assets/sendata-logo.png';
-import bridgeGrowthMap from '../../../../../public/animations/bridge-growth-map.json';
+// import bridgeGrowthMap from '../../../../../public/animations/bridge-growth-map.json';
 import { useState } from "react";
 import { DefaultBlack } from "../../buttons/DefaultBlack";
 import { Chart } from "react-google-charts";
@@ -156,16 +156,16 @@ export const InvertmentBridgeGrowth = () => {
     return (
         <div className="investment-bridge-growth-bg h-auto relative">
             <div className="flex justify-center lg:h-100ch md:h-120ch h-150ch relative py-11">
-                <div className="w-11/12 bg-transparent relative overflow-hidden">
+                {/* <div className="w-11/12 bg-transparent relative overflow-hidden">
                     <Lottie animationData={bridgeGrowthMap} loop={true} className="opacity-10 absolute w-available h-fit" />
-                </div>
+                </div> */}
             </div>
             <div className="py-11 w-full absolute inset-0 flex justify-center items-start">
                 <div className="flex flex-col justify-center items-center text-white text-center">
                     <h3 className="2xl:text-118 xl:text-100 lg:text-90 md:text-80 text-5xl  font-extrabold border-b-[0.5px] border-hr relative">
                         Send
                         <sup className="absolute -top-5  w-full">
-                            <Image src={sendataLogo} width={352} height={102} />
+                            <Image src={sendataLogo} alt="send data logo" width={352} height={102} />
                         </sup>
                     </h3>
                     <p className="2xl:text-2xl lg:text-xl text-md mt-5 md:px-0 px-9">

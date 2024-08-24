@@ -31,7 +31,6 @@ export const CaseStudy = () => {
                             <div className="bg-gray-light flex justify-center items-center md:py-20 py-16">
                                 <Image
                                     src={caseStudy.caseStudyImage}
-                                    className=""
                                     alt="default image icon"
                                     width={100}
                                     height={100}
