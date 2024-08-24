@@ -36,7 +36,7 @@ const mobileNavIcons = [
 ];
 
 const mobileMenu = [
-    { navLinkName: 'HOME', navLink: '#', extras: '' },
+    { navLinkName: 'HOME', navLink: '/', extras: '' },
     { navLinkName: 'Whitepaper', navLink: '#', extras: '' },
     { navLinkName: 'Investors', navLink: '/investors', extras: '' },
     { navLinkName: 'About Us', navLink: '#', extras: '' },
