@@ -14,7 +14,7 @@ export const DetailCards = () => {
             <div className="absolute inset-0 z-0 filter backdrop-blur-lg">
                 <Lottie animationData={bubbleBg} loop={true} className="h-available" />
             </div>
-            <div className="relative xl:px-40 lg:px-20 px-9 lg:pt-20 pt-28 pb-96 z-10 filter backdrop-blur-lg">
+            <div className="relative xl:px-40 lg:px-20 px-9 lg:pt-20 pt-28 lg:pb-96 pb-30 z-10 filter backdrop-blur-lg">
                 <div className="grid md:grid-cols-2 grid-cols-1 lg:gap-0 gap-10 items-center md:py-20 py-10">
                     <div className="w-48 h-48 md:my-0 my-32 relative flex justify-center items-end justify-self-center lg:order-1 md:order-2 order-2">
                         <div className="absolute">
@@ -67,39 +67,6 @@ export const DetailCards = () => {
                         </div>
                     </div>
                 </div>
-                {/* <div className="grid grid-cols-2 items-center py-20">
-                    <div className="text-left flex flex-col gap-6">
-                        <h3 className="text-4xl text-green font-normal">Powering the data economy</h3>
-                        <p className="text-lg font-light">Access to advanced tools and services that enable users to fully participate in the data economy. This includes an the AI Refinement Engine for data analysis and engaging in the Monetization Marketplace, where data can be transformed into valuable assets.</p>
-                    </div>
-                    <div className="w-48 h-48 relative flex justify-center items-end justify-self-center">
-                        <div className="absolute">
-                            <Lottie animationData={boxesAnimation} loop={true} />
-                        </div>
-                    </div>
-                </div>
-                <div className="grid grid-cols-2 items-center py-20">
-                    <div className="w-48 h-48 relative flex justify-center items-end justify-self-center">
-                        <div className="absolute">
-                            <Lottie animationData={mountainAnimation} loop={true} />
-                        </div>
-                    </div>
-                    <div className="text-left flex flex-col gap-6">
-                        <h3 className="text-4xl text-green font-normal">Incentivising stakeholders and contributors</h3>
-                        <p className="text-lg font-light">The $SEND economy rewards top-performing storage providers, offers developers access to tools and APIs, and provides long-term value for investors. This ecosystem fosters collaboration, drives technological advancements, and ensures a robust and dynamic platform.</p>
-                    </div>
-                </div>
-                <div className="grid grid-cols-2 items-center py-20">
-                    <div className="text-left flex flex-col gap-6">
-                        <h3 className="text-4xl text-green font-normal">Premium features & exclusive access</h3>
-                        <p className="text-lg font-light">Elevate your engagement with $SEND by unlocking premium tools and gaining exclusive access to special webinars, advanced analytics, and unique events, enhancing both value and experience.</p>
-                    </div>
-                    <div className="w-48 h-48 relative flex justify-center items-end justify-self-center">
-                        <div className="absolute">
-                            <Lottie animationData={premiumFeaturesAnimation} loop={true} />
-                        </div>
-                    </div>
-                </div> */}
             </div>
         </div>
     )

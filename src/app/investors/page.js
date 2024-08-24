@@ -15,8 +15,8 @@ export default function Investors() {
             <PoweredBySend />
             <hr className=" border-green border-[2.5px]"/>
             <DetailCards />
-            {/* <hr className=" border-green border-[2.5px]"/>
-            <MessageForInvestors /> */}
+            <hr className=" border-green border-[2.5px]"/>
+            <MessageForInvestors />
         </>
     )
 }
