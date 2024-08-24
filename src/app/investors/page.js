@@ -13,9 +13,9 @@ export default function Investors() {
             <InvertmentBridgeGrowth />
             <StorageSolution />
             <PoweredBySend />
-            {/* <hr className=" border-green border-[2.5px]"/>
-            <DetailCards />
             <hr className=" border-green border-[2.5px]"/>
+            <DetailCards />
+            {/* <hr className=" border-green border-[2.5px]"/>
             <MessageForInvestors /> */}
         </>
     )
