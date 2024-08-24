@@ -14,11 +14,11 @@ export const PoweredBySend = () => {
                     <h3 className="md:text-4xl sm:text-2xl text-lg font-extralight ">
                         The largest data migration in history.
                     </h3>
-                    <div className="grid md:grid-cols-7 sm:grid-cols-9 grid-cols-8 justify-end items-center gap-3 mt-2">
-                        <div className="h-available md:col-span-5 sm:col-span-6 col-span-4 relative overflow-hidden flex justify-center items-center">
+                    <div className="grid md:grid-cols-7 sm:grid-cols-9 grid-cols-7 justify-end items-center gap-3 mt-2">
+                        <div className="h-available md:col-span-5 sm:col-span-6 col-span-5 relative overflow-hidden flex justify-center items-center">
                             <Lottie animationData={LoadingBar} loop={true} className="absolute w-max" />
                         </div>
-                        <div className="md:text-xl text-md font-extralight md:col-span-2 sm:col-span-3 col-span-4">
+                        <div className="md:text-xl text-md font-extralight md:col-span-2 sm:col-span-3 col-span-2">
                             Powered by
                             <span className="font-medium relative">
                                 {" "}Send
