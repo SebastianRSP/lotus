@@ -19,8 +19,8 @@ export const MessageForInvestors = () => {
                             </div>
                         </div>
                         <div className="flex flex-col md:gap-4 gap-3 lg:my-0 my-5">
-                            <h3 className="lg:text-5xl md:text-3xl text-2xl font-light lg:leading-56 leading-26">A message for our investors</h3>
-                            <p className="md:text-2xl text-lg">
+                            <h3 className="lg:text-5xl md:text-3xl text-2xl lg:font-light font-semibold lg:leading-56 leading-26">A message for our investors</h3>
+                            <p className="md:text-2xl text-lg lg:font-normal font-light">
                                 Lorem ipsum dolor sit amet,
                                 consectetur adipiscing elit,
                                 sed do eiusmod tempor incididunt ut
