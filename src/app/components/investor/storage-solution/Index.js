@@ -20,21 +20,23 @@ const storageSolutions = [
 
 export const StorageSolution = () => {
     return (
-        <div className="px-32 py-28">
-            <div className="grid grid-cols-4 gap-10">
-                <div>
+        <div className="xl:px-32 lg:px-20 px-9 lg:py-28 py-9">
+            <div className="grid lg:grid-cols-4 grid-cols-none gap-10 lg:items-start items-center">
+                <div className="lg:text-left text-center">
                     <h4 className="bg-green text-black text-2xl inline px-2">
-                        Why tokenize a storage solution?
+                        Why tokenize a <br /> storage solution?
                     </h4>
                 </div>
-                {storageSolutions.map((storageSolution, index) => (
-                    <SolutinoDetails
-                        key={index}
-                        count={storageSolution.count}
-                        heading={storageSolution.heading}
-                        description={storageSolution.description}
-                    />
-                ))}
+                <div className="lg:col-span-3 lg:contents flex gap-3 md:flex-nowrap flex-wrap">
+                    {storageSolutions.map((storageSolution, index) => (
+                        <SolutinoDetails
+                            key={index}
+                            count={storageSolution.count}
+                            heading={storageSolution.heading}
+                            description={storageSolution.description}
+                        />
+                    ))}
+                </div>
             </div>
         </div>
     )

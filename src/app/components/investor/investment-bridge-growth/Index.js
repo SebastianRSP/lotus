@@ -155,7 +155,7 @@ export const InvertmentBridgeGrowth = () => {
 
     return (
         <div className="investment-bridge-growth-bg h-auto relative">
-            <div className="flex justify-center lg:h-100ch md:h-120ch h-150ch relative py-11">
+            <div className="flex justify-center lg:h-105ch md:h-120ch h-150ch relative py-11">
                 {/* <div className="w-11/12 bg-transparent relative overflow-hidden">
                     <Lottie animationData={bridgeGrowthMap} loop={true} className="opacity-10 absolute w-available h-fit" />
                 </div> */}

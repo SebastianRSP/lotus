@@ -11,8 +11,8 @@ export default function Investors() {
         <>
             <InvestmentHero />
             <InvertmentBridgeGrowth />
-            {/* <StorageSolution />
-            <PoweredBySend />
+            <StorageSolution />
+            {/* <PoweredBySend />
             <hr className=" border-green border-[2.5px]"/>
             <DetailCards />
             <hr className=" border-green border-[2.5px]"/>
