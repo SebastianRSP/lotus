@@ -3,8 +3,6 @@
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import "./components/fontawsome";
-import { Footer } from "./components/footer/Index";
-import { Navbar } from "./components/navbar/Navbar";
 import Cursor from "./components/cursor/Index";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
@@ -13,6 +11,8 @@ import { useEffect, useRef } from "react";
 import { initAnimations } from './components/gsap-animations/Index';
 import { ScrollTrigger } from "gsap/all";
 import { Loading } from "./components/loading/Index";
+import { InvestorNavbar } from "./components/navbar/investor/InvestorNavbar";
+import { Navbar } from "./components/navbar/Navbar";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
     if (typeof window !== 'undefined') {
       console.log('Loading')
       initAnimations();
-      
+
       // Clean up ScrollTrigger instances on component unmount
       return () => {
         ScrollTrigger.getAll().forEach(trigger => trigger.kill());
@@ -35,24 +35,28 @@ export default function RootLayout({ children }) {
     }
   }, [pathname]);
 
+  const isInvestorsPage = pathname.startsWith("/investors");
+
   return (
     <html lang="en">
       <body className={plusJakartaSans.variable}>
+        {isInvestorsPage ? (
+          <header>
+            <InvestorNavbar />
+          </header>
+        ) : (
           <header>
             <Navbar />
           </header>
-          <div id="wrapper">
-            {/* <Loading /> */}
-            <div id="smooth-content">
-              <main ref={containerRef}>
-                {children}
-                <Cursor />
-              </main>
-              <footer className="bg-gray-light">
-                <Footer />
-              </footer>
-            </div>
+        )}
+        <div id="wrapper">
+          <div id="smooth-content">
+            <main ref={containerRef}>
+              {children}
+              <Cursor />
+            </main>
           </div>
+        </div>
       </body>
     </html>
   );

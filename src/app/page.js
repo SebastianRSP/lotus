@@ -11,39 +11,40 @@ import { FrequentlyAsked } from './components/frequently-asked/Index';
 import { FoldingCard } from './components/folding-cards/Index';
 
 import cardAnimationBackground from '../../public/images/card-animation-background.png';
+import { Footer } from './components/footer/Index';
 
 const cardAnimationData = [
   {
-      cardHeading: 'SUPERCHARGE',
-      padding: 'lg:py-4 py-1 xl:px-28 md:px-9 px-7',
-      height: '',
-      backgroundColor: 'bg-gray-light',
-      textColor: '',
-      backgroundImage: ''
+    cardHeading: 'SUPERCHARGE',
+    padding: 'lg:py-4 py-1 xl:px-28 md:px-9 px-7',
+    height: '',
+    backgroundColor: 'bg-gray-light',
+    textColor: '',
+    backgroundImage: ''
   },
   {
-      cardHeading: 'YOUR DATA',
-      padding: 'lg:py-4 py-1 xl:px-28 md:px-9 px-7',
-      height: 'lg:h-auto h-20', //lg:h-44 md:h-28 h-20
-      backgroundColor: 'bg-green',
-      textColor: '',
-      backgroundImage: ''
+    cardHeading: 'YOUR DATA',
+    padding: 'lg:py-4 py-1 xl:px-28 md:px-9 px-7',
+    height: 'lg:h-auto h-20', //lg:h-44 md:h-28 h-20
+    backgroundColor: 'bg-green',
+    textColor: '',
+    backgroundImage: ''
   },
   {
-      cardHeading: 'WITH',
-      padding: 'lg:py-4 py-1 xl:px-28 md:px-9 px-7',
-      height: 'lg:h-auto h-20', 
-      backgroundColor: 'bg-purple',
-      textColor: '',
-      backgroundImage: cardAnimationBackground
+    cardHeading: 'WITH',
+    padding: 'lg:py-4 py-1 xl:px-28 md:px-9 px-7',
+    height: 'lg:h-auto h-20',
+    backgroundColor: 'bg-purple',
+    textColor: '',
+    backgroundImage: cardAnimationBackground
   },
   {
-      cardHeading: 'AI TOOLS',
-      padding: 'lg:py-4 py-2 xl:px-28 md:px-9 px-7',
-      height: 'lg:h-auto h-20',
-      backgroundColor: 'bg-gray-light',
-      textColor: '',
-      backgroundImage: ''
+    cardHeading: 'AI TOOLS',
+    padding: 'lg:py-4 py-2 xl:px-28 md:px-9 px-7',
+    height: 'lg:h-auto h-20',
+    backgroundColor: 'bg-gray-light',
+    textColor: '',
+    backgroundImage: ''
   },
 ]
 
@@ -52,6 +53,7 @@ export default function Home() {
 
   return (
     <>
+
       <div className='xl:mx-40 mx-9'>
         <Hero />
         <TextSlider />
@@ -69,6 +71,9 @@ export default function Home() {
         <OurPartner />
         <FrequentlyAsked />
       </div>
+      <footer className="bg-gray-light">
+        <Footer />
+      </footer>
     </>
   );
 }

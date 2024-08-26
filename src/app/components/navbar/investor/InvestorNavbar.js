@@ -1,15 +1,15 @@
 'use client'
 
-import React, { useEffect, useRef, useState } from 'react';
-import logo from '../../../../public/icons/logo.svg';
-import lotus from '../../../../public/icons/lotus.svg';
-import telegram from '../../../../public/icons/telegram.svg';
-import greenTelegram from '../../../../public/icons/green-telegram.svg';
-import navToggle from '../../../../public/icons/nav-toggle.svg';
-import cross from '../../../../public/icons/cross.svg';
-import { NavLink } from "./NavLink";
+import React, { useState } from 'react';
+import logo from '../../../../../public/icons/logo.svg';
+import lotus from '../../../../../public/icons/lotus.svg';
+import telegram from '../../../../../public/icons/telegram.svg';
+import greenTelegram from '../../../../../public/icons/green-telegram.svg';
+import navToggle from '../../../../../public/icons/nav-toggle.svg';
+import cross from '../../../../../public/icons/cross.svg';
+import { InvestorNavLink } from "./InvestorNavLink";
 import Image from "next/image";
-import { MobileLink } from './MobileLink';
+import { MobileLink } from '../MobileLink';
 
 const navLinksBefore = [
     { navLinkName: 'HOME', navLink: '/', extras: '' },
@@ -18,14 +18,13 @@ const navLinksBefore = [
 ];
 
 const navLinksAfter = [
-    { navLinkName: 'About Us', navLink: '#', extras: '' },
-    { navLinkName: 'Book a Demo', navLink: '#', extras: '' },  
+    { navLinkName: 'About Us', navLink: '#', extras: '', bookDemo: false },
+    { navLinkName: 'Book a Demo', navLink: '#', extras: '', bookDemo: true },  
     // {/* bg-yellowDark */}
 ];
 
 const navIcons = [
     { navLinkName: '', navLink: '#', extras: '', icon: true, iconImage: telegram, font: '' },
-    { navLinkName: 'M', navLink: '#', extras: '', icon: false, iconImage: null, font: 'font-serif' },
     { navLinkName: 'EN', navLink: '#', extras: '', icon: false, iconImage: null, font: '' },
 ];
 
@@ -45,7 +44,7 @@ const mobileMenu = [
 ]
 
 
-export const Navbar = () => {
+export const InvestorNavbar = () => {
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -60,12 +59,12 @@ export const Navbar = () => {
                 {/* Desktop Vesion */}
                 <div className={`hidden md:!block desktop-nav pt-6 px-8 `}>
                     {/* border border-black bg-yellowLight shadow-outer*/}
-                    <div className='absolute bg-yellowLight shadow-sm inset-0 origin-top z-10 desktop-nav-bg'></div>
-                    <div className=' w-full grid grid-flow-col auto-cols-auto items-center text-center h-14  relative z-50 overflow-hidden'>
+                    <div className='absolute h-20 bg-black/70 bg-no-repeat bg-origin-padding filter backdrop-blur-30 shadow-sm inset-0 origin-top z-10 desktop-nav-bg'></div>
+                    <div className=' w-full grid grid-flow-col auto-cols-auto items-center text-center h-16  relative z-50 overflow-hidden'>
                         {/* divide-x divide-black */}
-                        <div className="grid grid-cols-3 items-center h-inherit text-black">
+                        <div className="grid grid-cols-3 items-center h-inherit text-white">
                             {navLinksBefore.map((navLink, index) => (
-                                <NavLink
+                                <InvestorNavLink
                                     key={index}
                                     id={index}
                                     navLinkName={navLink.navLinkName}
@@ -78,7 +77,7 @@ export const Navbar = () => {
                         <div className="flex items-center col-span-3 justify-center h-inherit w-auto  ">
                             <div className="logo-container">
                                 <Image
-                                    className="lotus"
+                                    className="lotus fill-white"
                                     src={logo}
                                     alt="Logo"
                                     width={32}
@@ -94,20 +93,21 @@ export const Navbar = () => {
                             </div>
                         </div>
                         {/* divide-x divide-black */}
-                        <div className="grid grid-cols-3 items-center h-inherit text-black">
+                        <div className="grid grid-cols-3 items-center h-inherit text-white">
                             {navLinksAfter.map((navLink, index) => (
-                                <NavLink
+                                <InvestorNavLink
                                     key={index}
                                     id={index}
                                     navLinkName={navLink.navLinkName}
                                     navLink={navLink.navLink}
                                     extras={navLink.extras}
+                                    isIncludeBookDemoBtn={navLink.bookDemo}
                                 />
                             ))}
                             {/* divide-x divide-black */}
-                            <div className="grid grid-cols-3 items-center h-inherit text-black">
+                            <div className="grid grid-cols-3 items-center h-inherit text-white">
                                 {navIcons.map((navIcon, index) => (
-                                    <NavLink
+                                    <InvestorNavLink
                                         key={index}
                                         id={index}
                                         navLinkName={navIcon.navLinkName}
@@ -188,9 +188,9 @@ export const Navbar = () => {
                                 />
                             ))}
                         </div>
-                        <div className="flex items-center divider-x divide-green mb-28 text-black">
+                        <div className="flex items-center divider-x divide-green mb-28 text-white">
                             {mobileNavIcons.map((navIcon, index) => (
-                                <NavLink
+                                <InvestorNavLink
                                     key={index}
                                     id={index}
                                     navLinkName={navIcon.navLinkName}

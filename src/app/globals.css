@@ -127,6 +127,32 @@ nav{
   transform-origin: left;
 }
 
+/* Investor Navbar Starts*/
+.link-investor-hover {
+  position: relative; /* Make sure the pseudo-element is positioned relative to the link */
+  display: inline-flex;
+  white-space: nowrap;
+}
+
+.link-investor-hover:before {
+  background-color: #00FF03;
+  content: "";
+  height: 0.05em; /* Adjust height as needed */
+  left: 0;
+  min-height: 1px;
+  position: absolute;
+  right: 0;
+  bottom: -0.1em; /* Adjust positioning as needed */
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.75s cubic-bezier(.19,1,.22,1);
+}
+
+.link-investor-hover.link-investor-exact-active:before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+/* Investor Navbar Ends */
 
 /* Navbar Desktop Animation */
 
@@ -611,10 +637,43 @@ nav{
 }
 #reactgooglegraph-2 svg g path{
   stroke: white;
-  stroke-width: 2px;
+  stroke-width: 1px;
 }
 #reactgooglegraph-2 svg{
   height: inherit;
   width: inherit;
 }
+
+@keyframes moveParticle {
+  0% {
+      transform: translate(0, 0);
+  }
+  100% {
+      transform: translate(var(--endX), var(--endY));
+  }
+}
+
+.particle-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(0, 255, 0, 0.4); /* Bright green */
+  border-radius: 50%;
+  filter: blur(10px);
+  opacity: 1;
+  animation: moveParticle linear infinite;
+}
+
+
+
 /* Investors Page CSS Ends */

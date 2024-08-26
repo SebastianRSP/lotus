@@ -6,13 +6,15 @@ import boxesAnimation from '../../../../../public/animations/boxes.json';
 import mountainAnimation from '../../../../../public/animations/mountain.json';
 import premiumFeaturesAnimation from '../../../../../public/animations/premium-features.json';
 import bubbleBg from '../../../../../public/animations/bubbles-bg.json';
+import ParticleComponent from "../../bubbles-animation/Index";
 
 
 export const DetailCards = () => {
     return (
         <div className="relative bg-black text-white h-auto bg-opacity-100 bg-no-repeat bg-origin-padding filter backdrop-blur-lg overflow-hidden">
-            <div className="absolute inset-0 z-0 filter backdrop-blur-30">
-                <Lottie animationData={bubbleBg} loop={true} className="h-available" />
+            <div className="absolute inset-0 z-0">
+                <ParticleComponent />
+                {/* <Lottie animationData={bubbleBg} loop={true} className="h-available" /> */}
             </div>
             <div className="relative xl:px-40 lg:px-20 px-9 lg:pt-20 pt-28 lg:pb-96 pb-30 z-10 filter backdrop-blur-lg">
                 <div className="grid md:grid-cols-2 grid-cols-1 lg:gap-0 gap-10 items-center md:py-20 py-10">

@@ -40,7 +40,7 @@ export const NavLink = ({ navLinkName, navLink, extras, icon, iconImage, id, fon
                 ) : (
                     <>
                         {/* ${isToggled ? 'text-green' : ''} */}
-                        <span className={`${font} link-hover ${isToggled ? 'link-exact-active' : ''} text-black uppercase lg:text-sm md:text-xs font-medium md:leading-66 leading-none tracking-space60 inner-text`}>
+                        <span className={`${font} link-hover ${isToggled ? 'link-exact-active' : ''} uppercase lg:text-sm md:text-xs font-medium md:leading-66 leading-none tracking-space60 inner-text`}>
                             {navLinkName}
                         </span>
                     </>
