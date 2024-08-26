@@ -160,7 +160,7 @@ export const InvertmentBridgeGrowth = () => {
                     <Lottie animationData={bridgeGrowthMap} loop={true} className="opacity-10 absolute w-available h-fit" />
                 </div> */}
             </div>
-            <div className="py-11 w-full absolute inset-0 flex justify-center items-start">
+            <div className="py-28 w-full absolute inset-0 flex justify-center items-start">
                 <div className="flex flex-col justify-center items-center text-white text-center">
                     <h3 className="2xl:text-118 xl:text-100 lg:text-90 md:text-80 text-5xl  font-extrabold border-b-[0.5px] border-hr relative">
                         Send
@@ -182,7 +182,7 @@ export const InvertmentBridgeGrowth = () => {
                         </h4>
                     </div>
                     <div className="py-16 lg:px-40 md:px-20 px-9 w-auto">
-                        <div className="lg:bg-black bg-transparent relative w-fit bg-no-repeat lg:border border-0 border-white lg:shadow-white shadow-none">
+                        <div className="lg:bg-black lg:block hidden bg-transparent relative w-fit bg-no-repeat lg:border border-0 border-white lg:shadow-white shadow-none">
                             <div className="flex lg:flex-nowrap flex-wrap justify-center lg:gap-0 gap-2">
                                 {growthTabs.map((growthtab, index) => (
                                     <div key={index}
@@ -199,13 +199,13 @@ export const InvertmentBridgeGrowth = () => {
                             </div>
                         </div>
                         <div className="">
-                            <div className="lg:pt-40 pt-20 pb-10">
+                            <div className="lg:pt-40 pt-0 pb-10">
                                 <div className="grid lg:grid-cols-2 grid-cols-1 justify-center items-start">
                                     <div className="flex justify-center">
-                                        <div className="relative w-96 h-96 flex justify-center items-center">
+                                        <div className="relative lg:flex hidden w-80 h-80 justify-center items-center">
                                             <Chart
                                                 chartType="PieChart"
-                                                className="bg-transparent lg:w-43 lg:h-43 w-35 h-35"
+                                                className="bg-transparent lg:w-39 lg:h-39 w-31 h-31"
                                                 data={[
                                                     ["", "Percentage"],
                                                     ["", 20],
@@ -220,7 +220,7 @@ export const InvertmentBridgeGrowth = () => {
                                                 options={{
                                                     legend: "none",
                                                     pieSliceText: "none",
-                                                    pieHole: 0.74,
+                                                    pieHole: 0.83,
                                                     pieStartAngle: 0,
                                                     backgroundColor: 'transparent',
                                                     colors: 'transparent',
@@ -228,13 +228,63 @@ export const InvertmentBridgeGrowth = () => {
                                                     slices: generateSlices(),
                                                 }}
                                             />
-                                            <div className="absolute lg:w-80 w-64 lg:h-80 h-64 bg-transparent rounded-full flex justify-center items-center border-[5px] border-black">
-                                                <div className="absolute inset-0 bg-gray-circle opacity-25 rounded-full"></div>
-                                                <h4 className="uppercase lg:text-7xl text-5xl font-bold flex flex-col relative">
+                                            <div className="absolute lg:w-80 w-64 lg:h-80 h-64 bg-transparent rounded-full flex justify-center items-center border-[4px] border-black">
+                                                <div className="absolute inset-0 bg-white bg-no-repeat bg-origin-padding opacity-25 rounded-full"></div>
+                                                <h4 className="uppercase lg:text-5xl text-3xl font-bold flex flex-col relative">
                                                     {percentage}%
-                                                    <span className="lg:text-4xl text-2xl font-normal text-green">{title}</span>
+                                                    <span className="lg:text-2xl text-xl font-normal text-green">{title}</span>
                                                 </h4>
                                             </div>
+
+                                            {/* <div className="absolute lg:w-80 w-64 lg:h-80 h-64 bg-transparent rounded-full flex justify-center items-center border-[4px] border-black">
+                                                <div className="absolute inset-0 bg-white bg-no-repeat bg-origin-padding opacity-25 rounded-full"></div>
+                                                <h4 className="uppercase lg:text-5xl text-3xl font-bold flex flex-col relative">
+                                                    {percentage}%
+                                                    <span className="lg:text-2xl text-xl font-normal text-green">{title}</span>
+                                                </h4>
+                                            </div> */}
+                                        </div>
+                                        <div className="relative lg:hidden flex w-80 h-80 mb-10 justify-center items-center">
+                                            <Chart
+                                                chartType="PieChart"
+                                                className="bg-transparent lg:w-39 lg:h-39 w-31 h-31"
+                                                data={[
+                                                    ["", "Percentage"],
+                                                    ["", 20],
+                                                    ["", 20],
+                                                    ["", 10],
+                                                    ["", 10],
+                                                    ["", 10],
+                                                    ["", 10],
+                                                    ["", 10],
+                                                    ["", 10],
+                                                ]}
+                                                options={{
+                                                    legend: "none",
+                                                    pieSliceText: "none",
+                                                    pieHole: 0.83,
+                                                    pieStartAngle: 0,
+                                                    backgroundColor: 'transparent',
+                                                    colors: 'transparent',
+                                                    tooltip: { trigger: "true" },
+                                                    slices: generateSlices(),
+                                                }}
+                                            />
+                                            <div className="absolute lg:w-80 w-64 lg:h-80 h-64 bg-transparent rounded-full flex justify-center items-center border-[4px] border-black">
+                                                <div className="absolute inset-0 bg-white bg-no-repeat bg-origin-padding opacity-25 rounded-full"></div>
+                                                <h4 className="uppercase lg:text-5xl text-3xl font-bold flex flex-col relative">
+                                                    {percentage}%
+                                                    <span className="lg:text-2xl text-xl font-normal text-green">{title}</span>
+                                                </h4>
+                                            </div>
+
+                                            {/* <div className="absolute lg:w-80 w-64 lg:h-80 h-64 bg-transparent rounded-full flex justify-center items-center border-[4px] border-black">
+                                                <div className="absolute inset-0 bg-white bg-no-repeat bg-origin-padding opacity-25 rounded-full"></div>
+                                                <h4 className="uppercase lg:text-5xl text-3xl font-bold flex flex-col relative">
+                                                    {percentage}%
+                                                    <span className="lg:text-2xl text-xl font-normal text-green">{title}</span>
+                                                </h4>
+                                            </div> */}
                                         </div>
                                     </div>
                                     <div className="lg:border-l-2 border-l-0 border-green lg:px-8 px-0 flex lg:flex-col md:flex-row flex-col justify-between gap-5 h-fit ">
