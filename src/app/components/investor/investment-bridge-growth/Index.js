@@ -303,7 +303,6 @@ export const InvertmentBridgeGrowth = () => {
                                 </div>
                             </div>
                         </div>
-                        <DefaultBlack btnType={'button'} btnText={'Load More'} />
                     </div>
                 </div>
             </div>
