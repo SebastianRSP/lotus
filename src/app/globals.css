@@ -609,4 +609,12 @@ nav{
   height: inherit;
   width: inherit;
 }
+#reactgooglegraph-2 svg g path{
+  stroke: white;
+  stroke-width: 2px;
+}
+#reactgooglegraph-2 svg{
+  height: inherit;
+  width: inherit;
+}
 /* Investors Page CSS Ends */

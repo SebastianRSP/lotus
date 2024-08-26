@@ -134,6 +134,29 @@ export const data = [
 export const InvertmentBridgeGrowth = () => {
     const [activeIndex, setActiveIndex] = useState(0);
 
+
+    const handleSliceClick = (chartWrapper) => {
+
+        const chart = chartWrapper.getChart();
+        const selection = chart.getSelection();
+
+        if (selection.length > 0) {
+            const sliceIndex = selection[0].row;
+            setActiveIndex(sliceIndex)
+        }
+    };
+
+    // Function to generate slices based on the active index
+    const generateSlicesForMobileVersion = () => {
+        const slices = {};
+        for (let i = 0; i < tabData.length; i++) {
+            slices[i] = {
+                color: i === activeIndex ? "#00ff00" : "gray",
+            };
+        }
+        return slices;
+    };
+
     // Function to generate slices based on the active index
     const generateSlices = () => {
         const slices = {};
@@ -145,6 +168,8 @@ export const InvertmentBridgeGrowth = () => {
         return slices;
     };
 
+
+
     // Get data for the active tab
     const activeTab = tabData[activeIndex];
 
@@ -155,7 +180,7 @@ export const InvertmentBridgeGrowth = () => {
 
     return (
         <div className="investment-bridge-growth-bg h-auto relative">
-            <div className="flex justify-center lg:h-105ch md:h-120ch h-150ch relative py-11">
+            <div className="flex justify-center lg:h-105ch md:h-110ch h-120ch relative py-11">
                 {/* <div className="w-11/12 bg-transparent relative overflow-hidden">
                     <Lottie animationData={bridgeGrowthMap} loop={true} className="opacity-10 absolute w-available h-fit" />
                 </div> */}
@@ -266,9 +291,15 @@ export const InvertmentBridgeGrowth = () => {
                                                     pieStartAngle: 0,
                                                     backgroundColor: 'transparent',
                                                     colors: 'transparent',
-                                                    tooltip: { trigger: "true" },
-                                                    slices: generateSlices(),
+                                                    tooltip: { trigger: "none" },
+                                                    slices: generateSlicesForMobileVersion(),
                                                 }}
+                                                chartEvents={[
+                                                    {
+                                                        eventName: "select",
+                                                        callback: ({ chartWrapper }) => handleSliceClick(chartWrapper),
+                                                    },
+                                                ]}
                                             />
                                             <div className="absolute lg:w-80 w-64 lg:h-80 h-64 bg-transparent rounded-full flex justify-center items-center border-[4px] border-black">
                                                 <div className="absolute inset-0 bg-white bg-no-repeat bg-origin-padding opacity-25 rounded-full"></div>

@@ -22,8 +22,8 @@ export const StorageSolution = () => {
     return (
         <div className="xl:px-32 lg:px-20 px-9 lg:py-28 py-9">
             <div className="grid lg:grid-cols-4 grid-cols-none gap-10 lg:items-start items-center">
-                <div className="lg:text-left text-center">
-                    <h4 className="bg-green text-black text-2xl inline px-2">
+                <div className="lg:text-left md:text-center text-left">
+                    <h4 className="bg-green text-black text-2xl inline md:px-2 px-0">
                         Why tokenize a <br /> storage solution?
                     </h4>
                 </div>
