@@ -11,7 +11,7 @@ export const PoweredBySend = () => {
             <div className="w-fit">
                 <span className="bg-green text-black inline px-0.5 md:text-2xl text-lg tracking-space18">Join</span>
                 <div className="text-right w-full">
-                    <h3 className="2xl:text-325 md:text-2.3 sm:text-2xl text-32 font-extralight 2xl:!leading-45 md:!leading-50 !leading-8 md:text-center text-left">
+                    <h3 className="2xl:text-325 xl:text-4xl md:text-2.61 sm:text-2xl text-32 font-extralight 2xl:!leading-45 md:!leading-50 !leading-8 md:text-center text-left">
                         The largest data migration in history.
                     </h3>
                     <div className="grid md:grid-cols-7 sm:grid-cols-9 grid-cols-9 justify-end items-center gap-3 mt-2">
