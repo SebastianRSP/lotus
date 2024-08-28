@@ -1,28 +1,30 @@
 import Image from 'next/image';
 import footerLogo from '../../../../../public/footer-logo.png';
 import Link from 'next/link';
-import { LinkToGo } from '../../shared-components/LinkToGo';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-const sociaLinks = [
-    {socialLinkName: 'Telegram', socialLinkAddress: '#', socialLinkIcon: 'fa-brands fa-telegram'},
-    {socialLinkName: 'Medium', socialLinkAddress: '#', socialLinkIcon: 'fa-brands fa-medium'},
-    {socialLinkName: 'Instagram', socialLinkAddress: '#', socialLinkIcon: 'fa-brands fa-instagram'},
-]
+import telegram from '../../../../../public/animations/telegram.json';
+import sendMessageArrow from '../../../../../public/animations/send-message-arrow.json';
+import Lottie from 'lottie-react';
+import { DefaultBlack } from '../../buttons/DefaultBlack';
 
 const footerMenu1 = [
-    {linkName: 'Home', goTo: '#'},
-    {linkName: 'The Bridge', goTo: '#'},
-    {linkName: 'How It Work', goTo: '#'},
-    {linkName: 'Al Tool', goTo: '#'},
-    {linkName: 'Partners', goTo: '#'},
-    {linkName: 'FAQs', goTo: '#'},
+    { linkName: 'Home', goTo: '#' },
+    { linkName: 'The Bridge', goTo: '#' },
+    { linkName: 'Testimonials', goTo: '#' },
+    { linkName: 'Al Tool', goTo: '#' },
+    { linkName: 'Partners', goTo: '#' },
+    { linkName: 'FAQs', goTo: '#' },
 ]
 const footerMenu2 = [
-    {linkName: 'About', goTo: '#'},
-    {linkName: 'Lorem Ipem', goTo: '#'},
-    {linkName: 'Lorem Ipem', goTo: '#'},
-    {linkName: 'Lorem Ipem', goTo: '#'},
+    { linkName: 'Investors', goTo: '#' },
+    { linkName: '$Send Token', goTo: '#' },
+    { linkName: 'Why Tokenize', goTo: '#' },
+    { linkName: 'Investors', goTo: '#' },
+]
+const footerMenu3 = [
+    { linkName: 'About Us', goTo: '#' },
+    { linkName: 'Company', goTo: '#' },
+    { linkName: 'Technology', goTo: '#' },
+    { linkName: 'Team', goTo: '#' },
 ]
 
 export const InvestorFooter = () => {
@@ -39,36 +41,51 @@ export const InvestorFooter = () => {
                             height={19}
                         />
                     </div>
-                    <p className='text-xs font-normal leading-4 w-full'>
-                        The Bridge streamlines the migration from
-                        traditional Web2 data storage systems like AWS and
-                        Google Cloud to cutting-edge Web3 platforms such as Filecoin,
-                        SIA, and Arweave. Our advanced AI-driven analytics tools enhance
-                        data understanding and utilization for enterprises.
-                    </p>
-                    <div className='flex flex-col gap-1'>
-                        {sociaLinks.map((sociaLink, index) => (
-                            <Link className='text-s font-normal hover:font-bold leading-32' href={sociaLink.socialLinkAddress} key={index}>
-                                <FontAwesomeIcon size='sm' icon={sociaLink.socialLinkIcon} className='mr-2'/>
-                                {sociaLink.socialLinkName}
-                            </Link>
-                        ))}
+                    <div className="items-center flex sm:space-y-0 border border-black shadow-black">
+                        <div className="relative w-full">
+                            <input
+                                className="block px-4 py-3 w-full text-sm bg-transparent placeholder:text-black placeholder:opacity-50 placeholder:2xl:text-2xl  placeholder:text-lg focus:border-none focus:ring-0"
+                                placeholder="Join our mailing list"
+                                type="email"
+                                id="email"
+                                required=""
+                            />
+                        </div>
+                        <div className='relative 2xl:w-16 w-11 2xl:h-16 h-11 bg-black flex justify-center items-center'>
+                            <Lottie animationData={sendMessageArrow} className='absolute 2xl:w-10 w-7 2xl:h-10 h-7 transform -rotate-90 scale-x-[1]' />
+                        </div>
+                    </div>
+
+                    <h4 className='2xl:text-4xl text-2xl 2xl:leading-43 leading-7'>
+                        See what our community on telegram has to say
+                    </h4>
+                    <div className='relative 2xl:w-20 w-12 2xl:h-20 h-12'>
+                        <Lottie animationData={telegram} className='absolute' />
                     </div>
                 </div>
-                <div className='grid md:grid-cols-2 grid-cols-1'>
+                <div className='grid md:grid-cols-3 grid-cols-1'>
                     <div className='md:border-x md:border-y-0 border-y border-light-gray py-8 px-5'>
-                        <div className='flex flex-col gap-1'>
+                        <div className='flex flex-col'>
                             {footerMenu1.map((footerLink, index) => (
-                                <Link className='text-s uppercase font-normal hover:font-bold leading-32' href={footerLink.goTo} key={index}>
+                                <Link className={`${index == 0 ? 'font-extrabold' : 'hover:font-bold'} 2xl:text-lg text-sm uppercase font-normal leading-normal`} href={footerLink.goTo} key={index}>
                                     {footerLink.linkName}
                                 </Link>
                             ))}
                         </div>
                     </div>
                     <div className='md:border-x md:border-y-0 border-y border-light-gray py-8 px-5'>
-                        <div className='flex flex-col gap-1'>
+                        <div className='flex flex-col'>
                             {footerMenu2.map((footerLink, index) => (
-                                <Link className='text-s uppercase font-normal hover:font-bold leading-32' href={footerLink.goTo} key={index}>
+                                <Link className={`${index == 0 ? 'font-extrabold' : 'hover:font-bold'} 2xl:text-lg text-sm uppercase font-normal leading-normal`} href={footerLink.goTo} key={index}>
+                                    {footerLink.linkName}
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
+                    <div className='md:border-x md:border-y-0 border-y border-light-gray py-8 px-5'>
+                        <div className='flex flex-col'>
+                            {footerMenu3.map((footerLink, index) => (
+                                <Link className={`${index == 0 ? 'font-extrabold' : 'hover:font-bold'} 2xl:text-lg text-sm uppercase font-normal leading-normal`} href={footerLink.goTo} key={index}>
                                     {footerLink.linkName}
                                 </Link>
                             ))}
@@ -76,29 +93,34 @@ export const InvestorFooter = () => {
                     </div>
                 </div>
                 <div className='px-5 xl:py-8 py-8'>
-                <LinkToGo
-                    linkText={'TERMS & CONDITIONS'}
-                    href={'#'}
-                    icon={false}
-                    extras={'text-s uppercase !no-underline font-normal hover:font-bold leading-32'}
-                />
-                <LinkToGo
-                    linkText={'NEWSLETTER'}
-                    href={'#'}
-                    icon={false}
-                    extras={'text-s uppercase !no-underline font-normal hover:font-bold leading-32'}
-                />
-                <LinkToGo
-                    linkText={'LEGAL'}
-                    href={'#'}
-                    icon={false}
-                    extras={'text-s uppercase !no-underline font-normal hover:font-bold leading-32'}
-                />
+                    <p className='2xl:text-lg text-sm 2xl:w-4/6 w-5/6 mb-4'>
+                        Prospective investors should
+                        consult their own legal, tax, and
+                        financial advisors before making
+                        any investment decisions.
+                        Investing in securities involves
+                        risks, including the potential
+                        loss of principal.
+                    </p>
+                    <DefaultBlack 
+                        btnText={'Book a Demo'}
+                        btnType={'button'}
+                    />
+                </div>
+                <div className='absolute bottom-0 w-full px-5 py-2'>
+                    <div className='flex justify-between'>
+                        <Link href={'#'} className='2xl:text-lg text-sm 2xl:font-bold font-semibold underline uppercase'>
+                            TERMS & CONDITIONS
+                        </Link>
+                        <Link href={'#'} className='2xl:text-lg text-sm 2xl:font-bold font-semibold underline uppercase'>
+                            NEWSLETTER
+                        </Link>
+                        <Link href={'#'} className='2xl:text-lg text-sm 2xl:font-bold font-semibold underline uppercase'>
+                            LEGAL
+                        </Link>
+                    </div>
                 </div>
             </div>
-            {/* <div className='w-full relative bottom-10 flex justify-between xl:px-40 lg:px-20 md:px-9 px-7 text-black'>
-
-            </div> */}
         </>
     )
 }
