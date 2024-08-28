@@ -7,7 +7,7 @@ export const InvesterBannerText = () => {
         <div className="investor-banner-bg py-20 flex items-center">
             <div className="2xl:px-80 xl:px-60 lg:px-40 md:px-20 px-9 grid md:grid-cols-2 grid-cols-1 md:gap-0 gap-10 justify-between">
                 <div className="flex md:justify-start justify-start md:order-1 order-2">
-                    <div className='relative flex md:items-center items-start md:w-20 w-40'>
+                    <div className='relative flex items-start md:w-20 w-40'>
                         <div className="absolute">
                             <Lottie animationData={databasePricing} loop={true} />
                         </div>

@@ -12,7 +12,7 @@ export const MessageForInvestors = () => {
             <div className="relative lg:-top-60 md:-top-80 -top-80">
                 <div className="absolute inset-0 bg-black border border-white translate-x-[3.5px] translate-y-[3.5px]" ></div>
                 <div className="bg-white relative h-auto z-1 min-h-32">
-                    <div className="h-40 grid lg:grid-cols-2 grid-cols-none lg:grid-rows-none lg:p-16 md:p-8 p-2 ">
+                    <div className="h-40 grid lg:grid-cols-2 grid-cols-none lg:grid-rows-none lg:p-16 md:p-8 p-4 ">
                         <div className="relative lg:w-full md:w-35 w-72 lg:h-full md:h-80 h-56 lg:mt-0 md:mt-16 mt-3 flex lg:justify-center justify-self-center items-center">
                             <div className="absolute">
                                 <Lottie className="h-23" animationData={candleChart} loop={true} />

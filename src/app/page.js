@@ -9,9 +9,7 @@ import { CaseStudy } from './components/case-study/Index';
 import { OurPartner } from './components/partners/Index';
 import { FrequentlyAsked } from './components/frequently-asked/Index';
 import { FoldingCard } from './components/folding-cards/Index';
-
 import cardAnimationBackground from '../../public/images/card-animation-background.png';
-import { Footer } from './components/footer/Index';
 
 const cardAnimationData = [
   {
@@ -71,9 +69,6 @@ export default function Home() {
         <OurPartner />
         <FrequentlyAsked />
       </div>
-      <footer className="bg-gray-light">
-        <Footer />
-      </footer>
     </>
   );
 }

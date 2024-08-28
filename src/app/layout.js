@@ -13,6 +13,8 @@ import { ScrollTrigger } from "gsap/all";
 import { Loading } from "./components/loading/Index";
 import { InvestorNavbar } from "./components/navbar/investor/InvestorNavbar";
 import { Navbar } from "./components/navbar/Navbar";
+import { InvestorFooter } from "./components/footer/investor/Index";
+import { Footer } from "./components/footer/Index";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -55,6 +57,15 @@ export default function RootLayout({ children }) {
               {children}
               <Cursor />
             </main>
+            {isInvestorsPage ? (
+              <footer className="bg-green">
+                <InvestorFooter />
+              </footer>
+            ) : (
+              <footer className="bg-gray-light">
+                <Footer />
+              </footer>
+            )}
           </div>
         </div>
       </body>
