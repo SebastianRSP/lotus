@@ -30,8 +30,8 @@ const footerMenu3 = [
 export const InvestorFooter = () => {
     return (
         <>
-            <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 mx-auto w-full relative text-black">
-                <div className="px-5 py-8 flex flex-col md:gap-8 gap-8 ">
+            <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 mx-auto w-full relative text-black lg:pb-3 pb-5">
+                <div className="px-5 py-8 flex flex-col md:gap-8 gap-8">
                     <div className="w-full h-auto">
                         <Image
                             src={footerLogo}
@@ -107,7 +107,7 @@ export const InvestorFooter = () => {
                         btnType={'button'}
                     />
                 </div>
-                <div className='absolute bottom-0 w-full px-5 py-2'>
+                <div className='absolute bottom-0 w-full px-5 lg:py-2 py-0 lg:mb-0 mb-2'>
                     <div className='flex justify-between'>
                         <Link href={'#'} className='2xl:text-lg text-sm 2xl:font-bold font-semibold underline uppercase'>
                             TERMS & CONDITIONS
