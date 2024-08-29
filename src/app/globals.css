@@ -636,8 +636,8 @@ nav{
   width: inherit;
 }
 #reactgooglegraph-2 svg g path{
-  stroke: white;
-  stroke-width: 1px;
+  stroke: black;
+  stroke-width: 2px;
 }
 #reactgooglegraph-2 svg{
   height: inherit;
@@ -677,3 +677,23 @@ nav{
 
 
 /* Investors Page CSS Ends */
+
+
+/* New Home Page CSS Start */
+
+.link-home-hover {
+  position: relative;
+  display: inline-flex;
+  white-space: nowrap;
+}
+
+.link-home-hover:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 1.5em; /* Adjust positioning as needed */
+  height: 0.05em; /* Adjust height as needed */
+  background-color: black;
+}
+/* New Home Page CSS Ends */

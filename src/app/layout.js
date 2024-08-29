@@ -15,6 +15,7 @@ import { InvestorNavbar } from "./components/navbar/investor/InvestorNavbar";
 import { Navbar } from "./components/navbar/Navbar";
 import { InvestorFooter } from "./components/footer/investor/Index";
 import { Footer } from "./components/footer/Index";
+import { HomeNavbar } from "./components/navbar/home/HomeNavbar";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -38,6 +39,7 @@ export default function RootLayout({ children }) {
   }, [pathname]);
 
   const isInvestorsPage = pathname.startsWith("/investors");
+  const homePage = pathname.startsWith("/home");
 
   return (
     <html lang="en">
@@ -47,9 +49,17 @@ export default function RootLayout({ children }) {
             <InvestorNavbar />
           </header>
         ) : (
-          <header>
-            <Navbar />
-          </header>
+          <>
+            {homePage ? (
+              <header>
+                <HomeNavbar />
+              </header>
+            ) : (
+              <header>
+                <Navbar />
+              </header>
+            )}
+          </>
         )}
         <div id="wrapper">
           <div id="smooth-content">
@@ -62,13 +72,19 @@ export default function RootLayout({ children }) {
                 <InvestorFooter />
               </footer>
             ) : (
-              <footer className="bg-gray-light">
-                <Footer />
-              </footer>
+              <>
+                {homePage ? (
+                  <></>
+                ) : (
+                  <footer className="bg-gray-light">
+                    <Footer />
+                  </footer>
+                )}
+              </>
             )}
           </div>
         </div>
       </body>
-    </html>
+    </html >
   );
 }

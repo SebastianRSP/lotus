@@ -12,7 +12,7 @@ import Image from "next/image";
 import { MobileLink } from '../MobileLink';
 
 const navLinksBefore = [
-    { navLinkName: 'HOME', navLink: '/', extras: '' },
+    { navLinkName: 'HOME', navLink: '/home', extras: '' },
     { navLinkName: 'LIGHTPAPER', navLink: '#', extras: '' },
     { navLinkName: 'INVESTORS', navLink: '/investors', extras: '' },
 ];
@@ -35,7 +35,7 @@ const mobileNavIcons = [
 ];
 
 const mobileMenu = [
-    { navLinkName: 'HOME', navLink: '/', extras: '' },
+    { navLinkName: 'HOME', navLink: '/home', extras: '' },
     { navLinkName: 'Whitepaper', navLink: '#', extras: '' },
     { navLinkName: 'Investors', navLink: '/investors', extras: '' },
     { navLinkName: 'About Us', navLink: '#', extras: '' },

@@ -1,32 +1,30 @@
 'use client'
 
-import React, { useEffect, useRef, useState } from 'react';
-import logo from '../../../../public/icons/logo.svg';
-import lotus from '../../../../public/icons/lotus.svg';
-import telegram from '../../../../public/icons/telegram.svg';
-import greenTelegram from '../../../../public/icons/green-telegram.svg';
-import navToggle from '../../../../public/icons/nav-toggle.svg';
-import cross from '../../../../public/icons/cross.svg';
-import { NavLink } from "./NavLink";
+import React, { useState } from 'react';
+import logo from '../../../../../public/icons/logo.svg';
+import lotus from '../../../../../public/icons/lotus.svg';
+import telegram from '../../../../../public/icons/telegram.svg';
+import greenTelegram from '../../../../../public/icons/green-telegram.svg';
+import navToggle from '../../../../../public/icons/nav-toggle.svg';
+import cross from '../../../../../public/icons/cross.svg';
+import { HomeNavLink } from "../home/HomeNavLink";
 import Image from "next/image";
-import { MobileLink } from './MobileLink';
+import { MobileLink } from '../MobileLink';
 
 const navLinksBefore = [
-    { navLinkName: 'HOME', navLink: '/home', extras: '' },
+    { navLinkName: 'HOME', navLink: '/', extras: '' },
     { navLinkName: 'LIGHTPAPER', navLink: '#', extras: '' },
     { navLinkName: 'INVESTORS', navLink: '/investors', extras: '' },
 ];
 
 const navLinksAfter = [
-    { navLinkName: 'About Us', navLink: '#', extras: '' },
-    { navLinkName: 'Book a Demo', navLink: '#', extras: '' },  
+    { navLinkName: 'About Us', navLink: '#', extras: '', bookDemo: false },
+    { navLinkName: 'Book a Demo', navLink: '#', extras: '', bookDemo: true },
     // {/* bg-yellowDark */}
 ];
 
 const navIcons = [
     { navLinkName: '', navLink: '#', extras: '', icon: true, iconImage: telegram, font: '' },
-    { navLinkName: 'M', navLink: '#', extras: '', icon: false, iconImage: null, font: 'font-serif' },
-    { navLinkName: 'EN', navLink: '#', extras: '', icon: false, iconImage: null, font: '' },
 ];
 
 const mobileNavIcons = [
@@ -36,16 +34,16 @@ const mobileNavIcons = [
 ];
 
 const mobileMenu = [
-    { navLinkName: 'HOME', navLink: '/home', extras: '' },
+    { navLinkName: 'HOME', navLink: '/', extras: '' },
     { navLinkName: 'Whitepaper', navLink: '#', extras: '' },
     { navLinkName: 'Investors', navLink: '/investors', extras: '' },
     { navLinkName: 'About Us', navLink: '#', extras: '' },
     { navLinkName: 'Book a Demo', navLink: '#', extras: '' },
-    
+
 ]
 
 
-export const Navbar = () => {
+export const HomeNavbar = () => {
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -58,14 +56,13 @@ export const Navbar = () => {
             {/* xl:mx-40 mx-9 my-6 */}
             <nav >
                 {/* Desktop Vesion */}
-                <div className={`hidden md:!block desktop-nav pt-6 px-8 `}>
-                    {/* border border-black bg-yellowLight shadow-outer*/}
-                    <div className='absolute bg-yellowLight shadow-sm inset-0 origin-top z-10 desktop-nav-bg'></div>
-                    <div className=' w-full grid grid-flow-col auto-cols-auto items-center text-center h-14  relative z-50 overflow-hidden'>
+                <div className={`hidden md:!block desktop-nav pt-6 2xl:px-16 px-4`}>
+                    <div className='absolute h-20 bg-black/70 bg-no-repeat bg-origin-padding filter backdrop-blur-30 shadow-sm inset-0 origin-top z-10 desktop-nav-bg'></div>
+                    <div className=' w-full grid grid-cols-3 grid-flow-col items-center text-center 2xl:h-32 h-16 relative z-50 overflow-hidden'>
                         {/* divide-x divide-black */}
-                        <div className="grid grid-cols-3 items-center h-inherit text-black">
+                        <div className="grid grid-cols-3 items-center h-inherit ">
                             {navLinksBefore.map((navLink, index) => (
-                                <NavLink
+                                <HomeNavLink
                                     key={index}
                                     id={index}
                                     navLinkName={navLink.navLinkName}
@@ -75,10 +72,10 @@ export const Navbar = () => {
                             ))}
                         </div>
                         {/* border border-y-0 border-x-black */}
-                        <div className="flex items-center col-span-3 justify-center h-inherit w-auto  ">
+                        <div className="flex items-center w-full justify-center h-inherit ">
                             <div className="logo-container">
                                 <Image
-                                    className="lotus"
+                                    className="lotus fill-white"
                                     src={logo}
                                     alt="Logo"
                                     width={32}
@@ -94,30 +91,32 @@ export const Navbar = () => {
                             </div>
                         </div>
                         {/* divide-x divide-black */}
-                        <div className="grid grid-cols-3 items-center h-inherit text-black">
+                        <div className="grid grid-cols-3 items-center h-inherit ">
                             {navLinksAfter.map((navLink, index) => (
-                                <NavLink
+                                <HomeNavLink
                                     key={index}
                                     id={index}
                                     navLinkName={navLink.navLinkName}
                                     navLink={navLink.navLink}
                                     extras={navLink.extras}
+                                    isIncludeBookDemoBtn={navLink.bookDemo}
+                                />
+                            ))}
+                            {navIcons.map((navIcon, index) => (
+                                <HomeNavLink
+                                    key={index}
+                                    id={index}
+                                    navLinkName={navIcon.navLinkName}
+                                    navLink={navIcon.navLink}
+                                    icon={navIcon.icon}
+                                    iconImage={navIcon.iconImage}
+                                    font={navIcon.font}
                                 />
                             ))}
                             {/* divide-x divide-black */}
-                            <div className="grid grid-cols-3 items-center h-inherit text-black">
-                                {navIcons.map((navIcon, index) => (
-                                    <NavLink
-                                        key={index}
-                                        id={index}
-                                        navLinkName={navIcon.navLinkName}
-                                        navLink={navIcon.navLink}
-                                        icon={navIcon.icon}
-                                        iconImage={navIcon.iconImage}
-                                        font={navIcon.font}
-                                    />
-                                ))}
-                            </div>
+                            {/* <div className="grid grid-cols-1 items-center h-inherit ">
+                                
+                            </div> */}
                         </div>
                     </div>
                 </div>
@@ -177,7 +176,7 @@ export const Navbar = () => {
                 </div>
                 {/* Toggle Black Menu Screen for Mobile Device */}
                 <div className={`md:hidden fixed top-0 left-0 right-0 bottom-0 mt-28 mr-6 h-screen bg-black z-30 transform transition-transform duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
-                    <div className='flex flex-col h-full justify-between px-8 py-14 text-white'>
+                    <div className='flex flex-col h-full justify-between px-8 py-14 '>
                         <div className='grid'>
                             {mobileMenu.map((mobileLink, index) => (
                                 <MobileLink
@@ -188,9 +187,9 @@ export const Navbar = () => {
                                 />
                             ))}
                         </div>
-                        <div className="flex items-center divider-x divide-green mb-28 text-black">
+                        <div className="flex items-center divider-x divide-green mb-28 ">
                             {mobileNavIcons.map((navIcon, index) => (
-                                <NavLink
+                                <HomeNavLink
                                     key={index}
                                     id={index}
                                     navLinkName={navIcon.navLinkName}

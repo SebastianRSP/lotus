@@ -19,7 +19,7 @@ module.exports = {
         'plus-jakarta-sans': ['var(--font-plus-jakarta-sans)'],
       },
       fontSize: {
-        '8':'.8rem',
+        '8': '.8rem',
         '30': '1.875rem',
         '1.2': '1.2rem',
         '26': '1.625rem',
@@ -29,16 +29,18 @@ module.exports = {
         '2.61': '2.61rem',
         '80': '4rem',
         '90': '5rem',
-        '325':'3.25rem',
+        '325': '3.25rem',
         '100': '6.25rem',
         '118': '7.375rem',
         '123': '7.6875rem',
         '142': '8.875rem',
         '144': '9rem',
         '1.5xl': '1.3rem',
+        // For New Home Page
+        '4.4' : '4.1rem'
       },
       fontWeight: {
-        'light' : '200',
+        'light': '200',
       },
       boxShadow: {
         'outer': '6px 6px 0px #00000041',
@@ -52,7 +54,7 @@ module.exports = {
         'button-green-hover': '4px 4px 0px #03ff00;',
         'inner': 'inset 4px 4px 0px #00000040',
       },
-      borderColor: { 
+      borderColor: {
         'black': '#000000',
         'dark-gray': '#0D0D0D',
         'light-gray': '#00000040',
@@ -69,6 +71,8 @@ module.exports = {
         'gray-light': '#F2F2F2',
         'gray-circle': '#404240',
         'green': '#00FF00',
+        // For New Home Page
+        'gray-light': '#F2F5F2'
       },
       height: {
         'inherit': 'inherit',
@@ -77,8 +81,8 @@ module.exports = {
         '31': '31rem',
         '39': '39rem',
         '43': '43rem',
-        '40':'40rem',
-        '23':'23rem',
+        '40': '40rem',
+        '23': '23rem',
         '105ch': '105ch',
         '110ch': '110ch',
         '120ch': '120ch',
@@ -91,7 +95,7 @@ module.exports = {
         '35': '35rem',
         '39': '39rem',
         '43': '43rem',
-        '50' : '50rem'
+        '50': '50rem'
       },
       letterSpacing: {
         'space60': '0.6px',
@@ -108,6 +112,7 @@ module.exports = {
         '32': '2rem',
         '40': '2.5rem',
         '43': '2.6875rem',
+        '48': '3rem',
         '50': '3.125rem',
         '56': '3.5rem',
         '66': '4.125rem',
@@ -121,7 +126,7 @@ module.exports = {
         '154': '9.625rem',
         '45': '4.5rem',
       },
-      
+
       padding: {
         '0.2': '0.2rem',
         '0.3': '0.3rem',
@@ -129,6 +134,7 @@ module.exports = {
         '1': '1rem',
         '18': '4.5rem',
         '38': '38px',
+        '60': '60px',
         '70': '70px',
         '74': '74px',
         '78': '78px',
@@ -141,7 +147,7 @@ module.exports = {
       },
       margin: {
         '70': '70px',
-        '3':'3rem',
+        '3': '3rem',
       },
       borderWidth: {
         '3': '3px',
