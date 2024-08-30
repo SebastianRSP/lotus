@@ -12,7 +12,7 @@ import ParticleComponent from "../../bubbles-animation/Index";
 export const DetailCards = () => {
     return (
         <div className="relative bg-black text-white h-auto bg-opacity-100 bg-no-repeat bg-origin-padding filter backdrop-blur-lg overflow-hidden">
-            <div className="absolute inset-0 z-0 md:bg-transparent md:bg-white bg-black md:opacity-100 opacity-50">
+            <div className="absolute inset-0 z-0 md:bg-transparent bg-black md:opacity-100 opacity-50">
                 <ParticleComponent />
                 {/* <Lottie animationData={bubbleBg} loop={true} className="h-available" /> */}
             </div>
