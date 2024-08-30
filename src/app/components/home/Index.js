@@ -1,9 +1,9 @@
 import { DefaultBtn } from "../buttons/home/DefaultBtn"
 
 const bullets = [
-    {buttet: 'Seamless Web2 to Web3 Data Bridge'},
-    {buttet: 'AI Enabled Data Management Tools'},
-    {buttet: 'Enterprise Grade Infrastructure and Support'},
+    { buttet: 'Seamless Web2 to Web3 Data Bridge' },
+    { buttet: 'AI Enabled Data Management Tools' },
+    { buttet: 'Enterprise Grade Infrastructure and Support' },
 ]
 
 export const IndexHome = () => {
@@ -23,19 +23,19 @@ export const IndexHome = () => {
                                     <span className="inline bg-green box-border capitalize font-bold text-black">Fintech</span>
                                 </div>
                             </h2>
-                            <p className="2xl:text-2xl text-md">Data mobility. Without limits.</p>
+                            <p className="2xl:text-2xl text-sm">Data mobility. Without limits.</p>
                             <DefaultBtn
                                 btnText={'Get Started'}
                             />
                         </div>
-                        <div className="flex flex-col row-span-1 2xl:pb-10 pb-5">
-                            {bullets.map((bullet, index) => (
-                                <div key={index} className="border-y-[0.2px] divide-y-0">
-                                    <div className="my-2">
-                                        <p>{bullet.buttet}</p>
+                        <div className="flex flex-col row-span-1 2xl:pb-10 pb-5 w-fit">
+                            <div className="border-t-[0.2px] border-opacity-50">
+                                {bullets.map((bullet, index) => (
+                                    <div key={index} className="border-b-[0.2px] px-5 border-opacity-50 py-2">
+                                        <p className="2xl:text-xl text-sm">{bullet.buttet}</p>
                                     </div>
-                                </div>
-                            ))}
+                                ))}
+                            </div>
                         </div>
                     </div>
                     <div className="col-span-7"></div>

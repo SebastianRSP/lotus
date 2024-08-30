@@ -54,10 +54,9 @@ export const HomeNavbar = () => {
     return (
         <>
             {/* xl:mx-40 mx-9 my-6 */}
-            <nav >
+            <nav>
                 {/* Desktop Vesion */}
-                <div className={`hidden md:!block desktop-nav pt-6 2xl:px-16 px-4`}>
-                    <div className='absolute h-20 bg-black/70 bg-no-repeat bg-origin-padding filter backdrop-blur-30 shadow-sm inset-0 origin-top z-10 desktop-nav-bg'></div>
+                <div className={`hidden md:!block pt-6 2xl:px-16 px-4`}>
                     <div className=' w-full grid grid-cols-3 grid-flow-col items-center text-center 2xl:h-32 h-16 relative z-50 overflow-hidden'>
                         {/* divide-x divide-black */}
                         <div className="grid grid-cols-3 items-center h-inherit ">

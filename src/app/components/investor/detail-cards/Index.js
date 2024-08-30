@@ -12,11 +12,11 @@ import ParticleComponent from "../../bubbles-animation/Index";
 export const DetailCards = () => {
     return (
         <div className="relative bg-black text-white h-auto bg-opacity-100 bg-no-repeat bg-origin-padding filter backdrop-blur-lg overflow-hidden">
-            <div className="absolute inset-0 z-0 md:bg-transparent bg-white md:opacity-100 opacity-25">
+            <div className="absolute inset-0 z-0 md:bg-transparent bg-white md:opacity-100 opacity-50">
                 <ParticleComponent />
                 {/* <Lottie animationData={bubbleBg} loop={true} className="h-available" /> */}
             </div>
-            <div className="relative xl:px-40 lg:px-20 px-9 lg:pt-20 md:pt-28 pt-9 lg:pb-96 md:pb-30 pb-96 z-10 filter backdrop-blur-lg">
+            <div className="relative xl:px-40 lg:px-20 px-9 lg:pt-20 md:pt-28 pt-9 lg:pb-96 md:pb-30 pb-96 z-10 filter md:backdrop-blur-lg backdrop-blur-none">
                 <div className="grid md:grid-cols-2 grid-cols-1 lg:gap-0 gap-10 items-center md:py-20 py-5">
                     <div className="md:flex hidden w-48 h-48 md:my-0 sm:my-32 my-3 relative justify-center items-end justify-self-center lg:order-1 md:order-2 order-2">
                         <div className="absolute">

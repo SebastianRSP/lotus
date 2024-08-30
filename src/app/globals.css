@@ -46,9 +46,8 @@ canvas {
     opacity: 1;
   }
 }
-nav{
+.slide-up{
   height: 60px;
-  position: fixed;
   width: -webkit-fill-available;
   background: 0% 0% no-repeat padding-box;
   opacity: 1;

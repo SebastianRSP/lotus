@@ -142,7 +142,9 @@ export const initAnimations = () => {
 
     // Ensure navRef exists before proceeding
     const navRef = document.querySelector('.desktop-nav');
-    if (!navRef) return;
+    if (!navRef) {
+        return
+    }
 
     let lastScrollY = 0;
 

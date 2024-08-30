@@ -56,7 +56,7 @@ export const Navbar = () => {
     return (
         <>
             {/* xl:mx-40 mx-9 my-6 */}
-            <nav >
+            <nav className='fixed slide-up'>
                 {/* Desktop Vesion */}
                 <div className={`hidden md:!block desktop-nav pt-6 px-8 `}>
                     {/* border border-black bg-yellowLight shadow-outer*/}
