@@ -31,7 +31,7 @@ export const ShowCaseSection = () => {
                 <div className="pt-14">
                     <div className="border border-black rounded-lg">
                         <div className="py-11 px-10 flex justify-center">
-                            <div className="lg:bg-white lg:block hidden bg-transparent relative w-fit bg-no-repeat lg:shadow-black shadow-none">
+                            <div className="lg:bg-white bg-transparent relative w-fit bg-no-repeat lg:shadow-black shadow-none">
                                 <div className="flex lg:flex-nowrap flex-wrap justify-center border lg:gap-0 gap-2">
                                     {growthTabs.map((growthtab, index) => (
                                         <div key={index}
