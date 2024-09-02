@@ -626,19 +626,19 @@ canvas {
   border: 5px solid #00ff03; /* Change border color based on tab */
   z-index: -1;
 }
-#reactgooglegraph-1 svg g path{
+.chart-lg svg g path{
   stroke: transparent;
   stroke-width: 0px;
 }
-#reactgooglegraph-1 svg{
+.chart-lg svg{
   height: inherit;
   width: inherit;
 }
-#reactgooglegraph-2 svg g path{
+.chart-md svg g path{
   stroke: black;
   stroke-width: 2px;
 }
-#reactgooglegraph-2 svg{
+.chart-md svg{
   height: inherit;
   width: inherit;
 }

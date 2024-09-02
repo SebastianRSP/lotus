@@ -1,10 +1,126 @@
+import Image from "next/image";
+import bridgeImage from '../../../../../public/images/bridge.png';
+import bridgeText from '../../../../../public/images/bridgeText.png';
+import defaultImage from '../../../../../public/icons/defaultImg.svg';
+import { BlurCard } from "./BlurCard";
+
+const cardDetails = [
+    {
+        category: 'Simplified data connectivity',
+        heading: 'Data connectivity Simplified',
+        description: 'Our proprietary SenData and Pegasus stack seamlessly links Web2 and Web3 networks, eliminating traditional barriers of time, cost, and complexity that have historically made decentralized storage solutions inaccessible at scale.',
+        defaultImage: defaultImage
+    },
+    {
+        category: 'An integrated approach',
+        heading: 'An integrated approach',
+        description: 'The Bridge consolidates data from diverse sources into a unified platform, ensuring comprehensive and accurate management. This seamless integration enhances data quality and accessibility, giving businesses a complete view of their information assets.',
+        defaultImage: defaultImage
+    },
+    {
+        category: 'Redefining the internet of storage',
+        heading: 'Redefining the internet of storage',
+        description: 'The Bridge transforms data infrastructure by providing complete, scalable interoperability across all of the world’s leading storage solutions. Our innovative approach redefines how data is stored and accessed, offering unparalleled control and flexibility in a rapidly evolving digital landscape.',
+        defaultImage: defaultImage
+    },
+];
+
 export const BridgeSection = () => {
     return (
-        <div className="bg-black h-screen forced-full-width">
-            <div className="flex justify-center w-full">
-                <h4 className="2xl:text-6xl text-5xl 2xl:leading-66 leading-56 text-white font-extralight text-center">
+        <div className="bg-black h-auto forced-full-width text-white">
+            <div className="flex flex-col justify-center w-full 2xl:py-32 py-16">
+                <h4 className="2xl:text-6xl text-5xl 2xl:leading-66 leading-56 font-extralight text-center">
                     We’re building <br /> the world’s largest<br /> content delivery network
                 </h4>
+                <div className='flex justify-center items-center text-center text-green my-20 relative'>
+                    <div className="w-full relative">
+                        <Image
+                            src={bridgeImage}
+                            layout="responsive"
+                            className="md:!w-7/12 w-full md:px-0 px-6 h-auto"
+                            alt="bridge image"
+                            width={1096}
+                            height={605}
+                        />
+                    </div>
+                    <div id='bridge-donut-text' className='absolute w-12/12 text-left flex justify-center items-center'>
+                        <Image
+                            src={bridgeText}
+                            layout="responsive"
+                            alt="circle image"
+                            className="md:!w-9/12 w-full md:px-0 px-6 h-auto"
+                            width={1096}
+                            height={650}
+                        />
+                        <div className='border border-green rounded-full md:block hidden'>
+                            <span className='font-bold text-3xl leading-66 py-10 px-3'>
+                                TM
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div className="2xl:py-32 py-8 text-center">
+                    <h5 className="2xl:text-5xl text-4xl 2xl:leading-50 leading-10 font-extralight ">
+                        A single pane of glass <br /> connecting <span className="font-normal">web2</span> and <span className="font-normal">web3</span>
+                    </h5>
+                    <p className="2xl:text-4xl text-xl my-2 text-green">Backed by AI enabled data management tools</p>
+                </div>
+                <div className="2xl:py-32 py-8 text-center">
+                    <div className="flex flex-col gap-6 2xl:px-40 px-32">
+                        {cardDetails.map((cardDetail, index) => (
+                            <BlurCard>
+                                <div key={index} className="grid grid-cols-2 justify-center items-center 2xl:py-24 py-12">
+                                    <div>
+                                        <Image
+                                            src={cardDetail.defaultImage}
+                                            alt="default Image"
+                                            width={40}
+                                            height={40}
+                                        />
+                                    </div>
+                                    <div className="flex flex-col justify-between gap-3 text-left w-4/6">
+                                        <span className="2xl:text-lg text-md font-normal leading-43 text-green">{cardDetail.category}</span>
+                                        <h4 className="2xl:text-4xl text-2xl font-300 leading-7 text-green">{cardDetail.heading}</h4>
+                                        <p className="2xl:text-lg text-sm">
+                                            {cardDetail.description}
+                                        </p>
+                                    </div>
+                                </div>
+                            </BlurCard>
+                        ))}
+                    </div>
+                </div>
+            </div>
+            <div className="">
+                <div className="text-center border-y border-gray-500 border-opacity-50">
+                    <h4 className="2xl:text-7xl text-5xl font-extralight py-5">The trillion dollar data opportunity</h4>
+                </div>
+                <div className="grid grid-cols-3 justify-center items-center text-center">
+                    <div className="2xl:py-24 py-12 border-x flex flex-col gap-5 justify-center">
+                        <p className="2xl:text-5xl text-3xl">
+                            $ <span className="2xl:text-7xl text-5xl">3.1</span> trillion
+                        </p>
+                        <p className="2xl:text-lg text-sm text-green 2xl:leading-5 leading-4">
+                            Annual cost of poor <br /> data management practices <br /> in the United States.
+                        </p>
+                    </div>
+                    <div className="2xl:py-24 py-12 border-x flex flex-col gap-5 justify-center">
+                        <p className="2xl:text-5xl text-3xl">
+                            <span className="2xl:text-7xl text-5xl">90</span> %
+                        </p>
+                        <p className="2xl:text-lg text-sm text-green 2xl:leading-5 leading-4">
+                            Amount of total <br /> enterprise data trapped <br /> on inferior centralised systems.
+                        </p>
+                    </div>
+                    <div className="2xl:py-24 py-12 border-x flex flex-col gap-5 justify-center">
+                        <p className="2xl:text-5xl text-3xl">
+                            $ <span className="2xl:text-7xl text-5xl">1.5</span> trillion
+                        </p>
+                        <p className="2xl:text-lg text-sm text-green 2xl:leading-5 leading-4">
+                            Projected enterprise spend <br /> on data management, storage <br /> and analysis by 2025.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     )

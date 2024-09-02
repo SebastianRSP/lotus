@@ -16,7 +16,7 @@ export const DetailCards = () => {
                 <ParticleComponent />
                 {/* <Lottie animationData={bubbleBg} loop={true} className="h-available" /> */}
             </div>
-            <div className="relative xl:px-40 lg:px-20 px-9 lg:pt-20 md:pt-28 pt-9 lg:pb-96 md:pb-30 pb-96 z-10 filter bg-[#5e5e5e5e] md:backdrop-blur-lg backdrop-blur-none">
+            <div className="relative xl:px-40 lg:px-20 px-9 lg:pt-20 md:pt-28 pt-9 lg:pb-96 md:pb-30 pb-96 z-10 filter bg-gray-blur md:backdrop-blur-lg backdrop-blur-none">
                 <div className="grid md:grid-cols-2 grid-cols-1 lg:gap-0 gap-10 items-center md:py-20 py-5">
                     <div className="md:flex hidden w-48 h-48 md:my-0 sm:my-32 my-3 relative justify-center items-end justify-self-center lg:order-1 md:order-2 order-2">
                         <div className="absolute">

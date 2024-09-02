@@ -41,6 +41,7 @@ module.exports = {
       },
       fontWeight: {
         'light': '200',
+        '300': '300'
       },
       boxShadow: {
         'outer': '6px 6px 0px #00000041',
@@ -50,6 +51,7 @@ module.exports = {
         'button-green': '6px 6px 0px #03FF00',
         'white': '2px 2px 0px #fff',
         'black': '2px 2px 0px #000',
+        'green': '2px 2px 0px #00FF03',
         'wrapper-button-green': '7px 7px 0px #03FF00',
         'button-green-hover': '4px 4px 0px #03ff00;',
         'inner': 'inset 4px 4px 0px #00000040',
@@ -68,11 +70,14 @@ module.exports = {
         'purple': '#D869F3',
         'black': '#000000',
         'gray': '#252525',
-        'gray-light': '#F2F2F2',
         'gray-circle': '#404240',
         'green': '#00FF00',
+        'gray-border' : '#E6E6E6', /* For Gray Border */
         // For New Home Page
-        'gray-light': '#F2F5F2'
+        'gray-light': '#F2F5F2',
+
+        // For blur-background
+        'gray-blur': '#5e5e5e5e'
       },
       height: {
         'inherit': 'inherit',
@@ -114,6 +119,7 @@ module.exports = {
         '43': '2.6875rem',
         '48': '3rem',
         '50': '3.125rem',
+        '54': '3.375rem',
         '56': '3.5rem',
         '66': '4.125rem',
         '74': '4.625rem',
@@ -126,7 +132,6 @@ module.exports = {
         '154': '9.625rem',
         '45': '4.5rem',
       },
-
       padding: {
         '0.2': '0.2rem',
         '0.3': '0.3rem',
@@ -154,6 +159,9 @@ module.exports = {
         '6': '6px',
         '9': '9px',
         '12': '12px',
+      },
+      borderRadius: {
+        '4': '4px'
       },
       translate: {
         '2px': '2px',

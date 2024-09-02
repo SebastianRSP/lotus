@@ -180,12 +180,13 @@ export const InvertmentBridgeGrowth = () => {
 
     return (
         <div className="investment-bridge-growth-bg h-auto relative">
-            <div className="flex justify-center lg:h-105ch md:h-110ch h-120ch relative py-11">
+            <div className="flex justify-center absolute inset-0">
+                {/* lg:h-105ch md:h-110ch h-120ch py-11 */}
                 {/* <div className="w-11/12 bg-transparent relative overflow-hidden">
                     <Lottie animationData={bridgeGrowthMap} loop={true} className="opacity-10 absolute w-available h-fit" />
                 </div> */}
             </div>
-            <div className="py-28 w-full absolute inset-0 flex justify-center items-start">
+            <div className="py-28 w-full flex justify-center items-start">
                 <div className="flex flex-col justify-center items-center text-white text-center">
                     <h3 className="2xl:text-118 xl:text-100 lg:text-90 md:text-80 text-5xl  font-extrabold border-b-[0.5px] border-hr relative">
                         Send
@@ -206,7 +207,7 @@ export const InvertmentBridgeGrowth = () => {
                             <span className="font-normal text-green">2,000,000,000 $SEND</span>
                         </h4>
                     </div>
-                    <div className="py-16 lg:px-40 md:px-20 px-9 w-auto">
+                    <div className="pt-16 lg:px-40 md:px-20 px-9 w-auto">
                         <div className="lg:bg-black lg:block hidden bg-transparent relative w-fit bg-no-repeat lg:border border-0 border-white lg:shadow-white shadow-none">
                             <div className="flex lg:flex-nowrap flex-wrap justify-center lg:gap-0 gap-2">
                                 {growthTabs.map((growthtab, index) => (
@@ -230,7 +231,7 @@ export const InvertmentBridgeGrowth = () => {
                                         <div className="relative lg:flex hidden w-80 h-80 justify-center items-center">
                                             <Chart
                                                 chartType="PieChart"
-                                                className="bg-transparent lg:w-39 lg:h-39 w-31 h-31"
+                                                className="bg-transparent lg:w-39 lg:h-39 w-31 h-31 chart-lg"
                                                 data={[
                                                     ["", "Percentage"],
                                                     ["", 20],
@@ -272,7 +273,7 @@ export const InvertmentBridgeGrowth = () => {
                                         <div className="relative lg:hidden flex w-80 h-80 mb-10 justify-center items-center">
                                             <Chart
                                                 chartType="PieChart"
-                                                className="bg-transparent lg:w-39 lg:h-39 w-31 h-31"
+                                                className="bg-transparent lg:w-39 lg:h-39 w-31 h-31 chart-md"
                                                 data={[
                                                     ["", "Percentage"],
                                                     ["", 20],
@@ -333,6 +334,9 @@ export const InvertmentBridgeGrowth = () => {
                                     </div>
                                 </div>
                             </div>
+                            <DefaultBlack 
+                                btnText={'Learn More'}
+                            />
                         </div>
                     </div>
                 </div>
