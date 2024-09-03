@@ -75,6 +75,7 @@ module.exports = {
         'gray-border' : '#E6E6E6', /* For Gray Border */
         // For New Home Page
         'gray-light': '#F2F5F2',
+        'light-green': '#03FF00',
 
         // For blur-background
         'gray-blur': '#5e5e5e5e'

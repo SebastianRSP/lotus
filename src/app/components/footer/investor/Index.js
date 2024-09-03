@@ -1,3 +1,4 @@
+'use client'
 import Image from 'next/image';
 import footerLogo from '../../../../../public/footer-logo.png';
 import Link from 'next/link';

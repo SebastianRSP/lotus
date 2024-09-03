@@ -695,4 +695,22 @@ canvas {
   height: 0.05em; /* Adjust height as needed */
   background-color: black;
 }
+
+.curve {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: black;
+  font-size: 15px;
+  width: 86px;
+  height: 86px;
+  border: transparent;
+  background: black url(../../public/icons/bucket-curve.svg) left top no-repeat;
+}
+.curve span {
+  display: block;
+  position: absolute;
+  left: 20px;
+  top: 16px;
+}
 /* New Home Page CSS Ends */

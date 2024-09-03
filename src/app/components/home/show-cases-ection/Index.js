@@ -31,13 +31,13 @@ export const ShowCaseSection = () => {
                 <div className="pt-14">
                     <div className="border border-black rounded-lg">
                         <div className="py-11 px-10 flex justify-center">
-                            <div className="lg:bg-white bg-transparent relative w-fit bg-no-repeat lg:shadow-black shadow-none">
-                                <div className="flex lg:flex-nowrap flex-wrap justify-center border lg:gap-0 gap-2">
+                            <div className="lg:bg-white bg-transparent relative border rounded w-fit bg-no-repeat lg:shadow-black shadow-none">
+                                <div className="flex lg:flex-nowrap flex-wrap justify-center lg:gap-0 gap-2">
                                     {growthTabs.map((growthtab, index) => (
                                         <div key={index}
                                             onClick={() => setActiveIndex(index)}
                                             className={`
-                                                ${activeIndex === index ? 'bg-green border-x' : 'text-black divide-x border-transparent'} 
+                                                ${activeIndex === index ? 'bg-green border-x rounded' : 'text-black divide-x border-transparent'} 
                                                 xl:py-3 lg:py-2 py-0.5 xl:px-5 lg:px-3 px-5 text-black lg:shadow-none shadow-white cursor-pointer 2xl:text-sm xl:text-xs tracking-space90
                                             `}>
                                             <span className="uppercase ">
