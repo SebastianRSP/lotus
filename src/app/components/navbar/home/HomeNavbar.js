@@ -123,7 +123,7 @@ export const HomeNavbar = () => {
                     </div>
                 </div>
                 {/* Mobile Version */}
-                <div className='md:hidden flex justify-between items-center pt-6 px-8'>
+                <div className='md:hidden flex justify-between items-center pt-3 md:px-8 px-5'>
                     <div className="logo-container">
                         <Image
                             className="lotus"

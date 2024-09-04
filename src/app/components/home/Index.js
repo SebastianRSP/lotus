@@ -15,8 +15,8 @@ export const IndexHome = () => {
                     <HomeNavbar />
                 </header>
                 {/* White Strap */}
-                <div className="absolute justify-center w-full md:flex hidden">
-                    <div className=' bg-white 2xl:h-20 h-16 z-10 rounded-tl-[0px] rounded-tr-[0px] rounded-bl-[32px] rounded-br-[32px] lg:w-4/12 w-1/5'></div>
+                <div className="absolute md:flex justify-center w-full">
+                    <div className=' bg-white 2xl:h-20 h-16 z-10 md:rounded-bl-[32px] rounded-br-[32px] lg:w-4/12 md:w-1/5 sm:w-3/12 w-4/12'></div>
                 </div>
                 <div className="grid grid-cols-12 h-available items-center">
                     <div className="lg:col-span-5 col-span-11 2xl:pl-20 md:pl-10 pl-5 grid grid-rows-3 items-end h-available">

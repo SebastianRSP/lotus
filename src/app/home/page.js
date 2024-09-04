@@ -16,8 +16,8 @@ export default function Home() {
                 <div className="2xl:py-10 py-5 h-screen">
                     <IndexHome />
                 </div>
-                {/* <OurPartners />
-                <FeatureSection />
+                <OurPartners />
+                {/* <FeatureSection />
                 <BridgeSection />
                 <ShowCaseSection />
                 <PartnerReviews />
