@@ -55,6 +55,9 @@ module.exports = {
         'wrapper-button-green': '7px 7px 0px #03FF00',
         'button-green-hover': '4px 4px 0px #03ff00;',
         'inner': 'inset 4px 4px 0px #00000040',
+
+        // New Home page
+        'outer-new-home': '3px 3px 0px #00000041',
       },
       borderColor: {
         'black': '#000000',

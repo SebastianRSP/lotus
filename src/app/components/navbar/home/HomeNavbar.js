@@ -140,9 +140,9 @@ export const HomeNavbar = () => {
                             height={18}
                         />
                     </div>
-                    <div className='border border-black shadow-outer bg-yellowLight w-9 h-9 p-0.3 relative z-50'>
+                    <div className='border border-black rounded-4 shadow-outer-new-home bg-yellowLight w-9 h-9 p-0.3 relative z-50'>
                         <div
-                            className='bg-green flex justify-center items-center w-full h-full'
+                            className='bg-green rounded-4 flex justify-center items-center w-full h-full'
                             onClick={handleToggle}
                         >
                             <Image
