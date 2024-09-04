@@ -29,10 +29,10 @@ export const BridgeSection = () => {
     return (
         <div className="bg-black h-auto forced-full-width text-white">
             <div className="flex flex-col justify-center w-full 2xl:py-32 py-16">
-                <h4 className="2xl:text-6xl text-5xl 2xl:leading-66 leading-56 font-extralight text-center">
+                <h4 className="2xl:text-6xl lg:text-5xl md:text-4xl text-2xl 2xl:leading-66 lg:leading-56 md:leading-10 leading-7 font-extralight text-center">
                     We’re building <br /> the world’s largest<br /> content delivery network
                 </h4>
-                <div className='flex justify-center items-center text-center text-green my-20 relative'>
+                {/* <div className='flex justify-center items-center text-center text-green my-20 relative'>
                     <div className="w-full relative">
                         <Image
                             src={bridgeImage}
@@ -89,9 +89,9 @@ export const BridgeSection = () => {
                             </BlurCard>
                         ))}
                     </div>
-                </div>
+                </div> */}
             </div>
-            <div className="">
+            {/* <div className="">
                 <div className="text-center border-y border-gray-500 border-opacity-50">
                     <h4 className="2xl:text-7xl text-5xl font-extralight py-5">The trillion dollar data opportunity</h4>
                 </div>
@@ -121,7 +121,7 @@ export const BridgeSection = () => {
                         </p>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }

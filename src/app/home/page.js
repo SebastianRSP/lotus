@@ -17,9 +17,9 @@ export default function Home() {
                     <IndexHome />
                 </div>
                 <OurPartners />
-                {/* <FeatureSection />
+                {/* <FeatureSection /> */}
                 <BridgeSection />
-                <ShowCaseSection />
+                {/* <ShowCaseSection />
                 <PartnerReviews />
                 <CardsSection />
                 <FrequentlyAsked />
