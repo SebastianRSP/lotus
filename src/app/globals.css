@@ -682,19 +682,34 @@ canvas {
 
 .link-home-hover {
   position: relative;
-  display: inline-flex;
-  white-space: nowrap;
+  display: inline-block; 
+  text-transform: uppercase;
+  transition: transform 300ms cubic-bezier(0, 0, 0.2, 1); /* Text transition */
 }
-
-.link-home-hover:before {
+.link-home-hover::before {
   content: "";
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 1.5em; /* Adjust positioning as needed */
-  height: 0.05em; /* Adjust height as needed */
-  background-color: black;
+  bottom: -0.1em; 
+  height: 0.05em;
+  background-color: #000000;
+  opacity: 0;
+  transition: opacity 300ms cubic-bezier(0, 0, 0.2, 1);
 }
+.link-home-hover:hover {
+  transform: translateY(-2px);
+}
+.link-home-hover:hover::before {
+  opacity: 1;
+}
+.link-home-hover.link-home-exact-active {
+  transform: translateY(-2px);
+}
+.link-home-hover.link-home-exact-active::before {
+  opacity: 1;
+}
+
 
 .curve {
   position: absolute;

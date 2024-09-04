@@ -51,9 +51,10 @@ export default function RootLayout({ children }) {
         ) : (
           <>
             {homePage ? (
-              <header>
-                <HomeNavbar />
-              </header>
+              // <header>
+              //   <HomeNavbar />
+              // </header>
+              <></>
             ) : (
               <header>
                 <Navbar />
