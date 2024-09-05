@@ -59,18 +59,18 @@ export const BridgeSection = () => {
                         </div>
                     </div>
                 </div>
-                {/* <div className="2xl:py-32 py-8 text-center">
-                    <h5 className="2xl:text-5xl text-4xl 2xl:leading-50 leading-10 font-extralight ">
+                <div className="2xl:py-32 py-8 text-center">
+                    <h5 className="2xl:text-5xl md:text-4xl text-2xl 2xl:leading-50 md:leading-10 leading-7 font-extralight ">
                         A single pane of glass <br /> connecting <span className="font-normal">web2</span> and <span className="font-normal">web3</span>
                     </h5>
-                    <p className="2xl:text-4xl text-xl my-2 text-green">Backed by AI enabled data management tools</p>
+                    <p className="2xl:text-4xl md:text-xl text-md my-2 text-green">Backed by AI enabled data management tools</p>
                 </div>
                 <div className="2xl:py-32 py-8 text-center">
-                    <div className="flex flex-col gap-6 2xl:px-40 px-32">
+                    <div className="flex flex-col gap-6 2xl:px-40 md:px-20 px-9">
                         {cardDetails.map((cardDetail, index) => (
                             <BlurCard>
-                                <div key={index} className="grid grid-cols-2 justify-center items-center 2xl:py-24 py-12">
-                                    <div>
+                                <div key={index} className="grid md:grid-cols-2 grid-cols-1 justify-center items-center 2xl:py-24 py-12 md:px-0 px-5">
+                                    <div className="md:my-0 my-20">
                                         <Image
                                             src={cardDetail.defaultImage}
                                             alt="default Image"
@@ -78,7 +78,7 @@ export const BridgeSection = () => {
                                             height={40}
                                         />
                                     </div>
-                                    <div className="flex flex-col justify-between gap-3 text-left w-4/6">
+                                    <div className="flex flex-col justify-between gap-3 text-left lg:w-4/6 md:w-11/12 w-full">
                                         <span className="2xl:text-lg text-md font-normal leading-43 text-green">{cardDetail.category}</span>
                                         <h4 className="2xl:text-4xl text-2xl font-300 leading-7 text-green">{cardDetail.heading}</h4>
                                         <p className="2xl:text-lg text-sm">
@@ -89,7 +89,7 @@ export const BridgeSection = () => {
                             </BlurCard>
                         ))}
                     </div>
-                </div> */}
+                </div>
             </div>
             {/* <div className="">
                 <div className="text-center border-y border-gray-500 border-opacity-50">
