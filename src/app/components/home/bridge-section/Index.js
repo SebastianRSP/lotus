@@ -32,7 +32,7 @@ export const BridgeSection = () => {
                 <h4 className="2xl:text-6xl lg:text-5xl md:text-4xl text-2xl 2xl:leading-66 lg:leading-56 md:leading-10 leading-7 font-extralight text-center">
                     We’re building <br /> the world’s largest<br /> content delivery network
                 </h4>
-                {/* <div className='flex justify-center items-center text-center text-green my-20 relative'>
+                <div className='flex justify-center items-center text-center text-green my-20 relative'>
                     <div className="w-full relative">
                         <Image
                             src={bridgeImage}
@@ -59,7 +59,7 @@ export const BridgeSection = () => {
                         </div>
                     </div>
                 </div>
-                <div className="2xl:py-32 py-8 text-center">
+                {/* <div className="2xl:py-32 py-8 text-center">
                     <h5 className="2xl:text-5xl text-4xl 2xl:leading-50 leading-10 font-extralight ">
                         A single pane of glass <br /> connecting <span className="font-normal">web2</span> and <span className="font-normal">web3</span>
                     </h5>
