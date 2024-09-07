@@ -92,11 +92,11 @@ export const BridgeSection = () => {
                 </div>
             </div>
             <div className="">
-                <div className="text-center border-y border-gray-500 border-opacity-50">
+                <div className="text-center border-y border-opacity-20 border-gray-light">
                     <h4 className="2xl:text-7xl md:text-5xl text-xl md:font-extralight font-medium py-5">The trillion dollar data opportunity</h4>
                 </div>
                 <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 justify-center items-center text-center">
-                    <div className="2xl:py-24 py-12 lg:border-x border flex flex-col gap-5 justify-center">
+                    <div className="2xl:py-24 py-12 lg:border-x border-opacity-20 border-gray-light border flex flex-col gap-5 justify-center">
                         <p className="2xl:text-5xl text-3xl">
                             $ <span className="2xl:text-7xl text-5xl">3.1</span> trillion
                         </p>
@@ -104,7 +104,7 @@ export const BridgeSection = () => {
                             Annual cost of poor <br /> data management practices <br /> in the United States.
                         </p>
                     </div>
-                    <div className="2xl:py-24 py-12 lg:border-x border flex flex-col gap-5 justify-center">
+                    <div className="2xl:py-24 py-12 lg:border-x border border-opacity-20 border-gray-light flex flex-col gap-5 justify-center">
                         <p className="2xl:text-5xl text-3xl">
                             <span className="2xl:text-7xl text-5xl">90</span> %
                         </p>
@@ -112,7 +112,7 @@ export const BridgeSection = () => {
                             Amount of total <br /> enterprise data trapped <br /> on inferior centralised systems.
                         </p>
                     </div>
-                    <div className="2xl:py-24 py-12 lg:border-x border flex flex-col gap-5 justify-center">
+                    <div className="2xl:py-24 py-12 lg:border-x border border-opacity-20 border-gray-light flex flex-col gap-5 justify-center">
                         <p className="2xl:text-5xl text-3xl">
                             $ <span className="2xl:text-7xl text-5xl">1.5</span> trillion
                         </p>

@@ -75,7 +75,7 @@ export const ShowCaseSection = () => {
 
 
     return (
-        <div className="2xl:py-32 py-16 2xl:px-28 md:px-5 px-0">
+        <div className="2xl:py-28 md:py-16 py-10 2xl:px-28 md:px-5 px-0">
             <div className="bg-gray-light rounded-lg 2xl:px-40 md:px-10 px-5 2xl:py-28 py-12 ">
                 <div className="grid md:grid-cols-2 grid-cols-1 md:gap-36 gap-10 justify-between">
                     <h3 className="2xl:text-2xl text-xl 2xl:leading-7 leading-5 font-300">

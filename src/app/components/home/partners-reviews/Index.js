@@ -24,12 +24,12 @@ const partners = [
 
 export const PartnerReviews = () => {
     return (
-        <div className="2xl:px-10 px-24 2xl:py-16 py-8">
-            <h4 className="bg-green capitalize text-black 2xl:text-5xl 2xl:leading-54 text-2xl font-medium inline px-0.2">
+        <div className="2xl:px-10 md:px-5 px-0 2xl:py-16 md:py-8 py-3">
+            <h4 className="bg-green capitalize text-black 2xl:text-5xl md:text-2xl text-lg 2xl:leading-66 md:leading-7 leading-5  font-medium inline px-0.2">
                 What our partners <br /> have to say.
             </h4>
 
-            <div className="2xl:my-24 my-12 2xl:px-20 px-32 forced-full-width border-y border-y-gray-border h-auto">
+            {/* <div className="2xl:my-24 my-12 2xl:px-20 px-32 forced-full-width border-y border-y-gray-border h-auto">
                 <div className="border-x border-x-gray-border grid grid-cols-2">
                     <div className="flex flex-col h-auto justify-between p-6">
                         <div className='font-bold text-lg'>
@@ -58,7 +58,7 @@ export const PartnerReviews = () => {
                         ))}
                     </div>
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }

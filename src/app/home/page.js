@@ -20,8 +20,8 @@ export default function Home() {
                 {/* <FeatureSection /> */}
                 <BridgeSection />
                 <ShowCaseSection />
-                {/* <PartnerReviews />
-                <CardsSection />
+                <PartnerReviews />
+                {/* <CardsSection />
                 <FrequentlyAsked />
                 <FooterSection /> */}
             </div>
