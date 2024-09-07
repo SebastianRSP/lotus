@@ -728,4 +728,22 @@ canvas {
   left: 20px;
   top: 16px;
 }
+
+.new-home-slider .slick-list {
+  width: 75%;
+  overflow: hidden;
+}
+.arrow-new-home::before{
+  color: black !important;
+  font-size: 21px !important;
+}
+
+@media (max-width: 768px) {
+  .new-home-slider .slick-list {
+    width: 99%; /* Adjust the width for small screens */
+  }
+}
+
+
+
 /* New Home Page CSS Ends */

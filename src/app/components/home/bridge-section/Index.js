@@ -27,7 +27,7 @@ const cardDetails = [
 
 export const BridgeSection = () => {
     return (
-        <div className="bg-black h-auto forced-full-width text-white">
+        <div className="bg-black h-auto forced-full-width text-white md:px-0 px-5">
             <div className="flex flex-col justify-center w-full 2xl:py-32 py-16">
                 <h4 className="2xl:text-6xl lg:text-5xl md:text-4xl text-2xl 2xl:leading-66 lg:leading-56 md:leading-10 leading-7 font-extralight text-center">
                     We’re building <br /> the world’s largest<br /> content delivery network
@@ -37,7 +37,7 @@ export const BridgeSection = () => {
                         <Image
                             src={bridgeImage}
                             layout="responsive"
-                            className="md:!w-7/12 w-full md:px-0 px-6 h-auto"
+                            className="md:!w-7/12 w-full h-auto"
                             alt="bridge image"
                             width={1096}
                             height={605}
@@ -48,7 +48,7 @@ export const BridgeSection = () => {
                             src={bridgeText}
                             layout="responsive"
                             alt="circle image"
-                            className="md:!w-9/12 w-full md:px-0 px-6 h-auto"
+                            className="md:!w-9/12 w-full h-auto"
                             width={1096}
                             height={650}
                         />
@@ -66,7 +66,7 @@ export const BridgeSection = () => {
                     <p className="2xl:text-4xl md:text-xl text-md my-2 text-green">Backed by AI enabled data management tools</p>
                 </div>
                 <div className="2xl:py-32 py-8 text-center">
-                    <div className="flex flex-col gap-6 2xl:px-40 md:px-20 px-9">
+                    <div className="flex flex-col gap-6 2xl:px-40 md:px-20 px-0">
                         {cardDetails.map((cardDetail, index) => (
                             <BlurCard>
                                 <div key={index} className="grid md:grid-cols-2 grid-cols-1 justify-center items-center 2xl:py-24 py-12 md:px-0 px-5">
@@ -91,12 +91,12 @@ export const BridgeSection = () => {
                     </div>
                 </div>
             </div>
-            {/* <div className="">
+            <div className="">
                 <div className="text-center border-y border-gray-500 border-opacity-50">
-                    <h4 className="2xl:text-7xl text-5xl font-extralight py-5">The trillion dollar data opportunity</h4>
+                    <h4 className="2xl:text-7xl md:text-5xl text-xl md:font-extralight font-medium py-5">The trillion dollar data opportunity</h4>
                 </div>
-                <div className="grid grid-cols-3 justify-center items-center text-center">
-                    <div className="2xl:py-24 py-12 border-x flex flex-col gap-5 justify-center">
+                <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 justify-center items-center text-center">
+                    <div className="2xl:py-24 py-12 lg:border-x border flex flex-col gap-5 justify-center">
                         <p className="2xl:text-5xl text-3xl">
                             $ <span className="2xl:text-7xl text-5xl">3.1</span> trillion
                         </p>
@@ -104,7 +104,7 @@ export const BridgeSection = () => {
                             Annual cost of poor <br /> data management practices <br /> in the United States.
                         </p>
                     </div>
-                    <div className="2xl:py-24 py-12 border-x flex flex-col gap-5 justify-center">
+                    <div className="2xl:py-24 py-12 lg:border-x border flex flex-col gap-5 justify-center">
                         <p className="2xl:text-5xl text-3xl">
                             <span className="2xl:text-7xl text-5xl">90</span> %
                         </p>
@@ -112,7 +112,7 @@ export const BridgeSection = () => {
                             Amount of total <br /> enterprise data trapped <br /> on inferior centralised systems.
                         </p>
                     </div>
-                    <div className="2xl:py-24 py-12 border-x flex flex-col gap-5 justify-center">
+                    <div className="2xl:py-24 py-12 lg:border-x border flex flex-col gap-5 justify-center">
                         <p className="2xl:text-5xl text-3xl">
                             $ <span className="2xl:text-7xl text-5xl">1.5</span> trillion
                         </p>
@@ -121,7 +121,7 @@ export const BridgeSection = () => {
                         </p>
                     </div>
                 </div>
-            </div> */}
+            </div>
         </div>
     )
 }

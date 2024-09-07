@@ -19,8 +19,8 @@ export default function Home() {
                 <OurPartners />
                 {/* <FeatureSection /> */}
                 <BridgeSection />
-                {/* <ShowCaseSection />
-                <PartnerReviews />
+                <ShowCaseSection />
+                {/* <PartnerReviews />
                 <CardsSection />
                 <FrequentlyAsked />
                 <FooterSection /> */}

@@ -7,26 +7,29 @@ import './SlickSlider.css'
 import React from "react";
 
 const NextArrow = (props) => {
-    const { className, style, onClick, index } = props;
+    const { className, style, onClick, index, extras } = props;
+
+    const mergeClasses = `${className} ${extras}`;
 
     return (
-
         <div
             key={index}
-            className={className}
+            className={mergeClasses}
             style={{ ...style}}
             onClick={onClick}
         />
-
     );
 }
 
 const PrevArrow = (props) => {
-    const { className, style, onClick, index } = props;
+    const { className, style, onClick, index, extras } = props;
+
+    const mergeClasses = `${className} ${extras}`;
+
     return (
         <div
             key={index}
-            className={className}
+            className={mergeClasses}
             style={{ ...style}}
             onClick={onClick}
         />
@@ -112,6 +115,88 @@ export const SlickSlider = ({ children, index }) => {
     return (
     
             <Slider className='w-full' key={index} {...settings}>
+                    {children}
+            </Slider>
+      
+    )
+}
+
+export const NewHomeSlider = ({ children, index, sliderRef, onSlideChange }) => {
+
+    const newHomePageSettings = {
+        dots: false,
+        infinite: true,
+        speed: 1000,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        initialSlide: 0,
+        variableWidth: false,
+        nextArrow: <NextArrow extras="arrow-new-home !w-6 !h-6 !bg-transparent !border-2 !border-solid !text-black !rounded-full" />,
+        prevArrow: <PrevArrow extras="arrow-new-home !w-6 !h-6 !bg-transparent !border-2 !border-solid !text-black !rounded-full" />,
+        beforeChange: (oldIndex, newIndex) => {
+            onSlideChange(oldIndex, newIndex); // Update active index when slide changes
+        },
+        responsive: [
+            {
+                breakpoint: 1300,
+                settings: {
+                    speed: 1000,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    initialSlide: 0,
+                    variableWidth: false
+                }
+            },
+            {
+                breakpoint: 1024,
+                settings: {
+                    speed: 1000,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    initialSlide: 0,
+                    variableWidth: false
+                }
+            },
+            {
+                breakpoint: 800,
+                settings: {
+                    speed: 1000,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    initialSlide: 0,
+                    variableWidth: false
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    speed: 1000,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    initialSlide: 0,
+                    variableWidth: false,
+                    dots: true,
+                    arrows: false // Disable arrows for this breakpoint
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    speed: 1000,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    initialSlide: 0,
+                    variableWidth: false,
+                    dots: true,
+                    arrows: false // Disable arrows for this breakpoint
+                }
+            }
+        ]
+    };
+
+    return (
+    
+            <Slider className='w-full !flex justify-center  new-home-slider' key={index} ref={sliderRef} {...newHomePageSettings}>
                     {children}
             </Slider>
       

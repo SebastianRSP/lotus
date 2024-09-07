@@ -5,11 +5,6 @@
 .slick-bg{
     box-shadow: 20px 20px 50px white;
 }
-/* .slick-list{
-    position: relative;
-    z-index: 10;
-    pointer-events: none;
-} */
 
 .slick-prev, .slick-next {
     z-index: 1; 
@@ -46,8 +41,8 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: -3px;
-    left: 5px;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -92,7 +87,7 @@
   
   .slick-dots li button:hover, .slick-dots li button:focus {
     outline: none;
-    color: #03FF00 !important;;
+    color: #03FF00 !important;
   }
 
 
