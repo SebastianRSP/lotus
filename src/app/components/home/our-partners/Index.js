@@ -1,9 +1,7 @@
 import Image from "next/image";
-import awsIcon from '../../../../../public/icons/partners/aws.svg';
-import Marquee from "react-fast-marquee";
 
 // Partners Import
-import FileCoin from '../../../../../public/new-home-assets/icons/fileCoin.svg';
+import FileCoin from '../../../../../public/new-home-assets/icons/filecoin.svg';
 import Arweave from '../../../../../public/new-home-assets/icons/arweave.svg';
 import AWS from '../../../../../public/new-home-assets/icons/aws.svg';
 import Azure from '../../../../../public/new-home-assets/icons/azure.svg';

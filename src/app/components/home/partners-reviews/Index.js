@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
 // Partners Import
-import FileCoin from '../../../../../public/new-home-assets/fileCoin.svg';
+import FileCoin from '../../../../../public/new-home-assets/filecoin.svg';
 import Arweave from '../../../../../public/new-home-assets/arweave.svg';
 import Blocz from '../../../../../public/new-home-assets/blocz.svg';
 import Clearskye from '../../../../../public/new-home-assets/clearskye.svg';
