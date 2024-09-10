@@ -88,7 +88,7 @@ export const PartnerReviews = () => {
                 }
                 return prevProgress + 1; // Increment progress
             });
-        }, 100); // Adjust the speed as needed
+        }, 50); // Adjust the speed as needed
 
         return () => clearInterval(interval); // Clear interval on component unmount or when progress changes
     }, [progress]); // Only depend on progress

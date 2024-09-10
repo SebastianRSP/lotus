@@ -729,6 +729,16 @@ canvas {
   top: 16px;
 }
 
+.new-home-faq .is-active {
+  
+}
+.active-icon {
+  transition: all .75s cubic-bezier(.19,1,.22,1);
+}
+.is-active .active-icon {
+  transform: scaleY(-1);
+}
+
 .new-home-slider .slick-list {
   width: 75%;
   overflow: hidden;

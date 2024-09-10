@@ -21,9 +21,9 @@ export default function Home() {
                 <BridgeSection />
                 <ShowCaseSection />
                 <PartnerReviews />
-                {/* <CardsSection />
+                <CardsSection />
                 <FrequentlyAsked />
-                <FooterSection /> */}
+                {/* <FooterSection /> */}
             </div>
         </>
     )
