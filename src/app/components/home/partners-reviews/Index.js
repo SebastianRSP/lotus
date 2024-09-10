@@ -111,7 +111,7 @@ export const PartnerReviews = () => {
             <div className="2xl:my-24 my-12 2xl:px-20 xl:px-14 md:px-10 px-5 forced-full-width border-y border-y-gray-border h-auto">
                 <div className="border-x border-x-gray-border grid lg:grid-cols-2 grid-col-1">
                     {/* Dynamic Partner Content */}
-                    <div className="flex flex-col h-auto justify-between lg:p-6 p-3">
+                    <div className="flex flex-col h-auto justify-between lg:p-6 p-5">
                         <div className="h-full grid grid-rows-3 justify-between items-center gap-2">
                             <div className="font-bold text-lg">
                                 <Image
