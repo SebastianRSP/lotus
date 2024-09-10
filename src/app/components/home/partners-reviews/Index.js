@@ -83,7 +83,7 @@ export const PartnerReviews = () => {
             setProgress((prevProgress) => {
                 if (prevProgress >= 100) {
                     // console.log(activeIndex, 'activeIndex1')
-                    setActiveIndex((prevIndex) => (prevIndex + 0.5) % partners.length); // Increment activeIndex in sequence
+                    setActiveIndex((prevIndex) => (prevIndex + 1) % partners.length); // Increment activeIndex in sequence
                     return 0; // Reset progress for the next partner
                 }
                 return prevProgress + 1; // Increment progress
