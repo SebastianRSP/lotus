@@ -115,23 +115,23 @@ export const PartnerReviews = () => {
                         <div className="h-full grid grid-rows-3 justify-between items-center gap-2">
                             <div className="font-bold text-lg">
                                 <Image
-                                    src={currentPartner.partnerIcon}
-                                    alt={`${currentPartner.partnerName} icon`}
+                                    src={currentPartner?.partnerIcon}
+                                    alt={`${currentPartner?.partnerName} icon`}
                                     width={124}
                                     height={64}
                                 />
                             </div>
                             <p className="2xl:text-2xl md:text-base text-sm font-300 2xl:leading-7 leading-5">
-                                {currentPartner.testimonial}
+                                {currentPartner?.testimonial}
                             </p>
                             <div className="flex items-center lg:gap-10 gap-5">
                                 <div className="bg-green border border-black lg:p-10 p-8 relative rounded-4">
                                     <div className="absolute inset-0 bg-gray-light border rounded-4 -translate-x-[2px] -translate-y-[2px]"></div>
                                 </div>
                                 <div>
-                                    <span className="2xl:text-2xl lg:text-xl text-base font-bold 2xl:leading-6 leading-5">{currentPartner.person}</span>
+                                    <span className="2xl:text-2xl lg:text-xl text-base font-bold 2xl:leading-6 leading-5">{currentPartner?.person}</span>
                                     <p className="text-sm font-normal leading-4 mt-2">
-                                        {currentPartner.title} <br /> <span className="text-xs font-extralight">{currentPartner.company}</span>
+                                        {currentPartner?.title} <br /> <span className="text-xs font-extralight">{currentPartner?.company}</span>
                                     </p>
                                 </div>
                             </div>
