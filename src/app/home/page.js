@@ -23,7 +23,7 @@ export default function Home() {
                 <PartnerReviews />
                 <CardsSection />
                 <FrequentlyAsked />
-                {/* <FooterSection /> */}
+                <FooterSection />
             </div>
         </>
     )
