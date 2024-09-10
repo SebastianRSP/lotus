@@ -46,21 +46,6 @@ export const ShowCaseSection = () => {
     const [activeIndex, setActiveIndex] = useState(0);
     const sliderRef = useRef(null); // Ref for the slider
 
-
-    const handleNext = () => {
-        if (sliderRef.current) {
-            sliderRef.current.slickNext();
-            setActiveIndex((prevIndex) => (prevIndex + 1) % growthTabs.length); // Update tab
-        }
-    };
-
-    const handlePrev = () => {
-        if (sliderRef.current) {
-            sliderRef.current.slickPrev();
-            setActiveIndex((prevIndex) => (prevIndex - 1 + growthTabs.length) % growthTabs.length); // Update tab
-        }
-    };
-
     const handleTabClick = (index) => {
         setActiveIndex(index);
         if (sliderRef.current) {
@@ -76,7 +61,7 @@ export const ShowCaseSection = () => {
 
     return (
         <div className="2xl:py-28 md:py-16 py-10 2xl:px-28 md:px-5 px-0">
-            <div className="bg-gray-light rounded-lg 2xl:px-40 md:px-10 px-5 2xl:py-28 py-12 ">
+            <div className="bg-gray-light rounded-lg 2xl:px-32 md:px-10 px-5 2xl:py-28 py-12 ">
                 <div className="grid md:grid-cols-2 grid-cols-1 md:gap-36 gap-10 justify-between">
                     <h3 className="2xl:text-2xl text-xl 2xl:leading-7 leading-5 font-300">
                         <span className="font-bold">The Bridge<sup>TM</sup></span> houses cutting-edge AI enabled data management tools for enterprise clients
@@ -86,7 +71,7 @@ export const ShowCaseSection = () => {
                     </p>
                 </div>
                 <div className="pt-14">
-                    <div className="border border-opacity-20 border-black md:pb-0 pb-18 rounded-lg overflow-hidden">
+                    <div className="border border-opacity-20 border-black md:pb-0 pb-18 px-3 rounded-lg overflow-hidden">
                         <div className="py-11 lg:px-10 px-5 justify-center lg:flex hidden">
                             <div className="lg:bg-white bg-transparent relative border rounded w-fit bg-no-repeat lg:shadow-black shadow-none">
                                 <div className="flex lg:flex-nowrap flex-wrap justify-center lg:gap-0 gap-2">
@@ -95,7 +80,7 @@ export const ShowCaseSection = () => {
                                             onClick={() => handleTabClick(index)}
                                             className={`
                                                 ${activeIndex === index ? 'bg-green border-x rounded' : 'text-black divide-x border-transparent'} 
-                                                xl:py-3 lg:py-2 py-0.5 xl:px-5 lg:px-2 px-5 text-black lg:shadow-none shadow-white cursor-pointer 2xl:text-sm text-xs tracking-space90
+                                                xl:py-3 lg:py-2 py-0.5 xl:px-5 lg:px-2 px-5 text-black lg:shadow-none shadow-white cursor-pointer text-xs tracking-space90
                                             `}>
                                             <span className="uppercase ">
                                                 {growthtab}

@@ -1,5 +1,7 @@
-import { DefaultBtn } from "../buttons/home/DefaultBtn"
-import { HomeNavbar } from "../navbar/home/HomeNavbar"
+import Image from "next/image";
+import { DefaultBtn } from "../buttons/home/DefaultBtn";
+import { HomeNavbar } from "../navbar/home/HomeNavbar";
+import tickIcon from '../../../../public/new-home-assets/tick.svg';
 
 const bullets = [
     { buttet: 'Seamless Web2 to Web3 Data Bridge' },
@@ -33,9 +35,15 @@ export const IndexHome = () => {
                             />
                         </div>
                         <div className="flex flex-col row-span-1 2xl:pb-10 pb-5 w-fit">
-                            <div className="border-t-[0.2px] border-opacity-50">
+                            <div className="border-t-[0.2px] border-t-black border-opacity-20">
                                 {bullets.map((bullet, index) => (
-                                    <div key={index} className="border-b-[0.2px] border-opacity-50 py-2">
+                                    <div key={index} className="flex items-center gap-3 border-b-[0.2px] border-b-black border-opacity-20 py-2">
+                                        <Image 
+                                            src={tickIcon}
+                                            alt="tick icon"
+                                            width={16}
+                                            height={16}
+                                        />
                                         <p className="2xl:text-xl md:text-sm text-xs">{bullet.buttet}</p>
                                     </div>
                                 ))}
