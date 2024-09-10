@@ -7,6 +7,7 @@ import AWS from '../../../../../public/new-home-assets/icons/aws.svg';
 import Azure from '../../../../../public/new-home-assets/icons/azure.svg';
 import Sia from '../../../../../public/new-home-assets/icons/sia.svg';
 import Storj from '../../../../../public/new-home-assets/icons/storj.svg';
+import Marquee from "react-fast-marquee";
 
 
 export const OurPartners = () => {
@@ -51,18 +52,18 @@ export const OurPartners = () => {
     ]
 
     return (
-        <div className="2xl:px-10 px-5 2xl:py-16 py-8">
+        <div className="2xl:px-10 md:px-5 px-0 2xl:py-16 py-8">
             <div className="lg:grid grid-cols-12 justify-center items-center">
-                <div className="xl:col-span-2 lg:col-span-3 lg:mb-0 mb-10">
+                <div className="xl:col-span-2 lg:col-span-3 lg:mb-0 md:mb-10 mb-5">
                     <h4 className="bg-green capitalize text-black text-2xl inline px-0.2">
                     //Our partners:
                     </h4>
                 </div>
                 <div className="xl:col-span-10 lg:col-span-9">
-                    <div className="overflow-hidden flex justify-around items-center">
-                        {/* <Marquee direction="left" pauseOnHover={true} > */}
+                    <div className="overflow-hidden flex justify-around items-center forced-full-width">
+                        <Marquee direction="left" pauseOnHover={true} >
                             {partners.map((partner, index) => (
-                                <div className="">
+                                <div className="px-10">
                                     <Image
                                         key={index}
                                         src={partner.partnerIcon}
@@ -72,7 +73,7 @@ export const OurPartners = () => {
                                     />
                                 </div>
                             ))}
-                        {/* </Marquee> */}
+                        </Marquee>
                     </div>
                 </div>
             </div>
