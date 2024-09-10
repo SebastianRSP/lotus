@@ -160,12 +160,12 @@ export const PartnerReviews = () => {
                                 onClick={() => handleClick(index)}
                             >
                                 <Image
-                                    src={partner.partnerIcon}
+                                    src={partner?.partnerIcon}
                                     className={`${activeIndex === index ? 'opacity-100' : 'opacity-30'
                                         }`}
-                                    alt={`${partner.partnerName} icon`}
-                                    width={partner.width}
-                                    height={partner.height}
+                                    alt={`${partner?.partnerName} icon`}
+                                    width={partner?.width}
+                                    height={partner?.height}
                                 />
                             </div>
                         ))}
