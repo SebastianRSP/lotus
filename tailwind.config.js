@@ -58,6 +58,9 @@ module.exports = {
 
         // New Home page
         'outer-new-home': '3px 3px 0px #00000041',
+
+        // Investor Page Mobile Navbar Shadow
+        'mobile' : '0px 5px 10px #00000033'
       },
       borderColor: {
         'black': '#000000',

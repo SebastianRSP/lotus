@@ -60,7 +60,7 @@ export const OurPartners = () => {
                     </h4>
                 </div>
                 <div className="xl:col-span-10 lg:col-span-9">
-                    <div className="overflow-hidden flex justify-around items-center forced-full-width">
+                    <div className="overflow-hidden flex justify-around items-center xs:forced-full-width sm:forced-full-width">
                         <Marquee direction="left" pauseOnHover={true} >
                             {partners.map((partner, index) => (
                                 <div className="px-10">

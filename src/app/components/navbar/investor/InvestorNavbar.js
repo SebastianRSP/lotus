@@ -19,7 +19,7 @@ const navLinksBefore = [
 
 const navLinksAfter = [
     { navLinkName: 'About Us', navLink: '#', extras: '', bookDemo: false },
-    { navLinkName: 'Book a Demo', navLink: '#', extras: '', bookDemo: true },  
+    { navLinkName: 'Book a Demo', navLink: '#', extras: '', bookDemo: true },
     // {/* bg-yellowDark */}
 ];
 
@@ -40,7 +40,7 @@ const mobileMenu = [
     { navLinkName: 'Investors', navLink: '/investors', extras: '' },
     { navLinkName: 'About Us', navLink: '#', extras: '' },
     { navLinkName: 'Book a Demo', navLink: '#', extras: '' },
-    
+
 ]
 
 
@@ -122,35 +122,38 @@ export const InvestorNavbar = () => {
                     </div>
                 </div>
                 {/* Mobile Version */}
-                <div className='md:hidden flex justify-between items-center pt-6 px-8'>
-                    <div className="logo-container">
-                        <Image
-                            className="lotus"
-                            src={logo}
-                            alt="Logo"
-                            width={32}
-                            height={17}
-                        />
-                        <Image
-                            className="logo"
-                            src={lotus}
-                            alt="Lotus"
-                            width={76}
-                            height={18}
-                        />
-                    </div>
-                    <div className='border border-black shadow-outer bg-yellowLight w-9 h-9 p-0.3 relative z-50'>
-                        <div
-                            className='bg-green flex justify-center items-center w-full h-full'
-                            onClick={handleToggle}
-                        >
+                <div className='md:hidden relative block m-2 '>
+                    <div  className='absolute inset-0 backdrop-blur-30 rounded-2xl bg-black bg-opacity-50 shadow-mobile'/>
+                    <div className='flex justify-between items-center py-3 px-8 '>
+                        <div className="logo-container">
                             <Image
-                                src={isOpen ? cross : navToggle}
-                                alt='toggle icon'
-                                className='p-0.2'
-                                width={24}
-                                height={24}
+                                className="lotus"
+                                src={logo}
+                                alt="Logo"
+                                width={32}
+                                height={17}
                             />
+                            <Image
+                                className="logo"
+                                src={lotus}
+                                alt="Lotus"
+                                width={76}
+                                height={18}
+                            />
+                        </div>
+                        <div className='border border-black shadow-outer bg-yellowLight w-9 h-9 p-0.3 relative z-50'>
+                            <div
+                                className='bg-green flex justify-center items-center w-full h-full'
+                                onClick={handleToggle}
+                            >
+                                <Image
+                                    src={isOpen ? cross : navToggle}
+                                    alt='toggle icon'
+                                    className='p-0.2'
+                                    width={24}
+                                    height={24}
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
