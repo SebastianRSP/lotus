@@ -19,6 +19,7 @@ module.exports = {
         'plus-jakarta-sans': ['var(--font-plus-jakarta-sans)'],
       },
       fontSize: {
+        '6': '.6rem',
         '8': '.8rem',
         '30': '1.875rem',
         '1.2': '1.2rem',
