@@ -17,6 +17,7 @@
     "@react-three/drei": "^9.108.3",
     "@react-three/fiber": "^8.16.8",
     "cursor-effects": "^1.0.15",
+    "framer-motion": "^11.5.4",
     "gsap": "npm:@gsap/shockingly@^3.12.5",
     "lenis": "^1.1.6",
     "locomotive-scroll": "^4.1.4",

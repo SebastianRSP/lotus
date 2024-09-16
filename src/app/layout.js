@@ -66,20 +66,25 @@ export default function RootLayout({ children }) {
           <div id="smooth-content">
             <main ref={containerRef}>
               {children}
-              <Cursor />
             </main>
             {isInvestorsPage ? (
-              <footer className="bg-green">
-                <InvestorFooter />
-              </footer>
+              <>
+                <Cursor />
+                <footer className="bg-green">
+                  <InvestorFooter />
+                </footer>
+              </>
             ) : (
               <>
                 {homePage ? (
                   <></>
                 ) : (
-                  <footer className="bg-gray-light">
-                    <Footer />
-                  </footer>
+                  <>
+                    <Cursor />
+                    <footer className="bg-gray-light">
+                      <Footer />
+                    </footer>
+                  </>
                 )}
               </>
             )}

@@ -6,7 +6,7 @@
 body {
   @apply font-plus-jakarta-sans bg-white;
   overflow-x: hidden;
-  cursor: none;
+  /* cursor: none; */
   margin: 0;
   background-color: #fff;
   color: #000; 
@@ -728,10 +728,6 @@ canvas {
   left: 20px;
   top: 16px;
 }
-
-.new-home-faq .is-active {
-  
-}
 .active-icon {
   transition: all .75s cubic-bezier(.19,1,.22,1);
 }
@@ -752,6 +748,11 @@ canvas {
   .new-home-slider .slick-list {
     width: 99%; /* Adjust the width for small screens */
   }
+}
+
+.text-swap{
+  transition: none;
+  transform: translateY(-50);
 }
 
 
