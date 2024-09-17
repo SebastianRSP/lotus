@@ -42,21 +42,24 @@ export const OurPartners = () => {
             partnersContainer.style.minWidth = '200%'; // Adjust this to force overflow
         }
 
-        const lastElementWidth = partners[partners.length - 1].width; // Width of the last element
+        const percentage = (partnersContainer.scrollWidth / partners.length) / partnersContainer.scrollWidth * 100;
+        console.log(percentage);
+
+        const stopScrolling = partnersContainer.scrollWidth / partners.length;
 
 
         // Horizontal scrolling animation
         gsap.to(partnersContainer, {
-            xPercent: -100, // Move until last icon is fully visible
+            xPercent: -`${percentage * 2}`, // Move until last icon is fully visible
             ease: 'none',
             scrollTrigger: {
                 trigger: partnerSection.current,
                 start: 'top+=50 top',
-                end: '30%', // Stop when the last icon is fully visible
+                end: `${percentage - 4}%`, // Stop when the last icon is fully visible
                 scrub: true,
                 pin: true, // Pin the section during scroll
                 anticipatePin: 1,
-                markers: false, // Debugging markers
+                markers: true, // Debugging markers
                 invalidateOnRefresh: true,
             },
         });
@@ -67,7 +70,7 @@ export const OurPartners = () => {
             <div className="lg:grid grid-cols-12 justify-center items-center">
                 <div className="xl:col-span-2 lg:col-span-3 lg:mb-0 md:mb-10 mb-5">
                     <h4 className="bg-green capitalize text-black text-2xl inline px-0.2">
-            // Our partners:
+                        // Our partners:
                     </h4>
                 </div>
                 <div className="xl:col-span-10 lg:col-span-9 overflow-hidden">
