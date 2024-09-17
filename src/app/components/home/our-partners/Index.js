@@ -56,7 +56,7 @@ export const OurPartners = () => {
                 scrub: true,
                 pin: true, // Pin the section during scroll
                 anticipatePin: 1,
-                markers: true, // Debugging markers
+                markers: false, // Debugging markers
                 invalidateOnRefresh: true,
             },
         });
