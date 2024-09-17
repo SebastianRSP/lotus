@@ -69,9 +69,9 @@ export const IndexHome = () => {
                                             {/* Dynamic width for bg-green based on the active span */}
                                             <motion.div
                                                 className="inline-flex h-10 bg-green w-auto cursor-pointer"
-                                                style={{ width: bgSize.width !== 0 ? (bgSize.width + 10) + "px" : '100%' }}
+                                                style={{ width: bgSize.width !== 0 ? (bgSize.width + 2) + "px" : '100%' }}
                                                 ref={bgRef}
-                                                animate={{ width: bgSize.width !== 0 ? (bgSize.width + 10) + "px" : '100%' }}
+                                                animate={{ width: bgSize.width !== 0 ? (bgSize.width + 2) + "px" : '100%' }}
                                                 transition={{
                                                     type: "spring",
                                                     stiffness: 250,
@@ -80,15 +80,15 @@ export const IndexHome = () => {
                                                 onClick={handleClick} // Click event to trigger bounce
                                             >
                                                 <motion.div
-                                                    className="relative w-full inline-flex h-full flex-col leading-80"
+                                                    className="relative w-full inline-flex h-full flex-col gap-10"
                                                     initial={{ y: 0 }}
-                                                    animate={{ y: -currentIndex * 40 }}
+                                                    animate={{ y: -currentIndex * 80 }}
                                                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
                                                 >
                                                     {industryNames.map((industryName, index) => (
                                                         <motion.span
                                                             key={index}
-                                                            className="inline-flex w-max font-bold text-4xl"
+                                                            className="inline-flex w-max font-bold text-4xl cursor-pointer"
                                                             initial={{ opacity: 0, y: 0 }}
                                                             animate={{ opacity: 1, y: 0 }}
                                                             whileTap={{
@@ -97,7 +97,6 @@ export const IndexHome = () => {
                                                             transition={{
                                                                 y: { duration: 0.2, ease: "easeOut" }, // Smooth down
                                                             }}
-                                                            style={{ cursor: 'pointer' }}
                                                         >
                                                             {industryName}
                                                         </motion.span>
