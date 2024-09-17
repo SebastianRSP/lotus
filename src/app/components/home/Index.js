@@ -33,11 +33,10 @@ export const IndexHome = () => {
     // Update background size based on the active word
     useEffect(() => {
         if (bgRef.current) {
-            const activeElement = bgRef.current.querySelectorAll('span')[currentIndex]; // Access the actual span
-            console.log(activeElement)
+            const activeElement = bgRef.current.querySelectorAll('span')[currentIndex];
             if (activeElement) {
                 setBgSize({
-                    width: activeElement.offsetWidth, // Get the span width
+                    width: activeElement.offsetWidth, 
                 });
             }
         }
@@ -66,7 +65,6 @@ export const IndexHome = () => {
                                     Decentralized<br /> data infrastructure<br /> for{" "}
                                     <div className="inline">
                                         <div className="inline-flex h-12 overflow-hidden items-center">
-                                            {/* Dynamic width for bg-green based on the active span */}
                                             <motion.div
                                                 className="inline-flex h-10 bg-green w-auto cursor-pointer"
                                                 style={{ width: bgSize.width !== 0 ? (bgSize.width + 2) + "px" : '100%' }}
@@ -77,7 +75,7 @@ export const IndexHome = () => {
                                                     stiffness: 250,
                                                     damping: 25,
                                                 }}
-                                                onClick={handleClick} // Click event to trigger bounce
+                                                onClick={handleClick}
                                             >
                                                 <motion.div
                                                     className="relative w-full inline-flex h-full flex-col gap-10"
@@ -92,10 +90,10 @@ export const IndexHome = () => {
                                                             initial={{ opacity: 0, y: 0 }}
                                                             animate={{ opacity: 1, y: 0 }}
                                                             whileTap={{
-                                                                y: 10,      // Moves slightly down on click
+                                                                y: 8,
                                                             }}
                                                             transition={{
-                                                                y: { duration: 0.2, ease: "easeOut" }, // Smooth down
+                                                                y: { duration: 0.2, ease: "easeOut" }
                                                             }}
                                                         >
                                                             {industryName}

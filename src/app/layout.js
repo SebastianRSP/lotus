@@ -28,7 +28,6 @@ export default function RootLayout({ children }) {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      console.log('Loading')
       initAnimations();
 
       // Clean up ScrollTrigger instances on component unmount
