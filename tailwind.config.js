@@ -90,6 +90,7 @@ module.exports = {
       height: {
         'inherit': 'inherit',
         '121': '121px',
+        '18': '4.5rem',
         '35': '35rem',
         '31': '31rem',
         '39': '39rem',
@@ -124,6 +125,7 @@ module.exports = {
         '30': '1.875rem',
         '32': '2rem',
         '40': '2.5rem',
+        '42': '2.625rem',
         '43': '2.6875rem',
         '48': '3rem',
         '50': '3.125rem',

@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { DefaultBlack } from "../../buttons/DefaultBlack";
 import { DefaultBtn } from "../../buttons/home/DefaultBtn";
 
 export const HomeNavLink = ({ navLinkName, navLink, extras, icon, iconImage, id, font, isIncludeBookDemoBtn }) => {
@@ -46,7 +45,7 @@ export const HomeNavLink = ({ navLinkName, navLink, extras, icon, iconImage, id,
                         </>
                     ) : (
                         <>
-                            <span className={`${font} link-home-hover ${isToggled ? 'link-home-exact-active -translate-y-[2px]' : ''} transform ease-out duration-300  uppercase xl:text-base lg:text-sm text-xs font-medium tracking-space60 inner-text relative group`}>
+                            <span className={`${font} link-home-hover ${isToggled ? 'link-home-exact-active -translate-y-[2px]' : ''} transform ease-out duration-300  uppercase  2xl:text-base lg:text-sm text-xs font-medium tracking-space60 inner-text relative group`}>
                                 {navLinkName}
                             </span>
                         </>

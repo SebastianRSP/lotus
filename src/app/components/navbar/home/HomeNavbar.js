@@ -57,7 +57,7 @@ export const HomeNavbar = () => {
                 {/* Desktop Vesion */}
                 <div className={`hidden md:!block `}>
                     <div className='w-full grid lg:grid-cols-3 grid-cols-10 grid-flow-col items-center text-center 2xl:h-20 h-16 relative z-50 overflow-hidden'>
-                        <div className='lg:col-span-1 col-span-4 h-available bg-gray-light flex items-center rounded-tr-[8px] rounded-tl-[8px]'>
+                        <div className='lg:col-span-1 col-span-4'>
                             <div className="grid grid-cols-3 items-center h-inherit w-available">
                                 {navLinksBefore.map((navLink, index) => (
                                     <HomeNavLink
@@ -70,7 +70,7 @@ export const HomeNavbar = () => {
                                 ))}
                             </div>
                         </div>
-                        <div className='lg:col-span-1 col-span-2 bg-white h-available flex items-center rounded-bl-[32px] rounded-br-[32px]'>
+                        <div className='lg:col-span-1 col-span-2'>
                             {/* border border-y-0 border-x-black */}
                             <div className="flex items-center w-full justify-center h-inherit ">
                                 <div className="logo-container">
@@ -91,7 +91,7 @@ export const HomeNavbar = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='lg:col-span-1 col-span-4 h-available bg-gray-light flex items-center rounded-tl-[8px] rounded-tr-[8px]'>
+                        <div className='lg:col-span-1 col-span-4'>
                             <div className="lg:grid grid-cols-3 flex justify-around items-center h-inherit w-available">
                                 {navLinksAfter.map((navLink, index) => (
                                     <HomeNavLink

@@ -22,14 +22,14 @@ export const OurPartners = () => {
     const scrollContainerRef = useRef(null);
 
     const partners = [
-        { partnerName: 'Sia', partnerIcon: Sia, width: 90, height: 46 },
-        { partnerName: 'Arweave', partnerIcon: Arweave, width: 156, height: 34 },
-        { partnerName: 'Storj', partnerIcon: Storj, width: 113, height: 44 },
-        { partnerName: 'AWS', partnerIcon: AWS, width: 51, height: 30 },
-        { partnerName: 'Azure', partnerIcon: Azure, width: 120, height: 34 },
-        { partnerName: 'Cloudskye', partnerIcon: Cloudskye, width: 88, height: 53 },
-        { partnerName: 'Bloczio', partnerIcon: Bloczio, width: 130, height: 16 },
-        { partnerName: 'FileCoin', partnerIcon: FileCoin, width: 130, height: 16 },
+        { partnerName: 'Sia', partnerIcon: Sia, width: 90, height: 50 },
+        { partnerName: 'Arweave', partnerIcon: Arweave, width: 156, height: 50 },
+        { partnerName: 'Storj', partnerIcon: Storj, width: 113, height: 50 },
+        { partnerName: 'AWS', partnerIcon: AWS, width: 51, height: 50 },
+        { partnerName: 'Azure', partnerIcon: Azure, width: 120, height: 50 },
+        { partnerName: 'Cloudskye', partnerIcon: Cloudskye, width: 78, height: 50 },
+        { partnerName: 'Bloczio', partnerIcon: Bloczio, width: 130, height: 50 },
+        { partnerName: 'FileCoin', partnerIcon: FileCoin, width: 130, height: 50 },
     ];
 
     useEffect(() => {
@@ -87,6 +87,7 @@ export const OurPartners = () => {
                                 <Image
                                     src={partner.partnerIcon}
                                     alt={`${partner.partnerName} icon`}
+                                    className='h-fit'
                                     width={partner.width}
                                     height={partner.height}
                                 />
