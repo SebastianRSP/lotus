@@ -91,7 +91,7 @@ export const PartnerReviews = () => {
                 }
                 return prevProgress + progressStep;
             });
-        }, 50); // Update progress every 50ms
+        }, 30); // Update progress every 50ms
 
         return () => clearInterval(interval); // Clear interval on component unmount or when progress changes
     }, [activeIndex]);
