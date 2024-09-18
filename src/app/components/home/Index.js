@@ -36,11 +36,20 @@ export const IndexHome = () => {
             const activeElement = bgRef.current.querySelectorAll('span')[currentIndex];
             if (activeElement) {
                 setBgSize({
-                    width: activeElement.offsetWidth, 
+                    width: activeElement.offsetWidth,
                 });
             }
         }
     }, [currentIndex, industryNames]);
+
+    // Automatically change the currentIndex every 2 seconds
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % industryNames.length);
+        }, 2000);
+
+        return () => clearInterval(intervalId); // Clear interval on component unmount
+    }, [industryNames]);
 
     const handleClick = () => {
         // Increment index and reset to 0 if it exceeds the length of the array
@@ -93,7 +102,7 @@ export const IndexHome = () => {
                                                                 y: 8,
                                                             }}
                                                             transition={{
-                                                                y: { duration: 0.2, ease: "easeOut" }
+                                                                y: { duration: 0.4, ease: "easeOut" }
                                                             }}
                                                         >
                                                             {industryName}

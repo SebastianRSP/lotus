@@ -43,19 +43,23 @@ export const OurPartners = () => {
         }
 
         const percentage = (partnersContainer.scrollWidth / partners.length) / partnersContainer.scrollWidth * 100;
-        console.log(percentage);
 
-        const stopScrolling = partnersContainer.scrollWidth / partners.length;
+        const scrollerContent = Array.from(partnersContainer.children);
 
+        scrollerContent.forEach((item) => {
+            const duplicateElement = item.cloneNode(true);
+            partnersContainer.appendChild(duplicateElement)
+        });
 
         // Horizontal scrolling animation
         gsap.to(partnersContainer, {
             xPercent: -`${percentage * 2}`, // Move until last icon is fully visible
             ease: 'none',
+            
             scrollTrigger: {
                 trigger: partnerSection.current,
                 start: 'top+=50 top',
-                end: `${percentage - 4}%`, // Stop when the last icon is fully visible
+                end: `${percentage * 2}%`, // Stop when the last icon is fully visible
                 scrub: true,
                 pin: true, // Pin the section during scroll
                 anticipatePin: 1,
@@ -76,8 +80,7 @@ export const OurPartners = () => {
                 <div className="xl:col-span-10 lg:col-span-9 overflow-hidden">
                     <div
                         ref={scrollContainerRef}
-                        className="flex gap-5 items-center navigate-partners"
-                        style={{ minWidth: '100%' }} // Ensure it overflows horizontally
+                        className="flex gap-5 items-center navigate-partners w-max"
                     >
                         {partners.map((partner, index) => (
                             <div key={index} className="2xl:px-14 lg:px-10 px-2">

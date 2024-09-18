@@ -77,40 +77,48 @@ const partners = [
 export const PartnerReviews = () => {
     const [activeIndex, setActiveIndex] = useState(0); // Keep track of the currently active partner
     const [progress, setProgress] = useState(0); // Keep track of the progress bar
+    const [cycleComplete, setCycleComplete] = useState(false); // Track if the cycle is complete
 
     useEffect(() => {
+        const cycleDuration = 10000; // Duration for one full cycle in milliseconds (e.g., 10 seconds)
+        const progressStep = 100 / (cycleDuration / 50); // Increment step for progress every 50ms
+
         const interval = setInterval(() => {
             setProgress((prevProgress) => {
                 if (prevProgress >= 100) {
-                    // console.log(activeIndex, 'activeIndex1')
-                    setActiveIndex((prevIndex) => (prevIndex + 1) % partners.length); // Increment activeIndex in sequence
-                    return 0; // Reset progress for the next partner
+                    setCycleComplete(true); // Mark cycle as complete
+                    return 100;
                 }
-                return prevProgress + 1; // Increment progress
+                return prevProgress + progressStep;
             });
-        }, 50); // Adjust the speed as needed
+        }, 50); // Update progress every 50ms
 
         return () => clearInterval(interval); // Clear interval on component unmount or when progress changes
-    }, [progress]); // Only depend on progress
+    }, [activeIndex]);
+
+    useEffect(() => {
+        if (cycleComplete) {
+            setCycleComplete(false);
+            setProgress(0);
+            setActiveIndex((prevIndex) => (prevIndex + 1) % partners.length);
+        }
+    }, [cycleComplete]);
 
     const handleClick = (index) => {
         setActiveIndex(index); // Update the active partner
         setProgress(0); // Reset progress on manual click
+        setCycleComplete(false); // Reset cycle complete flag
     };
 
     const currentPartner = partners[activeIndex];
-
-
 
     return (
         <div className="2xl:px-10 md:px-5 px-0 2xl:py-16 md:py-8 py-3">
             <h4 className="bg-green capitalize text-black 2xl:text-4xl md:text-2xl text-lg 2xl:leading-48 md:leading-8 leading-5 font-medium inline px-0.2">
                 What our partners <br /> have to say.
             </h4>
-            {/* {console.log(activeIndex, 'activeIndex2')} */}
             <div className="2xl:my-24 my-12 2xl:px-20 xl:px-14 md:px-10 px-5 forced-full-width border-y border-y-gray-border h-auto">
                 <div className="border-x border-x-gray-border grid lg:grid-cols-2 grid-col-1">
-                    {/* Dynamic Partner Content */}
                     <div className="flex flex-col h-auto justify-between lg:p-6 p-5">
                         <div className="h-full grid grid-rows-3 justify-between items-center gap-2">
                             <div className="font-bold text-lg">
@@ -142,16 +150,14 @@ export const PartnerReviews = () => {
                                 </div>
                                 <div className="relative w-full h-[2px] bg-gray-200 mt-2">
                                     <div
-                                        className="absolute left-0 top-0 h-full bg-black transition-all duration-300"
-                                        style={{ width: `${(activeIndex + progress / 100) * (100 / partners.length)}%` }} // Dynamically set width
+                                        className="absolute left-0 top-0 h-full bg-black transition-all ease-linear"
+                                        style={{ width: `${progress}%` }} // Complete progress for the current partner
                                     ></div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
 
-                    {/* Partners Grid */}
                     <div className="grid grid-cols-3">
                         {partners.map((partner, index) => (
                             <div
