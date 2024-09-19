@@ -55,7 +55,7 @@ export const OurPartners = () => {
         gsap.to(partnersContainer, {
             xPercent: -`${percentage * 2}`, // Move until last icon is fully visible
             ease: 'none',
-            
+
             scrollTrigger: {
                 trigger: partnerSection.current,
                 start: 'top+=50 top',
@@ -73,7 +73,7 @@ export const OurPartners = () => {
         <div className="2xl:px-10 md:px-5 px-0 2xl:py-16 py-8">
             <div className="lg:grid grid-cols-12 justify-center items-center">
                 <div className="xl:col-span-2 lg:col-span-3 lg:mb-0 md:mb-10 mb-5">
-                    <h4 className="bg-green capitalize text-black text-2xl inline px-0.2">
+                    <h4 className="bg-green capitalize text-black xl:text-2xl md:text-xl text-lg xl:leading-5 md:leading-4 leading-4 inline px-0.2">
                         // Our partners:
                     </h4>
                 </div>

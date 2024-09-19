@@ -36,7 +36,7 @@ export const CardsSection = () => {
                                         <span className="2xl:text-lg text-md">0{index + 1}</span>
                                     </div>
                                     <div className="grid grid-rows-2 items-center justify-center">
-                                        <div className="w-full 2xl:py-14 xl:py-12 py-10">
+                                        <div className="w-full 2xl:py-14 xl:py-12 py-14">
                                             <Image
                                                 src={card.defaultImage}
                                                 className="2xl:w-16 w-10 2xl:h-16 h-10"
