@@ -133,7 +133,7 @@ export const IndexHome = () => {
                                                 width={10}
                                                 height={10}
                                             />
-                                            <p className="2xl:text-xl md:text-sm text-xs">{bullet.buttet}</p>
+                                            <p className="2xl:text-xl md:text-sm font-medium text-xs">{bullet.buttet}</p>
                                         </div>
                                     ))}
                                 </div>

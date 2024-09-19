@@ -113,11 +113,11 @@ export const PartnerReviews = () => {
     const currentPartner = partners[activeIndex];
 
     return (
-        <div className="2xl:px-10 md:px-5 px-0 2xl:py-16 md:py-8 py-3">
+        <div className="2xl:px-100 xl:px-90 lg:px-8 px-5">
             <h4 className="bg-green capitalize text-black 2xl:text-4xl md:text-2xl text-lg 2xl:leading-48 md:leading-8 leading-5 font-medium inline px-0.2">
                 What our partners <br /> have to say.
             </h4>
-            <div className="2xl:my-24 my-12 2xl:px-20 xl:px-14 md:px-10 px-5 forced-full-width border-y border-y-gray-border h-auto">
+            <div className="2xl:my-24 my-12 2xl:px-36 xl:px-28 lg:px-14 md:px-10 px-10 forced-full-width border-y border-y-gray-border h-auto">
                 <div className="border-x border-x-gray-border grid lg:grid-cols-2 grid-col-1">
                     <div className="flex flex-col h-auto justify-between lg:p-6 p-5">
                         <div className="h-full grid grid-rows-3 justify-between items-center gap-2">

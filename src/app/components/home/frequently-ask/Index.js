@@ -31,7 +31,7 @@ export const FrequentlyAsked = () => {
 
 
     return (
-        <div className="2xl:py-28 md:py-16 py-10 2xl:px-28 md:px-5 px-0 ">
+        <div className="2xl:py-28 md:py-16 py-10 xl:px-28 md:px-5 px-0 ">
             <div className="flex justify-center text-center">
                 <h4 className="2xl:text-5xl text-4xl font-medium">
                     Frequently Asked Questions
@@ -42,7 +42,7 @@ export const FrequentlyAsked = () => {
                     <div className="border-y border-[#ADADAD]" key={index}>
                         <div className={`flex justify-between py-8 items-center group new-home-faq ${activeIndex === index ? 'is-active' : ''}`}
                             onClick={() => handleToggleBox(index)} >
-                            <span className="2xl:text-2xl text-xl font-300 group-hover:text-green">
+                            <span className="2xl:text-2xl text-xl font-300 ">
                                 {faq.question}
                             </span>
                             <span className="w-3 h-4 active-icon relative">

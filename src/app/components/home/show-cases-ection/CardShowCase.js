@@ -2,7 +2,7 @@ import Image from "next/image"
 
 export const CardShowCase = ({id, heading, subHeading, description, defaultImage}) => {
     return (
-        <div key={id} className="lg:py-10 py-3 lg:px-0 px-3">
+        <div key={id} className="lg:px-0 px-3">
             <div className="grid lg:grid-cols-2 grid-cols-1 gap-10">
                 <div className="flex justify-self-center bg-green lg:py-0 py-20 opacity-10 rounded-lg w-full justify-center">
                     <Image

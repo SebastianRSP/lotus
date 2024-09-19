@@ -60,27 +60,27 @@ export const ShowCaseSection = () => {
 
 
     return (
-        <div className="2xl:py-28 md:py-16 py-10 2xl:px-28 md:px-5 px-0">
-            <div className="bg-gray-light rounded-lg 2xl:px-32 md:px-10 px-5 2xl:py-28 py-12 ">
-                <div className="grid md:grid-cols-2 grid-cols-1 md:gap-36 gap-10 justify-between">
-                    <h3 className="2xl:text-2xl text-xl 2xl:leading-7 leading-5 font-300">
-                        <span className="font-bold">The Bridge<sup>TM</sup></span> houses cutting-edge AI enabled data management tools for enterprise clients
+        <div className="2xl:py-28 md:py-16 py-10">
+            <div className="bg-gray-light rounded-lg 2xl:px-100 xl:px-20 md:px-10 px-5 xl:py-24 py-12 ">
+                <div className="grid lg:grid-cols-12 grid-cols-1 lg:gap-0 gap-8">
+                    <h3 className="2xl:text-5xl xl:text-4xl lg:text-3xl text-xl 2xl:leading-60 xl:leading-48 lg:leading-42 leading-8 font-extralight lg:col-span-8 lg:w-11/12 w-11/12">
+                        <span className="font-normal">The Bridge<sup>TM</sup></span> houses cutting-edge AI enabled data management tools for enterprise clients
                     </h3>
-                    <p className="2xl:text-sm md:justify-self-end text-xs md:w-4/6">
+                    <p className="2xl:text-2xl xl:text-base lg:text-sm text-xs lg:justify-self-end lg:col-span-4 lg:w-full w-11/12">
                         We believe that effective data management is essential to staying ahead of the curve. That’s why we’ve built industry leading tools right into our platform. Our powerful set of AI-driven tools make data sets more legible, and empower companies to use their data more effectively.
                     </p>
                 </div>
-                <div className="pt-14">
-                    <div className="border border-opacity-20 border-black md:pb-0 pb-18 px-3 rounded-lg overflow-hidden">
-                        <div className="py-11 lg:px-10 px-5 justify-center lg:flex hidden">
+                <div className="2xl:pt-100 xl:pt-20 md:pt-10">
+                    <div className="border border-opacity-50 border-black md:pb-0 pb-12 px-2 rounded-lg overflow-hidden">
+                        <div className="2xl:pt-14 pt-11 2xl:pb-24 xl:pb-20 pb-10  lg:px-10 px-5 justify-center lg:flex hidden">
                             <div className="lg:bg-white bg-transparent relative border rounded w-fit bg-no-repeat lg:shadow-black shadow-none">
                                 <div className="flex lg:flex-nowrap flex-wrap justify-center lg:gap-0 gap-2">
                                     {growthTabs.map((growthtab, index) => (
                                         <div key={index}
                                             onClick={() => handleTabClick(index)}
                                             className={`
-                                                ${activeIndex === index ? 'bg-green border-x rounded' : 'text-black divide-x border-transparent'} 
-                                                xl:py-3 lg:py-2 py-0.5 xl:px-5 lg:px-2 px-5 text-black lg:shadow-none shadow-white cursor-pointer text-xs tracking-space90
+                                                ${activeIndex === index ? 'bg-green border-x rounded-sm' : 'text-black border-x border-transparent'} 
+                                                2xl:py-1.4 xl:py-3 lg:py-2 py-0.5 2xl:px-1.8 xl:px-5 lg:px-2 px-5 text-black lg:shadow-none shadow-white cursor-pointer 2xl:text-base text-xs tracking-space90
                                             `}>
                                             <span className="uppercase ">
                                                 {growthtab}
@@ -90,7 +90,7 @@ export const ShowCaseSection = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="w-full flex justify-center">
+                        <div className="w-full flex justify-center 2xl:pb-24 pb-12 lg:pt-0 pt-12">
                             <NewHomeSlider sliderRef={sliderRef} onSlideChange={handleSliderChange}>
                                 {showCases.map((showcase, index) => (
                                     <CardShowCase
