@@ -755,6 +755,32 @@ canvas {
   transform: translateY(-50);
 }
 
+.smooth-transition {
+  transition: left 0.4s ease, width 0.4s ease; /* Smooth transition */
+}
+
+.animate-left {
+  transform: translateX(-100%);
+}
+
+.animate-right {
+  transform: translateX(100%);
+}
+
+.animate-up {
+  transform: translateY(-100%);
+}
+
+.animate-down {
+  transform: translateY(100%);
+}
+
+/* Apply transition for smooth animation */
+.transition-transform {
+  transition: transform 0.6s ease-in-out;
+}
+
+
 
 
 /* New Home Page CSS Ends */

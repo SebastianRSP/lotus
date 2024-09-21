@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 
 // Partners Import
@@ -17,7 +17,7 @@ const partners = [
         partnerIcon: FileCoin,
         width: 130,
         height: 36,
-        testimonial: "One of the stumbling blocks to the broader adoption of blockchain is that different platforms often use distinct protocols and standards, making interaction and communication between them uncertain.",
+        testimonial: "One of the stumbling blocks to the broader adoption of blockchain is that different platforms often use distinct protocols and standards.",
         person: "PORTER STOWELL",
         title: "Head of Community",
         company: "FILECOIN FOUNDATION"
@@ -25,7 +25,7 @@ const partners = [
     {
         partnerName: 'Sia',
         partnerIcon: Sia,
-        width: 90,
+        width: 80,
         height: 46,
         testimonial: "Sia's decentralized storage platform leverages underutilized storage capacity to bring greater privacy, security, and efficiency.",
         person: "DAVID VORICK",
@@ -78,6 +78,26 @@ export const PartnerReviews = () => {
     const [activeIndex, setActiveIndex] = useState(0); // Keep track of the currently active partner
     const [progress, setProgress] = useState(0); // Keep track of the progress bar
     const [cycleComplete, setCycleComplete] = useState(false); // Track if the cycle is complete
+    const [containerWidth, setContainerWidth] = useState('0px');
+    const setWidth = useRef(null);  // Initialize the ref as null
+
+    useEffect(() => {
+        const updateWidth = () => {
+            if (setWidth.current) {
+                const width = setWidth.current.clientWidth;  // Get the width of the div
+                setContainerWidth(width + 'px');  // Store the width in the state
+            }
+        };
+
+        // Call updateWidth initially to set the width on first render
+        updateWidth();
+
+        // Add event listener to update width on window resize
+        window.addEventListener('resize', updateWidth);
+
+        // Cleanup the event listener on component unmount
+        return () => window.removeEventListener('resize', updateWidth);
+    }, []);
 
     useEffect(() => {
         const cycleDuration = 10000; // Duration for one full cycle in milliseconds (e.g., 10 seconds)
@@ -110,7 +130,7 @@ export const PartnerReviews = () => {
         setCycleComplete(false); // Reset cycle complete flag
     };
 
-    const currentPartner = partners[activeIndex];
+    const activePartner = partners[activeIndex];
 
     return (
         <div className="2xl:px-100 xl:px-90 lg:px-8 px-5">
@@ -119,32 +139,42 @@ export const PartnerReviews = () => {
             </h4>
             <div className="2xl:my-24 my-12 2xl:px-36 xl:px-28 lg:px-14 md:px-10 px-10 forced-full-width border-y border-y-gray-border h-auto">
                 <div className="border-x border-x-gray-border grid lg:grid-cols-2 grid-col-1">
-                    <div className="flex flex-col h-auto justify-between lg:p-6 p-5">
-                        <div className="h-full grid grid-rows-3 justify-between items-center gap-2">
-                            <div className="font-bold text-lg">
-                                <Image
-                                    src={currentPartner?.partnerIcon}
-                                    alt={`${currentPartner?.partnerName} icon`}
-                                    width={124}
-                                    height={64}
-                                />
-                            </div>
-                            <p className="2xl:text-2xl md:text-base text-sm font-300 2xl:leading-7 leading-5">
-                                {currentPartner?.testimonial}
-                            </p>
-                            <div className="flex items-center lg:gap-10 gap-5">
-                                <div className="bg-green border border-black lg:p-10 p-8 relative rounded-4">
-                                    <div className="absolute inset-0 bg-gray-light border rounded-4 -translate-x-[2px] -translate-y-[2px]"></div>
-                                </div>
-                                <div>
-                                    <span className="2xl:text-2xl lg:text-xl text-base font-bold 2xl:leading-6 leading-5">{currentPartner?.person}</span>
-                                    <p className="text-sm font-normal leading-4 mt-2">
-                                        {currentPartner?.title} <br /> <span className="text-xs font-extralight">{currentPartner?.company}</span>
-                                    </p>
-                                </div>
+                    <div className="flex flex-col h-auto justify-between lg:p-6 p-5" >
+                        <div className="h-80 relative w-full overflow-hidden" ref={setWidth}>
+                            <div className={`absolute inset-0 grid grid-cols-3 lg:gap-6 gap-5 w-max`}>
+                                {partners.map((currentPartner, index) => (
+                                    <>
+                                        {/* {activePartner.partnerName === currentPartner.partnerName && ( */}
+                                            <div key={index} style={{ maxWidth: containerWidth }} className={`grid grid-rows-3 justify-between items-center gap-4`}>
+                                                <div className="font-bold text-lg">
+                                                    <Image
+                                                        src={currentPartner?.partnerIcon}
+                                                        alt={`${currentPartner?.partnerName} icon`}
+                                                        width={124}
+                                                        height={64}
+                                                    />
+                                                </div>
+                                                <p className="2xl:text-2xl md:text-base text-sm font-300 2xl:leading-7 leading-5">
+                                                    {currentPartner?.testimonial}
+                                                </p>
+                                                <div className="flex items-center lg:gap-10 gap-5 pl-2">
+                                                    <div className="bg-green border border-black lg:p-10 p-8 relative rounded-4">
+                                                        <div className="absolute inset-0 bg-gray-light border rounded-4 -translate-x-[2px] -translate-y-[2px]"></div>
+                                                    </div>
+                                                    <div>
+                                                        <span className="2xl:text-2xl lg:text-xl text-base font-bold 2xl:leading-6 leading-5">{currentPartner?.person}</span>
+                                                        <p className="text-sm font-normal leading-4 mt-2">
+                                                            {currentPartner?.title} <br /> <span className="text-xs font-extralight">{currentPartner?.company}</span>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {/* )} */}
+                                    </>
+                                ))}
                             </div>
 
-                            <div className="w-full">
+                            <div className="w-full h-full flex flex-col justify-end">
                                 <div className="flex justify-end opacity-20">
                                     <span className="text-xs font-extralight leading-5 tracking-space60">{`0${activeIndex + 1}/06`}</span>
                                 </div>

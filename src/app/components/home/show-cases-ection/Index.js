@@ -1,7 +1,7 @@
 'use client'
 
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import defaultImage from '../../../../../public/icons/defaultImageIcon.svg';
 import { NewHomeSlider } from "../../slick-slider/SlickSlider";
 import { CardShowCase } from "./CardShowCase";
@@ -44,7 +44,9 @@ const showCases = [
 
 export const ShowCaseSection = () => {
     const [activeIndex, setActiveIndex] = useState(0);
-    const sliderRef = useRef(null); // Ref for the slider
+    const sliderRef = useRef(null);
+    const tabRefs = useRef([]); // To store refs for each tab
+    const [bgStyle, setBgStyle] = useState({ left: 0, width: 0 });
 
     const handleTabClick = (index) => {
         setActiveIndex(index);
@@ -52,6 +54,16 @@ export const ShowCaseSection = () => {
             sliderRef.current.slickGoTo(index); // Move to specific slide
         }
     };
+
+    useEffect(() => {
+        // Calculate the position and width of the active tab
+        if (tabRefs.current[activeIndex]) {
+            const activeTab = tabRefs.current[activeIndex];
+            const left = activeTab.offsetLeft;
+            const width = activeTab.offsetWidth;
+            setBgStyle({ left, width });
+        }
+    }, [activeIndex]);
 
     // Handler to sync state when slider changes
     const handleSliderChange = (oldIndex, newIndex) => {
@@ -74,15 +86,20 @@ export const ShowCaseSection = () => {
                     <div className="border border-opacity-50 border-black md:pb-0 pb-12 px-2 rounded-lg overflow-hidden">
                         <div className="2xl:pt-14 pt-11 2xl:pb-24 xl:pb-20 pb-10  lg:px-10 px-5 justify-center lg:flex hidden">
                             <div className="lg:bg-white bg-transparent relative border rounded w-fit bg-no-repeat lg:shadow-black shadow-none">
-                                <div className="flex lg:flex-nowrap flex-wrap justify-center lg:gap-0 gap-2">
+                                <div className="relative flex lg:flex-nowrap flex-wrap justify-center lg:gap-0 gap-2">
+                                    <div
+                                        className="absolute top-0 h-full bg-green z-0 smooth-transition border-x rounded-sm"
+                                        style={{ left: `${bgStyle.left}px`, width: `${bgStyle.width}px` }}
+                                    />
                                     {growthTabs.map((growthtab, index) => (
                                         <div key={index}
                                             onClick={() => handleTabClick(index)}
-                                            className={`
-                                                ${activeIndex === index ? 'bg-green border-x rounded-sm' : 'text-black border-x border-transparent'} 
-                                                2xl:py-1.4 xl:py-3 lg:py-2 py-0.5 2xl:px-1.8 xl:px-5 lg:px-2 px-5 text-black lg:shadow-none shadow-white cursor-pointer 2xl:text-base text-xs tracking-space90
+                                            ref={(el) => (tabRefs.current[index] = el)}
+                                            className={`tab
+                                                ${activeIndex === index ? '' : 'text-black'} 
+                                                2xl:py-1.4 xl:py-3 lg:py-2 py-0.5 2xl:px-1.8 xl:px-5 lg:px-2 px-5 text-black lg:shadow-none shadow-white relative z-[1] cursor-pointer 2xl:text-base text-xs tracking-space90
                                             `}>
-                                            <span className="uppercase ">
+                                            <span className="uppercase">
                                                 {growthtab}
                                             </span>
                                         </div>
@@ -107,6 +124,6 @@ export const ShowCaseSection = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }

@@ -22,14 +22,14 @@ export const OurPartners = () => {
     const scrollContainerRef = useRef(null);
 
     const partners = [
-        { partnerName: 'Sia', partnerIcon: Sia, width: 90, height: 50 },
-        { partnerName: 'Arweave', partnerIcon: Arweave, width: 156, height: 50 },
-        { partnerName: 'Storj', partnerIcon: Storj, width: 113, height: 50 },
-        { partnerName: 'AWS', partnerIcon: AWS, width: 51, height: 50 },
-        { partnerName: 'Azure', partnerIcon: Azure, width: 120, height: 50 },
-        { partnerName: 'Cloudskye', partnerIcon: Cloudskye, width: 78, height: 50 },
-        { partnerName: 'Bloczio', partnerIcon: Bloczio, width: 130, height: 50 },
-        { partnerName: 'FileCoin', partnerIcon: FileCoin, width: 130, height: 50 },
+        { partnerName: 'Sia', partnerIcon: Sia, width: 80, height: 50 },
+        { partnerName: 'Arweave', partnerIcon: Arweave, width: 146, height: 50 },
+        { partnerName: 'Storj', partnerIcon: Storj, width: 103, height: 50 },
+        { partnerName: 'AWS', partnerIcon: AWS, width: 41, height: 50 },
+        { partnerName: 'Azure', partnerIcon: Azure, width: 100, height: 50 },
+        { partnerName: 'Cloudskye', partnerIcon: Cloudskye, width: 68, height: 50 },
+        { partnerName: 'Bloczio', partnerIcon: Bloczio, width: 120, height: 50 },
+        { partnerName: 'FileCoin', partnerIcon: FileCoin, width: 120, height: 50 },
     ];
 
     useEffect(() => {

@@ -21,8 +21,8 @@ export default function Home() {
                 <BridgeSection />
                 <ShowCaseSection />
                 <PartnerReviews />
-                <CardsSection />
-                <FrequentlyAsked />
+                {/* <CardsSection />
+                <FrequentlyAsked /> */}
                 <FooterSection />
             </div>
         </>
