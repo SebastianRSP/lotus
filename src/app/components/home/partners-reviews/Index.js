@@ -81,11 +81,29 @@ export const PartnerReviews = () => {
     const [containerWidth, setContainerWidth] = useState('0px');
     const setWidth = useRef(null);  // Initialize the ref as null
 
+    // Calculate the position (row, col) based on activeIndex
+    const getTranslation = (index) => {
+
+        // Check if the ref (setWidth.current) is available
+        if (!setWidth.current) {
+            return { translateX: 0, translateY: 0 };  // Return default values if the ref is null
+        }
+
+        const col = index % 3; // Column (0, 1, 2)
+        const row = Math.floor(index / 3); // Row (0 or 1)
+
+        // Calculate the translation needed to align the active partner with the container
+        const translateX = -col * (setWidth.current.clientWidth + 20);
+        const translateY = -row * (setWidth.current.clientHeight);
+
+        return { translateX, translateY };
+    };
+
     useEffect(() => {
         const updateWidth = () => {
             if (setWidth.current) {
-                const width = setWidth.current.clientWidth;  // Get the width of the div
-                setContainerWidth(width + 'px');  // Store the width in the state
+                const width = setWidth.current.clientWidth;
+                setContainerWidth(width + 'px');
             }
         };
 
@@ -100,20 +118,20 @@ export const PartnerReviews = () => {
     }, []);
 
     useEffect(() => {
-        const cycleDuration = 10000; // Duration for one full cycle in milliseconds (e.g., 10 seconds)
-        const progressStep = 100 / (cycleDuration / 50); // Increment step for progress every 50ms
+        const cycleDuration = 10000;
+        const progressStep = 100 / (cycleDuration / 50);
 
         const interval = setInterval(() => {
             setProgress((prevProgress) => {
                 if (prevProgress >= 100) {
-                    setCycleComplete(true); // Mark cycle as complete
+                    setCycleComplete(true);
                     return 100;
                 }
                 return prevProgress + progressStep;
             });
-        }, 30); // Update progress every 50ms
+        }, 30);
 
-        return () => clearInterval(interval); // Clear interval on component unmount or when progress changes
+        return () => clearInterval(interval);
     }, [activeIndex]);
 
     useEffect(() => {
@@ -125,52 +143,52 @@ export const PartnerReviews = () => {
     }, [cycleComplete]);
 
     const handleClick = (index) => {
-        setActiveIndex(index); // Update the active partner
-        setProgress(0); // Reset progress on manual click
-        setCycleComplete(false); // Reset cycle complete flag
+        setActiveIndex(index);
+        setProgress(0);
+        setCycleComplete(false);
     };
 
     const activePartner = partners[activeIndex];
+    const { translateX, translateY } = getTranslation(activeIndex);
 
     return (
-        <div className="2xl:px-100 xl:px-90 lg:px-8 px-5">
+        <div className="2xl:px-100 xl:px-90 lg:px-8 px-0">
             <h4 className="bg-green capitalize text-black 2xl:text-4xl md:text-2xl text-lg 2xl:leading-48 md:leading-8 leading-5 font-medium inline px-0.2">
                 What our partners <br /> have to say.
             </h4>
-            <div className="2xl:my-24 my-12 2xl:px-36 xl:px-28 lg:px-14 md:px-10 px-10 forced-full-width border-y border-y-gray-border h-auto">
+            <div className="2xl:my-24 my-12 2xl:px-36 xl:px-28 lg:px-14 md:px-10 px-5 forced-full-width border-y border-y-gray-border h-auto">
                 <div className="border-x border-x-gray-border grid lg:grid-cols-2 grid-col-1">
-                    <div className="flex flex-col h-auto justify-between lg:p-6 p-5" >
-                        <div className="h-80 relative w-full overflow-hidden" ref={setWidth}>
-                            <div className={`absolute inset-0 grid grid-cols-3 lg:gap-6 gap-5 w-max`}>
+                    <div className="flex flex-col h-auto justify-between p-5" >
+                        <div className="lg:h-19 h-64 relative w-full overflow-hidden" ref={setWidth}>
+                            <div
+                                className={`absolute inset-0 grid grid-cols-3 gap-5 w-max transition-transform duration-1000`}
+                                style={{ transform: `translate(${translateX}px, ${translateY}px)` }}
+                            >
                                 {partners.map((currentPartner, index) => (
-                                    <>
-                                        {/* {activePartner.partnerName === currentPartner.partnerName && ( */}
-                                            <div key={index} style={{ maxWidth: containerWidth }} className={`grid grid-rows-3 justify-between items-center gap-4`}>
-                                                <div className="font-bold text-lg">
-                                                    <Image
-                                                        src={currentPartner?.partnerIcon}
-                                                        alt={`${currentPartner?.partnerName} icon`}
-                                                        width={124}
-                                                        height={64}
-                                                    />
-                                                </div>
-                                                <p className="2xl:text-2xl md:text-base text-sm font-300 2xl:leading-7 leading-5">
-                                                    {currentPartner?.testimonial}
-                                                </p>
-                                                <div className="flex items-center lg:gap-10 gap-5 pl-2">
-                                                    <div className="bg-green border border-black lg:p-10 p-8 relative rounded-4">
-                                                        <div className="absolute inset-0 bg-gray-light border rounded-4 -translate-x-[2px] -translate-y-[2px]"></div>
-                                                    </div>
-                                                    <div>
-                                                        <span className="2xl:text-2xl lg:text-xl text-base font-bold 2xl:leading-6 leading-5">{currentPartner?.person}</span>
-                                                        <p className="text-sm font-normal leading-4 mt-2">
-                                                            {currentPartner?.title} <br /> <span className="text-xs font-extralight">{currentPartner?.company}</span>
-                                                        </p>
-                                                    </div>
-                                                </div>
+                                    <div key={index} style={{ maxWidth: containerWidth }} className={`grid grid-rows-3 lg:h-72 h-60 justify-between items-center lg:gap-4 gap-1`}>
+                                        <div className="font-bold text-lg">
+                                            <Image
+                                                src={currentPartner?.partnerIcon}
+                                                alt={`${currentPartner?.partnerName} icon`}
+                                                width={104}
+                                                height={64}
+                                            />
+                                        </div>
+                                        <p className="2xl:text-2xl md:text-base text-sm font-300 2xl:leading-7 leading-5">
+                                            {currentPartner?.testimonial}
+                                        </p>
+                                        <div className="flex items-center lg:gap-10 gap-5 pl-2">
+                                            <div className="bg-green border border-black lg:p-10 md:p-8 p-7 relative rounded-4">
+                                                <div className="absolute inset-0 bg-gray-light border rounded-4 -translate-x-[2px] -translate-y-[2px]"></div>
                                             </div>
-                                        {/* )} */}
-                                    </>
+                                            <div>
+                                                <span className="2xl:text-2xl lg:text-xl md:text-base text-sm font-bold 2xl:leading-6 leading-5">{currentPartner?.person}</span>
+                                                <p className="text-sm font-normal leading-4 mt-2">
+                                                    {currentPartner?.title} <br /> <span className="text-xs font-extralight">{currentPartner?.company}</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 ))}
                             </div>
 
@@ -181,7 +199,7 @@ export const PartnerReviews = () => {
                                 <div className="relative w-full h-[2px] bg-gray-200 mt-2">
                                     <div
                                         className="absolute left-0 top-0 h-full bg-black transition-all ease-linear"
-                                        style={{ width: `${progress}%` }} // Complete progress for the current partner
+                                        style={{ width: `${progress}%` }}
                                     ></div>
                                 </div>
                             </div>
@@ -211,3 +229,4 @@ export const PartnerReviews = () => {
         </div>
     );
 };
+
