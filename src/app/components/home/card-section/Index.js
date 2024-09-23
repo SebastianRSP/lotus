@@ -28,80 +28,86 @@ export const CardsSection = () => {
     const borderRef = useRef(null);  // Ref for the BorderDivider
 
     useEffect(() => {
-        // Set up initial hidden positions for the first and third cards behind the middle card
-        gsap.set(cardRefs.current[0], {
-            translateX: '20%',
-            translateY: '10%',
-            scale: 1,
-            opacity: 1
+        const mm = gsap.matchMedia();
+
+        mm.add("(min-width: 1024px)", () => {
+            // Set up initial hidden positions for the first and third cards behind the middle card
+            gsap.set(cardRefs.current[0], {
+                translateX: '20%',
+                translateY: '10%',
+                scale: 1,
+                opacity: 1
+            });
+
+            gsap.set(cardRefs.current[1], {
+                scale: 1,
+                opacity: 1
+            });
+
+            gsap.set(cardRefs.current[2], {
+                translateX: '-20%',
+                translateY: '10%',
+                scale: 1,
+                opacity: 1
+            });
+
+            // Set up initial position for BorderDivider (moving it lower)
+            gsap.set(borderRef.current, {
+                y: -140,  // Moves the borders 140px below the initial position
+                opacity: 1
+            });
+
+            // GSAP Timeline for animation on scroll
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: cardRefs.current[1], // Middle card as trigger
+                    start: "top 80%", // Trigger animation when 80% of the section is in view
+                    end: "bottom 20%",
+                    scrub: true, // Sync the animation with scroll
+                    toggleActions: "play reverse play reverse",
+                    markers: false
+                }
+            });
+
+            // Animate first card (left side)
+            tl.to(cardRefs.current[0], {
+                translateX: '0%',
+                translateY: '0%',
+                scale: 1,
+                opacity: 1,
+                duration: 1.2,
+                ease: "power3.out"
+            }, "<");
+
+            // Animate middle card
+            tl.to(cardRefs.current[1], {
+                scale: 1,
+                opacity: 1,
+                duration: 1.2,
+                ease: "power3.out"
+            }, "<");
+
+            // Animate third card (right side)
+            tl.to(cardRefs.current[2], {
+                translateX: '0%',
+                translateY: '0%',
+                scale: 1,
+                opacity: 1,
+                duration: 1,
+                ease: "power3.out"
+            }, "<");
+
+            // Animate BorderDivider after cards appear
+            tl.to(borderRef.current, {
+                y: 0,   // Move it back to its original position
+                opacity: 1, // Fade in
+                duration: 1,
+                ease: "power3.out"
+            });
         });
 
-        gsap.set(cardRefs.current[1], {
-            scale: 1,
-            opacity: 1
-        });
-
-        gsap.set(cardRefs.current[2], {
-            translateX: '-20%',
-            translateY: '10%',
-            scale: 1,
-            opacity: 1
-        });
-
-        // Set up initial position for BorderDivider (moving it lower)
-        gsap.set(borderRef.current, {
-            y: -140,  // Moves the borders 100px below the initial position
-            opacity: 1
-        });
-
-        // GSAP Timeline for animation on scroll
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: cardRefs.current[1], // Middle card as trigger
-                start: "top 80%", // Trigger animation when 80% of the section is in view
-                end: "bottom 20%",
-                scrub: true, // Sync the animation with scroll
-                toggleActions: "play reverse play reverse",
-                markers: false
-            }
-        });
-
-        // Animate first card (left side)
-        tl.to(cardRefs.current[0], {
-            translateX: '0%',
-            translateY: '0%',
-            scale: 1,
-            opacity: 1,
-            duration: 1.2,
-            ease: "power3.out"
-        }, "<");
-
-        // Animate middle card
-        tl.to(cardRefs.current[1], {
-            scale: 1,
-            opacity: 1,
-            duration: 1.2,
-            ease: "power3.out"
-        }, "<");
-
-        // Animate third card (right side)
-        tl.to(cardRefs.current[2], {
-            translateX: '0%',
-            translateY: '0%',
-            scale: 1,
-            opacity: 1,
-            duration: 1,
-            ease: "power3.out"
-        }, "<");
-
-        // Animate BorderDivider after cards appear
-        tl.to(borderRef.current, {
-            y: 0,   // Move it back to its original position
-            opacity: 1, // Fade in
-            duration: 1,
-            ease: "power3.out"
-        });
-
+        // Clean up on unmount
+        return () => mm.revert();
     }, []);
 
     return (

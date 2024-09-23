@@ -53,9 +53,11 @@ export const HomeNavbar = () => {
 
     return (
         <>
-            <nav className='w-full'>
+            <nav className='fixed slide-up w-full'>
                 {/* Desktop Vesion */}
-                <div className={`hidden md:!block `}>
+                <div className={`hidden md:!block desktop-nav pt-5 lg:px-8 md:px-0 px-8 `}>
+                    {/* border border-black bg-yellowLight shadow-outer*/}
+                    <div className='absolute h-20 bg-white/70 bg-no-repeat bg-origin-padding filter backdrop-blur-30 shadow-sm inset-0 origin-top z-10 desktop-nav-bg'></div>
                     <div className='w-full grid lg:grid-cols-3 grid-cols-10 grid-flow-col items-center text-center 2xl:h-20 h-16 relative z-50 overflow-hidden'>
                         <div className='lg:col-span-1 col-span-4'>
                             <div className="grid grid-cols-3 items-center h-inherit w-available">
@@ -123,7 +125,7 @@ export const HomeNavbar = () => {
                     </div>
                 </div>
                 {/* Mobile Version */}
-                <div className='md:hidden flex justify-between items-center pt-3 md:px-8 px-5'>
+                <div className='md:hidden flex justify-between items-center pt-8 md:px-8 px-10'>
                     <div className="logo-container">
                         <Image
                             className="lotus"
@@ -157,7 +159,7 @@ export const HomeNavbar = () => {
                 </div>
                 {/* Toggle Green Screen */}
                 <div className={`md:hidden fixed top-0 left-0 right-0 bottom-0 w-full h-screen bg-green z-30 transform transition-transform duration-300 ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-                    <div className='flex justify-start xl:mx-40 mx-9 mt-8'>
+                    <div className='flex justify-start xl:mx-40 mx-9 pt-10'>
                         <div className="logo-container">
                             <Image
                                 className="lotus"

@@ -63,9 +63,6 @@ export const IndexHome = () => {
     return (
         <>
             <div className="h-available relative">
-                <header className="absolute flex justify-center w-full">
-                    <HomeNavbar />
-                </header>
                 <div className="bg-gray-light h-available rounded-lg relative">
                     {/* White Strap */}
                     <div className="absolute md:flex justify-center w-full">
