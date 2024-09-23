@@ -98,7 +98,7 @@ export const CardsSection = () => {
         tl.to(borderRef.current, {
             y: 0,   // Move it back to its original position
             opacity: 1, // Fade in
-            duration: 0.3,
+            duration: 1,
             ease: "power3.out"
         });
 
