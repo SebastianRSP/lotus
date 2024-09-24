@@ -62,10 +62,10 @@ export const IndexHome = () => {
 
     return (
         <>
-            <div className="h-available relative">
+            <section className="h-available relative">
                 <div className="bg-gray-light h-available rounded-lg relative">
                     {/* White Strap */}
-                    <div className="absolute md:flex justify-center w-full">
+                    <div className="absolute md:flex justify-center w-full z-0">
                         <div className=' bg-white 2xl:h-18 h-16 z-10 md:rounded-bl-[32px] rounded-br-[32px] 2xl:w-2/6 lg:w-4/12 md:w-1/5 sm:w-3/12 w-4/12'></div>
                     </div>
                     <div className=" grid grid-cols-12 h-available items-center">
@@ -139,7 +139,7 @@ export const IndexHome = () => {
                         <div className="lg:col-span-7 col-span-1"></div>
                     </div>
                 </div>
-            </div>
+            </section>
         </>
     )
 }

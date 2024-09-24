@@ -111,7 +111,7 @@ export const CardsSection = () => {
     }, []);
 
     return (
-        <div className="2xl:py-28 md:py-16 py-10">
+        <section className="2xl:py-28 md:py-16 py-10">
             <div className="relative">
                 <div className="bg-black text-white text-center rounded-tl-lg rounded-tr-lg 2xl:px-40 xl:px-28 px-5 2xl:py-28 py-12">
                     <h6 className="2xl:text-7xl xl:text-6xl lg:text-5xl md:text-4xl text-2xl 2xl:leading-84 xl:leading-45 lg:leading-60 md:leading-48 leading-9 font-thin">
@@ -157,6 +157,6 @@ export const CardsSection = () => {
                     <BorderDivider />
                 </div>
             </div>
-        </div>
+        </section>
     );
 };

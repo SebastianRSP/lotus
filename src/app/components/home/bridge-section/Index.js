@@ -28,7 +28,7 @@ const cardDetails = [
 
 export const BridgeSection = () => {
     return (
-        <div className="bg-black h-auto forced-full-width text-white md:px-0 px-5">
+        <section className="bg-black h-auto forced-full-width text-white md:px-0 px-5">
             <div className="flex flex-col justify-center w-full 2xl:py-32 py-16">
                 <h4 className="2xl:text-7xl xl:text-6xl lg:text-5xl md:text-4xl text-2xl 2xl:leading-84 xl:leading-45 lg:leading-60 md:leading-48 leading-9 font-extralight text-center">
                     We’re building <br /> the world’s largest<br /> content delivery network
@@ -135,6 +135,6 @@ export const BridgeSection = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }

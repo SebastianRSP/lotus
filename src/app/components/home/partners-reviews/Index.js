@@ -155,7 +155,7 @@ export const PartnerReviews = () => {
     const { translateX, translateY } = getTranslation(activeIndex);
 
     return (
-        <div className="2xl:px-100 xl:px-90 lg:px-8 px-0">
+        <section className="2xl:px-100 xl:px-90 lg:px-8 px-0">
             <h4 className="bg-green capitalize text-black 2xl:text-4xl md:text-2xl text-lg 2xl:leading-48 md:leading-8 leading-5 font-medium inline px-0.2">
                 What our partners <br /> have to say.
             </h4>
@@ -229,7 +229,7 @@ export const PartnerReviews = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 
