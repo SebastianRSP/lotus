@@ -44,7 +44,7 @@ export const BridgeSection = () => {
                             height={605}
                         />
                     </div>
-                    <div id='bridge-donut-text' className='absolute w-12/12 text-left flex justify-center items-center'>
+                    <div className='absolute w-12/12 text-left flex justify-center items-center'>
                         <Image
                             src={bridgeText}
                             layout="responsive"
