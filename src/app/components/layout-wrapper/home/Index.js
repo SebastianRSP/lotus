@@ -3,7 +3,8 @@ import { useEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/all";
 import { HomeNavbar } from "../../navbar/home/HomeNavbar";
 import { desktopNavbarAnimation } from "../../gsap-animations/DesktopNavbarAnimation";
-
+import { NewHomeLoading } from "../../loading/home/Index";
+import { newHomePageAnimation } from "../../gsap-animations/home/Index";
 
 export const NewHomePage = ({ children }) => {
 
@@ -13,7 +14,7 @@ export const NewHomePage = ({ children }) => {
     useEffect(() => {
       if (typeof window !== 'undefined') {
         desktopNavbarAnimation();
-  
+        newHomePageAnimation();
         // Clean up ScrollTrigger instances on component unmount
         return () => {
           ScrollTrigger.getAll().forEach(trigger => trigger.kill());
@@ -29,6 +30,7 @@ export const NewHomePage = ({ children }) => {
             <div id="wrapper">
                 <div id="smooth-content">
                     <main ref={containerRef}>
+                        <NewHomeLoading />
                         {children}
                     </main>
                 </div>

@@ -21,6 +21,7 @@ export const HomeNavLink = ({ navLinkName, navLink, extras, icon, iconImage, id,
             {isIncludeBookDemoBtn ? (
                 <div className="flex justify-center">
                     <DefaultBtn
+                        extras={'link-animation'}
                         btnText={'BOOK A DEMO'}
                         btnType={'button'}
                     />
@@ -31,7 +32,7 @@ export const HomeNavLink = ({ navLinkName, navLink, extras, icon, iconImage, id,
                     key={id}
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}
-                    className={`${extras} h-inherit flex items-center justify-center`}
+                    className={`${extras} h-inherit flex items-center justify-center link-animation`}
                 >
                     {icon ? (
                         <>

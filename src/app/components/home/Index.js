@@ -33,7 +33,7 @@ export const IndexHome = () => {
 
     // Update background size based on the active word
     useEffect(() => {
-        
+
         if (bgRef.current) {
             const activeElement = bgRef.current.querySelectorAll('span')[currentIndex];
             if (activeElement) {
@@ -63,7 +63,7 @@ export const IndexHome = () => {
     return (
         <>
             <section className="h-available relative">
-                <div className="bg-gray-light h-available rounded-lg relative">
+                <div id="home-hero-bg" className="bg-gray-light h-available rounded-lg relative">
                     {/* White Strap */}
                     <div className="absolute md:flex justify-center w-full z-0">
                         <div className=' bg-white 2xl:h-18 h-16 z-10 md:rounded-bl-[32px] rounded-br-[32px] 2xl:w-2/6 lg:w-4/12 md:w-1/5 sm:w-3/12 w-4/12'></div>
@@ -71,7 +71,7 @@ export const IndexHome = () => {
                     <div className=" grid grid-cols-12 h-available items-center">
                         <div className="lg:col-span-5 col-span-11 2xl:pl-20 md:pl-10 pl-5 grid grid-rows-3 items-end h-available">
                             <div className="flex flex-col gap-6 row-span-2">
-                                <h2 className="2xl:text-6xl lg:text-5xl md:text-4xl text-3xl font-extralight 2xl:leading-66 lg:leading-54 md:leading-42 leading-9">
+                                <h2 id="home-hero-heading" className="2xl:text-6xl lg:text-5xl md:text-4xl text-3xl font-extralight 2xl:leading-66 lg:leading-54 md:leading-42 leading-9">
                                     Decentralized<br /> data infrastructure<br /> for{" "}
                                     <div className="inline">
                                         <div className="inline-flex 2xl:h-20 lg:h-18 md:h-14 h-10 overflow-hidden items-center">
@@ -114,12 +114,14 @@ export const IndexHome = () => {
                                         </div>
                                     </div>
                                 </h2>
-                                <p className="2xl:text-2xl text-sm">Data mobility. Without limits.</p>
-                                <DefaultBtn
-                                    btnText={'Get Started'}
-                                />
+                                <p id="home-hero-paragraph" className="2xl:text-2xl text-sm">Data mobility. Without limits.</p>
+                                <div id="home-hero-button">
+                                    <DefaultBtn
+                                        btnText={'Get Started'}
+                                    />
+                                </div>
                             </div>
-                            <div className="flex flex-col row-span-1 2xl:pb-10 pb-5 w-fit">
+                            <div id="home-hero-bullets" className="flex flex-col row-span-1 2xl:pb-10 pb-5 w-fit">
                                 <div className="border-t-[0.2px] border-t-black border-opacity-20">
                                     {bullets.map((bullet, index) => (
                                         <div key={index} className="flex items-center gap-3 border-b-[0.2px] border-b-black border-opacity-20 py-2">

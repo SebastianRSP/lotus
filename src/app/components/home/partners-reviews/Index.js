@@ -164,7 +164,7 @@ export const PartnerReviews = () => {
                     <div className="flex flex-col h-auto justify-between p-5" >
                         <div className="2xl:h-96 lg:h-72 h-64 relative w-full overflow-hidden" ref={setWidth}>
                             <div
-                                className={`absolute inset-0 grid grid-cols-3 gap-5 w-max transition-transform duration-200 ease-linear`}
+                                className={`absolute inset-0 grid grid-cols-3 gap-5 w-max transition-transform duration-200 ease-[0.68, -0.55, 0.27, 1.55]`}
                                 style={{ transform: `translate(${translateX}px, ${translateY}px)`, transitionDuration: '0.2s' }}
                             >
                                 {partners.map((currentPartner, index) => (

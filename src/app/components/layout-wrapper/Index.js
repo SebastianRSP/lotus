@@ -6,6 +6,7 @@ import { useEffect, useRef } from "react";
 import { initAnimations } from "../gsap-animations/Index";
 import { ScrollTrigger } from "gsap/all";
 import { desktopNavbarAnimation } from "../gsap-animations/DesktopNavbarAnimation";
+import { Loading } from "../loading/Index";
 
 
 export const OldHomePage = ({ children }) => {
@@ -32,6 +33,7 @@ export const OldHomePage = ({ children }) => {
             <div id="wrapper">
                 <div id="smooth-content">
                     <main ref={containerRef}>
+                        <Loading />
                         {children}
                     </main>
                     <Cursor />

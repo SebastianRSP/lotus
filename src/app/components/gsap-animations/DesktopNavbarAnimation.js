@@ -19,7 +19,7 @@ export const desktopNavbarAnimation = () => {
         onUpdate: (self) => {
             const scrollY = self.scroll();
             // Handle "is-scrolled" class
-            if (scrollY > 100) {
+            if (scrollY > 20) {
                 navRef.classList.add('is-scrolled');
             } else {
                 navRef.classList.remove('is-scrolled');

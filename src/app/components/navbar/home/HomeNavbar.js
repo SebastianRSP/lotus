@@ -75,7 +75,7 @@ export const HomeNavbar = () => {
                         <div className='lg:col-span-1 col-span-2'>
                             {/* border border-y-0 border-x-black */}
                             <div className="flex items-center w-full justify-center h-inherit ">
-                                <div className="logo-container">
+                                <div className="logo-container link-animation">
                                     <Image
                                         className="lotus fill-white"
                                         src={logo}
@@ -116,17 +116,13 @@ export const HomeNavbar = () => {
                                         font={navIcon.font}
                                     />
                                 ))}
-                                {/* divide-x divide-black */}
-                                {/* <div className="grid grid-cols-1 items-center h-inherit ">
-                                
-                            </div> */}
                             </div>
                         </div>
                     </div>
                 </div>
                 {/* Mobile Version */}
                 <div className='md:hidden flex justify-between items-center pt-8 md:px-8 px-10'>
-                    <div className="logo-container">
+                    <div className="logo-container link-animation">
                         <Image
                             className="lotus"
                             src={logo}
@@ -142,7 +138,7 @@ export const HomeNavbar = () => {
                             height={18}
                         />
                     </div>
-                    <div className='border border-black rounded-4 shadow-outer-new-home bg-yellowLight w-9 h-9 p-0.3 relative z-50'>
+                    <div className='link-animation border border-black rounded-4 shadow-outer-new-home bg-yellowLight w-9 h-9 p-0.3 relative z-50'>
                         <div
                             className='bg-green rounded-4 flex justify-center items-center w-full h-full'
                             onClick={handleToggle}
