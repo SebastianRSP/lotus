@@ -161,7 +161,9 @@ canvas {
 .desktop-nav.is-scrolled {
   transform: translateY(-1.5rem);
 }
-
+.is-scrolled .middle-scroll {
+  padding-top: 1.75rem;
+}
 .desktop-nav-bg {
   transform: scaleY(0);
   transition: transform 1s cubic-bezier(.19,1,.22,1);

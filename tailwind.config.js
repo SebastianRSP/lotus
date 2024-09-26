@@ -114,6 +114,7 @@ module.exports = {
       },
       letterSpacing: {
         'space60': '0.6px',
+        'space80': '0.8px',
         'space00': '0px',
         'space90': '0.9px',
         'space12': '1.2px',

@@ -12,12 +12,12 @@ import { ShowCaseSection } from "../components/home/show-cases-ection/Index";
 export default function Home() {
     return (
         <>
-            <div className="2xl:px-10 px-5">
-                <div className="2xl:py-10 py-5 h-screen">
+            <div className="2xl:px-60 lg:px-10 px-5">
+                <div className="2xl:py-12 lg:py-10 py-5 xl:h-[120vh] h-screen">
                     <IndexHome />
                 </div>
                 <OurPartners />
-                {/* <FeatureSection /> */}
+                <FeatureSection />
                 <BridgeSection />
                 <ShowCaseSection />
                 <PartnerReviews />

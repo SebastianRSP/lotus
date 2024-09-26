@@ -115,7 +115,7 @@ export const IndexHome = () => {
                                     </div>
                                 </h2>
                                 <p id="home-hero-paragraph" className="2xl:text-2xl text-sm">Data mobility. Without limits.</p>
-                                <div id="home-hero-button">
+                                <div id="home-hero-button" className="2xl:pt-6 pt-3">
                                     <DefaultBtn
                                         btnText={'Get Started'}
                                     />
