@@ -17,7 +17,7 @@ export default function Home() {
                     <IndexHome />
                 </div>
                 <OurPartners />
-                <FeatureSection />
+                {/* <FeatureSection /> */}
                 <BridgeSection />
                 <ShowCaseSection />
                 <PartnerReviews />
