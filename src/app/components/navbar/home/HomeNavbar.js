@@ -55,7 +55,7 @@ export const HomeNavbar = () => {
         <>
             <nav className='fixed slide-up w-full'>
                 {/* Desktop Vesion */}
-                <div className={`hidden md:!block desktop-nav 2xl:px-60 lg:px-10 px-5 middle-scroll`}>
+                <div className={`hidden md:!block desktop-nav 2xl:px-20 lg:px-10 px-5 middle-scroll`}>
                     {/* border border-black bg-yellowLight shadow-outer*/}
                     <div className='absolute 2xl:h-36 xl:h-28 h-24 bg-white/70 bg-no-repeat bg-origin-padding filter backdrop-blur-30 shadow-sm inset-0 origin-top z-10 desktop-nav-bg'></div>
                     <div className='w-full grid lg:grid-cols-3 grid-cols-10 grid-flow-col items-center text-center 2xl:h-44 xl:h-36 h-28 relative z-50 overflow-hidden'>
