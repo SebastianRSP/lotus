@@ -1,8 +1,19 @@
 import gsap from 'gsap';
-import { ScrollSmoother, ScrollTrigger, SplitText } from "gsap/all";
+import { ScrollSmoother, ScrollTrigger, SplitText, TextPlugin } from "gsap/all";
 import { smoothScroolling } from '../smoothScroll';
 
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText, TextPlugin);
+
+// Text Typing Animation List
+const industryNames = [
+    "Fintech",
+    "Pharmaceutical",
+    "Cybersecurity",
+    "Retail",
+    "Universities",
+    "Hedge Funds",
+    "Genomics",
+];
 
 export const newHomePageAnimation = () => {
     const loader = document.querySelector('.loader');
@@ -46,6 +57,59 @@ export const newHomePageAnimation = () => {
         // Initialize main animations
         const initMainAnimations = () => {
             smoothScroolling();
+
+            const textTyping = document.getElementById('text-typing-animation');
+
+            if (textTyping) {
+                // Start text typing animation
+                startTextTypingAnimation(textTyping);
+            }
         };
     }
+};
+
+
+
+// Function to handle text typing and erasing
+const startTextTypingAnimation = (textRef) => {
+    let currentIndex = 0;
+    const typingSpeed = 0.15; // Speed of typing for each character (seconds per character)
+    const erasingSpeed = 0.10; // Speed of erasing for each character
+
+    const typeNextWord = () => {
+        const currentWord = industryNames[currentIndex];
+        gsap.to(textRef, {
+            duration: currentWord.length * typingSpeed,
+            text: currentWord,
+            delay: .5,
+            ease: "none",
+            onComplete: () => {
+                // Pause before erasing
+                setTimeout(() => {
+                    eraseWord(currentWord);
+                }, 1000); // Hold the typed word for 1 second
+            }
+        });
+    };
+
+    const eraseWord = (word) => {
+        const length = word.length;
+        for (let i = 0; i <= length; i++) {
+            gsap.to(textRef, {
+                duration: erasingSpeed,
+                text: word.substring(0, length - i), // Erase from the right side
+                ease: "none",
+                delay: i * erasingSpeed,
+                onComplete: () => {
+                    if (i === length) {
+                        currentIndex = (currentIndex + 1) % industryNames.length;
+                        typeNextWord(); // Move to the next word
+                    }
+                }
+            });
+        }
+    };
+
+    // Start typing the first word
+    typeNextWord();
 };
