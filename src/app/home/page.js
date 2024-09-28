@@ -13,10 +13,11 @@ export default function Home() {
     return (
         <>
             <div className="2xl:px-60 lg:px-10 px-5">
-                <div className="2xl:py-12 lg:py-10 py-5 xl:h-[120vh] h-screen">
+                {/* 2xl:h-[125vh] xl:h-[150vh] h-screen */}
+                <div className="2xl:py-12 lg:py-10 py-5 2xl:h-[122vh] xl:h-[125vh] lg:h-[120vh] h-screen">
                     <IndexHome />
                 </div>
-                <OurPartners />
+                {/* <OurPartners /> */}
                 {/* <FeatureSection /> */}
                 <BridgeSection />
                 <ShowCaseSection />

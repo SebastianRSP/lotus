@@ -131,8 +131,8 @@ export const NewHomeSlider = ({ children, index, sliderRef, onSlideChange }) => 
         slidesToScroll: 1,
         initialSlide: 0,
         variableWidth: false,
-        nextArrow: <NextArrow extras="arrow-new-home !w-6 !h-6 !bg-transparent !border-2 !border-solid !text-black !rounded-full" />,
-        prevArrow: <PrevArrow extras="arrow-new-home !w-6 !h-6 !bg-transparent !border-2 !border-solid !text-black !rounded-full" />,
+        nextArrow: <NextArrow extras="arrow-new-home !w-8 !h-8 !bg-transparent !border-2 !border-solid !text-black !rounded-full" />,
+        prevArrow: <PrevArrow extras="arrow-new-home !w-8 !h-8 !bg-transparent !border-2 !border-solid !text-black !rounded-full" />,
         beforeChange: (oldIndex, newIndex) => {
             onSlideChange(oldIndex, newIndex); // Update active index when slide changes
         },

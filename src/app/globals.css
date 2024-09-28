@@ -6,11 +6,23 @@
 body {
   @apply font-plus-jakarta-sans bg-white;
   overflow-x: hidden;
-  /* cursor: none; */
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   background-color: #fff;
   color: #000; 
 }
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
 
 /* Canvas */
 canvas { 
@@ -738,12 +750,19 @@ canvas {
 }
 
 .new-home-slider .slick-list {
-  width: 75%;
+  width: 67%;
   overflow: hidden;
 }
 .arrow-new-home::before{
   color: black !important;
   font-size: 21px !important;
+}
+
+
+@media (max-width: 1536px) {
+  .new-home-slider .slick-list {
+    width: 75%; /* Adjust the width for small screens */
+  }
 }
 
 @media (max-width: 768px) {
@@ -758,7 +777,7 @@ canvas {
 }
 
 .smooth-transition {
-  transition: left 0.4s ease, width 0.4s ease; /* Smooth transition */
+  transition: left 0.4s ease-in, width 0.4s ease; /* Smooth transition */
 }
 
 /* Apply transition for smooth animation */

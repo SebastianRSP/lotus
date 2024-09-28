@@ -3,8 +3,8 @@ import Image from "next/image"
 export const CardShowCase = ({id, heading, subHeading, description, defaultImage}) => {
     return (
         <div key={id} className="lg:px-0 px-3">
-            <div className="grid lg:grid-cols-2 grid-cols-1 gap-10">
-                <div className="flex justify-self-center bg-green lg:py-0 py-20 opacity-10 rounded-lg w-full justify-center">
+            <div className="grid lg:grid-cols-5 grid-cols-1 gap-10">
+                <div className="lg:col-span-2 flex justify-self-center bg-green lg:py-0 py-20 opacity-10 rounded w-full justify-center">
                     <Image
                         src={defaultImage}
                         alt="default Image"
@@ -12,12 +12,12 @@ export const CardShowCase = ({id, heading, subHeading, description, defaultImage
                         height={40}
                     />
                 </div>
-                <div className="flex flex-col">
-                    <h4 className="2xl:text-3xl lg:text-2xl text-xl 2xl:leading-9 leading-7 font-medium">{heading}</h4>
-                    <h5 className="2xl:text-3xl lg:text-2xl text-xl 2xl:leading-9 leading-7 font-extralight">
+                <div className="lg:col-span-3 flex flex-col">
+                    <h4 className="2xl:text-4xl xl:text-3xl lg:text-2xl text-xl 2xl:leading-9 xl:leading-30 lg:leading-6 leading-5 font-medium">{heading}</h4>
+                    <h5 className="2xl:text-4xl xl:text-3xl lg:text-2xl text-xl 2xl:leading-9 xl:leading-30 lg:leading-6 leading-5 font-extralight">
                         {subHeading}
                     </h5>
-                    <p className="2xl:text-lg md:text-md text-sm mt-4">
+                    <p className="2xl:text-2xl xl:text-xl lg:text-lg md:text-md text-sm mt-4 lg:w-11/12 w-full">
                         {description}
                     </p>
                 </div>

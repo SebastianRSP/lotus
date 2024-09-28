@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
 import { useRef, useEffect } from 'react';
 
 // Partners Import
@@ -13,9 +14,14 @@ import Sia from '../../../../../public/new-home-assets/icons/sia.svg';
 import Storj from '../../../../../public/new-home-assets/icons/storj.svg';
 import Cloudskye from '../../../../../public/new-home-assets/icons/cloudskye.svg';
 import Bloczio from '../../../../../public/new-home-assets/icons/bloczio.svg';
+import Marquee from 'react-fast-marquee';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export const OurPartners = () => {
+    const partnerSection = useRef(null);
     const scrollContainerRef = useRef(null);
+
     const partners = [
         { partnerName: 'Sia', partnerIcon: Sia, width: 80, height: 50 },
         { partnerName: 'Arweave', partnerIcon: Arweave, width: 146, height: 50 },
@@ -29,13 +35,15 @@ export const OurPartners = () => {
 
     useEffect(() => {
         const partnersContainer = scrollContainerRef.current;
-        const items = partnersContainer.children;
 
-        // Calculate the width of the container dynamically based on the children
-        let totalWidth = 0;
-        Array.from(items).forEach(item => {
-            totalWidth += item.offsetWidth;
-        });
+        const totalWidth = partnersContainer.scrollWidth - partnersContainer.clientWidth;
+
+        // If there's no horizontal scrollable space, force it by setting a larger width
+        if (totalWidth <= 0) {
+            partnersContainer.style.minWidth = '200%'; // Adjust this to force overflow
+        }
+
+        const percentage = (partnersContainer.scrollWidth / partners.length) / partnersContainer.scrollWidth * 100;
 
         const scrollerContent = Array.from(partnersContainer.children);
 
@@ -44,15 +52,21 @@ export const OurPartners = () => {
             partnersContainer.appendChild(duplicateElement)
         });
 
-        // Set up a GSAP infinite scroll (marquee-like animation)
+        // Horizontal scrolling animation
         gsap.to(partnersContainer, {
-            x: -totalWidth, // Move left by the total width of all items
-            duration: 50, // Adjust speed (higher duration = slower)
-            ease: 'linear',
-            repeat: -1, // Infinite loop
-            modifiers: {
-                x: gsap.utils.unitize((x) => parseFloat(x) % totalWidth) // This will reset the position when scrolling ends
-            }
+            xPercent: -`${percentage * 2}`, // Move until last icon is fully visible
+            ease: 'none',
+
+            scrollTrigger: {
+                trigger: partnerSection.current,
+                start: 'top+=50 top',
+                end: `${percentage * 2}%`, // Stop when the last icon is fully visible
+                scrub: true,
+                pin: true, // Pin the section during scroll
+                anticipatePin: 1,
+                markers: false, // Debugging markers
+                invalidateOnRefresh: true,
+            },
         });
     }, [partners]);
 
@@ -67,10 +81,10 @@ export const OurPartners = () => {
                 <div className="xl:col-span-10 lg:col-span-9 overflow-hidden">
                     <div
                         ref={scrollContainerRef}
-                        className="flex gap-5 items-center w-max"
+                        className="flex gap-5 items-center navigate-partners w-max"
                     >
                         {partners.map((partner, index) => (
-                            <div key={index} className="2xl:px-14 lg:px-10 px-10">
+                            <div key={index} className="2xl:px-14 lg:px-10 px-2">
                                 <Image
                                     src={partner.partnerIcon}
                                     alt={`${partner.partnerName} icon`}

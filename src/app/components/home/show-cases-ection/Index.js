@@ -14,7 +14,6 @@ const growthTabs = [
     "OPTIMIZATION ALGORITHMS",
 ];
 
-
 const showCases = [
     {
         heading: 'TrendScopeTM',
@@ -55,14 +54,26 @@ export const ShowCaseSection = () => {
         }
     };
 
-    useEffect(() => {
-        // Calculate the position and width of the active tab
+    const updateBgStyle = () => {
         if (tabRefs.current[activeIndex]) {
             const activeTab = tabRefs.current[activeIndex];
             const left = activeTab.offsetLeft;
             const width = activeTab.offsetWidth;
             setBgStyle({ left, width });
         }
+    };
+
+    useEffect(() => {
+        // Update background position and width whenever activeIndex changes
+        updateBgStyle();
+
+        // Add resize event listener to update bgStyle on window resize
+        window.addEventListener("resize", updateBgStyle);
+
+        return () => {
+            // Cleanup the event listener
+            window.removeEventListener("resize", updateBgStyle);
+        };
     }, [activeIndex]);
 
     // Handler to sync state when slider changes
@@ -70,12 +81,12 @@ export const ShowCaseSection = () => {
         setActiveIndex(newIndex);
     };
 
-
     return (
         <section className="2xl:py-28 md:py-16 py-10">
-            <div className="bg-gray-light rounded-lg 2xl:px-100 xl:px-20 md:px-10 px-5 xl:py-24 py-12 ">
+            <div className="bg-gray-light rounded-lg 2xl:px-100 xl:px-20 md:px-10 px-5 xl:py-24 py-12">
                 <div className="grid lg:grid-cols-12 grid-cols-1 lg:gap-0 gap-8 lg:mb-0 mb-5">
-                    <h3 className="2xl:text-5xl xl:text-4xl lg:text-3xl text-xl 2xl:leading-60 xl:leading-48 lg:leading-42 leading-8 font-extralight lg:col-span-8 lg:w-11/12 w-11/12">
+                    {/* <h3 className="2xl:text-5xl xl:text-4xl lg:text-3xl text-xl 2xl:leading-60 xl:leading-48 lg:leading-42 leading-8 font-extralight lg:col-span-8 lg:w-11/12 w-11/12"> */}
+                    <h3 className="2xl:text-5xl xl:text-4xl lg:text-3xl text-2xl 2xl:leading-60 xl:leading-48 lg:leading-42 leading-8 font-extralight lg:col-span-8 lg:w-11/12 md:w-11/12 w-full">
                         <span className="font-normal">The Bridge<sup>TM</sup></span> houses cutting-edge AI enabled data management tools for enterprise clients
                     </h3>
                     <p className="2xl:text-2xl xl:text-base lg:text-sm text-xs lg:justify-self-end lg:col-span-4 lg:w-full w-11/12">
@@ -83,13 +94,13 @@ export const ShowCaseSection = () => {
                     </p>
                 </div>
                 <div className="2xl:pt-100 xl:pt-20 md:pt-10">
-                    <div className="border border-opacity-50 border-black md:pb-0 pb-12 px-2 rounded-lg overflow-hidden">
-                        <div className="2xl:pt-14 pt-11 2xl:pb-24 xl:pb-20 pb-10  lg:px-10 px-5 justify-center lg:flex hidden">
+                    <div className="border border-opacity-80 border-black md:pb-0 pb-12 px-2 rounded-lg overflow-hidden">
+                        <div className="2xl:pt-14 pt-11 2xl:pb-24 xl:pb-20 pb-10 lg:px-10 px-5 justify-center lg:flex hidden">
                             <div className="lg:bg-white bg-transparent relative border rounded w-fit bg-no-repeat lg:shadow-black shadow-none">
                                 <div className="relative flex lg:flex-nowrap flex-wrap justify-center lg:gap-0 gap-2">
                                     <div
-                                        className="absolute top-0 h-full bg-green z-0 smooth-transition border-x rounded-sm"
-                                        style={{ left: `${bgStyle.left}px`, width: `${bgStyle.width}px` }}
+                                        className="absolute top-0 h-full bg-green z-0 smooth-transition rounded border-x"
+                                        style={{ left: `${bgStyle.left - 1}px`, width: `${bgStyle.width + 2}px` }}
                                     />
                                     {growthTabs.map((growthtab, index) => (
                                         <div key={index}
@@ -97,7 +108,7 @@ export const ShowCaseSection = () => {
                                             ref={(el) => (tabRefs.current[index] = el)}
                                             className={`tab
                                                 ${activeIndex === index ? '' : 'text-black'} 
-                                                2xl:py-1.4 xl:py-3 lg:py-2 py-0.5 2xl:px-1.8 xl:px-5 lg:px-2 px-5 text-black lg:shadow-none shadow-white relative z-[1] cursor-pointer 2xl:text-base text-xs tracking-space90
+                                                2xl:text-base text-xs tracking-space90 text-black 2xl:py-1.4 xl:py-3 lg:py-2 py-0.5 2xl:px-1.8 xl:px-5 lg:px-2 px-5 border-x-transparent lg:shadow-none shadow-white relative z-[1] cursor-pointer
                                             `}>
                                             <span className="uppercase">
                                                 {growthtab}
@@ -124,6 +135,6 @@ export const ShowCaseSection = () => {
                     </div>
                 </div>
             </div>
-        </section >
-    )
-}
+        </section>
+    );
+};

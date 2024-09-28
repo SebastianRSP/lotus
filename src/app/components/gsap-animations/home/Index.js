@@ -20,14 +20,15 @@ export const newHomePageAnimation = () => {
 
     if (loader) {
         // Initial collapsed state: Leaves rotated and positioned below
-        gsap.set("#left-leaf", { transformOrigin: "right center", rotate: -80, x: 50, y: 100, opacity: 0 });
-        gsap.set("#middle-leaf", { transformOrigin: "center center", rotate: -300, x: -60, y: 100, opacity: 0 });
-        gsap.set("#right-leaf", { transformOrigin: "left center", rotate: -300, x: -120, y: 100, opacity: 0 });
+        gsap.set("#left-leaf", { transformOrigin: "center center", x: 20, y: 50, });
+        gsap.set("#middle-leaf", { transformOrigin: "center center", rotate: -100, x: -20, y: 50, });
+        gsap.set("#right-leaf", { transformOrigin: "center center", rotate: -100, x: -40, y: 50,  });
         gsap.set("#home-hero-bg", { transformOrigin: "center center", y: '50%', opacity: 0 });
-        gsap.set("#home-hero-heading", { transformOrigin: "center center", x: '-200%' });
-        gsap.set("#home-hero-paragraph", { transformOrigin: "center center", x: '-200%' });
-        gsap.set("#home-hero-button", { transformOrigin: "center center", x: '-200%', opacity: 0 });
-        gsap.set("#home-hero-bullets", { transformOrigin: "center center", x: '-200%', opacity: 0 });
+        // x: '-200%', if we mode the hero text and buttom from right to left as per the XD file
+        gsap.set("#home-hero-heading", { transformOrigin: "center center", opacity: 0 });
+        gsap.set("#home-hero-paragraph", { transformOrigin: "center center", opacity: 0 });
+        gsap.set("#home-hero-button", { transformOrigin: "center center", opacity: 0 });
+        gsap.set("#home-hero-bullets", { transformOrigin: "center center", opacity: 0 });
         gsap.set(".link-animation", { transformOrigin: "center center", y: -100, opacity: .5 });
 
         const timeline = gsap.timeline({
@@ -49,10 +50,10 @@ export const newHomePageAnimation = () => {
             .to("#left-leaf, #middle-leaf, #right-leaf", { opacity: 0, duration: 0.4, ease: "power1.inOut" }, "<")
             .to("#home-hero-bg", { y: '0%', opacity: 1, duration: 1, ease: "back.inOut" }, "<")
             .to(".link-animation", { y: 0, duration: 1.2, ease: "back.inOut", opacity: 1 }, "<")
-            .to("#home-hero-heading", { x: '0%', duration: 0.3, ease: "sine.inOut", opacity: 1 })
-            .to("#home-hero-paragraph", { x: '0%', duration: 0.4, ease: "sine.inOut", opacity: 1 }, "<")
-            .to("#home-hero-button", { x: '0%', duration: 0.5, ease: "sine.inOut", opacity: 1 }, "<")
-            .to("#home-hero-bullets", { x: '0%', duration: 0.5, ease: "sine.inOut", opacity: 1 }, "<");
+            .to("#home-hero-heading", { duration: 0.9, ease: "sine.inOut", opacity: 1 })
+            .to("#home-hero-paragraph", {duration: 0.9, ease: "sine.inOut", opacity: 1 }, "<")
+            .to("#home-hero-button", { duration: 0.9, ease: "sine.inOut", opacity: 1 }, "<")
+            .to("#home-hero-bullets", { duration: 0.9, ease: "sine.inOut", opacity: 1 }, "<");
 
         // Initialize main animations
         const initMainAnimations = () => {

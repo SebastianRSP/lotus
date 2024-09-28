@@ -30,7 +30,7 @@ export const BridgeSection = () => {
     return (
         <section className="bg-black h-auto forced-full-width text-white md:px-0 px-5">
             <div className="flex flex-col justify-center w-full 2xl:py-32 py-16">
-                <h4 className="2xl:text-7xl xl:text-6xl lg:text-5xl md:text-4xl text-2xl 2xl:leading-84 xl:leading-45 lg:leading-60 md:leading-48 leading-9 font-extralight text-center">
+                <h4 className="2xl:text-7xl xl:text-6xl lg:text-5xl md:text-4xl text-28 2xl:leading-84 xl:leading-66 lg:leading-54 md:leading-42 leading-9 font-extralight text-center">
                     We’re building <br /> the world’s largest<br /> content delivery network
                 </h4>
                 <div className='flex justify-center items-center text-center text-green my-20 relative'>
@@ -61,7 +61,7 @@ export const BridgeSection = () => {
                     </div>
                 </div>
                 <div className="2xl:py-16 py-0 text-center">
-                    <h5 className="2xl:text-7xl xl:text-6xl lg:text-5xl md:text-4xl text-2xl 2xl:leading-84 xl:leading-45 lg:leading-60 md:leading-48 leading-9 font-extralight ">
+                    <h5 className="2xl:text-7xl xl:text-6xl lg:text-5xl md:text-4xl text-26 2xl:leading-84 xl:leading-66 lg:leading-54 md:leading-42 leading-9 font-extralight ">
                         A single pane of glass <br /> connecting <span className="font-normal">web2</span> and <span className="font-normal">web3</span>
                     </h5>
                     <p className="2xl:text-4xl lg:text-3xl md:text-2xl text-xs my-2 text-green flex items-center justify-center gap-4">
@@ -90,9 +90,11 @@ export const BridgeSection = () => {
                                         />
                                     </div>
                                     <div className="flex flex-col justify-between gap-3 text-left lg:w-4/6 md:w-11/12 w-full">
-                                        <span className="2xl:text-lg text-md font-normal leading-43 text-green">{cardDetail.category}</span>
-                                        <h4 className="2xl:text-4xl text-2xl font-300 leading-7 text-green">{cardDetail.heading}</h4>
-                                        <p className="2xl:text-lg text-sm">
+                                        <span className="2xl:text-lg text-base font-normal leading-42 text-green">{cardDetail.category}</span>
+                                        <h4 className="2xl:text-4xl lg:text-3xl text-2xl font-300 2xl:leading-42 lg:leading-9 leading-30 text-green 2xl:w-3/4 lg:w-4/5 w-5/6">
+                                            {cardDetail.heading}
+                                        </h4>
+                                        <p className="2xl:text-2xl lg:text-xl text-base">
                                             {cardDetail.description}
                                         </p>
                                     </div>
@@ -104,7 +106,7 @@ export const BridgeSection = () => {
             </div>
             <div className="">
                 <div className="text-center border-y border-opacity-20 border-gray-light">
-                    <h4 className="2xl:text-7xl xl:text-6xl lg:text-5xl md:text-4xl text-2xl 2xl:leading-84 xl:leading-45 lg:leading-60 md:leading-48 leading-9 font-extralight pt-5 pb-7">
+                    <h4 className="2xl:text-7xl xl:text-6xl lg:text-5xl md:text-4xl text-3xl 2xl:leading-84 xl:leading-66 lg:leading-54 md:leading-42 leading-9 font-extralight pt-5 pb-7">
                         The trillion dollar data opportunity
                         </h4>
                 </div>

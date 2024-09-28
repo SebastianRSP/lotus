@@ -2,7 +2,7 @@
     overflow: visible;
 }
 
-.slick-bg{
+.slick-bg {
     box-shadow: 20px 20px 50px white;
 }
 
@@ -19,52 +19,36 @@
     top: 50%;
     transform: translateY(-50%);
     pointer-events: auto;
+    background-size: cover; /* Ensure the icon covers the button */
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .slick-prev {
-    left: 10px; 
+    left: 36px; 
+    background-image: url('../../../../public/new-home-assets/arrow.svg'); /* Path for left arrow */
 }
 
 .slick-next {
-    right: 10px; 
+    right: 36px; 
+    background-image: url('../../../../public/new-home-assets/arrow.svg'); /* Path for right arrow */
+    transform: rotate(180deg); /* Rotate for left arrow */
 }
 
 .slick-prev:hover, .slick-next:hover {
     background-color: #000000;
 }
 
-.slick-prev:before, .slick-next:before {
-    font-family: monospace;
-    font-size: 33px;
-    color: #03FF00;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    width: -webkit-fill-available;
-    height: -webkit-fill-available;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-.slick-prev:before {
-    content: '\2190' !important; /* Unicode for left arrow */
-}
-
-.slick-next:before {
-    content: '\2192' !important; /* Unicode for right arrow */
-}
-
 .slick-prev:before,
 .slick-next:before {
-    content: '';
+    content: ''; /* Remove the Unicode content */
 }
 
 .slick-track {
     padding: 0px !important;
 }
 
-.slick-dots{
+.slick-dots {
     bottom: -52px !important;
 }
 
@@ -83,20 +67,12 @@
     color: #03FF00 !important;;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-  }
-  
-  .slick-dots li button:hover, .slick-dots li button:focus {
+}
+
+.slick-dots li button:hover, .slick-dots li button:focus {
     outline: none;
     color: #03FF00 !important;
-  }
-
-
-
-
-
-
-
-
+}
 
 .before\:-inset-10:before {
     bottom: -1rem;
@@ -109,4 +85,14 @@
 .before\:absolute:before {
     content: "";
     position: absolute;
+}
+
+.slick-prev:hover, .slick-prev:focus, .slick-next:hover, .slick-next:focus {
+    color: transparent;
+    outline: none;
+    background: url(/_next/static/media/arrow.80f02200.svg);
+    background-color: transparent !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }

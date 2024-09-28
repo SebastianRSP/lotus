@@ -2,12 +2,9 @@
 
 import Image from "next/image";
 import { DefaultBtn } from "../buttons/home/DefaultBtn";
-import { HomeNavbar } from "../navbar/home/HomeNavbar";
-import { useEffect, useRef, useState } from 'react';
-import { motion } from 'framer-motion';
 import tickIcon from '../../../../public/new-home-assets/tick.svg';
-import { TextSwapper } from "./text-animation/TextSwapper";
 import { TextTyping } from "./text-animation/TextTyping";
+import navCurve from '../../../../public/new-home-assets/nav-curve.svg';
 
 const bullets = [
     { buttet: 'Seamless Web2 to Web3 Data Bridge' },
@@ -24,27 +21,44 @@ export const IndexHome = () => {
                 <div id="home-hero-bg" className="bg-gray-light h-available rounded-lg relative">
                     {/* White Strap */}
                     <div className="absolute md:flex justify-center w-full z-0">
-                        <div className=' bg-white 2xl:h-18 h-16 z-10 md:rounded-bl-[32px] rounded-br-[32px] 2xl:max-w-md lg:w-1/4 md:w-1/5 sm:w-3/12 w-4/12'></div>
+                        {/* 2xl:max-w-lg xl:max-w-sm lg:w-32r md:w-96 */}
+                        <div className=' bg-white 2xl:h-18 lg:h-14 h-16 z-10 md:rounded-bl-[43px] rounded-br-[43px] lg:w-28.5p md:w-1/5 w-1/3 relative'>
+                            <div className="absolute md:top-0 md:-left-7 -bottom-14 -left-0">
+                                <Image 
+                                   src={navCurve}
+                                    width={32}
+                                    height={20}
+                                />
+                            </div>
+                            <div className="absolute top-0 -right-7">
+                                <Image 
+                                    src={navCurve}
+                                    width={32}
+                                    height={20}
+                                />
+                            </div>
+                        </div>
                     </div>
-                    <div className=" grid grid-cols-12 h-available items-center">
-                        <div className="lg:col-span-6 col-span-11 2xl:pl-100 lg:pl-14 md:pl-10 pl-5 grid grid-rows-3 items-end h-available">
-                            <div className="flex flex-col gap-6 row-span-2">
-                                <h2 id="home-hero-heading" className="2xl:text-6xl lg:text-5xl md:text-4xl text-3xl font-extralight 2xl:leading-66 lg:leading-54 md:leading-42 leading-9">
+                    <div className=" grid grid-cols-12 h-available justify-end items-end">
+                        {/* 2xl:gap-4.5 xl:gap-0 md:gap-12 gap-0 */}
+                        <div className="lg:col-span-7 col-span-11 2xl:pl-100 lg:pl-14 md:pl-10 pl-5 grid 2xl:grid-rows-2 lg:grid-rows-3 grid-rows-5 items-end h-available">
+                            <div className="flex flex-col gap-6 md:self-center self-end lg:row-span-2 row-span-3">
+                                <h2 id="home-hero-heading" className="font-extralight 2xl:text-7xl xl:text-6xl lg:text-5xl md:text-4xl text-3xl 2xl:leading-84 xl:leading-66 lg:leading-54 md:leading-42 leading-9">
                                     Decentralized<br /> data infrastructure<br /> for{" "}
                                     {/* <TextSwapper /> */}
                                     <TextTyping />
                                 </h2>
-                                <p id="home-hero-paragraph" className="2xl:text-2xl text-sm">Data mobility. Without limits.</p>
-                                <div id="home-hero-button" className="2xl:pt-6 pt-3">
+                                <p id="home-hero-paragraph" className="2xl:text-2xl xl:text-xl md:text-xl sm:text-lg text-sm">Data mobility. Without limits.</p>
+                                <div id="home-hero-button" className="md:pt-6 pt-3">
                                     <DefaultBtn
                                         btnText={'Get Started'}
                                     />
                                 </div>
                             </div>
-                            <div id="home-hero-bullets" className="flex flex-col row-span-1 2xl:pb-10 pb-5 w-fit">
+                            <div id="home-hero-bullets" className="flex flex-col lg:row-span-1 row-span-2 2xl:pb-10 pb-5 w-fit">
                                 <div className="border-t-[0.2px] border-t-black border-opacity-20">
                                     {bullets.map((bullet, index) => (
-                                        <div key={index} className="flex items-center gap-3 border-b-[0.2px] border-b-black border-opacity-20 py-2">
+                                        <div key={index} className="flex items-center gap-3 border-b-[0.2px] border-b-black border-opacity-20 xl:py-5 py-3">
                                             <Image
                                                 src={tickIcon}
                                                 className="2xl:w-4 -mb-2"
@@ -52,13 +66,13 @@ export const IndexHome = () => {
                                                 width={10}
                                                 height={10}
                                             />
-                                            <p className="2xl:text-xl md:text-sm font-medium text-xs">{bullet.buttet}</p>
+                                            <p className="2xl:text-2xl xl:text-xl md:text-xl sm:text-lg text-sm font-normal xl:leading-26 md:leading-22 leading-5">{bullet.buttet}</p>
                                         </div>
                                     ))}
                                 </div>
                             </div>
                         </div>
-                        <div className="lg:col-span-6 col-span-1"></div>
+                        <div className="lg:col-span-5 col-span-1"></div>
                     </div>
                 </div>
             </section>
