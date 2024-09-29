@@ -41,8 +41,8 @@ export const IndexHome = () => {
                     </div>
                     <div className=" grid grid-cols-12 h-available justify-end items-end">
                         {/* 2xl:gap-4.5 xl:gap-0 md:gap-12 gap-0 */}
-                        <div className="lg:col-span-7 col-span-11 2xl:pl-100 lg:pl-14 md:pl-10 pl-5 grid 2xl:grid-rows-2 xl:grid-rows-6 lg:grid-rows-5 md:grid-rows-2 grid-rows-5 items-end h-available">
-                            <div className="flex flex-col gap-6 md:self-center self-end xl:row-span-4 lg:row-span-4 md:row-span-4 row-span-3">
+                        <div className="lg:col-span-7 col-span-11 2xl:pl-100 lg:pl-14 md:pl-10 pl-5 grid 2xl:grid-rows-2 xl:grid-rows-7 lg:grid-rows-5 md:grid-rows-2 grid-rows-5 items-end h-available">
+                            <div className="flex flex-col gap-6 md:self-center self-end xl:row-span-5 lg:row-span-4 md:row-span-4 row-span-3">
                                 {/* xl:text-6xl xl:leading-66  */}
                                 <h2 id="home-hero-heading" className="font-extralight 2xl:text-7xl xl:text-3.5r lg:text-5xl md:text-4xl text-3xl 2xl:leading-84 xl:leading-62 lg:leading-54 md:leading-42 leading-9">
                                     Decentralized<br /> data infrastructure<br /> for{" "}
