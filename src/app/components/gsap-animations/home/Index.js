@@ -22,7 +22,7 @@ export const newHomePageAnimation = () => {
         // Initial collapsed state: Leaves rotated and positioned below
         gsap.set("#left-leaf", { transformOrigin: "center center", x: 20, y: 50, });
         gsap.set("#middle-leaf", { transformOrigin: "center center", rotate: -100, x: -20, y: 50, });
-        gsap.set("#right-leaf", { transformOrigin: "center center", rotate: -100, x: -40, y: 50,  });
+        gsap.set("#right-leaf", { transformOrigin: "center center", rotate: -100, x: -40, y: 50, });
         gsap.set("#home-hero-bg", { transformOrigin: "center center", y: '50%', opacity: 0 });
         // x: '-200%', if we mode the hero text and buttom from right to left as per the XD file
         gsap.set("#home-hero-heading", { transformOrigin: "center center", opacity: 0 });
@@ -51,7 +51,7 @@ export const newHomePageAnimation = () => {
             .to("#home-hero-bg", { y: '0%', opacity: 1, duration: 1, ease: "back.inOut" }, "<")
             .to(".link-animation", { y: 0, duration: 1.2, ease: "back.inOut", opacity: 1 }, "<")
             .to("#home-hero-heading", { duration: 0.9, ease: "sine.inOut", opacity: 1 })
-            .to("#home-hero-paragraph", {duration: 0.9, ease: "sine.inOut", opacity: 1 }, "<")
+            .to("#home-hero-paragraph", { duration: 0.9, ease: "sine.inOut", opacity: 1 }, "<")
             .to("#home-hero-button", { duration: 0.9, ease: "sine.inOut", opacity: 1 }, "<")
             .to("#home-hero-bullets", { duration: 0.9, ease: "sine.inOut", opacity: 1 }, "<");
 
@@ -65,6 +65,8 @@ export const newHomePageAnimation = () => {
                 // Start text typing animation
                 startTextTypingAnimation(textTyping);
             }
+
+            initCounterAnimation();
         };
     }
 };
@@ -114,3 +116,42 @@ const startTextTypingAnimation = (textRef) => {
     // Start typing the first word
     typeNextWord();
 };
+
+// Flag to track if the animation has run
+let hasAnimated = false;
+
+// Function to run counter animation
+const initCounterAnimation = () => {
+    const counterContainer = document.querySelector('.counter-container');
+
+    // Create a ScrollTrigger for the counterContainer
+    ScrollTrigger.create({
+        trigger: counterContainer,
+        start: "top 80%",
+        onEnter: function () {
+            // Check if the animation has already run
+            if (!hasAnimated) {
+                hasAnimated = true; // Set the flag to true so it doesn't run again
+                gsap.utils.toArray('.counter').forEach(function (el) {
+                    const target = { val: 0 };
+                    const endValue = parseFloat(el.getAttribute('data-number')); // Get the target number
+
+                    gsap.to(target, {
+                        val: endValue,
+                        duration: 2,
+                        onUpdate: function () {
+                            el.innerText = target.val.toFixed(1); // Update the displayed value
+                        }
+                    });
+                });
+            }
+        },
+        toggleActions: 'play none none none'
+    });
+};
+
+
+
+
+
+

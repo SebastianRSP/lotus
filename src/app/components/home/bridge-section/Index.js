@@ -110,10 +110,10 @@ export const BridgeSection = () => {
                         The trillion dollar data opportunity
                         </h4>
                 </div>
-                <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 justify-center items-center text-center">
+                <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 justify-center items-center text-center counter-container">
                     <div className="2xl:py-24 py-12 lg:border-x border-opacity-20 border-gray-light border flex flex-col gap-5 justify-center">
                         <p className="2xl:text-5xl text-3xl 2xl:leading-84 leading-66">
-                            $ <span className="2xl:text-7xl text-5xl">3.1</span> trillion
+                            $ <span className="2xl:text-7xl text-5xl counter" data-number="3.1">0</span> trillion
                         </p>
                         <p className="2xl:text-lg text-sm text-green 2xl:leading-6 leading-5 opacity-75">
                             Annual cost of poor <br /> data management practices <br /> in the United States.
@@ -121,7 +121,7 @@ export const BridgeSection = () => {
                     </div>
                     <div className="2xl:py-24 py-12 lg:border-x border border-opacity-20 border-gray-light flex flex-col gap-5 justify-center">
                         <p className="2xl:text-5xl text-3xl 2xl:leading-84 leading-66">
-                            <span className="2xl:text-7xl text-5xl">90</span> %
+                            <span className="2xl:text-7xl text-5xl counter" data-number="90">0</span> %
                         </p>
                         <p className="2xl:text-lg text-sm text-green 2xl:leading-6 leading-5 opacity-75">
                             Amount of total <br /> enterprise data trapped <br /> on inferior centralised systems.
@@ -129,7 +129,7 @@ export const BridgeSection = () => {
                     </div>
                     <div className="2xl:py-24 py-12 lg:border-x border border-opacity-20 border-gray-light flex flex-col gap-5 justify-center">
                         <p className="2xl:text-5xl text-3xl 2xl:leading-84 leading-66">
-                            $ <span className="2xl:text-7xl text-5xl">1.5</span> trillion
+                            $ <span className="2xl:text-7xl text-5xl counter" data-number="1.5">0</span> trillion
                         </p>
                         <p className="2xl:text-lg text-sm text-green 2xl:leading-6 leading-5 opacity-75">
                             Projected enterprise spend <br /> on data management, storage <br /> and analysis by 2025.
