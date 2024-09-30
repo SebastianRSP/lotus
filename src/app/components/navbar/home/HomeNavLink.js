@@ -46,7 +46,7 @@ export const HomeNavLink = ({ navLinkName, navLink, extras, icon, iconImage, id,
                         </>
                     ) : (
                         <>
-                            <span className={`${font} link-home-hover ${isToggled ? 'link-home-exact-active -translate-y-[2px]' : ''} transform ease-out duration-300  uppercase  2xl:text-base lg:text-sm text-xs font-normal leading-66 tracking-space80 inner-text relative group`}>
+                            <span className={`${font} link-home-hover ${isToggled ? 'link-home-exact-active -translate-y-[2px]' : ''} transform ease-out duration-300  uppercase  2xl:text-base lg:text-sm text-xs 2xl:font-medium font-normal leading-66 2xl:tracking-space80 tracking-space60 inner-text relative group`}>
                                 {navLinkName}
                             </span>
                         </>

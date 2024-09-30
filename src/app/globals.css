@@ -78,7 +78,7 @@ canvas {
 }
 .logo-container {
   position: relative;
-  width: 76px;
+  width: 66px;
   height: 18px;
   overflow: hidden;
   display: flex;
@@ -731,8 +731,8 @@ canvas {
   top: 0;
   background-color: black;
   font-size: 15px;
-  width: 85px;
-  height: 85px;
+  width: 86px;
+  height: 86px;
   border: transparent;
   background: black url(../../public/icons/bucket-curve.svg) left top no-repeat;
 }

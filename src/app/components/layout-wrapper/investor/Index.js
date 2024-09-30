@@ -35,7 +35,6 @@ export const InvestorHomePage = ({ children }) => {
                     <main ref={containerRef}>
                         {children}
                     </main>
-                    <Cursor />
                     <footer className="bg-green">
                         <InvestorFooter />
                     </footer>
