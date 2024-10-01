@@ -83,7 +83,7 @@ export const HomeNavbar = () => {
                             </div>
                         </div>
                         {/* isScroll-logo-middle */}
-                        <div className={`'lg:col-span-1 col-span-2 ${isDark ? '' : '-mt-18'} `}>
+                        <div className={`lg:col-span-1 col-span-2 -mt-18 `}>
                             {/* border border-y-0 border-x-black */}
                             <div className="flex items-center w-full justify-center h-inherit ">
                                 <div className={`logo-container link-animation items-center`}>
