@@ -32,7 +32,7 @@ const footerMenu3 = [
 export const HomeFooter = () => {
     return (
         <>
-            <footer className="bg-gray-light 2xl:px-100 md:px-12 px-5 2xl:pt-100 md:pt-12 pt-5 py-8 ">
+            <footer className="bg-gray-light 2xl:px-100 md:px-12 px-5 2xl:pt-100 md:pt-12 pt-5 py-8 rounded-tr-lg rounded-tl-lg">
                 <div className="flex flex-col md:gap-8 gap-8 2xl:pb-60 md:pb-8 pb-5">
                     <div className="w-full h-auto">
                         <Image

@@ -4,8 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { DefaultBtn } from "../../buttons/home/DefaultBtn";
+import { DefaultBtnBlack } from "../../buttons/home/DefaultBtnBlack";
 
-export const HomeNavLink = ({ navLinkName, navLink, extras, icon, iconImage, id, font, isIncludeBookDemoBtn }) => {
+export const HomeNavLink = ({ navLinkName, navLink, extras, icon, iconImage, id, font, isIncludeBookDemoBtn, isDark }) => {
     const [isToggled, setIsToggled] = useState(false);
 
     const handleMouseEnter = () => {
@@ -20,11 +21,19 @@ export const HomeNavLink = ({ navLinkName, navLink, extras, icon, iconImage, id,
         <>
             {isIncludeBookDemoBtn ? (
                 <div className="flex justify-center">
-                    <DefaultBtn
-                        extras={'link-animation'}
-                        btnText={'BOOK A DEMO'}
-                        btnType={'button'}
-                    />
+                    {isDark ? (
+                        <DefaultBtnBlack
+                            extras={'link-animation'}
+                            btnText={'BOOK A DEMO'}
+                            btnType={'button'}
+                        />
+                    ) : (
+                        <DefaultBtn
+                            extras={'link-animation'}
+                            btnText={'BOOK A DEMO'}
+                            btnType={'button'}
+                        />
+                    )}
                 </div>
             ) : (
                 <Link
@@ -46,7 +55,7 @@ export const HomeNavLink = ({ navLinkName, navLink, extras, icon, iconImage, id,
                         </>
                     ) : (
                         <>
-                            <span className={`${font} link-home-hover ${isToggled ? 'link-home-exact-active -translate-y-[2px]' : ''} transform ease-out duration-300  uppercase  2xl:text-base lg:text-sm text-xs 2xl:font-medium font-normal leading-66 2xl:tracking-space80 tracking-space60 inner-text relative group`}>
+                            <span className={`${font} ${isDark ? 'link-investor-hover' : 'link-home-hover'}   ${isToggled ? `${isDark ? 'link-investor-exact-active' : 'link-home-exact-active -translate-y-[2px]'}` : ''} transform ease-out duration-300  uppercase  2xl:text-base lg:text-sm text-xs 2xl:font-medium font-normal leading-66 2xl:tracking-space80 tracking-space60 inner-text relative group`}>
                                 {navLinkName}
                             </span>
                         </>

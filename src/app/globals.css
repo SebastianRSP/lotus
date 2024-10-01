@@ -176,6 +176,12 @@ canvas {
 .is-scrolled .middle-scroll {
   padding-top: 1.75rem;
 }
+.is-scrolled .h-inher {
+  height: inherit;
+}
+.is-scrolled .isScroll-logo-middle {
+  margin-top: 0px;
+}
 .desktop-nav-bg {
   transform: scaleY(0);
   transition: transform 1s cubic-bezier(.19,1,.22,1);
