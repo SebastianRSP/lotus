@@ -5,6 +5,8 @@ import { DefaultBtn } from "../buttons/home/DefaultBtn";
 import tickIcon from '../../../../public/new-home-assets/tick.svg';
 import { TextTyping } from "./text-animation/TextTyping";
 import navCurve from '../../../../public/new-home-assets/nav-curve.svg';
+import { HomeNavbar } from "../navbar/home/HomeNavbar";
+import { WhiteStrap } from "../white-strap-navbar/Index";
 
 const bullets = [
     { buttet: 'Seamless Web2 to Web3 Data Bridge' },
@@ -18,27 +20,10 @@ export const IndexHome = () => {
     return (
         <>
             <section className="h-available relative">
+
                 <div id="home-hero-bg" className="bg-gray-light h-available rounded-lg relative">
                     {/* White Strap */}
-                    <div className="absolute md:flex justify-center w-full z-0">
-                        {/* 2xl:max-w-lg xl:max-w-sm lg:w-32r md:w-96 */}
-                        <div className=' bg-white 2xl:h-18 lg:h-14 h-16 z-10 md:rounded-bl-[43px] rounded-br-[43px] lg:w-28.5p md:w-1/5 w-1/3 relative'>
-                            <div className="absolute md:top-0 md:-left-7 -bottom-14 -left-0">
-                                <Image 
-                                   src={navCurve}
-                                    width={32}
-                                    height={20}
-                                />
-                            </div>
-                            <div className="absolute top-0 -right-7">
-                                <Image 
-                                    src={navCurve}
-                                    width={32}
-                                    height={20}
-                                />
-                            </div>
-                        </div>
-                    </div>
+                    <WhiteStrap />
                     <div className=" grid grid-cols-12 h-available justify-end items-end">
                         {/* 2xl:gap-4.5 xl:gap-0 md:gap-12 gap-0 */}
                         <div className="lg:col-span-7 col-span-11 2xl:pl-100 lg:pl-14 md:pl-10 pl-5 grid 2xl:grid-rows-2 xl:grid-rows-7 lg:grid-rows-2 md:grid-rows-2 grid-rows-5 items-end h-available">

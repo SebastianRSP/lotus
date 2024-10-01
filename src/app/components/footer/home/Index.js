@@ -32,24 +32,25 @@ const footerMenu3 = [
 export const HomeFooter = () => {
     return (
         <>
-            <footer className="bg-gray-light">
-                <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 mx-auto w-full relative text-black lg:pb-3 pb-5">
-                    <div className="px-5 py-8 flex flex-col md:gap-8 gap-8">
-                        <div className="w-full h-auto">
-                            <Image
-                                src={footerLogo}
-                                className=''
-                                alt='footer logo'
-                                width={120}
-                                height={19}
-                            />
-                        </div>
-                        <h4 className='2xl:text-4xl text-2xl 2xl:leading-43 leading-7'>
+            <footer className="bg-gray-light 2xl:px-100 md:px-12 px-5 2xl:pt-100 md:pt-12 pt-5 py-8 ">
+                <div className="flex flex-col md:gap-8 gap-8 2xl:pb-60 md:pb-8 pb-5">
+                    <div className="w-full h-auto">
+                        <Image
+                            src={footerLogo}
+                            className='2xl:w-60 xl:w-1/12'
+                            alt='footer logo'
+                            width={120}
+                            height={19}
+                        />
+                    </div>
+                </div>
+                <div className="grid xl:grid-cols-12 md:grid-cols-2 grid-cols-1 gap-5 mx-auto w-full relative text-black lg:pb-7 pb-5">
+                    <div className="flex flex-col xl:col-span-4 md:gap-8 gap-8">
+                        <h4 className='xl:text-2xl md:text-xl text-lg xl:leading-32 md:leading-7 leading-26'>
                             Join the mailing list
                         </h4>
                         <div className='relative'>
                             <div className='absolute z-0 order-last inset-0 bg-gray-300 bg-green border border-black rounded-4 translate-x-[2px] translate-y-[2px]'></div>
-
                             <div className="bg-white relative z-10 items-center flex sm:space-y-0 border rounded-4 border-black">
                                 <div className="relative z-10 w-full">
                                     <input
@@ -70,15 +71,15 @@ export const HomeFooter = () => {
                         </div>
 
 
-                        <h4 className='2xl:text-4xl text-2xl 2xl:leading-43 leading-7'>
+                        <h4 className='xl:text-2xl md:text-xl text-lg xl:leading-32 md:leading-7 leading-26'>
                             See what our community on telegram has to say
                         </h4>
                         <div className='relative 2xl:w-20 w-12 2xl:h-20 h-12'>
                             <Lottie animationData={telegram} className='absolute' />
                         </div>
                     </div>
-                    <div className='grid md:grid-cols-3 grid-cols-1'>
-                        <div className=' py-8 px-5'>
+                    <div className='grid md:grid-cols-3 xl:col-span-5 md:gap-0 gap-5 grid-cols-2'>
+                        <div className='md:px-5 md:flex justify-center'>
                             <div className='flex flex-col'>
                                 {footerMenu1.map((footerLink, index) => (
                                     <Link className={`${index == 0 ? 'font-extrabold' : 'hover:font-bold'} 2xl:text-lg text-sm uppercase font-normal leading-normal`} href={footerLink.goTo} key={index}>
@@ -87,7 +88,7 @@ export const HomeFooter = () => {
                                 ))}
                             </div>
                         </div>
-                        <div className='py-8 px-5'>
+                        <div className='md:px-5 md:flex justify-center'>
                             <div className='flex flex-col'>
                                 {footerMenu2.map((footerLink, index) => (
                                     <Link className={`${index == 0 ? 'font-extrabold' : 'hover:font-bold'} 2xl:text-lg text-sm uppercase font-normal leading-normal`} href={footerLink.goTo} key={index}>
@@ -96,7 +97,7 @@ export const HomeFooter = () => {
                                 ))}
                             </div>
                         </div>
-                        <div className='py-8 px-5'>
+                        <div className='md:px-5 md:flex justify-center'>
                             <div className='flex flex-col'>
                                 {footerMenu3.map((footerLink, index) => (
                                     <Link className={`${index == 0 ? 'font-extrabold' : 'hover:font-bold'} 2xl:text-lg text-sm uppercase font-normal leading-normal`} href={footerLink.goTo} key={index}>
@@ -106,8 +107,8 @@ export const HomeFooter = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='px-5 xl:py-8 py-8'>
-                        <p className='2xl:text-lg text-sm 2xl:w-4/6 w-5/6 mb-4'>
+                    <div className='md:px-5 xl:col-span-3'>
+                        <p className='2xl:text-lg text-sm 2xl:w-5/6 xl:w-full w-5/6 mb-4'>
                             Prospective investors should
                             consult their own legal, tax, and
                             financial advisors before making
@@ -122,15 +123,15 @@ export const HomeFooter = () => {
                         />
                     </div>
                 </div>
-                <div className='px-5 pb-8'>
-                    <div className='flex justify-between w-full'>
-                        <Link href={'#'} className='2xl:text-lg text-sm 2xl:font-bold font-semibold underline uppercase'>
+                <div className='md:px-5 md:pb-8 pb-0'>
+                    <div className='flex justify-between md:gap-0 gap-4 w-full'>
+                        <Link href={'#'} className='2xl:text-lg md:text-sm text-xs 2xl:font-bold font-semibold underline uppercase'>
                             TERMS & CONDITIONS
                         </Link>
-                        <Link href={'#'} className='2xl:text-lg text-sm 2xl:font-bold font-semibold underline uppercase'>
+                        <Link href={'#'} className='2xl:text-lg md:text-sm text-xs 2xl:font-bold font-semibold underline uppercase'>
                             NEWSLETTER
                         </Link>
-                        <Link href={'#'} className='2xl:text-lg text-sm 2xl:font-bold font-semibold underline uppercase'>
+                        <Link href={'#'} className='2xl:text-lg md:text-sm text-xs 2xl:font-bold font-semibold underline uppercase'>
                             LEGAL
                         </Link>
                     </div>

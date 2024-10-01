@@ -138,9 +138,15 @@ const initCounterAnimation = () => {
 
                     gsap.to(target, {
                         val: endValue,
-                        duration: 2,
+                        ease: 'power1.out', // Apply ease-out animation
+                        duration: 3,
                         onUpdate: function () {
-                            el.innerText = target.val.toFixed(1); // Update the displayed value
+                            // Check if the end value has a decimal
+                            if (endValue % 1 !== 0) {
+                                el.innerText = target.val.toFixed(1); // Show one decimal place for decimals
+                            } else {
+                                el.innerText = Math.floor(target.val); // Show as integer if no decimal
+                            }
                         }
                     });
                 });

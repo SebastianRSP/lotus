@@ -4,7 +4,7 @@ import { FutureInvestment } from "./FutureInvestment"
 export const FooterSection = () => {
     return (
        <>
-        <FutureInvestment />
+        {/* <FutureInvestment /> */}
         <HomeFooter />
        </>
     )
