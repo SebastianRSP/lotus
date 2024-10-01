@@ -66,7 +66,7 @@ export const HomeNavbar = () => {
                 {/* Desktop Vesion */}
                 <div className={`hidden md:!block desktop-nav 2xl:px-20 lg:px-11 px-5 middle-scroll ${isDark ? 'pt-2 h-20' : ''}`}>
                     {/* border border-black bg-yellowLight shadow-outer*/}
-                    <div className={`absolute ${isDark ? 'bg-black/70 h-20' : 'bg-white/70 2xl:h-36 xl:h-28 h-24'} bg-no-repeat bg-origin-padding filter backdrop-blur-30 shadow-sm inset-0 origin-top z-10 desktop-nav-bg`}></div>
+                    <div className={`absolute ${isDark ? 'bg-white/70 h-20' : 'bg-white/70 2xl:h-36 xl:h-28 h-24'} bg-no-repeat bg-origin-padding filter backdrop-blur-30 shadow-sm inset-0 origin-top z-10 desktop-nav-bg`}></div>
                     <div className={`w-full grid lg:grid-cols-3 grid-cols-10 grid-flow-col items-center text-center ${isDark ? 'h-14 h-inher auto-cols-auto' : '2xl:h-44 lg:h-36 h-28'} relative z-50 overflow-hidden`}>
                         <div className='lg:col-span-1 col-span-4'>
                             <div className="grid grid-cols-3 items-center h-inherit w-available">
