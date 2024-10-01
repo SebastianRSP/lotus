@@ -11,7 +11,7 @@ export const InvestmentHero = () => {
     return (
         <>
             <section id="home-hero-bg" className="investor-hero-bg relative">
-                <WhiteStrap />
+                {/* <WhiteStrap /> */}
                 {/* md:py-20 py-28 */} 
                 {/* md:h-auto xl:py-40 md:py-28 py-10 xl:pb-20 md:pb-14 pb-10 */}
                 <div className="xl:px-40 px-9 h-screen text-white items-center grid md:grid-cols-2 grid-cols-1 justify-start">
