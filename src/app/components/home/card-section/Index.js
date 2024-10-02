@@ -4,6 +4,7 @@ import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import defaultImage from '../../../../../public/icons/defaultImageIcon.svg';
+import curvedCard from '../../../../../public/new-home-assets/curved-card.svg';
 import { BorderDivider } from "../../borders-divider/Index";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -121,18 +122,25 @@ export const CardsSection = () => {
                         Explore how our platform can future-proof your enterprise.
                     </p>
                     <div className="2xl:py-32 md:py-20 py-10 cards-wrap relative z-20">
-                        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-7">
+                        <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 md:gap-7 gap-6">
                             {cardDetails.map((card, index) => (
                                 <div
                                     key={index}
-                                    className="bg-gray-light rounded-lg text-black text-center relative p-10"
+                                    className="bg-black border-transparent rounded-lg w-full h-full text-black text-center relative lg:px-10 lg:pt-10 md:px-0 md:pt-0"
                                     ref={el => cardRefs.current[index] = el}
                                 >
-                                    <div className="curve rounded-tl-lg text-green flex justify-center items-center">
-                                        <span className="2xl:text-lg text-md">0{index + 1}</span>
+                                    <div className="rounded-tl-lg text-green flex justify-center items-center">
+                                        <div className="absolute inset-0 md:w-full w-fit h-full justify-self-center">
+                                            <span className="absolute 2xl:text-lg text-md 2xl:top-3 xl:top-3 lg:top-2 md:top-1 sm:top-2 top-3 2xl:left-4 xl:left-3 lg:left-2 md:left-1 sm:left-2 left-2">0{index + 1}</span>
+                                            <Image
+                                                src={curvedCard}
+                                                className="md:w-auto w-full md:h-auto h-full relative -left-[2px]"
+                                                objectFit="contain"
+                                            />
+                                        </div>
                                     </div>
-                                    <div className="grid grid-rows-2 items-center justify-center">
-                                        <div className="w-full 2xl:py-14 xl:py-12 py-14">
+                                    <div className="grid grid-rows-2 items-center justify-center relative md:w-full w-4/6">
+                                        <div className="w-full 2xl:py-14 xl:py-12 md:py-9 py-14">
                                             <Image
                                                 src={card.defaultImage}
                                                 className="2xl:w-16 w-10 2xl:h-16 h-10"
@@ -141,8 +149,8 @@ export const CardsSection = () => {
                                                 height={69}
                                             />
                                         </div>
-                                        <div className="h-full">
-                                            <p className="2xl:text-2xl text-lg">
+                                        <div className="h-full lg:p-0 px-3">
+                                            <p className="2xl:text-2xl lg:text-lg md:text-md text-sm">
                                                 {card.cardDesp}
                                             </p>
                                         </div>

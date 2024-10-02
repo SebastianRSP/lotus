@@ -6,8 +6,8 @@ import investerHero from '../../../../../public/animations/ethereum-crypto.json'
 import sendataLogo from '../../../../../public/investor-assets/sendata-logo.png';
 // import bridgeGrowthMap from '../../../../../public/animations/bridge-growth-map.json';
 import { useState } from "react";
-import { DefaultBlack } from "../../buttons/DefaultBlack";
 import { Chart } from "react-google-charts";
+import { DefaultBtnBlack } from "../../buttons/home/DefaultBtnBlack";
 
 const growthTabs = [
     "INVESTORS",
@@ -334,8 +334,9 @@ export const InvertmentBridgeGrowth = () => {
                                     </div>
                                 </div>
                             </div>
-                            <DefaultBlack 
-                                btnText={'Learn More'}
+                            <DefaultBtnBlack
+                                btnText={'LEARN MORE'}
+                                btnType={'button'}
                             />
                         </div>
                     </div>
