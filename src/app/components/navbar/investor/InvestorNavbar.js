@@ -3,46 +3,14 @@
 import React, { useState } from 'react';
 import logo from '../../../../../public/icons/logo-white.svg';
 import lotus from '../../../../../public/icons/lotus-white.svg';
-import telegram from '../../../../../public/icons/telegram.svg';
-import greenTelegram from '../../../../../public/icons/green-telegram.svg';
+import logoWhite from '../../../../../public/icons/logo-white.svg';
+import lotusWhite from '../../../../../public/icons/lotus-white.svg';
 import navToggle from '../../../../../public/icons/nav-toggle.svg';
 import cross from '../../../../../public/icons/cross.svg';
 import { InvestorNavLink } from "./InvestorNavLink";
 import Image from "next/image";
 import { MobileLink } from '../MobileLink';
-
-const navLinksBefore = [
-    { navLinkName: 'HOME', navLink: '/home', extras: '' },
-    { navLinkName: 'LIGHTPAPER', navLink: '#', extras: '' },
-    { navLinkName: 'INVESTORS', navLink: '/investors', extras: '' },
-];
-
-const navLinksAfter = [
-    { navLinkName: 'About Us', navLink: '#', extras: '', bookDemo: false },
-    { navLinkName: 'Book a Demo', navLink: '#', extras: '', bookDemo: true },
-    // {/* bg-yellowDark */}
-];
-
-const navIcons = [
-    { navLinkName: '', navLink: '#', extras: '', icon: true, iconImage: telegram, font: '' },
-    { navLinkName: 'EN', navLink: '#', extras: '', icon: false, iconImage: null, font: '' },
-];
-
-const mobileNavIcons = [
-    { navLinkName: '', navLink: '#', extras: 'p-5 border border-green', icon: true, iconImage: greenTelegram, font: '' },
-    { navLinkName: 'M', navLink: '#', extras: 'p-6 border border-green', icon: false, iconImage: null, font: 'text-green font-serif' },
-    { navLinkName: 'EN', navLink: '#', extras: 'p-6 border border-green', icon: false, iconImage: null, font: 'text-green ' },
-];
-
-const mobileMenu = [
-    { navLinkName: 'HOME', navLink: '/home', extras: '' },
-    { navLinkName: 'Whitepaper', navLink: '#', extras: '' },
-    { navLinkName: 'Investors', navLink: '/investors', extras: '' },
-    { navLinkName: 'About Us', navLink: '#', extras: '' },
-    { navLinkName: 'Book a Demo', navLink: '#', extras: '' },
-
-]
-
+import { mobileMenu, mobileNavIcons, navIcons, navLinksAfter, navLinksBefore } from '../links';
 
 export const InvestorNavbar = () => {
 
@@ -55,15 +23,15 @@ export const InvestorNavbar = () => {
     return (
         <>
             {/* xl:mx-40 mx-9 my-6 */}
-            <nav className='fixed slide-up'>
+            <nav className='fixed slide-up w-full'>
                 {/* Desktop Vesion */}
-                <div className={`hidden md:!block desktop-nav pt-6 lg:px-8 md:px-0 px-8 `}>
+                <div className={`hidden md:!block desktop-nav 2xl:px-20 lg:px-11 px-5 middle-scroll pt-2 h-20`}>
                     {/* border border-black bg-yellowLight shadow-outer*/}
-                    <div className='absolute h-20 bg-black/70 bg-no-repeat bg-origin-padding filter backdrop-blur-30 shadow-sm inset-0 origin-top z-10 desktop-nav-bg'></div>
-                    <div className=' w-full grid lg:grid-cols-3 grid-cols-10 grid-flow-col auto-cols-auto items-center text-center h-14  relative z-50 overflow-hidden'>
+                    <div className='absolute bg-black/70 h-20 bg-no-repeat bg-origin-padding filter backdrop-blur-30 shadow-sm inset-0 origin-top z-10 desktop-nav-bg'></div>
+                    <div className='w-full grid lg:grid-cols-3 grid-cols-10 grid-flow-col items-center text-center h-14 h-inher auto-cols-auto relative z-50 overflow-hidden'>
                         {/* divide-x divide-black */}
                         <div className='lg:col-span-1 col-span-4'>
-                            <div className="grid grid-cols-3 items-center h-inherit text-white">
+                            <div className="grid grid-cols-3 items-center h-inherit w-available">
                                 {navLinksBefore.map((navLink, index) => (
                                     <InvestorNavLink
                                         key={index}
@@ -75,19 +43,19 @@ export const InvestorNavbar = () => {
                                 ))}
                             </div></div>
                         {/* border border-y-0 border-x-black */}
-                        <div className='lg:col-span-1 col-span-2'>
-                            <div className="flex items-center col-span-3 justify-center h-inherit w-auto  ">
-                                <div className="logo-container items-center">
+                        <div className='lg:col-span-1 col-span-2 isScroll-logo-middle'>
+                            <div className="flex items-center w-full justify-center h-inherit">
+                                <div className="logo-container link-animation items-center">
                                     <Image
                                         className="lotus !h-8"
-                                        src={logo}
+                                        src={logoWhite}
                                         alt="Logo"
                                         width={32}
                                         height={17}
                                     />
                                     <Image
                                         className="logo !h-10"
-                                        src={lotus}
+                                        src={lotusWhite}
                                         alt="Lotus"
                                         width={76}
                                         height={40}
@@ -96,7 +64,7 @@ export const InvestorNavbar = () => {
                             </div></div>
                         {/* divide-x divide-black */}
                         <div className='lg:col-span-1 col-span-4'>
-                            <div className="grid grid-cols-3 items-center h-inherit text-white">
+                            <div className="lg:grid grid-cols-3 flex justify-around items-center h-inherit w-available">
                                 {navLinksAfter.map((navLink, index) => (
                                     <InvestorNavLink
                                         key={index}
@@ -107,26 +75,23 @@ export const InvestorNavbar = () => {
                                         isIncludeBookDemoBtn={navLink.bookDemo}
                                     />
                                 ))}
-                                {/* divide-x divide-black */}
-                                <div className="grid grid-cols-2 items-center h-inherit text-white">
-                                    {navIcons.map((navIcon, index) => (
-                                        <InvestorNavLink
-                                            key={index}
-                                            id={index}
-                                            navLinkName={navIcon.navLinkName}
-                                            navLink={navIcon.navLink}
-                                            icon={navIcon.icon}
-                                            iconImage={navIcon.iconImage}
-                                            font={navIcon.font}
-                                        />
-                                    ))}
-                                </div>
+                                {navIcons.map((navIcon, index) => (
+                                    <InvestorNavLink
+                                        key={index}
+                                        id={index}
+                                        navLinkName={navIcon.navLinkName}
+                                        navLink={navIcon.navLink}
+                                        icon={navIcon.icon}
+                                        iconImage={navIcon.iconImage}
+                                        font={navIcon.font}
+                                    />
+                                ))}
                             </div>
                         </div>
                     </div>
                 </div>
                 {/* Mobile Version */}
-                <div className='md:hidden relative block m-2 '>
+                <div className='md:hidden relative block m-2'>
                     <div className='absolute inset-0 backdrop-blur-30 rounded-2xl bg-black bg-opacity-50 shadow-mobile' />
                     <div className='flex justify-between items-center py-3 px-8 '>
                         <div className="logo-container items-center">

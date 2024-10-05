@@ -5,7 +5,7 @@ export const WhiteStrap = () => {
     const pathname = usePathname();
 
     // Determine the layout based on the current path
-    const isDark = pathname.startsWith('/investors');
+    const isDark = pathname.startsWith('/investor');
 
     return (
         <div className={`${isDark ? 'bg-transparent' : 'md:bg-white bg-gray-light'}  absolute grid grid-cols-12 md:flex justify-center w-full z-0`}>

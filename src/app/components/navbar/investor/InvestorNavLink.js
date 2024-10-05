@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { DefaultBlack } from "../../buttons/DefaultBlack";
+import { DefaultBtnBlack } from "../../buttons/home/DefaultBtnBlack";
 
 export const InvestorNavLink = ({ navLinkName, navLink, extras, icon, iconImage, id, font, isIncludeBookDemoBtn }) => {
     const [isToggled, setIsToggled] = useState(false);
@@ -19,10 +19,10 @@ export const InvestorNavLink = ({ navLinkName, navLink, extras, icon, iconImage,
     return (
         <>
             {isIncludeBookDemoBtn ? (
-                <DefaultBlack 
+                <DefaultBtnBlack
+                    extras={'link-animation'}
                     btnText={'BOOK A DEMO'}
                     btnType={'button'}
-                    
                 />
             ) : (
                 <Link
@@ -30,7 +30,7 @@ export const InvestorNavLink = ({ navLinkName, navLink, extras, icon, iconImage,
                     key={id}
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}
-                    className={`${extras} h-inherit flex items-center justify-center `}
+                    className={`${extras} text-white h-inherit flex items-center justify-center link-animation`}
                 >
                     {icon ? (
                         <>
@@ -44,7 +44,7 @@ export const InvestorNavLink = ({ navLinkName, navLink, extras, icon, iconImage,
                         </>
                     ) : (
                         <>
-                            <span className={`${font} link-investor-hover ${isToggled ? 'link-investor-exact-active opacity-100' : 'opacity-80'}  uppercase lg:text-sm md:text-xs font-medium md:leading-66 leading-none tracking-space60 inner-text`}>
+                            <span className={`${font} link-investor-hover ${isToggled ? 'link-investor-exact-active' : ''} transform ease-out duration-300  uppercase  2xl:text-base lg:text-sm text-xs 2xl:font-medium font-normal leading-66 2xl:tracking-space80 tracking-space60 inner-text relative group`}>
                                 {navLinkName}
                             </span>
                         </>

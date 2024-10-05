@@ -4,7 +4,7 @@ import Lottie from "lottie-react";
 import investerHero from '../../../../../public/animations/investor-hero.json';
 import { InvesterBannerText } from "../investor-banner-text/Index";
 import { DefaultBlack } from "../../buttons/DefaultBlack";
-import { WhiteStrap } from "../../white-strap-navbar/Index";
+import { WhiteStrap } from "../../white-strap-navbar/WhiteStrap";
 import { DefaultBtnBlack } from "../../buttons/home/DefaultBtnBlack";
 
 export const InvestmentHero = () => {

@@ -41,7 +41,7 @@ export const HomeNavLink = ({ navLinkName, navLink, extras, icon, iconImage, id,
                     key={id}
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}
-                    className={`${extras} h-inherit flex items-center justify-center link-animation`}
+                    className={`${extras} ${isDark ? 'text-white' : 'text-black'} h-inherit flex items-center justify-center link-animation`}
                 >
                     {icon ? (
                         <>
@@ -55,7 +55,7 @@ export const HomeNavLink = ({ navLinkName, navLink, extras, icon, iconImage, id,
                         </>
                     ) : (
                         <>
-                            <span className={`${font} ${isDark ? 'link-investor-hover' : 'link-home-hover'}   ${isToggled ? `${isDark ? 'link-investor-exact-active' : 'link-home-exact-active -translate-y-[2px]'}` : ''} transform ease-out duration-300  uppercase  2xl:text-base lg:text-sm text-xs 2xl:font-medium font-normal leading-66 2xl:tracking-space80 tracking-space60 inner-text relative group`}>
+                            <span className={`${font} link-home-hover ${isToggled ? `link-home-exact-active -translate-y-[2px]` : ''} transform ease-out duration-300  uppercase  2xl:text-base lg:text-sm text-xs 2xl:font-medium font-normal leading-66 2xl:tracking-space80 tracking-space60 inner-text relative group`}>
                                 {navLinkName}
                             </span>
                         </>

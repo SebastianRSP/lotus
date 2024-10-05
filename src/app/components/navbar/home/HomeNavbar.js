@@ -5,33 +5,13 @@ import logo from '../../../../../public/icons/logo.svg';
 import lotus from '../../../../../public/icons/lotus.svg';
 import logoWhite from '../../../../../public/icons/logo-white.svg';
 import lotusWhite from '../../../../../public/icons/lotus-white.svg';
-import telegram from '../../../../../public/icons/telegram.svg';
-import greenTelegram from '../../../../../public/icons/green-telegram.svg';
 import navToggle from '../../../../../public/icons/nav-toggle.svg';
 import cross from '../../../../../public/icons/cross.svg';
 import { HomeNavLink } from "../home/HomeNavLink";
 import Image from "next/image";
 import { MobileLink } from '../MobileLink';
 import { usePathname } from 'next/navigation';
-
-const navIcons = [
-    { navLinkName: '', navLink: '#', extras: '', icon: true, iconImage: telegram, font: '' },
-];
-
-const mobileNavIcons = [
-    { navLinkName: '', navLink: '#', extras: 'p-5 border border-green', icon: true, iconImage: greenTelegram, font: '' },
-    { navLinkName: 'M', navLink: '#', extras: 'p-6 border border-green', icon: false, iconImage: null, font: 'text-green font-serif' },
-    { navLinkName: 'EN', navLink: '#', extras: 'p-6 border border-green', icon: false, iconImage: null, font: 'text-green ' },
-];
-
-const mobileMenu = [
-    { navLinkName: 'HOME', navLink: '/', extras: '' },
-    { navLinkName: 'Whitepaper', navLink: '#', extras: '' },
-    { navLinkName: 'Investors', navLink: '/investors', extras: '' },
-    { navLinkName: 'About Us', navLink: '#', extras: '' },
-    { navLinkName: 'Book a Demo', navLink: '#', extras: '' },
-
-]
+import { mobileMenu, mobileNavIcons, navIcons, navLinksAfter, navLinksBefore } from '../links';
 
 
 export const HomeNavbar = () => {
@@ -39,19 +19,7 @@ export const HomeNavbar = () => {
     const pathname = usePathname();
 
     // Determine the layout based on the current path
-    const isDark = pathname.startsWith('/investors');
-
-    const navLinksBefore = [
-        { navLinkName: 'HOME', navLink: '/', extras: `${isDark ? 'text-white' : ''}` },
-        { navLinkName: 'LIGHTPAPER', navLink: '#', extras: `${isDark ? 'text-white' : ''}` },
-        { navLinkName: 'INVESTORS', navLink: '/investors', extras: `${isDark ? 'text-white' : ''}` },
-    ];
-
-    const navLinksAfter = [
-        { navLinkName: 'About Us', navLink: '#', extras: `${isDark ? 'text-white' : ''}`, bookDemo: false },
-        { navLinkName: 'Book a Demo', navLink: '#', extras: `${isDark ? 'text-white' : ''}`, bookDemo: true },
-        // {/* bg-yellowDark */}
-    ];
+    const isDark = pathname.startsWith('/about-us');
 
 
     const [isOpen, setIsOpen] = useState(false);
@@ -64,10 +32,10 @@ export const HomeNavbar = () => {
         <>
             <nav className='fixed slide-up w-full'>
                 {/* Desktop Vesion */}
-                <div className={`hidden md:!block desktop-nav 2xl:px-20 lg:px-11 px-5 middle-scroll ${isDark ? 'pt-2 h-20' : ''}`}>
+                <div className={`hidden md:!block desktop-nav 2xl:px-20 lg:px-11 px-5 middle-scroll`}>
                     {/* border border-black bg-yellowLight shadow-outer*/}
-                    <div className={`absolute ${isDark ? 'bg-black/70 h-20' : 'bg-white/70 2xl:h-36 xl:h-28 h-24'} bg-no-repeat bg-origin-padding filter backdrop-blur-30 shadow-sm inset-0 origin-top z-10 desktop-nav-bg`}></div>
-                    <div className={`w-full grid lg:grid-cols-3 grid-cols-10 grid-flow-col items-center text-center ${isDark ? 'h-14 h-inher auto-cols-auto' : '2xl:h-44 lg:h-36 h-28'} relative z-50 overflow-hidden`}>
+                    <div className={`absolute bg-white/70 2xl:h-36 xl:h-28 h-24 bg-no-repeat bg-origin-padding filter backdrop-blur-30 shadow-sm inset-0 origin-top z-10 desktop-nav-bg`}></div>
+                    <div className={`w-full grid lg:grid-cols-3 grid-cols-10 grid-flow-col items-center text-center 2xl:h-44 lg:h-36 h-28 relative z-50 overflow-hidden`}>
                         <div className='lg:col-span-1 col-span-4'>
                             <div className="grid grid-cols-3 items-center h-inherit w-available">
                                 {navLinksBefore.map((navLink, index) => (
@@ -83,20 +51,20 @@ export const HomeNavbar = () => {
                             </div>
                         </div>
                         {/*  */}
-                        <div className={`lg:col-span-1 col-span-2 ${isDark ? 'isScroll-logo-middle' : '-mt-18'} `}>
+                        <div className={`lg:col-span-1 col-span-2 -mt-18`}>
                             {/* border border-y-0 border-x-black */}
-                            <div className="flex items-center w-full justify-center h-inherit ">
+                            <div className="flex items-center w-full justify-center h-inherit">
                                 <div className={`logo-container link-animation items-center`}>
                                     <Image
-                                        className={`lotus ${isDark ? '!h-8' : ''}`}
-                                        src={isDark ? logoWhite : logo}
+                                        className={`lotus`}
+                                        src={logo}
                                         alt="Logo"
                                         width={32}
                                         height={17}
                                     />
                                     <Image
-                                        className={`logo ${isDark ? '!h-10' : ''}`}
-                                        src={isDark ? lotusWhite : lotus}
+                                        className={`logo`}
+                                        src={lotus}
                                         alt="Lotus"
                                         width={76}
                                         height={18}
@@ -135,18 +103,18 @@ export const HomeNavbar = () => {
                 {/* Mobile Version */}
                 <div className='md:hidden relative block m-2'>
                     {/* <div className='absolute inset-0 backdrop-blur-30 rounded-2xl bg-black bg-opacity-50 shadow-mobile' /> */}
-                    <div className={`flex justify-between items-center ${isDark ? 'py-3 px-8' : 'pt-8 md:px-8 px-10'}`}>
+                    <div className={`flex justify-between items-center pt-8 md:px-8 px-10`}>
                         <div className={`logo-container link-animation items-center`}>
                             <Image
-                                className={`lotus ${isDark ? '!h-8' : ''}`}
-                                src={isDark ? logoWhite : logo}
+                                className={`lotus`}
+                                src={logo}
                                 alt="Logo"
                                 width={32}
                                 height={17}
                             />
                             <Image
-                                className={`logo ${isDark ? '!h-10' : ''}`}
-                                src={isDark ? lotusWhite : lotus}
+                                className={`logo`}
+                                src={lotus}
                                 alt="Lotus"
                                 width={76}
                                 height={18}

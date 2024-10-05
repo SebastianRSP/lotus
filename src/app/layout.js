@@ -8,6 +8,7 @@ import { OldHomePage } from './components/layout-wrapper/Index';
 import { InvestorHomePage } from './components/layout-wrapper/investor/Index';
 import { NewHomePage } from './components/layout-wrapper/home/Index';
 import Head from 'next/head';
+import { AboutUsPage } from './components/layout-wrapper/about-us/Index';
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -20,6 +21,7 @@ export default function RootLayout({ children }) {
   // Determine the layout based on the current path
   const isInvestorsPage = pathname.startsWith('/investors');
   const isHomePage = pathname.startsWith('/home');
+  const isAboutUsPage = pathname.startsWith('/about-us');
 
   return (
     <html lang="en">
@@ -38,7 +40,11 @@ export default function RootLayout({ children }) {
         ) : isHomePage ? (
           <NewHomePage>{children}</NewHomePage>
         ) : (
-          <OldHomePage>{children}</OldHomePage>
+          isAboutUsPage ? (
+            <AboutUsPage>{children}</AboutUsPage>
+          ) : (
+            <OldHomePage>{children}</OldHomePage>
+          )
         )}
       </body>
     </html>
