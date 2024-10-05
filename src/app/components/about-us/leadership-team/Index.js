@@ -57,7 +57,7 @@ export const LeaderShipTeam = () => {
         {
             leaderName: 'DANIELE ZITO',
             leaderProfileImage: daniele_zito,
-            leaderDesignation: 'Chief Product Architect & Head of R&D',
+            leaderDesignation: 'CPA & Head of R&D',
             leaderCompany: 'SENDATA',
             description: 'Dr. Daniele Zito has a Ph.D. and a master’s degree in Computer and Telecommunication Engineering from University of Catania, Italy. In his 10+ years of experience in ICT industry, Daniele has collaborated with several companies, covering several positions such as Software Developer, Senior Software Architect and VP of Engineering.',
             linkedInProfileLink: 'https://www.linkedin.com/in/neilsumaru'
@@ -89,13 +89,13 @@ export const LeaderShipTeam = () => {
     ]
 
     return (
-        <div className="bg-white 2xl:py-40 xl:py-32 2xl:px-56 px-40">
-            <div className="grid grid-cols-4 2xl:gap-9 xl:gap-5 lg:gap-3 gap-7">
-                <div className="col-span-2 lg:text-left md:text-center text-left">
+        <div className="bg-white 2xl:py-40 xl:py-32 md:py-16 py-8 2xl:px-40 md:px-20 px-5">
+            <div className="sm:grid flex flex-col items-center xl:grid-cols-4 lg:grid-cols-3 grid-cols-2 2xl:gap-9 xl:gap-5 lg:gap-3 gap-7">
+                <div className="xl:col-span-2 lg:col-span-2 col-span-2 text-left">
                     <h4 className="bg-green capitalize text-black 2xl:text-5xl lg:text-3xl md:text-2xl text-xl 2xl:leading-64 lg:leading-40 md:leading-34 leading-7 2xl:font-normal font-medium inline px-0.2">
                         Our leadership  <br /> team
                     </h4>
-                    <p className="xl:text-xl md:text-lg text-sm font-extralight 2xl:w-3/6 xl:w-5/6 pt-9">
+                    <p className="xl:text-xl md:text-lg text-sm font-extralight 2xl:w-3/6 xl:w-5/6 md:w-5/6 pt-9">
                         A longstanding and trusted data
                         management team comprised of
                         ex filecoin veterans - the world's
@@ -104,11 +104,12 @@ export const LeaderShipTeam = () => {
                     </p>
                 </div>
                 {teamLeaderShip.map((team, index) => (
-                        <div key={index} className="flex flex-col 2xl:gap-9 xl:gap-5 lg:gap-3 gap-7">
-                            <div className="cursor-pointer overflow-hidden group rounded-lg">
+                        <div key={index} className="flex flex-col 2xl:gap-9 xl:gap-5 lg:gap-3 gap-7 md:col-span-1 sm:col-span-1 col-span-2 w-fit">
+                            <div className="cursor-pointer overflow-hidden group rounded-lg flex justify-center">
                                 <div className="relative">
+                                    {/* 2xl:w-23.125r xl:w-72 2xl:h-23.125r xl:h-72 */}
                                     <Image
-                                        className="rounded-lg 2xl:w-23.125r xl:w-72 2xl:h-23.125r xl:h-72"
+                                        className="rounded-lg md:w-available sm:w-80 w-72 2xl:h-23.125r xl:h-80 md:h-23 sm:h-96 "
                                         src={team.leaderProfileImage}
                                         alt={`${team.leaderName} profile image`}
                                         objectFit="cover"
@@ -116,12 +117,12 @@ export const LeaderShipTeam = () => {
                                     <div className="absolute inset-0 rounded-lg transition-transform ease-linear duration-300 translate-x-[-110%] group-hover:translate-x-0">
                                         <div className="bg-black opacity-[0.67] rounded-lg group z-0" />
                                         <div className="flex justify-center items-center w-full h-full px-5 py-9 filter bg-black/60 backdrop-blur-30 rounded-lg">
-                                            <p className="text-white 2xl:text-base text-xs font-extralight">
+                                            <p className="text-white xl:text-base md:text-sm text-xs font-extralight">
                                                 {team.description}
                                             </p>
                                         </div>
                                         <div className="absolute inset-0 flex justify-end items-end">
-                                            <Link href={team.linkedInProfileLink}>
+                                            <Link href={team.linkedInProfileLink} target="_blank">
                                                 <Image
                                                     src={linkedIn}
                                                     className="relative -right-2 -bottom-2"

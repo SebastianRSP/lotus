@@ -5,7 +5,7 @@ import { OurValues } from "../our-values/Index"
 export const FooterSection = () => {
     return (
        <>
-        <OurValues />
+        {/* <OurValues /> */}
         <AboutUsFooter />
        </>
     )

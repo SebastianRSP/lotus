@@ -3,7 +3,6 @@ import { IndexAboutUs } from "../components/about-us/Index";
 import { OurJourney } from "../components/about-us/journey/Index";
 import { LeaderShipTeam } from "../components/about-us/leadership-team/Index";
 import { Partners } from "../components/about-us/partners/Index";
-import { BorderDivider } from "../components/borders-divider/Index";
 
 
 export default function AboutUs() {

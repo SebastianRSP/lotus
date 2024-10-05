@@ -28,9 +28,9 @@ export const OurJourney = () => {
                     Our Journey
                 </h4>
             </div>
-            <div className="grid grid-cols-2 2xl:px-100 xl:px-20 md:px-10">
-                <div className="flex flex-col 2xl:gap-9 lg:gap-5 gap-7 xl:w-4/6 md:w-4/6 2xl:py-40 xl:py-32 md:py-24">
-                    <h4 className="2xl:text-144 xl:text-123 lg:text-100 md:text-90 2xl:leading-160 xl:leading-142 lg:leading-116 md:leading-106 md:font-extrabold">
+            <div className="grid md:grid-cols-2 grid-cols-1 2xl:px-100 xl:px-20 md:px-10 px-5 md:pb-0 pb-10">
+                <div className="flex flex-col 2xl:gap-9 lg:gap-5 gap-7 xl:w-4/6 md:w-4/6 sm:w-5/6 2xl:py-40 xl:py-32 md:py-24 py-12">
+                    <h4 className="2xl:text-144 xl:text-123 lg:text-100 md:text-90 text-5xl 2xl:leading-160 xl:leading-142 lg:leading-116 md:leading-106 md:font-extrabold font-bold">
                         WE ARE LOTUS
                     </h4>
                     <p className="xl:text-xl md:text-lg text-sm">
@@ -44,15 +44,19 @@ export const OurJourney = () => {
                 <div className="2xl:w-5/6">
                     <ol className="relative border-l-2 border-black 2xl:pt-36 xl:pt-32 md:pt-24">
                         {timelines.map((timeline, index) => (
-                            <li key={index} className="ml-16 xl:py-12 md:py-12">
-                                <span className="absolute flex items-center justify-center 2xl:-left-10 md:-left-8">
+                            <li key={index} className="md:ml-16 ml-8 xl:py-12 md:py-12 py-0 md:pb-0 pb-6">
+                                <span className="absolute items-center justify-center 2xl:-left-10 md:-left-8 md:flex hidden">
                                     <TimelineSpan
                                         btnText={timeline.year}
                                     />
                                 </span>
-                                <p className="xl:text-xl lg:text-lg md:text-base text-sm font-extralight">
-                                    {timeline.description}
-                                </p>
+                                <span class="absolute w-3 h-3 bg-gray-200 rounded-full -left-1.5 -mt-1 bg-green md:hidden block"></span>
+                                <div className="">
+                                    <div class="text-sm relative -top-1 font-normal leading-none bg-green text-black w-fit md:hidden block">{timeline.year}</div>
+                                    <p className="xl:text-xl lg:text-lg md:text-base text-sm font-extralight md:pt-0 pt-4">
+                                        {timeline.description}
+                                    </p>
+                                </div>
                             </li>
                         ))}
                     </ol>
