@@ -1,4 +1,6 @@
-import { TimelineSpan } from "./TimelineSpans"
+import { TimelineSpan } from "./TimelineSpans";
+import logo from '../../../../../public/icons/logo.svg';
+import Image from "next/image";
 
 const timelines = [
     {
@@ -28,18 +30,36 @@ export const OurJourney = () => {
                     Our Journey
                 </h4>
             </div>
-            <div className="grid md:grid-cols-2 grid-cols-1 2xl:px-100 xl:px-20 md:px-10 px-5 md:pb-0 pb-10">
-                <div className="flex flex-col 2xl:gap-9 lg:gap-5 gap-7 xl:w-4/6 md:w-4/6 sm:w-5/6 2xl:py-40 xl:py-32 md:py-24 py-12">
-                    <h4 className="2xl:text-144 xl:text-123 lg:text-100 md:text-90 text-5xl 2xl:leading-160 xl:leading-142 lg:leading-116 md:leading-106 md:font-extrabold font-bold">
-                        WE ARE LOTUS
-                    </h4>
-                    <p className="xl:text-xl md:text-lg text-sm">
-                        A longstanding and trusted data
-                        management team comprised of
-                        ex filecoin veterans - the world's leading
-                        decentralised data storage protocol,
-                        and one of the world’s largest crypto assets.
-                    </p>
+            <div className="grid md:grid-cols-2 grid-cols-1 md:gap-0 gap-10 2xl:px-100 xl:px-20 md:px-10 px-5 md:pb-0 pb-10">
+                <div className="flex flex-col justify-around 2xl:gap-9 lg:gap-5 gap-7 xl:w-4/6 md:w-4/6 sm:w-5/6 2xl:pt-40 xl:pt-32 md:pt-24 pt-12">
+                    <div>
+                        <h4 className="flex items-center gap-10 2xl:text-144 xl:text-123 lg:text-100 md:text-90 text-5xl 2xl:leading-160 xl:leading-142 lg:leading-116 md:leading-96 leading-64 md:font-extrabold font-bold">
+                            WE ARE LOTUS
+                            <span>
+                                <Image
+                                    src={logo}
+                                    className='2xl:w-10/12 xl:w-11/12 lg:w-10/12 md:w-11/12 opacity-10'
+                                    alt="Logo"
+                                    width={69}
+                                    height={37}
+                                />
+                            </span>
+                        </h4>
+                        <p className="xl:text-xl md:text-lg text-sm pt-6">
+                            A longstanding and trusted data
+                            management team comprised of
+                            ex filecoin veterans - the world's leading
+                            decentralised data storage protocol,
+                            and one of the world’s largest crypto assets.
+                        </p>
+                    </div>
+                    <Image
+                        src={logo}
+                        className='2xl:w-10/12 xl:w-11/12 lg:w-10/12 md:w-11/12 opacity-10 md:block hidden'
+                        alt="Logo"
+                        width={69}
+                        height={37}
+                    />
                 </div>
                 <div className="2xl:w-5/6">
                     <ol className="relative border-line 2xl:pt-36 xl:pt-32 md:pt-24">
