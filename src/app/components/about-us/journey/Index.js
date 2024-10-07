@@ -1,22 +1,33 @@
 import { TimelineSpan } from "./TimelineSpans";
 import logo from '../../../../../public/icons/logo.svg';
+
+
+import flag from '../../../../../public/about-us/icons/journey-icons/flag.svg';
+import light from '../../../../../public/about-us/icons/journey-icons/light.svg';
+import box from '../../../../../public/about-us/icons/journey-icons/box.svg';
+import mou from '../../../../../public/about-us/icons/journey-icons/mou.svg';
+
 import Image from "next/image";
 
 const timelines = [
     {
         year: '2021',
+        icon: flag,
         description: 'Lotus Data Group was founded 3 years ago by a distinguished group of tech veterans with storied careers at Microsoft, Filecoin, Lockheed Martin, among others. Our Team has consulted for institutions and enterprises like Disney and the U.S Department of Defence.'
     },
     {
         year: '2022',
+        icon: light,
         description: 'In consultation with Protocol Labs and the Filecoin team we began to develop our SenData and Pegasus protocols, in order to build a wholesale data ingestion solution for decentralized networks.'
     },
     {
         year: '2023',
+        icon: box,
         description: 'Members of the Filecoin Data Tools team join Lotus Data Group and we combine forces with Bluewhale Global, the largest AI and Blockchain development company in Taipei. We develop a suite of data management solutions to house under our ingestion platform.'
     },
     {
         year: '2024',
+        icon: mou,
         description: 'Members of the Filecoin Data Tools team join Lotus Data Group and we combine forces with Bluewhale Global, the largest AI and Blockchain development company in Taipei. We develop a suite of data management solutions to house under our ingestion platform.'
     },
 
@@ -71,8 +82,14 @@ export const OurJourney = () => {
                                     />
                                 </span>
                                 <span class="absolute w-3 h-3 bg-gray-200 rounded-full -left-1.5 -mt-1 bg-green md:hidden block"></span>
-                                <div className="">
+                                <div className="flex flex-col gap-5 relative -top-[2px]">
                                     <div class="text-sm relative -top-1 font-normal leading-none bg-green text-black w-fit md:hidden block">{timeline.year}</div>
+                                    <Image
+                                        src={timeline.icon}
+                                        alt="icon"
+                                        width={40}
+                                        height={40}
+                                    />
                                     <p className="xl:text-xl lg:text-lg md:text-base text-sm font-extralight md:pt-0 pt-4">
                                         {timeline.description}
                                     </p>
