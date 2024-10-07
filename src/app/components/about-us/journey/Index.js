@@ -38,7 +38,7 @@ export const OurJourney = () => {
                             <span>
                                 <Image
                                     src={logo}
-                                    className='2xl:w-10/12 xl:w-11/12 lg:w-10/12 md:w-11/12 opacity-10'
+                                    className='2xl:w-10/12 xl:w-11/12 lg:w-10/12 md:w-11/12 opacity-10 md:hidden block'
                                     alt="Logo"
                                     width={69}
                                     height={37}

@@ -397,6 +397,10 @@ canvas {
   width: -webkit-fill-available;
 }
 
+.backface-visibility-hidden{
+  backface-visibility: hidden;
+}
+
 /* Loading Animation */
 
 .loader {

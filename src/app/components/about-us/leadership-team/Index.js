@@ -91,7 +91,7 @@ export const LeaderShipTeam = () => {
     return (
         <div className="bg-white 2xl:py-40 xl:py-32 md:py-16 py-8 2xl:px-40 md:px-20 px-5">
             <div className="sm:grid flex flex-col items-center xl:grid-cols-4 lg:grid-cols-3 grid-cols-2 2xl:gap-9 xl:gap-5 lg:gap-3 gap-7">
-                <div className="xl:col-span-2 lg:col-span-2 col-span-2 text-left">
+                <div className="xl:col-span-2 lg:col-span-2 col-span-2 text-left self-baseline">
                     <h4 className="bg-green capitalize text-black 2xl:text-5xl lg:text-3xl md:text-2xl text-xl 2xl:leading-64 lg:leading-40 md:leading-34 leading-7 2xl:font-normal font-medium inline px-0.2">
                         Our leadership  <br /> team
                     </h4>
