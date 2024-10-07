@@ -82,10 +82,11 @@ export const OurJourney = () => {
                                     />
                                 </span>
                                 <span class="absolute w-3 h-3 bg-gray-200 rounded-full -left-1.5 -mt-1 bg-green md:hidden block"></span>
-                                <div className="flex flex-col gap-5 relative -top-[2px]">
-                                    <div class="text-sm relative -top-1 font-normal leading-none bg-green text-black w-fit md:hidden block">{timeline.year}</div>
+                                <div className="flex flex-col gap-2 relative -top-[2px]">
+                                    <div class="text-sm relative font-normal leading-none bg-green text-black w-fit md:hidden block">{timeline.year}</div>
                                     <Image
                                         src={timeline.icon}
+                                        className="md:relative absolute md:left-0 -left-12 md:mt-0 -mt-2 md:w-10 w-7 md:h-10 h-7"
                                         alt="icon"
                                         width={40}
                                         height={40}
