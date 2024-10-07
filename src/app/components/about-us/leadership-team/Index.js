@@ -115,7 +115,7 @@ export const LeaderShipTeam = () => {
                                 />
                                 <div className="absolute inset-0 rounded-lg transition-all ease-in duration-500 translate-x-[-110%] group-hover:translate-x-[0]">
                                     <div className="flex justify-center items-center w-full h-full px-5 py-9 filter bg-black/60 backdrop-blur-30 rounded-lg">
-                                        <p className="text-white xl:text-base md:text-sm text-xs font-extralight">
+                                        <p className="text-white 2xl:text-base md:text-sm text-xs font-extralight">
                                             {team.description}
                                         </p>
                                     </div>
