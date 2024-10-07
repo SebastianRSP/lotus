@@ -42,7 +42,7 @@ export const OurJourney = () => {
                     </p>
                 </div>
                 <div className="2xl:w-5/6">
-                    <ol className="relative border-l-2 border-black 2xl:pt-36 xl:pt-32 md:pt-24">
+                    <ol className="relative border-line 2xl:pt-36 xl:pt-32 md:pt-24">
                         {timelines.map((timeline, index) => (
                             <li key={index} className="md:ml-16 ml-8 xl:py-12 md:py-12 py-0 md:pb-0 pb-6">
                                 <span className="absolute items-center justify-center 2xl:-left-10 md:-left-8 md:flex hidden">

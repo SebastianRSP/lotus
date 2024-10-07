@@ -886,3 +886,40 @@ canvas {
 }
 
 /* New Home Page CSS Ends */
+
+
+
+/* About-us Page */
+.name-background {
+  position: relative;
+  z-index: 1;
+}
+
+.name-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 100%;
+  background-color: #00ff00; /* Green color */
+  transition: width 0.5s ease;
+  z-index: -1; /* Behind the text */
+}
+
+/* This now triggers the background animation on hover over the entire group */
+.group:hover .name-background::before {
+  width: 100%;
+}
+
+.border-line {
+  border-left: solid black 2px;
+  height: 83%;
+}
+
+@media (max-width: 768px) {
+  .border-line {
+    height: 74%;
+  }
+}

@@ -86,7 +86,7 @@ export const LeaderShipTeam = () => {
             description: 'Alvin Reyes is the Chief Technology Officer at Pegasus Data Technologies, where he leads the company’s technological direction and contributes to ongoing innovation in data technology. With a background in various global companies, Alvin brings over 15 years of experience as a Software Engineer to his current role.',
             linkedInProfileLink: 'https://www.linkedin.com/in/neilsumaru'
         },
-    ]
+    ];
 
     return (
         <div className="bg-white 2xl:py-40 xl:py-32 md:py-16 py-8 2xl:px-40 md:px-20 px-5">
@@ -104,45 +104,46 @@ export const LeaderShipTeam = () => {
                     </p>
                 </div>
                 {teamLeaderShip.map((team, index) => (
-                        <div key={index} className="flex flex-col 2xl:gap-9 xl:gap-5 lg:gap-3 gap-7 md:col-span-1 sm:col-span-1 col-span-2 w-fit">
-                            <div className="cursor-pointer overflow-hidden group rounded-lg flex justify-center">
-                                <div className="relative">
-                                    {/* 2xl:w-23.125r xl:w-72 2xl:h-23.125r xl:h-72 */}
-                                    <Image
-                                        className="rounded-lg md:w-available sm:w-80 w-72 2xl:h-23.125r xl:h-80 md:h-23 sm:h-96 "
-                                        src={team.leaderProfileImage}
-                                        alt={`${team.leaderName} profile image`}
-                                        objectFit="cover"
-                                    />
-                                    <div className="absolute inset-0 rounded-lg transition-transform ease-linear duration-300 translate-x-[-110%] group-hover:translate-x-0">
-                                        <div className="bg-black opacity-[0.67] rounded-lg group z-0" />
-                                        <div className="flex justify-center items-center w-full h-full px-5 py-9 filter bg-black/60 backdrop-blur-30 rounded-lg">
-                                            <p className="text-white xl:text-base md:text-sm text-xs font-extralight">
-                                                {team.description}
-                                            </p>
-                                        </div>
-                                        <div className="absolute inset-0 flex justify-end items-end">
-                                            <Link href={team.linkedInProfileLink} target="_blank">
-                                                <Image
-                                                    src={linkedIn}
-                                                    className="relative -right-2 -bottom-2"
-                                                    alt="linkedin icon"
-                                                    width={44}
-                                                    height={44}
-                                                />
-                                            </Link>
-                                        </div>
+                    <div key={index} className="flex flex-col 2xl:gap-9 xl:gap-5 lg:gap-3 gap-7 md:col-span-1 sm:col-span-1 col-span-2 w-fit group">
+                        <div className="cursor-pointer rounded-lg flex justify-center">
+                            <div className="relative inset-0 overflow-hidden">
+                                <Image
+                                    className="rounded-lg md:w-available sm:w-80 w-72 2xl:h-23.125r xl:h-80 md:h-23 sm:h-96 "
+                                    src={team.leaderProfileImage}
+                                    alt={`${team.leaderName} profile image`}
+                                    objectFit="cover"
+                                />
+                                <div className="absolute inset-0 rounded-lg transition-all ease-in duration-500 translate-x-[-110%] group-hover:translate-x-[0]">
+                                    <div className="flex justify-center items-center w-full h-full px-5 py-9 filter bg-black/60 backdrop-blur-30 rounded-lg">
+                                        <p className="text-white xl:text-base md:text-sm text-xs font-extralight">
+                                            {team.description}
+                                        </p>
+                                    </div>
+                                    <div className="absolute inset-0 flex justify-end items-end">
+                                        <Link href={team.linkedInProfileLink} target="_blank">
+                                            <Image
+                                                src={linkedIn}
+                                                className="relative -right-2 -bottom-2"
+                                                alt="linkedin icon"
+                                                width={44}
+                                                height={44}
+                                            />
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
-
-                            <div className="flex flex-col leading-6 text-center">
-                                <span className="2xl:text-xl 2xl:leading-6 font-bold">{team.leaderName}</span>
-                                <span className="text-lg leading-6 font-extralight">{team.leaderDesignation},</span>
-                                <span className="text-sm font-extralight">{team.leaderCompany}</span>
-                            </div>
                         </div>
-                    ))}
+
+                        <div className="flex flex-col leading-6 text-center">
+                            <span className="2xl:text-xl 2xl:leading-6 font-bold relative inline-block">
+                                <span className="name-background">{team.leaderName}</span>
+                            </span>
+                            <span className="text-lg leading-6 font-extralight">{team.leaderDesignation},</span>
+                            <span className="text-sm font-extralight">{team.leaderCompany}</span>
+                        </div>
+                    </div>
+                ))}
+
             </div>
         </div>
     )
