@@ -1,4 +1,5 @@
 import { BridgeSection } from "../components/home/bridge-section/Index";
+import { Bridge } from "../components/home/bridge/Index";
 import { CardsSection } from "../components/home/card-section/Index";
 import { FeatureSection } from "../components/home/feature-section/Index";
 import { FooterSection } from "../components/home/footer-section/Index";
@@ -19,7 +20,8 @@ export default function Home() {
                 </div>
                 {/* <OurPartners /> */}
                 {/* <FeatureSection /> */}
-                <BridgeSection />
+                {/* <BridgeSection /> */}
+                <Bridge />
                 <ShowCaseSection />
                 <PartnerReviews />
                 <CardsSection />
