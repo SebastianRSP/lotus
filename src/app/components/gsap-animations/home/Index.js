@@ -60,10 +60,15 @@ export const newHomePageAnimation = () => {
             smoothScroolling();
 
             const textTyping = document.getElementById('text-typing-animation');
-
             if (textTyping) {
                 // Start text typing animation
                 startTextTypingAnimation(textTyping);
+            }
+
+            const bridgeSection = document.getElementById('bridge');
+
+            if (bridgeSection) {
+                startBridgeAnimation(bridgeSection)
             }
 
             initCounterAnimation();
@@ -156,6 +161,119 @@ const initCounterAnimation = () => {
     });
 };
 
+const startBridgeAnimation = (bridgeSection) => {
+    const bridgeBlackInitial = document.querySelector('.bridge-initial');
+    const bridgeInsideBlackBox = document.querySelector('.inside-black-box');
+
+    // Initial state: Slightly Bend inside
+    gsap.set(bridgeBlackInitial, {
+        scaleY: 0.98,
+        scaleX: 0.95,
+    });
+    // Initial state: Bridge Inside Black Box width is 100%
+    gsap.set(bridgeInsideBlackBox, {
+        width: '100%',
+    });
+
+    // Initialize the animation with ScrollTrigger
+    const bridgeSectionTimeline = gsap.timeline({
+        scrollTrigger: {
+            trigger: bridgeSection,
+            start: "top bottom",
+            end: "top top",
+            scrub: true,
+            markers: false
+        }
+    });
+
+    // Bridge Section Animation
+    bridgeSectionTimeline.to(bridgeBlackInitial, {
+        scaleY: 1,
+        scaleX: 1,
+        ease: "power1.out",
+        duration: 1
+    });
+
+    // Trigger width and padding reduction when section hits the top
+    ScrollTrigger.create({
+        trigger: bridgeSection,
+        start: "top top",
+        onEnter: () => {
+            // Timeline for entering animation
+            const enterTimeline = gsap.timeline();
+
+            // First, animate the bridge inside box and padding
+            enterTimeline.to(bridgeInsideBlackBox, {
+                width: '45.7%',
+                ease: "power2.out",
+                duration: 0.8
+            }).to(bridgeBlackInitial, {
+                padding: '0px',
+                ease: "power2.out",
+                duration: 0.8
+            }, 0);  // This ensures both animations happen at the same time.
+
+            // After the bridge box animations complete, animate the grid lines
+            enterTimeline.add(() => animateGridLines());
+        },
+        onLeaveBack: () => {
+            // Timeline for leaving animation
+            const leaveTimeline = gsap.timeline();
+
+            // First, reset the grid lines (hide them)
+            leaveTimeline.add(() => resetGridLines());
+            // After grid lines are hidden, animate the bridge box and padding
+            leaveTimeline.to(bridgeInsideBlackBox, {
+                width: '100%',
+                ease: "power2.out",
+                delay: 1,
+                duration: 0.8
+            }).to(bridgeBlackInitial, {
+                paddingLeft: '160px',
+                paddingRight: '160px',
+                paddingTop: '160px',
+                ease: "power2.out",
+                delay: 1,
+                duration: 0.8
+            }, 0); // This ensures both animations happen at the same time.
+        }
+    });
+};
+
+
+// Function to animate grid lines
+function animateGridLines() {
+    const gridLinesConfig = [
+        { selector: '#back-grid #RIGHT_GRID line', initial: { opacity: 0, attr: { x2: 878.03 } }, final: { opacity: 1, attr: { x2: 439.26 } } },
+        { selector: '#back-grid #LEFT_GRID line', initial: { opacity: 0, attr: { x1: 0 } }, final: { opacity: 1, attr: { x1: 439.26 } } },
+        { selector: '#back-grid #TOP_GRID line', initial: { opacity: 0, attr: { y1: 0 } }, final: { opacity: 1, attr: { y1: 289.83 } } },
+        { selector: '#back-grid #BOTTOM_GRID line', initial: { opacity: 0, attr: { y1: 583.31 } }, final: { opacity: 1, attr: { y1: 289.83 } } }
+    ];
+
+    gridLinesConfig.forEach(({ selector, initial, final }) => {
+        const lines = document.querySelectorAll(selector);
+        lines.forEach(line => {
+            gsap.fromTo(line, initial, { ...final, ease: "power2.out", duration: 1 });
+        });
+    });
+}
+
+// Function to reset grid lines to their initial state
+function resetGridLines() {
+    const gridLinesConfig = [
+        { selector: '#back-grid #RIGHT_GRID line', initial: { opacity: 1, attr: { x2: 439.26 } }, final: { opacity: 0, attr: { x2: 878.03 } } },
+        { selector: '#back-grid #LEFT_GRID line', initial: { opacity: 1, attr: { x1: 439.26 } }, final: { opacity: 0, attr: { x1: 0 } } },
+        { selector: '#back-grid #TOP_GRID line', initial: { opacity: 1, attr: { y1: 289.83 } }, final: { opacity: 0, attr: { y1: 0 } } },
+        { selector: '#back-grid #BOTTOM_GRID line', initial: { opacity: 1, attr: { y1: 289.83 } }, final: { opacity: 0, attr: { y1: 583.31 } } }
+    ];
+
+    gridLinesConfig.forEach(({ selector, initial, final }) => {
+        const lines = document.querySelectorAll(selector);
+        lines.forEach(line => {
+            gsap.fromTo(line, initial, { ...final, ease: "power2.out", duration: 1 });
+        });
+    });
+}
 
 
 

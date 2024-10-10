@@ -397,8 +397,38 @@ canvas {
   width: -webkit-fill-available;
 }
 
-.backface-visibility-hidden{
+.backface-visibility-hidden {
   backface-visibility: hidden;
+}
+
+.cls-4 {
+  fill: none;
+  stroke: #f2f5f2;
+  stroke-width: .75px;
+}
+
+.cls-1,
+.cls-2,
+.cls-3 {
+  fill: none;
+}
+
+.cls-2 {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.cls-2,
+.cls-3 {
+  stroke: #6abd45;
+  stroke-width: .75px;
+}
+
+.cls-1 {
+  fill: none;
+  stroke: #6abd45;
+  stroke-linecap: square;
+  stroke-width: .75px;
 }
 
 /* Loading Animation */
@@ -830,12 +860,17 @@ canvas {
   border: transparent;
   background: transparent url(../../public/new-home-assets/curved-card.svg);
   background-position: center;
-  background-size: cover; /* Ensure it fits within both width and height */
+  background-size: cover;
+  /* Ensure it fits within both width and height */
   background-repeat: no-repeat;
-  width: 100%; /* Ensure full width */
-  height: 100%; /* Ensure full height */
-  overflow: hidden; /* Prevents overflow if the image scales larger */
+  width: 100%;
+  /* Ensure full width */
+  height: 100%;
+  /* Ensure full height */
+  overflow: hidden;
+  /* Prevents overflow if the image scales larger */
 }
+
 .curve span {
   display: block;
   position: absolute;
@@ -907,9 +942,11 @@ canvas {
   transform: translateX(-50%);
   width: 0;
   height: 100%;
-  background-color: #00ff00; /* Green color */
+  background-color: #00ff00;
+  /* Green color */
   transition: width 0.5s ease;
-  z-index: -1; /* Behind the text */
+  z-index: -1;
+  /* Behind the text */
 }
 
 /* This now triggers the background animation on hover over the entire group */
