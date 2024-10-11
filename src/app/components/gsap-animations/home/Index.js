@@ -361,7 +361,19 @@ function startTextAnimation(bridgeHeroText) {
                 }, index * 0.025); // Stagger for a wave effect
             })
         }
+    })
+
+    // Initialize the animation with ScrollTrigger
+    const bridgeTextScrollTrigger = gsap.timeline({
+        scrollTrigger: {
+            trigger: bridgeHeroText,
+            start: "top top",
+            end: "+=3000",
+            scrub: true,
+            markers: true
+        }
     });
+
 }
 
 // Function to revert Text Animation

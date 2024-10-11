@@ -36,7 +36,7 @@ export const Bridge = () => {
                     <div className="absolute inset-0 z-20 2xl:py-56 xl:py-40 py-16">
                         <div className="flex flex-col justify-start w-full items-left 2xl:px-40 xl:px-28 lg:px-10 px-5">
                             <div className="flex flex-col">
-                                <h4 className="bridge-hero-text 2xl:text-8xl xl:text-7xl lg:text-5xl md:text-4xl text-28 2xl:leading-102 xl:leading-78 lg:leading-54 md:leading-42 leading-9 font-extralight text-[#D0D0D0]">
+                                <h4 className="bridge-hero-text opacity-0 2xl:text-8xl xl:text-7xl lg:text-5xl md:text-4xl text-28 2xl:leading-102 xl:leading-78 lg:leading-54 md:leading-42 leading-9 font-extralight text-[#D0D0D0]">
                                     We’re building <br /> the world’s largest<br /> content delivery network
                                 </h4>
                                 {/* <div className='text-green 2xl:pt-56 xl:pt-28 relative'>
