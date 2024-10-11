@@ -164,6 +164,15 @@ const initCounterAnimation = () => {
 const startBridgeAnimation = (bridgeSection) => {
     const bridgeBlackInitial = document.querySelector('.bridge-initial');
     const bridgeInsideBlackBox = document.querySelector('.inside-black-box');
+    const bridgeBgBlur = document.querySelector('.bridge-bg-blur');
+    const bridgeHeroText = document.querySelectorAll('.bridge-hero-text');
+
+    // Get the current padding values
+    const computedStyle = window.getComputedStyle(bridgeBlackInitial);
+    const currentPaddingLeft = computedStyle.paddingLeft;
+    const currentPaddingRight = computedStyle.paddingRight;
+    const currentPaddingTop = computedStyle.paddingTop;
+
 
     // Initial state: Slightly Bend inside
     gsap.set(bridgeBlackInitial, {
@@ -174,6 +183,37 @@ const startBridgeAnimation = (bridgeSection) => {
     gsap.set(bridgeInsideBlackBox, {
         width: '100%',
     });
+    // Initial state: Bridge Background hidden initially we will show this after the back grid liens comes out
+    gsap.set(bridgeBgBlur, {
+        opacity: 0
+    });
+    // Set initial opacity for each character to 1
+    if (bridgeHeroText) {
+        bridgeHeroText.forEach(bridgeText => {
+            if (!bridgeText.classList.contains('processed')) {
+                // Mark the element as processed
+                bridgeText.classList.add('processed');
+                const splitText = new SplitText(bridgeHeroText, { type: "lines,chars" });
+                // splitText.chars.reverse();
+                splitText.lines.forEach(line => {
+                    line.style.display = 'block';
+                    line.style.position = 'relative';
+                });
+
+                splitText.chars.forEach((char) => {
+                    gsap.set(char, {
+                        autoAlpha: 1,
+                    })
+                })
+
+            }
+            gsap.set(bridgeHeroText, {
+                autoAlpha: 0,
+                x: -20
+            })
+        })
+    }
+
 
     // Initialize the animation with ScrollTrigger
     const bridgeSectionTimeline = gsap.timeline({
@@ -215,25 +255,41 @@ const startBridgeAnimation = (bridgeSection) => {
 
             // After the bridge box animations complete, animate the grid lines
             enterTimeline.add(() => animateGridLines());
+            enterTimeline.add(() => startTextAnimation(bridgeHeroText));
+            enterTimeline.to('.cls-1, .cls-2, .cls-3', {
+                stroke: '#f2f5f2',
+                duration: 1,
+            }).to(bridgeBgBlur, {
+                opacity: 0.6,
+            })
+
         },
         onLeaveBack: () => {
             // Timeline for leaving animation
             const leaveTimeline = gsap.timeline();
 
+            leaveTimeline.to('.cls-1, .cls-2, .cls-3', {
+                stroke: '#6abd45',
+                duration: 1,
+            }).to(bridgeBgBlur, {
+                opacity: 0,
+            })
+
             // First, reset the grid lines (hide them)
             leaveTimeline.add(() => resetGridLines());
+            leaveTimeline.add(() => revertTextAnimation(bridgeHeroText));
             // After grid lines are hidden, animate the bridge box and padding
             leaveTimeline.to(bridgeInsideBlackBox, {
                 width: '100%',
                 ease: "power2.out",
-                delay: 1,
+                delay: .6,
                 duration: 0.8
             }).to(bridgeBlackInitial, {
-                paddingLeft: '160px',
-                paddingRight: '160px',
-                paddingTop: '160px',
+                paddingLeft: currentPaddingLeft,
+                paddingRight: currentPaddingRight,
+                paddingTop: currentPaddingTop,
                 ease: "power2.out",
-                delay: 1,
+                delay: 2,
                 duration: 0.8
             }, 0); // This ensures both animations happen at the same time.
         }
@@ -256,6 +312,7 @@ function animateGridLines() {
             gsap.fromTo(line, initial, { ...final, ease: "power2.out", duration: 1 });
         });
     });
+
 }
 
 // Function to reset grid lines to their initial state
@@ -275,6 +332,70 @@ function resetGridLines() {
     });
 }
 
+// Function to start Text Animation
+function startTextAnimation(bridgeHeroText) {
+    const timeline = gsap.timeline();
+
+    // Initial fade-in effect for the entire text
+    timeline.to(bridgeHeroText, {
+        autoAlpha: 1,
+        x: 20
+    });
+
+    // Iterate over spans and change the opacity of each character from right to left
+    bridgeHeroText.forEach((span) => {
+        const chars = span.childNodes; // Get the inner characters (text nodes)
+
+        // Animate each character to change opacity from right to left
+        for (let i = chars.length - 1; i >= 0; i--) {
+            const innerChars = Array.from(chars[i].childNodes).reverse();
+            innerChars.forEach((char, index) => {
+                // Create the animation
+                timeline.to(char, {
+                    autoAlpha: 0.24, // Change opacity
+                    ease: "power1.out",
+                    duration: index * 0.025,
+                    stagger: {
+                        from: 'end'
+                    }
+                }, index * 0.025); // Stagger for a wave effect
+            })
+        }
+    });
+}
+
+// Function to revert Text Animation
+function revertTextAnimation(bridgeHeroText) {
+    const timeline = gsap.timeline();
+
+    // Iterate over spans and change the opacity of each character from right to left
+    bridgeHeroText.forEach((span) => {
+        const chars = span.childNodes; // Get the inner characters (text nodes)
+
+        // Animate each character to change opacity from right to left
+        for (let i = chars.length - 1; i >= 0; i--) {
+            const innerChars = chars[i].childNodes;
+            innerChars.forEach((char, index) => {
+                // Create the animation
+                timeline.to(char, {
+                    autoAlpha: 1, // Change opacity
+                    ease: "power1.out",
+                    duration: index * 0.0083,
+                    stagger: {
+                        from: 'end'
+                    }
+                }, index * 0.0083); // Stagger for a wave effect
+            })
+        }
+    });
+
+    // Initial fade-in effect for the entire text
+    timeline.to(bridgeHeroText, {
+        autoAlpha: 0,
+        duration: 0.15,
+        x: -20
+    });
+}
 
 
 

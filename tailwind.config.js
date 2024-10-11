@@ -227,8 +227,9 @@ module.exports = {
         '4.5': '4.5rem'
       },
       backdropBlur: {
-        '10': '10px',
+        '1': '1px',
         '7': '7px',
+        '10': '10px',
         '30': '30px',
       },
       keyframes: {
