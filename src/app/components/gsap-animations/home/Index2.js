@@ -19,6 +19,7 @@ export const newHomePageAnimation = () => {
     const loader = document.querySelector('.loader');
 
     if (loader) {
+        gsap.set(loader, {width : '100vw'})
         // Initial collapsed state: Leaves rotated and positioned below
         gsap.set("#left-leaf", { transformOrigin: "center center", x: 20, y: 50, });
         gsap.set("#middle-leaf", { transformOrigin: "center center", rotate: -100, x: -20, y: 50, });
