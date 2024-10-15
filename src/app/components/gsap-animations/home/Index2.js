@@ -226,7 +226,7 @@ const startBridgeAnimation = (bridgeSection) => {
         scrub: true, // Smooth animation linked to scrolling
         pin: true,
         pinSpacing: true,
-        markers: true,
+        markers: false,
         onUpdate: (self) => {
             // Calculate translateY based on scroll incrementally
             let translateY = self.scroll() - self.start;
