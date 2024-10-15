@@ -162,58 +162,43 @@ const initCounterAnimation = () => {
 };
 
 const startBridgeAnimation = (bridgeSection) => {
-    const bridgeBlackInitial = document.querySelector('.bridge-initial');
     const bridgeInsideBlackBox = document.querySelector('.inside-black-box');
+    const verticalBlackLayers = document.querySelectorAll('.conver-object-vertical');
+    const horizentalBlackLayers = document.querySelectorAll('.conver-object-horizontal');
     const bridgeBgBlur = document.querySelector('.bridge-bg-blur');
-    const bridgeHeroText = document.querySelectorAll('.bridge-hero-text');
-
-    // Get the current padding values
-    const computedStyle = window.getComputedStyle(bridgeBlackInitial);
-    const currentPaddingLeft = computedStyle.paddingLeft;
-    const currentPaddingRight = computedStyle.paddingRight;
-    const currentPaddingTop = computedStyle.paddingTop;
 
 
-    // Initial state: Slightly Bend inside
-    gsap.set(bridgeBlackInitial, {
-        scaleY: 0.98,
-        scaleX: 0.95,
-    });
+    const gridLinesConfig = [
+        { selector: '#back-grid #RIGHT_GRID line', from: { opacity: 0, attr: { x2: 878.03 } }, to: { opacity: 1, attr: { x2: 439.26 } } },
+        { selector: '#back-grid #LEFT_GRID line', from: { opacity: 0, attr: { x1: 0 } }, to: { opacity: 1, attr: { x1: 439.26 } } },
+        { selector: '#back-grid #TOP_GRID line', from: { opacity: 0, attr: { y1: 0 } }, to: { opacity: 1, attr: { y1: 289.83 } } },
+        { selector: '#back-grid #BOTTOM_GRID line', from: { opacity: 0, attr: { y1: 583.31 } }, to: { opacity: 1, attr: { y1: 289.83 } } }
+    ];
+
     // Initial state: Bridge Inside Black Box width is 100%
     gsap.set(bridgeInsideBlackBox, {
         width: '100%',
+    });
+
+    // Initial state: Slightly Bend inside
+    verticalBlackLayers.forEach((layer) => {
+        gsap.set(layer, {
+            scaleY: .98,
+            scaleX: 1.3,
+        });
     });
     // Initial state: Bridge Background hidden initially we will show this after the back grid liens comes out
     gsap.set(bridgeBgBlur, {
         opacity: 0
     });
-    // Set initial opacity for each character to 1
-    if (bridgeHeroText) {
-        bridgeHeroText.forEach(bridgeText => {
-            if (!bridgeText.classList.contains('processed')) {
-                // Mark the element as processed
-                bridgeText.classList.add('processed');
-                const splitText = new SplitText(bridgeHeroText, { type: "lines,chars" });
-                // splitText.chars.reverse();
-                splitText.lines.forEach(line => {
-                    line.style.display = 'block';
-                    line.style.position = 'relative';
-                });
 
-                splitText.chars.forEach((char) => {
-                    gsap.set(char, {
-                        autoAlpha: 1,
-                    })
-                })
-
-            }
-            gsap.set(bridgeHeroText, {
-                autoAlpha: 0,
-                x: -20
-            })
-        })
-    }
-
+    // Set initial states for the grid lines
+    gridLinesConfig.forEach(({ selector, from }) => {
+        const lines = document.querySelectorAll(selector);
+        lines.forEach(line => {
+            gsap.set(line, from);  // Set each line's initial attributes using 'attr'
+        });
+    });
 
     // Initialize the animation with ScrollTrigger
     const bridgeSectionTimeline = gsap.timeline({
@@ -227,74 +212,160 @@ const startBridgeAnimation = (bridgeSection) => {
     });
 
     // Bridge Section Animation
-    bridgeSectionTimeline.to(bridgeBlackInitial, {
+    bridgeSectionTimeline.to(verticalBlackLayers, {
         scaleY: 1,
         scaleX: 1,
         ease: "power1.out",
         duration: 1
     });
 
-    // Trigger width and padding reduction when section hits the top
     ScrollTrigger.create({
         trigger: bridgeSection,
         start: "top top",
-        onEnter: () => {
-            // Timeline for entering animation
-            const enterTimeline = gsap.timeline();
+        end: `+=1000`, // Total scroll range
+        scrub: true, // Smooth animation linked to scrolling
+        pin: true,
+        pinSpacing: true,
+        markers: true,
+        onUpdate: (self) => {
+            // Calculate translateY based on scroll incrementally
+            let translateY = self.scroll() - self.start;
 
-            // First, animate the bridge inside box and padding
-            enterTimeline.to(bridgeInsideBlackBox, {
-                width: '45.7%',
-                ease: "power2.out",
-                duration: 0.8
-            }).to(bridgeBlackInitial, {
-                padding: '0px',
-                ease: "power2.out",
-                duration: 0.8
-            }, 0);  // This ensures both animations happen at the same time.
+            // Apply the dynamic translateY value based on the scroll
+            gsap.set(bridgeSection, {
+                translateY: `${translateY}px`,
+            });
 
-            // After the bridge box animations complete, animate the grid lines
-            enterTimeline.add(() => animateGridLines());
-            enterTimeline.add(() => startTextAnimation(bridgeHeroText));
-            enterTimeline.to('.cls-1, .cls-2, .cls-3', {
-                stroke: '#f2f5f2',
-                duration: 1,
-            }).to(bridgeBgBlur, {
-                opacity: 0.6,
-            })
+            // Calculate progress for width animation
+            const widthProgress = Math.min(self.progress / 0.5, 1); // Cap progress at 1
+            let newWidth = gsap.utils.interpolate(100, 45.7, widthProgress); // Interpolating width
+
+            // Apply the dynamic width to bridgeInsideBlackBox
+            gsap.set(bridgeInsideBlackBox, {
+                width: `${newWidth}%`,  // Scale width from 100% to 45.7%
+            });
+
+            // Animate grid lines only after width animation is complete
+            if (self.progress >= 0.5) {
+                // Calculate the grid line progress (from 0 to 1 for the second half of the scroll)
+                const gridProgress = gsap.utils.normalize(0.5, 1, self.progress); // Normalize to [0, 1]
+                gridBackAnimation(gridLinesConfig, gridProgress);
+            }
+
+            if (self.progress >= 0.3) {
+                const coverObjectProgress = gsap.utils.normalize(0.3, 1, self.progress); // Normalize progress between 0.3 and 1
+
+                // Calculate initial width and height in pixels
+                const viewportWidth = window.innerWidth;
+                const initialSize = (8.3333 * 0.8333 * viewportWidth) / 100; // Calculate in pixels (convert from vw to px)
+
+                // Gradually reduce width of vertical black layers
+                verticalBlackLayers.forEach((layer) => {
+                    const newWidth = gsap.utils.interpolate(initialSize, 0, coverObjectProgress); // Interpolate from initial width to 0 based on progress
+                    gsap.set(layer, {
+                        width: `${newWidth}px`, // Set the new width based on scroll progress
+                    });
+                });
+
+                // Gradually reduce height of horizontal black layers
+                horizentalBlackLayers.forEach((layer) => {
+                    const newHeight = gsap.utils.interpolate(initialSize, 0, coverObjectProgress); // Interpolate from initial height to 0 based on progress
+                    gsap.set(layer, {
+                        height: `${newHeight}px`, // Set the new height based on scroll progress
+                    });
+                });
+            }
+
+            if (self.progress >= 0.5) {
+                const colorChangeProgress = gsap.utils.normalize(0.5, 1, self.progress); // Normalize progress between 0.8 and 1
+
+                // Initial RGB color (rgb(106,189,69))
+                const initialColor = { r: 106, g: 189, b: 69 };
+                // Target RGB color (rgb(242,245,242))
+                const targetColor = { r: 242, g: 245, b: 242 };
+
+                // Interpolate each RGB component
+                const currentR = gsap.utils.interpolate(initialColor.r, targetColor.r, colorChangeProgress);
+                const currentG = gsap.utils.interpolate(initialColor.g, targetColor.g, colorChangeProgress);
+                const currentB = gsap.utils.interpolate(initialColor.b, targetColor.b, colorChangeProgress);
+
+                // Create the final interpolated RGB color
+                const currentColor = `rgb(${currentR}, ${currentG}, ${currentB})`;
+
+                // Apply the stroke color based on scroll progress
+                gsap.set('.cls-1, .cls-2, .cls-3', {
+                    stroke: currentColor,
+                });
+                gsap.set('.inside-black-box', {
+                    border: `solid .75px ${currentColor}`,
+                });
+                gsap.set(bridgeBgBlur, {
+                    opacity: gsap.utils.interpolate(0, .7, colorChangeProgress),
+                })
+
+            } else {
+                // Reset to the original color when progress is less than 0.8
+                const colorChangeProgress = gsap.utils.normalize(0, 0.5, self.progress);
+
+                // Interpolate back to the original color
+                const currentR = gsap.utils.interpolate(242, 106, colorChangeProgress);
+                const currentG = gsap.utils.interpolate(245, 189, colorChangeProgress);
+                const currentB = gsap.utils.interpolate(242, 69, colorChangeProgress);
+
+                const currentColor = `rgb(${currentR}, ${currentG}, ${currentB})`;
+
+                gsap.set('.cls-1, .cls-2, .cls-3', {
+                    stroke: currentColor,
+                });
+                gsap.set('.inside-black-box', {
+                    border: `solid .75px ${currentColor}`,
+                });
+                gsap.set(bridgeBgBlur, {
+                    opacity: gsap.utils.interpolate(.7, 0, colorChangeProgress),
+                })
+            }
+
+
 
         },
         onLeaveBack: () => {
-            // Timeline for leaving animation
-            const leaveTimeline = gsap.timeline();
-
-            leaveTimeline.to('.cls-1, .cls-2, .cls-3', {
-                stroke: '#6abd45',
-                duration: 1,
-            }).to(bridgeBgBlur, {
-                opacity: 0,
-            })
-
-            // First, reset the grid lines (hide them)
-            leaveTimeline.add(() => resetGridLines());
-            leaveTimeline.add(() => revertTextAnimation(bridgeHeroText));
-            // After grid lines are hidden, animate the bridge box and padding
-            leaveTimeline.to(bridgeInsideBlackBox, {
-                width: '100%',
-                ease: "power2.out",
-                delay: .6,
-                duration: 0.8
-            }).to(bridgeBlackInitial, {
-                paddingLeft: currentPaddingLeft,
-                paddingRight: currentPaddingRight,
-                paddingTop: currentPaddingTop,
-                ease: "power2.out",
-                delay: 2,
-                duration: 0.8
-            }, 0); // This ensures both animations happen at the same time.
+            // Optional: Reset to initial states when scrolling back up
         }
     });
 };
+
+function gridBackAnimation(gridLinesConfig, self) {
+    // Animate the grid lines based on the scroll progress
+    gridLinesConfig.forEach(({ selector, from, to }) => {
+        const lines = document.querySelectorAll(selector);
+        lines.forEach(line => {
+            // Only interpolate attributes that exist in the configuration
+            let newAttrs = {};
+
+            if (from.attr.x1 !== undefined && to.attr.x1 !== undefined) {
+                newAttrs.x1 = gsap.utils.interpolate(from.attr.x1, to.attr.x1, self);
+            }
+            if (from.attr.x2 !== undefined && to.attr.x2 !== undefined) {
+                newAttrs.x2 = gsap.utils.interpolate(from.attr.x2, to.attr.x2, self);
+            }
+            if (from.attr.y1 !== undefined && to.attr.y1 !== undefined) {
+                newAttrs.y1 = gsap.utils.interpolate(from.attr.y1, to.attr.y1, self);
+            }
+            if (from.attr.y2 !== undefined && to.attr.y2 !== undefined) {
+                newAttrs.y2 = gsap.utils.interpolate(from.attr.y2, to.attr.y2, self);
+            }
+
+            // Interpolate opacity
+            let newOpacity = gsap.utils.interpolate(from.opacity, to.opacity, self);
+
+            // Apply the dynamic values based on scroll using GSAP's 'attr' for SVG properties
+            gsap.set(line, {
+                opacity: newOpacity,
+                attr: newAttrs,
+            });
+        });
+    });
+}
 
 
 // Function to animate grid lines

@@ -3,6 +3,8 @@ import bridgeText from '../../../../../public/images/bridgeText.png';
 import defaultImage from '../../../../../public/icons/defaultImg.svg';
 import { BridgeCard } from "./BridgeCard";
 import { Gridlines } from "./GridLines";
+import { GridGreen } from "./grid-svgs/GridGreen";
+import { BackGrid } from "./grid-svgs/BackGrid";
 
 
 const cardDetails = [
@@ -28,8 +30,53 @@ const cardDetails = [
 
 export const Bridge = () => {
     return (
-        <section id="bridge" className="bg-gray-light h-auto forced-full-width text-white md:px-0 px-5">
-            <div className="bridge-initial 2xl:px-40 px-20 2xl:pt-40 pt-20">
+        <section id="bridge" className="home-bridge-gridroom block relative h-auto forced-full-width md:px-0 px-5">
+            {/* 2xl:px-40 xl:px-20 2xl:py-40 xl:py-20 */}
+            <div className="bridge-overlay bg-none">
+                <div className="bridge-wrapper-1 bg-black bridge-gridroom">
+                    <div className="relative bridge-window bridge-window-full">
+                        <GridGreen />
+                        <div className="absolute inset-0 z-20 bg-black backdrop-blur-1 opacity-70 bridge-bg-blur" />
+                        <div className="absolute overflow-hidden inset-0 w-full h-full flex justify-center items-center z-10 ">
+                            <div className="bg-black w-45.7p h-fit inside-black-box">
+                                <BackGrid />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="overlay animate-cover horizontal">
+                        <div className="cover-object conver-object-horizontal bg-gray-light"></div>
+                        <div className="cover-object conver-object-horizontal bg-gray-light"></div>
+                    </div>
+                    <div className="overlay overlay-content">
+                        {/* <div className="container">
+                            <div className="row" style={{ transform: 'scale(0.82, 0.82)' }}>
+                                <div className="flex flex-col">
+                                    <h4 className="bridge-hero-text 2xl:text-8xl xl:text-7xl lg:text-5xl md:text-4xl text-28 2xl:leading-102 xl:leading-78 lg:leading-54 md:leading-42 leading-9 font-extralight text-[#D0D0D0]">
+                                        We’re building <br /> the world’s largest<br /> content delivery network
+                                    </h4>
+                                    <div className='text-green 2xl:pt-56 xl:pt-28 relative'>
+                                        <div className='absolute w-12/12 text-left flex justify-start gap-3'>
+                                            <h4 className="2xl:text-9xl xl:text-8xl lg:text-5xl md:text-4xl text-28 2xl:leading-132 xl:leading-102 lg:leading-54 md:leading-42 leading-9 uppercase font-bold">
+                                                The Bridge
+                                            </h4>
+                                            <div className='border border-green rounded-full self-baseline'>
+                                                <span className='font-bold text-3xl leading-60 px-2'>
+                                                    TM
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> */}
+                    </div>
+                </div>
+            </div>
+            <div className="overlay animate-cover vertical">
+                <div className="cover-object conver-object-vertical bg-gray-light"></div>
+                <div className="cover-object conver-object-vertical bg-gray-light"></div>
+            </div>
+            {/* <div className="bridge-initial">
                 <div className="bg-black relative">
                     <Gridlines />
                     <div className="absolute inset-0 z-20 bg-black backdrop-blur-1 rounded-lg opacity-70 bridge-bg-blur" />
@@ -39,7 +86,7 @@ export const Bridge = () => {
                                 <h4 className="bridge-hero-text opacity-0 2xl:text-8xl xl:text-7xl lg:text-5xl md:text-4xl text-28 2xl:leading-102 xl:leading-78 lg:leading-54 md:leading-42 leading-9 font-extralight text-[#D0D0D0]">
                                     We’re building <br /> the world’s largest<br /> content delivery network
                                 </h4>
-                                {/* <div className='text-green 2xl:pt-56 xl:pt-28 relative'>
+                                <div className='text-green 2xl:pt-56 xl:pt-28 relative'>
                                     <div className='absolute w-12/12 text-left flex justify-start gap-3'>
                                         <h4 className="2xl:text-9xl xl:text-8xl lg:text-5xl md:text-4xl text-28 2xl:leading-132 xl:leading-102 lg:leading-54 md:leading-42 leading-9 uppercase font-bold">
                                             The Bridge
@@ -50,9 +97,9 @@ export const Bridge = () => {
                                             </span>
                                         </div>
                                     </div>
-                                </div> */}
+                                </div>
                             </div>
-                            {/* <div className="2xl:pt-45r xl:pt-25r py-0">
+                            <div className="2xl:pt-45r xl:pt-25r py-0">
                                 <h5 className="2xl:text-108 xl:text-6xl lg:text-5xl md:text-4xl text-28 2xl:leading-124 xl:leading-66 lg:leading-54 md:leading-42 leading-9 text-gray-light font-extralight ">
                                     A single pane of glass <br /> connecting <br /> <span className="font-normal">web2</span> and <span className="font-normal">web3</span>
                                 </h5>
@@ -83,12 +130,12 @@ export const Bridge = () => {
                                         </BridgeCard>
                                     ))}
                                 </div>
-                            </div> */}
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className="bg-black">
+            </div> */}
+            {/* <div className="bg-black">
                 <div className="text-center border-y border-opacity-20 border-green">
                     <h4 className="2xl:text-7xl xl:text-6xl lg:text-5xl md:text-4xl text-3xl 2xl:leading-84 xl:leading-66 lg:leading-54 md:leading-42 leading-9 font-extralight text-green pt-5 pb-7">
                         The trillion dollar data opportunity
@@ -125,7 +172,7 @@ export const Bridge = () => {
                         </p>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </section>
     )
 }

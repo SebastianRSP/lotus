@@ -403,7 +403,7 @@ canvas {
 
 .cls-4 {
   fill: none;
-  stroke: #f2f5f2;
+  stroke: rgb(242,245,242);
   stroke-width: .75px;
 }
 
@@ -420,13 +420,16 @@ canvas {
 
 .cls-2,
 .cls-3 {
-  stroke: #6abd45;
+  stroke: rgb(106,189,69);
   stroke-width: .75px;
+}
+.inside-black-box{
+  border: solid .75px rgb(106,189,69);
 }
 
 .cls-1 {
   fill: none;
-  stroke: #6abd45;
+  stroke: rgb(106,189,69);
   stroke-linecap: square;
   stroke-width: .75px;
 }
@@ -922,6 +925,176 @@ canvas {
 /* Apply transition for smooth animation */
 .transition-transform {
   transition: transform 0.6s ease-in-out;
+}
+
+.home-bridge-gridroom {
+  padding: 0;
+  z-index: 2;
+  /* width: 100%; */
+}
+
+.home-bridge-gridroom::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: black;
+  z-index: 999;
+}
+
+.pin-spacer {
+  background: black;
+}
+
+.bridge-overlay {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* background: black; */
+}
+
+.bridge-gridroom {
+  transform: translate(-50%);
+  left: 50%;
+  width: 100%;
+  position: relative;
+}
+
+.bridge-gridroom::before {
+  display: block;
+  content: "";
+  padding-top: calc(780/1240*100%);
+}
+
+.bridge-gridroom .bridge-window-full {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.bridge-gridroom .bridge-window-full svg {
+  width: 100%;
+  height: 100%;
+}
+
+.bridge-gridroom .bridge-window-full svg path {
+  stroke-width: .5px;
+}
+
+.home-bridge-gridroom h2 .single-line-inner {
+  transform: translateY(110%) rotate(0.001deg);
+}
+
+@media (max-aspect-ratio: 1240/780){
+  .bridge-gridroom {
+     width: calc(1240/780*100vh);
+  }
+
+  .bridge-gridroom {
+     width: 100vw;
+  }
+
+  .bridge-gridroom {
+     width: 100%;
+  }
+  
+  .bridge-gridroom::before {
+     display: block;
+     content: "";
+     padding-top: 100vh;
+  }
+}
+
+@media screen and (max-width: 1024px){
+  .bridge-gridroom {
+     width: 200%;
+  }
+}
+
+/* Overlay Cover Sides */
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.home-bridge-gridroom .overlay.animate-cover {
+  pointer-events: none;
+}
+
+.home-bridge-gridroom .overlay .cover-object {
+  position: absolute;
+  z-index: 2;
+}
+
+.home-bridge-gridroom .overlay.horizontal .cover-object:nth-child(1) {
+  z-index: 20;
+  top: -1px;
+  left: -1px;
+  width: 100%;
+  height: calc(8.3333vw * 0.8333);
+  transform-origin: top left;
+}
+
+.home-bridge-gridroom .overlay.vertical .cover-object:nth-child(1) {
+  top: -1px;
+  right: -1px;
+  width: calc(8.3333vw * 0.8333);
+  height: 100%;
+  transform-origin: top right;
+}
+
+.home-bridge-gridroom .overlay.horizontal .cover-object:nth-child(2) {
+  z-index: 20;
+  bottom: -1px;
+  left: -1px;
+  width: 100%;
+  height: calc(8.3333vw * 0.8333);
+  transform-origin: bottom left;
+}
+
+.home-bridge-gridroom .overlay.vertical .cover-object:nth-child(2) {
+  top: -1px;
+  left: -1px;
+  width: calc(8.3333vw * 0.8333);
+  height: 100%;
+  transform-origin: top left;
+}
+
+/* Overlay Content */
+
+.home-bridge-gridroom .overlay-content {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100vw;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.home-bridge-gridroom .overlay-content .container {
+  padding-right: calc(8.3333vw * 1);
+}
+
+.home-bridge-gridroom .bridge-wrapper-2 {
+  width: calc(7vw * 1.3888);
+  margin-top: 3em;
+}
+
+@media screen and (max-width: 1024px){
+
+  .home-bridge-gridroom .overlay-content .container {
+     padding-right: calc(8.3333vw * 1);
+  }
 }
 
 /* New Home Page CSS Ends */
