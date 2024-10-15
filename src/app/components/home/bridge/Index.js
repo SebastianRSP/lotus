@@ -36,7 +36,7 @@ export const Bridge = () => {
                 <div className="bridge-wrapper-1 bg-black bridge-gridroom">
                     <div className="relative bridge-window bridge-window-full">
                         <GridGreen />
-                        <div className="absolute inset-0 z-20 bg-black backdrop-blur-1 opacity-70 bridge-bg-blur" />
+                        {/* <div className="absolute inset-0 z-20 bg-black backdrop-blur-1 opacity-70 bridge-bg-blur" /> */}
                         <div className="absolute overflow-hidden inset-0 w-full h-full flex justify-center items-center z-10 ">
                             <div className="bg-black w-45.7p h-fit inside-black-box">
                                 <BackGrid />

@@ -299,9 +299,9 @@ const startBridgeAnimation = (bridgeSection) => {
                 gsap.set('.inside-black-box', {
                     border: `solid .75px ${currentColor}`,
                 });
-                gsap.set(bridgeBgBlur, {
-                    opacity: gsap.utils.interpolate(0, .7, colorChangeProgress),
-                })
+                // gsap.set(bridgeBgBlur, {
+                //     opacity: gsap.utils.interpolate(0, .7, colorChangeProgress),
+                // })
 
             } else {
                 // Reset to the original color when progress is less than 0.8
@@ -320,9 +320,9 @@ const startBridgeAnimation = (bridgeSection) => {
                 gsap.set('.inside-black-box', {
                     border: `solid .75px ${currentColor}`,
                 });
-                gsap.set(bridgeBgBlur, {
-                    opacity: gsap.utils.interpolate(.7, 0, colorChangeProgress),
-                })
+                // gsap.set(bridgeBgBlur, {
+                //     opacity: gsap.utils.interpolate(.7, 0, colorChangeProgress),
+                // })
             }
 
 
