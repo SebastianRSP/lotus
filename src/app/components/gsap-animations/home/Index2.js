@@ -19,7 +19,7 @@ export const newHomePageAnimation = () => {
     const loader = document.querySelector('.loader');
 
     if (loader) {
-        gsap.set(loader, {width : '100vw', height: '100vh'})
+        gsap.set(loader, { width: '100vw', height: '100vh' })
         // Initial collapsed state: Leaves rotated and positioned below
         gsap.set("#left-leaf", { transformOrigin: "center center", x: 20, y: 50, });
         gsap.set("#middle-leaf", { transformOrigin: "center center", rotate: -100, x: -20, y: 50, });
@@ -167,6 +167,7 @@ const startBridgeAnimation = (bridgeSection) => {
     const verticalBlackLayers = document.querySelectorAll('.conver-object-vertical');
     const horizentalBlackLayers = document.querySelectorAll('.conver-object-horizontal');
     const bridgeBgBlur = document.querySelector('.bridge-bg-blur');
+    const bridgeHeroText = document.querySelectorAll('.bridge-text-split');
 
 
     const gridLinesConfig = [
@@ -178,7 +179,7 @@ const startBridgeAnimation = (bridgeSection) => {
 
     // Initial state: Bridge Inside Black Box width is 100%
     gsap.set(bridgeInsideBlackBox, {
-        width: '100%',
+        width: '90%',
     });
 
     // Initial state: Slightly Bend inside
@@ -200,6 +201,48 @@ const startBridgeAnimation = (bridgeSection) => {
             gsap.set(line, from);  // Set each line's initial attributes using 'attr'
         });
     });
+
+    // Set initial opacity for each character to 1
+    if (bridgeHeroText) {
+        bridgeHeroText.forEach(bridgeText => {
+            if (!bridgeText.classList.contains('processed')) {
+                // Mark the element as processed
+                bridgeText.classList.add('processed');
+                const splitText = new SplitText(bridgeHeroText, { type: "lines,chars" });
+
+                // Process each line
+                splitText.lines.forEach(line => {
+                    line.classList.add('single-line');
+                    line.style.display = 'block';
+                    line.style.position = 'relative';
+
+                    // Create the inner div with class 'single-line-inner'
+                    const innerDiv = document.createElement('div');
+                    innerDiv.classList.add('single-line-inner');
+
+                    // Apply the default transform property to the inner div
+                    innerDiv.style.transform = 'translate(0%, 110%) rotate(0.00115deg)';
+
+                    // Move the current line content into the inner div
+                    innerDiv.innerHTML = line.innerHTML;
+                    line.innerHTML = ''; // Clear the original content
+                    line.appendChild(innerDiv); // Append the new inner div
+                });
+
+                // Set initial styles for characters
+                splitText.chars.forEach((char) => {
+                    gsap.set(char, {
+                        autoAlpha: 1,
+                        position: 'relative',        // Ensure relative positioning
+                        display: 'inline-block',     // Ensure inline-block display
+                        color: 'rgb(255, 255, 255)'  // Set character color to white
+                    });
+                });
+            }
+        });
+    }
+
+
 
     // Initialize the animation with ScrollTrigger
     const bridgeSectionTimeline = gsap.timeline({
@@ -223,11 +266,11 @@ const startBridgeAnimation = (bridgeSection) => {
     ScrollTrigger.create({
         trigger: bridgeSection,
         start: "top top",
-        end: `+=1000`, // Total scroll range
+        end: `+=1500`, // Total scroll range
         scrub: true, // Smooth animation linked to scrolling
         pin: true,
         pinSpacing: true,
-        markers: false,
+        markers: true,
         onUpdate: (self) => {
             // Calculate translateY based on scroll incrementally
             let translateY = self.scroll() - self.start;
@@ -238,23 +281,22 @@ const startBridgeAnimation = (bridgeSection) => {
             });
 
             // Calculate progress for width animation
-            const widthProgress = Math.min(self.progress / 0.5, 1); // Cap progress at 1
-            let newWidth = gsap.utils.interpolate(100, 45.7, widthProgress); // Interpolating width
+            const widthProgress = Math.min(self.progress / 0.2, 1); // Cap progress at 1
+            let newWidth = gsap.utils.interpolate(90, 45.7, widthProgress); // Interpolating width
 
             // Apply the dynamic width to bridgeInsideBlackBox
             gsap.set(bridgeInsideBlackBox, {
-                width: `${newWidth}%`,  // Scale width from 100% to 45.7%
+                width: `${newWidth}%`,  // Scale width from 90% to 45.7%
             });
 
             // Animate grid lines only after width animation is complete
-            if (self.progress >= 0.5) {
-                // Calculate the grid line progress (from 0 to 1 for the second half of the scroll)
-                const gridProgress = gsap.utils.normalize(0.5, 1, self.progress); // Normalize to [0, 1]
+            if (self.progress >= 0.2) {
+                const gridProgress = gsap.utils.normalize(0.2, 0.5, self.progress);
                 gridBackAnimation(gridLinesConfig, gridProgress);
             }
 
-            if (self.progress >= 0.3) {
-                const coverObjectProgress = gsap.utils.normalize(0.3, 1, self.progress); // Normalize progress between 0.3 and 1
+            if (self.progress >= 0.025) {
+                const coverObjectProgress = gsap.utils.normalize(0.025, 0.5, self.progress);
 
                 // Calculate initial width and height in pixels
                 const viewportWidth = window.innerWidth;
@@ -277,8 +319,8 @@ const startBridgeAnimation = (bridgeSection) => {
                 });
             }
 
-            if (self.progress >= 0.5) {
-                const colorChangeProgress = gsap.utils.normalize(0.5, 1, self.progress); // Normalize progress between 0.8 and 1
+            if (self.progress >= 0.2) {
+                const colorChangeProgress = gsap.utils.normalize(0.2, .5, self.progress); // Normalize progress between 0.8 and 1
 
                 // Initial RGB color (rgb(106,189,69))
                 const initialColor = { r: 106, g: 189, b: 69 };
@@ -306,7 +348,7 @@ const startBridgeAnimation = (bridgeSection) => {
 
             } else {
                 // Reset to the original color when progress is less than 0.8
-                const colorChangeProgress = gsap.utils.normalize(0, 0.5, self.progress);
+                const colorChangeProgress = gsap.utils.normalize(0, 0.2, self.progress);
 
                 // Interpolate back to the original color
                 const currentR = gsap.utils.interpolate(242, 106, colorChangeProgress);

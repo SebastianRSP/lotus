@@ -38,7 +38,7 @@ export const Bridge = () => {
                         <GridGreen />
                         {/* <div className="absolute inset-0 z-20 bg-black backdrop-blur-1 opacity-70 bridge-bg-blur" /> */}
                         <div className="absolute overflow-hidden inset-0 w-full h-full flex justify-center items-center z-10 ">
-                            <div className="bg-black w-45.7p h-fit inside-black-box">
+                            <div className="bg-black w-45.7p inside-black-box">
                                 <BackGrid />
                             </div>
                         </div>
@@ -47,13 +47,15 @@ export const Bridge = () => {
                         <div className="cover-object conver-object-horizontal bg-gray-light"></div>
                         <div className="cover-object conver-object-horizontal bg-gray-light"></div>
                     </div>
-                    <div className="overlay overlay-content">
-                        {/* <div className="container">
-                            <div className="row" style={{ transform: 'scale(0.82, 0.82)' }}>
+                    <div className="overlay overlay-content z-50">
+                        <div className="container 2xl:px-40 xl:px-28 lg:px-10 px-5">
+                            <div className="row" >
                                 <div className="flex flex-col">
-                                    <h4 className="bridge-hero-text 2xl:text-8xl xl:text-7xl lg:text-5xl md:text-4xl text-28 2xl:leading-102 xl:leading-78 lg:leading-54 md:leading-42 leading-9 font-extralight text-[#D0D0D0]">
-                                        We’re building <br /> the world’s largest<br /> content delivery network
-                                    </h4>
+                                    <h2 className="bridge-hero-text 2xl:text-8xl xl:text-7xl lg:text-5xl md:text-4xl text-28 2xl:leading-102 xl:leading-78 lg:leading-54 md:leading-42 leading-9 font-extralight text-[#D0D0D0]">
+                                        <span className="normal bridge-text-split">
+                                            We’re building <br /> the world’s largest<br /> content delivery network
+                                        </span>
+                                    </h2>
                                     <div className='text-green 2xl:pt-56 xl:pt-28 relative'>
                                         <div className='absolute w-12/12 text-left flex justify-start gap-3'>
                                             <h4 className="2xl:text-9xl xl:text-8xl lg:text-5xl md:text-4xl text-28 2xl:leading-132 xl:leading-102 lg:leading-54 md:leading-42 leading-9 uppercase font-bold">
@@ -68,7 +70,7 @@ export const Bridge = () => {
                                     </div>
                                 </div>
                             </div>
-                        </div> */}
+                        </div>
                     </div>
                 </div>
             </div>

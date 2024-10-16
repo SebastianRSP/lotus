@@ -19,9 +19,9 @@ body {
   box-sizing: border-box;
 }
 
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   display: none;
-}
+} */
 
 
 /* Canvas */
@@ -1095,6 +1095,18 @@ canvas {
   .home-bridge-gridroom .overlay-content .container {
      padding-right: calc(8.3333vw * 1);
   }
+}
+
+.bridge-text-split.normal .single-line {
+  overflow: hidden;
+  padding: 0.05em 0;
+  margin: -0.07em 0;
+}
+.bridge-text-split .single-line .single-line-inner {
+  transform: translateY(0%) rotate(0.001deg);
+}
+.home-bridge-gridroom h2 .single-line-inner {
+  transform: translateY(0%) rotate(0.001deg);
 }
 
 /* New Home Page CSS Ends */
