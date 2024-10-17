@@ -168,6 +168,7 @@ const startBridgeAnimation = (bridgeSection) => {
     const horizentalBlackLayers = document.querySelectorAll('.conver-object-horizontal');
     const bridgeBgBlur = document.querySelector('.bridge-bg-blur');
     const bridgeHeroText = document.querySelectorAll('.bridge-text-split');
+    const bridgeHeroH2 = document.querySelectorAll('.bridge-hero-text');
     let hasAnimated = false; // Tracks if Text animation Shows
     let hasColored = false; // Tracks if the Text Color Changes
 
@@ -279,7 +280,7 @@ const startBridgeAnimation = (bridgeSection) => {
         pinSpacing: true,
         markers: false,
         onUpdate: (self) => {
-            gsap.set(bridgeHeroText, {autoAlpha : 1})
+            gsap.set(bridgeHeroText, { autoAlpha: 1 })
             // Calculate translateY based on scroll incrementally
             let translateY = self.scroll() - self.start;
 
@@ -394,7 +395,7 @@ const startBridgeAnimation = (bridgeSection) => {
                     });
 
                     // Calculate normalized progress using gsap.utils.normalize
-                    const normalizedProgress = gsap.utils.normalize(0.5, 0.8, self.progress); // Normalize between 0 and 1 based on defined range
+                    const normalizedProgress = gsap.utils.normalize(0.5, 0.85, self.progress); // Normalize between 0 and 1 based on defined range
 
                     // Calculate the dynamic RGB values based on normalized progress
                     const startColor = { r: 118, g: 114, b: 112 }; // Original color
@@ -422,7 +423,7 @@ const startBridgeAnimation = (bridgeSection) => {
 
 
             // Reverse color animation when scrolling back up
-            if (self.progress <= 0.8 && hasColored) {
+            if (self.progress <= 0.85 && hasColored) {
                 hasColored = false; // Reset flag to false, ready to reverse animation
                 bridgeHeroText.forEach((bridgeText) => {
                     const processedLines = bridgeText.querySelectorAll('.single-line-inner'); // Target the processed inner divs
@@ -434,7 +435,7 @@ const startBridgeAnimation = (bridgeSection) => {
                     });
 
                     // Calculate normalized progress for reversing color
-                    const normalizedProgress = gsap.utils.normalize(0.8, 0.48, self.progress); // Normalize for reverse transition from .75 to .55
+                    const normalizedProgress = gsap.utils.normalize(0.85, 0.48, self.progress); // Normalize for reverse transition from .75 to .55
 
                     // Animate reverse color from the last character to the first
                     chars.reverse().forEach((char, index) => {
@@ -447,9 +448,6 @@ const startBridgeAnimation = (bridgeSection) => {
                     });
                 });
             }
-
-
-
 
             // Check if progress is beyond 0.6 and has not yet animated
             if (self.progress >= 0.53 && !hasAnimated) {
@@ -482,6 +480,42 @@ const startBridgeAnimation = (bridgeSection) => {
                     });
                 });
             }
+
+            if (self.progress >= 0.89) {
+                gsap.to(bridgeHeroH2, {
+                    x: -40, // Slightly move left
+                    y: -40, // Slightly move up
+                    scale: 0.95, // Scale down slightly to simulate moving backward
+                    duration: 0.5,
+                    ease: "power2.out",
+                });
+                bridgeHeroText.forEach((bridgeText) => {
+                    const processedLines = bridgeText.querySelectorAll('.single-line-inner'); // Target the processed inner divs
+
+                    // Collect all characters for the animation
+                    const chars = [];
+                    processedLines.forEach(line => {
+                        chars.push(...line.children); // Push each character into the array
+                    });
+
+                    gsap.set(chars, {
+                        color: 'rgb(118,114,112)', // Transform back to original color progressively
+                    });
+                })
+            }
+
+            if (self.progress < 0.89) {
+
+                gsap.to(bridgeHeroH2, {
+                    x: 40, // Slightly move left
+                    y: 40, // Slightly move up
+                    scale: 1, // Scale down slightly to simulate moving backward
+                    duration: 0.5,
+                    ease: "power2.out",
+                });
+            }
+
+
 
 
         },
