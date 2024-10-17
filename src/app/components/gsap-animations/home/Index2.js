@@ -394,7 +394,7 @@ const startBridgeAnimation = (bridgeSection) => {
                     });
 
                     // Calculate normalized progress using gsap.utils.normalize
-                    const normalizedProgress = gsap.utils.normalize(0.5, 0.75, self.progress); // Normalize between 0 and 1 based on defined range
+                    const normalizedProgress = gsap.utils.normalize(0.5, 0.8, self.progress); // Normalize between 0 and 1 based on defined range
 
                     // Calculate the dynamic RGB values based on normalized progress
                     const startColor = { r: 118, g: 114, b: 112 }; // Original color
@@ -422,7 +422,7 @@ const startBridgeAnimation = (bridgeSection) => {
 
 
             // Reverse color animation when scrolling back up
-            if (self.progress <= 0.75 && hasColored) {
+            if (self.progress <= 0.8 && hasColored) {
                 hasColored = false; // Reset flag to false, ready to reverse animation
                 bridgeHeroText.forEach((bridgeText) => {
                     const processedLines = bridgeText.querySelectorAll('.single-line-inner'); // Target the processed inner divs
@@ -434,7 +434,7 @@ const startBridgeAnimation = (bridgeSection) => {
                     });
 
                     // Calculate normalized progress for reversing color
-                    const normalizedProgress = gsap.utils.normalize(0.75, 0.52, self.progress); // Normalize for reverse transition from .75 to .55
+                    const normalizedProgress = gsap.utils.normalize(0.8, 0.48, self.progress); // Normalize for reverse transition from .75 to .55
 
                     // Animate reverse color from the last character to the first
                     chars.reverse().forEach((char, index) => {
