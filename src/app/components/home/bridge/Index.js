@@ -34,7 +34,7 @@ export const Bridge = () => {
             {/* 2xl:px-40 xl:px-20 2xl:py-40 xl:py-20 */}
             <div className="bridge-overlay bg-none">
                 <div className="bridge-wrapper-1 bg-black bridge-gridroom">
-                    <div className="relative bridge-window bridge-window-full">
+                    <div className="relative opacity-50 bridge-window bridge-window-full">
                         <GridGreen />
                         {/* <div className="absolute inset-0 z-20 bg-black backdrop-blur-1 opacity-70 bridge-bg-blur" /> */}
                         <div className="absolute overflow-hidden inset-0 w-full h-full flex justify-center items-center z-10 ">
@@ -56,7 +56,7 @@ export const Bridge = () => {
                                             We’re building <br /> the world’s largest<br /> content delivery network
                                         </span>
                                     </h2>
-                                    <div className='text-green 2xl:pt-56 xl:pt-28 relative'>
+                                    {/* <div className='text-green 2xl:pt-56 xl:pt-28 relative'>
                                         <div className='absolute w-12/12 text-left flex justify-start gap-3'>
                                             <h4 className="2xl:text-9xl xl:text-8xl lg:text-5xl md:text-4xl text-28 2xl:leading-132 xl:leading-102 lg:leading-54 md:leading-42 leading-9 uppercase font-bold">
                                                 The Bridge
@@ -67,7 +67,7 @@ export const Bridge = () => {
                                                 </span>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                         </div>

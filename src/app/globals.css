@@ -1108,6 +1108,9 @@ canvas {
 .home-bridge-gridroom h2 .single-line-inner {
   transform: translateY(0%) rotate(0.001deg);
 }
+.split-text-char {
+  color: rgb(118, 114, 112) !important; /* Make sure it overrides */
+}
 
 /* New Home Page CSS Ends */
 

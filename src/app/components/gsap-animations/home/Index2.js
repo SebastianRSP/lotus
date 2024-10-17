@@ -168,6 +168,8 @@ const startBridgeAnimation = (bridgeSection) => {
     const horizentalBlackLayers = document.querySelectorAll('.conver-object-horizontal');
     const bridgeBgBlur = document.querySelector('.bridge-bg-blur');
     const bridgeHeroText = document.querySelectorAll('.bridge-text-split');
+    let hasAnimated = false; // Tracks if Text animation Shows
+    let hasColored = false; // Tracks if the Text Color Changes
 
 
     const gridLinesConfig = [
@@ -208,7 +210,9 @@ const startBridgeAnimation = (bridgeSection) => {
             if (!bridgeText.classList.contains('processed')) {
                 // Mark the element as processed
                 bridgeText.classList.add('processed');
-                const splitText = new SplitText(bridgeHeroText, { type: "lines,chars" });
+
+                // Create a SplitText instance for the current bridgeText
+                const splitText = new SplitText(bridgeText, { type: "lines,chars" });
 
                 // Process each line
                 splitText.lines.forEach(line => {
@@ -223,24 +227,27 @@ const startBridgeAnimation = (bridgeSection) => {
                     // Apply the default transform property to the inner div
                     innerDiv.style.transform = 'translate(0%, 110%) rotate(0.00115deg)';
 
-                    // Move the current line content into the inner div
-                    innerDiv.innerHTML = line.innerHTML;
-                    line.innerHTML = ''; // Clear the original content
-                    line.appendChild(innerDiv); // Append the new inner div
-                });
+                    // Set initial styles for characters and move them into the inner div
+                    line.childNodes.forEach(char => {
+                        // Set styles for the character
+                        gsap.set(char, {
+                            position: 'relative',
+                            display: 'inline-block',
+                            color: 'rgb(118, 114, 112)'
+                        });
 
-                // Set initial styles for characters
-                splitText.chars.forEach((char) => {
-                    gsap.set(char, {
-                        autoAlpha: 1,
-                        position: 'relative',        // Ensure relative positioning
-                        display: 'inline-block',     // Ensure inline-block display
-                        color: 'rgb(255, 255, 255)'  // Set character color to white
+                        // Append the character to the innerDiv
+                        innerDiv.appendChild(char.cloneNode(true)); // Clone and append to innerDiv
                     });
+
+                    // Clear the original content of the line
+                    line.innerHTML = ''; // Clear the original content
+                    line.appendChild(innerDiv); // Append the new inner div to the line
                 });
             }
         });
     }
+
 
 
 
@@ -271,9 +278,15 @@ const startBridgeAnimation = (bridgeSection) => {
         pin: true,
         pinSpacing: true,
         markers: true,
+        onEnter: (self) => {
+
+        },
         onUpdate: (self) => {
             // Calculate translateY based on scroll incrementally
             let translateY = self.scroll() - self.start;
+
+            // Bound the translateY value to prevent overshooting
+            translateY = gsap.utils.clamp(0, 1500, translateY); // Adjust 500 to your max translateY value if necessary
 
             // Apply the dynamic translateY value based on the scroll
             gsap.set(bridgeSection, {
@@ -291,7 +304,8 @@ const startBridgeAnimation = (bridgeSection) => {
 
             // Animate grid lines only after width animation is complete
             if (self.progress >= 0.2) {
-                const gridProgress = gsap.utils.normalize(0.2, 0.5, self.progress);
+                const gridProgress = gsap.utils.normalize(0.2, .5, self.progress);
+
                 gridBackAnimation(gridLinesConfig, gridProgress);
             }
 
@@ -368,6 +382,108 @@ const startBridgeAnimation = (bridgeSection) => {
                 // })
             }
 
+            // Inside your ScrollTrigger callback
+            if (self.progress >= 0.5) {
+                hasColored = true; // Set flag to true to indicate color change has started
+
+                bridgeHeroText.forEach((bridgeText) => {
+                    const processedLines = bridgeText.querySelectorAll('.single-line-inner'); // Target the processed inner divs
+
+                    // Collect all characters for the animation
+                    const chars = [];
+                    processedLines.forEach(line => {
+                        chars.push(...line.children); // Push each character into the array
+                    });
+
+                    // Calculate normalized progress using gsap.utils.normalize
+                    const normalizedProgress = gsap.utils.normalize(0.5, 0.75, self.progress); // Normalize between 0 and 1 based on defined range
+
+                    // Calculate the dynamic RGB values based on normalized progress
+                    const startColor = { r: 118, g: 114, b: 112 }; // Original color
+                    const endColor = { r: 255, g: 255, b: 255 }; // Target color
+
+                    // Interpolate each RGB component based on scroll progress
+                    const currentR = gsap.utils.interpolate(startColor.r, endColor.r, normalizedProgress);
+                    const currentG = gsap.utils.interpolate(startColor.g, endColor.g, normalizedProgress);
+                    const currentB = gsap.utils.interpolate(startColor.b, endColor.b, normalizedProgress);
+
+                    // Create the final interpolated RGB color
+                    const currentColor = `rgb(${currentR}, ${currentG}, ${currentB})`;
+
+                    // Update color based on scroll position; no automatic effect
+                    chars.forEach((char, index) => {
+                        const charProgress = index / chars.length; // Character progress based on index
+                        if (normalizedProgress >= charProgress) {
+                            gsap.set(char, {
+                                color: 'rgb(255,255,255)',
+                            });
+                        }
+                    });
+                });
+            }
+
+
+            // Reverse color animation when scrolling back up
+            if (self.progress <= 0.75 && hasColored) {
+                hasColored = false; // Reset flag to false, ready to reverse animation
+                bridgeHeroText.forEach((bridgeText) => {
+                    const processedLines = bridgeText.querySelectorAll('.single-line-inner'); // Target the processed inner divs
+
+                    // Collect all characters for the animation
+                    const chars = [];
+                    processedLines.forEach(line => {
+                        chars.push(...line.children); // Push each character into the array
+                    });
+
+                    // Calculate normalized progress for reversing color
+                    const normalizedProgress = gsap.utils.normalize(0.75, 0.52, self.progress); // Normalize for reverse transition from .75 to .55
+
+                    // Animate reverse color from the last character to the first
+                    chars.reverse().forEach((char, index) => {
+                        const charProgress = index / chars.length; // Recalculate progress for reversed characters
+                        if (normalizedProgress >= charProgress) {
+                            gsap.set(char, {
+                                color: 'rgb(118,114,112)', // Transform back to original color progressively
+                            });
+                        }
+                    });
+                });
+            }
+
+
+
+
+            // Check if progress is beyond 0.6 and has not yet animated
+            if (self.progress >= 0.53 && !hasAnimated) {
+                hasAnimated = true; // Set flag to true, animation starts
+                bridgeHeroText.forEach((bridgeText) => {
+                    const processedLines = bridgeText.querySelectorAll('.single-line-inner'); // Target the processed inner divs
+
+                    // Animate the transform for each line with a slight delay
+                    gsap.to(processedLines, {
+                        duration: 0.9, // Duration for each line's animation
+                        y: "0%", // Translate to original position (remove the translation)
+                        ease: "power1.out",
+                        stagger: 0.25, // Delay between each line
+                    });
+                });
+            }
+
+            // Revert the animation when scrolling back up before progress reaches 0.6
+            if (self.progress < 0.53 && hasAnimated) {
+                hasAnimated = false; // Reset flag to false, ready to reverse animation
+                bridgeHeroText.forEach((bridgeText) => {
+                    const processedLines = bridgeText.querySelectorAll('.single-line-inner'); // Target the processed inner divs
+
+                    // Reverse the animation
+                    gsap.to(processedLines, {
+                        duration: 0.9, // Duration for each line's animation
+                        y: "110%", // Move back to the initial off-screen position
+                        ease: "power1.out",
+                        stagger: -0.15, // Delay between each line
+                    });
+                });
+            }
 
 
         },
@@ -410,6 +526,17 @@ function gridBackAnimation(gridLinesConfig, self) {
     });
 }
 
+// Function to interpolate color
+const interpolateColor = (progress) => {
+    const startColor = { r: 118, g: 114, b: 112 }; // Original color
+    const endColor = { r: 255, g: 255, b: 255 }; // Target color
+
+    const r = gsap.utils.interpolate(startColor.r, endColor.r, progress);
+    const g = gsap.utils.interpolate(startColor.g, endColor.g, progress);
+    const b = gsap.utils.interpolate(startColor.b, endColor.b, progress);
+
+    return `rgb(${Math.round(r)}, ${Math.round(g)}, ${Math.round(b)})`;
+};
 
 // Function to animate grid lines
 function animateGridLines() {
