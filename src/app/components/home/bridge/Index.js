@@ -38,7 +38,7 @@ export const Bridge = () => {
                         <GridGreen />
                         {/* <div className="absolute inset-0 z-20 bg-black backdrop-blur-1 opacity-70 bridge-bg-blur" /> */}
                         <div className="absolute overflow-hidden inset-0 w-full h-full flex justify-center items-center z-10 ">
-                            <div className="bg-black w-45.7p inside-black-box">
+                            <div className="bg-black w-full inside-black-box">
                                 <BackGrid />
                             </div>
                         </div>
@@ -52,7 +52,7 @@ export const Bridge = () => {
                             <div className="row" >
                                 <div className="flex flex-col">
                                     <h2 className="bridge-hero-text 2xl:text-8xl xl:text-7xl lg:text-5xl md:text-4xl text-28 2xl:leading-102 xl:leading-78 lg:leading-54 md:leading-42 leading-9 font-extralight text-[#D0D0D0]">
-                                        <span className="normal bridge-text-split">
+                                        <span className="normal bridge-text-split opacity-0">
                                             We’re building <br /> the world’s largest<br /> content delivery network
                                         </span>
                                     </h2>

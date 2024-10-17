@@ -277,11 +277,9 @@ const startBridgeAnimation = (bridgeSection) => {
         scrub: true, // Smooth animation linked to scrolling
         pin: true,
         pinSpacing: true,
-        markers: true,
-        onEnter: (self) => {
-
-        },
+        markers: false,
         onUpdate: (self) => {
+            gsap.set(bridgeHeroText, {autoAlpha : 1})
             // Calculate translateY based on scroll incrementally
             let translateY = self.scroll() - self.start;
 
@@ -487,9 +485,6 @@ const startBridgeAnimation = (bridgeSection) => {
 
 
         },
-        onLeaveBack: () => {
-            // Optional: Reset to initial states when scrolling back up
-        }
     });
 };
 
