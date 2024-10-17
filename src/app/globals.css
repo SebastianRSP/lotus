@@ -1010,7 +1010,7 @@ canvas {
   }
 }
 
-@media screen and (max-width: 1024px){
+@media screen and (max-width: 640px){
   .bridge-gridroom {
      width: 200%;
   }

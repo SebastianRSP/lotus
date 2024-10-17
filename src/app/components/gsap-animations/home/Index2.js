@@ -169,8 +169,11 @@ const startBridgeAnimation = (bridgeSection) => {
     const bridgeBgBlur = document.querySelector('.bridge-bg-blur');
     const bridgeHeroText = document.querySelectorAll('.bridge-text-split');
     const bridgeHeroH2 = document.querySelectorAll('.bridge-hero-text');
+    const bridgeTM = document.querySelectorAll('.bridge-tm');
     let hasAnimated = false; // Tracks if Text animation Shows
     let hasColored = false; // Tracks if the Text Color Changes
+    let hasBridgeTM = false; // Tracks if the BridgeTM logo Shows 
+    let hasBridgeDown = false; // Tracks if the BridgeTM logo Shows 
 
 
     const gridLinesConfig = [
@@ -195,6 +198,11 @@ const startBridgeAnimation = (bridgeSection) => {
     // Initial state: Bridge Background hidden initially we will show this after the back grid liens comes out
     gsap.set(bridgeBgBlur, {
         opacity: 0
+    });
+
+    gsap.set(bridgeTM, {
+        y: 0,
+        x: -50,
     });
 
     // Set initial states for the grid lines
@@ -251,7 +259,6 @@ const startBridgeAnimation = (bridgeSection) => {
 
 
 
-
     // Initialize the animation with ScrollTrigger
     const bridgeSectionTimeline = gsap.timeline({
         scrollTrigger: {
@@ -280,7 +287,8 @@ const startBridgeAnimation = (bridgeSection) => {
         pinSpacing: true,
         markers: false,
         onUpdate: (self) => {
-            gsap.set(bridgeHeroText, { autoAlpha: 1 })
+            gsap.set(bridgeHeroText, { autoAlpha: 1 });
+            // gsap.set(bridgeTM, { autoAlpha: 1 });
             // Calculate translateY based on scroll incrementally
             let translateY = self.scroll() - self.start;
 
@@ -420,8 +428,6 @@ const startBridgeAnimation = (bridgeSection) => {
                     });
                 });
             }
-
-
             // Reverse color animation when scrolling back up
             if (self.progress <= 0.85 && hasColored) {
                 hasColored = false; // Reset flag to false, ready to reverse animation
@@ -483,8 +489,8 @@ const startBridgeAnimation = (bridgeSection) => {
 
             if (self.progress >= 0.89) {
                 gsap.to(bridgeHeroH2, {
-                    x: -40, // Slightly move left
-                    y: -40, // Slightly move up
+                    x: '-2%', // Slightly move left
+                    y: '-5%', // Slightly move up
                     scale: 0.95, // Scale down slightly to simulate moving backward
                     duration: 0.5,
                     ease: "power2.out",
@@ -505,10 +511,9 @@ const startBridgeAnimation = (bridgeSection) => {
             }
 
             if (self.progress < 0.89) {
-
                 gsap.to(bridgeHeroH2, {
-                    x: 40, // Slightly move left
-                    y: 40, // Slightly move up
+                    x: '2%', // Slightly move left
+                    y: '5%', // Slightly move up
                     scale: 1, // Scale down slightly to simulate moving backward
                     duration: 0.5,
                     ease: "power2.out",
@@ -516,7 +521,66 @@ const startBridgeAnimation = (bridgeSection) => {
             }
 
 
+            if (self.progress >= 0.89 && !hasBridgeTM) {
+                hasBridgeTM = true;
+                gsap.fromTo(bridgeTM,
+                    {
+                        x: -50, // Starting position (left)
+                        opacity: 0, // Start with opacity 0 (invisible)
+                    },
+                    {
+                        x: 50, // End position (right)
+                        opacity: 1, // End with opacity 1 (fully visible)
+                        // duration: 1, // Adjust duration for smooth transition
+                        ease: "power2.out", // Smooth easing
+                    }
+                );
+            }
 
+            if (self.progress < 0.89 && hasBridgeTM) {
+                hasBridgeTM = false;
+                gsap.fromTo(bridgeTM,
+                    {
+                        x: 50, // Starting position (right)
+                        opacity: 1, // Start with opacity 1 (fully visible)
+                    },
+                    {
+                        x: -50, // End position (left)
+                        opacity: 0, // End with opacity 0 (invisible)
+                        // duration: 1, // Adjust duration for smooth transition
+                        ease: "power2.out", // Smooth easing
+                    }
+                );
+            }
+
+            if (self.progress >= 0.95 && !hasBridgeDown) {
+                hasBridgeDown = true; // Set the flag to indicate the animation has moved down
+                gsap.fromTo(bridgeTM,
+                    {
+                        y: 0, // Starting position (initial state)
+                    },
+                    {
+                        y: 150, // Move down by 150px
+                        duration: 0.4,
+                        ease: "power2.out", // Smooth easing
+                    }
+                );
+            }
+
+            // When progress < 0.95, reverse the animation (move back up)
+            if (self.progress < 0.99 && hasBridgeDown) {
+                hasBridgeDown = false; // Reset the flag to allow reverse animation
+                gsap.fromTo(bridgeTM,
+                    {
+                        y: 150, // Start at the downward position
+                    },
+                    {
+                        y: 0, // Move back to the original position
+                        duration: 0.4,
+                        ease: "power2.out", // Smooth easing
+                    }
+                );
+            }
 
         },
     });

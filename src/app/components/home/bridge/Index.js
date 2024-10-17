@@ -56,8 +56,8 @@ export const Bridge = () => {
                                             We’re building <br /> the world’s largest<br /> content delivery network
                                         </span>
                                     </h2>
-                                    {/* <div className='text-green 2xl:pt-56 xl:pt-28 relative'>
-                                        <div className='absolute w-12/12 text-left flex justify-start gap-3'>
+                                    <div className='text-green 2xl:pt-56 xl:pt-28 relative'>
+                                        <div className='bridge-tm absolute w-12/12 text-left flex justify-start gap-3 opacity-0'>
                                             <h4 className="2xl:text-9xl xl:text-8xl lg:text-5xl md:text-4xl text-28 2xl:leading-132 xl:leading-102 lg:leading-54 md:leading-42 leading-9 uppercase font-bold">
                                                 The Bridge
                                             </h4>
@@ -67,7 +67,7 @@ export const Bridge = () => {
                                                 </span>
                                             </div>
                                         </div>
-                                    </div> */}
+                                    </div>
                                 </div>
                             </div>
                         </div>
