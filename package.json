@@ -16,6 +16,7 @@
     "@gsap/react": "^2.1.1",
     "@react-three/drei": "^9.108.3",
     "@react-three/fiber": "^8.16.8",
+    "@splinetool/react-spline": "^4.0.0",
     "cursor-effects": "^1.0.15",
     "framer-motion": "^11.5.4",
     "gsap": "npm:@gsap/shockingly@^3.12.5",
