@@ -300,14 +300,29 @@ const startBridgeAnimation = (bridgeSection) => {
                 translateY: `${translateY}px`,
             });
 
-            // Calculate progress for width animation
+            // Get the viewport width in pixels
+            const viewportWidth = window.innerWidth;
+
+            // Function to convert vw to pixels
+            const vwToPixels = (percentage) => (percentage / 100) * viewportWidth;
+
+            // Convert 45.7vw to pixels
+            const targetWidthInPixels = vwToPixels(45.7);
+
+            // Convert 90vw to pixels
+            const startWidthInPixels = vwToPixels(90);
+
+            // Calculate the progress for width animation
             const widthProgress = Math.min(self.progress / 0.2, 1); // Cap progress at 1
-            let newWidth = gsap.utils.interpolate(90, 45.7, widthProgress); // Interpolating width
+
+            // Interpolate between 90vw (start) and 45.7vw (end) in pixels
+            let newWidth = gsap.utils.interpolate(startWidthInPixels, targetWidthInPixels, widthProgress);
 
             // Apply the dynamic width to bridgeInsideBlackBox
             gsap.set(bridgeInsideBlackBox, {
-                width: `${newWidth}%`,  // Scale width from 90% to 45.7%
+                width: `${newWidth}px`,  // Set the width in pixels
             });
+
 
             // Animate grid lines only after width animation is complete
             if (self.progress >= 0.2) {
@@ -525,11 +540,11 @@ const startBridgeAnimation = (bridgeSection) => {
                 hasBridgeTM = true;
                 gsap.fromTo(bridgeTM,
                     {
-                        x: -50, // Starting position (left)
+                        x: '-3vw', // Starting position (left)
                         opacity: 0, // Start with opacity 0 (invisible)
                     },
                     {
-                        x: 50, // End position (right)
+                        x: '3vw', // End position (right)
                         opacity: 1, // End with opacity 1 (fully visible)
                         ease: "power2.out", // Smooth easing
                     }
@@ -540,11 +555,11 @@ const startBridgeAnimation = (bridgeSection) => {
                 hasBridgeTM = false;
                 gsap.fromTo(bridgeTM,
                     {
-                        x: 50, // Starting position (right)
+                        x: '3vw', // Starting position (right)
                         opacity: 1, // Start with opacity 1 (fully visible)
                     },
                     {
-                        x: -50, // End position (left)
+                        x: '-3vw', // End position (left)
                         opacity: 0, // End with opacity 0 (invisible)
                         ease: "power2.out", // Smooth easing
                     }
@@ -555,12 +570,12 @@ const startBridgeAnimation = (bridgeSection) => {
                 hasBridgeDown = true; // Set the flag to indicate the animation has moved down
                 gsap.fromTo(bridgeTM,
                     {
-                        y: 0, // Starting position (initial state)
+                        y: '0vh', // Starting position (initial state)
                         duration: 0.4,
                         ease: "power2.out", // Smooth easing
                     },
                     {
-                        y: 150, // Move down by 150px
+                        y: '10vh', // Move down by 150px
                         duration: 0.4,
                         ease: "power2.out", // Smooth easing
                     }
@@ -572,12 +587,12 @@ const startBridgeAnimation = (bridgeSection) => {
                 hasBridgeDown = false; // Reset the flag to allow reverse animation
                 gsap.fromTo(bridgeTM,
                     {
-                        y: 150, // Start at the downward position
+                        y: '10vh', // Start at the downward position
                         duration: 0.4,
                         ease: "power2.out", // Smooth easing
                     },
                     {
-                        y: 0, // Move back to the original position
+                        y: '0vh', // Move back to the original position
                         duration: 0.4,
                         ease: "power2.out", // Smooth easing
                     }

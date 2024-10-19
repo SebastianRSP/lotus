@@ -48,24 +48,28 @@ export const Bridge = () => {
                         <div className="cover-object conver-object-horizontal bg-gray-light"></div>
                     </div>
                     <div className="overlay overlay-content z-50">
-                        <div className="container 2xl:px-40 xl:px-28 lg:px-10 px-5">
+                        <div className="container xl:px-40 md:px-28 px-10">
                             <div className="row" >
-                                <div className="flex flex-col">
-                                    <h2 className="bridge-hero-text 2xl:text-8xl xl:text-7xl lg:text-5xl md:text-4xl text-28 2xl:leading-102 xl:leading-78 lg:leading-54 md:leading-42 leading-9 font-extralight text-[#D0D0D0]">
+                                <div className="grid grid-rows-3 gap-10 h-full">
+                                    <h2 className="bridge-hero-text row-span-2 2xl:text-8xl xl:text-7xl lg:text-5xl md:text-4xl text-28 2xl:leading-102 xl:leading-78 lg:leading-54 md:leading-42 leading-9 font-extralight text-[#D0D0D0]">
                                         <span className="normal bridge-text-split opacity-0">
                                             We’re building <br /> the world’s largest<br /> content delivery network
                                         </span>
                                     </h2>
-                                    <div className='text-green 2xl:pt-56 xl:pt-28 relative'>
-                                        <div className='bridge-tm absolute w-12/12 text-left flex justify-start gap-3 opacity-0'>
-                                            <h4 className="2xl:text-9xl xl:text-8xl lg:text-5xl md:text-4xl text-28 2xl:leading-132 xl:leading-102 lg:leading-54 md:leading-42 leading-9 uppercase font-bold">
+                                    {/* 2xl:pt-56 lg:pt-28 pt-10 */}
+                                    <div className='text-green relative content-center'>
+                                        <div className='bridge-tm absolute w-12/12 text-left flex justify-start lg:gap-3 gap-1 opacity-0'>
+                                            <h4 className="2xl:text-9xl xl:text-8xl lg:text-6xl md:text-4xl text-28 2xl:leading-132 xl:leading-102 lg:leading-54 md:leading-42 leading-9 uppercase font-bold">
                                                 The Bridge
                                             </h4>
-                                            <div className='border border-green rounded-full self-baseline'>
-                                                <span className='font-bold text-3xl leading-60 px-2'>
+                                            <sup>
+
+                                            <div className='border border-green rounded-full self-baseline 2xl:py-3 xl:py-2 py-0.2'>
+                                                <span className='xl:font-bold 2xl:text-3xl xl:text-2xl lg:text-sm text-xs xl:px-2 px-0.2'>
                                                     TM
                                                 </span>
                                             </div>
+                                            </sup>
                                         </div>
                                     </div>
                                 </div>
