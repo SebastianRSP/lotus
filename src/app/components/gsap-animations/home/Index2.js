@@ -285,7 +285,7 @@ const startBridgeAnimation = (bridgeSection) => {
         scrub: true, // Smooth animation linked to scrolling
         pin: true,
         pinSpacing: true,
-        markers: false,
+        markers: true,
         onUpdate: (self) => {
             gsap.set(bridgeHeroText, { autoAlpha: 1 });
             // gsap.set(bridgeTM, { autoAlpha: 1 });
@@ -531,7 +531,6 @@ const startBridgeAnimation = (bridgeSection) => {
                     {
                         x: 50, // End position (right)
                         opacity: 1, // End with opacity 1 (fully visible)
-                        // duration: 1, // Adjust duration for smooth transition
                         ease: "power2.out", // Smooth easing
                     }
                 );
@@ -547,17 +546,18 @@ const startBridgeAnimation = (bridgeSection) => {
                     {
                         x: -50, // End position (left)
                         opacity: 0, // End with opacity 0 (invisible)
-                        // duration: 1, // Adjust duration for smooth transition
                         ease: "power2.out", // Smooth easing
                     }
                 );
             }
 
-            if (self.progress >= 0.95 && !hasBridgeDown) {
+            if (self.progress >= 0.99 && !hasBridgeDown) {
                 hasBridgeDown = true; // Set the flag to indicate the animation has moved down
                 gsap.fromTo(bridgeTM,
                     {
                         y: 0, // Starting position (initial state)
+                        duration: 0.4,
+                        ease: "power2.out", // Smooth easing
                     },
                     {
                         y: 150, // Move down by 150px
@@ -573,6 +573,8 @@ const startBridgeAnimation = (bridgeSection) => {
                 gsap.fromTo(bridgeTM,
                     {
                         y: 150, // Start at the downward position
+                        duration: 0.4,
+                        ease: "power2.out", // Smooth easing
                     },
                     {
                         y: 0, // Move back to the original position
