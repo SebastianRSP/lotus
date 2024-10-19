@@ -82,6 +82,7 @@ export const Bridge = () => {
                 <div className="cover-object conver-object-vertical bg-gray-light"></div>
                 <div className="cover-object conver-object-vertical bg-gray-light"></div>
             </div>
+            
             {/* <div className="bridge-initial">
                 <div className="bg-black relative">
                     <Gridlines />

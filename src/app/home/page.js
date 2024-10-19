@@ -1,4 +1,5 @@
 import { BridgeSection } from "../components/home/bridge-section/Index";
+import { BridgeBelow } from "../components/home/bridge/bridge-below/Index";
 import { Bridge } from "../components/home/bridge/Index";
 import { CardsSection } from "../components/home/card-section/Index";
 import { FeatureSection } from "../components/home/feature-section/Index";
@@ -22,6 +23,7 @@ export default function Home() {
                 {/* <FeatureSection /> */}
                 {/* <BridgeSection /> */}
                 <Bridge />
+                <BridgeBelow />
                 <ShowCaseSection />
                 <PartnerReviews />
                 <CardsSection />
