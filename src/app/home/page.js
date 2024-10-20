@@ -6,7 +6,7 @@ import { FeatureSection } from "../components/home/feature-section/Index";
 import { FooterSection } from "../components/home/footer-section/Index";
 import { FrequentlyAsked } from "../components/home/frequently-ask/Index";
 import { IndexHome } from "../components/home/Index";
-import { OurPartners } from "../components/home/our-partners/Index";
+import { OurPartners } from "../components/home/our-partners/PartnersWithOnScroll";
 import { PartnerReviews } from "../components/home/partners-reviews/Index";
 import { ShowCaseSection } from "../components/home/show-cases-ection/Index";
 
