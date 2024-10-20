@@ -19,6 +19,7 @@ module.exports = {
         'plus-jakarta-sans': ['var(--font-plus-jakarta-sans)'],
       },
       fontSize: {
+        '24': '1.1rem',
         '1.2': '1.2rem',
         '1.5xl': '1.3rem',
         '26': '1.625rem',
@@ -224,7 +225,8 @@ module.exports = {
       },
       gap: {
         '4': '1rem', // Custom gap size
-        '4.5': '4.5rem'
+        '4.5': '4.5rem',
+        '10':'10rem'
       },
       backdropBlur: {
         '1': '1px',
