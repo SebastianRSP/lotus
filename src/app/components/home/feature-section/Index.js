@@ -7,7 +7,7 @@ import Lottie from 'lottie-react';
 
 export const FeatureSection = () => {
     return (
-        <div className="2xl:px-20 px-10 2xl:py-28 xl:py-24 py-5">
+        <div className="2xl:px-20 px-10 2xl:pt-28 xl:pt-24 pt-5">
             <div className="grid grid-cols-12 2xl:gap-20 gap-12">
                 <div className="col-span-7 bg-gray-light rounded flex justify-center items-center">
                     <div className="h-available w-full relative overflow-hidden flex justify-center items-center">
