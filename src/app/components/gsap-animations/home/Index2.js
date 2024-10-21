@@ -79,16 +79,16 @@ export const newHomePageAnimation = () => {
                 cards.forEach(card => {
                     gsap.fromTo(
                         card,
-                        { x: '-100%', autoAlpha: 0 }, // Initial state
+                        { x: '-100%', opacity: 0 }, // Initial state
                         {
                             x: '0%',
-                            autoAlpha: 1,
+                            opacity: 1,
                             duration: .3,
                             ease: 'power2.out',
                             scrollTrigger: {
                                 trigger: card,          // Trigger on each card
                                 start: 'top 70%',
-                                markers: true,       // Start the animation when top of the card reaches 70% of the viewport
+                                markers: false,       // Start the animation when top of the card reaches 70% of the viewport
                                 toggleActions: 'play none none reverse', // Play the animation when entering and reverse when leaving
                             }
                         }
