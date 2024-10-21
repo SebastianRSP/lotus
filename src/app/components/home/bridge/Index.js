@@ -33,7 +33,7 @@ export const Bridge = () => {
         <section id="bridge" className="home-bridge-gridroom block relative h-auto forced-full-width md:px-0 px-5">
             {/* 2xl:px-40 xl:px-20 2xl:py-40 xl:py-20 */}
             <div className="bridge-overlay bg-none">
-                <div className="bridge-wrapper-1 bg-black bridge-gridroom">
+                <div className="bridge-wrapper-1 md:overflow-hidden bg-black bridge-gridroom">
                     <div className="relative opacity-50 bridge-window bridge-window-full">
                         <GridGreen />
                         {/* <div className="absolute inset-0 z-20 bg-black backdrop-blur-1 opacity-70 bridge-bg-blur" /> */}

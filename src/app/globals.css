@@ -429,7 +429,7 @@ canvas {
 
 .cls-1 {
   fill: none;
-  stroke: rgb(106,189,69);
+  stroke: rgb(255,255,255);
   stroke-linecap: square;
   stroke-width: .75px;
 }
@@ -953,7 +953,6 @@ canvas {
   top: 0;
   left: 0;
   width: 100%;
-  /* background: black; */
 }
 
 .bridge-gridroom {
@@ -971,10 +970,16 @@ canvas {
 
 .bridge-gridroom .bridge-window-full {
   position: absolute;
-  top: 0;
+  /* top: 0; */
   left: 0;
   right: 0;
   bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .bridge-gridroom .bridge-window-full {
+    top: 0;
+  }
 }
 
 .bridge-gridroom .bridge-window-full svg {
@@ -1098,7 +1103,7 @@ canvas {
 
 .bridge-text-split.normal .single-line {
   overflow: hidden;
-  padding: 0.05em 0;
+  padding: 0.10em 0;
   margin: -0.07em 0;
 }
 .bridge-text-split .single-line .single-line-inner {
