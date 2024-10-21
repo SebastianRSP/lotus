@@ -285,7 +285,7 @@ const startBridgeAnimation = (bridgeSection) => {
         scrub: true, // Smooth animation linked to scrolling
         pin: true,
         pinSpacing: true,
-        markers: true,
+        markers: false,
         onUpdate: (self) => {
             gsap.set(bridgeHeroText, { autoAlpha: 1 });
             // gsap.set(bridgeTM, { autoAlpha: 1 });
