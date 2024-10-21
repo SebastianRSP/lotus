@@ -79,7 +79,7 @@ export const newHomePageAnimation = () => {
                 cards.forEach(card => {
                     gsap.fromTo(
                         card,
-                        { x: -80, opacity: 0 }, // Initial state
+                        { x: -80, opacity: 1 }, // Initial state
                         {
                             x: 0,
                             opacity: 1,
