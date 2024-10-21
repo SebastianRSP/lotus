@@ -19,7 +19,7 @@ export default function Home() {
                 <div className="2xl:py-12 lg:py-10 py-5 h-screen">
                     <IndexHome />
                 </div>
-                <OurPartners />
+                {/* <OurPartners /> */}
                 <FeatureSection />
                 {/* <BridgeSection /> */}
                 <Bridge />
