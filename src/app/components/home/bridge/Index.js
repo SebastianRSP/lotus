@@ -142,44 +142,6 @@ export const Bridge = () => {
                     </div>
                 </div>
             </div> */}
-            {/* <div className="bg-black">
-                <div className="text-center border-y border-opacity-20 border-green">
-                    <h4 className="2xl:text-7xl xl:text-6xl lg:text-5xl md:text-4xl text-3xl 2xl:leading-84 xl:leading-66 lg:leading-54 md:leading-42 leading-9 font-extralight text-green pt-5 pb-7">
-                        The trillion dollar data opportunity
-                    </h4>
-                </div>
-                <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 justify-center items-center text-center counter-container">
-                    <div className="2xl:py-24 py-12 lg:border-x border-opacity-20 border-green border flex flex-col gap-5 justify-center">
-                        <p className="2xl:text-5xl text-3xl 2xl:leading-84 leading-66 flex justify-center items-baseline">
-                            <span>$ </span>
-                            <span className="2xl:text-7xl text-5xl counter transition-all ease-out w-16" data-number="3.1">0</span>
-                            <span className="pl-3">trillion</span>
-                        </p>
-                        <p className="2xl:text-lg text-sm text-green 2xl:leading-6 leading-5 opacity-75">
-                            Annual cost of poor <br /> data management practices <br /> in the United States.
-                        </p>
-                    </div>
-                    <div className="2xl:py-24 py-12 lg:border-x border border-opacity-20 border-green flex flex-col gap-5 justify-center">
-                        <p className="2xl:text-5xl text-3xl 2xl:leading-84 leading-66 flex justify-center items-baseline">
-                            <span className="2xl:text-7xl text-5xl counter transition-all ease-out w-16" data-number="90">0</span>
-                            <span className="pl-2">%</span>
-                        </p>
-                        <p className="2xl:text-lg text-sm text-green 2xl:leading-6 leading-5 opacity-75">
-                            Amount of total <br /> enterprise data trapped <br /> on inferior centralised systems.
-                        </p>
-                    </div>
-                    <div className="2xl:py-24 py-12 lg:border-x border border-opacity-20 border-green flex flex-col gap-5 justify-center">
-                        <p className="2xl:text-5xl text-3xl 2xl:leading-84 leading-66 flex justify-center items-baseline">
-                            <span>$ </span>
-                            <span className="2xl:text-7xl text-5xl counter transition-all ease-out w-16" data-number="1.5">0</span>
-                            <span className="pl-3">trillion</span>
-                        </p>
-                        <p className="2xl:text-lg text-sm text-green 2xl:leading-6 leading-5 opacity-75">
-                            Projected enterprise spend <br /> on data management, storage <br /> and analysis by 2025.
-                        </p>
-                    </div>
-                </div>
-            </div> */}
         </section>
     )
 }
