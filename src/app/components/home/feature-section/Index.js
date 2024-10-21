@@ -10,7 +10,6 @@ export const FeatureSection = () => {
         <div className="2xl:px-20 lg:px-10 px-0 2xl:pb-28 xl:pb-24 pb-5">
             <div className="grid grid-cols-12 2xl:gap-20 lg:gap-12 gap-0">
                 <div className="lg:col-span-7 col-span-12 bg-gray-light rounded flex justify-center items-center ">
-
                     <div className="lg:h-available md:h-31 h-23 w-full relative overflow-hidden flex justify-center lg:items-center items-end">
                         <h4 className='lg:hidden block absolute top-0 2xl:-ml-96 lg:-ml-64 ml-0 bg-white z-30 2xl:pl-20 lg:pl-10 pl-0 2xl:pb-20 lg:pb-10 pb-6 font-extralight 2xl:text-6xl xl:text-5xl lg:text-2.5 md:text-4xl text-3xl 2xl:leading-60 xl:leading-54 lg:leading-46 md:leading-42 leading-9'>
                             Lotus powers the future of data storage by building superior rails for migration.
@@ -19,7 +18,7 @@ export const FeatureSection = () => {
                     </div>
                 </div>
                 <div className="lg:col-span-5 col-span-12 bg-white lg:pt-0 pt-8">
-                    <div className='flex flex-col 2xl:gap-9 lg:gap-10 gap-5 h-full items-center justify-between'>
+                    <div className='flex flex-col 2xl:gap-12 lg:gap-3 gap-5 h-full items-center justify-between'>
                         <h4 className='lg:block hidden 2xl:-ml-96 lg:-ml-64 ml-0 bg-white relative z-30 2xl:pl-20 lg:pl-10 pl-0 2xl:pb-20 lg:pb-10 pb-0 font-extralight 2xl:text-6xl xl:text-5xl lg:text-2.5 md:text-4xl text-3xl 2xl:leading-60 xl:leading-54 lg:leading-46 md:leading-42 leading-9'>
                             Lotus powers the future of data storage by building superior rails for migration.
                         </h4>

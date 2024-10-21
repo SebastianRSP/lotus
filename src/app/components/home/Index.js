@@ -6,7 +6,12 @@ import tickIcon from '../../../../public/new-home-assets/tick.svg';
 import { TextTyping } from "./text-animation/TextTyping";
 import { WhiteStrap } from "../white-strap-navbar/WhiteStrap";
 import { HeroBackground } from "../shared-components/HeroBackground";
+import dynamic from 'next/dynamic';
 import Spline from '@splinetool/react-spline';
+import { useEffect, useRef, useState } from "react";
+
+// Lazy load the Spline component
+// const LazySpline = dynamic(() => import('@splinetool/react-spline'), { ssr: false });
 
 const bullets = [
     { buttet: 'Seamless Web2 to Web3 Data Bridge' },
@@ -16,6 +21,32 @@ const bullets = [
 
 
 export const IndexHome = () => {
+
+    const [isSplineVisible, setIsSplineVisible] = useState(false);
+    const splineRef = useRef(null);
+
+
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsSplineVisible(true);
+                    observer.disconnect(); // Stop observing after it's loaded
+                }
+            },
+            { threshold: 0.1 }
+        );
+        if (splineRef.current) {
+            observer.observe(splineRef.current);
+        }
+
+        return () => {
+            if (splineRef.current) {
+                observer.unobserve(splineRef.current);
+            }
+        };
+    }, []);
 
     return (
         <>
@@ -59,10 +90,12 @@ export const IndexHome = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="lg:col-span-6 col-span-1 h-full mr-[50px] overflow-hidden pb-[100px]">
-                    <Spline
-        scene="https://prod.spline.design/tVJl7VPLrgiUcyuz/scene.splinecode"
-      />
+                    <div className="lg:col-span-6 col-span-1 h-full overflow-hidden flex justify-center items-end">
+                        <div ref={splineRef} className="h-full">
+                            {isSplineVisible && (
+                                <Spline scene="https://prod.spline.design/3U4NIWWOIzRC1ZS2/scene.splinecode" />
+                            )}
+                        </div>
                     </div>
                 </div>
             </HeroBackground>

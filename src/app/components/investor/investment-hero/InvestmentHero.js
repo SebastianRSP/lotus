@@ -13,7 +13,7 @@ export const InvestmentHero = () => {
         <>
             <section id="home-hero-bg" className="investor-hero-bg relative">
                 {/* <WhiteStrap /> */}
-                {/* md:py-20 py-28 */} 
+                {/* md:py-20 py-28 */}
                 {/* md:h-auto xl:py-40 md:py-28 py-10 xl:pb-20 md:pb-14 pb-10 */}
                 <div className="xl:px-[5rem] px-9 h-screen text-white items-center grid md:grid-cols-2 grid-cols-1 justify-start">
                     <div className="flex flex-col justify-between gap-6 h-fit md:pt-20">
@@ -38,12 +38,12 @@ export const InvestmentHero = () => {
                         />
                     </div>
                     <div className="flex justify-center md:items-center items-start justify-self-center lg:h-auto lg:w-auto md:h-96 md:w-96 md:pt-20 h-60 w-72 order-first md:order-last">
-                    <Image
-                        src="/images/investor_hero_item.png"
-                        alt="Investor"
-                        width={350}
-                        height={350}
-                    />
+                        <Image
+                            src="/images/investor_hero_item.png"
+                            alt="Investor"
+                            width={350}
+                            height={350}
+                        />
                     </div>
                 </div>
                 <InvesterBannerText />
