@@ -36,7 +36,7 @@ export const BridgeBelow = () => {
                     A single pane of glass <br /> connecting <br /> <span className="font-normal">web2</span> and <span className="font-normal">web3</span>
                 </h5>
             </div>
-            <div className="2xl:py-72 pt-28 text-center">
+            <div className="2xl:py-72 py-28 text-center">
                 <div className="flex flex-col gap-6">
                     {cardDetails.map((cardDetail, index) => (
                         <BridgeCard>
@@ -54,7 +54,7 @@ export const BridgeBelow = () => {
                                     <h4 className="2xl:text-4xl lg:text-3xl text-2xl font-300 2xl:leading-42 lg:leading-9 leading-30 text-green 2xl:w-3/4 lg:w-4/5 w-5/6">
                                         {cardDetail.heading}
                                     </h4>
-                                    <p className="2xl:text-2xl lg:text-xl text-base  text-white">
+                                    <p className="2xl:text-2xl lg:text-xl text-base  text-white ">
                                         {cardDetail.description}
                                     </p>
                                 </div>
@@ -75,7 +75,7 @@ export const BridgeBelow = () => {
                         <p className="2xl:text-5xl text-3xl 2xl:leading-84 leading-66 flex justify-center items-baseline text-white">
                             <span>$ </span>
                             <span className="2xl:text-7xl text-5xl counter transition-all ease-out w-16" data-number="3.1">0</span>
-                            <span className="pl-3">trillion</span>
+                            <span className="2xl:pl-10 pl-3">trillion</span>
                         </p>
                         <p className="2xl:text-lg text-sm text-green 2xl:leading-6 leading-5 opacity-75">
                             Annual cost of poor <br /> data management practices <br /> in the United States.
@@ -84,7 +84,7 @@ export const BridgeBelow = () => {
                     <div className="2xl:py-24 py-12 lg:border-x border border-opacity-20 border-green flex flex-col gap-5 justify-center">
                         <p className="2xl:text-5xl text-3xl 2xl:leading-84 leading-66 flex justify-center items-baseline  text-white">
                             <span className="2xl:text-7xl text-5xl counter transition-all ease-out w-16" data-number="90">0</span>
-                            <span className="pl-2">%</span>
+                            <span className="2xl:pl-10 pl-3">%</span>
                         </p>
                         <p className="2xl:text-lg text-sm text-green 2xl:leading-6 leading-5 opacity-75">
                             Amount of total <br /> enterprise data trapped <br /> on inferior centralised systems.
@@ -94,7 +94,7 @@ export const BridgeBelow = () => {
                         <p className="2xl:text-5xl text-3xl 2xl:leading-84 leading-66 flex justify-center items-baseline  text-white">
                             <span>$ </span>
                             <span className="2xl:text-7xl text-5xl counter transition-all ease-out w-16" data-number="1.5">0</span>
-                            <span className="pl-3">trillion</span>
+                            <span className="2xl:pl-10 pl-3">trillion</span>
                         </p>
                         <p className="2xl:text-lg text-sm text-green 2xl:leading-6 leading-5 opacity-75">
                             Projected enterprise spend <br /> on data management, storage <br /> and analysis by 2025.

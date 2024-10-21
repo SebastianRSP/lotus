@@ -72,6 +72,30 @@ export const newHomePageAnimation = () => {
                 startBridgeAnimation(bridgeSection)
             }
 
+            const cards = document.querySelectorAll('.bridge-card');
+            console.log(cards,'cards')
+            if (cards.length) {
+                // GSAP animation for each card
+                cards.forEach(card => {
+                    gsap.fromTo(
+                        card,
+                        { x: -80, opacity: 0 }, // Initial state
+                        {
+                            x: 0,
+                            opacity: 1,
+                            duration: .5,
+                            ease: 'power1.out',
+                            scrollTrigger: {
+                                trigger: card,          // Trigger on each card
+                                start: 'top 70%',
+                                markers: true,       // Start the animation when top of the card reaches 70% of the viewport
+                                toggleActions: 'play none none reverse', // Play the animation when entering and reverse when leaving
+                            }
+                        }
+                    );
+                });
+            }
+
             initCounterAnimation();
         };
     }
