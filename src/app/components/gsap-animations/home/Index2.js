@@ -79,12 +79,12 @@ export const newHomePageAnimation = () => {
                 cards.forEach(card => {
                     gsap.fromTo(
                         card,
-                        { x: '-100%', opacity: 1 }, // Initial state
+                        { x: '-100%', autoAlpha: 0 }, // Initial state
                         {
                             x: '0%',
-                            opacity: 1,
-                            duration: .1,
-                            ease: 'power1.out',
+                            autoAlpha: 1,
+                            duration: .3,
+                            ease: 'power2.out',
                             scrollTrigger: {
                                 trigger: card,          // Trigger on each card
                                 start: 'top 70%',
