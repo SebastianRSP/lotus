@@ -22,31 +22,31 @@ const bullets = [
 
 export const IndexHome = () => {
 
-    // const [isSplineVisible, setIsSplineVisible] = useState(false);
-    // const splineRef = useRef(null);
+    const [isSplineVisible, setIsSplineVisible] = useState(false);
+    const splineRef = useRef(null);
 
 
 
-    // useEffect(() => {
-    //     const observer = new IntersectionObserver(
-    //         ([entry]) => {
-    //             if (entry.isIntersecting) {
-    //                 setIsSplineVisible(true);
-    //                 observer.disconnect(); // Stop observing after it's loaded
-    //             }
-    //         },
-    //         { threshold: 0.1 }
-    //     );
-    //     if (splineRef.current) {
-    //         observer.observe(splineRef.current);
-    //     }
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsSplineVisible(true);
+                    observer.disconnect(); // Stop observing after it's loaded
+                }
+            },
+            { threshold: 0.1 }
+        );
+        if (splineRef.current) {
+            observer.observe(splineRef.current);
+        }
 
-    //     return () => {
-    //         if (splineRef.current) {
-    //             observer.unobserve(splineRef.current);
-    //         }
-    //     };
-    // }, []);
+        return () => {
+            if (splineRef.current) {
+                observer.unobserve(splineRef.current);
+            }
+        };
+    }, []);
 
     return (
         <>
@@ -91,11 +91,11 @@ export const IndexHome = () => {
                         </div>
                     </div>
                     <div className="lg:col-span-6 col-span-1 h-full overflow-hidden flex justify-center items-end">
-                        {/* <div ref={splineRef} className="h-full">
+                        <div ref={splineRef} className="h-full">
                             {isSplineVisible && (
                                 <Spline scene="https://prod.spline.design/3U4NIWWOIzRC1ZS2/scene.splinecode" />
                             )}
-                        </div> */}
+                        </div>
                     </div>
                 </div>
             </HeroBackground>
