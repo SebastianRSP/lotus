@@ -28,7 +28,7 @@ export const BridgeBelow = () => {
     return (
         <>
         <section className="bg-black forced-full-width 2xl:px-40 xl:px-28 lg:px-10 px-5 w-full h-full relative overflow-hidden pb-0 block py-[16.6666vh]">
-            <div className="absolute inset-0 w-full h-full">
+            <div className="absolute -mt-[1px] inset-0 w-full h-full">
                 <GridLines />
             </div>
             <div className="flex flex-col justify-start w-full items-left">
