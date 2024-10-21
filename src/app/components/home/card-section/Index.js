@@ -7,8 +7,6 @@ import defaultImage from '../../../../../public/icons/defaultImageIcon.svg';
 import curvedCard from '../../../../../public/new-home-assets/curved-card.svg';
 import { BorderDivider } from "../../borders-divider/Index";
 
-gsap.registerPlugin(ScrollTrigger);
-
 const cardDetails = [
     {
         cardDesp: 'Book a demo',
@@ -25,6 +23,10 @@ const cardDetails = [
 ];
 
 export const CardsSection = () => {
+
+
+    gsap.registerPlugin(ScrollTrigger);
+
     const cardRefs = useRef([]);
     const borderRef = useRef(null);  // Ref for the BorderDivider
 

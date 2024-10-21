@@ -73,7 +73,7 @@ export const newHomePageAnimation = () => {
             }
 
             const cards = document.querySelectorAll('.bridge-card');
-            console.log(cards,'cards')
+            
             if (cards.length) {
                 // GSAP animation for each card
                 cards.forEach(card => {
