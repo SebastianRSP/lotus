@@ -185,7 +185,7 @@ export const PartnerReviews = () => {
                                         <p className="2xl:row-span-2 row-span-3 2xl:text-2xl xl:text-xl lg:text-lg md:text-md text-sm font-300 2xl:leading-7 leading-5 self-center 2xl:mt-5 ">
                                             {currentPartner?.testimonial}
                                         </p>
-                                        <div className="2xl:row-span-3 row-span-2 flex items-center lg:gap-10 gap-5 pl-2 2xl:mt-16 self-end">
+                                        <div className="2xl:row-span-3 row-span-2 flex items-start lg:gap-8 gap-5 pl-2 2xl:mt-16 self-end">
                                             {/* lg:p-10 md:p-8 p-7 */}
                                             <div className="bg-green border border-black 2xl:w-28 xl:w-24 md:w-20 w-16 2xl:h-28 xl:h-24 md:h-20 h-16 relative rounded-4">
                                                 <div className="absolute inset-0 bg-gray-light border rounded-4 -translate-x-[2px] -translate-y-[2px]"></div>
