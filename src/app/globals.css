@@ -1091,7 +1091,6 @@ canvas {
 }
 
 @media screen and (max-width: 1024px){
-
   .home-bridge-gridroom .overlay-content .container {
      padding-right: calc(8.3333vw * 1);
   }
@@ -1124,6 +1123,29 @@ canvas {
   transform: translateX(-50%);
   min-width: 100vw;
   pointer-events: none;
+}
+.rfm-child{
+  padding-left: 3.5rem;
+  padding-right: 3.5rem;
+}
+
+@media screen and (min-width: 1536px){
+  .rfm-child{
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+}
+@media screen and (min-width: 1280px){
+  .rfm-child{
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
+  }
+}
+@media screen and (min-width: 1024px){
+  .rfm-child{
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
 }
 
 /* New Home Page CSS Ends */
