@@ -10,7 +10,7 @@ export default function Investors() {
     return (
         <>
             <InvestmentHero />
-            <InvertmentBridgeGrowth />
+            {/* <InvertmentBridgeGrowth /> */}
             <StorageSolution />
             <hr className=" border-green border-[2.5px]"/>
             <PoweredBySend />

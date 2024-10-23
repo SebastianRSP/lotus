@@ -724,7 +724,8 @@ canvas {
 
 /* Investors Page CSS Starts */
 .investor-hero-bg {
-  background: black;
+  background: transparent radial-gradient(closest-side at 50% 83%, #00FF00 -293%, #000000 289%) 0% 0% no-repeat padding-box;
+  opacity: 1;
 }
 
 .investor-banner-bg {
@@ -812,6 +813,27 @@ canvas {
   filter: blur(10px);
   opacity: 1;
   animation: moveParticle linear infinite;
+}
+
+/* .border-send-bridge{
+  border-left: solid .5px;
+  height: 90%;
+  position: relative;
+  
+} */
+.border-send-bridge {
+  position: relative; /* This makes sure the child positions itself relative to this container */
+}
+
+.border-send-bridge::before {
+  content: '';
+  position: absolute;
+  left: 0; /* or right: 0; depending on where you want the border */
+  top: 28px;
+  bottom: 0;
+  width: 0.5px; /* define the width of the border */
+  height: 88%;
+  background-color: #00BE00; /* or any color you prefer */
 }
 
 

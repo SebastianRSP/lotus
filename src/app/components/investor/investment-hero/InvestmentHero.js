@@ -1,12 +1,8 @@
 'use client'
 
 import Image from 'next/image';
-import Lottie from "lottie-react";
-import investerHero from '../../../../../public/animations/investor-hero.json';
-import { InvesterBannerText } from "../investor-banner-text/Index";
-import { DefaultBlack } from "../../buttons/DefaultBlack";
-import { WhiteStrap } from "../../white-strap-navbar/WhiteStrap";
 import { DefaultBtnBlack } from "../../buttons/home/DefaultBtnBlack";
+import { InvertmentBridgeGrowth } from '../investment-bridge-growth/Page';
 
 export const InvestmentHero = () => {
     return (
@@ -15,7 +11,7 @@ export const InvestmentHero = () => {
                 {/* <WhiteStrap /> */}
                 {/* md:py-20 py-28 */}
                 {/* md:h-auto xl:py-40 md:py-28 py-10 xl:pb-20 md:pb-14 pb-10 */}
-                <div className="xl:px-[5rem] px-9 h-screen text-white items-center grid md:grid-cols-2 grid-cols-1 justify-start">
+                <div className="2xl:px-40 xl:px-20 px-9 h-screen text-white items-center grid md:grid-cols-2 grid-cols-1 justify-start">
                     <div className="flex flex-col justify-between gap-6 h-fit md:pt-20">
                         <h1 className="font-extralight 2xl:text-7xl xl:text-5xl lg:text-5xl md:text-4xl text-32 2xl:leading-74 xl:leading-56 lg:leading-50 md:leading-43 leading-40 xl:w-11/12 lg:w-10/12 w-11/12">
                             The {" "}
@@ -46,7 +42,8 @@ export const InvestmentHero = () => {
                         />
                     </div>
                 </div>
-                <InvesterBannerText />
+                {/* <InvesterBannerText /> */}
+                <InvertmentBridgeGrowth />
             </section>
         </>
     )
