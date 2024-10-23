@@ -12,6 +12,7 @@ import mountainAnimation from '../../../../../public/animations/mountain.json';
 import premiumFeaturesAnimation from '../../../../../public/animations/premium-features.json';
 // import bubbleBg from '../../../../../public/animations/bubbles-bg.json';
 import ParticleComponent from "../../bubbles-animation/Index";
+import { CardBackground } from './CardBackground';
 
 
 export const DetailCards = () => {
@@ -23,16 +24,13 @@ export const DetailCards = () => {
             <div className="relative xl:px-40 lg:px-20 px-9 lg:pt-20 md:pt-28 pt-9 lg:pb-96 md:pb-30 pb-96 z-10">
                 <div className="grid md:grid-cols-2 grid-cols-1 lg:gap-10 gap-10 items-center md:py-20 py-5">
                     <div class="order-1 w-full">
-                        <div className="p-[20px] bg-[#181818] rounded-[15px] mx-auto border border-[rgba(255,255,255,0.3)]">
-                            <div className="bg-[#1D1D1D] p-[80px] px-[100px] rounded-[10px] mx-auto border border-[rgba(255,255,255,0.3)] overflow-hidden shadow-[inset_0_0_10px_rgba(255,255,255,0.23)]">
-                                {/* HERE */}
-                                <div className="md:flex hidden w-28 h-28 m-auto relative justify-center items-end justify-self-center lg:order-1 md:order-2 order-2">
-                                    <div className="absolute">
-                                        <Lottie animationData={puzzleAnimation} loop={true} />
-                                    </div>
+                        <CardBackground>
+                            <div className="md:flex hidden w-28 h-28 m-auto relative justify-center items-end justify-self-center lg:order-1 md:order-2 order-2">
+                                <div className="absolute">
+                                    <Lottie animationData={puzzleAnimation} loop={true} />
                                 </div>
                             </div>
-                        </div>
+                        </CardBackground>
                     </div>
                     <div className="md:bg-transparent bg-black md:rounded-none rounded-3xl md:p-0 p-4 lg:order-2 md:order-1 order-1">
                         <div className="text-left flex flex-col md:gap-6 gap-3">
@@ -55,20 +53,22 @@ export const DetailCards = () => {
                                         height={20}
                                     /> Simplifies storage operations
                                 </li>
-                                <li className="flex gap-[15px]">                                    <Image
-                                    src={icon2}
-                                    className="md:relative absolute md:left-0 -left-12 md:mt-0 -mt-2 color-green"
-                                    alt="icon"
-                                    width={20}
-                                    height={20}
-                                /> Lowers transaction costs</li>
-                                <li className="flex gap-[15px]">                                    <Image
-                                    src={icon3}
-                                    className="md:relative absolute md:left-0 -left-12 md:mt-0 -mt-2 color-green"
-                                    alt="icon"
-                                    width={20}
-                                    height={20}
-                                /> Boosts platform efficiency</li>
+                                <li className="flex gap-[15px]">
+                                    <Image
+                                        src={icon2}
+                                        className="md:relative absolute md:left-0 -left-12 md:mt-0 -mt-2 color-green"
+                                        alt="icon"
+                                        width={20}
+                                        height={20}
+                                    /> Lowers transaction costs</li>
+                                <li className="flex gap-[15px]">
+                                    <Image
+                                        src={icon3}
+                                        className="md:relative absolute md:left-0 -left-12 md:mt-0 -mt-2 color-green"
+                                        alt="icon"
+                                        width={20}
+                                        height={20}
+                                    /> Boosts platform efficiency</li>
                             </ul>
                         </div>
                     </div>
@@ -113,34 +113,25 @@ export const DetailCards = () => {
                         </div>
                     </div>
                     <div class="order-1 w-full">
-                        <div className="p-[20px] bg-[#181818] rounded-[15px] mx-auto border border-[rgba(255,255,255,0.3)]">
-                            <div className="bg-[#1D1D1D] p-[40px] px-[70px] rounded-[10px] mx-auto border border-[rgba(255,255,255,0.3)] overflow-hidden shadow-[inset_0_0_10px_rgba(255,255,255,0.23)]">
-                                {/* HERE */}
-
-                                <div className="md:flex hidden w-48 h-48 m-auto relative justify-center items-end justify-self-center lg:order-2 md:order-1 order-2">
-                                    <div className="absolute">
-                                        <Lottie animationData={boxesAnimation} loop={true} />
-                                    </div>
+                        <CardBackground>
+                            <div className="md:flex hidden w-48 h-48 m-auto relative justify-center items-end justify-self-center lg:order-2 md:order-1 order-2">
+                                <div className="absolute">
+                                    <Lottie animationData={boxesAnimation} loop={true} />
                                 </div>
                             </div>
-                        </div>
+                        </CardBackground>
                     </div>
 
                 </div>
                 <div className="grid md:grid-cols-2 grid-cols-1 lg:gap-10 gap-10 items-center md:py-20 py-5">
                     <div class="w-full">
-                        <div className="p-[20px] bg-[#181818] rounded-[15px] mx-auto border border-[rgba(255,255,255,0.3)]">
-                            <div className="flex bg-[#1D1D1D] p-[80px] px-[100px] rounded-[10px] mx-auto border border-[rgba(255,255,255,0.3)] overflow-hidden shadow-[inset_0_0_10px_rgba(255,255,255,0.23)]">
-                                {/* HERE */}
-
-                                <div className="md:flex hidden w-48 h-48 m-auto relative justify-center items-end justify-self-center lg:order-1 md:order-2 order-2">
-                                    <div className="absolute">
-                                        <Lottie animationData={mountainAnimation} loop={true} />
-                                    </div>
+                        <CardBackground>
+                            <div className="md:flex hidden w-48 h-48 m-auto relative justify-center items-end justify-self-center lg:order-1 md:order-2 order-2">
+                                <div className="absolute">
+                                    <Lottie animationData={mountainAnimation} loop={true} />
                                 </div>
-
                             </div>
-                        </div>
+                        </CardBackground>
                     </div>
 
 
@@ -217,21 +208,14 @@ export const DetailCards = () => {
                         </div>
                     </div>
                     <div class="order-1 w-full">
-                        <div className="p-[20px] bg-[#181818] rounded-[15px] mx-auto border border-[rgba(255,255,255,0.3)]">
-                            <div className="bg-[#1D1D1D] p-[40px] px-[70px] rounded-[10px] mx-auto border border-[rgba(255,255,255,0.3)] overflow-hidden shadow-[inset_0_0_10px_rgba(255,255,255,0.23)]">
-
-
-                                {/* HERE */}
-                                <div className="md:flex hidden w-48 h-48 m-auto relative justify-center items-end justify-self-center lg:order-2 md:order-1 order-2">
-                                    <div className="absolute">
-                                        <Lottie animationData={premiumFeaturesAnimation} loop={true} />
-                                    </div>
+                        <CardBackground>
+                            <div className="md:flex hidden w-48 h-48 m-auto relative justify-center items-end justify-self-center lg:order-2 md:order-1 order-2">
+                                <div className="absolute">
+                                    <Lottie animationData={premiumFeaturesAnimation} loop={true} />
                                 </div>
                             </div>
-                        </div>
+                        </CardBackground>
                     </div>
-
-
                 </div>
             </div>
         </div>

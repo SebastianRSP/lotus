@@ -64,8 +64,11 @@ module.exports = {
         // New Home page
         'outer-new-home': '3px 3px 0px #00000041',
 
+        // Investor Page Desktop Shadow
+        'inner-light': 'inset 0 0 10px rgba(255, 255, 255, 0.23)',
         // Investor Page Mobile Navbar Shadow
-        'mobile' : '0px 5px 10px #00000033'
+        'mobile' : '0px 5px 10px #00000033',
+
       },
       borderColor: {
         'black': '#000000',
@@ -89,7 +92,11 @@ module.exports = {
         'light-green': '#03FF00',
 
         // For blur-background
-        'gray-blur': '#5e5e5e5e'
+        'gray-blur': '#5e5e5e5e',
+
+        // Investor page cards background color
+        'gray-investor': '#1D1D1D',
+        'gray-dark-investor': '#181818',
       },
       height: {
         'inherit': 'inherit',
