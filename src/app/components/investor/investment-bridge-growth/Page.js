@@ -22,22 +22,25 @@ export const InvertmentBridgeGrowth = () => {
     return (
         <>
             <div className="text-white mt-5 relative">
-                <div className=''>
+                {/* absolute inset-0  */}
+                <div className='flex justify-center items-end'>
+                    
+                <div className='absolute inset-0 '>
                     <Image
                         src={gridLines}
-                        className='w-full h-full'
+                        className='w-full object-cover h-full'
                         width={100}
                         height={100}
                     />
                 </div>
-                <div className='absolute inset-0 flex justify-center items-end'>
-                    <div className='2xl:px-40 xl:px-20 px-9 2xl:py-32 xl:py-16 py-9 w-full'>
+                    <div className='2xl:px-40 xl:px-20 px-9 xl:pt-96 pt-9 2xl:pb-32 xl:pb-28 pb-8 w-full relative'>
                         <div className='flex justify-start'>
-                            <h3 className='text-123 font-bold flex text-green'>
+                            <h3 className='2xl:text-123 text-100 font-bold flex text-green'>
                                 Send
                                 <sup className='pl-2'>
                                     <Image
                                         src={sendataArrow}
+                                        className='2xl:w-full xl:w-4/6'
                                         width={128}
                                         height={95}
                                     />
@@ -71,25 +74,25 @@ export const InvertmentBridgeGrowth = () => {
                                     </div>
                                     <div className='grid grid-cols-12 gap-2 py-14'>
                                         {/* border-l-0.5 */}
-                                        <div className='col-span-3 border-send-bridge'>
+                                        <div className='2xl:col-span-3 col-span-4 border-send-bridge'>
                                             {growthTabs.map((growthTabs, index) => (
                                                 <div key={index} className='flex gap-6 items-center'>
                                                     <span className='w-2 h-2 bg-[#00BE00] -ml-1'>
                                                     </span>
-                                                    <span className='text-lg text-black opacity-30 leading-60 cursor-pointer'>
+                                                    <span className='text-lg text-black opacity-30 2xl:leading-60 leading-48 cursor-pointer'>
                                                         {growthTabs}
                                                     </span>
                                                 </div>
                                             ))}
                                         </div>
-                                        <div className='col-span-9'>
+                                        <div className='2xl:col-span-9 col-span-8'>
                                             <div className='border-y-2 h-full py-5 border-opacity-20 border-black'>
-                                                <div className="lg:pr-28 pl-3 flex flex-col lg:gap-0 gap-3 text-left">
+                                                <div className="2xl:pr-28 pr-14 pl-3 flex flex-col lg:gap-0 gap-3 text-left">
                                                     <div className=" flex justify-between">
-                                                        <h4 className="text-2xl font-bold leading-60 flex flex-col">
+                                                        <h4 className="2xl:text-2xl text-xl font-bold 2xl:leading-60 leading-48 flex flex-col">
                                                             Private placement
                                                         </h4>
-                                                        <span className="text-4xl leading-60 font-bold text-black opacity-40">10%</span>
+                                                        <span className="text-4xl 2xl:leading-60 leading-48 font-bold text-black opacity-40">10%</span>
                                                     </div>
                                                     <p className="w-full pt-5 text-lg leading-6">
                                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -102,14 +105,14 @@ export const InvertmentBridgeGrowth = () => {
                                     <div className='flex justify-start'>
                                         <Image
                                             src={lotusLogo}
-                                            className='opacity-30'
+                                            className='opacity-30 2xl:w-2/12 w-14'
                                             width={86}
                                             height={47}
                                         />
                                     </div>
                                 </div>
                                 <div className='flex justify-center items-center'>
-                                    <div className='flex flex-col'>
+                                    <div className='flex flex-col 2xl:w-8/12 w-7/12'>
                                         <h4 className='text-lg pb-4 font-bold'>
                                             Total Supply
                                             <span className='font-normal block'>2,000,000,000 $SEND</span>
@@ -128,7 +131,7 @@ export const InvertmentBridgeGrowth = () => {
                             </div>
                         </div>
                         <div className='flex justify-center'>
-                            <div className='flex justify-between gap-16'>
+                            <div className='flex justify-between 2xl:gap-16 gap-3.3'>
                                 {Array(6).fill(null).map((_, index) => (
                                     <Image
                                         key={index}
