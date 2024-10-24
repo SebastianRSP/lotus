@@ -64,7 +64,7 @@ export const CardsSection = () => {
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: cardRefs.current[1], // Middle card as trigger
-                    start: "bottom 80%", // Trigger animation when 80% of the section is in view
+                    start: "top+=1500 80%", // Trigger animation when 80% of the section is in view
                     end: "bottom 20%",
                     scrub: true, // Sync the animation with scroll
                     toggleActions: "play reverse play reverse",
