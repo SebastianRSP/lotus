@@ -21,7 +21,6 @@ export default function Home() {
                 </div>
                 <OurPartners />
                 <FeatureSection />
-                {/* <BridgeSection /> */}
                 <Bridge />
                 <BridgeBelow />
                 <ShowCaseSection />
