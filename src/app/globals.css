@@ -1211,7 +1211,7 @@ canvas {
 
 .border-line {
   border-left: solid black 2px;
-  height: 83%;
+  height: 82%;
 }
 
 @media (max-width: 768px) {
