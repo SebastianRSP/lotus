@@ -1,74 +1,35 @@
-import { Hero } from './components/hero/Index';
-import { TextSlider } from './components/text-slider/Index';
-import { TeamManagement } from './components/team-management/Index';
-import { Bridge } from './components/bridge/Index';
-import { ProblemSolution } from './components/problem-solution/Index';
-import { CardSection } from './components/card-section/CardSections';
-import { SliderCard } from './components/slider-card/Index';
-import { CaseStudy } from './components/case-study/Index';
-import { OurPartner } from './components/partners/Index';
-import { FrequentlyAsked } from './components/frequently-asked/Index';
-import { FoldingCard } from './components/folding-cards/Index';
-import cardAnimationBackground from '../../public/images/card-animation-background.png';
-
-const cardAnimationData = [
-  {
-    cardHeading: 'SUPERCHARGE',
-    padding: 'lg:py-4 py-1 xl:px-28 md:px-9 px-7',
-    height: '',
-    backgroundColor: 'bg-gray-light',
-    textColor: '',
-    backgroundImage: ''
-  },
-  {
-    cardHeading: 'YOUR DATA',
-    padding: 'lg:py-4 py-1 xl:px-28 md:px-9 px-7',
-    height: 'lg:h-auto h-20', //lg:h-44 md:h-28 h-20
-    backgroundColor: 'bg-green',
-    textColor: '',
-    backgroundImage: ''
-  },
-  {
-    cardHeading: 'WITH',
-    padding: 'lg:py-4 py-1 xl:px-28 md:px-9 px-7',
-    height: 'lg:h-auto h-20',
-    backgroundColor: 'bg-purple',
-    textColor: '',
-    backgroundImage: cardAnimationBackground
-  },
-  {
-    cardHeading: 'AI TOOLS',
-    padding: 'lg:py-4 py-2 xl:px-28 md:px-9 px-7',
-    height: 'lg:h-auto h-20',
-    backgroundColor: 'bg-gray-light',
-    textColor: '',
-    backgroundImage: ''
-  },
-]
+import { BridgeSection } from "./components/home/bridge-section/Index";
+import { BridgeBelow } from "./components/home/bridge/bridge-below/Index";
+import { Bridge } from "./components/home/bridge/Index";
+import { CardsSection } from "./components/home/card-section/Index";
+import { FeatureSection } from "./components/home/feature-section/Index";
+import { FooterSection } from "./components/home/footer-section/Index";
+import { FrequentlyAsked } from "./components/home/frequently-ask/Index";
+import { IndexHome } from "./components/home/Index";
+import { OurPartners } from "./components/home/our-partners/Index";
+import { PartnerReviews } from "./components/home/partners-reviews/Index";
+import { ShowCaseSection } from "./components/home/show-cases-ection/Index";
 
 
 export default function Home() {
-
-  return (
-    <>
-
-      <div className='xl:mx-40 mx-9'>
-        <Hero />
-        <TextSlider />
-        <TeamManagement />
-        <Bridge />
-        <ProblemSolution />
-        <CardSection />
-        <SliderCard />
-        <CaseStudy />
-        <FoldingCard
-          otherComponents={true}
-          cardAnimationData={cardAnimationData}
-        />
-        {/* <StaticFoldingCard /> */}
-        <OurPartner />
-        <FrequentlyAsked />
-      </div>
-    </>
-  );
+    return (
+        <>
+            <div className="2xl:px-60 lg:px-10 px-5">
+                {/* 2xl:h-[122vh] xl:h-[125vh] lg:h-[120vh]  h-screen */}
+                <div className="2xl:py-12 lg:py-10 py-5 h-screen">
+                    <IndexHome />
+                </div>
+                <OurPartners />
+                <FeatureSection />
+                {/* <BridgeSection /> */}
+                <Bridge />
+                <BridgeBelow />
+                <ShowCaseSection />
+                <PartnerReviews />
+                <CardsSection />
+                <FrequentlyAsked />
+                <FooterSection />
+            </div>
+        </>
+    )
 }

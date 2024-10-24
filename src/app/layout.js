@@ -20,7 +20,6 @@ export default function RootLayout({ children }) {
 
   // Determine the layout based on the current path
   const isInvestorsPage = pathname.startsWith('/investors');
-  const isHomePage = pathname.startsWith('/home');
   const isAboutUsPage = pathname.startsWith('/about-us');
 
   return (
@@ -37,14 +36,10 @@ export default function RootLayout({ children }) {
         {/* Conditional rendering of layouts */}
         {isInvestorsPage ? (
           <InvestorHomePage>{children}</InvestorHomePage>
-        ) : isHomePage ? (
-          <NewHomePage>{children}</NewHomePage>
+        ) : isAboutUsPage ? (
+          <AboutUsPage>{children}</AboutUsPage>
         ) : (
-          isAboutUsPage ? (
-            <AboutUsPage>{children}</AboutUsPage>
-          ) : (
-            <OldHomePage>{children}</OldHomePage>
-          )
+          <NewHomePage>{children}</NewHomePage>
         )}
       </body>
     </html>
