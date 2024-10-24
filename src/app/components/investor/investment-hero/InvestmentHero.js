@@ -44,6 +44,7 @@ export const InvestmentHero = () => {
                 </div>
                 {/* <InvesterBannerText /> */}
                 <InvertmentBridgeGrowth />
+                <div className='bg-black shadow-outer-light 2xl:h-18 h-14'></div>
             </section>
         </>
     )

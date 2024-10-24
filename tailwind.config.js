@@ -66,6 +66,7 @@ module.exports = {
 
         // Investor Page Desktop Shadow
         'inner-light': 'inset 0 0 10px rgba(255, 255, 255, 0.23)',
+        'outer-light': '0px -9px 18px #00FF002E',
         // Investor Page Mobile Navbar Shadow
         'mobile' : '0px 5px 10px #00000033',
 
