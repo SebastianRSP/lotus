@@ -16,6 +16,7 @@ const industryNames = [
 ];
 
 export const newHomePageAnimation = () => {
+
     const loader = document.querySelector('.loader');
 
     if (loader) {
@@ -34,6 +35,13 @@ export const newHomePageAnimation = () => {
 
         const timeline = gsap.timeline({
             onComplete: () => {
+                ScrollSmoother.create({
+                    wrapper: '#wrapper',
+                    content: '#smooth-content',
+                    smooth: 0.5,
+                    smoothTouch: 0.1,
+                    effects: true,
+                });
                 initMainAnimations();
                 // smoothScroolling();
             }

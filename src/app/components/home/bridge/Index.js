@@ -48,10 +48,11 @@ export const Bridge = () => {
                         <div className="cover-object conver-object-horizontal bg-gray-light"></div>
                     </div>
                     <div className="overlay overlay-content z-50">
-                        <div className="container xl:px-40 md:px-28 px-10">
+                        {/* xl:pt-0 lg:pt-36 */}
+                        <div className="container xl:px-40 md:px-28 sm:px-10 px-5">
                             <div className="row" >
-                                <div className="grid grid-rows-3 gap-10 h-full">
-                                    <h2 className="bridge-hero-text row-span-2 2xl:text-8xl xl:text-7xl lg:text-5xl md:text-4xl text-28 2xl:leading-102 xl:leading-78 lg:leading-54 md:leading-42 leading-9 font-extralight text-[#D0D0D0]">
+                                <div className="grid grid-rows-3 xl:gap-10 gap-8 h-full">
+                                    <h2 className="bridge-hero-text row-span-2 2xl:text-8xl xl:text-7xl lg:text-6xl md:text-5xl sm:text-3xl text-28 2xl:leading-102 xl:leading-78 lg:leading-66 md:leading-54 sm:leading-9 leading-8 font-extralight text-[#D0D0D0]">
                                         <span className="normal bridge-text-split opacity-0">
                                             We’re building <br /> the world’s largest<br /> content delivery network
                                         </span>
@@ -59,7 +60,7 @@ export const Bridge = () => {
                                     {/* 2xl:pt-56 lg:pt-28 pt-10 */}
                                     <div className='text-green relative content-center'>
                                         <div className='bridge-tm absolute w-12/12 text-left flex justify-start lg:gap-3 gap-1 opacity-0'>
-                                            <h4 className="2xl:text-9xl xl:text-8xl lg:text-6xl md:text-4xl text-28 2xl:leading-132 xl:leading-102 lg:leading-54 md:leading-42 leading-9 uppercase font-bold">
+                                            <h4 className="2xl:text-9xl xl:text-8xl lg:text-7xl md:text-5xl text-28 2xl:leading-132 xl:leading-102 lg:leading-78 md:leading-54 leading-9 uppercase font-bold">
                                                 The Bridge
                                             </h4>
                                             <sup>

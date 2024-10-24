@@ -1003,6 +1003,9 @@ canvas {
 }
 
 @media (max-width: 768px) {
+  .bridge-gridroom {
+    width: 127% !important;
+  }
   .bridge-gridroom .bridge-window-full {
     top: 0;
   }
@@ -1041,11 +1044,15 @@ canvas {
   }
 }
 
-@media screen and (max-width: 640px){
+@media (max-width: 640px){
   .bridge-gridroom {
-     width: 325%;
+     width: 325% !important;
   }
 }
+
+/* @media screen and (max-width: 768px){
+  
+} */
 
 /* Overlay Cover Sides */
 
