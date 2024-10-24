@@ -13,7 +13,7 @@ export const CardShowCase = ({id, heading, subHeading, description, defaultImage
                     />
                 </div>
                 <div className="lg:col-span-3 flex flex-col">
-                    <h4 className="2xl:text-4xl xl:text-3xl lg:text-2xl text-xl 2xl:leading-9 xl:leading-30 lg:leading-6 leading-5 font-medium">{heading}</h4>
+                    <h4 dangerouslySetInnerHTML={{ __html: heading }} className="2xl:text-4xl xl:text-3xl lg:text-2xl text-xl 2xl:leading-9 xl:leading-30 lg:leading-6 leading-5 font-medium pb-0.5"></h4>
                     <h5 className="2xl:text-4xl xl:text-3xl lg:text-2xl text-xl 2xl:leading-9 xl:leading-30 lg:leading-6 leading-5 font-extralight">
                         {subHeading}
                     </h5>

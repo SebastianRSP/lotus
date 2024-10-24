@@ -28,8 +28,8 @@ export const InvestorNavbar = () => {
                 <div className={`hidden md:!block desktop-nav 2xl:px-20 lg:px-11 px-5 middle-scroll pt-2 h-20`}>
                     {/* border border-black bg-yellowLight shadow-outer*/}
                     <div className='absolute bg-black/70 h-20 bg-no-repeat bg-origin-padding filter backdrop-blur-30 shadow-sm inset-0 origin-top z-10 desktop-nav-bg'></div>
-                    <div className='w-full grid lg:grid-cols-3 grid-cols-10 grid-flow-col items-center text-center h-14 h-inher auto-cols-auto relative z-50 overflow-hidden'>
-                        {/* divide-x divide-black */}
+                    <div className='w-full grid lg:grid-cols-3 grid-cols-10 grid-flow-col items-center text-center h-inherit auto-cols-auto relative z-50 overflow-hidden'>
+                        {/* divide-x divide-black */} 
                         <div className='lg:col-span-1 col-span-4'>
                             <div className="grid grid-cols-3 items-center h-inherit w-available">
                                 {navLinksBefore.map((navLink, index) => (

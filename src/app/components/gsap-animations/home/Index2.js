@@ -35,6 +35,7 @@ export const newHomePageAnimation = () => {
         const timeline = gsap.timeline({
             onComplete: () => {
                 initMainAnimations();
+                // smoothScroolling();
             }
         });
 
@@ -58,7 +59,6 @@ export const newHomePageAnimation = () => {
 
         // Initialize main animations
         const initMainAnimations = () => {
-            smoothScroolling();
 
             const textTyping = document.getElementById('text-typing-animation');
             if (textTyping) {

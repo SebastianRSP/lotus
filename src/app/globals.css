@@ -210,6 +210,9 @@ canvas {
 .is-scrolled .isScroll-logo-middle {
   margin-top: 0px;
 }
+.is-scrolled .text-scroll{
+  color: black;
+}
 
 .desktop-nav-bg {
   transform: scaleY(0);

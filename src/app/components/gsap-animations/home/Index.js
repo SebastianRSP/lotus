@@ -57,7 +57,7 @@ export const newHomePageAnimation = () => {
 
         // Initialize main animations
         const initMainAnimations = () => {
-            smoothScroolling();
+            // smoothScroolling();
 
             const textTyping = document.getElementById('text-typing-animation');
             if (textTyping) {

@@ -16,19 +16,19 @@ const growthTabs = [
 
 const showCases = [
     {
-        heading: 'TrendScopeTM',
+        heading: `TrendScope<sup>TM</sup>`,
         subHeading: 'Predictive Analytics',
         description: 'Harness the power of predictive analytics to identify emerging trends and forecast future outcomes. This tool empowers decision-makers with actionable insights, enhancing strategic planning and operational efficiency through data-driven decisions.',
         defaultImage: defaultImage
     },
     {
-        heading: 'DataStreamTM',
+        heading: 'DataStream<sup>TM</sup>',
         subHeading: 'Automated Data Ingestion',
         description: 'Our automated data ingestion tool simplifies the integration of diverse data sources, reducing manual effort and increasing accuracy. It seamlessly aggregates, sorts, and prepares data, ensuring your systems are always fueled with timely and relevant information.',
         defaultImage: defaultImage
     },
     {
-        heading: 'DataGuardTM',
+        heading: 'DataGuard<sup>TM</sup>',
         subHeading: 'Data Integrity Scanner',
         description: 'Ensure data integrity with our robust error-checking mechanisms. Designed to prevent mishandling and inconsistencies, this tool continuously scans your data frameworks, identifies discrepancies, and provides solutions to maintain impeccable data quality.',
         defaultImage: defaultImage
