@@ -1,6 +1,6 @@
 export const GridLines = () => {
     return (
-        <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1921.35 2835.07" className="h-full">
+        <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1921.35 2835.07">
             <g id="Group_176537">
                 <line id="Line_1953" class="cls-1" x1="120.97" y1=".38" x2="120.97" y2="2834.7" />
                 <line id="Line_1953-2" class="cls-1" x1="240.97" y1=".38" x2="240.97" y2="2834.7" />
