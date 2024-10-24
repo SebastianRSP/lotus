@@ -83,7 +83,7 @@ export const newHomePageAnimation = () => {
                         {
                             x: '0%',
                             opacity: 1,
-                            duration: .3,
+                            duration: .6,
                             ease: 'power2.out',
                             scrollTrigger: {
                                 trigger: card,          // Trigger on each card
