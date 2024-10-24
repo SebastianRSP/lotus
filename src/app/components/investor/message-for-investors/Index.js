@@ -4,6 +4,7 @@ import { DefaultBtn } from "../../buttons/DefaultBtn"
 import Lottie from "lottie-react";
 import candleChart from "../../../../../public/animations/candle-chart.json";
 import { DefaultBlack } from "../../buttons/DefaultBlack";
+import { DefaultBtnBlack } from "../../buttons/home/DefaultBtnBlack";
 
 
 export const MessageForInvestors = () => {
@@ -29,7 +30,7 @@ export const MessageForInvestors = () => {
                                 exercitation ullamco laboris nisi ut
                                 aliquip ex ea commodo consequat.
                             </p>
-                            <DefaultBlack
+                            <DefaultBtnBlack
                                 btnText={'GET IN TOUCH'}
                                 btnType={'button'}
                             />
