@@ -65,7 +65,7 @@ export const CardsSection = () => {
                 scrollTrigger: {
                     trigger: cardRefs.current[1], // Middle card as trigger
                     start: "top+=1500 80%", // Trigger animation when 80% of the section is in view
-                    end: "bottom 20%",
+                    end: "bottom+=1500 20%",
                     scrub: true, // Sync the animation with scroll
                     toggleActions: "play reverse play reverse",
                     markers: true
