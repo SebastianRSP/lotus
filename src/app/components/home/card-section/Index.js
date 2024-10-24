@@ -68,7 +68,7 @@ export const CardsSection = () => {
                     end: "bottom+=1500 20%",
                     scrub: true, // Sync the animation with scroll
                     toggleActions: "play reverse play reverse",
-                    markers: true
+                    markers: false
                 }
             });
 
