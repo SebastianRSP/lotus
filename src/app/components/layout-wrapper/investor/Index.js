@@ -19,8 +19,8 @@ export const InvestorHomePage = ({ children }) => {
     useEffect(() => {
       if (typeof window !== 'undefined') {
         desktopNavbarAnimation();
-        initAnimations();
-        // newHomePageAnimation();
+        // initAnimations();
+        newHomePageAnimation();
   
         // Clean up ScrollTrigger instances on component unmount
         return () => {
@@ -32,12 +32,13 @@ export const InvestorHomePage = ({ children }) => {
     return (
         <>
             <header>
-                <InvestorNavbar />
+                {/* <InvestorNavbar /> */}
+                <HomeNavbar />
             </header>
             <div id="wrapper">
                 <div id="smooth-content">
                     <main ref={containerRef}>
-                        {/* <NewHomeLoading /> */}
+                        <NewHomeLoading />
                         {children}
                     </main>
                     <footer className="bg-green">

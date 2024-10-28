@@ -36,7 +36,7 @@ export const LeaderShipTeam = () => {
             leaderDesignation: 'Advisor',
             leaderCompany: 'LOTUS DATA GROUP',
             description: 'Carl A. Maybin II is an advisor to Lotus Data Group and former CEO and Founder of several IT and telecom companies including VersiPay Tech, a mobile payments platform connecting global banks and telecom carriers, and IP Triple Communications, a telecom provider that privatized infrastructure at Yokota Air Base in Japan.',
-            linkedInProfileLink: 'https://www.linkedin.com/in/neilsumaru'
+            linkedInProfileLink: 'https://www.linkedin.com/in/cmaybin'
         },
         {
             leaderName: 'JIMMY JOBE',
@@ -44,7 +44,7 @@ export const LeaderShipTeam = () => {
             leaderDesignation: 'CEO',
             leaderCompany: 'SENDATA',
             description: 'An executive with over 30 years of experience specializing in technology management with extensive entrepreneurial leadership in managed solution services and building new products, applications and businesses. He has broad experience in software product and managed solution services.',
-            linkedInProfileLink: 'https://www.linkedin.com/in/neilsumaru'
+            linkedInProfileLink: 'https://www.linkedin.com/in/jimmy-jobe'
         },
         {
             leaderName: 'GIOVANNI MORANA',
@@ -52,7 +52,7 @@ export const LeaderShipTeam = () => {
             leaderDesignation: 'CTO',
             leaderCompany: 'SENDATA',
             description: 'Dr. Morana has been leading R&D teams for many years and was involved with the new CANS and SenData architectures from the beginning. Dr. Morana has held several research and development positions with STMicroelectronics, Centro Competenza, Kawa Objects and the University of Catania.',
-            linkedInProfileLink: 'https://www.linkedin.com/in/neilsumaru'
+            linkedInProfileLink: 'https://www.linkedin.com/in/gmorana'
         },
         {
             leaderName: 'DANIELE ZITO',
@@ -60,7 +60,7 @@ export const LeaderShipTeam = () => {
             leaderDesignation: 'CPA & Head of R&D',
             leaderCompany: 'SENDATA',
             description: 'Dr. Daniele Zito has a Ph.D. and a master’s degree in Computer and Telecommunication Engineering from University of Catania, Italy. In his 10+ years of experience in ICT industry, Daniele has collaborated with several companies, covering several positions such as Software Developer, Senior Software Architect and VP of Engineering.',
-            linkedInProfileLink: 'https://www.linkedin.com/in/neilsumaru'
+            linkedInProfileLink: 'https://www.linkedin.com/in/daniele-zito-phd-3096875'
         },
         {
             leaderName: 'RAVI RAO',
@@ -68,7 +68,7 @@ export const LeaderShipTeam = () => {
             leaderDesignation: 'CSO',
             leaderCompany: 'SENDATA',
             description: 'Neil Sumaru is Co-founder and Chairman of Lotus Data Group which is comprised of three subsidiaries, SenData Tech, Sen Pegasus, and Sen Whale AI (which collectively make up the SenD token ecosystem). Neil is a Founder of each of these companies and sits on the respective boards as Chairman.',
-            linkedInProfileLink: 'https://www.linkedin.com/in/neilsumaru'
+            linkedInProfileLink: 'https://www.linkedin.com/in/ravikrao'
         },
         {
             leaderName: 'BILL SCHRECKENSTEIN',
@@ -76,7 +76,7 @@ export const LeaderShipTeam = () => {
             leaderDesignation: 'CEO',
             leaderCompany: 'PEGASUS',
             description: 'Bill Schreckenstein is the Chief Executive Officer at Pegasus Data Technologies, where he leads the company’s strategic direction while contributing technical knowledge to the development of the core Pegasus products. With over 24 years of experience in the industry Bill has had a large array of prestigious titles. ranging from software engineer, system administrator, integration engineer and team lead.',
-            linkedInProfileLink: 'https://www.linkedin.com/in/neilsumaru'
+            linkedInProfileLink: 'https://www.linkedin.com/in/billschreckenstein'
         },
         {
             leaderName: 'ALVIN REYES',
@@ -84,7 +84,7 @@ export const LeaderShipTeam = () => {
             leaderDesignation: 'CTO',
             leaderCompany: 'PEGASUS',
             description: 'Alvin Reyes is the Chief Technology Officer at Pegasus Data Technologies, where he leads the company’s technological direction and contributes to ongoing innovation in data technology. With a background in various global companies, Alvin brings over 15 years of experience as a Software Engineer to his current role.',
-            linkedInProfileLink: 'https://www.linkedin.com/in/neilsumaru'
+            linkedInProfileLink: 'https://www.linkedin.com/in/alvinpreyes'
         },
     ];
 

@@ -1,10 +1,10 @@
 'use client'
 
 import React, { useState } from 'react';
-import logo from '../../../../../public/icons/logo.svg';
-import lotus from '../../../../../public/icons/lotus.svg';
 import logoWhite from '../../../../../public/icons/logo-white.svg';
 import lotusWhite from '../../../../../public/icons/lotus-white.svg';
+import logo from '../../../../../public/icons/logo.svg';
+import lotus from '../../../../../public/icons/lotus.svg';
 import navToggle from '../../../../../public/icons/nav-toggle.svg';
 import cross from '../../../../../public/icons/cross.svg';
 import { HomeNavLink } from "../home/HomeNavLink";
@@ -12,6 +12,8 @@ import Image from "next/image";
 import { MobileLink } from '../MobileLink';
 import { usePathname } from 'next/navigation';
 import { mobileMenu, mobileNavIcons, navIcons, navLinksAfter, navLinksBefore } from '../links';
+import { Logo } from '../../svgs/Logo';
+import { Lotus } from '../../svgs/Lotus';
 
 
 export const HomeNavbar = () => {
@@ -19,7 +21,10 @@ export const HomeNavbar = () => {
     const pathname = usePathname();
 
     // Determine the layout based on the current path
-    const isDark = pathname.startsWith('/about-us');
+    const darkRoutes = ['/about-us', '/investors'];
+    const isDark = darkRoutes.some(route => pathname.startsWith(route));
+
+    const isDarkLogo = pathname.startsWith('/investors');
 
 
     const [isOpen, setIsOpen] = useState(false);
@@ -55,20 +60,8 @@ export const HomeNavbar = () => {
                             {/* border border-y-0 border-x-black */}
                             <div className="flex items-center w-full justify-center h-inherit">
                                 <div className={`logo-container link-animation items-center`}>
-                                    <Image
-                                        className={`lotus`}
-                                        src={logo}
-                                        alt="Logo"
-                                        width={32}
-                                        height={17}
-                                    />
-                                    <Image
-                                        className={`logo`}
-                                        src={lotus}
-                                        alt="Lotus"
-                                        width={76}
-                                        height={18}
-                                    />
+                                    <Logo iconColor={`${isDarkLogo ? 'fill-white' : 'fill-black'} `} />
+                                    <Lotus iconColor={`${isDarkLogo ? 'fill-white' : 'fill-black'} `} />
                                 </div>
                             </div>
                         </div>
@@ -94,6 +87,7 @@ export const HomeNavbar = () => {
                                         icon={navIcon.icon}
                                         iconImage={navIcon.iconImage}
                                         font={navIcon.font}
+                                        isDark={isDark}
                                     />
                                 ))}
                             </div>

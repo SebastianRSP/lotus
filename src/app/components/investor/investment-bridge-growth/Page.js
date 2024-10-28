@@ -338,7 +338,7 @@ export const InvertmentBridgeGrowth = () => {
                                                 <div className='h-available'>
                                                     <div className='flex justify-center items-center h-full w-full'>
                                                         <div className='2xl:w-36 xl:w-28 lg:w-20 w-10 2xl:h-36 xl:h-28 lg:h-20 h-10'>
-                                                            <Lottie animationData={animatedBox} className='fill-none' loop={true} />
+                                                            <Lottie animationData={animatedBox} className='bg-transparent' loop={true} />
                                                         </div>
                                                     </div>
                                                     {tabData.map((data, index) => (

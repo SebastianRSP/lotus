@@ -213,6 +213,9 @@ canvas {
 .is-scrolled .text-scroll{
   color: black;
 }
+.is-scrolled .scroller-icon{
+  fill: black;
+}
 
 .desktop-nav-bg {
   transform: scaleY(0);
