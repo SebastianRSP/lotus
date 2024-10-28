@@ -262,9 +262,9 @@ export const InvertmentBridgeGrowth = () => {
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
                             </p>
                         </div>
-                        <div className='bg-black border-2 border-green rounded-lg lg:my-32 my-16'>
-                            <div className='grid grid-cols-2'>
-                                <div className='bg-green pl-9 py-10 text-black'>
+                        <div className='bg-black border-2 border-green rounded-lg xl:my-32 lg:my-28 my-16'>
+                            <div className='grid lg:grid-cols-2 grid-cols-1'>
+                                <div className='bg-green pl-9 lg:pr-0 pr-9 py-10 text-black'>
                                     <div>
                                         <h6 className='text-32 font-extrabold flex'>
                                             Send
@@ -300,7 +300,7 @@ export const InvertmentBridgeGrowth = () => {
                                                 style={{ transform: `translateY(${translateY}px)` }} >
                                                 <div className='h-available'>
                                                     <div className='flex justify-center items-center h-full w-full'>
-                                                        <div className='w-36 h-36'>
+                                                        <div className='2xl:w-36 w-28 2xl:h-36 h-28'>
                                                             <Lottie animationData={animatedBox} className='fill-none' loop={true} />
                                                         </div>
                                                     </div>
@@ -308,12 +308,12 @@ export const InvertmentBridgeGrowth = () => {
                                                         <div key={index} className="border-y-2 h-full py-5 border-opacity-20 border-black">
                                                             <div className="grid grid-rows-2 gap-6 h-full">
                                                                 {data.detail.map((item, index) => (
-                                                                    <div key={index} className="2xl:pr-20 xl:pr-12 pr-14 pl-3 flex flex-col lg:gap-2 gap-3 text-left">
+                                                                    <div key={index} className="2xl:pr-20 xl:pr-12 lg:pr-8 pr-14 pl-3 flex flex-col lg:gap-2 gap-3 text-left">
                                                                         <div className="flex justify-between items-center gap-2">
                                                                             <h4 className="2xl:text-2xl text-lg font-bold ">{item.title}</h4>
                                                                             <span className="2xl:text-4xl text-2xl font-bold text-black opacity-40">{item.percentage}</span>
                                                                         </div>
-                                                                        <p className="w-full 2xl:pt-2 xl:pt-0 pt-5 2xl:text-base text-sm 2xl:leading-6 leading-22">{item.description}</p>
+                                                                        <p className="w-full 2xl:pt-2 lg:pt-0 pt-5 2xl:text-base xl:text-sm lg:text-8 text-xs 2xl:leading-6 xl:leading-22 leading-18 ">{item.description}</p>
                                                                     </div>
                                                                 ))}
                                                             </div>
@@ -341,7 +341,7 @@ export const InvertmentBridgeGrowth = () => {
                                                 <span className='font-normal block'>2,000,000,000 $SEND</span>
                                             </div>
                                         </h4>
-                                        <div className='relative 2xl:w-26 w-80 2xl:h-26 h-80'>
+                                        <div className='relative 2xl:w-26 xl:w-80 lg:w-72 w-60 2xl:h-26 xl:h-80 lg:h-72 h-60'>
                                             <Boxes
                                                 activePercentage={activePercentage}
                                                 tabIndex={activeTab == null ? activeTab : activeTabIndex}
