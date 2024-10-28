@@ -296,8 +296,8 @@ export const InvertmentBridgeGrowth = () => {
 
                                         {/* Content Area */}
                                         <div className="2xl:col-span-9 col-span-8 relative overflow-hidden">
-                                            <div className='lg:hidden block absolute inset-0 h-available opacity-70 backdrop-blur-30 bg-black'>
-                                                <div className='flex justify-center items-center h-available'>
+                                            <div className='lg:hidden block absolute inset-0 h-full opacity-70 backdrop-blur-30 bg-black'>
+                                                <div className='flex justify-center items-center h-full'>
                                                     <div className='flex flex-col w-fit'>
                                                         {/* <h4 className='2xl:text-lg text-sm pb-4 font-bold'>
                                                             <div ref={totalSupplyRef} className='opacity-0'>
