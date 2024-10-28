@@ -239,7 +239,7 @@ export const InvertmentBridgeGrowth = () => {
                             height={100}
                         />
                     </div>
-                    <div className='2xl:px-40 xl:px-20 px-9 xl:pt-96 pt-9 2xl:pb-32 xl:pb-28 pb-8 w-full relative'>
+                    <div className='2xl:px-40 xl:px-20 px-9 xl:pt-96 pt-9 2xl:pb-32 xl:pb-28 lg:pb-20 pb-8 w-full relative'>
                         <div className='flex justify-start'>
                             <h3 className='2xl:text-123 text-100 font-bold flex text-green'>
                                 Send
@@ -296,11 +296,47 @@ export const InvertmentBridgeGrowth = () => {
 
                                         {/* Content Area */}
                                         <div className="2xl:col-span-9 col-span-8 relative overflow-hidden">
-                                            <div ref={boxLengthRef} className="absolute inset-0 transition-all duration-1000 ease-in-out"
+                                            <div className='lg:hidden block absolute inset-0 h-available opacity-70 backdrop-blur-30 bg-black'>
+                                                <div className='flex justify-center items-center h-inherit'>
+                                                    <div className='flex flex-col w-fit'>
+                                                        {/* <h4 className='2xl:text-lg text-sm pb-4 font-bold'>
+                                                            <div ref={totalSupplyRef} className='opacity-0'>
+                                                                Total Supply
+                                                                <span className='font-normal block'>2,000,000,000 $SEND</span>
+                                                            </div>
+                                                        </h4> */}
+                                                        <div className='relative 2xl:w-26 xl:w-80 lg:w-72 w-60 2xl:h-26 xl:h-80 lg:h-72 h-60'>
+                                                            <Boxes
+                                                                activePercentage={activePercentage}
+                                                                tabIndex={activeTab == null ? activeTab : activeTabIndex}
+                                                                previousTabIndex={activeTab == null ? activeTab : previousTabIndex}
+                                                                tabData={tabData}
+                                                            />
+                                                        </div>
+                                                        {/* <h4 className='2xl:text-lg text-sm 2xl:pt-4 pt-2 text-right text-green font-bold'>
+                                                            <div ref={activeSendTab} className='relative'>
+                                                                {tabData.map((activeTab, index) => (
+                                                                    <span
+                                                                        key={index}
+                                                                        ref={(el) => {
+                                                                            if (el) activeSendTab.current[index] = el;
+                                                                        }}
+                                                                        className={`absolute top-0 right-0 opacity-0`}
+                                                                    >
+                                                                        {activeTab.title}
+                                                                        <span className='font-normal block'>400,000,000 $SEND</span>
+                                                                    </span>
+                                                                ))}
+                                                            </div>
+                                                        </h4> */}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div ref={boxLengthRef} className="absolute lg:text-black text-white inset-0 transition-all duration-1000 ease-in-out"
                                                 style={{ transform: `translateY(${translateY}px)` }} >
                                                 <div className='h-available'>
                                                     <div className='flex justify-center items-center h-full w-full'>
-                                                        <div className='2xl:w-36 w-28 2xl:h-36 h-28'>
+                                                        <div className='2xl:w-36 xl:w-28 lg:w-20 w-10 2xl:h-36 xl:h-28 lg:h-20 h-10'>
                                                             <Lottie animationData={animatedBox} className='fill-none' loop={true} />
                                                         </div>
                                                     </div>
@@ -333,7 +369,7 @@ export const InvertmentBridgeGrowth = () => {
                                         />
                                     </div>
                                 </div>
-                                <div className='flex justify-center items-center'>
+                                <div className='lg:flex hidden justify-center items-center'>
                                     <div className='flex flex-col w-fit'>
                                         <h4 className='2xl:text-lg text-sm pb-4 font-bold'>
                                             <div ref={totalSupplyRef} className='opacity-0'>
@@ -370,7 +406,7 @@ export const InvertmentBridgeGrowth = () => {
                             </div>
                         </div>
                         <div className='flex justify-center'>
-                            <div className='flex justify-between 2xl:gap-16 gap-3.3'>
+                            <div className='flex justify-between 2xl:gap-16 xl:gap-3.3 gap-8'>
                                 {Array(6).fill(null).map((_, index) => (
                                     <Image
                                         key={index}

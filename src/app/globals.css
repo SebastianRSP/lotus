@@ -835,7 +835,7 @@ canvas {
   top: 28px;
   bottom: 0;
   width: 0.5px; /* define the width of the border */
-  height: 88%;
+  height: 87.5%;
   background-color: #00BE00; /* or any color you prefer */
 }
 
