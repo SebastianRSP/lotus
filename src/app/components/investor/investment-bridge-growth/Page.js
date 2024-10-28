@@ -264,8 +264,8 @@ export const InvertmentBridgeGrowth = () => {
                         </div>
                         <div className='bg-black border-2 border-green rounded-lg xl:my-32 lg:my-28 my-16'>
                             <div className='grid lg:grid-cols-2 grid-cols-1'>
-                                <div className='bg-green pl-9 lg:pr-0 pr-9 py-10 text-black'>
-                                    <div>
+                                <div className='lg:bg-green bg-black pl-9 lg:pr-0 pr-9 py-10 text-black'>
+                                    <div className='lg:text-black text-green'>
                                         <h6 className='text-32 font-extrabold flex'>
                                             Send
                                             <sup className='pl-2 mt-2'>
@@ -283,10 +283,10 @@ export const InvertmentBridgeGrowth = () => {
                                         <div className="2xl:col-span-3 col-span-4 border-send-bridge">
                                             {growthTabs.map((tab, index) => (
                                                 <div key={index} className="flex gap-6 items-center">
-                                                    <span className={`${activeTab === tab ? 'bg-black' : 'bg-[#00BE00]'} w-2 h-2 -ml-1`}></span>
+                                                    <span className={`${activeTab === tab ? 'lg:bg-black bg-green' : 'bg-[#00BE00]'} w-2 h-2 -ml-1`}></span>
                                                     <span
                                                         onClick={() => handleTabActive(tab)}
-                                                        className={`${activeTab === tab ? 'opacity-100' : 'opacity-30'} 2xl:text-lg text-sm text-black 2xl:leading-60 leading-48 cursor-pointer`}
+                                                        className={`${activeTab === tab ? 'opacity-100' : 'opacity-30'} 2xl:text-lg text-sm lg:text-black text-green 2xl:leading-60 leading-48 cursor-pointer`}
                                                     >
                                                         {tab}
                                                     </span>
@@ -296,8 +296,9 @@ export const InvertmentBridgeGrowth = () => {
 
                                         {/* Content Area */}
                                         <div className="2xl:col-span-9 col-span-8 relative overflow-hidden">
-                                            <div className='lg:hidden block absolute inset-0 h-full opacity-70 backdrop-blur-30 bg-black'>
-                                                <div className='flex justify-center items-center h-full'>
+                                            {/* */}
+                                            <div className='lg:hidden block absolute inset-0 h-full opacity-50 blur-2p bg-black'>
+                                                <div className='flex justify-center items-center h-full backdrop-blur-10'>
                                                     <div className='flex flex-col w-fit'>
                                                         {/* <h4 className='2xl:text-lg text-sm pb-4 font-bold'>
                                                             <div ref={totalSupplyRef} className='opacity-0'>
@@ -332,7 +333,7 @@ export const InvertmentBridgeGrowth = () => {
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div ref={boxLengthRef} className="absolute lg:text-black text-white inset-0 transition-all duration-1000 ease-in-out"
+                                            <div ref={boxLengthRef} className="absolute lg:text-black text-green inset-0 transition-all duration-1000 ease-in-out"
                                                 style={{ transform: `translateY(${translateY}px)` }} >
                                                 <div className='h-available'>
                                                     <div className='flex justify-center items-center h-full w-full'>
@@ -341,15 +342,15 @@ export const InvertmentBridgeGrowth = () => {
                                                         </div>
                                                     </div>
                                                     {tabData.map((data, index) => (
-                                                        <div key={index} className="border-y-2 h-full py-5 border-opacity-20 border-black">
+                                                        <div key={index} className="border-y-2 h-full py-5 border-opacity-20 lg:border-black border-green">
                                                             <div className="grid grid-rows-2 gap-6 h-full">
                                                                 {data.detail.map((item, index) => (
                                                                     <div key={index} className="2xl:pr-20 xl:pr-12 lg:pr-8 pr-14 pl-3 flex flex-col lg:gap-2 gap-3 text-left">
                                                                         <div className="flex justify-between items-center gap-2">
                                                                             <h4 className="2xl:text-2xl text-lg font-bold ">{item.title}</h4>
-                                                                            <span className="2xl:text-4xl text-2xl font-bold text-black opacity-40">{item.percentage}</span>
+                                                                            <span className="2xl:text-4xl text-2xl font-bold lg:opacity-40 opacity-100">{item.percentage}</span>
                                                                         </div>
-                                                                        <p className="w-full 2xl:pt-2 lg:pt-0 pt-5 2xl:text-base xl:text-sm lg:text-8 text-xs 2xl:leading-6 xl:leading-22 leading-18 ">{item.description}</p>
+                                                                        <p className="w-full 2xl:pt-2 lg:pt-0 pt-5 2xl:text-base xl:text-sm lg:text-8 text-xs 2xl:leading-6 xl:leading-22 leading-18 lg:text-current text-white">{item.description}</p>
                                                                     </div>
                                                                 ))}
                                                             </div>

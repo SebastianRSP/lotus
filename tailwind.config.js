@@ -255,6 +255,9 @@ module.exports = {
       animation: {
         blink: 'blink 0.8s step-end infinite',
       },
+      blur:{
+        '2p': '2px'
+      }
     }
   },
   plugins: [],
