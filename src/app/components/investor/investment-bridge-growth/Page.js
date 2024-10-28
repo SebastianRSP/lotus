@@ -239,7 +239,7 @@ export const InvertmentBridgeGrowth = () => {
                             height={100}
                         />
                     </div>
-                    <div className='2xl:px-40 xl:px-20 px-9 xl:pt-96 pt-9 2xl:pb-32 xl:pb-28 lg:pb-20 pb-8 w-full relative'>
+                    <div className='2xl:px-40 xl:px-20 px-9 xl:pt-96 pt-9 2xl:pb-32 xl:pb-28 lg:pb-20 md:pb-18 pb-8 w-full relative'>
                         <div className='flex justify-start'>
                             <h3 className='2xl:text-123 text-100 font-bold flex text-green'>
                                 Send
@@ -407,7 +407,7 @@ export const InvertmentBridgeGrowth = () => {
                             </div>
                         </div>
                         <div className='flex justify-center'>
-                            <div className='flex justify-between 2xl:gap-16 xl:gap-3.3 gap-8'>
+                            <div className='flex justify-between 2xl:gap-16 xl:gap-3.3 lg:gap-8 md:gap-1.6r gap-6'>
                                 {Array(6).fill(null).map((_, index) => (
                                     <Image
                                         key={index}

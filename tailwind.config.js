@@ -235,6 +235,7 @@ module.exports = {
         '2px': '2px',
       },
       gap: {
+        '1.6r': '1.6rem', // Custom gap size
         '3.3': '3.3rem', // Custom gap size
         '4': '1rem', // Custom gap size
         '4.5': '4.5rem',
