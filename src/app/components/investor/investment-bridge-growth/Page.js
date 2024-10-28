@@ -124,6 +124,9 @@ export const InvertmentBridgeGrowth = () => {
     const [activeTab, setActiveTab] = useState(null); // Track active tab
     const [translateY, setTranslateY] = useState(0); // Track Y position for animation
     const [isFirstClick, setIsFirstClick] = useState(true);
+    const [activePercentage, setActivePercentage] = useState(0);
+    const [activeTabIndex, setActiveTabIndex] = useState(0);
+    const [previousTabIndex, setPreviousTabIndex] = useState(0);
     const boxLengthRef = useRef(null);
     const totalSupplyRef = useRef(null);
     const activeSendTab = useRef([]);
@@ -138,17 +141,32 @@ export const InvertmentBridgeGrowth = () => {
         });
     };
 
+    const waitForElement = async (refArray, index) => {
+        return new Promise((resolve) => {
+            const interval = setInterval(() => {
+                if (refArray.current && refArray.current[index]) {
+                    clearInterval(interval);
+                    resolve(refArray.current[index]);
+                }
+            }, 10); // Check every 10ms for minimal delay
+        });
+    };
+
     const handleTabActive = async (selectedTab) => {
         if (selectedTab === activeTab) return;
 
         setActiveTab(selectedTab);
 
         const previousTabIndex = tabData.findIndex(tab => tab.title === activeTab);
-        const itemIndex = tabData.findIndex((item) => item.title === selectedTab);
+        const itemIndex = tabData.findIndex(item => item.title === selectedTab);
+        const filteredItem = tabData.filter(item => item.title === selectedTab);
 
         if (itemIndex !== -1 && boxLengthRef.current) {
             const targetPosition = -(itemIndex + 1) * boxLengthRef.current.offsetHeight;
             setTranslateY(targetPosition);
+            setActivePercentage(filteredItem[0].percentage);
+            setActiveTabIndex(itemIndex);
+            setPreviousTabIndex(previousTabIndex);
 
             // Play the initial animation on first click
             if (isFirstClick && totalSupplyRef.current) {
@@ -173,16 +191,18 @@ export const InvertmentBridgeGrowth = () => {
                 });
             }
 
-            // Animate in the current tab if it exists
-            if (itemIndex !== -1 && activeSendTab.current[itemIndex]) {
+            // Wait for the current tab element to be available, then animate it
+            const element = await waitForElement(activeSendTab, itemIndex);
+            if (element) {
                 await animateTab(
-                    activeSendTab.current[itemIndex],
+                    element,
                     { opacity: 0, x: 0 },
                     { opacity: 1, x: 44, duration: 1 }
                 );
             }
         }
     };
+
 
 
     useEffect(() => {
@@ -209,7 +229,6 @@ export const InvertmentBridgeGrowth = () => {
         <>
             <div className="text-white mt-5 relative">
                 {/* absolute inset-0  */}
-                {console.log(isFirstClick, 'isFirstClick')}
                 <div className='flex justify-center items-end'>
 
                     <div className='absolute inset-0 '>
@@ -267,7 +286,7 @@ export const InvertmentBridgeGrowth = () => {
                                                     <span className={`${activeTab === tab ? 'bg-black' : 'bg-[#00BE00]'} w-2 h-2 -ml-1`}></span>
                                                     <span
                                                         onClick={() => handleTabActive(tab)}
-                                                        className={`${activeTab === tab ? 'opacity-100' : 'opacity-30'} text-lg text-black 2xl:leading-60 leading-48 cursor-pointer`}
+                                                        className={`${activeTab === tab ? 'opacity-100' : 'opacity-30'} 2xl:text-lg text-sm text-black 2xl:leading-60 leading-48 cursor-pointer`}
                                                     >
                                                         {tab}
                                                     </span>
@@ -289,12 +308,12 @@ export const InvertmentBridgeGrowth = () => {
                                                         <div key={index} className="border-y-2 h-full py-5 border-opacity-20 border-black">
                                                             <div className="grid grid-rows-2 gap-6 h-full">
                                                                 {data.detail.map((item, index) => (
-                                                                    <div key={index} className="2xl:pr-28 pr-14 pl-3 flex flex-col lg:gap-0 gap-3 text-left">
-                                                                        <div className="flex justify-between">
-                                                                            <h4 className="2xl:text-2xl text-xl font-bold 2xl:leading-60 leading-48">{item.title}</h4>
-                                                                            <span className="text-4xl font-bold text-black opacity-40">{item.percentage}</span>
+                                                                    <div key={index} className="2xl:pr-20 xl:pr-12 pr-14 pl-3 flex flex-col lg:gap-2 gap-3 text-left">
+                                                                        <div className="flex justify-between items-center gap-2">
+                                                                            <h4 className="2xl:text-2xl text-lg font-bold ">{item.title}</h4>
+                                                                            <span className="2xl:text-4xl text-2xl font-bold text-black opacity-40">{item.percentage}</span>
                                                                         </div>
-                                                                        <p className="w-full pt-5 text-lg leading-6">{item.description}</p>
+                                                                        <p className="w-full 2xl:pt-2 xl:pt-0 pt-5 2xl:text-base text-sm 2xl:leading-6 leading-22">{item.description}</p>
                                                                     </div>
                                                                 ))}
                                                             </div>
@@ -316,16 +335,21 @@ export const InvertmentBridgeGrowth = () => {
                                 </div>
                                 <div className='flex justify-center items-center'>
                                     <div className='flex flex-col w-fit'>
-                                        <h4 className='text-lg pb-4 font-bold'>
+                                        <h4 className='2xl:text-lg text-sm pb-4 font-bold'>
                                             <div ref={totalSupplyRef} className='opacity-0'>
                                                 Total Supply
                                                 <span className='font-normal block'>2,000,000,000 $SEND</span>
                                             </div>
                                         </h4>
-                                        <div className='relative w-26 h-26'>
-                                            <Boxes />
+                                        <div className='relative 2xl:w-26 w-80 2xl:h-26 h-80'>
+                                            <Boxes
+                                                activePercentage={activePercentage}
+                                                tabIndex={activeTab == null ? activeTab : activeTabIndex}
+                                                previousTabIndex={activeTab == null ? activeTab : previousTabIndex}
+                                                tabData={tabData}
+                                            />
                                         </div>
-                                        <h4 className='text-lg pt-4 text-right text-green font-bold'>
+                                        <h4 className='2xl:text-lg text-sm 2xl:pt-4 pt-2 text-right text-green font-bold'>
                                             <div ref={activeSendTab} className='relative'>
                                                 {tabData.map((activeTab, index) => (
                                                     <span
