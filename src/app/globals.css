@@ -843,6 +843,13 @@ canvas {
 }
 
 
+@media (max-width: 1536px) {
+  .border-send-bridge::before {
+    height: 76.5%;
+    /* Adjust the width for small screens */
+  }
+}
+
 
 /* Investors Page CSS Ends */
 

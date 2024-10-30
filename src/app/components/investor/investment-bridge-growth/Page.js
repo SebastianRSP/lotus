@@ -10,6 +10,9 @@ import { Boxes } from './svgs/boxes';
 import Lottie from 'lottie-react';
 import gsap from 'gsap';
 import { useEffect, useRef, useState } from 'react';
+import { Logo } from '../../svgs/Logo';
+import { SlickSlider } from '../../slick-slider/SlickSlider';
+import { SenDataArrow } from '../../svgs/SenDataArrow';
 
 const growthTabs = [
     "INVESTORS",
@@ -239,7 +242,7 @@ export const InvertmentBridgeGrowth = () => {
                             height={100}
                         />
                     </div>
-                    <div className='2xl:px-40 xl:px-20 px-9 xl:pt-96 pt-9 2xl:pb-32 xl:pb-28 lg:pb-20 md:pb-18 pb-8 w-full relative'>
+                    <div className='2xl:px-40 xl:px-20 px-9 xl:pt-96 pt-9 2xl:pb-32 xl:pb-28 lg:pb-20 md:pb-18 pb-18 w-full relative'>
                         <div className='flex justify-start'>
                             <h3 className='2xl:text-123 text-100 font-bold flex text-green'>
                                 Send
@@ -264,23 +267,37 @@ export const InvertmentBridgeGrowth = () => {
                         </div>
                         <div className='bg-black border-2 border-green rounded-lg xl:my-32 lg:my-28 my-16'>
                             <div className='grid lg:grid-cols-2 grid-cols-1'>
-                                <div className='lg:bg-green bg-black pl-9 lg:pr-0 pr-9 py-10 text-black'>
+                                <div className='lg:bg-green bg-black sm:pl-9 pl-3 lg:pr-0 sm:pr-9 pr-3 py-10 text-black'>
                                     <div className='lg:text-black text-green'>
-                                        <h6 className='text-32 font-extrabold flex'>
-                                            Send
-                                            <sup className='pl-2 mt-2'>
-                                                <Image
-                                                    src={sendataBlackArrow}
-                                                    width={28}
-                                                    height={22}
-                                                />
-                                            </sup>
-                                        </h6>
-                                        <p className='text-base font-300 -mt-2'>TOKENOMICS</p>
+                                        <div className='flex justify-between items-center'>
+                                            <div>
+                                                <h6 className='md:text-32 text-2xl font-extrabold flex'>
+                                                    Send
+                                                    <sup className='pl-2 mt-2'>
+                                                        <SenDataArrow iconColor={'lg:fill-black fill-green'} />
+                                                        {/* <Image
+                                                            src={sendataBlackArrow}
+                                                            width={28}
+                                                            height={22}
+                                                        /> */}
+                                                    </sup>
+                                                </h6>
+                                                <p className='md:text-base text-sm font-300 -mt-2'>TOKENOMICS</p>
+                                            </div>
+                                            <div className='lg:hidden flex justify-start'>
+                                                <svg xmlns="http://www.w3.org/2000/svg" className={`fill-green opacity-30`} width="34" height="20">
+                                                    <g data-name="Group 172703">
+                                                        <path d="M21.66 8.82c0 4.316-3.932 7.738-5.02 8.604-.17-1.196-1.14-6.533-4.99-8.737a7.225 7.225 0 0 0-.574-.294C11.354 3.443 16.362 0 16.362 0s4.794 3.445 5.261 8.094c.025.24.038.482.038.726Z" fill-rule="evenodd" data-name="Path 10531" />
+                                                        <path d="M15.178 17.382H3.606C.413 14.444 0 9.442 0 9.442s5.433-2.473 9.71-.509c.196.088.387.187.576.295 3.396 1.944 4.55 6.33 4.892 8.154Z" fill-rule="evenodd" data-name="Path 10532" />
+                                                        <path d="M32.276 9.4s-.398 5.038-3.613 7.982h-9.94c1.56-1.44 4.143-4.35 4.143-7.848 0-.245-.013-.486-.038-.727 4.227-1.762 9.448.592 9.448.592Z" fill-rule="evenodd" data-name="Path 10533" />
+                                                    </g>
+                                                </svg>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div className="grid grid-cols-12 gap-2 py-14">
+                                    <div className="grid grid-cols-12 gap-2 md:py-14 py-7">
                                         {/* Tabs */}
-                                        <div className="2xl:col-span-3 col-span-4 border-send-bridge">
+                                        <div className="2xl:col-span-3 sm:col-span-4 sm:block hidden border-send-bridge">
                                             {growthTabs.map((tab, index) => (
                                                 <div key={index} className="flex gap-6 items-center">
                                                     <span className={`${activeTab === tab ? 'lg:bg-black bg-green' : 'bg-[#00BE00]'} w-2 h-2 -ml-1`}></span>
@@ -295,18 +312,11 @@ export const InvertmentBridgeGrowth = () => {
                                         </div>
 
                                         {/* Content Area */}
-                                        <div className="2xl:col-span-9 col-span-8 relative overflow-hidden">
-                                            {/* */}
+                                        <div className="2xl:col-span-9 sm:col-span-8 col-span-12 h-96 relative overflow-hidden">
                                             <div className='lg:hidden block absolute inset-0 h-full opacity-50 blur-2p bg-black'>
                                                 <div className='flex justify-center items-center h-full backdrop-blur-10'>
                                                     <div className='flex flex-col w-fit'>
-                                                        {/* <h4 className='2xl:text-lg text-sm pb-4 font-bold'>
-                                                            <div ref={totalSupplyRef} className='opacity-0'>
-                                                                Total Supply
-                                                                <span className='font-normal block'>2,000,000,000 $SEND</span>
-                                                            </div>
-                                                        </h4> */}
-                                                        <div className='relative 2xl:w-26 xl:w-80 lg:w-72 w-60 2xl:h-26 xl:h-80 lg:h-72 h-60'>
+                                                        <div className='relative 2xl:w-26 xl:w-80 lg:w-72 md:w-60 w-44 2xl:h-26 xl:h-80 lg:h-72 md:h-60 h-44'>
                                                             <Boxes
                                                                 activePercentage={activePercentage}
                                                                 tabIndex={activeTab == null ? activeTab : activeTabIndex}
@@ -314,26 +324,10 @@ export const InvertmentBridgeGrowth = () => {
                                                                 tabData={tabData}
                                                             />
                                                         </div>
-                                                        {/* <h4 className='2xl:text-lg text-sm 2xl:pt-4 pt-2 text-right text-green font-bold'>
-                                                            <div ref={activeSendTab} className='relative'>
-                                                                {tabData.map((activeTab, index) => (
-                                                                    <span
-                                                                        key={index}
-                                                                        ref={(el) => {
-                                                                            if (el) activeSendTab.current[index] = el;
-                                                                        }}
-                                                                        className={`absolute top-0 right-0 opacity-0`}
-                                                                    >
-                                                                        {activeTab.title}
-                                                                        <span className='font-normal block'>400,000,000 $SEND</span>
-                                                                    </span>
-                                                                ))}
-                                                            </div>
-                                                        </h4> */}
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div ref={boxLengthRef} className="absolute lg:text-black text-green inset-0 transition-all duration-1000 ease-in-out"
+                                            <div ref={boxLengthRef} className="absolute sm:block hidden lg:text-black text-green inset-0 transition-all duration-1000 ease-in-out"
                                                 style={{ transform: `translateY(${translateY}px)` }} >
                                                 <div className='h-available'>
                                                     <div className='flex justify-center items-center h-full w-full'>
@@ -345,12 +339,12 @@ export const InvertmentBridgeGrowth = () => {
                                                         <div key={index} className="border-y-2 h-full py-5 border-opacity-20 lg:border-black border-green">
                                                             <div className="grid grid-rows-2 gap-6 h-full">
                                                                 {data.detail.map((item, index) => (
-                                                                    <div key={index} className="2xl:pr-20 xl:pr-12 lg:pr-8 pr-14 pl-3 flex flex-col lg:gap-2 gap-3 text-left">
+                                                                    <div key={index} className="2xl:pr-20 xl:pr-12 lg:pr-8 md:pr-14 pr-0 md:pl-3 pl-0 flex flex-col lg:gap-2 gap-3 text-left">
                                                                         <div className="flex justify-between items-center gap-2">
                                                                             <h4 className="2xl:text-2xl text-lg font-bold ">{item.title}</h4>
                                                                             <span className="2xl:text-4xl text-2xl font-bold lg:opacity-40 opacity-100">{item.percentage}</span>
                                                                         </div>
-                                                                        <p className="w-full 2xl:pt-2 lg:pt-0 pt-5 2xl:text-base xl:text-sm lg:text-8 text-xs 2xl:leading-6 xl:leading-22 leading-18 lg:text-current text-white">{item.description}</p>
+                                                                        <p className="w-full 2xl:pt-2 lg:pt-0 md:pt-5 sm:pt-3 pt-0 2xl:text-base xl:text-sm lg:text-8 text-xs 2xl:leading-6 xl:leading-22 leading-18 lg:text-current text-white">{item.description}</p>
                                                                     </div>
                                                                 ))}
                                                             </div>
@@ -358,10 +352,32 @@ export const InvertmentBridgeGrowth = () => {
                                                     ))}
                                                 </div>
                                             </div>
+
+                                            <div className='sm:hidden block absolute lg:text-black text-green inset-0 transition-all duration-1000 ease-in-out'>
+                                                <div className='h-full bridge-slider'>
+                                                    <SlickSlider>
+                                                        {tabData.map((data, index) => (
+                                                            <div key={index} className="border-y-2 h-full py-5 px-3 border-opacity-20 lg:border-black border-green">
+                                                                <div className="grid grid-rows-2 gap-3 h-full">
+                                                                    {data.detail.map((item, index) => (
+                                                                        <div key={index} className="2xl:pr-20 xl:pr-12 lg:pr-8 md:pr-14 pr-0 md:pl-3 pl-0 flex flex-col lg:gap-2 gap-3 text-left">
+                                                                            <div className="flex justify-between items-center gap-2">
+                                                                                <h4 className="2xl:text-2xl text-lg font-bold ">{item.title}</h4>
+                                                                                <span className="2xl:text-4xl text-2xl font-bold lg:opacity-40 opacity-100">{item.percentage}</span>
+                                                                            </div>
+                                                                            <p className="w-full 2xl:pt-2 lg:pt-0 md:pt-5 sm:pt-3 pt-0 2xl:text-base xl:text-sm lg:text-8 text-xs 2xl:leading-6 xl:leading-22 leading-18 lg:text-current text-white">{item.description}</p>
+                                                                        </div>
+                                                                    ))}
+                                                                </div>
+                                                            </div>
+                                                        ))}
+                                                    </SlickSlider>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
 
-                                    <div className='flex justify-start'>
+                                    <div className='lg:flex hidden justify-start'>
                                         <Image
                                             src={lotusLogo}
                                             className='opacity-30 2xl:w-2/12 w-14'

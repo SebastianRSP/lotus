@@ -114,7 +114,7 @@ var settings = {
 export const SlickSlider = ({ children, index }) => {
     return (
     
-            <Slider className='w-full' key={index} {...settings}>
+            <Slider className='w-full h-full' key={index} {...settings}>
                     {children}
             </Slider>
       

@@ -52,6 +52,19 @@
     bottom: -52px !important;
 }
 
+.bridge-slider .slick-dots {
+    bottom: -5px !important;
+}
+.bridge-slider .slick-list {
+    height: 100%;
+}
+.bridge-slider .slick-track {
+    height: 100%;
+}
+.bridge-slider .slick-track div div {
+    height: 96.5%;
+}
+
 .slick-dots li button:before {
     font-family: 'slick';
     font-size: 13px !important;
