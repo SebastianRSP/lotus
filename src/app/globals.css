@@ -210,10 +210,12 @@ canvas {
 .is-scrolled .isScroll-logo-middle {
   margin-top: 0px;
 }
-.is-scrolled .text-scroll{
+
+.is-scrolled .text-scroll {
   color: black;
 }
-.is-scrolled .scroller-icon{
+
+.is-scrolled .scroller-icon {
   fill: black;
 }
 
@@ -409,7 +411,7 @@ canvas {
 
 .cls-4 {
   fill: none;
-  stroke: rgb(242,245,242);
+  stroke: rgb(242, 245, 242);
   stroke-width: .75px;
 }
 
@@ -426,17 +428,18 @@ canvas {
 
 .cls-2,
 .cls-3 {
-  stroke: rgb(106,189,69);
+  stroke: rgb(106, 189, 69);
   stroke-width: .75px;
 }
-.inside-black-box{
-  border: solid .75px rgb(106,189,69);
+
+.inside-black-box {
+  border: solid .75px rgb(106, 189, 69);
 }
 
 .cls-1 {
   fill: none;
   opacity: .5;
-  stroke: rgb(255,255,255);
+  stroke: rgb(255, 255, 255);
   stroke-linecap: square;
   stroke-width: .75px;
 }
@@ -734,6 +737,12 @@ canvas {
   opacity: 1;
 }
 
+@media (max-width: 1280px) {
+  .investor-hero-bg {
+    background: transparent radial-gradient(closest-side at 50% 86%, #00FF00 -293%, #000000 289%) 0% 0% no-repeat padding-box
+  }
+}
+
 .investor-banner-bg {
   background: #03ff00;
   max-height: 400px;
@@ -828,22 +837,26 @@ canvas {
   
 } */
 .border-send-bridge {
-  position: relative; /* This makes sure the child positions itself relative to this container */
+  position: relative;
+  /* This makes sure the child positions itself relative to this container */
 }
 
 .border-send-bridge::before {
   content: '';
   position: absolute;
-  left: 0; /* or right: 0; depending on where you want the border */
+  left: 0;
+  /* or right: 0; depending on where you want the border */
   top: 28px;
   bottom: 0;
-  width: 0.5px; /* define the width of the border */
+  width: 0.5px;
+  /* define the width of the border */
   height: 87.5%;
-  background-color: #00BE00; /* or any color you prefer */
+  background-color: #00BE00;
+  /* or any color you prefer */
 }
 
 
-@media (max-width: 1536px) {
+@media (min-width: 1536px) {
   .border-send-bridge::before {
     height: 76.5%;
     /* Adjust the width for small screens */
@@ -1016,6 +1029,7 @@ canvas {
   .bridge-gridroom {
     width: 127% !important;
   }
+
   .bridge-gridroom .bridge-window-full {
     top: 0;
   }
@@ -1034,29 +1048,29 @@ canvas {
   transform: translateY(110%) rotate(0.001deg);
 }
 
-@media (max-aspect-ratio: 1240/780){
+@media (max-aspect-ratio: 1240/780) {
   .bridge-gridroom {
-     width: calc(1240/780*100vh);
+    width: calc(1240/780*100vh);
   }
 
   .bridge-gridroom {
-     width: 100vw;
+    width: 100vw;
   }
 
   .bridge-gridroom {
-     width: 100%;
+    width: 100%;
   }
-  
+
   .bridge-gridroom::before {
-     display: block;
-     content: "";
-     padding-top: 100vh;
+    display: block;
+    content: "";
+    padding-top: 100vh;
   }
 }
 
-@media (max-width: 640px){
+@media (max-width: 640px) {
   .bridge-gridroom {
-     width: 325% !important;
+    width: 325% !important;
   }
 }
 
@@ -1134,9 +1148,9 @@ canvas {
   margin-top: 3em;
 }
 
-@media screen and (max-width: 1024px){
+@media screen and (max-width: 1024px) {
   .home-bridge-gridroom .overlay-content .container {
-     padding-right: calc(8.3333vw * 1);
+    padding-right: calc(8.3333vw * 1);
   }
 }
 
@@ -1145,14 +1159,18 @@ canvas {
   padding: 0.10em 0;
   margin: -0.07em 0;
 }
+
 .bridge-text-split .single-line .single-line-inner {
   transform: translateY(0%) rotate(0.001deg);
 }
+
 .home-bridge-gridroom h2 .single-line-inner {
   transform: translateY(0%) rotate(0.001deg);
 }
+
 .split-text-char {
-  color: rgb(118, 114, 112) !important; /* Make sure it overrides */
+  color: rgb(118, 114, 112) !important;
+  /* Make sure it overrides */
 }
 
 .vertical-lines {
@@ -1168,25 +1186,28 @@ canvas {
   min-width: 100vw;
   pointer-events: none;
 }
-.rfm-child{
+
+.rfm-child {
   padding-left: 3.5rem;
   padding-right: 3.5rem;
 }
 
-@media screen and (min-width: 1536px){
-  .rfm-child{
+@media screen and (min-width: 1536px) {
+  .rfm-child {
     padding-left: 5rem;
     padding-right: 5rem;
   }
 }
-@media screen and (min-width: 1280px){
-  .rfm-child{
+
+@media screen and (min-width: 1280px) {
+  .rfm-child {
     padding-left: 4.5rem;
     padding-right: 4.5rem;
   }
 }
-@media screen and (min-width: 1024px){
-  .rfm-child{
+
+@media screen and (min-width: 1024px) {
+  .rfm-child {
     padding-left: 4rem;
     padding-right: 4rem;
   }

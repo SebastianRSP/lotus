@@ -1,16 +1,13 @@
 import Image from 'next/image';
 import gridLines from '../../../../../public/investor-assets/investor-grid-lines.svg';
 import sendataArrow from '../../../../../public/investor-assets/sendata-arrow.svg';
-import sendataBlackArrow from '../../../../../public/investor-assets/senddata-black.svg';
 import defaultImageIcon from '../../../../../public/investor-assets/default-img-icon.svg';
 import animatedBox from '../../../../../public/animations/animated-box.json';
-import databoxes from '../../../../../public/investor-assets/data-box.svg';
 import lotusLogo from '../../../../../public/icons/logo.svg';
 import { Boxes } from './svgs/boxes';
 import Lottie from 'lottie-react';
 import gsap from 'gsap';
 import { useEffect, useRef, useState } from 'react';
-import { Logo } from '../../svgs/Logo';
 import { SlickSlider } from '../../slick-slider/SlickSlider';
 import { SenDataArrow } from '../../svgs/SenDataArrow';
 
@@ -254,24 +251,19 @@ export const InvertmentBridgeGrowth = () => {
                             height={100}
                         />
                     </div>
-                    <div className='2xl:px-40 xl:px-20 px-9 xl:pt-96 pt-9 2xl:pb-32 xl:pb-28 lg:pb-20 md:pb-18 pb-18 w-full relative'>
+                    <div className='2xl:px-40 xl:px-20 px-9 xl:pt-96 lg:pt-72 pt-9 2xl:pb-32 xl:pb-28 lg:pb-20 md:pb-18 pb-18 w-full relative'>
                         <div className='flex justify-start'>
-                            <h3 className='2xl:text-123 text-100 font-bold flex text-green'>
+                            <h3 className='2xl:text-123 lg:text-100 md:text-80 text-4xl font-bold flex text-green'>
                                 Send
-                                <sup className='pl-2'>
-                                    <Image
-                                        src={sendataArrow}
-                                        className='2xl:w-full xl:w-4/6'
-                                        width={128}
-                                        height={95}
-                                    />
+                                <sup className='pl-2 xl:-mt-10 lg:-mt-8 -mt-0'>
+                                    <SenDataArrow extraClasses={'lg:w-2/6 md:w-1/6 sm:w-1/12 w-2/12'} iconColor={'fill-green'} />
                                 </sup>
                             </h3>
                         </div>
-                        <div className="grid lg:grid-cols-12 grid-cols-1 lg:gap-0 gap-8 lg:mt-16 mt-8">
+                        <div className="grid lg:grid-cols-12 grid-cols-1 lg:gap-0 md:gap-8 gap-4 lg:mt-16 mt-8">
                             {/* <h3 className="2xl:text-5xl xl:text-4xl lg:text-3xl text-xl 2xl:leading-60 xl:leading-48 lg:leading-42 leading-8 font-extralight lg:col-span-8 lg:w-11/12 w-11/12"> */}
-                            <h3 className="2xl:text-5xl xl:text-4xl lg:text-3xl text-2xl 2xl:leading-60 xl:leading-48 lg:leading-42 leading-8 font-extralight lg:col-span-8 lg:w-full md:w-11/12 w-full">
-                                Designed to drive engagement, <br /> reward participation, and foster growth <br /> within <span className="font-bold">The Bridge<sup>TM</sup></span>  ecosystem.
+                            <h3 className="2xl:text-5xl xl:text-4xl lg:text-3xl text-xl 2xl:leading-60 xl:leading-48 lg:leading-42 leading-8 font-extralight lg:col-span-8 lg:w-full md:w-11/12 w-full">
+                                Designed to drive engagement, <br className='lg:block hidden'/> reward participation, and foster growth <br className='lg:block hidden'/> within <span className="font-bold">The Bridge<sup>TM</sup></span>  ecosystem.
                             </h3>
                             <p className="2xl:text-2xl xl:text-base lg:text-sm text-xs lg:justify-self-end lg:col-span-4 lg:w-full w-11/12">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
@@ -279,19 +271,14 @@ export const InvertmentBridgeGrowth = () => {
                         </div>
                         <div className='bg-black border-2 border-green rounded-lg xl:my-32 lg:my-28 my-16'>
                             <div className='grid lg:grid-cols-2 grid-cols-1'>
-                                <div className='lg:bg-green bg-black rounded-lg sm:pl-9 pl-3 lg:pr-0 sm:pr-9 pr-3 py-10 text-black'>
+                                <div className='lg:bg-green bg-black lg:rounded-none rounded-lg sm:pl-9 pl-3 lg:pr-0 sm:pr-9 pr-3 py-10 text-black'>
                                     <div className='lg:text-black text-green'>
                                         <div className='flex justify-between items-center'>
                                             <div>
                                                 <h6 className='md:text-32 text-2xl font-extrabold flex'>
                                                     Send
                                                     <sup className='pl-2 mt-2'>
-                                                        <SenDataArrow iconColor={'lg:fill-black fill-green'} />
-                                                        {/* <Image
-                                                            src={sendataBlackArrow}
-                                                            width={28}
-                                                            height={22}
-                                                        /> */}
+                                                        <SenDataArrow extraClasses={'md:w-7 w-5 md:h-5 h-3'} iconColor={'lg:fill-black fill-green'} />
                                                     </sup>
                                                 </h6>
                                                 <p className='md:text-base text-sm font-300 -mt-2'>TOKENOMICS</p>
@@ -329,7 +316,6 @@ export const InvertmentBridgeGrowth = () => {
                                                 <div className='flex justify-center items-center h-full backdrop-blur-10'>
                                                     <div className='flex flex-col w-fit'>
                                                         <div className='relative 2xl:w-26 xl:w-80 lg:w-72 md:w-60 w-44 2xl:h-26 xl:h-80 lg:h-72 md:h-60 h-44'>
-                                                            {console.log(activeTab, 'activeTab')}
                                                             <Boxes
                                                                 activePercentage={activePercentage}
                                                                 tabIndex={activeTab == null ? activeTab : activeTabIndex}
