@@ -267,7 +267,7 @@ export const InvertmentBridgeGrowth = () => {
                         </div>
                         <div className='bg-black border-2 border-green rounded-lg xl:my-32 lg:my-28 my-16'>
                             <div className='grid lg:grid-cols-2 grid-cols-1'>
-                                <div className='lg:bg-green bg-black sm:pl-9 pl-3 lg:pr-0 sm:pr-9 pr-3 py-10 text-black'>
+                                <div className='lg:bg-green bg-black rounded-lg sm:pl-9 pl-3 lg:pr-0 sm:pr-9 pr-3 py-10 text-black'>
                                     <div className='lg:text-black text-green'>
                                         <div className='flex justify-between items-center'>
                                             <div>
