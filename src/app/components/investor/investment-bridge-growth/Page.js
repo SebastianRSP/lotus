@@ -251,7 +251,7 @@ export const InvertmentBridgeGrowth = () => {
                             height={100}
                         />
                     </div>
-                    <div className='2xl:px-40 xl:px-20 px-9 xl:pt-96 lg:pt-72 pt-9 2xl:pb-32 xl:pb-28 lg:pb-20 md:pb-18 pb-18 w-full relative'>
+                    <div className='2xl:px-40 xl:px-20 px-9 xl:pt-96 lg:pt-72 md:pt-60 sm:pt-32 pt-16 2xl:pb-32 xl:pb-28 lg:pb-20 md:pb-18 sm:pb-18 pb-14 w-full relative'>
                         <div className='flex justify-start'>
                             <h3 className='2xl:text-123 lg:text-100 md:text-80 text-4xl font-bold flex text-green'>
                                 Send
@@ -260,7 +260,7 @@ export const InvertmentBridgeGrowth = () => {
                                 </sup>
                             </h3>
                         </div>
-                        <div className="grid lg:grid-cols-12 grid-cols-1 lg:gap-0 md:gap-8 gap-4 lg:mt-16 mt-8">
+                        <div className="grid lg:grid-cols-12 grid-cols-1 lg:gap-0 md:gap-8 gap-4 lg:mt-16 sm:mt-8 mt-4">
                             {/* <h3 className="2xl:text-5xl xl:text-4xl lg:text-3xl text-xl 2xl:leading-60 xl:leading-48 lg:leading-42 leading-8 font-extralight lg:col-span-8 lg:w-11/12 w-11/12"> */}
                             <h3 className="2xl:text-5xl xl:text-4xl lg:text-3xl text-xl 2xl:leading-60 xl:leading-48 lg:leading-42 leading-8 font-extralight lg:col-span-8 lg:w-full md:w-11/12 w-full">
                                 Designed to drive engagement, <br className='lg:block hidden'/> reward participation, and foster growth <br className='lg:block hidden'/> within <span className="font-bold">The Bridge<sup>TM</sup></span>  ecosystem.
@@ -269,7 +269,7 @@ export const InvertmentBridgeGrowth = () => {
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
                             </p>
                         </div>
-                        <div className='bg-black border-2 border-green rounded-lg xl:my-32 lg:my-28 my-16'>
+                        <div className='bg-black border-2 border-green rounded-lg xl:my-32 lg:my-28 md:my-16 my-8'>
                             <div className='grid lg:grid-cols-2 grid-cols-1'>
                                 <div className='lg:bg-green bg-black lg:rounded-none rounded-lg sm:pl-9 pl-3 lg:pr-0 sm:pr-9 pr-3 py-10 text-black'>
                                     <div className='lg:text-black text-green'>
@@ -422,7 +422,7 @@ export const InvertmentBridgeGrowth = () => {
                             </div>
                         </div>
                         <div className='flex justify-center'>
-                            <div className='flex justify-between 2xl:gap-16 xl:gap-3.3 lg:gap-8 md:gap-1.6r gap-6'>
+                            <div className='flex justify-between 2xl:gap-16 xl:gap-3.3 lg:gap-8 md:gap-1.6r sm:gap-6 gap-4'>
                                 {Array(6).fill(null).map((_, index) => (
                                     <Image
                                         key={index}
