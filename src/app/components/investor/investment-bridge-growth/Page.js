@@ -144,6 +144,10 @@ export const InvertmentBridgeGrowth = () => {
         });
     };
 
+    const getObjectByIndex = (index) => {
+        return tabData[index] || null; // Returns the object at the given index or null if out of bounds
+    };
+
     const waitForElement = async (refArray, index) => {
         return new Promise((resolve) => {
             const interval = setInterval(() => {
@@ -206,6 +210,14 @@ export const InvertmentBridgeGrowth = () => {
         }
     };
 
+    const handleSlideChange = async (oldIndex, newIndex) => {
+        const filteredItem = getObjectByIndex(newIndex).percentage;
+        const filteredItemTitle = getObjectByIndex(newIndex).title;
+        setActiveTab(filteredItemTitle);
+        setActivePercentage(filteredItem);
+        setActiveTabIndex(newIndex);
+        setPreviousTabIndex(oldIndex);
+    }
 
 
     useEffect(() => {
@@ -317,6 +329,7 @@ export const InvertmentBridgeGrowth = () => {
                                                 <div className='flex justify-center items-center h-full backdrop-blur-10'>
                                                     <div className='flex flex-col w-fit'>
                                                         <div className='relative 2xl:w-26 xl:w-80 lg:w-72 md:w-60 w-44 2xl:h-26 xl:h-80 lg:h-72 md:h-60 h-44'>
+                                                            {console.log(activeTab, 'activeTab')}
                                                             <Boxes
                                                                 activePercentage={activePercentage}
                                                                 tabIndex={activeTab == null ? activeTab : activeTabIndex}
@@ -355,7 +368,7 @@ export const InvertmentBridgeGrowth = () => {
 
                                             <div className='sm:hidden block absolute lg:text-black text-green inset-0 transition-all duration-1000 ease-in-out'>
                                                 <div className='h-full bridge-slider'>
-                                                    <SlickSlider>
+                                                    <SlickSlider onSlideChange={handleSlideChange}>
                                                         {tabData.map((data, index) => (
                                                             <div key={index} className="border-y-2 h-full py-5 px-3 border-opacity-20 lg:border-black border-green">
                                                                 <div className="grid grid-rows-2 gap-3 h-full">

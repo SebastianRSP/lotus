@@ -36,82 +36,89 @@ const PrevArrow = (props) => {
     );
 };
 
-var settings = {
-    dots: false,
-    infinite: true,
-    speed: 1000,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    initialSlide: 0,
-    variableWidth: false,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
-    responsive: [
-        {
-            breakpoint: 1300,
-            settings: {
-                speed: 1000,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                initialSlide: 0,
-                variableWidth: false,
-                nextArrow: <NextArrow />,
-                prevArrow: <PrevArrow />
+export const SlickSlider = ({ children, index, onSlideChange }) => {
+
+
+    var settings = {
+        dots: false,
+        infinite: true,
+        speed: 1000,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        initialSlide: 0,
+        variableWidth: false,
+        nextArrow: <NextArrow />,
+        prevArrow: <PrevArrow />,
+        responsive: [
+            {
+                breakpoint: 1300,
+                settings: {
+                    speed: 1000,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    initialSlide: 0,
+                    variableWidth: false,
+                    nextArrow: <NextArrow />,
+                    prevArrow: <PrevArrow />
+                }
+            },
+            {
+                breakpoint: 1024,
+                settings: {
+                    speed: 1000,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    initialSlide: 0,
+                    variableWidth: false,
+                    nextArrow: <NextArrow />,
+                    prevArrow: <PrevArrow />
+                }
+            },
+            {
+                breakpoint: 800,
+                settings: {
+                    speed: 1000,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    initialSlide: 0,
+                    variableWidth: false,
+                    nextArrow: <NextArrow />,
+                    prevArrow: <PrevArrow />
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    speed: 1000,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    initialSlide: 0,
+                    variableWidth: false,
+                    dots: true,
+                    arrows: false // Disable arrows for this breakpoint
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    speed: 1000,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    initialSlide: 0,
+                    variableWidth: false,
+                    dots: true,
+                    arrows: false // Disable arrows for this breakpoint
+                }
             }
-        },
-        {
-            breakpoint: 1024,
-            settings: {
-                speed: 1000,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                initialSlide: 0,
-                variableWidth: false,
-                nextArrow: <NextArrow />,
-                prevArrow: <PrevArrow />
-            }
-        },
-        {
-            breakpoint: 800,
-            settings: {
-                speed: 1000,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                initialSlide: 0,
-                variableWidth: false,
-                nextArrow: <NextArrow />,
-                prevArrow: <PrevArrow />
-            }
-        },
-        {
-            breakpoint: 768,
-            settings: {
-                speed: 1000,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                initialSlide: 0,
-                variableWidth: false,
-                dots: true,
-                arrows: false // Disable arrows for this breakpoint
-            }
-        },
-        {
-            breakpoint: 480,
-            settings: {
-                speed: 1000,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                initialSlide: 0,
-                variableWidth: false,
-                dots: true,
-                arrows: false // Disable arrows for this breakpoint
+        ],
+        beforeChange: (oldIndex, newIndex) => {
+            if (onSlideChange) {
+                onSlideChange(oldIndex, newIndex);  // Call the callback with previous and current indices
             }
         }
-    ]
-};
+    };
+    
 
-
-export const SlickSlider = ({ children, index }) => {
     return (
     
             <Slider className='w-full h-full' key={index} {...settings}>

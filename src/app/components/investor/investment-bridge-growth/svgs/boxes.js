@@ -7,6 +7,11 @@ export const Boxes = ({ activePercentage, tabIndex, previousTabIndex, tabData })
     // Array of refs for each line (row) of boxes
     const rowRefs = useRef([...Array(10)].map(() => React.createRef()));
 
+    // console.log(activePercentage, 'activePercentage')
+    console.log(tabIndex, 'tabIndex')
+    // console.log(previousTabIndex, 'previousTabIndex')
+    // console.log(tabData, 'tabData')
+
     useEffect(() => {
         // Calculate cumulative lines for each tab based on tabData percentages
         let cumulativeLines = 0;
