@@ -37,10 +37,7 @@ export const AboutUsFooter = () => {
         <>
             <footer className={`${isGreen ? 'bg-green' : 'bg-gray-light'} 2xl:px-100 md:px-12 px-5 2xl:pt-100 md:pt-12 pt-5 py-8 rounded-tr-lg rounded-tl-lg`}>
                 <div className="grid xl:grid-cols-12 md:grid-cols-2 grid-cols-1 gap-5 mx-auto w-full relative text-black lg:pb-7 pb-5">
-                    <div className="flex flex-col xl:col-span-4 md:gap-8 gap-8">
-                        <h4 className='xl:text-2xl md:text-xl text-lg xl:leading-32 md:leading-7 leading-26'>
-                            Join the mailing list
-                        </h4>
+                    <div className="flex flex-col xl:col-span-4 ">
                         <div className='relative'>
                             <div className='absolute z-0 order-last inset-0 bg-gray-300 bg-green border border-black rounded-4 translate-x-[2px] translate-y-[2px]'></div>
                             <div className="bg-white relative z-10 items-center flex sm:space-y-0 border rounded-4 border-black">
@@ -61,8 +58,11 @@ export const AboutUsFooter = () => {
                                 </div>
                             </div>
                         </div>
-                        <h4 className='xl:text-2xl md:text-xl text-lg xl:leading-32 md:leading-7 leading-26'>
-                            See what our community on telegram has to say
+                        <h4 className='text-sm pb-10 pt-3'>
+                            Sign up to receive the latest in news about Lotus
+                        </h4>
+                        <h4 className='xl:text-2xl md:text-xl text-lg xl:leading-32 md:leading-7 leading-26 pb-2'>
+                            Join our Telegram
                         </h4>
                         <div className='relative 2xl:w-20 w-12 2xl:h-20 h-12'>
                             <Lottie animationData={telegram} className='absolute' />

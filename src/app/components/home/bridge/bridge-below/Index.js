@@ -36,7 +36,7 @@ export const BridgeBelow = () => {
                         A single pane of glass <br /> connecting <br /> <span className="font-normal">web2</span> and <span className="font-normal">web3</span>
                     </h5>
                 </div>
-                <div className="2xl:py-72 py-28 text-center">
+                <div className="2xl:py-72 xl:py-16 py-28 text-center">
                     <div className="flex flex-col gap-2.5">
                         {cardDetails.map((cardDetail, index) => (
                             <BridgeCard>
