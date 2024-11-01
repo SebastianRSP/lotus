@@ -110,7 +110,7 @@ export const LeaderShipTeam = () => {
                                 <Image
                                     className="rounded-lg md:w-available sm:w-80 w-72 2xl:h-72 xl:h-64 md:h-23 sm:h-96 "
                                     src={team.leaderProfileImage}
-                                    alt={`${team.leaderName} profile image`}
+                                    alt={`${team.leaderName.toLowerCase()} profile image`}
                                     objectFit="cover"
                                 />
                                 <div className="absolute inset-0 rounded-lg transition-all ease-in duration-500 translate-x-[-110%] group-hover:translate-x-[0]">
