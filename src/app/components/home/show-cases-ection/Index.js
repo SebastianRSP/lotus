@@ -105,8 +105,7 @@ export const ShowCaseSection = () => {
                                         <div key={index}
                                             onClick={() => handleTabClick(index)}
                                             ref={(el) => (tabRefs.current[index] = el)}
-                                            className={`tab
-                                                ${activeIndex === index ? '' : 'text-black'} 
+                                            className={`tab ${activeIndex === index ? '' : 'text-black'} 
                                                 2xl:text-base text-xs tracking-space90 text-black 2xl:py-1.4 xl:py-3 lg:py-2 py-0.5 2xl:px-1.8 xl:px-5 lg:px-2 px-5 border-x-transparent lg:shadow-none shadow-white relative z-[1] cursor-pointer
                                             `}>
                                             <span className="uppercase">

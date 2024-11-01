@@ -147,7 +147,7 @@ export const NewHomeSlider = ({ children, index, sliderRef, onSlideChange }) => 
             {
                 breakpoint: 1300,
                 settings: {
-                    speed: 1000,
+                    speed: 100,
                     slidesToShow: 1,
                     slidesToScroll: 1,
                     initialSlide: 0,
