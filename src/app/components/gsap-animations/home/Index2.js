@@ -165,7 +165,7 @@ const initCounterAnimation = () => {
     ScrollTrigger.create({
         trigger: counterContainer,
         start: "top 80%",
-        markers: true,
+        markers: false,
         onEnter: function () {
             // Check if the animation has already run
             if (!hasAnimated) {
