@@ -6,6 +6,7 @@ import Link from 'next/link';
 import telegram from '../../../../../public/animations/telegram.json';
 import sendMessageArrow from '../../../../../public/animations/send-message-arrow.json';
 import Lottie from 'lottie-react';
+import { usePathname } from 'next/navigation';
 
 const footerMenu1 = [
     { linkName: 'Home', goTo: '#' },
@@ -29,9 +30,12 @@ const footerMenu3 = [
 ]
 
 export const AboutUsFooter = () => {
+    const pathname = usePathname();
+    const isGreen = pathname.startsWith('/about-us');
+
     return (
         <>
-            <footer className="bg-gray-light 2xl:px-100 md:px-12 px-5 2xl:pt-100 md:pt-12 pt-5 py-8 rounded-tr-lg rounded-tl-lg">
+            <footer className={`${isGreen ? 'bg-green' : 'bg-gray-light'} 2xl:px-100 md:px-12 px-5 2xl:pt-100 md:pt-12 pt-5 py-8 rounded-tr-lg rounded-tl-lg`}>
                 <div className="grid xl:grid-cols-12 md:grid-cols-2 grid-cols-1 gap-5 mx-auto w-full relative text-black lg:pb-7 pb-5">
                     <div className="flex flex-col xl:col-span-4 md:gap-8 gap-8">
                         <h4 className='xl:text-2xl md:text-xl text-lg xl:leading-32 md:leading-7 leading-26'>
@@ -67,7 +71,7 @@ export const AboutUsFooter = () => {
                         </div>
                     </div>
                     <div className='grid md:grid-cols-3 xl:col-span-5 md:gap-0 gap-5 grid-cols-2'>
-                        <div className='md:px-5 md:flex justify-center'>
+                        <div className='md:px-5 md:flex justify-start flex-col'>
                             <div className='flex flex-col'>
                                 {footerMenu1.map((footerLink, index) => (
                                     <Link className={`${index == 0 ? 'font-extrabold' : 'hover:font-bold'} 2xl:text-lg text-sm uppercase font-normal leading-normal`} href={footerLink.goTo} key={index}>
@@ -76,7 +80,7 @@ export const AboutUsFooter = () => {
                                 ))}
                             </div>
                         </div>
-                        <div className='md:px-5 md:flex justify-center'>
+                        <div className='md:px-5 md:flex justify-start flex-col'>
                             <div className='flex flex-col'>
                                 {footerMenu2.map((footerLink, index) => (
                                     <Link className={`${index == 0 ? 'font-extrabold' : 'hover:font-bold'} 2xl:text-lg text-sm uppercase font-normal leading-normal`} href={footerLink.goTo} key={index}>
@@ -85,7 +89,7 @@ export const AboutUsFooter = () => {
                                 ))}
                             </div>
                         </div>
-                        <div className='md:px-5 md:flex justify-center'>
+                        <div className='md:px-5 md:flex justify-start flex-col'>
                             <div className='flex flex-col'>
                                 {footerMenu3.map((footerLink, index) => (
                                     <Link className={`${index == 0 ? 'font-extrabold' : 'hover:font-bold'} 2xl:text-lg text-sm uppercase font-normal leading-normal`} href={footerLink.goTo} key={index}>
@@ -116,6 +120,13 @@ export const AboutUsFooter = () => {
                     </div>
                 </div>
             </footer>
+            <div className="flex flex-col gap-2 z-10 w-full">
+                <hr className="border-12 border-dark-gray" />
+                <hr className="border-6 border-dark-gray" />
+                <hr className="border-3 border-dark-gray" />
+                <hr className="border-2 border-dark-gray" />
+                <hr className="border-1 border-dark-gray" />
+            </div>
         </>
     )
 }

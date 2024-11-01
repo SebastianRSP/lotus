@@ -130,6 +130,7 @@ export const InvertmentBridgeGrowth = () => {
     const boxLengthRef = useRef(null);
     const totalSupplyRef = useRef(null);
     const activeSendTab = useRef([]);
+    const autoSwitchTimeout = useRef(null);
 
     const animateTab = async (element, fromVars, toVars) => {
         return new Promise((resolve) => {
@@ -157,6 +158,11 @@ export const InvertmentBridgeGrowth = () => {
     };
 
     const handleTabActive = async (selectedTab) => {
+
+        if (autoSwitchTimeout.current) {
+            clearTimeout(autoSwitchTimeout.current);
+        }
+
         if (selectedTab === activeTab) return;
 
         setActiveTab(selectedTab);
@@ -216,6 +222,33 @@ export const InvertmentBridgeGrowth = () => {
         setPreviousTabIndex(oldIndex);
     }
 
+    const startAutoSwitch = () => {
+        autoSwitchTimeout.current = setTimeout(() => {
+            handleTabActive('INVESTORS'); // Automatically switch to "Investor" tab
+        }, 2000);
+    };
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting && !activeTab) {
+                    startAutoSwitch();
+                }
+            },
+            { threshold: 0.1 }
+        );
+
+        if (boxLengthRef.current) {
+            observer.observe(boxLengthRef.current);
+        }
+
+        return () => {
+            if (boxLengthRef.current) {
+                observer.unobserve(boxLengthRef.current);
+            }
+            clearTimeout(autoSwitchTimeout.current);
+        };
+    }, [activeTab]);
 
     useEffect(() => {
         const handleResize = () => {
@@ -242,7 +275,6 @@ export const InvertmentBridgeGrowth = () => {
             <div className="text-white mt-5 relative">
                 {/* absolute inset-0  */}
                 <div className='flex justify-center items-end'>
-
                     <div className='absolute inset-0 '>
                         <Image
                             src={gridLines}
@@ -251,12 +283,12 @@ export const InvertmentBridgeGrowth = () => {
                             height={100}
                         />
                     </div>
-                    <div className='2xl:px-40 xl:px-20 px-9 xl:pt-96 lg:pt-72 md:pt-60 sm:pt-32 pt-16 2xl:pb-32 xl:pb-28 lg:pb-20 md:pb-18 sm:pb-18 pb-14 w-full relative'>
+                    <div className='2xl:px-40 xl:px-20 px-9 xl:pt-72 lg:pt-64 md:pt-32 sm:pt-32 pt-16 2xl:pb-28 xl:pb-24 lg:pb-5.3r md:pb-4.3r sm:pb-14 pb-3.2r w-full relative'>
                         <div className='flex justify-start'>
                             <h3 className='2xl:text-123 lg:text-100 md:text-80 text-4xl font-bold flex text-green'>
                                 Send
                                 <sup className='pl-2 xl:-mt-10 lg:-mt-8 -mt-0'>
-                                    <SenDataArrow extraClasses={'lg:w-2/6 md:w-1/6 sm:w-1/12 w-2/12'} iconColor={'fill-green'} />
+                                    <SenDataArrow extraClasses={'lg:w-3/12 md:w-1/6 sm:w-1/12 w-2/12'} iconColor={'fill-green'} />
                                 </sup>
                             </h3>
                         </div>
@@ -422,7 +454,7 @@ export const InvertmentBridgeGrowth = () => {
                             </div>
                         </div>
                         <div className='flex justify-center'>
-                            <div className='flex justify-between 2xl:gap-16 xl:gap-3.3 lg:gap-8 md:gap-1.6r sm:gap-6 gap-4'>
+                            <div className='flex justify-between 2xl:gap-3.4 xl:gap-2.5 lg:gap-9 md:gap-1.3r sm:gap-0.8r gap-0.6r'>
                                 {Array(6).fill(null).map((_, index) => (
                                     <Image
                                         key={index}

@@ -65,8 +65,8 @@ export const Bridge = () => {
                                             </h4>
                                             <sup>
 
-                                            <div className='border border-green rounded-full self-baseline 2xl:py-3 xl:py-2 py-0.2'>
-                                                <span className='xl:font-bold 2xl:text-3xl xl:text-2xl lg:text-sm text-xs xl:px-2 px-0.2'>
+                                            <div className='border border-green rounded-full self-baseline xl:py-2 py-0.2'>
+                                                <span className='xl:font-bold xl:text-base md:text-sm text-xs xl:px-2 px-0.2'>
                                                     TM
                                                 </span>
                                             </div>

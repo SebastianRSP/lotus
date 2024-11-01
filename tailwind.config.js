@@ -199,7 +199,10 @@ module.exports = {
         '1.4': '0.875rem',
         '1': '1rem',
         '1.8': '1.125rem',
+        '3.2r': '3.2rem',
+        '4.3r': '4.3rem',
         '18': '4.5rem',
+        '5.3r': '5.3rem',
         '38': '38px',
         '60': '60px',
         '70': '70px',
@@ -236,8 +239,13 @@ module.exports = {
         '2px': '2px',
       },
       gap: {
+        '0.6r': '0.6rem', // Custom gap size
+        '0.8r': '0.8rem', // Custom gap size
+        '1.3r': '1.3rem', // Custom gap size
         '1.6r': '1.6rem', // Custom gap size
+        '2.5': '2.5rem', // Custom gap size
         '3.3': '3.3rem', // Custom gap size
+        '3.4': '3.4rem', // Custom gap size
         '4': '1rem', // Custom gap size
         '4.5': '4.5rem',
         '10':'10rem'

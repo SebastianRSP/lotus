@@ -9,24 +9,25 @@ import { desktopNavbarAnimation } from "../../gsap-animations/DesktopNavbarAnima
 import { HomeNavbar } from "../../navbar/home/HomeNavbar";
 import { NewHomeLoading } from "../../loading/home/Index";
 import { newHomePageAnimation } from "../../gsap-animations/home/Index";
+import { AboutUsFooter } from "../../footer/about-us/Index";
 
 
 export const InvestorHomePage = ({ children }) => {
 
     const pathname = usePathname();
     const containerRef = useRef();
-  
+
     useEffect(() => {
-      if (typeof window !== 'undefined') {
-        desktopNavbarAnimation();
-        // initAnimations();
-        newHomePageAnimation();
-  
-        // Clean up ScrollTrigger instances on component unmount
-        return () => {
-          ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-        };
-      }
+        if (typeof window !== 'undefined') {
+            desktopNavbarAnimation();
+            // initAnimations();
+            newHomePageAnimation();
+
+            // Clean up ScrollTrigger instances on component unmount
+            return () => {
+                ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+            };
+        }
     }, [pathname]);
 
     return (
@@ -41,9 +42,6 @@ export const InvestorHomePage = ({ children }) => {
                         <NewHomeLoading />
                         {children}
                     </main>
-                    <footer className="bg-green">
-                        <InvestorFooter />
-                    </footer>
                 </div>
             </div>
         </>

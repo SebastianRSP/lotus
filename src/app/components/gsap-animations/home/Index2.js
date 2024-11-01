@@ -91,13 +91,13 @@ export const newHomePageAnimation = () => {
                         {
                             x: '0%',
                             opacity: 1,
-                            duration: .6,
+                            duration: 1,
                             ease: 'power2.out',
                             scrollTrigger: {
                                 trigger: card,          // Trigger on each card
                                 start: 'top 70%',
                                 markers: false,       // Start the animation when top of the card reaches 70% of the viewport
-                                toggleActions: 'play none none reverse', // Play the animation when entering and reverse when leaving
+                                toggleActions: 'play none none none', // Play the animation when entering and reverse when leaving
                             }
                         }
                     );
@@ -598,38 +598,38 @@ const startBridgeAnimation = (bridgeSection) => {
                 );
             }
 
-            if (self.progress >= 0.99 && !hasBridgeDown) {
-                hasBridgeDown = true; // Set the flag to indicate the animation has moved down
-                gsap.fromTo(bridgeTM,
-                    {
-                        y: '0vh', // Starting position (initial state)
-                        duration: 0.4,
-                        ease: "power2.out", // Smooth easing
-                    },
-                    {
-                        y: '10vh', // Move down by 150px
-                        duration: 0.4,
-                        ease: "power2.out", // Smooth easing
-                    }
-                );
-            }
+            // if (self.progress >= 0.99 && !hasBridgeDown) {
+            //     hasBridgeDown = true; // Set the flag to indicate the animation has moved down
+            //     gsap.fromTo(bridgeTM,
+            //         {
+            //             y: '0vh', // Starting position (initial state)
+            //             duration: 0.4,
+            //             ease: "power2.out", // Smooth easing
+            //         },
+            //         {
+            //             y: '10vh', // Move down by 150px
+            //             duration: 0.4,
+            //             ease: "power2.out", // Smooth easing
+            //         }
+            //     );
+            // }
 
-            // When progress < 0.95, reverse the animation (move back up)
-            if (self.progress < 0.99 && hasBridgeDown) {
-                hasBridgeDown = false; // Reset the flag to allow reverse animation
-                gsap.fromTo(bridgeTM,
-                    {
-                        y: '10vh', // Start at the downward position
-                        duration: 0.4,
-                        ease: "power2.out", // Smooth easing
-                    },
-                    {
-                        y: '0vh', // Move back to the original position
-                        duration: 0.4,
-                        ease: "power2.out", // Smooth easing
-                    }
-                );
-            }
+            // // When progress < 0.95, reverse the animation (move back up)
+            // if (self.progress < 0.99 && hasBridgeDown) {
+            //     hasBridgeDown = false; // Reset the flag to allow reverse animation
+            //     gsap.fromTo(bridgeTM,
+            //         {
+            //             y: '10vh', // Start at the downward position
+            //             duration: 0.4,
+            //             ease: "power2.out", // Smooth easing
+            //         },
+            //         {
+            //             y: '0vh', // Move back to the original position
+            //             duration: 0.4,
+            //             ease: "power2.out", // Smooth easing
+            //         }
+            //     );
+            // }
 
         },
     });

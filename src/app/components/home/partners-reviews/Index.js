@@ -55,7 +55,7 @@ const partners = [
     {
         partnerName: 'Clearskye',
         partnerIcon: Clearskye,
-        width: 55,
+        width: 75,
         height: 53,
         testimonial: '“ClearSkye helps organizations achieve their identity management goals faster with an integrated approach to security and compliance.”',
         person: "MARIO GIAMMETTI",
@@ -167,8 +167,9 @@ export const PartnerReviews = () => {
                                 className={`absolute inset-0 grid grid-cols-3 gap-5 w-max transition-transform duration-200`}
                                 style={{
                                     transform: `translate(${translateX}px, ${translateY}px)`,
-                                    transitionDuration: '0.6s',
-                                    transitionTimingFunction: 'cubic-bezier(0.14, 1.56, 0.14, 1)',
+                                    transitionDuration: '1.3s',
+                                    // transitionTimingFunction: 'cubic-bezier(0.14, 1.56, 0.14, 1)',
+                                    transitionTimingFunction: 'cubic-bezier(0.10, 1.4, 0.10, 1)',
                                 }}
                             >
                                 {partners.map((currentPartner, index) => (
@@ -204,7 +205,7 @@ export const PartnerReviews = () => {
                                 ))}
                             </div>
                             <div className="w-full h-full flex flex-col justify-end">
-                                <div className="flex justify-end opacity-20">
+                                <div className="flex justify-end opacity-50">
                                     <span className="text-xs font-extralight leading-5 tracking-space60">{`0${activeIndex + 1}/06`}</span>
                                 </div>
                                 <div className="relative w-full h-[2px] bg-gray-200 mt-2">

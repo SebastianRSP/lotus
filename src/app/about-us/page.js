@@ -18,13 +18,6 @@ export default function AboutUs() {
                 <LeaderShipTeam />
                 <Partners />
                 <FooterSection />
-                <div className="flex flex-col gap-2 z-10 w-full">
-                    <hr className="border-12 border-dark-gray" />
-                    <hr className="border-6 border-dark-gray" />
-                    <hr className="border-3 border-dark-gray" />
-                    <hr className="border-2 border-dark-gray" />
-                    <hr className="border-1 border-dark-gray" />
-                </div>
             </div>
         </>
     )

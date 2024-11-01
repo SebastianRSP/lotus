@@ -9,6 +9,7 @@ import { InvestorHomePage } from './components/layout-wrapper/investor/Index';
 import { NewHomePage } from './components/layout-wrapper/home/Index';
 import Head from 'next/head';
 import { AboutUsPage } from './components/layout-wrapper/about-us/Index';
+import { useEffect } from 'react';
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -21,6 +22,12 @@ export default function RootLayout({ children }) {
   // Determine the layout based on the current path
   const isInvestorsPage = pathname.startsWith('/investors');
   const isAboutUsPage = pathname.startsWith('/about-us');
+
+  // Scroll to top when the pathname changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
 
   return (
     <html lang="en">

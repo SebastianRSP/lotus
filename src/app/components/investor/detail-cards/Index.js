@@ -105,7 +105,7 @@ export const DetailCards = () => {
             <div className="absolute inset-0 z-0 md:bg-transparent bg-black md:opacity-100 opacity-50">
                 {/* <Lottie animationData={bubbleBg} loop={true} className="h-available" /> */}
             </div>
-            <div className="relative xl:px-40 lg:px-20 px-9 lg:pt-20 md:pt-28 pt-9 lg:pb-96 md:pb-30 pb-96 z-10">
+            <div className="relative xl:px-40 lg:px-20 px-9 lg:pt-20 md:pt-28 pt-9 lg:pb-96 md:pb-30 pb-96 z-0">
                 {dataMigrations.map((dataMigration, index) => (
                     <div className="grid md:grid-cols-2 grid-cols-1 lg:gap-10 gap-5 items-center md:py-20 py-10">
                         <CardBackground>

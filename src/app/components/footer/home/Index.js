@@ -123,7 +123,7 @@ export const HomeFooter = () => {
                         />
                     </div>
                 </div>
-                <div className='md:px-5 md:pb-8 pb-0'>
+                {/* <div className='md:px-5 md:pb-8 pb-0'>
                     <div className='flex justify-between md:gap-0 gap-4 w-full'>
                         <Link href={'#'} className='2xl:text-lg md:text-sm text-xs 2xl:font-bold font-semibold underline uppercase'>
                             TERMS & CONDITIONS
@@ -135,7 +135,7 @@ export const HomeFooter = () => {
                             LEGAL
                         </Link>
                     </div>
-                </div>
+                </div> */}
             </footer>
         </>
     )

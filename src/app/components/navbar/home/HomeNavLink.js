@@ -20,9 +20,8 @@ export const HomeNavLink = ({ navLinkName, navLink, extras, icon, iconImage, id,
 
     return (
         <>
-            {console.log(isDark, 'isDark')}
             {isIncludeBookDemoBtn ? (
-                <div className="flex justify-center">
+                <div className="flex justify-end">
                     {isDark ? (
                         <DefaultBtnBlack
                             extras={'link-animation'}
@@ -38,34 +37,29 @@ export const HomeNavLink = ({ navLinkName, navLink, extras, icon, iconImage, id,
                     )}
                 </div>
             ) : (
-                <Link
-                    href={navLink}
-                    key={id}
-                    onMouseEnter={handleMouseEnter}
-                    onMouseLeave={handleMouseLeave}
-                    className={`${extras} ${isDark ? 'text-white' : 'text-black'} h-inherit flex items-center justify-center link-animation`}
-                >
-                    {icon ? (
-                        <>
-                            <Telegram 
-                                iconColor={`${isDark ? 'fill-white' : 'fill-black'}`}
-                            />
-                            {/* <Image
-                                src={iconImage}
-                                alt="icons"
-                                width={18}
-                                height={15}
-                                className={`fill-white w-6 h-6 md:w-4 md:h-4 `}
-                            /> */}
-                        </>
-                    ) : (
-                        <>
-                            <span className={`${font} link-home-hover ${isToggled ? `link-home-exact-active -translate-y-[2px]` : ''} text-scroll transform ease-out duration-300  uppercase  2xl:text-base lg:text-sm text-xs 2xl:font-medium font-normal 2xl:tracking-space80 tracking-space60 inner-text relative group`}>
-                                {navLinkName}
-                            </span>
-                        </>
-                    )}
-                </Link>
+                <div >
+                    <Link
+                        href={navLink}
+                        key={id}
+                        onMouseEnter={handleMouseEnter}
+                        onMouseLeave={handleMouseLeave}
+                        className={`${extras} ${isDark ? 'text-white' : 'text-black'} h-inherit flex items-center justify-center link-animation`}
+                    >
+                        {icon ? (
+                            <>
+                                <Telegram
+                                    iconColor={`${isDark ? 'fill-white' : 'fill-black'}`}
+                                />
+                            </>
+                        ) : (
+                            <>
+                                <span className={`${font} link-home-hover ${isToggled ? `link-home-exact-active -translate-y-[2px]` : ''} text-scroll transform ease-out duration-300  uppercase  2xl:text-base lg:text-sm text-xs 2xl:font-medium font-normal 2xl:tracking-space80 tracking-space60 inner-text relative group`}>
+                                    {navLinkName}
+                                </span>
+                            </>
+                        )}
+                    </Link>
+                </div>
             )}
         </>
     );

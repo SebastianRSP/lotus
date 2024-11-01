@@ -1,3 +1,4 @@
+import { AboutUsFooter } from "../components/footer/about-us/Index";
 import { DetailCards } from "../components/investor/detail-cards/Index";
 import { InvertmentBridgeGrowth } from "../components/investor/investment-bridge-growth/Index";
 import { InvestmentHero } from "../components/investor/investment-hero/InvestmentHero";
@@ -16,6 +17,7 @@ export default function Investors() {
             <PoweredBySend />
             <DetailCards />
             <MessageForInvestors />
+            <AboutUsFooter />
         </>
     )
 }

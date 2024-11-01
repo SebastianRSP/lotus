@@ -1,3 +1,4 @@
+import { AboutUsFooter } from "./components/footer/about-us/Index";
 import { BridgeSection } from "./components/home/bridge-section/Index";
 import { BridgeBelow } from "./components/home/bridge/bridge-below/Index";
 import { Bridge } from "./components/home/bridge/Index";
@@ -27,7 +28,7 @@ export default function Home() {
                 <PartnerReviews />
                 <CardsSection />
                 <FrequentlyAsked />
-                <FooterSection />
+                <AboutUsFooter />
             </div>
         </>
     )
