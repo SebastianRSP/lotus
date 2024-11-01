@@ -5,13 +5,13 @@
 
 @font-face {
   font-family: 'Plus Jakarta Sans';
-  src: url('/public/font/PlusJakartaSans-VariableFont_wght.ttf') format('truetype');
+  src: url('/font/PlusJakartaSans-VariableFont_wght.ttf') format('truetype');
   font-weight: 100 900; /* Define the font-weight range if it's a variable font */
   font-style: normal;
 }
 
 body {
-  @apply font-plus-jakarta-sans bg-white !important;
+  @apply font-plus-jakarta-sans bg-white;
   font-family: 'Plus Jakarta Sans', sans-serif;
   overflow-x: hidden;
   margin: 0;
