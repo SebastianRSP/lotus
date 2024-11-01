@@ -4,7 +4,6 @@ import { Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
 import './components/fontawsome';
 import { usePathname } from 'next/navigation';
-import { OldHomePage } from './components/layout-wrapper/Index';
 import { InvestorHomePage } from './components/layout-wrapper/investor/Index';
 import { NewHomePage } from './components/layout-wrapper/home/Index';
 import Head from 'next/head';
