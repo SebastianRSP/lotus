@@ -108,7 +108,7 @@ export const LeaderShipTeam = () => {
                         <div className="cursor-pointer rounded-lg flex justify-center">
                             <div className="relative inset-0 overflow-hidden">
                                 <Image
-                                    className="rounded-lg md:w-available sm:w-80 w-72 2xl:h-72 xl:h-64 md:h-23 sm:h-96 "
+                                    className="rounded-lg md:w-available sm:w-80 w-72 2xl:h-19 xl:h-64 md:h-23 sm:h-96 "
                                     src={team.leaderProfileImage}
                                     alt={`${team.leaderName.toLowerCase()} profile image`}
                                     objectFit="cover"
