@@ -21,50 +21,50 @@ const cardDetails = [
         heading: 'Redefining the internet of storage',
         description: 'The Bridge transforms data infrastructure by providing complete, scalable interoperability across all of the world’s leading storage solutions. Our innovative approach redefines how data is stored and accessed, offering unparalleled control and flexibility in a rapidly evolving digital landscape.',
         defaultImage: defaultImage
-    },
+    }
 ];
 
 export const BridgeBelow = () => {
     return (
         <>
-        <section className="bg-black forced-full-width 2xl:px-40 xl:px-28 lg:px-10 px-5 w-full h-full relative overflow-hidden pb-0 block py-[16.6666vh]">
-            <div className="absolute opacity-50 -mt-[1px] inset-0 w-full h-full">
-                <GridLines />
-            </div>
-            <div className="flex flex-col justify-start w-full items-left">
-                <h5 className="2xl:text-108 xl:text-6xl lg:text-5xl md:text-4xl text-28 2xl:leading-124 xl:leading-66 lg:leading-54 md:leading-42 leading-9 text-gray-light font-extralight ">
-                    A single pane of glass <br /> connecting <br /> <span className="font-normal">web2</span> and <span className="font-normal">web3</span>
-                </h5>
-            </div>
-            <div className="2xl:py-72 py-28 text-center">
-                <div className="flex flex-col gap-2.5">
-                    {cardDetails.map((cardDetail, index) => (
-                        <BridgeCard>
-                            <div key={index} className="grid md:grid-cols-2 grid-cols-1 justify-center items-center 2xl:py-24 py-12 md:px-0 px-5">
-                                <div className="md:my-0 my-20">
-                                    <Image
-                                        src={cardDetail.defaultImage}
-                                        alt="default Image"
-                                        width={40}
-                                        height={40}
-                                    />
-                                </div>
-                                <div className="flex flex-col justify-between gap-3 text-left lg:w-4/6 md:w-11/12 w-full">
-                                    <span className="2xl:text-lg text-base font-normal leading-42 text-green">{cardDetail.category}</span>
-                                    <h4 className="2xl:text-4xl lg:text-3xl text-2xl font-300 2xl:leading-42 lg:leading-9 leading-30 text-green 2xl:w-3/4 lg:w-4/5 w-5/6">
-                                        {cardDetail.heading}
-                                    </h4>
-                                    <p className="2xl:text-2xl lg:text-xl text-base  text-white ">
-                                        {cardDetail.description}
-                                    </p>
-                                </div>
-                            </div>
-                        </BridgeCard>
-                    ))}
+            <section className="bg-black forced-full-width 2xl:px-40 xl:px-28 lg:px-10 px-5 w-full h-full relative overflow-hidden pb-0 block py-[16.6666vh]">
+                <div className="absolute opacity-50 -mt-[1px] inset-0 w-full h-full">
+                    <GridLines />
                 </div>
-            </div>
-        </section>
-        <div className="bg-black forced-full-width">
+                <div className="flex flex-col justify-start w-full items-left">
+                    <h5 className="2xl:text-108 xl:text-6xl lg:text-5xl md:text-4xl text-28 2xl:leading-124 xl:leading-66 lg:leading-54 md:leading-42 leading-9 text-gray-light font-extralight ">
+                        A single pane of glass <br /> connecting <br /> <span className="font-normal">web2</span> and <span className="font-normal">web3</span>
+                    </h5>
+                </div>
+                <div className="2xl:py-72 py-28 text-center">
+                    <div className="flex flex-col gap-2.5">
+                        {cardDetails.map((cardDetail, index) => (
+                            <BridgeCard>
+                                <div key={index} className="grid md:grid-cols-2 grid-cols-1 justify-center items-center 2xl:py-24 py-12 md:px-0 px-5">
+                                    <div className="md:my-0 my-20">
+                                        <Image
+                                            src={cardDetail.defaultImage}
+                                            alt="default Image"
+                                            width={40}
+                                            height={40}
+                                        />
+                                    </div>
+                                    <div className="flex flex-col justify-between gap-3 text-left lg:w-4/6 md:w-11/12 w-full">
+                                        <span className="2xl:text-lg text-base font-normal leading-42 text-green">{cardDetail.category}</span>
+                                        <h4 className="2xl:text-4xl lg:text-3xl text-2xl font-300 2xl:leading-42 lg:leading-9 leading-30 text-green 2xl:w-3/4 lg:w-4/5 w-5/6">
+                                            {cardDetail.heading}
+                                        </h4>
+                                        <p className="2xl:text-2xl lg:text-xl text-base  text-white ">
+                                            {cardDetail.description}
+                                        </p>
+                                    </div>
+                                </div>
+                            </BridgeCard>
+                        ))}
+                    </div>
+                </div>
+            </section>
+            <div className="bg-black forced-full-width">
                 <div className="text-center border-y border-opacity-20 border-green">
                     <h4 className="2xl:text-7xl xl:text-6xl lg:text-5xl md:text-4xl text-3xl 2xl:leading-84 xl:leading-66 lg:leading-54 md:leading-42 leading-9 font-extralight text-green pt-5 pb-7">
                         The trillion dollar data opportunity

@@ -11,7 +11,6 @@ export const Hero = () => {
                     <span className="font-semibold">WE REFINE IT.</span>
                 </div>
             </div>
-        
             <div className="absolute md:right-20 md:bottom-20 sm:right-20 sm:top-20 right-8 top-36 flex md:justify-end justify-center items-end pl-6 z-0">
                 <div className="2xl:w-9/12 md:w-9/12 sm:w-8/12 xs:w-10/12 w-full">
                     <Image

@@ -1,5 +1,4 @@
 export const TextTyping = () => {
-
     return (
         <div className="inline">
             <div className="inline-flex items-center">

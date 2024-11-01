@@ -6,7 +6,6 @@ import arrowTopRight from '../../../../public/icons/arrow-top-right.svg';
 import Image from "next/image";
 import { LinkToGo } from '../shared-components/LinkToGo';
 import { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const faqs = [
     {
@@ -38,13 +37,10 @@ const faqs = [
         question: 'WILL THERE BE A TOKEN?',
         innderHeading: 'SED UT PERSPICIATIS UNDE OMNIS ISTE NATUS ERROR SIT VOLUPTATEM ACCUSANTIUM DOLOR?',
         innderDescription: 'SED UT PERSPICIATIS UNDE OMNIS ISTE NATUS ERROR SIT VOLUPTATEM ACCUSANTIUM DOLOREMQUE LAUDANTIUM, TOTAM REM APERIAM, EAQUE IPSA QUAE AB ILLO INVENTORE VERITATIS ET QUASI ARCHITECTO BEATAE VITAE DICTA SUNT EXPLICABO. NEMO ENIM IPSAM VOLUPTATEM QUIA VOLUPTAS SIT ASPERNATUR AUT ODIT AUT FUGIT, SED QUIA CONSEQUUNTUR MAGNI DOLORES EOS QUI RATIONE VOLUPTATEM SEQUI NESCIUNT.'
-    },
+    }
 ];
 
 export const FrequentlyAsked = () => {
-
-
-
     const [openFAQ, setOpenFAQ] = useState(null);
 
     const toggleAccordion = (index) => {
@@ -81,7 +77,6 @@ export const FrequentlyAsked = () => {
                                         width={28}
                                         height={28}
                                     />
-                                    {/* <FontAwesomeIcon icon="fa-solid fa-arrow-right" size='lg'/> */}
                                 </div>
                             </button>
                             <div className={`bg-white text-black transition-all duration-1000 ease-in-out overflow-hidden ${openFAQ === index ? 'max-h-screen' : 'max-h-0'}`}>

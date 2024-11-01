@@ -14,19 +14,19 @@ const footerMenu1 = [
     { linkName: 'Testimonials', goTo: '#' },
     { linkName: 'Al Tool', goTo: '#' },
     { linkName: 'Partners', goTo: '#' },
-    { linkName: 'FAQs', goTo: '#' },
+    { linkName: 'FAQs', goTo: '#' }
 ]
 const footerMenu2 = [
     { linkName: 'Investors', goTo: '#' },
     { linkName: '$Send Token', goTo: '#' },
     { linkName: 'Why Tokenize', goTo: '#' },
-    { linkName: 'Investors', goTo: '#' },
+    { linkName: 'Investors', goTo: '#' }
 ]
 const footerMenu3 = [
     { linkName: 'About Us', goTo: '#' },
     { linkName: 'Company', goTo: '#' },
     { linkName: 'Technology', goTo: '#' },
-    { linkName: 'Team', goTo: '#' },
+    { linkName: 'Team', goTo: '#' }
 ]
 
 export const HomeFooter = () => {

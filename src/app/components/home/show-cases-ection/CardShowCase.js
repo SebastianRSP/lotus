@@ -1,6 +1,6 @@
-import Image from "next/image"
+import Image from "next/image";
 
-export const CardShowCase = ({id, heading, subHeading, description, defaultImage}) => {
+export const CardShowCase = ({ id, heading, subHeading, description, defaultImage }) => {
     return (
         <div key={id} className="lg:px-0 px-3">
             <div className="grid lg:grid-cols-5 grid-cols-1 gap-10">

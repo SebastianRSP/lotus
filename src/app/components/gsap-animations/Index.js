@@ -105,8 +105,7 @@ export const initAnimations = () => {
             })
         }
 
-    }else{
-        console.log('No Loader')
+    } else {
         gsap.timeline({
             onComplete: () => {
                 gsap.delayedCall(0, () => {
@@ -120,7 +119,7 @@ export const initAnimations = () => {
 
 
     const initMainAnimations = () => {
-        
+
         smoothScroolling();
 
         ///////////////////////////////////////////////////////////

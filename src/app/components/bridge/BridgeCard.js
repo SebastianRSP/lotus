@@ -1,4 +1,4 @@
-export const BridgeCard = ({children, borders, paddings}) => {
+export const BridgeCard = ({ children, borders, paddings }) => {
     return (
         <div className={`${borders} ${paddings}`}>
             {children}

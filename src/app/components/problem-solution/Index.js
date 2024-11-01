@@ -1,6 +1,6 @@
-import { Card } from "../shared-components/Card"
-import { Heading } from "./Heading"
-import { Paragraph } from "./Paragraph"
+import { Card } from "../shared-components/Card";
+import { Heading } from "./Heading";
+import { Paragraph } from "./Paragraph";
 import { SmallHeading } from "./SmallHeading";
 import defaultImageIcon from '../../../../public/icons/defaultImg.svg';
 import solutionImage from '../../../../public/images/solution.png';

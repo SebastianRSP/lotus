@@ -1,11 +1,9 @@
-import { HomeFooter } from "../../footer/home/Index"
-import { FutureInvestment } from "./FutureInvestment"
+import { HomeFooter } from "../../footer/home/Index";
 
 export const FooterSection = () => {
     return (
-       <>
-        {/* <FutureInvestment /> */}
-        <HomeFooter />
-       </>
+        <>
+            <HomeFooter />
+        </>
     )
 }

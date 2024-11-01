@@ -36,10 +36,8 @@ export default function RootLayout({ children }) {
         <meta charSet="UTF-8" />
         <meta name="description" content="Your website description" />
         <title>Your Website Title</title>
-        {/* Add other meta tags as needed */}
       </Head>
       <body className={plusJakartaSans.variable}>
-        {/* Conditional rendering of layouts */}
         {isInvestorsPage ? (
           <InvestorHomePage>{children}</InvestorHomePage>
         ) : isAboutUsPage ? (

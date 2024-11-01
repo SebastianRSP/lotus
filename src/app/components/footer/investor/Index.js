@@ -13,19 +13,19 @@ const footerMenu1 = [
     { linkName: 'Testimonials', goTo: '#' },
     { linkName: 'Al Tool', goTo: '#' },
     { linkName: 'Partners', goTo: '#' },
-    { linkName: 'FAQs', goTo: '#' },
+    { linkName: 'FAQs', goTo: '#' }
 ]
 const footerMenu2 = [
     { linkName: 'Investors', goTo: '#' },
     { linkName: '$Send Token', goTo: '#' },
     { linkName: 'Why Tokenize', goTo: '#' },
-    { linkName: 'Investors', goTo: '#' },
+    { linkName: 'Investors', goTo: '#' }
 ]
 const footerMenu3 = [
     { linkName: 'About Us', goTo: '#' },
     { linkName: 'Company', goTo: '#' },
     { linkName: 'Technology', goTo: '#' },
-    { linkName: 'Team', goTo: '#' },
+    { linkName: 'Team', goTo: '#' }
 ]
 
 export const InvestorFooter = () => {
@@ -56,7 +56,6 @@ export const InvestorFooter = () => {
                             <Lottie animationData={sendMessageArrow} className='absolute 2xl:w-10 w-7 2xl:h-10 h-7 transform -rotate-90 scale-x-[1]' />
                         </div>
                     </div>
-
                     <h4 className='2xl:text-4xl text-2xl 2xl:leading-43 leading-7'>
                         See what our community on telegram has to say
                     </h4>
@@ -103,7 +102,7 @@ export const InvestorFooter = () => {
                         risks, including the potential
                         loss of principal.
                     </p>
-                    <DefaultBlack 
+                    <DefaultBlack
                         btnText={'Book a Demo'}
                         btnType={'button'}
                     />

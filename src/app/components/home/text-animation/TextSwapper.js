@@ -10,7 +10,7 @@ const industryNames = [
     "Retail",
     "Universities",
     "Hedge Funds",
-    "Genomics",
+    "Genomics"
 ];
 
 export const TextSwapper = () => {

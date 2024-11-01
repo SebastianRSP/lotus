@@ -1,6 +1,5 @@
 import gsap from 'gsap';
 import { ScrollSmoother, ScrollTrigger, SplitText, TextPlugin } from "gsap/all";
-import { smoothScroolling } from '../smoothScroll';
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText, TextPlugin);
 

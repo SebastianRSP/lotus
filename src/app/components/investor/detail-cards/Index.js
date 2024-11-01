@@ -11,7 +11,6 @@ import boxesAnimation from '../../../../../public/animations/boxes.json';
 import mountainAnimation from '../../../../../public/animations/mountain.json';
 import premiumFeaturesAnimation from '../../../../../public/animations/premium-features.json';
 // import bubbleBg from '../../../../../public/animations/bubbles-bg.json';
-import ParticleComponent from "../../bubbles-animation/Index";
 import { CardBackground } from './CardBackground';
 
 

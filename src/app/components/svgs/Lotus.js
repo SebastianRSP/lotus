@@ -1,4 +1,4 @@
-export const Lotus = ({iconColor}) => {
+export const Lotus = ({ iconColor }) => {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" className={`${iconColor} logo !w-full`} width="76.403" height="17.643" viewBox="-23.063 -30 76.403 17.643">
             <g data-name="Group 172705">

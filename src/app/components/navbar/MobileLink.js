@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import arrowRightGreen from '../../../../public/icons/arrow-right-green.svg';
 
-export const MobileLink = ({ navLinkName, navLink, extras, index }) => {
+export const MobileLink = ({ navLinkName, navLink, index }) => {
     return (
         <Link
             href={navLink}

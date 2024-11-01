@@ -12,7 +12,6 @@ export const NewHomeLoading = () => {
                         <path id="right-leaf" d="M32.276 9.4s-.398 5.038-3.613 7.982h-9.94c1.56-1.44 4.143-4.35 4.143-7.848 0-.245-.013-.486-.038-.727 4.227-1.762 9.448.592 9.448.592Z" fill-rule="evenodd" data-name="Path 10533" />
                     </g>
                 </svg>
-
             </div>
         </div>
     )

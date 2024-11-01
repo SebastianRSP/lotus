@@ -29,8 +29,7 @@ const timelines = [
         year: '2024',
         icon: mou,
         description: 'Members of the Filecoin Data Tools team join Lotus Data Group and we combine forces with Bluewhale Global, the largest AI and Blockchain development company in Taipei. We develop a suite of data management solutions to house under our ingestion platform.'
-    },
-
+    }
 ];
 
 export const OurJourney = () => {

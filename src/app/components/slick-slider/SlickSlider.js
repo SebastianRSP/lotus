@@ -15,7 +15,7 @@ const NextArrow = (props) => {
         <div
             key={index}
             className={mergeClasses}
-            style={{ ...style}}
+            style={{ ...style }}
             onClick={onClick}
         />
     );
@@ -30,7 +30,7 @@ const PrevArrow = (props) => {
         <div
             key={index}
             className={mergeClasses}
-            style={{ ...style}}
+            style={{ ...style }}
             onClick={onClick}
         />
     );
@@ -117,14 +117,14 @@ export const SlickSlider = ({ children, index, onSlideChange }) => {
             }
         }
     };
-    
+
 
     return (
-    
-            <Slider className='w-full h-full' key={index} {...settings}>
-                    {children}
-            </Slider>
-      
+
+        <Slider className='w-full h-full' key={index} {...settings}>
+            {children}
+        </Slider>
+
     )
 }
 
@@ -202,10 +202,10 @@ export const NewHomeSlider = ({ children, index, sliderRef, onSlideChange }) => 
     };
 
     return (
-    
-            <Slider className='w-full !flex justify-center  new-home-slider' key={index} ref={sliderRef} {...newHomePageSettings}>
-                    {children}
-            </Slider>
-      
+
+        <Slider className='w-full !flex justify-center  new-home-slider' key={index} ref={sliderRef} {...newHomePageSettings}>
+            {children}
+        </Slider>
+
     )
 }

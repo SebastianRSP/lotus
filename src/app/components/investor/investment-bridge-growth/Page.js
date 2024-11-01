@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import gridLines from '../../../../../public/investor-assets/investor-grid-lines.svg';
-import sendataArrow from '../../../../../public/investor-assets/sendata-arrow.svg';
 import defaultImageIcon from '../../../../../public/investor-assets/default-img-icon.svg';
 import animatedBox from '../../../../../public/animations/animated-box.json';
 import lotusLogo from '../../../../../public/icons/logo.svg';

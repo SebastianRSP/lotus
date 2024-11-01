@@ -6,9 +6,6 @@ import tickIcon from '../../../../public/new-home-assets/tick.svg';
 import { TextTyping } from "./text-animation/TextTyping";
 import { WhiteStrap } from "../white-strap-navbar/WhiteStrap";
 import { HeroBackground } from "../shared-components/HeroBackground";
-import dynamic from 'next/dynamic';
-import Spline from '@splinetool/react-spline';
-import { useEffect, useRef, useState } from "react";
 
 // Lazy load the Spline component
 // const LazySpline = dynamic(() => import('@splinetool/react-spline'), { ssr: false });

@@ -1,11 +1,11 @@
-import Image from "next/image"
+import Image from "next/image";
 import { Card } from "../shared-components/Card";
 import defaultImage from '../../../../public/icons/defaultImg.svg';
 
 const cardContent = [
-    {cardHeading : 'Migration', cardContentDetail: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.'},
-    {cardHeading : 'Analytics', cardContentDetail: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.'},
-    {cardHeading : 'Integration', cardContentDetail: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.'},
+    { cardHeading: 'Migration', cardContentDetail: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.' },
+    { cardHeading: 'Analytics', cardContentDetail: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.' },
+    { cardHeading: 'Integration', cardContentDetail: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.' }
 ]
 
 export const CardSection = () => {
@@ -38,7 +38,7 @@ export const CardSection = () => {
                                     {detail.cardContentDetail}
                                 </p>
                             </div>
-                        </Card> 
+                        </Card>
                     ))}
                 </div>
             </div>

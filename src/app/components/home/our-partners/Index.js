@@ -1,8 +1,6 @@
 'use client';
 
 import Image from 'next/image';
-import gsap from 'gsap';
-import { useRef, useEffect } from 'react';
 
 // Partners Import
 import FileCoin from '../../../../../public/new-home-assets/icons/filecoin.svg';
@@ -16,7 +14,7 @@ import Bloczio from '../../../../../public/new-home-assets/icons/bloczio.svg';
 import Marquee from "react-fast-marquee";
 
 export const OurPartners = () => {
-    const scrollContainerRef = useRef(null);
+    // const scrollContainerRef = useRef(null);
     const partners = [
         { partnerName: 'Sia', partnerIcon: Sia, width: 80, height: 50 },
         { partnerName: 'Arweave', partnerIcon: Arweave, width: 146, height: 50 },

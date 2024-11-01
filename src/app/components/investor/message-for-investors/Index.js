@@ -1,9 +1,7 @@
 'use client'
 
-import { DefaultBtn } from "../../buttons/DefaultBtn"
 import Lottie from "lottie-react";
 import candleChart from "../../../../../public/animations/candle-chart.json";
-import { DefaultBlack } from "../../buttons/DefaultBlack";
 import { DefaultBtnBlack } from "../../buttons/home/DefaultBtnBlack";
 
 
@@ -36,7 +34,6 @@ export const MessageForInvestors = () => {
                             />
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>

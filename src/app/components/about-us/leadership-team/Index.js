@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Image from "next/image";
 import neil_sumaru from '../../../../../public/about-us/team/neil-sumaru.png';
 import thomas_hsu from '../../../../../public/about-us/team/thomas-hsu.png';
 import carl_maybin from '../../../../../public/about-us/team/carl-maybin.png';
@@ -85,7 +85,7 @@ export const LeaderShipTeam = () => {
             leaderCompany: 'PEGASUS',
             description: 'Alvin Reyes is the Chief Technology Officer at Pegasus Data Technologies, where he leads the company’s technological direction and contributes to ongoing innovation in data technology. With a background in various global companies, Alvin brings over 15 years of experience as a Software Engineer to his current role.',
             linkedInProfileLink: 'https://www.linkedin.com/in/alvinpreyes'
-        },
+        }
     ];
 
     return (
@@ -133,7 +133,6 @@ export const LeaderShipTeam = () => {
                                 </div>
                             </div>
                         </div>
-
                         <div className="flex flex-col leading-6 text-center">
                             <span className="2xl:text-xl 2xl:leading-6 font-bold relative inline-block">
                                 <span className="name-background">{team.leaderName}</span>
@@ -143,7 +142,6 @@ export const LeaderShipTeam = () => {
                         </div>
                     </div>
                 ))}
-
             </div>
         </div>
     )

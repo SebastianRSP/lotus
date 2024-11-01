@@ -14,25 +14,24 @@ import { MobileLink } from './MobileLink';
 const navLinksBefore = [
     { navLinkName: 'HOME', navLink: '/home', extras: '' },
     { navLinkName: 'LIGHTPAPER', navLink: '#', extras: '' },
-    { navLinkName: 'INVESTORS', navLink: '/investors', extras: '' },
+    { navLinkName: 'INVESTORS', navLink: '/investors', extras: '' }
 ];
 
 const navLinksAfter = [
     { navLinkName: 'About Us', navLink: '#', extras: '' },
-    { navLinkName: 'Book a Demo', navLink: '#', extras: '' },  
-    // {/* bg-yellowDark */}
+    { navLinkName: 'Book a Demo', navLink: '#', extras: '' }
 ];
 
 const navIcons = [
     { navLinkName: '', navLink: '#', extras: '', icon: true, iconImage: telegram, font: '' },
     { navLinkName: 'M', navLink: '#', extras: '', icon: false, iconImage: null, font: 'font-serif' },
-    { navLinkName: 'EN', navLink: '#', extras: '', icon: false, iconImage: null, font: '' },
+    { navLinkName: 'EN', navLink: '#', extras: '', icon: false, iconImage: null, font: '' }
 ];
 
 const mobileNavIcons = [
     { navLinkName: '', navLink: '#', extras: 'p-5 border border-green', icon: true, iconImage: greenTelegram, font: '' },
     { navLinkName: 'M', navLink: '#', extras: 'p-6 border border-green', icon: false, iconImage: null, font: 'text-green font-serif' },
-    { navLinkName: 'EN', navLink: '#', extras: 'p-6 border border-green', icon: false, iconImage: null, font: 'text-green ' },
+    { navLinkName: 'EN', navLink: '#', extras: 'p-6 border border-green', icon: false, iconImage: null, font: 'text-green ' }
 ];
 
 const mobileMenu = [
@@ -40,7 +39,7 @@ const mobileMenu = [
     { navLinkName: 'Whitepaper', navLink: '#', extras: '' },
     { navLinkName: 'Investors', navLink: '/investors', extras: '' },
     { navLinkName: 'About Us', navLink: '#', extras: '' },
-    { navLinkName: 'Book a Demo', navLink: '#', extras: '' },
+    { navLinkName: 'Book a Demo', navLink: '#', extras: '' }
     
 ]
 

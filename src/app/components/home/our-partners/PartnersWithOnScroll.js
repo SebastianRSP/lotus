@@ -14,7 +14,6 @@ import Sia from '../../../../../public/new-home-assets/icons/sia.svg';
 import Storj from '../../../../../public/new-home-assets/icons/storj.svg';
 import Cloudskye from '../../../../../public/new-home-assets/icons/cloudskye.svg';
 import Bloczio from '../../../../../public/new-home-assets/icons/bloczio.svg';
-import Marquee from 'react-fast-marquee';
 
 gsap.registerPlugin(ScrollTrigger);
 

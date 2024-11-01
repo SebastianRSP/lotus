@@ -1,8 +1,6 @@
 'use client'
 
 import React, { useState } from 'react';
-import logoWhite from '../../../../../public/icons/logo-white.svg';
-import lotusWhite from '../../../../../public/icons/lotus-white.svg';
 import logo from '../../../../../public/icons/logo.svg';
 import lotus from '../../../../../public/icons/lotus.svg';
 import navToggle from '../../../../../public/icons/nav-toggle.svg';

@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import bridgeImage from '../../../../public/images/bridge.png';
 import bridgeText from '../../../../public/images/bridgeText.png';
 import defaultImage from '../../../../public/images/defaultImage.png';
 import { BridgeCard } from './BridgeCard';
@@ -52,7 +51,6 @@ export const Bridge = () => {
                 </div>
                 <div className='xl:px-40 md:px-9 px-7 lg:pb-32 md:pb-32 pb-16'>
                     <div className='w-full md:mt-28 mt-0 md:border-x md:border-y-0 border-0'>
-                        {/* previosu 2xl:px-36 */}
                         <div className='md:px-8 px-0 pt-1'>
                             <div className='md:flex justify-between grid gap-4 my-auto'>
                                 <div className='md:w-8/12 w-full'>

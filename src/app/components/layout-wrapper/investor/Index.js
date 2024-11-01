@@ -1,15 +1,10 @@
 import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/all";
-import { InvestorNavbar } from "../../navbar/investor/InvestorNavbar";
-import { InvestorFooter } from "../../footer/investor/Index";
-import Cursor from "../../cursor/Index";
-import { initAnimations } from "../../gsap-animations/Index";
 import { desktopNavbarAnimation } from "../../gsap-animations/DesktopNavbarAnimation";
 import { HomeNavbar } from "../../navbar/home/HomeNavbar";
 import { NewHomeLoading } from "../../loading/home/Index";
 import { newHomePageAnimation } from "../../gsap-animations/home/Index";
-import { AboutUsFooter } from "../../footer/about-us/Index";
 
 
 export const InvestorHomePage = ({ children }) => {
@@ -20,7 +15,6 @@ export const InvestorHomePage = ({ children }) => {
     useEffect(() => {
         if (typeof window !== 'undefined') {
             desktopNavbarAnimation();
-            // initAnimations();
             newHomePageAnimation();
 
             // Clean up ScrollTrigger instances on component unmount
@@ -33,7 +27,6 @@ export const InvestorHomePage = ({ children }) => {
     return (
         <>
             <header>
-                {/* <InvestorNavbar /> */}
                 <HomeNavbar />
             </header>
             <div id="wrapper">

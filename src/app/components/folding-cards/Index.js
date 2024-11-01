@@ -2,11 +2,8 @@
 
 import { useRef, useEffect } from 'react';
 import { BottomCard2 } from './innerAnimatedCards';
-import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/all';
 import gsap from 'gsap';
-import { AITool } from '../ai-tool/Index';
-import { StaticFoldingCard } from './StaticFoldingCard';
 import { AfterLastAnimatedCard } from './AfterLastAnimatedCard';
 
 // Initialize GSAP plugins
@@ -33,7 +30,7 @@ export const FoldingCard = ({ cardAnimationData, otherComponents, extras }) => {
       tl.fromTo(
         card,
         { y: otherComponents ? 0 : 20 }, // Starting position of cards
-        { y: otherComponents ? -150 : -60 , opacity: 1, duration: otherComponents ? 1 : 1 }, // Ending position of cards
+        { y: otherComponents ? -150 : -60, opacity: 1, duration: otherComponents ? 1 : 1 }, // Ending position of cards
         (index * (otherComponents ? 0.1 : 0.1)) // Staggering effect for each card
       );
     });
@@ -83,11 +80,6 @@ export const FoldingCard = ({ cardAnimationData, otherComponents, extras }) => {
         </div>
       )}
       {renderNestedCards(cardAnimationData.slice(1))}
-      {/* {otherComponents && (
-        <>
-          <StaticFoldingCard />
-        </>
-      )} */}
     </section>
   );
 };

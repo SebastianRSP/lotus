@@ -1,5 +1,4 @@
 'use client'
-import { useEffect, useRef } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -19,7 +18,7 @@ const cardDetails = [
     {
         cardDesp: `Transform your company liability into a valuable asset`,
         defaultImage: defaultImage
-    },
+    }
 ];
 
 export const CardsSection = () => {
@@ -162,8 +161,6 @@ export const CardsSection = () => {
                         </div>
                     </div>
                 </div>
-                {/* Apply the ref to the BorderDivider */}
-                {/* <div ref={borderRef}> */}
                 <BorderDivider />
             </div>
         </section>

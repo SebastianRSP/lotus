@@ -14,7 +14,7 @@ const caseStudies = [
         caseStudyImage: defaultImage,
         caseStudyHeading: 'Cybersecurity',
         caseStudyDescription: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.'
-    },
+    }
 ]
 
 export const CaseStudy = () => {
@@ -41,21 +41,12 @@ export const CaseStudy = () => {
                                 <p className="text-base font-semibold leading-7">{caseStudy.caseStudyDescription}</p>
                             </div>
                             <div className="px-9 md:pb-9 pb-5  w-11/12 flex justify-end">
-                                <ArrowBtn arrow={faArrowRight}/>
+                                <ArrowBtn arrow={faArrowRight} />
                             </div>
                         </div>
                     </Card>
                 ))}
             </div>
-            
-            {/*<div className="flex justify-center flex-row md:mt-24 mt-16">
-                <DefaultBtn
-                    extras={''}
-                    btnText={'VIEW MORE'}
-                    btnType={'button'}
-                />
-            </div>
-            */}
         </section>
     )
 }

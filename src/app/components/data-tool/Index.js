@@ -1,4 +1,3 @@
-import { MultiAnimatedCards } from "../folding-cards/MultiAnimatedCards";
 import cardAnimationBackground from '../../../../public/images/card-animation-background.png';
 import { FoldingCard } from "../folding-cards/Index";
 
@@ -34,7 +33,7 @@ const cardAnimationData = [
         backgroundColor: 'bg-gray-light',
         textColor: '',
         backgroundImage: ''
-    },
+    }
 ]
 
 export const DataTool = () => {

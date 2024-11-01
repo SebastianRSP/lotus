@@ -1,6 +1,5 @@
 'use client'
 
-import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import defaultImage from '../../../../../public/icons/defaultImageIcon.svg';
 import { NewHomeSlider } from "../../slick-slider/SlickSlider";
@@ -38,7 +37,7 @@ const showCases = [
         subHeading: 'Optimization Algorithms',
         description: 'Optimize your data management with our advanced algorithms designed for efficient data storage, retrieval, and monetization. These tools analyze usage patterns to ensure optimal performance, reducing costs and enhancing the accessibility of critical data.',
         defaultImage: defaultImage
-    },
+    }
 ];
 
 export const ShowCaseSection = () => {
@@ -48,7 +47,6 @@ export const ShowCaseSection = () => {
     const [bgStyle, setBgStyle] = useState({ left: 0, width: 0 });
 
     const handleTabClick = (index) => {
-        console.log(index, 'index')
         setActiveIndex(index);
         if (sliderRef.current) {
             sliderRef.current.slickGoTo(index); // Move to specific slide
@@ -84,7 +82,6 @@ export const ShowCaseSection = () => {
 
     return (
         <section className="2xl:py-28 md:py-16 py-10">
-            {console.log(activeIndex, 'activeIndex')}
             <div className="bg-gray-light rounded-lg 2xl:px-100 xl:px-20 md:px-10 px-5 xl:py-24 py-12">
                 <div className="grid lg:grid-cols-12 grid-cols-1 lg:gap-0 gap-8 lg:mb-0 mb-5">
                     {/* <h3 className="2xl:text-5xl xl:text-4xl lg:text-3xl text-xl 2xl:leading-60 xl:leading-48 lg:leading-42 leading-8 font-extralight lg:col-span-8 lg:w-11/12 w-11/12"> */}

@@ -10,7 +10,6 @@ export const IndexAboutUs = () => {
     return (
         <>
             <HeroBackground bgColor={'bg-black'}>
-                {/* Black Strap */}
                 <BlackStrap />
                 <div className="h-full w-full">
                     <AboutUsHeroSection />

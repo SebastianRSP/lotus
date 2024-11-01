@@ -1,4 +1,4 @@
-export const Logo = ({iconColor}) => {
+export const Logo = ({ iconColor }) => {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" className={`${iconColor} lotus`} width="32.276" height="17.424">
             <g data-name="Group 172703">

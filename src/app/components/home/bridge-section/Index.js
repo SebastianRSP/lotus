@@ -23,7 +23,7 @@ const cardDetails = [
         heading: 'Redefining the internet of storage',
         description: 'The Bridge transforms data infrastructure by providing complete, scalable interoperability across all of the world’s leading storage solutions. Our innovative approach redefines how data is stored and accessed, offering unparalleled control and flexibility in a rapidly evolving digital landscape.',
         defaultImage: defaultImage
-    },
+    }
 ];
 
 export const BridgeSection = () => {

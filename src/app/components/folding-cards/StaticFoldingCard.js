@@ -26,7 +26,7 @@ const cardContent = [
     {
         cardHeading: 'DATA VISUALIZATION',
         cardContentDetail: 'Fed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et..'
-    },
+    }
 ];
 
 
@@ -42,31 +42,31 @@ export const StaticFoldingCard = () => {
             // Clean up on unmount
             return () => ScrollTrigger.getAll().forEach(st => st.kill());
         }, deps);
-      };
-      
-      useGSAP(() => {
+    };
+
+    useGSAP(() => {
         const foldingContainer = document.querySelector('.folding-container');
         const cards = gsap.utils.toArray('.folding-card');
-      
+
         // Ensure there are no duplicate elements
         const uniqueCards = [...new Set(cards)];
-      
-          let timeline = gsap.timeline({
-              scrollTrigger: {
-                  trigger: foldingContainer,
-                  start: 'top center+=200',
+
+        let timeline = gsap.timeline({
+            scrollTrigger: {
+                trigger: foldingContainer,
+                start: 'top center+=200',
                 //   end: () => `+=${((800 * uniqueCards.length))}`,
-                  scrub: true,
-                  pin: true,
-                  markers: false
-              }
-          });
+                scrub: true,
+                pin: true,
+                markers: false
+            }
+        });
 
         const screenWidth = window.innerWidth;
         const totalCards = uniqueCards.length;
 
         const eachCardDeserve = screenWidth / totalCards;
-        
+
         // Calculate the width of one card
         const cardWidth = uniqueCards[0].offsetWidth;
 
@@ -75,12 +75,9 @@ export const StaticFoldingCard = () => {
 
         const finalXPos = 100 - movePercentage;
 
-
-        console.log(finalXPos, 'movePercentage')
-        
         // // Calculate the move distance
         // const moveDistance = totalCardsWidth / (screenWidth * 10);
-        
+
         // // Calculate the move percentage based on card width
         // const movePercentage = moveDistance * 100;
 
@@ -88,7 +85,7 @@ export const StaticFoldingCard = () => {
         uniqueCards.forEach((card, index) => {
             // Calculate the x position based on the index and calculated percentage
             let xPos = index === 0 ? 0 : `-${index * (finalXPos + 10)}%`;
-            
+
             // Animate the card using GSAP
             timeline.to(card, {
                 x: xPos,
@@ -98,17 +95,17 @@ export const StaticFoldingCard = () => {
         });
 
 
-      }, []);
-    
-    
+    }, []);
+
+
     return (
         <div data-folding-parent className={`folding-container h-auto lg:px-0 md:px-9 px-7 lg:pb-0 xl:pb-0 2xl:pb-0 pb-20`}>
             <div data-folding-card className="folding-sticky-container overflow-hidden mt-32 lg:sticky top-20">
-                <div  className='grid md:grid-cols-2 lg:grid-flow-col lg:grid-cols-none lg:gap-0 md:gap-16 gap-4' >
+                <div className='grid md:grid-cols-2 lg:grid-flow-col lg:grid-cols-none lg:gap-0 md:gap-16 gap-4' >
                     {cardContent.map((data, index) => {
                         return (
-                            <div 
-                                key={index} 
+                            <div
+                                key={index}
                                 className={`folding-card border-green divide-x border-y-2 border lg:w-50 w-auto cursor-pointer bg-black`}
                             >
                                 <div className="grid flex-grow lg:px-20 px-5 lg:pt-36 pt-10 lg:pb-16 pb-8 duration-300 transition-colors relative">
@@ -138,7 +135,7 @@ export const StaticFoldingCard = () => {
                                     </div>
                                 </div>
                             </div>
-                        );
+                        )
                     })}
                 </div>
             </div>

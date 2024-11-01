@@ -1,4 +1,4 @@
-export const Telegram = ({iconColor}) => {
+export const Telegram = ({ iconColor }) => {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" className={`${iconColor} scroller-icon w-6 h-6 md:w-4 md:h-4 `} viewBox="19.955 22.5 18.09 15">
             <g data-name="Artwork 1">

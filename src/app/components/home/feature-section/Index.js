@@ -1,7 +1,5 @@
 'use client'
 
-import Image from 'next/image';
-import defaultImageIcon from '../../../../../public/icons/defaultImg.svg';
 import rails from '../../../../../public/animations/rails.json';
 import Lottie from 'lottie-react';
 
