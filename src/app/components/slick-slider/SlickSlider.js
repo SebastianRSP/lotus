@@ -133,7 +133,7 @@ export const NewHomeSlider = ({ children, index, sliderRef, onSlideChange }) => 
     const newHomePageSettings = {
         dots: false,
         infinite: true,
-        speed: 300,
+        speed: 100,
         slidesToShow: 1,
         slidesToScroll: 1,
         initialSlide: 0,

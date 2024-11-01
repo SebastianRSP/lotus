@@ -975,7 +975,7 @@ canvas {
 }
 
 .smooth-transition {
-  transition: left 0.4s ease-in, width 0.4s ease;
+  transition: left 0.1s ease-in, width 0.1s ease;
   /* Smooth transition */
 }
 
