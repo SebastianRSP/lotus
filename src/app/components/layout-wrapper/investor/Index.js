@@ -5,6 +5,7 @@ import { desktopNavbarAnimation } from "../../gsap-animations/DesktopNavbarAnima
 import { HomeNavbar } from "../../navbar/home/HomeNavbar";
 import { NewHomeLoading } from "../../loading/home/Index";
 import { newHomePageAnimation } from "../../gsap-animations/home/Index";
+import { smoothScroolling } from "../../gsap-animations/smoothScroll";
 
 
 export const InvestorHomePage = ({ children }) => {
@@ -14,8 +15,9 @@ export const InvestorHomePage = ({ children }) => {
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
-            desktopNavbarAnimation();
             newHomePageAnimation();
+            desktopNavbarAnimation();
+            smoothScroolling();
 
             // Clean up ScrollTrigger instances on component unmount
             return () => {

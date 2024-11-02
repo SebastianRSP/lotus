@@ -38,13 +38,14 @@ export default function RootLayout({ children }) {
         <title>Your Website Title</title>
       </Head>
       <body className={plusJakartaSans.variable}>
-        {isInvestorsPage ? (
+        {/* {isInvestorsPage ? (
           <InvestorHomePage>{children}</InvestorHomePage>
         ) : isAboutUsPage ? (
           <AboutUsPage>{children}</AboutUsPage>
         ) : (
           <NewHomePage>{children}</NewHomePage>
-        )}
+        )} */}
+        <NewHomePage>{children}</NewHomePage>
       </body>
     </html>
   );

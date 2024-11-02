@@ -17,9 +17,11 @@ const industryNames = [
 export const newHomePageAnimation = () => {
 
     const loader = document.querySelector('.loader');
+    const nav = document.querySelector('nav');
 
     if (loader) {
-        gsap.set(loader, { width: '100vw', height: '100vh' })
+        gsap.set(nav, { zIndex: 0 });
+        gsap.set(loader, { width: '100vw', height: '100vh', y: 0, opacity: 1 });
         // Initial collapsed state: Leaves rotated and positioned below
         gsap.set("#left-leaf", { transformOrigin: "center center", x: 20, y: 50, });
         gsap.set("#middle-leaf", { transformOrigin: "center center", rotate: -100, x: -20, y: 50, });
@@ -30,19 +32,18 @@ export const newHomePageAnimation = () => {
         gsap.set("#home-hero-paragraph", { transformOrigin: "center center", opacity: 0 });
         gsap.set("#home-hero-button", { transformOrigin: "center center", opacity: 0 });
         gsap.set("#home-hero-bullets", { transformOrigin: "center center", opacity: 0 });
-        gsap.set(".link-animation", { transformOrigin: "center center", y: -100, opacity: .5 });
+        gsap.set(".link-animation", { transformOrigin: "center center", y: -200, opacity: .5 });
 
         const timeline = gsap.timeline({
             onComplete: () => {
-                ScrollSmoother.create({
-                    wrapper: '#wrapper',
-                    content: '#smooth-content',
-                    smooth: 0.5,
-                    smoothTouch: 0.1,
-                    effects: true,
-                });
+                // ScrollSmoother.create({
+                //     wrapper: '#wrapper',
+                //     content: '#smooth-content',
+                //     smooth: 0.5,
+                //     smoothTouch: 0.1,
+                //     effects: true,
+                // });
                 initMainAnimations();
-                // smoothScroolling();
             }
         });
 
@@ -55,6 +56,7 @@ export const newHomePageAnimation = () => {
             .to("#middle-leaf", { rotate: 0, x: 0, y: 0, opacity: 1, duration: 1.1, ease: "power2.out" }, "<")
             .to("#right-leaf", { rotate: 0, x: 0, y: 0, opacity: 1, duration: 1.2, ease: "power2.out" }, "<")
             .delay(1)  // Pause after the leaves animation completes
+            .to(nav, { zIndex: 10 })
             .to(loader, { y: '-100%', opacity: 0.5, duration: 0.8, ease: "power1.inOut" })
             .to("#left-leaf, #middle-leaf, #right-leaf", { opacity: 0, duration: 0.4, ease: "power1.inOut" }, "<")
             .to("#home-hero-bg", { y: '0%', opacity: 1, duration: 1, ease: "back.inOut" }, "<")
@@ -105,7 +107,7 @@ export const newHomePageAnimation = () => {
 
             const counterContainer = document.querySelector('.counter-container');
 
-            if(counterContainer) {
+            if (counterContainer) {
                 initCounterAnimation(counterContainer);
             }
         };

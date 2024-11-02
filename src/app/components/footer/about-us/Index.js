@@ -64,7 +64,7 @@ export const AboutUsFooter = () => {
                         <h4 className='xl:text-2xl md:text-xl text-lg xl:leading-32 md:leading-7 leading-26 pb-2'>
                             Join our Telegram
                         </h4>
-                        <div className='relative 2xl:w-20 w-12 2xl:h-20 h-12'>
+                        <div className='relative 2xl:w-16 w-12 2xl:h-16 h-12 mt-2'>
                             <Lottie animationData={telegram} className='absolute' />
                         </div>
                     </div>
@@ -97,8 +97,8 @@ export const AboutUsFooter = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='md:px-5 xl:col-span-3'>
-                        <p className='2xl:text-lg text-sm 2xl:w-5/6 xl:w-full w-5/6 mb-4'>
+                    <div className='xl:px-5 xl:col-span-3'>
+                        <p className='2xl:text-lg text-sm 2xl:w-5/6 xl:w-full sm:w-5/6 w-full mb-4'>
                             Prospective investors should
                             consult their own legal, tax, and
                             financial advisors before making
