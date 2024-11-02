@@ -161,6 +161,8 @@ let hasAnimated = false;
 const initCounterAnimation = () => {
     const counterContainer = document.querySelector('.counter-container');
 
+    console.log(counterContainer, 'counterContainer')
+
     // Create a ScrollTrigger for the counterContainer
     ScrollTrigger.create({
         trigger: counterContainer,
