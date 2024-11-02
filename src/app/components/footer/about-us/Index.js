@@ -38,34 +38,38 @@ export const AboutUsFooter = () => {
             <footer className={`${isGreen ? 'bg-green' : 'bg-gray-light'} 2xl:px-100 md:px-12 px-5 2xl:pt-100 md:pt-12 pt-5 py-8 rounded-tr-lg rounded-tl-lg`}>
                 <div className="grid xl:grid-cols-12 md:grid-cols-2 grid-cols-1 gap-5 mx-auto w-full relative text-black lg:pb-7 pb-5">
                     <div className="flex flex-col xl:col-span-4 justify-between">
-                        <div className='relative'>
-                            <div className='absolute z-0 order-last inset-0 bg-gray-300 bg-green border border-black rounded-4 translate-x-[2px] translate-y-[2px]'></div>
-                            <div className="bg-white relative z-10 items-center flex sm:space-y-0 border rounded-4 border-black">
-                                <div className="relative z-10 w-full">
-                                    <input
-                                        className="block px-4 py-3 w-full bg-white text-sm bg-transparent placeholder:text-black placeholder:opacity-50 placeholder:2xl:text-2xl placeholder:text-lg focus:border-none focus:ring-0"
-                                        placeholder="Email"
-                                        type="email"
-                                        id="email"
-                                        required=""
-                                    />
-                                </div>
-                                <div className='relative 2xl:w-16 w-11 2xl:h-16 h-11 bg-black rounded-[4px] flex justify-center items-center'>
-                                    <Lottie
-                                        animationData={sendMessageArrow}
-                                        className='absolute 2xl:w-10 w-7 2xl:h-10 h-7 transform -rotate-90 scale-x-[1]'
-                                    />
+                        <div>
+                            <div className='relative'>
+                                <div className='absolute z-0 order-last inset-0 bg-gray-300 bg-green border border-black rounded-4 translate-x-[2px] translate-y-[2px]'></div>
+                                <div className="bg-white relative z-10 items-center flex sm:space-y-0 border rounded-4 border-black">
+                                    <div className="relative z-10 w-full">
+                                        <input
+                                            className="block px-4 py-3 w-full bg-white text-sm bg-transparent placeholder:text-black placeholder:opacity-50 placeholder:2xl:text-2xl placeholder:text-lg focus:border-none focus:ring-0"
+                                            placeholder="Email"
+                                            type="email"
+                                            id="email"
+                                            required=""
+                                        />
+                                    </div>
+                                    <div className='relative 2xl:w-16 w-11 2xl:h-16 h-11 bg-black rounded-[4px] flex justify-center items-center'>
+                                        <Lottie
+                                            animationData={sendMessageArrow}
+                                            className='absolute 2xl:w-10 w-7 2xl:h-10 h-7 transform -rotate-90 scale-x-[1]'
+                                        />
+                                    </div>
                                 </div>
                             </div>
+                            <h4 className='text-sm lg:pb-10 pb-3 pt-3'>
+                                Sign up to receive the latest in news about Lotus
+                            </h4>
                         </div>
-                        <h4 className='text-sm pb-10 pt-3'>
-                            Sign up to receive the latest in news about Lotus
-                        </h4>
-                        <h4 className='xl:text-2xl md:text-xl text-lg xl:leading-32 md:leading-7 leading-26 pb-2'>
-                            Join our Telegram
-                        </h4>
-                        <div className='relative 2xl:w-16 w-12 2xl:h-16 h-12 mt-2'>
-                            <Lottie animationData={telegram} className='absolute' />
+                        <div className='md:mt-14 mt-10'>
+                            <h4 className='xl:text-2xl md:text-xl text-lg xl:leading-32 md:leading-7 leading-26 pb-2'>
+                                Join our Telegram
+                            </h4>
+                            <div className='relative 2xl:w-16 w-12 2xl:h-16 h-12 mt-2'>
+                                <Lottie animationData={telegram} className='absolute' />
+                            </div>
                         </div>
                     </div>
                     <div className='grid md:grid-cols-3 xl:col-span-5 md:gap-0 gap-5 grid-cols-2'>
