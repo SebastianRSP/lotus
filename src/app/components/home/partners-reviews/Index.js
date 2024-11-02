@@ -169,7 +169,8 @@ export const PartnerReviews = () => {
                                     transform: `translate(${translateX}px, ${translateY}px)`,
                                     transitionDuration: '1.3s',
                                     // transitionTimingFunction: 'cubic-bezier(0.14, 1.56, 0.14, 1)',
-                                    transitionTimingFunction: 'cubic-bezier(0.10, 1.4, 0.10, 1)',
+                                    // transitionTimingFunction: 'cubic-bezier(0.10, 1.4, 0.10, 1)',
+                                    transitionTimingFunction: 'cubic-bezier(0.1, 1.1, 0.1, 1)'
                                 }}
                             >
                                 {partners.map((currentPartner, index) => (
