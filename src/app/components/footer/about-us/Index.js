@@ -37,7 +37,7 @@ export const AboutUsFooter = () => {
         <>
             <footer className={`${isGreen ? 'bg-green' : 'bg-gray-light'} 2xl:px-100 md:px-12 px-5 2xl:pt-100 md:pt-12 pt-5 py-8 rounded-tr-lg rounded-tl-lg`}>
                 <div className="grid xl:grid-cols-12 md:grid-cols-2 grid-cols-1 gap-5 mx-auto w-full relative text-black lg:pb-7 pb-5">
-                    <div className="flex flex-col xl:col-span-4 ">
+                    <div className="flex flex-col xl:col-span-4 justify-between">
                         <div className='relative'>
                             <div className='absolute z-0 order-last inset-0 bg-gray-300 bg-green border border-black rounded-4 translate-x-[2px] translate-y-[2px]'></div>
                             <div className="bg-white relative z-10 items-center flex sm:space-y-0 border rounded-4 border-black">
@@ -118,13 +118,13 @@ export const AboutUsFooter = () => {
                     </div>
                 </div>
             </footer>
-            <div className="flex flex-col gap-2 z-10 w-full">
+            {/* <div className="flex flex-col gap-2 z-10 w-full">
                 <hr className="border-12 border-dark-gray" />
                 <hr className="border-6 border-dark-gray" />
                 <hr className="border-3 border-dark-gray" />
                 <hr className="border-2 border-dark-gray" />
                 <hr className="border-1 border-dark-gray" />
-            </div>
+            </div> */}
         </>
     )
 }
