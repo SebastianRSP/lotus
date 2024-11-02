@@ -15,7 +15,7 @@ export const desktopNavbarAnimation = () => {
     ScrollTrigger.create({
         scroller: window,
         start: "top top+=100",
-        end: "bottom top+=100",
+        end: "bottom+=1500 top+=100",
         onUpdate: (self) => {
             const scrollY = self.scroll();
             // Handle "is-scrolled" class
