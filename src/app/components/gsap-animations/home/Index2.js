@@ -103,7 +103,11 @@ export const newHomePageAnimation = () => {
                 });
             }
 
-            initCounterAnimation();
+            const counterContainer = document.querySelector('.counter-container');
+
+            if(counterContainer) {
+                initCounterAnimation(counterContainer);
+            }
         };
     }
 };
@@ -154,39 +158,34 @@ const startTextTypingAnimation = (textRef) => {
     typeNextWord();
 };
 
-// Flag to track if the animation has run
-let hasAnimated = false;
+let hasCounterAnimated = false;
 
-// Function to run counter animation
-const initCounterAnimation = () => {
-    const counterContainer = document.querySelector('.counter-container');
+const initCounterAnimation = (counterContainer) => {
+    // Reset any previous ScrollTriggers and flag
+    // ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    hasCounterAnimated = false;
 
-    console.log(counterContainer, 'counterContainer')
-
-    // Create a ScrollTrigger for the counterContainer
     ScrollTrigger.create({
         trigger: counterContainer,
         start: "top 80%",
-        markers: true,
+        markers: false,
         toggleActions: 'play none none none',
         onEnter: function () {
-            // Check if the animation has already run
-            if (!hasAnimated) {
-                hasAnimated = true; // Set the flag to true so it doesn't run again
+            if (!hasCounterAnimated) {
+                hasCounterAnimated = true;
                 gsap.utils.toArray('.counter').forEach(function (el) {
                     const target = { val: 0 };
-                    const endValue = parseFloat(el.getAttribute('data-number')); // Get the target number
+                    const endValue = parseFloat(el.getAttribute('data-number'));
 
                     gsap.to(target, {
                         val: endValue,
-                        ease: 'power1.out', // Apply ease-out animation
+                        ease: 'power1.out',
                         duration: 3,
                         onUpdate: function () {
-                            // Check if the end value has a decimal
                             if (endValue % 1 !== 0) {
-                                el.innerText = target.val.toFixed(1); // Show one decimal place for decimals
+                                el.innerText = target.val.toFixed(1);
                             } else {
-                                el.innerText = Math.floor(target.val); // Show as integer if no decimal
+                                el.innerText = Math.floor(target.val);
                             }
                         }
                     });
@@ -195,6 +194,7 @@ const initCounterAnimation = () => {
         }
     });
 };
+
 
 const startBridgeAnimation = (bridgeSection) => {
     const bridgeInsideBlackBox = document.querySelector('.inside-black-box');
