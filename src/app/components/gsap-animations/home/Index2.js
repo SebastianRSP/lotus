@@ -164,8 +164,9 @@ const initCounterAnimation = () => {
     // Create a ScrollTrigger for the counterContainer
     ScrollTrigger.create({
         trigger: counterContainer,
-        start: "top+=1500 80%",
-        markers: true,
+        start: "top 80%",
+        markers: false,
+        toggleActions: 'play none none none',
         onEnter: function () {
             // Check if the animation has already run
             if (!hasAnimated) {
@@ -189,8 +190,7 @@ const initCounterAnimation = () => {
                     });
                 });
             }
-        },
-        toggleActions: 'play none none none'
+        }
     });
 };
 
