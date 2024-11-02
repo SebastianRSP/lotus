@@ -41,7 +41,7 @@ export const desktopNavbarAnimation = () => {
 
             lastScrollY = scrollY;
         },
-        markers: true,
+        markers: false,
         scrub: true,
     });
 };
