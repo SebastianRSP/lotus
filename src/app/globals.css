@@ -863,7 +863,7 @@ canvas {
 
 @media (min-width: 1536px) {
   .border-send-bridge::before {
-    height: 86.5%;
+    height: 87.5%;
     /* Adjust the width for small screens */
   }
 }
