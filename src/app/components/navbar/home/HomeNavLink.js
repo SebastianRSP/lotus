@@ -5,11 +5,12 @@ import { useState, useCallback } from "react";
 import { DefaultBtn } from "../../buttons/home/DefaultBtn";
 import { DefaultBtnBlack } from "../../buttons/home/DefaultBtnBlack";
 import { Telegram } from "../../svgs/Telegram";
-import { useRouter } from "next/navigation"; 
+import { usePathname, useRouter } from "next/navigation";
 import { exitPageAnimation } from "../../gsap-animations/home/Index2";
 
 export const HomeNavLink = ({ navLinkName, navLink, extras, icon, iconImage, id, font, isIncludeBookDemoBtn, isDark }) => {
     const router = useRouter();
+    const currentPath = usePathname();
     const [isToggled, setIsToggled] = useState(false);
 
     const handleMouseEnter = () => {
@@ -21,7 +22,11 @@ export const HomeNavLink = ({ navLinkName, navLink, extras, icon, iconImage, id,
     };
 
     const handleRouteClick = useCallback((e) => {
-        // Delay route change by 1.5 seconds
+        // Check if the clicked link is the same as the current path
+        if (currentPath === navLink) {
+            // Do not perform animation or route change if it's the same link
+            return;
+        }
 
         exitPageAnimation();
 
