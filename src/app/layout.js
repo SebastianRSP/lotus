@@ -31,7 +31,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <Head>
-        {/* Add meta tags globally */}
         <meta name="viewport" content="width=device-width, initial-scale=00" />
         <meta charSet="UTF-8" />
         <meta name="description" content="Your website description" />

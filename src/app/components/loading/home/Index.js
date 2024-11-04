@@ -3,7 +3,7 @@
 export const NewHomeLoading = () => {
 
     return (
-        <div className="loader">
+        <div className="loader-container">
             <div className="relative flex justify-center items-center w-28 h-8">
                 <svg id="leaf-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.5 16" className="absolute inset-0 w-28 h-8 invisible">
                     <g data-name="Group 172703">
