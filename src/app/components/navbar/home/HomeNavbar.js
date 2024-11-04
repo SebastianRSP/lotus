@@ -159,6 +159,7 @@ export const HomeNavbar = () => {
                                     navLink={mobileLink.navLink}
                                     extras={''}
                                     key={index}
+                                    handleToggle={handleToggle}
                                 />
                             ))}
                         </div>

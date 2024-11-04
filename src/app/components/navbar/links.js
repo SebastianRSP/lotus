@@ -26,6 +26,6 @@ export const mobileMenu = [
     { navLinkName: 'HOME', navLink: '/', extras: '' },
     { navLinkName: 'Whitepaper', navLink: '#', extras: '' },
     { navLinkName: 'Investors', navLink: '/investors', extras: '' },
-    { navLinkName: 'About Us', navLink: '#', extras: '' },
+    { navLinkName: 'About Us', navLink: '/about-us', extras: '' },
     { navLinkName: 'Book a Demo', navLink: '#', extras: '' }
 ];
