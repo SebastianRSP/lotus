@@ -25,7 +25,11 @@ export const HomeNavLink = ({ navLinkName, navLink, extras, icon, iconImage, id,
     const handleRouteClick = useCallback((e) => {
         // Check if the clicked link is the same as the current path
 
-        if (currentPath === navLink) {
+        console.log(navLink, 'navLink')
+
+        if(navLink === '#'){
+            return;
+        }else if (currentPath === navLink) {
             // Do not perform animation or route change if it's the same link
             return;
         }else{
