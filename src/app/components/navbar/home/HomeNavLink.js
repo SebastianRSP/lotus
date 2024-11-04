@@ -1,12 +1,15 @@
-'use client'
+'use client';
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { DefaultBtn } from "../../buttons/home/DefaultBtn";
 import { DefaultBtnBlack } from "../../buttons/home/DefaultBtnBlack";
 import { Telegram } from "../../svgs/Telegram";
+import { useRouter } from "next/navigation"; 
+import { exitPageAnimation } from "../../gsap-animations/home/Index2";
 
 export const HomeNavLink = ({ navLinkName, navLink, extras, icon, iconImage, id, font, isIncludeBookDemoBtn, isDark }) => {
+    const router = useRouter();
     const [isToggled, setIsToggled] = useState(false);
 
     const handleMouseEnter = () => {
@@ -16,6 +19,16 @@ export const HomeNavLink = ({ navLinkName, navLink, extras, icon, iconImage, id,
     const handleMouseLeave = () => {
         setIsToggled(false);
     };
+
+    const handleRouteClick = useCallback((e) => {
+        // Delay route change by 1.5 seconds
+
+        exitPageAnimation();
+
+        setTimeout(() => {
+            router.push(navLink); // Navigate to the route after delay
+        }, 800);
+    }, [navLink, router]);
 
     return (
         <>
@@ -37,12 +50,12 @@ export const HomeNavLink = ({ navLinkName, navLink, extras, icon, iconImage, id,
                 </div>
             ) : (
                 <div >
-                    <Link
-                        href={navLink}
+                    <p
                         key={id}
+                        onClick={() => handleRouteClick(navLink)}
                         onMouseEnter={handleMouseEnter}
                         onMouseLeave={handleMouseLeave}
-                        className={`${extras} ${isDark ? 'text-white' : 'text-black'} h-inherit flex items-center justify-center link-animation`}
+                        className={`${extras} ${isDark ? 'text-white' : 'text-black'} cursor-pointer h-inherit flex items-center justify-center link-animation`}
                     >
                         {icon ? (
                             <>
@@ -57,7 +70,7 @@ export const HomeNavLink = ({ navLinkName, navLink, extras, icon, iconImage, id,
                                 </span>
                             </>
                         )}
-                    </Link>
+                    </p>
                 </div>
             )}
         </>

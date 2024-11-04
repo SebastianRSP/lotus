@@ -14,9 +14,9 @@ export const NewHomePage = ({ children }) => {
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
+            // smoothScroolling();
             newHomePageAnimation();
             desktopNavbarAnimation();
-            smoothScroolling();
             // Clean up ScrollTrigger instances on component unmount
             return () => {
                 ScrollTrigger.getAll().forEach(trigger => trigger.kill());

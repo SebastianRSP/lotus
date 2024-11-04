@@ -11,13 +11,13 @@
 }
 
 body {
-  @apply font-plus-jakarta-sans;
+  @apply font-plus-jakarta-sans bg-white;
   font-family: 'Plus Jakarta Sans', sans-serif;
   overflow-x: hidden;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* background-color: #fff; */
+  background-color: #fff;
   color: #000;
 }
 
@@ -463,6 +463,7 @@ canvas {
 /* Loading Animation */
 
 .loader-container {
+  background: #fff;
   align-items: center;
   bottom: 0;
   color: #000;
@@ -471,19 +472,19 @@ canvas {
   pointer-events: none;
   position: fixed;
   inset: 0;
-  opacity: 0;
+  /* opacity: 0;  */
   z-index: 900;
   width: 100%;
   height: 100%;
 }
 
 .loader-container:before {
-  /* background-color: #fff; */
+  background-color: #fff;
   content: "";
   height: 100%;
   position: absolute;
   inset: 0;
-  transition: opacity .4s cubic-bezier(.32, .94, .6, 1);
+  /* transition: opacity .4s cubic-bezier(.32, .94, .6, 1); */
   width: 100%
 }
 
