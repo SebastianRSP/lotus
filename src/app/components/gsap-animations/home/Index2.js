@@ -31,7 +31,7 @@ export const newHomePageAnimation = () => {
         // gsap.set(loader , { width: '100vw', height: '100vh', y: 0, opacity: 1});
         // Initial collapsed state: Leaves rotated and positioned below
 
-        gsap.delayedCall(.2, () => {
+        gsap.delayedCall(.5, () => {
             gsap.set(nav, { zIndex: 0 });
             gsap.set("#left-leaf", { transformOrigin: "center center", x: 20, y: 50, });
             gsap.set("#middle-leaf", { transformOrigin: "center center", rotate: -100, x: -20, y: 50, });
@@ -51,8 +51,8 @@ export const newHomePageAnimation = () => {
             }
         });
 
-        timeline.fromTo(body, { opacity: 0 }, { opacity: 1, duration: .3, ease: "power4.in" });
-        timeline.delay(.2)
+        timeline.fromTo(body, { opacity: 0 }, { opacity: 1, duration: .25, ease: "power4.in" });
+        timeline.delay(.5)
         timeline.set(loader, { background: '#fff', y: 0, opacity: 1 });
         
         // Make the SVG visible before starting the animation
@@ -63,7 +63,7 @@ export const newHomePageAnimation = () => {
             .to("#left-leaf", { rotate: 0, x: 0, y: 0, opacity: 1, duration: .8, ease: "power2.out" })
             .to("#middle-leaf", { rotate: 0, x: 0, y: 0, opacity: 1, duration: .9, ease: "power2.out" }, "<")
             .to("#right-leaf", { rotate: 0, x: 0, y: 0, opacity: 1, duration: 1, ease: "power2.out" }, "<")
-            .delay(.8)  // Pause after the leaves animation completes
+            .delay(1)  // Pause after the leaves animation completes
             // .to(body, { opacity: 1 })
             .to(nav, { zIndex: 10 })
             .to(loader, { y: '-100%', opacity: 0.5, duration: 0.8, ease: "power1.inOut" })
