@@ -12,7 +12,7 @@ export const FeatureSection = () => {
                         <h4 className='lg:hidden block absolute top-0 2xl:-ml-96 lg:-ml-64 ml-0 bg-white z-30 2xl:pl-20 lg:pl-10 pl-0 2xl:pb-20 lg:pb-10 pb-6 font-extralight 2xl:text-6xl xl:text-5xl lg:text-2.5 md:text-4xl text-3xl 2xl:leading-60 xl:leading-54 lg:leading-46 md:leading-42 leading-9'>
                             Lotus powers the future of data storage by building superior rails for migration.
                         </h4>
-                        <Lottie animationData={rails} loop={true} className="absolute w-fit h-available" />
+                        <Lottie animationData={rails} loop={true} className="md:block hidden absolute w-fit h-available" />
                     </div>
                 </div>
                 <div className="lg:col-span-5 col-span-12 bg-white lg:pt-0 pt-8">
