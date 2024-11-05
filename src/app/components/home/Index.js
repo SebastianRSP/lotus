@@ -6,6 +6,8 @@ import tickIcon from '../../../../public/new-home-assets/tick.svg';
 import { TextTyping } from "./text-animation/TextTyping";
 import { WhiteStrap } from "../white-strap-navbar/WhiteStrap";
 import { HeroBackground } from "../shared-components/HeroBackground";
+import { useEffect, useRef, useState } from "react";
+import Spline from "@splinetool/react-spline/next";
 
 // Lazy load the Spline component
 // const LazySpline = dynamic(() => import('@splinetool/react-spline'), { ssr: false });
@@ -88,11 +90,11 @@ export const IndexHome = () => {
                         </div>
                     </div>
                     <div className="lg:col-span-6 col-span-1 h-full overflow-hidden flex justify-center items-end">
-                        {/* <div ref={splineRef} className="h-full">
-                            {isSplineVisible && (
-                                <Spline scene="https://prod.spline.design/3U4NIWWOIzRC1ZS2/scene.splinecode" />
-                            )}
-                        </div> */}
+                        <div className="h-full w-full">
+                            <Spline scene="https://prod.spline.design/oEhJQIegnUr-kZTl/scene.splinecode" />
+                            {/* {isSplineVisible && (
+                            )} */}
+                        </div>
                     </div>
                 </div>
             </HeroBackground>
