@@ -1,6 +1,6 @@
 'use client'
 
-import rails from '../../../../../public/animations/rails.json';
+import rails from '../../../../../public/animations/rails.lottie';
 import Lottie from 'lottie-react';
 
 export const FeatureSection = () => {
