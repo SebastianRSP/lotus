@@ -306,7 +306,7 @@ export const InvertmentBridgeGrowth = () => {
                                     <div className='lg:text-black text-green'>
                                         <div className='flex justify-between items-center'>
                                             <div>
-                                                <h6 className='md:text-32 text-2xl font-extrabold flex'>
+                                                <h6 className='md:text-32 text-2xl md:leading-64 leading-48 font-extrabold flex'>
                                                     Send
                                                     <sup className='pl-2 mt-2'>
                                                         <SenDataArrow extraClasses={'md:w-7 w-5 md:h-5 h-3'} iconColor={'lg:fill-black fill-green'} />
@@ -357,7 +357,7 @@ export const InvertmentBridgeGrowth = () => {
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div ref={boxLengthRef} className="absolute sm:block hidden lg:text-black text-green inset-0 transition-all duration-1000 ease-in-out"
+                                            <div ref={boxLengthRef} className="absolute pr-6 sm:block hidden lg:text-black text-green inset-0 transition-all duration-1000 ease-in-out"
                                                 style={{ transform: `translateY(${translateY}px)` }} >
                                                 <div className='h-available'>
                                                     <div className='flex justify-center items-center h-full w-full'>
@@ -369,7 +369,7 @@ export const InvertmentBridgeGrowth = () => {
                                                         <div key={index} className="border-y-2 h-full py-5 border-opacity-20 lg:border-black border-green">
                                                             <div className="grid grid-rows-2 gap-6 h-full">
                                                                 {data.detail.map((item, index) => (
-                                                                    <div key={index} className="2xl:pr-20 xl:pr-12 lg:pr-8 md:pr-14 pr-0 md:pl-3 pl-0 flex flex-col lg:gap-2 gap-3 text-left">
+                                                                    <div key={index} className="2xl:pr-10 xl:pr-8 lg:pr-4 md:pr-14 pr-0 md:pl-3 pl-0 flex flex-col lg:gap-2 gap-3 text-left">
                                                                         <div className="flex justify-between items-center gap-2">
                                                                             <h4 className="2xl:text-2xl text-lg font-bold ">{item.title}</h4>
                                                                             <span className="2xl:text-4xl text-2xl font-bold lg:opacity-40 opacity-100">{item.percentage}</span>
@@ -452,7 +452,7 @@ export const InvertmentBridgeGrowth = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='flex justify-center'>
+                        {/* <div className='flex justify-center'>
                             <div className='flex justify-between 2xl:gap-3.4 xl:gap-2.5 lg:gap-9 md:gap-1.3r sm:gap-0.8r gap-0.6r'>
                                 {Array(6).fill(null).map((_, index) => (
                                     <Image
@@ -463,7 +463,7 @@ export const InvertmentBridgeGrowth = () => {
                                     />
                                 ))}
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>

@@ -9,21 +9,21 @@ import Lottie from 'lottie-react';
 import { usePathname } from 'next/navigation';
 
 const footerMenu1 = [
-    { linkName: 'Home', goTo: '#' },
+    { linkName: 'Home', goTo: '/' },
     { linkName: 'The Bridge', goTo: '#' },
     { linkName: 'Testimonials', goTo: '#' },
     { linkName: 'Al Tool', goTo: '#' },
     { linkName: 'Partners', goTo: '#' },
-    { linkName: 'FAQs', goTo: '#' }
+    { linkName: 'FAQs', goTo: '#faqs' }
 ]
 const footerMenu2 = [
-    { linkName: 'Investors', goTo: '#' },
+    { linkName: 'Investors', goTo: '/investors' },
     { linkName: '$Send Token', goTo: '#' },
     { linkName: 'Why Tokenize', goTo: '#' },
-    { linkName: 'Investors', goTo: '#' }
+    { linkName: 'Investors', goTo: '/investors' }
 ]
 const footerMenu3 = [
-    { linkName: 'About Us', goTo: '#' },
+    { linkName: 'About Us', goTo: '/about-us' },
     { linkName: 'Company', goTo: '#' },
     { linkName: 'Technology', goTo: '#' },
     { linkName: 'Team', goTo: '#' }
@@ -112,12 +112,14 @@ export const AboutUsFooter = () => {
                             loss of principal.
                         </p>
                         <div className='pt-9'>
-                            <Image
-                                src={footerLogo}
-                                alt='footer logo'
-                                width={173}
-                                height={30}
-                            />
+                            <Link href={'/'}>
+                                <Image
+                                    src={footerLogo}
+                                    alt='footer logo'
+                                    width={173}
+                                    height={30}
+                                />
+                            </Link>
                         </div>
                     </div>
                 </div>

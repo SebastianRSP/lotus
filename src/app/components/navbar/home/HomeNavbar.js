@@ -12,6 +12,7 @@ import { usePathname } from 'next/navigation';
 import { mobileMenu, mobileNavIcons, navIcons, navLinksAfter, navLinksBefore } from '../links';
 import { Logo } from '../../svgs/Logo';
 import { Lotus } from '../../svgs/Lotus';
+import { Telegram } from '../../svgs/Telegram';
 
 
 export const HomeNavbar = () => {
@@ -95,22 +96,10 @@ export const HomeNavbar = () => {
                 {/* Mobile Version */}
                 <div className='md:hidden relative block m-2'>
                     {/* <div className='absolute inset-0 backdrop-blur-30 rounded-2xl bg-black bg-opacity-50 shadow-mobile' /> */}
-                    <div className={`flex justify-between items-center pt-8 md:px-8 px-10`}>
+                    <div className={`flex justify-between items-center pt-7 md:px-8 px-10`}>
                         <div className={`logo-container link-animation items-center`}>
-                            <Image
-                                className={`lotus`}
-                                src={logo}
-                                alt="Logo"
-                                width={32}
-                                height={17}
-                            />
-                            <Image
-                                className={`logo`}
-                                src={lotus}
-                                alt="Lotus"
-                                width={76}
-                                height={18}
-                            />
+                            <Logo iconColor={`${isDarkLogo ? 'fill-white' : 'fill-black'} `} />
+                            <Lotus iconColor={`${isDarkLogo ? 'fill-white' : 'fill-black'} `} />
                         </div>
                         <div className='link-animation border border-black rounded-4 shadow-outer-new-home bg-yellowLight w-9 h-9 p-0.3 relative z-50'>
                             <div
@@ -131,21 +120,9 @@ export const HomeNavbar = () => {
                 {/* Toggle Green Screen */}
                 <div className={`md:hidden fixed top-0 left-0 right-0 bottom-0 w-full h-screen bg-green z-30 transform transition-transform duration-300 ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
                     <div className='flex justify-start xl:mx-40 mx-9 pt-10'>
-                        <div className="logo-container">
-                            <Image
-                                className="lotus"
-                                src={logo}
-                                alt="Logo"
-                                width={32}
-                                height={17}
-                            />
-                            <Image
-                                className="logo"
-                                src={lotus}
-                                alt="Lotus"
-                                width={76}
-                                height={18}
-                            />
+                        <div className="logo-container link-animation items-center">
+                            <Logo iconColor={`${isDarkLogo ? 'fill-white' : 'fill-black'} `} />
+                            <Lotus iconColor={`${isDarkLogo ? 'fill-white' : 'fill-black'} `} />
                         </div>
                     </div>
                 </div>
@@ -163,19 +140,12 @@ export const HomeNavbar = () => {
                                 />
                             ))}
                         </div>
-                        <div className="flex items-center divider-x divide-green mb-28 ">
-                            {mobileNavIcons.map((navIcon, index) => (
-                                <HomeNavLink
-                                    key={index}
-                                    id={index}
-                                    navLinkName={navIcon.navLinkName}
-                                    navLink={navIcon.navLink}
-                                    icon={navIcon.icon}
-                                    extras={navIcon.extras}
-                                    iconImage={navIcon.iconImage}
-                                    font={navIcon.font}
+                        <div className="flex items- divider-x divide-green mb-28 ">
+                            <div className='border border-green p-4 rounded-lg'>
+                                <Telegram
+                                    iconColor={`fill-white !w-4 !h-4`}
                                 />
-                            ))}
+                            </div>
                         </div>
                     </div>
                 </div>

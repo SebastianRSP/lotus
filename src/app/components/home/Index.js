@@ -90,7 +90,7 @@ export const IndexHome = () => {
                         </div>
                     </div>
                     <div className="lg:col-span-6 col-span-1 h-full overflow-hidden flex justify-center items-end">
-                        <div className="h-full w-full">
+                        <div className="2xl:h-full h-90p 2xl:w-full w-90p flex justify-center items-end">
                             <Spline scene="https://prod.spline.design/oEhJQIegnUr-kZTl/scene.splinecode" />
                             {/* {isSplineVisible && (
                             )} */}

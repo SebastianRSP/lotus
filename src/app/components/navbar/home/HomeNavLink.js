@@ -24,9 +24,6 @@ export const HomeNavLink = ({ navLinkName, navLink, extras, icon, iconImage, id,
 
     const handleRouteClick = useCallback((e) => {
         // Check if the clicked link is the same as the current path
-
-        console.log(navLink, 'navLink')
-
         if(navLink === '#'){
             return;
         }else if (currentPath === navLink) {

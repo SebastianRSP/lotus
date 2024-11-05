@@ -13,7 +13,7 @@ export const navLinksAfter = [
 ];
 
 export const navIcons = [
-    { navLinkName: '', navLink: '#', extras: '', icon: true, iconImage: telegram, font: '' }
+    { navLinkName: '', navLink: '#', extras: 'p-5 border border-green', icon: true, iconImage: telegram, font: '' }
 ];
 
 export const mobileNavIcons = [

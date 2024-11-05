@@ -4,7 +4,7 @@ export const BlackStrap = () => {
             <div className={`md:bg-black bg-gray-light backface-visibility-hidden md:rounded-tl-lg md:rounded-tr-lg col-span-8 order-2 md:order-1 md:col-span-full 2xl:h-18 lg:h-14 h-16 z-10 lg:w-35.75p md:w-40p relative`}>
                 <div className={`bg-black rounded-tl-lg rounded-tr-lg h-full w-full`}></div>
             </div>
-            <div className={`bg-black backface-visibility-hidden -mt-[2px] order-1 md:order-2 col-span-4 md:col-span-full 2xl:h-18 lg:h-14 h-16 z-10 lg:w-28.5p md:w-1/5 w-full relative`}>
+            <div className={`bg-black backface-visibility-hidden md:-mt-[2px] mt-0 order-1 md:order-2 col-span-4 md:col-span-full 2xl:h-18 lg:h-14 h-16 z-10 lg:w-28.5p md:w-1/5 w-full relative`}>
                 <div className={` bg-gray-light h-full w-full md:rounded-bl-[32px] rounded-br-[32px]`}></div>
             </div>
             <div className={`md:bg-black bg-gray-light backface-visibility-hidden md:rounded-tl-lg md:rounded-tr-lg col-span-5 order-3 md:order-3 md:col-span-full 2xl:h-18 lg:h-14 h-16 z-10 lg:w-35.75p md:w-40p relative`}>
