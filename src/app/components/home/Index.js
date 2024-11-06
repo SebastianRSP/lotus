@@ -97,7 +97,7 @@ export const IndexHome = () => {
                     </div>
                     <div className="sm:flex hidden 2xl:col-span-7 lg:col-span-6 col-span-6 h-full overflow-hidden justify-center sm:items-center items-end">
                         {/*  lg:w-80p md:w-70p sm:w-60p w-50p */}
-                        <div className="2xl:h-95p xl:h-90p lg:h-80p md:h-60p h-50p 2xl:w-95p lg:w-90p w-full flex justify-center items-end">
+                        <div className="2xl:h-95p xl:h-80p lg:h-80p md:h-60p h-50p 2xl:w-95p lg:w-90p w-full flex justify-center items-end">
                             <Spline scene="https://prod.spline.design/oEhJQIegnUr-kZTl/scene.splinecode" />
                             {/* {isSplineVisible && (
                             )} */}
