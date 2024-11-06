@@ -24,7 +24,7 @@
     "lenis": "^1.1.6",
     "locomotive-scroll": "^4.1.4",
     "lottie-react": "^2.4.0",
-    "next": "14.2.4",
+    "next": "^14.2.4",
     "react": "^18",
     "react-dom": "^18",
     "react-fast-marquee": "^1.6.5",

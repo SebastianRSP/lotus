@@ -54,8 +54,8 @@ export const IndexHome = () => {
                 <WhiteStrap />
                 <div className=" grid grid-cols-12 h-available justify-end items-end">
                     {/* 2xl:gap-4.5 xl:gap-0 md:gap-12 gap-0 */}
-                    <div className="2xl:col-span-5 lg:col-span-6 col-span-6 2xl:pl-100 lg:pl-14 pl-5 grid 2xl:grid-rows-2 xl:grid-rows-7 lg:grid-rows-2 md:grid-rows-2 grid-rows-5 items-end h-available">
-                        <div className="flex flex-col gap-6 md:self-center self-end xl:row-span-5 lg:row-span-4 md:row-span-4 row-span-3">
+                    <div className="2xl:col-span-5 lg:col-span-6 sm:col-span-6 col-span-11 2xl:pl-100 lg:pl-14 pl-5 grid 2xl:grid-rows-2 xl:grid-rows-7 lg:grid-rows-2 md:grid-rows-2 grid-rows-12 items-end h-available relative">
+                        <div className="flex flex-col gap-6 md:self-center self-end xl:row-span-5 lg:row-span-4 md:row-span-4 row-span-6 z-50">
                             {/* 2xl:text-7xl xl:text-3.5r lg:text-5xl md:text-4xl text-3xl 2xl:leading-84 xl:leading-62 lg:leading-54 md:leading-42 leading-9  */}
                             <h2 id="home-hero-heading" className="2xl:font-300 font-extralight 2xl:text-5xl lg:text-325 md:text-4xl text-3xl 2xl:leading-54 lg:leading-62 md:leading-42 leading-9">
                                 Decentralized<br /> data infrastructure<br /> for{" "}
@@ -69,6 +69,12 @@ export const IndexHome = () => {
                                 <DefaultBtn
                                     btnText={'Get Started'}
                                 />
+                            </div>
+                        </div>
+                        {/* absolute inset-0 col-span-12 */}
+                        <div className="sm:hidden flex justify-center h-full w-full items-end row-span-3">
+                            <div className="flex 2xl:h-95p xl:h-90p lg:h-80p md:h-60p h-80p 2xl:w-95p lg:w-90p w-full">
+                                <Spline className="h-fit w-fit" scene="https://prod.spline.design/oEhJQIegnUr-kZTl/scene.splinecode" />
                             </div>
                         </div>
                         <div id="home-hero-bullets" className="flex flex-col xl:row-span-2 lg:row-span-1 md:row-span-2 row-span-2 2xl:pb-10 pb-5 w-fit">
@@ -89,7 +95,7 @@ export const IndexHome = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="2xl:col-span-7 lg:col-span-6 col-span-6 h-full overflow-hidden flex justify-center sm:items-center items-end">
+                    <div className="sm:flex hidden 2xl:col-span-7 lg:col-span-6 col-span-6 h-full overflow-hidden justify-center sm:items-center items-end">
                         {/*  lg:w-80p md:w-70p sm:w-60p w-50p */}
                         <div className="2xl:h-95p xl:h-90p lg:h-80p md:h-60p h-50p 2xl:w-95p lg:w-90p w-full flex justify-center items-end">
                             <Spline scene="https://prod.spline.design/oEhJQIegnUr-kZTl/scene.splinecode" />
