@@ -300,7 +300,7 @@ export const InvertmentBridgeGrowth = () => {
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
                             </p>
                         </div>
-                        <div className='bg-black border-2 border-green rounded-lg xl:my-32 lg:my-28 md:my-16 my-8'>
+                        <div id='send-investor' className='bg-black border-2 border-green rounded-lg xl:my-32 lg:my-28 md:my-16 my-8'>
                             <div className='grid lg:grid-cols-2 grid-cols-1'>
                                 <div className='lg:bg-green bg-black lg:rounded-none rounded-lg sm:pl-9 pl-3 lg:pr-0 sm:pr-9 pr-3 py-10 text-black'>
                                     <div className='lg:text-black text-green'>

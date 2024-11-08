@@ -74,7 +74,7 @@ export const IndexHome = () => {
                         {/* absolute inset-0 col-span-12 */}
                         <div className="md:hidden flex justify-center h-full w-full items-end row-span-4">
                             <div className="flex 2xl:h-95p xl:h-90p lg:h-80p md:h-60p h-80p 2xl:w-95p lg:w-90p w-full">
-                                <Spline className="h-fit w-fit" scene="https://prod.spline.design/oEhJQIegnUr-kZTl/scene.splinecode" />
+                                {/* <Spline className="h-fit w-fit" scene="https://prod.spline.design/oEhJQIegnUr-kZTl/scene.splinecode" /> */}
                             </div>
                         </div>
                         <div id="home-hero-bullets" className="flex flex-col xl:row-span-2 lg:row-span-1 md:row-span-2 row-span-2 2xl:pb-10 pb-5 w-fit">
@@ -98,9 +98,7 @@ export const IndexHome = () => {
                     <div className="md:flex hidden 2xl:col-span-7 md:col-span-6 col-span-1 h-full  justify-center sm:items-center items-end">
                         {/*  lg:w-80p md:w-70p sm:w-60p w-50p */}
                         <div className="2xl:h-70p xl:h-60p lg:h-54p md:h-40p h-50p 2xl:w-95p xl:w-90p w-full flex justify-center items-end">
-                            <Spline scene="https://prod.spline.design/oEhJQIegnUr-kZTl/scene.splinecode" />
-                            {/* {isSplineVisible && (
-                            )} */}
+                            {/* <Spline scene="https://prod.spline.design/oEhJQIegnUr-kZTl/scene.splinecode" /> */}
                         </div>
                     </div>
                 </div>

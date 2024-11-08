@@ -6,6 +6,7 @@ import { desktopNavbarAnimation } from "../../gsap-animations/DesktopNavbarAnima
 import { NewHomeLoading } from "../../loading/home/Index";
 import { newHomePageAnimation } from "../../gsap-animations/home/Index2";
 import { smoothScroolling } from "../../gsap-animations/smoothScroll";
+import { investorPageAnimation } from "../../gsap-animations/home/investorPageAnimation";
 
 export const NewHomePage = ({ children }) => {
 
@@ -16,6 +17,7 @@ export const NewHomePage = ({ children }) => {
         if (typeof window !== 'undefined') {
             smoothScroolling();
             newHomePageAnimation();
+            investorPageAnimation();
             desktopNavbarAnimation();
             // Clean up ScrollTrigger instances on component unmount
             return () => {
