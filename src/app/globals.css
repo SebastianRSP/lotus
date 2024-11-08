@@ -1009,7 +1009,7 @@ canvas {
 }
 
 .pin-spacer {
-  background: black;
+  background: transparent;
 }
 
 .bridge-overlay {

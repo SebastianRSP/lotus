@@ -54,7 +54,7 @@ export const IndexHome = () => {
                 <WhiteStrap />
                 <div className=" grid grid-cols-12 h-available  justify-end items-end">
                     {/* 2xl:gap-4.5 xl:gap-0 md:gap-12 gap-0 */}
-                    <div className="2xl:col-span-5 md:col-span-6 col-span-11 2xl:pl-100 xl:pl-14 lg:pl-5 pl-5 grid xl:grid-rows-5 lg:grid-rows-2 md:grid-rows-2 grid-rows-none items-end h-available relative">
+                    <div className="2xl:col-span-5 md:col-span-6 col-span-11 2xl:pl-20 xl:pl-14 lg:pl-5 pl-5 grid xl:grid-rows-5 lg:grid-rows-2 md:grid-rows-2 grid-rows-none items-end h-available relative">
                         <div className="flex flex-col gap-6 md:self-center self-end xl:row-span-3 lg:row-span-4 md:row-span-4 row-span-6 z-50">
                             {/* 2xl:text-7xl xl:text-3.5r lg:text-5xl md:text-4xl text-3xl 2xl:leading-84 xl:leading-62 lg:leading-54 md:leading-42 leading-9  */}
                             <h2 id="home-hero-heading" className="2xl:font-300 font-extralight 2xl:text-5xl xl:text-325 lg:text-5xl md:text-4xl text-3xl 2xl:leading-54 xl:leading-62 lg:leading-54 md:leading-42 leading-9">

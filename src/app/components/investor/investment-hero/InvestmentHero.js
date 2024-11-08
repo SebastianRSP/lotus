@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { DefaultBtnBlack } from "../../buttons/home/DefaultBtnBlack";
-import { InvertmentBridgeGrowth } from '../investment-bridge-growth/Page';
+import { InvertmentBridgeGrowth } from '../investment-bridge-growth/PageOnScroll';
 
 export const InvestmentHero = () => {
     return (

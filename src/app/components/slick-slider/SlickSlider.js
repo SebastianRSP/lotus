@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './SlickSlider.css'
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 const NextArrow = (props) => {
     const { className, style, onClick, index, extras } = props;
@@ -36,8 +36,8 @@ const PrevArrow = (props) => {
     );
 };
 
-export const SlickSlider = ({ children, index, onSlideChange }) => {
-
+export const SlickSlider = ({ children, activeIndex, index, onSlideChange }) => {
+    const sliderRef = useRef(null);
 
     var settings = {
         dots: false,
@@ -94,7 +94,7 @@ export const SlickSlider = ({ children, index, onSlideChange }) => {
                     slidesToScroll: 1,
                     initialSlide: 0,
                     variableWidth: false,
-                    dots: true,
+                    dots: false,
                     arrows: false // Disable arrows for this breakpoint
                 }
             },
@@ -106,7 +106,7 @@ export const SlickSlider = ({ children, index, onSlideChange }) => {
                     slidesToScroll: 1,
                     initialSlide: 0,
                     variableWidth: false,
-                    dots: true,
+                    dots: false,
                     arrows: false // Disable arrows for this breakpoint
                 }
             }
@@ -119,9 +119,16 @@ export const SlickSlider = ({ children, index, onSlideChange }) => {
     };
 
 
+    // Move to the activeIndex whenever it updates
+    useEffect(() => {
+        if (sliderRef.current && typeof activeIndex === 'number') {
+            sliderRef.current.slickGoTo(activeIndex);
+        }
+    }, [activeIndex]);
+
     return (
 
-        <Slider className='w-full h-full' key={index} {...settings}>
+        <Slider ref={sliderRef} className='w-full h-full' key={index} {...settings}>
             {children}
         </Slider>
 
