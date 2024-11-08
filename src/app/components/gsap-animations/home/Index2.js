@@ -31,7 +31,7 @@ export const newHomePageAnimation = () => {
         // gsap.set(loader , { width: '100vw', height: '100vh', y: 0, opacity: 1});
         // Initial collapsed state: Leaves rotated and positioned below
 
-        gsap.delayedCall(.2, () => {
+        gsap.delayedCall(.25, () => {
             gsap.set(nav, { zIndex: 0 });
             gsap.set("#left-leaf", { transformOrigin: "center center", x: 20, y: 50, });
             gsap.set("#middle-leaf", { transformOrigin: "center center", rotate: -100, x: -20, y: 50, });
@@ -52,7 +52,7 @@ export const newHomePageAnimation = () => {
         });
 
         timeline.fromTo(body, { opacity: 0 }, { opacity: 1, duration: .0625, ease: "power4.in" });
-        timeline.delay(.2);
+        timeline.delay(.25);
         timeline.set(loader, { background: '#fff', y: 0, opacity: 1 });
         
         // Make the SVG visible before starting the animation
