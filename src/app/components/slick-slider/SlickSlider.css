@@ -64,7 +64,9 @@
 .bridge-slider .slick-track div div {
     height: 96.5%;
 }
-
+.bridge-slider .slick-list{
+    pointer-events: none;
+}
 .slick-dots li button:before {
     font-family: 'slick';
     font-size: 13px !important;
@@ -109,3 +111,4 @@
     background-repeat: no-repeat;
     background-position: center;
 }
+

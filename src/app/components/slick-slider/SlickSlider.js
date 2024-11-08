@@ -107,6 +107,8 @@ export const SlickSlider = ({ children, activeIndex, index, onSlideChange }) => 
                     initialSlide: 0,
                     variableWidth: false,
                     dots: false,
+                    swipe: false, // Disable swipe globally
+                    draggable: false, // Disable drag globally
                     arrows: false // Disable arrows for this breakpoint
                 }
             }
