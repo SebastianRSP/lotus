@@ -34,7 +34,7 @@ export const HomeNavLink = ({ navLinkName, navLink, extras, icon, iconImage, id,
     
             setTimeout(() => {
                 router.push(navLink); // Navigate to the route after delay
-            }, 175);
+            }, 2);
         }
     }, [navLink, router, currentPath]);
 
