@@ -3,6 +3,7 @@
 import Image from 'next/image';
 // import rails from '../../../../../public/animations/rails.lottie';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import snip from '../../../../../public/new-home-assets/snip.png';
 import Lottie from 'lottie-react';
 
 export const FeatureSection = () => {
