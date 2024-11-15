@@ -260,7 +260,7 @@ export const InvertmentBridgeGrowth = () => {
             scrub: true, // Smooth animation linked to scrolling
             pin: true,
             pinSpacing: true,
-            markers: false,
+            markers: true,
             onUpdate: (self) => {
                 let currentIndex = -1;
 
