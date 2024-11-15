@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { DefaultBtnBlack } from "../../buttons/home/DefaultBtnBlack";
 import { InvertmentBridgeGrowth } from '../investment-bridge-growth/PageOnScroll';
+import Spline from '@splinetool/react-spline';
 
 export const InvestmentHero = () => {
     return (
@@ -34,12 +35,13 @@ export const InvestmentHero = () => {
                         />
                     </div>
                     <div className="flex justify-center md:items-center items-start justify-self-center lg:h-auto lg:w-auto md:h-96 md:w-96 md:pt-20 h-60 w-72 order-first md:order-last">
-                        <Image
+                        {/* <Image
                             src="/images/investor_hero_item.png"
                             alt="Investor"
                             width={350}
                             height={350}
-                        />
+                        /> */}
+                        <Spline scene="https://prod.spline.design/U6zfVaWNgMTaZLak/scene.splinecode"  />
                     </div>
                 </div>
                 <InvertmentBridgeGrowth />
