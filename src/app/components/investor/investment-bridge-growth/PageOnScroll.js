@@ -164,8 +164,6 @@ export const InvertmentBridgeGrowth = () => {
 
     const handleTabActive = async (selectedTab) => {
 
-        console.log(selectedTab, 'selectedTab')
-
         if (autoSwitchTimeout.current) {
             clearTimeout(autoSwitchTimeout.current);
         }
@@ -262,7 +260,7 @@ export const InvertmentBridgeGrowth = () => {
             scrub: true, // Smooth animation linked to scrolling
             pin: true,
             pinSpacing: true,
-            markers: false,
+            markers: true,
             onUpdate: (self) => {
                 let currentIndex = -1;
 
@@ -276,8 +274,6 @@ export const InvertmentBridgeGrowth = () => {
 
                 // Log only if currentIndex has changed and is within valid range
                 if (currentIndex !== previousIndex && currentIndex >= 0 && currentIndex <= 7) {
-                    console.log(`Previous: ${previousIndex}, Current: ${currentIndex}`);
-
                     const filteredItem = getObjectByIndex(currentIndex).percentage;
                     const filteredItemTitle = getObjectByIndex(currentIndex).title;
                     setActiveTab(filteredItemTitle);
@@ -297,10 +293,10 @@ export const InvertmentBridgeGrowth = () => {
             <div className="text-white mt-5 relative">
                 {/* absolute inset-0  */}
                 <div className='flex justify-center items-end'>
-                    <div className='absolute inset-0 '>
+                    <div className='absolute inset-0'>
                         <Image
                             src={gridLines}
-                            className='w-full object-cover h-full'
+                            className='object-contain w-full h-full'
                             width={100}
                             height={100}
                         />

@@ -378,27 +378,52 @@ const startBridgeAnimation = (bridgeSection) => {
 
             if (self.progress >= 0.025) {
                 const coverObjectProgress = gsap.utils.normalize(0.025, 0.5, self.progress);
-
+            
                 // Calculate initial width and height in pixels
                 const viewportWidth = window.innerWidth;
                 const initialSize = (8.3333 * 0.8333 * viewportWidth) / 100; // Calculate in pixels (convert from vw to px)
-
+            
                 // Gradually reduce width of vertical black layers
                 verticalBlackLayers.forEach((layer) => {
                     const newWidth = gsap.utils.interpolate(initialSize, 0, coverObjectProgress); // Interpolate from initial width to 0 based on progress
-                    gsap.set(layer, {
-                        width: `${newWidth}px`, // Set the new width based on scroll progress
+            
+                    // Use GSAP `to` with a tolerance to ensure smooth and accurate transformation
+                    gsap.to(layer, {
+                        width: newWidth < 1 ? 0 : newWidth, // If value is less than 1px, force it to 0
+                        duration: 0.1, // Quick animation for smoother transition
                     });
                 });
-
+            
                 // Gradually reduce height of horizontal black layers
                 horizentalBlackLayers.forEach((layer) => {
                     const newHeight = gsap.utils.interpolate(initialSize, 0, coverObjectProgress); // Interpolate from initial height to 0 based on progress
-                    gsap.set(layer, {
-                        height: `${newHeight}px`, // Set the new height based on scroll progress
+            
+                    // Use GSAP `to` with a tolerance to ensure smooth and accurate transformation
+                    gsap.to(layer, {
+                        height: newHeight < 1 ? 0 : newHeight, // If value is less than 1px, force it to 0
+                        duration: 0.1, // Quick animation for smoother transition
+                    });
+                });
+            } else {
+                // Reset the layers to their original size when progress is below the threshold
+                const viewportWidth = window.innerWidth;
+                const initialSize = (8.3333 * 0.8333 * viewportWidth) / 100; // Initial size in pixels
+            
+                verticalBlackLayers.forEach((layer) => {
+                    gsap.to(layer, {
+                        width: `${initialSize}px`,
+                        duration: 0.1, // Quick reset animation
+                    });
+                });
+            
+                horizentalBlackLayers.forEach((layer) => {
+                    gsap.to(layer, {
+                        height: `${initialSize}px`,
+                        duration: 0.1, // Quick reset animation
                     });
                 });
             }
+            
 
             if (self.progress >= 0.2) {
                 const colorChangeProgress = gsap.utils.normalize(0.2, .5, self.progress); // Normalize progress between 0.8 and 1

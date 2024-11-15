@@ -215,8 +215,12 @@ canvas {
   height: inherit;
 }
 
+.isScroll-logo-middle {
+  transition: margin-top 0.2s ease; /* Adds a smooth transition */
+}
+
 .is-scrolled .isScroll-logo-middle {
-  margin-top: 0px;
+  margin-top: 0px; /* Adjusts to 0 when .is-scrolled is added */
 }
 
 .is-scrolled .text-scroll {
