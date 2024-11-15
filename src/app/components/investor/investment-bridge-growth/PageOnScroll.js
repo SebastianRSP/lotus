@@ -247,24 +247,23 @@ export const InvertmentBridgeGrowth = () => {
     }, [activeTab]);
 
 
-    useGSAP(() => {
-
-        // Define progress ranges for each index
-        const progressRanges = [0.11, 0.22, 0.33, 0.44, 0.55, 0.66, 0.77, 0.88, 0.99];
-        let previousIndex = -1; // Track the previous index to avoid redundant logs
-
+    useEffect(() => {
+        let scrollTriggerInstance;
+        let previousIndex = -1; // Initialize previousIndex to track state
+    
         if (sendInvestor.current) {
-            ScrollTrigger.create({
+            scrollTriggerInstance = ScrollTrigger.create({
                 trigger: sendInvestor.current,
                 start: "center center",
                 end: "+=5000", // Total scroll range
                 scrub: true, // Smooth animation linked to scrolling
                 pin: true,
                 pinSpacing: true,
-                markers: true,
+                markers: false,
                 onUpdate: (self) => {
+                    const progressRanges = [0.11, 0.22, 0.33, 0.44, 0.55, 0.66, 0.77, 0.88, 0.99];
                     let currentIndex = -1;
-
+    
                     // Determine the current index based on progress ranges
                     for (let i = 0; i < progressRanges.length; i++) {
                         if (self.progress >= progressRanges[i] && self.progress < (progressRanges[i + 1] || 10)) {
@@ -272,22 +271,33 @@ export const InvertmentBridgeGrowth = () => {
                             break;
                         }
                     }
-
-                    // Log only if currentIndex has changed and is within valid range
+    
+                    // Handle tab and progress updates
                     if (currentIndex !== previousIndex && currentIndex >= 0 && currentIndex <= 7) {
                         const filteredItem = getObjectByIndex(currentIndex).percentage;
                         const filteredItemTitle = getObjectByIndex(currentIndex).title;
+    
                         setActiveTab(filteredItemTitle);
                         setActivePercentage(filteredItem);
                         setActiveTabIndex(currentIndex);
                         setPreviousTabIndex(previousIndex);
-
-                        previousIndex = currentIndex; // Update previousIndex to current
+    
+                        previousIndex = currentIndex; // Update previous index
                     }
-                }
+                },
             });
         }
-    }, [])
+
+        ScrollTrigger.refresh();
+    
+        // Cleanup to prevent multiple ScrollTrigger instances
+        return () => {
+            if (scrollTriggerInstance) {
+                scrollTriggerInstance.kill();
+            }
+        };
+    }, [sendInvestor]); // Re-run the effect if `sendInvestor` changes
+    
 
     return (
         <>
