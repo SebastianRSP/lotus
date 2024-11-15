@@ -293,180 +293,187 @@ export const InvertmentBridgeGrowth = () => {
             <div className="text-white mt-5 relative">
                 {/* absolute inset-0  */}
                 <div className='flex justify-center items-end'>
-                    <div className='absolute inset-0'>
-                        <Image
-                            src={gridLines}
-                            className='object-contain w-full h-full'
-                            width={100}
-                            height={100}
-                        />
-                    </div>
-                    <div className='2xl:px-40 xl:px-20 px-9 xl:pt-72 lg:pt-64 md:pt-32 sm:pt-32 pt-16 2xl:pb-28 xl:pb-24 lg:pb-5.3r md:pb-4.3r sm:pb-14 pb-3.2r w-full relative'>
-                        <div className='flex justify-start'>
-                            <h3 className='2xl:text-123 lg:text-100 md:text-80 text-4xl font-bold flex text-green'>
-                                Send
-                                <sup className='pl-2 xl:-mt-10 lg:-mt-8 -mt-0'>
-                                    <SenDataArrow extraClasses={'lg:w-3/12 md:w-1/6 sm:w-1/12 w-2/12'} iconColor={'fill-green'} />
-                                </sup>
-                            </h3>
+                    {/* <div className='2xl:px-40 xl:px-20 px-9 xl:pt-72 lg:pt-64 md:pt-32 sm:pt-32 pt-16 2xl:pb-28 xl:pb-24 lg:pb-5.3r md:pb-4.3r sm:pb-14 pb-3.2r w-full relative'> */}
+                    <div className='w-full relative'>
+                        <div className='2xl:px-40 xl:px-20 px-9 xl:pt-72 lg:pt-64 md:pt-32 sm:pt-32 pt-16 w-full relative'>
+                            <div className='flex justify-start'>
+                                <h3 className='2xl:text-123 lg:text-100 md:text-80 text-4xl font-bold flex text-green'>
+                                    Send
+                                    <sup className='pl-2 xl:-mt-10 lg:-mt-8 -mt-0'>
+                                        <SenDataArrow extraClasses={'lg:w-3/12 md:w-1/6 sm:w-1/12 w-2/12'} iconColor={'fill-green'} />
+                                    </sup>
+                                </h3>
+                            </div>
+                            <div className="grid lg:grid-cols-12 grid-cols-1 lg:gap-0 md:gap-8 gap-4 lg:mt-16 sm:mt-8 mt-4">
+                                {/* <h3 className="2xl:text-5xl xl:text-4xl lg:text-3xl text-xl 2xl:leading-60 xl:leading-48 lg:leading-42 leading-8 font-extralight lg:col-span-8 lg:w-11/12 w-11/12"> */}
+                                <h3 className="2xl:text-5xl xl:text-4xl lg:text-3xl text-xl 2xl:leading-60 xl:leading-48 lg:leading-42 leading-8 font-extralight lg:col-span-8 lg:w-full md:w-11/12 w-full">
+                                    Designed to drive engagement, <br className='lg:block hidden' /> reward participation, and foster growth <br className='lg:block hidden' /> within <span className="font-bold">The Bridge<sup>TM</sup></span>  ecosystem.
+                                </h3>
+                                <p className="2xl:text-2xl xl:text-base lg:text-sm text-xs lg:justify-self-end lg:col-span-4 lg:w-full w-11/12">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
+                                </p>
+                            </div>
                         </div>
-                        <div className="grid lg:grid-cols-12 grid-cols-1 lg:gap-0 md:gap-8 gap-4 lg:mt-16 sm:mt-8 mt-4">
-                            {/* <h3 className="2xl:text-5xl xl:text-4xl lg:text-3xl text-xl 2xl:leading-60 xl:leading-48 lg:leading-42 leading-8 font-extralight lg:col-span-8 lg:w-11/12 w-11/12"> */}
-                            <h3 className="2xl:text-5xl xl:text-4xl lg:text-3xl text-xl 2xl:leading-60 xl:leading-48 lg:leading-42 leading-8 font-extralight lg:col-span-8 lg:w-full md:w-11/12 w-full">
-                                Designed to drive engagement, <br className='lg:block hidden' /> reward participation, and foster growth <br className='lg:block hidden' /> within <span className="font-bold">The Bridge<sup>TM</sup></span>  ecosystem.
-                            </h3>
-                            <p className="2xl:text-2xl xl:text-base lg:text-sm text-xs lg:justify-self-end lg:col-span-4 lg:w-full w-11/12">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
-                            </p>
-                        </div>
-                        <div id='send-investor' ref={sendInvestor} className='bg-black border-2 border-green rounded-lg xl:my-32 lg:my-28 md:my-16 my-8'>
-                            <div className='grid lg:grid-cols-2 grid-cols-1'>
-                                <div className='lg:bg-green bg-black lg:rounded-none rounded-lg sm:pl-9 pl-3 lg:pr-0 sm:pr-9 pr-3 py-10 text-black'>
-                                    <div className='lg:text-black text-green'>
-                                        <div className='flex justify-between items-center'>
-                                            <div>
-                                                <h6 className='md:text-32 text-2xl md:leading-64 leading-48 font-extrabold flex'>
-                                                    Send
-                                                    <sup className='pl-2 mt-2'>
-                                                        <SenDataArrow extraClasses={'md:w-7 w-5 md:h-5 h-3'} iconColor={'lg:fill-black fill-green'} />
-                                                    </sup>
-                                                </h6>
-                                                <p className='md:text-base text-sm font-300 -mt-2'>TOKENOMICS</p>
-                                            </div>
-                                            <div className='lg:hidden flex justify-start'>
-                                                <svg xmlns="http://www.w3.org/2000/svg" className={`fill-green opacity-30`} width="34" height="20">
-                                                    <g data-name="Group 172703">
-                                                        <path d="M21.66 8.82c0 4.316-3.932 7.738-5.02 8.604-.17-1.196-1.14-6.533-4.99-8.737a7.225 7.225 0 0 0-.574-.294C11.354 3.443 16.362 0 16.362 0s4.794 3.445 5.261 8.094c.025.24.038.482.038.726Z" fill-rule="evenodd" data-name="Path 10531" />
-                                                        <path d="M15.178 17.382H3.606C.413 14.444 0 9.442 0 9.442s5.433-2.473 9.71-.509c.196.088.387.187.576.295 3.396 1.944 4.55 6.33 4.892 8.154Z" fill-rule="evenodd" data-name="Path 10532" />
-                                                        <path d="M32.276 9.4s-.398 5.038-3.613 7.982h-9.94c1.56-1.44 4.143-4.35 4.143-7.848 0-.245-.013-.486-.038-.727 4.227-1.762 9.448.592 9.448.592Z" fill-rule="evenodd" data-name="Path 10533" />
-                                                    </g>
-                                                </svg>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="grid grid-cols-12 gap-2 md:py-14 py-7">
-                                        {/* Tabs */}
-                                        <div className="2xl:col-span-3 sm:col-span-4 sm:block hidden border-send-bridge">
-                                            {growthTabs.map((tab, index) => (
-                                                <div key={index} className="flex gap-6 items-center">
-                                                    <span className={`${activeTab === tab ? 'lg:bg-black bg-green' : 'bg-[#00BE00]'} w-2 h-2 -ml-1`}></span>
-                                                    <span
-                                                        className={`${activeTab === tab ? 'opacity-100' : 'opacity-30'} 2xl:text-lg text-sm lg:text-black text-green 2xl:leading-60 leading-48`}
-                                                    >
-                                                        {tab}
-                                                    </span>
-                                                </div>
-                                            ))}
-                                        </div>
-
-                                        {/* Content Area */}
-                                        <div className="2xl:col-span-9 sm:col-span-8 col-span-12 h-96 relative overflow-hidden">
-                                            <div className='lg:hidden block absolute inset-0 h-full opacity-50 blur-2p bg-black'>
-                                                <div className='flex justify-center items-center h-full backdrop-blur-10'>
-                                                    <div className='flex flex-col w-fit'>
-                                                        <div className='relative 2xl:w-26 xl:w-80 lg:w-72 md:w-60 w-44 2xl:h-26 xl:h-80 lg:h-72 md:h-60 h-44'>
-                                                            <Boxes
-                                                                activePercentage={activePercentage}
-                                                                tabIndex={activeTab == null ? activeTab : activeTabIndex}
-                                                                previousTabIndex={activeTab == null ? activeTab : previousTabIndex}
-                                                                tabData={tabData}
-                                                            />
-                                                        </div>
+                        <div ref={sendInvestor} className='flex justify-center items-center relative '>
+                            <div className='absolute inset-0 z-0'>
+                                <Image
+                                    src={gridLines}
+                                    className='object-cover w-full h-full'
+                                    width={100}
+                                    height={100}
+                                />
+                            </div>
+                            <div className='w-full h-full'>
+                                <div id='send-investor' className='2xl:mx-40 xl:mx-20 mx-9 xl:my-32 lg:my-28 md:my-16 my-8 relative z-20 bg-black border-2 border-green rounded-lg'>
+                                    <div className='grid lg:grid-cols-2 grid-cols-1'>
+                                        <div className='lg:bg-green bg-black lg:rounded-none rounded-lg sm:pl-9 pl-3 lg:pr-0 sm:pr-9 pr-3 py-10 text-black'>
+                                            <div className='lg:text-black text-green'>
+                                                <div className='flex justify-between items-center'>
+                                                    <div>
+                                                        <h6 className='md:text-32 text-2xl md:leading-64 leading-48 font-extrabold flex'>
+                                                            Send
+                                                            <sup className='pl-2 mt-2'>
+                                                                <SenDataArrow extraClasses={'md:w-7 w-5 md:h-5 h-3'} iconColor={'lg:fill-black fill-green'} />
+                                                            </sup>
+                                                        </h6>
+                                                        <p className='md:text-base text-sm font-300 -mt-2'>TOKENOMICS</p>
+                                                    </div>
+                                                    <div className='lg:hidden flex justify-start'>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" className={`fill-green opacity-30`} width="34" height="20">
+                                                            <g data-name="Group 172703">
+                                                                <path d="M21.66 8.82c0 4.316-3.932 7.738-5.02 8.604-.17-1.196-1.14-6.533-4.99-8.737a7.225 7.225 0 0 0-.574-.294C11.354 3.443 16.362 0 16.362 0s4.794 3.445 5.261 8.094c.025.24.038.482.038.726Z" fill-rule="evenodd" data-name="Path 10531" />
+                                                                <path d="M15.178 17.382H3.606C.413 14.444 0 9.442 0 9.442s5.433-2.473 9.71-.509c.196.088.387.187.576.295 3.396 1.944 4.55 6.33 4.892 8.154Z" fill-rule="evenodd" data-name="Path 10532" />
+                                                                <path d="M32.276 9.4s-.398 5.038-3.613 7.982h-9.94c1.56-1.44 4.143-4.35 4.143-7.848 0-.245-.013-.486-.038-.727 4.227-1.762 9.448.592 9.448.592Z" fill-rule="evenodd" data-name="Path 10533" />
+                                                            </g>
+                                                        </svg>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div ref={boxLengthRef} className="absolute pr-6 sm:block hidden lg:text-black text-green inset-0 transition-all duration-1000 ease-in-out"
-                                                style={{ transform: `translateY(${translateY}px)` }} >
-                                                <div className='h-available'>
-                                                    <div className='flex justify-center items-center h-full w-full'>
-                                                        <div className='2xl:w-36 xl:w-28 lg:w-20 w-10 2xl:h-36 xl:h-28 lg:h-20 h-10'>
-                                                            <Lottie animationData={animatedBox} className='bg-transparent' loop={true} />
-                                                        </div>
-                                                    </div>
-                                                    {tabData.map((data, index) => (
-                                                        <div key={index} className="border-y-2 h-full py-5 border-opacity-20 lg:border-black border-green">
-                                                            <div className="grid grid-rows-2 gap-6 h-full">
-                                                                {data.detail.map((item, index) => (
-                                                                    <div key={index} className="2xl:pr-10 xl:pr-8 lg:pr-4 md:pr-14 pr-0 md:pl-3 pl-0 flex flex-col lg:gap-2 gap-3 text-left">
-                                                                        <div className="flex justify-between items-center gap-2">
-                                                                            <h4 className="2xl:text-2xl text-lg font-bold ">{item.title}</h4>
-                                                                            <span className="2xl:text-4xl text-2xl font-bold lg:opacity-40 opacity-100">{item.percentage}</span>
-                                                                        </div>
-                                                                        <p className="w-full 2xl:pt-2 lg:pt-0 md:pt-5 sm:pt-3 pt-0 2xl:text-base xl:text-sm lg:text-8 text-xs 2xl:leading-6 xl:leading-22 leading-18 lg:text-current text-white">{item.description}</p>
-                                                                    </div>
-                                                                ))}
-                                                            </div>
+                                            <div className="grid grid-cols-12 gap-2 md:py-14 py-7">
+                                                {/* Tabs */}
+                                                <div className="2xl:col-span-3 sm:col-span-4 sm:block hidden border-send-bridge">
+                                                    {growthTabs.map((tab, index) => (
+                                                        <div key={index} className="flex gap-6 items-center">
+                                                            <span className={`${activeTab === tab ? 'lg:bg-black bg-green' : 'bg-[#00BE00]'} w-2 h-2 -ml-1`}></span>
+                                                            <span
+                                                                className={`${activeTab === tab ? 'opacity-100' : 'opacity-30'} 2xl:text-lg text-sm lg:text-black text-green 2xl:leading-60 leading-48`}
+                                                            >
+                                                                {tab}
+                                                            </span>
                                                         </div>
                                                     ))}
                                                 </div>
-                                            </div>
 
-                                            <div className='sm:hidden block absolute lg:text-black text-green inset-0 transition-all duration-1000 ease-in-out'>
-                                                <div className='h-full bridge-slider'>
-                                                    {/*  onSlideChange={handleSlideChange} */}
-                                                    <SlickSlider activeIndex={activeTabIndex}>
-                                                        {tabData.map((data, index) => (
-                                                            <div key={index} className="border-y-2 h-full py-5 px-3 border-opacity-20 lg:border-black border-green">
-                                                                <div className="grid grid-rows-2 gap-3 h-full">
-                                                                    {data.detail.map((item, index) => (
-                                                                        <div key={index} className="2xl:pr-20 xl:pr-12 lg:pr-8 md:pr-14 pr-0 md:pl-3 pl-0 flex flex-col lg:gap-2 gap-3 text-left">
-                                                                            <div className="flex justify-between items-center gap-2">
-                                                                                <h4 className="2xl:text-2xl text-lg font-bold ">{item.title}</h4>
-                                                                                <span className="2xl:text-4xl text-2xl font-bold lg:opacity-40 opacity-100">{item.percentage}</span>
-                                                                            </div>
-                                                                            <p className="w-full 2xl:pt-2 lg:pt-0 md:pt-5 sm:pt-3 pt-0 2xl:text-base xl:text-sm lg:text-8 text-xs 2xl:leading-6 xl:leading-22 leading-18 lg:text-current text-white">{item.description}</p>
-                                                                        </div>
-                                                                    ))}
+                                                {/* Content Area */}
+                                                <div className="2xl:col-span-9 sm:col-span-8 col-span-12 h-96 relative overflow-hidden">
+                                                    <div className='lg:hidden block absolute inset-0 h-full opacity-50 blur-2p bg-black'>
+                                                        <div className='flex justify-center items-center h-full backdrop-blur-10'>
+                                                            <div className='flex flex-col w-fit'>
+                                                                <div className='relative 2xl:w-26 xl:w-80 lg:w-72 md:w-60 w-44 2xl:h-26 xl:h-80 lg:h-72 md:h-60 h-44'>
+                                                                    <Boxes
+                                                                        activePercentage={activePercentage}
+                                                                        tabIndex={activeTab == null ? activeTab : activeTabIndex}
+                                                                        previousTabIndex={activeTab == null ? activeTab : previousTabIndex}
+                                                                        tabData={tabData}
+                                                                    />
                                                                 </div>
                                                             </div>
-                                                        ))}
-                                                    </SlickSlider>
+                                                        </div>
+                                                    </div>
+                                                    <div ref={boxLengthRef} className="absolute pr-6 sm:block hidden lg:text-black text-green inset-0 transition-all duration-1000 ease-in-out"
+                                                        style={{ transform: `translateY(${translateY}px)` }} >
+                                                        <div className='h-available'>
+                                                            <div className='flex justify-center items-center h-full w-full'>
+                                                                <div className='2xl:w-36 xl:w-28 lg:w-20 w-10 2xl:h-36 xl:h-28 lg:h-20 h-10'>
+                                                                    <Lottie animationData={animatedBox} className='bg-transparent' loop={true} />
+                                                                </div>
+                                                            </div>
+                                                            {tabData.map((data, index) => (
+                                                                <div key={index} className="border-y-2 h-full py-5 border-opacity-20 lg:border-black border-green">
+                                                                    <div className="grid grid-rows-2 gap-6 h-full">
+                                                                        {data.detail.map((item, index) => (
+                                                                            <div key={index} className="2xl:pr-10 xl:pr-8 lg:pr-4 md:pr-14 pr-0 md:pl-3 pl-0 flex flex-col lg:gap-2 gap-3 text-left">
+                                                                                <div className="flex justify-between items-center gap-2">
+                                                                                    <h4 className="2xl:text-2xl text-lg font-bold ">{item.title}</h4>
+                                                                                    <span className="2xl:text-4xl text-2xl font-bold lg:opacity-40 opacity-100">{item.percentage}</span>
+                                                                                </div>
+                                                                                <p className="w-full 2xl:pt-2 lg:pt-0 md:pt-5 sm:pt-3 pt-0 2xl:text-base xl:text-sm lg:text-8 text-xs 2xl:leading-6 xl:leading-22 leading-18 lg:text-current text-white">{item.description}</p>
+                                                                            </div>
+                                                                        ))}
+                                                                    </div>
+                                                                </div>
+                                                            ))}
+                                                        </div>
+                                                    </div>
+
+                                                    <div className='sm:hidden block absolute lg:text-black text-green inset-0 transition-all duration-1000 ease-in-out'>
+                                                        <div className='h-full bridge-slider'>
+                                                            {/*  onSlideChange={handleSlideChange} */}
+                                                            <SlickSlider activeIndex={activeTabIndex}>
+                                                                {tabData.map((data, index) => (
+                                                                    <div key={index} className="border-y-2 h-full py-5 px-3 border-opacity-20 lg:border-black border-green">
+                                                                        <div className="grid grid-rows-2 gap-3 h-full">
+                                                                            {data.detail.map((item, index) => (
+                                                                                <div key={index} className="2xl:pr-20 xl:pr-12 lg:pr-8 md:pr-14 pr-0 md:pl-3 pl-0 flex flex-col lg:gap-2 gap-3 text-left">
+                                                                                    <div className="flex justify-between items-center gap-2">
+                                                                                        <h4 className="2xl:text-2xl text-lg font-bold ">{item.title}</h4>
+                                                                                        <span className="2xl:text-4xl text-2xl font-bold lg:opacity-40 opacity-100">{item.percentage}</span>
+                                                                                    </div>
+                                                                                    <p className="w-full 2xl:pt-2 lg:pt-0 md:pt-5 sm:pt-3 pt-0 2xl:text-base xl:text-sm lg:text-8 text-xs 2xl:leading-6 xl:leading-22 leading-18 lg:text-current text-white">{item.description}</p>
+                                                                                </div>
+                                                                            ))}
+                                                                        </div>
+                                                                    </div>
+                                                                ))}
+                                                            </SlickSlider>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
 
-                                    <div className='lg:flex hidden justify-start'>
-                                        <Image
-                                            src={lotusLogo}
-                                            className='opacity-30 2xl:w-2/12 w-14'
-                                            width={86}
-                                            height={47}
-                                        />
-                                    </div>
-                                </div>
-                                <div className='lg:flex hidden justify-center items-center'>
-                                    <div className='flex flex-col w-fit'>
-                                        <h4 className='2xl:text-lg text-sm pb-4 font-bold'>
-                                            <div ref={totalSupplyRef} className='opacity-0'>
-                                                Total Supply
-                                                <span className='font-normal block'>2,000,000,000 $SEND</span>
+                                            <div className='lg:flex hidden justify-start'>
+                                                <Image
+                                                    src={lotusLogo}
+                                                    className='opacity-30 2xl:w-2/12 w-14'
+                                                    width={86}
+                                                    height={47}
+                                                />
                                             </div>
-                                        </h4>
-                                        <div className='relative 2xl:w-26 xl:w-80 lg:w-72 w-60 2xl:h-26 xl:h-80 lg:h-72 h-60'>
-                                            <Boxes
-                                                activePercentage={activePercentage}
-                                                tabIndex={activeTab == null ? activeTab : activeTabIndex}
-                                                previousTabIndex={activeTab == null ? activeTab : previousTabIndex}
-                                                tabData={tabData}
-                                            />
                                         </div>
-                                        <h4 className='2xl:text-lg text-sm 2xl:pt-4 pt-2 text-right text-green font-bold'>
-                                            <div ref={activeSendTab} className='relative'>
-                                                {tabData.map((activeTab, index) => (
-                                                    <span
-                                                        key={index}
-                                                        ref={(el) => {
-                                                            if (el) activeSendTab.current[index] = el;
-                                                        }}
-                                                        className={`absolute top-0 right-0 opacity-0`}
-                                                    >
-                                                        {activeTab.title}
-                                                        <span className='font-normal block'>400,000,000 $SEND</span>
-                                                    </span>
-                                                ))}
+                                        <div className='lg:flex hidden justify-center items-center'>
+                                            <div className='flex flex-col w-fit'>
+                                                <h4 className='2xl:text-lg text-sm pb-4 font-bold'>
+                                                    <div ref={totalSupplyRef} className='opacity-0'>
+                                                        Total Supply
+                                                        <span className='font-normal block'>2,000,000,000 $SEND</span>
+                                                    </div>
+                                                </h4>
+                                                <div className='relative 2xl:w-26 xl:w-80 lg:w-72 w-60 2xl:h-26 xl:h-80 lg:h-72 h-60'>
+                                                    <Boxes
+                                                        activePercentage={activePercentage}
+                                                        tabIndex={activeTab == null ? activeTab : activeTabIndex}
+                                                        previousTabIndex={activeTab == null ? activeTab : previousTabIndex}
+                                                        tabData={tabData}
+                                                    />
+                                                </div>
+                                                <h4 className='2xl:text-lg text-sm 2xl:pt-4 pt-2 text-right text-green font-bold'>
+                                                    <div ref={activeSendTab} className='relative'>
+                                                        {tabData.map((activeTab, index) => (
+                                                            <span
+                                                                key={index}
+                                                                ref={(el) => {
+                                                                    if (el) activeSendTab.current[index] = el;
+                                                                }}
+                                                                className={`absolute top-0 right-0 opacity-0`}
+                                                            >
+                                                                {activeTab.title}
+                                                                <span className='font-normal block'>400,000,000 $SEND</span>
+                                                            </span>
+                                                        ))}
+                                                    </div>
+                                                </h4>
                                             </div>
-                                        </h4>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
