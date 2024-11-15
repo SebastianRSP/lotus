@@ -287,7 +287,7 @@ export const InvertmentBridgeGrowth = () => {
                 }
             });
         }
-    }, [sendInvestor])
+    }, [])
 
     return (
         <>
