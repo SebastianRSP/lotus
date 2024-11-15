@@ -253,40 +253,41 @@ export const InvertmentBridgeGrowth = () => {
         const progressRanges = [0.11, 0.22, 0.33, 0.44, 0.55, 0.66, 0.77, 0.88, 0.99];
         let previousIndex = -1; // Track the previous index to avoid redundant logs
 
-        ScrollTrigger.create({
-            trigger: sendInvestor.current,
-            start: "center center",
-            end: "+=5000", // Total scroll range
-            scrub: true, // Smooth animation linked to scrolling
-            pin: true,
-            pinSpacing: true,
-            markers: true,
-            onUpdate: (self) => {
-                let currentIndex = -1;
+        if (sendInvestor.current) {
+            ScrollTrigger.create({
+                trigger: sendInvestor.current,
+                start: "center center",
+                end: "+=5000", // Total scroll range
+                scrub: true, // Smooth animation linked to scrolling
+                pin: true,
+                pinSpacing: true,
+                markers: true,
+                onUpdate: (self) => {
+                    let currentIndex = -1;
 
-                // Determine the current index based on progress ranges
-                for (let i = 0; i < progressRanges.length; i++) {
-                    if (self.progress >= progressRanges[i] && self.progress < (progressRanges[i + 1] || 10)) {
-                        currentIndex = i;
-                        break;
+                    // Determine the current index based on progress ranges
+                    for (let i = 0; i < progressRanges.length; i++) {
+                        if (self.progress >= progressRanges[i] && self.progress < (progressRanges[i + 1] || 10)) {
+                            currentIndex = i;
+                            break;
+                        }
+                    }
+
+                    // Log only if currentIndex has changed and is within valid range
+                    if (currentIndex !== previousIndex && currentIndex >= 0 && currentIndex <= 7) {
+                        const filteredItem = getObjectByIndex(currentIndex).percentage;
+                        const filteredItemTitle = getObjectByIndex(currentIndex).title;
+                        setActiveTab(filteredItemTitle);
+                        setActivePercentage(filteredItem);
+                        setActiveTabIndex(currentIndex);
+                        setPreviousTabIndex(previousIndex);
+
+                        previousIndex = currentIndex; // Update previousIndex to current
                     }
                 }
-
-                // Log only if currentIndex has changed and is within valid range
-                if (currentIndex !== previousIndex && currentIndex >= 0 && currentIndex <= 7) {
-                    const filteredItem = getObjectByIndex(currentIndex).percentage;
-                    const filteredItemTitle = getObjectByIndex(currentIndex).title;
-                    setActiveTab(filteredItemTitle);
-                    setActivePercentage(filteredItem);
-                    setActiveTabIndex(currentIndex);
-                    setPreviousTabIndex(previousIndex);
-
-                    previousIndex = currentIndex; // Update previousIndex to current
-                }
-            }
-        });
-
-    })
+            });
+        }
+    }, [sendInvestor])
 
     return (
         <>
