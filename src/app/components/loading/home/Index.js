@@ -1,7 +1,4 @@
-'use client'
-
 export const NewHomeLoading = () => {
-
     return (
         <div className="loader-container">
             <div className="relative flex justify-center items-center w-28 h-8">

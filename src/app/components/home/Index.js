@@ -7,7 +7,7 @@ import { TextTyping } from "./text-animation/TextTyping";
 import { WhiteStrap } from "../white-strap-navbar/WhiteStrap";
 import { HeroBackground } from "../shared-components/HeroBackground";
 import { useEffect, useRef, useState } from "react";
-import Spline from "@splinetool/react-spline/next";
+// import Spline from "@splinetool/react-spline/next";
 
 // Lazy load the Spline component
 // const LazySpline = dynamic(() => import('@splinetool/react-spline'), { ssr: false });
@@ -47,6 +47,22 @@ export const IndexHome = () => {
     //     };
     // }, []);
 
+    const [showFirstVideo, setShowFirstVideo] = useState(false);
+    const [showSecondVideo, setShowSecondVideo] = useState(false);
+
+    useEffect(() => {
+        // Delay the start of the first video by 3 seconds
+        const timer = setTimeout(() => {
+            setShowFirstVideo(true);
+        }, 3000);
+
+        return () => clearTimeout(timer); // Cleanup timer on unmount
+    }, []);
+
+    const handleFirstVideoEnd = () => {
+        setShowSecondVideo(true); // Show the second video when the first video ends
+    };
+
     return (
         <>
             <HeroBackground bgColor={'bg-gray-light'}>
@@ -54,7 +70,7 @@ export const IndexHome = () => {
                 <WhiteStrap />
                 <div className=" grid grid-cols-12 h-available  justify-end items-end">
                     {/* 2xl:gap-4.5 xl:gap-0 md:gap-12 gap-0 */}
-                    <div className="2xl:col-span-5 md:col-span-6 col-span-11 2xl:pl-20 xl:pl-14 lg:pl-5 pl-5 grid 2xl:grid-rows-7 xl:grid-rows-6 lg:grid-rows-2 md:grid-rows-2 grid-rows-7 items-end h-available relative">
+                    <div className="2xl:col-span-5 md:col-span-6 col-span-11 2xl:pl-20 xl:pl-14 lg:pl-5 pl-5 grid 2xl:grid-rows-7 xl:grid-rows-6 lg:grid-rows-2 md:grid-rows-2 grid-rows-none items-end h-available relative">
                         {/* self-end */}
                         <div className="flex flex-col gap-6 md:self-center self-center 2xl:row-span-5 xl:row-span-4 lg:row-span-4 md:row-span-4 row-span-5 z-50">
                             {/* 2xl:text-7xl xl:text-3.5r lg:text-5xl md:text-4xl text-3xl 2xl:leading-84 xl:leading-62 lg:leading-54 md:leading-42 leading-9  */}
@@ -73,9 +89,26 @@ export const IndexHome = () => {
                             </div>
                         </div>
                         {/* absolute inset-0 col-span-12 md:hidden flex */}
-                        <div className="hidden justify-center h-full w-full items-end row-span-4">
+                        <div className="absolute inset-0 col-span-12 md:hidden flex justify-center h-full w-full items-end row-span-4">
                             <div className="flex 2xl:h-95p xl:h-90p lg:h-80p md:h-60p h-80p 2xl:w-95p lg:w-90p w-full">
-                                <Spline className="h-fit w-fit" scene="https://prod.spline.design/oEhJQIegnUr-kZTl/scene.splinecode" />
+                                {showFirstVideo && !showSecondVideo ? (
+                                    <video
+                                        src="/new-home-assets/video/spline.mp4"
+                                        autoPlay
+                                        muted
+                                        className="bg-transparent"
+                                        onEnded={handleFirstVideoEnd}
+                                    ></video>
+                                ) : showSecondVideo ? (
+                                    <video
+                                        src="/new-home-assets/video/spline_lottie.mp4"
+                                        autoPlay
+                                        loop
+                                        muted
+                                        className="bg-transparent"
+                                    ></video>
+                                ) : null}
+                                {/* <Spline className="h-fit w-fit" scene="https://prod.spline.design/oEhJQIegnUr-kZTl/scene.splinecode" /> */}
                             </div>
                         </div>
                         <div id="home-hero-bullets" className="flex flex-col xl:row-span-2 lg:row-span-1 md:row-span-2 row-span-2 2xl:pb-10 pb-5 w-fit">
@@ -100,14 +133,23 @@ export const IndexHome = () => {
                         {/*  lg:w-80p md:w-70p sm:w-60p w-50p */}
                         {/* <div className="2xl:h-70p xl:h-60p lg:h-54p md:h-40p h-50p 2xl:w-95p xl:w-90p w-full flex justify-center items-end"> */}
                         <div className="2xl:h-full xl:h-90p lg:h-full md:h-80p h-50p 2xl:w-60p xl:w-50p w-full flex justify-center items-center">
-                            <video
-                                src="/new-home-assets/video/spline.mp4"
-                                autoPlay
-                                loop
-                                muted
-                                className="bg-transparent" // Adjust classes as needed
-                            >
-                            </video>
+                            {showFirstVideo && !showSecondVideo ? (
+                                <video
+                                    src="/new-home-assets/video/spline.mp4"
+                                    autoPlay
+                                    muted
+                                    className="bg-transparent"
+                                    onEnded={handleFirstVideoEnd}
+                                ></video>
+                            ) : showSecondVideo ? (
+                                <video
+                                    src="/new-home-assets/video/spline_lottie.mp4"
+                                    autoPlay
+                                    loop
+                                    muted
+                                    className="bg-transparent"
+                                ></video>
+                            ) : null}
                             {/* <Spline scene="https://prod.spline.design/oEhJQIegnUr-kZTl/scene.splinecode" /> */}
                         </div>
                     </div>

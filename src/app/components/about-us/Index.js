@@ -1,5 +1,3 @@
-'use client'
-
 import { HeroBackground } from "../shared-components/HeroBackground";
 import { BlackStrap } from "../white-strap-navbar/BlackStrap";
 import { AboutUsHeroSection } from "./hero-section/Index";

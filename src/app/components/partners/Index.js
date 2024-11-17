@@ -1,5 +1,3 @@
-'use client'
-
 import defaultImage from '../../../../public/icons/defaultImageIcon.svg';
 import Image from "next/image";
 import { FoldingCard } from "../folding-cards/Index";
