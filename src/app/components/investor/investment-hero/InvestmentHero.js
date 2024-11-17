@@ -13,7 +13,7 @@ export const InvestmentHero = () => {
                 {/* md:py-20 py-28 */}
                 {/* md:h-auto xl:py-40 md:py-28 py-10 xl:pb-20 md:pb-14 pb-10 */}
                 <div className="2xl:px-40 xl:px-20 px-9 h-screen text-white items-center grid md:grid-cols-2 grid-cols-1 justify-start">
-                    <div className="flex flex-col justify-between gap-6 h-fit md:pt-20">
+                    <div className="flex relative z-30 flex-col justify-between gap-6 h-fit md:pt-20">
                         <h1 className="font-extralight 2xl:text-7xl xl:text-5xl lg:text-5xl md:text-4xl text-32 2xl:leading-74 xl:leading-56 lg:leading-50 md:leading-43 leading-40 xl:w-11/12 lg:w-10/12 w-11/12">
                             The {" "}
                             <span className="bg-green box-border uppercase font-bold text-black">$Send</span>
@@ -34,15 +34,11 @@ export const InvestmentHero = () => {
                             btnType={'button'}
                         />
                     </div>
-                    <div className="flex justify-center md:items-center items-start justify-self-center lg:h-auto lg:w-auto md:h-96 md:w-96 md:pt-20 h-60 w-72 order-first md:order-last">
-                        {/* <Image
-                            src="/images/investor_hero_item.png"
-                            alt="Investor"
-                            width={350}
-                            height={350}
-                        /> */}
-                        <Spline scene="https://prod.spline.design/U6zfVaWNgMTaZLak/scene.splinecode"  />
+                    {/* md:w-96 forced-full-width lg:h-auto md:h-96 */}
+                    <div className="flex justify-center md:items-center items-start justify-self-center md:absolute relative z-0 md:pt-20 md:h-screen h-60 md:w-screen forced-full-width order-first md:order-last">
+                        <Spline className='relative md:left-0 -left-20' scene="https://prod.spline.design/U6zfVaWNgMTaZLak/scene.splinecode" />
                     </div>
+
                 </div>
                 <InvertmentBridgeGrowth />
                 <div className='bg-black shadow-outer-light 2xl:h-18 h-14'></div>
