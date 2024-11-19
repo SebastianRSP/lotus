@@ -36,8 +36,11 @@ export const InvestmentHero = () => {
                     </div>
                     {/* md:w-96 forced-full-width lg:h-auto md:h-96 */}
                     <div className="flex justify-center md:items-center items-start justify-self-center md:absolute relative z-0 md:pt-20 md:h-screen h-60 md:w-screen forced-full-width order-first md:order-last">
-                        <Spline className='relative md:left-0 -left-20' scene="https://prod.spline.design/U6zfVaWNgMTaZLak/scene.splinecode" />
+                        <div className="pointer-events-none relative md:left-0 -left-20">
+                            <Spline scene="https://prod.spline.design/U6zfVaWNgMTaZLak/scene.splinecode" />
+                        </div>
                     </div>
+
 
                 </div>
                 <InvertmentBridgeGrowth />

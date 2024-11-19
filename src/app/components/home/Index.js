@@ -132,7 +132,7 @@ export const IndexHome = () => {
                     <div className="md:flex hidden 2xl:col-span-7 md:col-span-6 col-span-1 h-full  justify-center 2xl:items-end sm:items-center items-end">
                         {/*  lg:w-80p md:w-70p sm:w-60p w-50p */}
                         {/* <div className="2xl:h-70p xl:h-60p lg:h-54p md:h-40p h-50p 2xl:w-95p xl:w-90p w-full flex justify-center items-end"> */}
-                        <div className="2xl:h-full xl:h-90p lg:h-full md:h-80p h-50p 2xl:w-60p xl:w-50p w-full flex justify-center items-center">
+                        <div className="2xl:h-full xl:h-90p lg:h-full md:h-80p h-50p 2xl:w-60p xl:w-80p w-full flex justify-center items-center">
                             {showFirstVideo && !showSecondVideo ? (
                                 <video
                                     src="/new-home-assets/video/spline.mp4"
