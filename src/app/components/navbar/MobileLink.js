@@ -1,14 +1,12 @@
 import Image from "next/image";
-import Link from "next/link";
 import arrowRightGreen from '../../../../public/icons/arrow-right-green.svg';
 
 export const MobileLink = ({ navLinkName, navLink, index, handleToggle }) => {
     return (
-        <Link
-            href={navLink}
+        <p
             key={index}
-            onClick={handleToggle}
-            className="uppercase flex gap-4 items-center text-white hover:text-green border-b-2 last:border-b-0 border-green py-4 group"
+            onClick={() => handleToggle(navLink)}
+            className="uppercase cursor-pointer flex gap-4 items-center text-white hover:text-green border-b-2 last:border-b-0 border-green py-4 group"
         >
             {navLinkName}
             <span className="hidden group-hover:block">
@@ -19,6 +17,6 @@ export const MobileLink = ({ navLinkName, navLink, index, handleToggle }) => {
                     height={11}
                 />
             </span>
-        </Link>
+        </p>
     );
 }

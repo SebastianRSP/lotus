@@ -8,16 +8,18 @@ import cross from '../../../../../public/icons/cross.svg';
 import { HomeNavLink } from "../home/HomeNavLink";
 import Image from "next/image";
 import { MobileLink } from '../MobileLink';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { mobileMenu, mobileNavIcons, navIcons, navLinksAfter, navLinksBefore } from '../links';
 import { Logo } from '../../svgs/Logo';
 import { Lotus } from '../../svgs/Lotus';
 import { Telegram } from '../../svgs/Telegram';
+import { handleRouteClick } from '@/app/utils/navigationUtils';
 
 
 export const HomeNavbar = () => {
 
     const pathname = usePathname();
+    const router = useRouter();
 
     // Determine the layout based on the current path
     const darkRoutes = ['/about-us', '/investors'];
@@ -28,8 +30,13 @@ export const HomeNavbar = () => {
 
     const [isOpen, setIsOpen] = useState(false);
 
-    const handleToggle = () => {
+    const handleToggle = (navLink) => {
         setIsOpen(!isOpen);
+        if(navLink){
+            setTimeout(() => {
+                handleRouteClick(router, pathname, navLink);
+            },450);
+        }
     };
 
     return (
@@ -104,7 +111,7 @@ export const HomeNavbar = () => {
                         <div className='link-animation border border-black rounded-4 shadow-outer-new-home bg-yellowLight w-9 h-9 p-0.3 relative z-50'>
                             <div
                                 className='bg-green rounded-4 flex justify-center items-center w-full h-full'
-                                onClick={handleToggle}
+                                onClick={() => handleToggle()}
                             >
                                 <Image
                                     src={isOpen ? cross : navToggle}

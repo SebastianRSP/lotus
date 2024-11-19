@@ -34,7 +34,7 @@ export default function RootLayout({ children }) {
         <meta name="viewport" content="width=device-width, initial-scale=00" />
         <meta charSet="UTF-8" />
         <meta name="description" content="Your website description" />
-        <title>Your Website Title</title>
+        <title>Lotus Group of Companies</title>
       </Head>
       <body className={plusJakartaSans.variable}>
         {/* {isInvestorsPage ? (

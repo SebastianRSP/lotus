@@ -6,7 +6,8 @@ import Link from 'next/link';
 import telegram from '../../../../../public/animations/telegram.json';
 import sendMessageArrow from '../../../../../public/animations/send-message-arrow.json';
 import Lottie from 'lottie-react';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
+import { handleRouteClick } from '@/app/utils/navigationUtils';
 
 const footerMenu1 = [
     { linkName: 'Home', goTo: '/' },
@@ -31,6 +32,8 @@ const footerMenu3 = [
 
 export const AboutUsFooter = () => {
     const pathname = usePathname();
+    const router = useRouter();
+
     const isGreen = pathname.startsWith('/about-us');
 
     return (
@@ -76,27 +79,27 @@ export const AboutUsFooter = () => {
                         <div className='md:px-5 md:flex justify-start flex-col'>
                             <div className='flex flex-col'>
                                 {footerMenu1.map((footerLink, index) => (
-                                    <Link className={`${index == 0 ? 'font-extrabold' : 'hover:font-bold'} 2xl:text-lg text-sm uppercase font-normal leading-normal`} href={footerLink.goTo} key={index}>
+                                    <p onClick={() => handleRouteClick(router, pathname, footerLink.goTo)} className={`${index == 0 ? 'font-extrabold' : 'hover:font-bold'} cursor-pointer 2xl:text-lg text-sm uppercase font-normal leading-normal`} href={footerLink.goTo} key={index}>
                                         {footerLink.linkName}
-                                    </Link>
+                                    </p>
                                 ))}
                             </div>
                         </div>
                         <div className='md:px-5 md:flex justify-start flex-col'>
                             <div className='flex flex-col'>
                                 {footerMenu2.map((footerLink, index) => (
-                                    <Link className={`${index == 0 ? 'font-extrabold' : 'hover:font-bold'} 2xl:text-lg text-sm uppercase font-normal leading-normal`} href={footerLink.goTo} key={index}>
+                                    <p onClick={() => handleRouteClick(router, pathname, footerLink.goTo)} className={`${index == 0 ? 'font-extrabold' : 'hover:font-bold'} cursor-pointer 2xl:text-lg text-sm uppercase font-normal leading-normal`} href={footerLink.goTo} key={index}>
                                         {footerLink.linkName}
-                                    </Link>
+                                    </p>
                                 ))}
                             </div>
                         </div>
                         <div className='md:px-5 md:flex justify-start flex-col'>
                             <div className='flex flex-col'>
                                 {footerMenu3.map((footerLink, index) => (
-                                    <Link className={`${index == 0 ? 'font-extrabold' : 'hover:font-bold'} 2xl:text-lg text-sm uppercase font-normal leading-normal`} href={footerLink.goTo} key={index}>
+                                    <p onClick={() => handleRouteClick(router, pathname, footerLink.goTo)} className={`${index == 0 ? 'font-extrabold' : 'hover:font-bold'} cursor-pointer 2xl:text-lg text-sm uppercase font-normal leading-normal`} href={footerLink.goTo} key={index}>
                                         {footerLink.linkName}
-                                    </Link>
+                                    </p>
                                 ))}
                             </div>
                         </div>

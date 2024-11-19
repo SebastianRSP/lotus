@@ -1,12 +1,11 @@
 'use client';
 
-import Link from "next/link";
-import { useState, useCallback } from "react";
+import { useState } from "react";
 import { DefaultBtn } from "../../buttons/home/DefaultBtn";
 import { DefaultBtnBlack } from "../../buttons/home/DefaultBtnBlack";
 import { Telegram } from "../../svgs/Telegram";
 import { usePathname, useRouter } from "next/navigation";
-import { exitPageAnimation } from "../../gsap-animations/home/Index2";
+import { handleRouteClick } from "@/app/utils/navigationUtils";
 
 export const HomeNavLink = ({ navLinkName, navLink, extras, icon, iconImage, id, font, isIncludeBookDemoBtn, isDark }) => {
     const router = useRouter();
@@ -22,21 +21,6 @@ export const HomeNavLink = ({ navLinkName, navLink, extras, icon, iconImage, id,
         setIsToggled(false);
     };
 
-    const handleRouteClick = useCallback((e) => {
-        // Check if the clicked link is the same as the current path
-        if(navLink === '#'){
-            return;
-        }else if (currentPath === navLink) {
-            // Do not perform animation or route change if it's the same link
-            return;
-        }else{
-            exitPageAnimation();
-    
-            setTimeout(() => {
-                router.push(navLink); // Navigate to the route after delay
-            }, 250);
-        }
-    }, [navLink, router, currentPath]);
 
     return (
         <>
@@ -60,7 +44,7 @@ export const HomeNavLink = ({ navLinkName, navLink, extras, icon, iconImage, id,
                 <div >
                     <p
                         key={id}
-                        onClick={() => handleRouteClick(navLink)}
+                        onClick={() => handleRouteClick(router, currentPath, navLink)}
                         onMouseEnter={handleMouseEnter}
                         onMouseLeave={handleMouseLeave}
                         className={`${extras} ${isDark ? 'text-white' : 'text-black'} cursor-pointer h-inherit flex items-center justify-center link-animation`}

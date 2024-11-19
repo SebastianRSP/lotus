@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image';
 import { DefaultBtnBlack } from "../../buttons/home/DefaultBtnBlack";
 import { InvertmentBridgeGrowth } from '../investment-bridge-growth/PageOnScroll';
 import Spline from '@splinetool/react-spline';
