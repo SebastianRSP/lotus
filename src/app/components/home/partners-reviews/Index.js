@@ -175,7 +175,8 @@ export const PartnerReviews = () => {
                             >
                                 {partners.map((currentPartner, index) => (
                                     <div key={index} style={{ maxWidth: containerWidth, height: containerHeight }} className={`grid grid-rows-6 justify-between xl:!h-26 lg:!h-19 !h-60 items-center`}>
-                                        <div className="2xl:row-span-1 row-span-1 2xl:w-40 xl:w-36 lg:w-28 md:w-32 w-28 h-available">
+                                        {/* h-available */}
+                                        <div className="2xl:row-span-1 row-span-1 2xl:w-40 xl:w-36 lg:w-28 md:w-32 w-28 h-full">
                                             <Image
                                                 src={currentPartner?.partnerIcon}
                                                 alt={`${currentPartner?.partnerName} icon`}
