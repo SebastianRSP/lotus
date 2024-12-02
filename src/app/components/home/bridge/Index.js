@@ -1,4 +1,3 @@
-import defaultImage from '../../../../../public/icons/defaultImg.svg';
 import { GridGreen } from "./grid-svgs/GridGreen";
 import { BackGrid } from "./grid-svgs/BackGrid";
 

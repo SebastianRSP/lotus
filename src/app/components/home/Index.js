@@ -68,9 +68,9 @@ export const IndexHome = () => {
             <HeroBackground bgColor={'bg-gray-light'}>
                 {/* White Strap */}
                 <WhiteStrap />
-                <div className=" grid grid-cols-12 h-available  justify-end items-end">
+                <div className=" grid grid-cols-12 h-full  justify-end items-end">
                     {/* 2xl:gap-4.5 xl:gap-0 md:gap-12 gap-0 */}
-                    <div className="2xl:col-span-5 md:col-span-6 col-span-12 2xl:pl-20 xl:pl-14 lg:pl-5 pl-5 grid 2xl:grid-rows-7 xl:grid-rows-6 lg:grid-rows-2 md:grid-rows-2 grid-rows-none items-end h-available relative">
+                    <div className="2xl:col-span-5 md:col-span-6 col-span-12 2xl:pl-20 xl:pl-14 lg:pl-5 pl-5 grid 2xl:grid-rows-7 xl:grid-rows-6 lg:grid-rows-2 md:grid-rows-2 grid-rows-none items-end h-full relative">
                         {/* self-end */}
                         <div className="flex flex-col gap-6 md:self-center self-center 2xl:row-span-5 xl:row-span-4 lg:row-span-4 md:row-span-4 row-span-2 z-50">
                             {/* 2xl:text-7xl xl:text-3.5r lg:text-5xl md:text-4xl text-3xl 2xl:leading-84 xl:leading-62 lg:leading-54 md:leading-42 leading-9  */}

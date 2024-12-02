@@ -4,20 +4,19 @@ import Image from 'next/image';
 // import rails from '../../../../../public/animations/rails.lottie';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import snip from '../../../../../public/new-home-assets/snip.png';
-import Lottie from 'lottie-react';
 
 export const FeatureSection = () => {
     return (
         <div className="2xl:px-20 lg:px-10 px-0 2xl:pb-28 xl:pb-24 pb-5 2xl:pt-12 xl:pt-10 pt-5">
             <div className="grid grid-cols-12 2xl:gap-20 lg:gap-12 gap-0">
                 <div className="lg:col-span-7 col-span-12 bg-gray-light rounded flex justify-center items-center ">
-                    <div className="lg:h-available md:h-31 h-23 w-full relative overflow-hidden flex justify-center lg:items-center items-end">
+                    <div className="lg:h-full md:h-31 h-23 w-full relative overflow-hidden flex justify-center lg:items-center items-end">
                         <h4 className='lg:hidden block absolute top-0 2xl:-ml-96 lg:-ml-64 ml-0 bg-white z-30 2xl:pl-20 lg:pl-10 pl-0 2xl:pb-20 lg:pb-10 pb-6 font-extralight 2xl:text-6xl xl:text-5xl lg:text-2.5 md:text-4xl text-3xl 2xl:leading-60 xl:leading-54 lg:leading-46 md:leading-42 leading-9'>
                             Lotus powers the future of data storage by building superior rails for migration.
                         </h4>
                         <Image
                             src={snip}
-                            className='absolute w-fit object-cover h-available md:hidden block'
+                            className='absolute w-fit object-cover h-full md:hidden block'
                             width={100}
                             height={100}
                         />
@@ -25,7 +24,7 @@ export const FeatureSection = () => {
                             src='/animations/rails.lottie'
                             loop
                             autoplay
-                            className="absolute w-fit h-available md:block hidden"
+                            className="absolute w-fit h-full md:block hidden"
                         />
                     </div>
                 </div>
