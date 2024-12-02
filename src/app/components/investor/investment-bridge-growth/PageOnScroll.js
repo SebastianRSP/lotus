@@ -393,7 +393,7 @@ export const InvertmentBridgeGrowth = () => {
                                                     </div>
                                                     <div ref={boxLengthRef} className="absolute pr-6 sm:block hidden lg:text-black text-green inset-0 transition-all duration-1000 ease-in-out"
                                                         style={{ transform: `translateY(${translateY}px)` }} >
-                                                        <div className='h-available'>
+                                                        <div className='h-full'>
                                                             <div className='flex justify-center items-center h-full w-full'>
                                                                 <div className='2xl:w-36 xl:w-28 lg:w-20 w-10 2xl:h-36 xl:h-28 lg:h-20 h-10'>
                                                                     <Lottie animationData={animatedBox} className='bg-transparent' loop={true} />
