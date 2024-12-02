@@ -1,6 +1,6 @@
 export const AboutUsHeroSection = () => {
     return (
-        <div className="flex justify-center items-center text-white h-inherit">
+        <div className="flex justify-center items-center text-white h-full">
             <div className="flex flex-col justify-between items-center text-center 2xl:gap-9 xl:gap-5 lg:gap-3 gap-7">
                 <h3 className="2xl:text-4xl xl:text-2xl md:text-xl 2xl:leading-42 text-lg bg-green text-black w-fit">Our mission</h3>
                 <h4 className="xl:text-5xl lg:text-2.5 md:text-4xl text-3xl xl:leading-54 lg:leading-46 md:leading-42 leading-9 font-extralight">
