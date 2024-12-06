@@ -10,67 +10,74 @@ import Blocz from '../../../../../public/new-home-assets/blocz.svg';
 import Clearskye from '../../../../../public/new-home-assets/clearskye.svg';
 import Sia from '../../../../../public/new-home-assets/sia.svg';
 import Storj from '../../../../../public/new-home-assets/storj.svg';
+import FTH from '../../../../../public/new-home-assets/FTH.jpg';
+import DCENT from '../../../../../public/new-home-assets/DCENT.jpg';
 
 const partners = [
     {
         partnerName: 'FileCoin',
         partnerIcon: FileCoin,
+        face: '/new-home-assets/profiles/Filecoin_Face.png',
         width: 130,
         height: 36,
-        testimonial: '“One of the stumbling blocks to the broader adoption of blockchain is that different platforms often use distinct protocols and standards, making interaction and communication between them uncertain.”',
+        testimonial: '“The Bridge aims to abstract away the things customers don´t care about and refocuses the conversation and capabilities on what they do; how to maximize value of their data.”',
         person: "PORTER STOWELL",
-        title: "Head of Community",
+        title: "Head of Ecosystem",
         company: "FILECOIN FOUNDATION"
     },
     {
-        partnerName: 'Sia',
-        partnerIcon: Sia,
+        partnerName: 'FTH',
+        partnerIcon: FTH,
+        face: '/new-home-assets/profiles/FTH_Face.png',
         width: 80,
         height: 46,
-        testimonial: '“Sia decentralized storage platform leverages underutilized storage capacity to bring greater privacy, security, and efficiency.”',
-        person: "DAVID VORICK",
-        title: "CEO & Co-Founder",
-        company: "SIA"
+        testimonial: '“We are big believers in decentralized technology and what it means for enterprises. That is why we are partnering with the Lotus Data group to deliver these services.”',
+        person: "Nathan Dragun",
+        title: "CEO",
+        company: "Future Tech Holdings"
     },
     {
-        partnerName: 'Arweave',
+        partnerName: 'TEST',
         partnerIcon: Arweave,
         width: 156,
         height: 34,
-        testimonial: '“Arweave offers truly permanent data storage, meaning you can store your files, apps, and even websites, forever.”',
-        person: "SAM WILLIAMS",
-        title: "CEO",
-        company: "ARWEAVE"
+        testimonial: '“TEST”',
+        person: "TEST",
+        title: "TEST",
+        company: "TEST"
     },
     {
-        partnerName: 'Storj',
-        partnerIcon: Storj,
+        partnerName: 'DCENT',
+        partnerIcon: DCENT,
+        face: '/new-home-assets/profiles/Face_DCENT.jpg',
         width: 113,
         height: 44,
-        testimonial: '“Storj brings decentralization to cloud storage, providing faster and cheaper services with the highest standards of security.”',
-        person: "BEN GOLUB",
-        title: "Executive Chairman",
-        company: "STORJ"
+        testimonial: '“By bridging data ecosystems, The Bridge project can pave the way for unparalleled data sharing and accessibility, a mission that resonates strongly with our vision at DCENT to drive interconnected digital (storage) infrastructure.”',
+        person: "Hidde Hoogland",
+        title: "CEO",
+        company: "DCent"
     },
     {
         partnerName: 'Clearskye',
         partnerIcon: Clearskye,
+        face: '/new-home-assets/profiles/ClearSkyFace.jpg',
         width: 75,
         height: 53,
-        testimonial: '“ClearSkye helps organizations achieve their identity management goals faster with an integrated approach to security and compliance.”',
-        person: "MARIO GIAMMETTI",
-        title: "VP Product",
-        company: "CLEARSKYE"
+        testimonial: '“This bridge serves as a nexus for technology, community, and innovation, unlocking the full potential of blockchain technology for data protection, archiving, and recovery solutions.”',
+        person: "Rich Van Duysen",
+        title: "CEO",
+        company: "Clearskye"
     },
     {
         partnerName: 'Blocz',
         partnerIcon: Blocz,
+        face: '/new-home-assets/profiles/FACE_BLOCZ.jpeg',
         width: 113,
         height: 29,
-        testimonial: '“Blocz offers unique blockchain solutions that connect all elements of a distributed ledger, making it easier for enterprises to adopt the technology.”',
-        person: "ELENA PEREZ",
+        testimonial: '“The Bridge seeks to remove the shackles of lock-in, democratizing data, unlocking it’s potential and unleashing the power of your data. The value of your data unlocked, processed, and located where you need it!”',
+        person: "Chris Ward-Jones",
         title: "CTO",
-        company: "BLOCZ"
+        company: "blocz.io"
     }
 ];
 
@@ -191,7 +198,15 @@ export const PartnerReviews = () => {
                                         <div className="2xl:row-span-3 row-span-2 flex items-start lg:gap-8 gap-5 pl-2 2xl:mt-16 self-end">
                                             {/* lg:p-10 md:p-8 p-7 */}
                                             <div className="bg-green border border-black 2xl:w-28 xl:w-24 md:w-20 w-16 2xl:h-28 xl:h-24 md:h-20 h-16 relative rounded-4">
-                                                <div className="absolute inset-0 bg-gray-light border rounded-4 -translate-x-[2px] -translate-y-[2px]"></div>
+                                                <div className="absolute inset-0 bg-gray-light border rounded-4 -translate-x-[2px] -translate-y-[2px]">
+                                                <Image
+                                                src={currentPartner?.face}
+                                                alt={`${currentPartner?.partnerName} icon`}
+                                                width={104}
+                                                height={64}
+                                                layout='responsive'
+                                            />
+                                                </div>
                                             </div>
                                             <div >
                                                 <span className="2xl:text-2xl xl:text-xl lg:text-lg md:text-base text-sm 2xl:leading-6 xl:leading-5 lg:leading-18 md:leading-4 leading-14 font-bold">

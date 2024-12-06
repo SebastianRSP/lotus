@@ -189,14 +189,14 @@ export const InvertmentBridgeGrowth = () => {
             <div className="py-28 w-full flex justify-center items-start">
                 <div className="flex flex-col justify-center items-center text-white text-center">
                     <h3 className="2xl:text-118 xl:text-100 lg:text-90 md:text-80 text-5xl  font-extrabold border-b-[0.5px] border-hr relative">
-                        Send
+                        BRIDGE
                         <sup className="absolute -top-5  w-full">
                             <Image src={sendataLogo} alt="send data logo" width={352} height={102} />
                         </sup>
                     </h3>
                     <p className="2xl:text-2xl lg:text-xl text-md mt-5 md:px-0 px-9">
-                        Designed to drive engagement, reward participation, <br className="hidden md:block" />
-                        and foster growth within <span className="font-bold">The Bridge<sup>TM</sup></span> ecosystem.
+                    Designed to drive engagement, rewards participation, and foster growth
+within <span className="font-bold">The Bridge<sup>TM</sup></span> ecosystem.
                     </p>
                     <div className="w-16 h-16 mt-10">
                         <Lottie animationData={investerHero} loop={true} />

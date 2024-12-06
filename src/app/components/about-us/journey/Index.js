@@ -11,24 +11,34 @@ import Image from "next/image";
 
 const timelines = [
     {
+        year: '2020',
+        icon: flag,
+        description: 'Filecoin mainnet launches backed by $200 million ICO. The largest DSN created thus far established a new paradigm for data storage. Lotus Data Group founders saw this as a tremendous opportunity for enterprises in the future.'
+    },
+    {
         year: '2021',
         icon: flag,
-        description: 'Lotus Data Group was founded 3 years ago by a distinguished group of tech veterans with storied careers at Microsoft, Filecoin, Lockheed Martin, among others. Our Team has consulted for institutions and enterprises like Disney and the U.S Department of Defence.'
+        description: 'Lotus data group was formed, the main mission became to study viability of distributed storage networks. As part of the exploration process significant time was spend with Protocol Labs leadership to understand how to maximize the potential of Filecoin as the worlds largest decentralized storage network.'
     },
     {
         year: '2022',
         icon: light,
-        description: 'In consultation with Protocol Labs and the Filecoin team we began to develop our SenData and Pegasus protocols, in order to build a wholesale data ingestion solution for decentralized networks.'
+        description: 'Initial design and creation of The Bridge platform began. Initial design was to provide S3 grade access to the Filecoin Network in response to potential enterprise demand. An MVP was built to demonstrate the planned capability that LDG wanted to deliver.'
     },
     {
         year: '2023',
         icon: box,
-        description: 'Members of the Filecoin Data Tools team join Lotus Data Group and we combine forces with Bluewhale Global, the largest AI and Blockchain development company in Taipei. We develop a suite of data management solutions to house under our ingestion platform.'
+        description: 'Lotus Data Group accelerated timelines adding former Protocol Labs engineers to better embrace the decentralized storage space. The Bridge design started to evolve into an even more mature solution adding Web2 support and support for even more Decentralized Storage Networks (DSN’s).'
     },
     {
         year: '2024',
         icon: mou,
-        description: 'Members of the Filecoin Data Tools team join Lotus Data Group and we combine forces with Bluewhale Global, the largest AI and Blockchain development company in Taipei. We develop a suite of data management solutions to house under our ingestion platform.'
+        description: 'We continue to refine  development of The Bridge. Memorandum of Understandings (MOUs) are secured with many enterprise partners to set the foundation for upcoming pilots. Lotus  formed its BVI company to ensure proper regulatory oversite for the project in anticipation of its 2025 TGE event.'
+    },
+    {
+        year: '2025',
+        icon: mou,
+        description: 'LDG is swiftly moving forward to exit the design phase and rapidly produce a production grade product and starting on enterprise pilots.'
     }
 ];
 

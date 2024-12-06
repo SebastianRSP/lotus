@@ -17,80 +17,80 @@ import { CardBackground } from './CardBackground';
 const dataMigrations = [
     {
         datamigration: 'Optimised Transactions',
-        migrationHeading: 'Seamless transactions & cost efficiency',
-        migrationDescription: '$SEND enhances platform operations, delivering fast, cost-effective transactions for seamless decentralized storage management.',
+        migrationHeading: 'Seamless data exchanges with efficiency at scale',
+        migrationDescription: '$Bridge transforms data transactions by establishing a unified, cost-efficient ecosystem. Utilizing blockchain-based identifiers to track transactions and data sets, it eliminates bottlenecks, enabling faster, more affordable transfers across diverse storage platforms.',
         lottieAnimation: puzzleAnimation,
         bullets: [
             {
-                heading: "Sim plifies storage operations",
+                heading: "Streamlined Data Management",
                 icon: icon1
             },
             {
-                heading: "Lowers transaction costs",
+                heading: "Reduced Transaction Costs",
                 icon: icon2
             },
             {
-                heading: "Boosts platform efficiency",
+                heading: "Scalable Transfers",
                 icon: icon3
             }
         ]
     },
     {
         datamigration: 'Data Empowerment',
-        migrationHeading: 'Powering the data economy',
-        migrationDescription: 'Empowering users with tools to unlock value in the data economy through AI analysis and data monetization.',
+        migrationHeading: 'Unlocking the potential of data as an asset',
+        migrationDescription: 'The Bridge paves the way for data to become a more liquid and portable asset, ensuring data owners retain control while unlocking its full potential. By leveraging advanced tools and frameworks, users can actively shape their role in the global data economy.',
         lottieAnimation: boxesAnimation,
         bullets: [
             {
-                heading: "AI Refinement Engine for data analysis",
+                heading: "AI-Driven Insights",
                 icon: icon1
             },
             {
-                heading: "Monetize data in the Marketplace",
+                heading: "Monetization Potential",
                 icon: icon2
             },
             {
-                heading: "Access tools to engage in the data economy",
+                heading: "API Accessibility",
                 icon: icon3
             }
         ]
     },
     {
         datamigration: 'Rewarding Collaboration',
-        migrationHeading: 'Incentivising stakeholders and contributors',
-        migrationDescription: 'The $SEND economy incentivizes storage providers, developers, and investors, fostering collaboration and innovation within a dynamic platform.',
+        migrationHeading: 'Fostering an ecosystem of mutual growth',
+        migrationDescription: 'The $Bridge token powers a collaborative economy, incentivizing stakeholders to enhance data integrity, drive innovation, and expand the platform’s reach. Through a structured rewards system, The Bridge ensures active contributors receive fair recognition and value.',
         lottieAnimation: mountainAnimation,
         bullets: [
             {
-                heading: "Rewards top-performing storage providers",
+                heading: "Performance-Based Rewards",
                 icon: icon1
             },
             {
-                heading: "Grants developers access to tools and APIs",
+                heading: "Developer Empowerment: ",
                 icon: icon2
             },
             {
-                heading: "Delivers long-term value for investors",
+                heading: "Ecosystem Growth Incentives",
                 icon: icon3
             }
         ]
     },
     {
         datamigration: 'Exclusive Benefits',
-        migrationHeading: 'Premium features & exclusive access',
-        migrationDescription: 'Unlock exclusive access to premium tools and events with $SEND, enhancing your experience and value.',
+        migrationHeading: 'Unlock advanced tools and ecosystem privileges',
+        migrationDescription: 'The $Bridge token offers exclusive access to premium features and tools designed to maximize user engagement and value creation. From advanced analytics to tailored insights, these benefits empower participants to navigate and thrive in The Bridge ecosystem.',
         lottieAnimation: premiumFeaturesAnimation,
         bullets: [
             {
-                heading: "Access to special webinars and unique events",
+                heading: "Priority Access",
                 icon: icon1
             },
             {
-                heading: "Advanced analytics for deeper insights",
+                heading: "Advanced Analytics",
                 icon: icon2
             },
             {
-                heading: "Premium tools to boost engagement and performance",
+                heading: "Premium Utilities",
                 icon: icon3
             }
         ]

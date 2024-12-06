@@ -14,18 +14,14 @@ export const FeatureSection = () => {
                         <h4 className='lg:hidden block absolute top-0 2xl:-ml-96 lg:-ml-64 ml-0 bg-white z-30 2xl:pl-20 lg:pl-10 pl-0 2xl:pb-20 lg:pb-10 pb-6 font-extralight 2xl:text-6xl xl:text-5xl lg:text-2.5 md:text-4xl text-3xl 2xl:leading-60 xl:leading-54 lg:leading-46 md:leading-42 leading-9'>
                             Lotus powers the future of data storage by building superior rails for migration.
                         </h4>
-                        <Image
-                            src={snip}
-                            className='absolute w-fit object-cover h-full md:hidden block'
-                            width={100}
-                            height={100}
-                        />
-                        <DotLottieReact
-                            src='/animations/rails.lottie'
-                            loop
-                            autoplay
-                            className="absolute w-fit h-full md:block hidden"
-                        />
+                        <video
+                                src="/new-home-assets/video/boxesAnimation.mp4"
+                                muted
+                                playsInline
+                                loop
+                                autoPlay
+                                className="absolute inset-0 h-full w-full top-[70px] object-contain lg:top-0 lg:object-cover z-0"
+                                ></video>
                     </div>
                 </div>
                 <div className="lg:col-span-5 col-span-12 bg-white lg:pt-0 pt-8">
@@ -33,9 +29,12 @@ export const FeatureSection = () => {
                         <h4 className='lg:block hidden 2xl:-ml-96 lg:-ml-64 ml-0 bg-white relative z-30 2xl:pl-20 lg:pl-10 pl-0 2xl:pb-20 lg:pb-10 pb-0 font-extralight 2xl:text-6xl xl:text-5xl lg:text-2.5 md:text-4xl text-3xl 2xl:leading-60 xl:leading-54 lg:leading-46 md:leading-42 leading-9'>
                             Lotus powers the future of data storage by building superior rails for migration.
                         </h4>
-                        <p className='2xl:text-2xl md:text-base text-sm'>Governments, institutions, and enterprises are increasingly seeking decentralized storage solutions, but the transition process from Web2 to Web3 networks remains a barrier. Our solution facilitates worldwide adoption of decentralized storage solutions, and provides best-in-class data management tools for enterprise and institutional grade clients.</p>
+                        <p className='2xl:text-2xl md:text-base text-sm'>Governments, institutions, and enterprises are increasingly seeking decentralised storage solutions, but the process from Web2 to Web3 networks remains a barrier. Our solution facilitates worldwide adoption of decentralised storage solutions, and provides best-in-class data management tools for enterprise and institutional grade clients.</p>
                         <div className=''>
-                            <p className='2xl:text-2xl md:text-base text-sm bg-green text-black inline px-0.2'>Our solution facilitates worldwide adoption of decentralized storage solutions, and provides best-in-class data management tools for enterprise and institutional grade clients.</p>
+                            <p className='2xl:text-2xl md:text-base text-sm bg-green text-black inline px-0.2'>Lotus does for data transfer what SWIFT does for money
+transfer—a single protocol that abstracts away hundreds of complex
+interactions, enabling seamless interoperability between disparate network
+s.</p>
                         </div>
                     </div>
                 </div>

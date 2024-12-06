@@ -8,15 +8,15 @@ import { BorderDivider } from "../../borders-divider/Index";
 const cardDetails = [
     {
         cardDesp: 'Book a demo',
-        defaultImage: defaultImage
+        svgPath: '/new-home-assets/SVG/BookDemo.svg'
     },
     {
         cardDesp: `Decentralise, analyse, and secure your data using The BridgeTM`,
-        defaultImage: defaultImage
+        svgPath: '/new-home-assets/SVG/Decentralise.svg'
     },
     {
         cardDesp: `Transform your company liability into a valuable asset`,
-        defaultImage: defaultImage
+        svgPath: '/new-home-assets/SVG/Transform.svg'
     }
 ];
 
@@ -114,14 +114,14 @@ export const CardsSection = () => {
     return (
         <section className="2xl:py-28 md:py-16 py-10">
             <div className="relative">
-                <div className="bg-black text-white text-center rounded-tl-lg rounded-tr-lg 2xl:px-40 xl:px-28 px-5 2xl:py-28 py-12">
+                <div className="bg-black text-white text-center rounded-tl-lg rounded-tr-lg 2xl:px-40 xl:px-28 px-5 2xl:py-28 py-12 ">
                     <h6 className="2xl:text-7xl xl:text-6xl lg:text-5xl md:text-4xl text-2xl 2xl:leading-84 xl:leading-45 lg:leading-60 md:leading-48 leading-9 font-thin">
                         Is your data strategy <br /> ready for the future?
                     </h6>
                     <p className="text-green 2xl:text-4xl lg:text-3xl md:text-2xl text-xs mt-5 font-extralight 2xl:leading-9 md:leading-5 leading-3">
                         Explore how our platform can future-proof your enterprise.
                     </p>
-                    <div className="2xl:py-32 md:py-20 py-10 cards-wrap relative z-20">
+                    <div className="2xl:py-32 md:py-20 py-10 cards-wrap relative z-20 max-w-screen-xl mx-auto">
                         <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 md:gap-7 gap-6">
                             {cardDetails.map((card, index) => (
                                 <div
@@ -131,8 +131,8 @@ export const CardsSection = () => {
                                 >
                                     <div className="rounded-tl-lg text-green flex justify-center items-center">
                                         <div className="absolute inset-0 md:w-full w-fit h-full justify-self-center">
-                                            <span className="absolute 2xl:text-lg text-md 2xl:top-3 xl:top-3 lg:top-2 md:top-1 sm:top-2 top-3 2xl:left-4 xl:left-3 lg:left-2 md:left-1 sm:left-2 left-2">0{index + 1}</span>
-                                            <Image
+                                        <span className="absolute text-md top-[3%] left-[3%]">0{index + 1}</span>
+                                        <Image
                                                 src={curvedCard}
                                                 className="md:w-auto w-full md:h-auto h-full relative -left-[2px]"
                                                 objectFit="contain"
@@ -141,12 +141,12 @@ export const CardsSection = () => {
                                     </div>
                                     <div className="grid grid-rows-2 items-center justify-center relative md:w-full w-4/6">
                                         <div className="w-full 2xl:py-14 xl:py-12 md:py-9 py-14">
-                                            <Image
-                                                src={card.defaultImage}
-                                                className="2xl:w-16 w-10 2xl:h-16 h-10"
+                                            <img
+                                                src={card.svgPath}
+                                                className="w-20 h-20"
                                                 alt="default Image"
-                                                width={69}
-                                                height={69}
+                                                width={80}
+                                                height={80}
                                             />
                                         </div>
                                         <div className="h-full lg:p-0 px-3">

@@ -1,26 +1,25 @@
 import { GridLines } from "../grid-svgs/GridLines";
-import defaultImage from '../../../../../../public/icons/defaultImg.svg';
 import { BridgeCard } from "../BridgeCard";
 import Image from "next/image";
 
 const cardDetails = [
     {
         category: 'Simplified data connectivity',
-        heading: 'Data connectivity Simplified',
-        description: 'Our proprietary SenData and Pegasus stack seamlessly links Web2 and Web3 networks, eliminating traditional barriers of time, cost, and complexity that have historically made decentralized storage solutions inaccessible at scale.',
-        defaultImage: defaultImage
+        heading: 'Data Connectivity Simplified',
+        description: 'Data connectivity is complicated. Hundreds of data networks around the world operate using disparate protocols and systems, making communication between them challenging and inefficient. The Bridge unifies protocols required by storage providers, eliminating the time and cost barriers that have traditionally made decentralized storage solutions inaccessible at scale.',
+        svgPath: '/new-home-assets/SVG/DataConnectivity.svg'
     },
     {
         category: 'An integrated approach',
-        heading: 'An integrated approach',
-        description: 'The Bridge consolidates data from diverse sources into a unified platform, ensuring comprehensive and accurate management. This seamless integration enhances data quality and accessibility, giving businesses a complete view of their information assets.',
-        defaultImage: defaultImage
+        heading: 'An Integrated Approach',
+        description: 'The Bridge utilises validation proofs to ensure that debits and credits of data across storage providers is ensured. Clients can now ensure that their data sets can be tracked, traced, and validated across all platforms. This seamless integration enhances data quality and accessibility, giving businesses a complete view over their information assets.',
+        svgPath: '/new-home-assets/SVG/IntegratedApproach.svg'
     },
     {
         category: 'Redefining the internet of storage',
-        heading: 'Redefining the internet of storage',
-        description: 'The Bridge transforms data infrastructure by providing complete, scalable interoperability across all of the world’s leading storage solutions. Our innovative approach redefines how data is stored and accessed, offering unparalleled control and flexibility in a rapidly evolving digital landscape.',
-        defaultImage: defaultImage
+        heading: 'Redefining the Internet of Storage',
+        description: 'Data has become the world´s largest and fastest-growing asset class, necessitating a trustless and transparent platform to track and manage its immense value. The Bridge addresses this need by recording data transaction attributes on-chain, ensuring every interaction is traceable and secure.',
+        svgPath: '/new-home-assets/SVG/InternetOfStorage.svg'
     }
 ];
 
@@ -32,29 +31,35 @@ export const BridgeBelow = () => {
                     <GridLines />
                 </div>
                 <div className="flex flex-col justify-start w-full items-left">
-                    <h5 className="2xl:text-108 xl:text-6xl lg:text-5xl md:text-4xl text-28 2xl:leading-124 xl:leading-66 lg:leading-54 md:leading-42 leading-9 text-gray-light font-extralight ">
+                    <h5 className="2xl:text-108 xl:text-6xl lg:text-5xl md:text-4xl text-28 2xl:leading-124 xl:leading-66 lg:leading-54 md:leading-42 leading-9 text-gray-light font-extralight">
                         A single pane of glass <br /> connecting <br /> <span className="font-normal">web2</span> and <span className="font-normal">web3</span>
                     </h5>
                 </div>
-                <div className="2xl:py-72 xl:py-16 py-28 text-center">
+                <div className="2xl:py-72 xl:py-16 py-28 text-center max-w-screen-xl mx-auto">
                     <div className="flex flex-col gap-2.5">
                         {cardDetails.map((cardDetail, index) => (
-                            <BridgeCard>
-                                <div key={index} className="grid md:grid-cols-2 grid-cols-1 justify-center items-center 2xl:py-24 py-12 md:px-0 px-5">
+                            <BridgeCard key={index}>
+                                <div
+                                    className={`grid md:grid-cols-2 grid-cols-1 justify-center items-center 2xl:py-24 py-12 md:px-0 px-5 ${
+                                        index % 2 === 1 ? 'md:grid-cols-2-reverse' : ''
+                                    }`}
+                                >
                                     <div className="md:my-0 my-20">
                                         <Image
-                                            src={cardDetail.defaultImage}
-                                            alt="default Image"
-                                            width={40}
-                                            height={40}
+                                            src={cardDetail.svgPath}
+                                            alt={`${cardDetail.category} icon`}
+                                            width={300}
+                                            height={300}
                                         />
                                     </div>
                                     <div className="flex flex-col justify-between gap-3 text-left lg:w-4/6 md:w-11/12 w-full">
-                                        <span className="2xl:text-lg text-base font-normal leading-42 text-green">{cardDetail.category}</span>
+                                        <span className="2xl:text-lg text-base font-normal leading-42 text-green">
+                                            {cardDetail.category}
+                                        </span>
                                         <h4 className="2xl:text-4xl lg:text-3xl text-2xl font-300 2xl:leading-42 lg:leading-9 leading-30 text-green 2xl:w-3/4 lg:w-4/5 w-5/6">
                                             {cardDetail.heading}
                                         </h4>
-                                        <p className="2xl:text-2xl lg:text-xl text-base  text-white ">
+                                        <p className="2xl:text-2xl lg:text-xl text-base text-white">
                                             {cardDetail.description}
                                         </p>
                                     </div>
@@ -72,7 +77,7 @@ export const BridgeBelow = () => {
                 </div>
                 <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 justify-center items-center text-center counter-container">
                     <div className="2xl:py-24 py-12 lg:border-x border-opacity-20 border-green border flex flex-col gap-5 justify-center">
-                        <p className="2xl:text-5xl text-3xl 2xl:leading-84 leading-66 flex justify-center items-baseline text-white">
+                        <p className="2xl:text-5xl text-3xl 2xl:leading-84 leading-66 block justify-center items-baseline text-white">
                             <span>$ </span>
                             <span className="2xl:text-7xl text-5xl counter transition-all ease-out 2xl:w-20 w-16" data-number="3.1">0</span>
                             <span className="2xl:pl-1">trillion</span>
@@ -82,26 +87,27 @@ export const BridgeBelow = () => {
                         </p>
                     </div>
                     <div className="2xl:py-24 py-12 lg:border-x border border-opacity-20 border-green flex flex-col gap-5 justify-center">
-                        <p className="2xl:text-5xl text-3xl 2xl:leading-84 leading-66 flex justify-center items-baseline  text-white">
+                        <p className="2xl:text-5xl text-3xl 2xl:leading-84 leading-66 flex justify-center items-baseline text-white">
                             <span className="2xl:text-7xl text-5xl counter transition-all ease-out 2xl:w-20 w-16" data-number="90">0</span>
                             <span className="2xl:pl-1">%</span>
                         </p>
                         <p className="2xl:text-lg text-sm text-green 2xl:leading-6 leading-5 opacity-75">
-                            Amount of total <br /> enterprise data trapped <br /> on inferior centralised systems.
+                        Enterprise data locked <br />in outdated, centralised systems
                         </p>
                     </div>
                     <div className="2xl:py-24 py-12 lg:border-x border border-opacity-20 border-green flex flex-col gap-5 justify-center">
-                        <p className="2xl:text-5xl text-3xl 2xl:leading-84 leading-66 flex justify-center items-baseline  text-white">
+                        <p className="2xl:text-5xl text-3xl 2xl:leading-84 leading-66 block justify-center items-baseline text-white">
                             <span>$ </span>
                             <span className="2xl:text-7xl text-5xl counter transition-all ease-out 2xl:w-20 w-16" data-number="1.5">0</span>
                             <span className="2xl:pl-1">trillion</span>
                         </p>
                         <p className="2xl:text-lg text-sm text-green 2xl:leading-6 leading-5 opacity-75">
-                            Projected enterprise spend <br /> on data management, storage <br /> and analysis by 2025.
+                        Forecasted enterprise spend on <br />data management, storage, <br />
+                        and analysis by 2025
                         </p>
                     </div>
                 </div>
             </div>
         </>
-    )
-}   
+    );
+};

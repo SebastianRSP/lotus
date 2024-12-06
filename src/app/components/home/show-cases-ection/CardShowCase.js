@@ -3,13 +3,14 @@ import Image from "next/image";
 export const CardShowCase = ({ id, heading, subHeading, description, defaultImage }) => {
     return (
         <div key={id} className="lg:px-0 px-3">
-            <div className="grid lg:grid-cols-5 grid-cols-1 gap-10">
-                <div className="lg:col-span-2 flex justify-self-center bg-green lg:py-0 py-20 opacity-10 rounded w-full justify-center">
-                    <Image
+            <div className="grid lg:grid-cols-5 grid-cols-1 gap-[8rem]">
+                <div className="lg:col-span-2 flex justify-self-center lg:py-0 py-20 rounded w-full justify-center">
+                    <img
                         src={defaultImage}
+                        className="m-auto"
                         alt="default Image"
-                        width={40}
-                        height={40}
+                        width={200}
+                        height={200}
                     />
                 </div>
                 <div className="lg:col-span-3 flex flex-col">

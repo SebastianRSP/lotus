@@ -20,13 +20,7 @@ export const MessageForInvestors = () => {
                         <div className="flex flex-col md:gap-4 gap-3 m-auto">
                             <h3 className="lg:text-4xl md:text-3xl text-2xl lg:font-light font-semibold lg:leading-56 leading-26">A message for our investors</h3>
                             <p className="text-lg lg:font-normal font-light">
-                                Lorem ipsum dolor sit amet,
-                                consectetur adipiscing elit,
-                                sed do eiusmod tempor incididunt ut
-                                labore et dolore magna aliqua.
-                                Ut enim ad minim veniam, quis nostrud
-                                exercitation ullamco laboris nisi ut
-                                aliquip ex ea commodo consequat.
+                            As an investor in The Bridge, you’re part of a transformative vision: establishing the global standard for secure, interoperable data exchange. Through $Bridge tokens, we empower seamless transactions, data monetization, and a thriving ecosystem of collaborators—from developers to storage providers and data consumers. Your investment prepares a foundation for a truly global data economy, where data is not only accessible but inherently valuable, with scalable growth potential across the data economy. Together, we’re building a platform that doesn’t just facilitate data transfer—it empowers innovation and generates lasting impact.
                             </p>
                             <DefaultBtnBlack
                                 btnText={'GET IN TOUCH'}

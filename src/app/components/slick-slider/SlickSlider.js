@@ -147,8 +147,9 @@ export const NewHomeSlider = ({ children, index, sliderRef, onSlideChange }) => 
         slidesToScroll: 1,
         initialSlide: 0,
         variableWidth: false,
-        nextArrow: <NextArrow extras="arrow-new-home !w-8 !h-8 !bg-transparent !border-2 !border-solid !text-black !rounded-full" />,
-        prevArrow: <PrevArrow extras="arrow-new-home !w-8 !h-8 !bg-transparent !border-2 !border-solid !text-black !rounded-full" />,
+        arrows: false,
+        nextArrow: <NextArrow extras="arrow-new-home !w-8 !h-8 !bg-transparent !border-2 !border-solid !text-black !rounded-full !absolute !top-full !translate-y-[80%] !z-10 !right-4 hover:!text-[#00ff00]] rotate-180" />,
+        prevArrow: <PrevArrow extras="arrow-new-home !w-8 !h-8 !bg-transparent !border-2 !border-solid !text-black !rounded-full !absolute !top-full !translate-y-[80%] !z-10 !left-4 hover:!text-[#00ff00] " />,
         beforeChange: (oldIndex, newIndex) => {
             onSlideChange(oldIndex, newIndex); // Update active index when slide changes
         },
@@ -160,7 +161,8 @@ export const NewHomeSlider = ({ children, index, sliderRef, onSlideChange }) => 
                     slidesToShow: 1,
                     slidesToScroll: 1,
                     initialSlide: 0,
-                    variableWidth: false
+                    variableWidth: false,
+                    arrows: false
                 }
             },
             {
@@ -170,7 +172,8 @@ export const NewHomeSlider = ({ children, index, sliderRef, onSlideChange }) => 
                     slidesToShow: 1,
                     slidesToScroll: 1,
                     initialSlide: 0,
-                    variableWidth: false
+                    variableWidth: false,
+                    arrows: false
                 }
             },
             {
@@ -180,7 +183,8 @@ export const NewHomeSlider = ({ children, index, sliderRef, onSlideChange }) => 
                     slidesToShow: 1,
                     slidesToScroll: 1,
                     initialSlide: 0,
-                    variableWidth: false
+                    variableWidth: false,
+                    arrows: false
                 }
             },
             {
@@ -192,7 +196,7 @@ export const NewHomeSlider = ({ children, index, sliderRef, onSlideChange }) => 
                     initialSlide: 0,
                     variableWidth: false,
                     dots: true,
-                    arrows: false // Disable arrows for this breakpoint
+                    arrows: true // Disable arrows for this breakpoint
                 }
             },
             {
@@ -204,7 +208,7 @@ export const NewHomeSlider = ({ children, index, sliderRef, onSlideChange }) => 
                     initialSlide: 0,
                     variableWidth: false,
                     dots: true,
-                    arrows: false // Disable arrows for this breakpoint
+                    arrows: true // Disable arrows for this breakpoint
                 }
             }
         ]

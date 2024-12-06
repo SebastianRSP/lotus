@@ -7,36 +7,36 @@ import { CardShowCase } from "./CardShowCase";
 
 
 const growthTabs = [
-    "PREDICTIVE ANALYSIS",
-    "AUTOMATED DATA INGESTION",
-    "DATA INTEGRITY SCANNER",
-    "OPTIMIZATION ALGORITHMS",
+    "Data Intake & Ingestion",
+    "Predictive Analytics",
+    "Data Trust Establishment",
+    "Optimization Algorithms",
 ];
 
 const showCases = [
     {
-        heading: `TrendScope<sup>TM</sup>`,
-        subHeading: 'Predictive Analytics',
-        description: 'Harness the power of predictive analytics to identify emerging trends and forecast future outcomes. This tool empowers decision-makers with actionable insights, enhancing strategic planning and operational efficiency through data-driven decisions.',
-        defaultImage: defaultImage
+        heading: `DataVault<sup>TM</sup>`,
+        subHeading: 'Analyzing Data Intake for Compliance, Residency, and Optimization',
+        description: 'DataVault is being built to analyze the intake of data to provide actionable insights that align with regulatory frameworks such as HIPAA, ISO, and SOC2. It will ensure that data flows and residency requirements are optimized for compliance, security, and strategic value. Data Vault will ensure your data is tracked, traced, and validated across all platforms and regions',
+        svgPath: '/new-home-assets/SVG/DataVault.svg'
     },
     {
-        heading: 'DataStream<sup>TM</sup>',
-        subHeading: 'Automated Data Ingestion',
-        description: 'Our automated data ingestion tool simplifies the integration of diverse data sources, reducing manual effort and increasing accuracy. It seamlessly aggregates, sorts, and prepares data, ensuring your systems are always fueled with timely and relevant information.',
-        defaultImage: defaultImage
+        heading: 'AssetFlow<sup>TM</sup>',
+        subHeading: 'Predictive Analytics for Data Performance',
+        description: 'AssetFlow is being built to provide real-time insights into the performance and movement of data assets across platforms. It will allow companies to forecast trends, optimize data strategies, and determine where their data will generate the most value.',
+        svgPath: '/new-home-assets/SVG/AssetFlow.svg'
     },
     {
-        heading: 'DataGuard<sup>TM</sup>',
-        subHeading: 'Data Integrity Scanner',
-        description: 'Ensure data integrity with our robust error-checking mechanisms. Designed to prevent mishandling and inconsistencies, this tool continuously scans your data frameworks, identifies discrepancies, and provides solutions to maintain impeccable data quality.',
-        defaultImage: defaultImage
+        heading: 'TrustGuard<sup>TM</sup>',
+        subHeading: 'Establishing Data Trusts and Ensuring Governance',
+        description: 'TrustGuard is being built to establish Data Trusts by employing third-party data validation to ensure that datasets are accurately maintained across all platforms. It will connect data owners with KYC-compliant “trustees” ensuring the appropriate credentials are met and that data is managed in the best interests of its owner.',
+        svgPath: '/new-home-assets/SVG/TrustGuard.svg'
     },
     {
-        heading: 'OptiCore',
-        subHeading: 'Optimization Algorithms',
-        description: 'Optimize your data management with our advanced algorithms designed for efficient data storage, retrieval, and monetization. These tools analyze usage patterns to ensure optimal performance, reducing costs and enhancing the accessibility of critical data.',
-        defaultImage: defaultImage
+        heading: 'DataYield<sup>TM</sup>',
+        subHeading: 'Algorithms to Quantify Quality',
+        description: 'DataYield evaluates the quality of datasets and their storage environments. This evaluation develops an internal rating for your data which empowers intelligent decisions. Trustless, immutable, on chain tracking will provide analytical information for external third parties to establish valuations and projections for the monetization of datasets.',
+        svgPath: '/new-home-assets/SVG/DataYield.svg'
     }
 ];
 
@@ -89,7 +89,9 @@ export const ShowCaseSection = () => {
                         <span className="font-normal">The Bridge<sup>TM</sup></span> houses cutting-edge AI enabled data management tools for enterprise clients
                     </h3>
                     <p className="2xl:text-2xl xl:text-base lg:text-sm text-xs lg:justify-self-end lg:col-span-4 lg:w-full w-11/12">
-                        We believe that effective data management is essential to staying ahead of the curve. That’s why we’ve built industry leading tools right into our platform. Our powerful set of AI-driven tools make data sets more legible, and empower companies to use their data more effectively.
+                    We believe that effective data management is essential to staying ahead of
+the curve. Our powerful set of AI-driven tools make data sets more legible,
+and empower companies to use their data more effectively.
                     </p>
                 </div>
                 <div className="2xl:pt-100 xl:pt-20 md:pt-10">
@@ -122,13 +124,14 @@ export const ShowCaseSection = () => {
                                     <CardShowCase
                                         key={index}
                                         id={index}
-                                        defaultImage={showcase.defaultImage}
+                                        defaultImage={showcase.svgPath}
                                         heading={showcase.heading}
                                         subHeading={showcase.subHeading}
                                         description={showcase.description}
                                     />
                                 ))}
                             </NewHomeSlider>
+                            
                         </div>
                     </div>
                 </div>

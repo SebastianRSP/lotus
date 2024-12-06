@@ -309,7 +309,7 @@ export const InvertmentBridgeGrowth = () => {
                         <div className='2xl:px-40 xl:px-20 px-9 xl:pt-72 lg:pt-64 md:pt-32 sm:pt-32 pt-16 w-full relative'>
                             <div className='flex justify-start'>
                                 <h3 className='2xl:text-123 lg:text-100 md:text-80 text-4xl font-bold flex text-green'>
-                                    Send
+                                    BRIDGE
                                     <sup className='pl-2 xl:-mt-10 lg:-mt-8 -mt-0'>
                                         <SenDataArrow extraClasses={'lg:w-3/12 md:w-1/6 sm:w-1/12 w-2/12'} iconColor={'fill-green'} />
                                     </sup>
@@ -318,11 +318,15 @@ export const InvertmentBridgeGrowth = () => {
                             <div className="grid lg:grid-cols-12 grid-cols-1 lg:gap-0 md:gap-8 gap-4 lg:mt-16 sm:mt-8 mt-4">
                                 {/* <h3 className="2xl:text-5xl xl:text-4xl lg:text-3xl text-xl 2xl:leading-60 xl:leading-48 lg:leading-42 leading-8 font-extralight lg:col-span-8 lg:w-11/12 w-11/12"> */}
                                 <h3 className="2xl:text-5xl xl:text-4xl lg:text-3xl text-xl 2xl:leading-60 xl:leading-48 lg:leading-42 leading-8 font-extralight lg:col-span-8 lg:w-full md:w-11/12 w-full">
-                                    Designed to drive engagement, <br className='lg:block hidden' /> reward participation, and foster growth <br className='lg:block hidden' /> within <span className="font-bold">The Bridge<sup>TM</sup></span>  ecosystem.
+                                Designed to drive engagement, rewards participation, and foster growth
+                                within <br className='lg:block hidden' /><span className="font-bold">The Bridge<sup>TM</sup></span>  ecosystem.
                                 </h3>
                                 <p className="2xl:text-2xl xl:text-base lg:text-sm text-xs lg:justify-self-end lg:col-span-4 lg:w-full w-11/12">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
-                                </p>
+                                The BridgeTM will integrate advanced AI powered analytics with on-chain
+tracking to ensure every data transaction is transparent, traceable, and
+trusted. By validating the quality of both the data and storage provider, we
+provide agnostic intelligence to empower participants to make educated and
+informed decisions.                                </p>
                             </div>
                         </div>
                         <div ref={sendInvestor} className='flex justify-center items-center relative '>

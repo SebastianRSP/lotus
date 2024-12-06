@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import logo from '../../../../../public/icons/logo.svg';
 import lotus from '../../../../../public/icons/lotus.svg';
 import navToggle from '../../../../../public/icons/nav-toggle.svg';
@@ -29,6 +29,10 @@ export const HomeNavbar = () => {
 
 
     const [isOpen, setIsOpen] = useState(false);
+    const [scrollY, setScrollY] = useState(0);
+    const [showNavbar, setShowNavbar] = useState(true);
+    const [navbarStyle, setNavbarStyle] = useState('original'); // 'original' | 'hidden' | 'new'
+
 
     const handleToggle = (navLink) => {
         setIsOpen(!isOpen);
@@ -38,6 +42,25 @@ export const HomeNavbar = () => {
             },450);
         }
     };
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY;
+
+            if (currentScrollY === 0) {
+                setNavbarStyle('original'); // At the top, use original style
+            } else if (currentScrollY > scrollY) {
+                setNavbarStyle('hidden'); // Scrolling down, hide the navbar
+            } else {
+                setNavbarStyle('new'); // Scrolling up, show the new style
+            }
+
+            setScrollY(currentScrollY);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [scrollY]);
 
     return (
         <>
@@ -103,8 +126,15 @@ export const HomeNavbar = () => {
                 {/* Mobile Version */}
                 <div className='md:hidden relative block m-2'>
                     {/* <div className='absolute inset-0 backdrop-blur-30 rounded-2xl bg-black bg-opacity-50 shadow-mobile' /> */}
-                    <div className={`flex justify-between items-center pt-7 md:px-8 px-10`}>
-                        <div className={`logo-container link-animation items-center`}>
+                    <div
+                        className={`flex justify-between items-center transition-all duration-300 ${
+                            navbarStyle === 'original'
+                                ? 'pt-7 md:px-8 px-10'
+                                : navbarStyle === 'hidden'
+                                ? '-mt-[80px] pt-7 px-10'
+                                : 'bg-[#ffffffad] my-[20px] pt-[12px] pb-[12px] px-10 rounded-[20px] shadow-[0px_3px_7px_#00000021]'
+                        }`}
+                    >                        <div className={`logo-container link-animation items-center`}>
                             <Logo iconColor={`${isDarkLogo ? 'fill-white' : 'fill-black'} `} />
                             <Lotus iconColor={`${isDarkLogo ? 'fill-white' : 'fill-black'} `} />
                         </div>

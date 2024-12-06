@@ -7,10 +7,6 @@ import { TextTyping } from "./text-animation/TextTyping";
 import { WhiteStrap } from "../white-strap-navbar/WhiteStrap";
 import { HeroBackground } from "../shared-components/HeroBackground";
 import { useEffect, useRef, useState } from "react";
-// import Spline from "@splinetool/react-spline/next";
-
-// Lazy load the Spline component
-// const LazySpline = dynamic(() => import('@splinetool/react-spline'), { ssr: false });
 
 const bullets = [
     { buttet: 'Seamless Web2 to Web3 Data Bridge' },
@@ -20,47 +16,33 @@ const bullets = [
 
 
 export const IndexHome = () => {
-
-    // const [isSplineVisible, setIsSplineVisible] = useState(false);
-    // const splineRef = useRef(null);
-
-
-
-    // useEffect(() => {
-    //     const observer = new IntersectionObserver(
-    //         ([entry]) => {
-    //             if (entry.isIntersecting) {
-    //                 setIsSplineVisible(true);
-    //                 observer.disconnect(); // Stop observing after it's loaded
-    //             }
-    //         },
-    //         { threshold: 0.1 }
-    //     );
-    //     if (splineRef.current) {
-    //         observer.observe(splineRef.current);
-    //     }
-
-    //     return () => {
-    //         if (splineRef.current) {
-    //             observer.unobserve(splineRef.current);
-    //         }
-    //     };
-    // }, []);
-
-    const [showFirstVideo, setShowFirstVideo] = useState(false);
-    const [showSecondVideo, setShowSecondVideo] = useState(false);
+    const [hideFirstVideo, setHideFirstVideo] = useState(false);
+    const firstVideoRef = useRef(null);
+    const secondVideoRef = useRef(null);
 
     useEffect(() => {
         // Delay the start of the first video by 3 seconds
-        const timer = setTimeout(() => {
-            setShowFirstVideo(true);
+        const firstVideoTimer = setTimeout(() => {
+            if (firstVideoRef.current) {
+                firstVideoRef.current.play(); // Start the first video
+            }
         }, 3000);
 
-        return () => clearTimeout(timer); // Cleanup timer on unmount
+        // Delay the start of the second video slightly after the first
+        const secondVideoTimer = setTimeout(() => {
+            if (secondVideoRef.current) {
+                secondVideoRef.current.play(); // Start the second video
+            }
+        }, 5350); // Adjust the delay as needed (e.g., 3s for simultaneous start)
+
+        return () => {
+            clearTimeout(firstVideoTimer);
+            clearTimeout(secondVideoTimer);
+        }; // Cleanup on unmount
     }, []);
 
     const handleFirstVideoEnd = () => {
-        setShowSecondVideo(true); // Show the second video when the first video ends
+        setHideFirstVideo(true); // Hide the first video when it ends
     };
 
     return (
@@ -68,11 +50,11 @@ export const IndexHome = () => {
             <HeroBackground bgColor={'bg-gray-light'}>
                 {/* White Strap */}
                 <WhiteStrap />
-                <div className=" grid grid-cols-12 h-full  justify-end items-end">
+                <div className=" grid grid-cols-12 h-full  justify-end items-end max-w-screen-xl mx-auto">
                     {/* 2xl:gap-4.5 xl:gap-0 md:gap-12 gap-0 */}
-                    <div className="2xl:col-span-5 md:col-span-6 col-span-12 2xl:pl-20 xl:pl-14 lg:pl-5 pl-5 grid 2xl:grid-rows-7 xl:grid-rows-6 lg:grid-rows-2 md:grid-rows-2 grid-rows-none items-end h-full relative">
-                        {/* self-end */}
-                        <div className="flex flex-col gap-6 md:self-center self-center 2xl:row-span-5 xl:row-span-4 lg:row-span-4 md:row-span-4 row-span-2 z-50">
+                    <div className="pt-12 2xl:col-span-5 md:col-span-6 col-span-12 2xl:pl-20 xl:pl-14 lg:pl-5 pl-5 grid content-center gap-[18rem] md:gap-[5rem] h-full relative">
+                    {/* self-end */}
+                        <div className="flex flex-col gap-6 md:self-center self-center 2xl:row-span-5 xl:row-span-4 lg:row-span-4 md:row-span-4 row-span-2 z-50 ">
                             {/* 2xl:text-7xl xl:text-3.5r lg:text-5xl md:text-4xl text-3xl 2xl:leading-84 xl:leading-62 lg:leading-54 md:leading-42 leading-9  */}
                             <h2 id="home-hero-heading" className="2xl:font-300 font-extralight 2xl:text-5xl xl:text-325 lg:text-5xl md:text-4xl text-3xl 2xl:leading-54 xl:leading-62 lg:leading-54 md:leading-42 leading-9">
                                 Decentralized<br /> data infrastructure<br /> for{" "}
@@ -91,27 +73,32 @@ export const IndexHome = () => {
                         {/* absolute inset-0 col-span-12 md:hidden flex */}
                         <div className="absolute inset-0 col-span-12 md:hidden flex justify-center h-full w-full items-end row-span-4">
                             <div className="flex 2xl:h-95p xl:h-90p lg:h-80p md:h-60p h-80p 2xl:w-95p lg:w-90p w-full">
-                                {showFirstVideo && !showSecondVideo ? (
-                                    <video
-                                        src="/new-home-assets/video/spline.mp4"
-                                        autoPlay
-                                        muted
-                                        className="bg-transparent"
-                                        onEnded={handleFirstVideoEnd}
-                                    ></video>
-                                ) : showSecondVideo ? (
-                                    <video
-                                        src="/new-home-assets/video/spline_lottie.mp4"
-                                        autoPlay
-                                        loop
-                                        muted
-                                        className="bg-transparent"
-                                    ></video>
-                                ) : null}
-                                {/* <Spline className="h-fit w-fit" scene="https://prod.spline.design/oEhJQIegnUr-kZTl/scene.splinecode" /> */}
+{/* Second Video (Background) */}
+<video
+                                ref={secondVideoRef} // Reference to control playback
+                                src="/new-home-assets/video/spline_lottie.mp4"
+                                muted
+                                playsInline
+                                loop
+                                autoPlay
+                                className="absolute inset-0 h-full w-full object-contain z-0"
+                            ></video>
+
+                            {/* First Video (Foreground) */}
+                            <video
+                                ref={firstVideoRef} // Reference to control playback
+                                src="/new-home-assets/video/spline.mp4"
+                                muted
+                                playsInline
+                                autoPlay
+                                className={`absolute inset-0 h-full w-full object-contain z-10 transition-opacity duration-300 ${
+                                    hideFirstVideo ? 'opacity-0' : 'opacity-100'
+                                }`}
+                                onEnded={handleFirstVideoEnd}
+                            ></video>
                             </div>
                         </div>
-                        <div id="home-hero-bullets" className="flex flex-col xl:row-span-2 lg:row-span-1 md:row-span-2 row-span-2 2xl:pb-10 pb-5 w-fit">
+                        <div id="home-hero-bullets" className="z-[99] flex flex-col xl:row-span-2 lg:row-span-1 md:row-span-2 row-span-2 2xl:pb-10 pb-5 w-fit">
                             <div className="border-t-[0.2px] border-t-black border-opacity-20">
                                 {bullets.map((bullet, index) => (
                                     <div key={index} className="flex items-center gap-3 border-b-[0.2px] border-b-black border-opacity-20 md:py-1 py-2">
@@ -132,25 +119,28 @@ export const IndexHome = () => {
                     <div className="md:flex hidden 2xl:col-span-7 md:col-span-6 col-span-1 h-full  justify-center 2xl:items-end sm:items-center items-end">
                         {/*  lg:w-80p md:w-70p sm:w-60p w-50p */}
                         {/* <div className="2xl:h-70p xl:h-60p lg:h-54p md:h-40p h-50p 2xl:w-95p xl:w-90p w-full flex justify-center items-end"> */}
-                        <div className="2xl:h-full xl:h-90p lg:h-full md:h-80p h-50p 2xl:w-60p xl:w-80p w-full flex justify-center items-center">
-                            {showFirstVideo && !showSecondVideo ? (
-                                <video
-                                    src="/new-home-assets/video/spline.mp4"
-                                    autoPlay
-                                    muted
-                                    className="bg-transparent"
-                                    onEnded={handleFirstVideoEnd}
-                                ></video>
-                            ) : showSecondVideo ? (
-                                <video
-                                    src="/new-home-assets/video/spline_lottie.mp4"
-                                    autoPlay
-                                    loop
-                                    muted
-                                    className="bg-transparent"
-                                ></video>
-                            ) : null}
-                            {/* <Spline scene="https://prod.spline.design/oEhJQIegnUr-kZTl/scene.splinecode" /> */}
+                        <div className="-ml-32 relative 2xl:h-full xl:h-80p lg:h-full md:h-80p h-50p 2xl:w-80p w-full flex justify-center items-center">
+{/* Second Video (Background) */}
+<video
+                                ref={secondVideoRef} // Reference to control playback
+                                src="/new-home-assets/video/spline_lottie.mp4"
+                                muted
+                                playsInline
+                                loop
+                                className="absolute inset-0 h-full w-full object-contain z-0"
+                            ></video>
+
+                            {/* First Video (Foreground) */}
+                            <video
+                                ref={firstVideoRef} // Reference to control playback
+                                src="/new-home-assets/video/spline.mp4"
+                                muted
+                                playsInline
+                                className={`absolute inset-0 h-full w-full object-contain z-10 transition-opacity duration-300 ${
+                                    hideFirstVideo ? 'opacity-0' : 'opacity-100'
+                                }`}
+                                onEnded={handleFirstVideoEnd}
+                            ></video>
                         </div>
                     </div>
                 </div>

@@ -297,7 +297,11 @@ export const InvertmentBridgeGrowth = () => {
                                 Designed to drive engagement, <br className='lg:block hidden'/> reward participation, and foster growth <br className='lg:block hidden'/> within <span className="font-bold">The Bridge<sup>TM</sup></span>  ecosystem.
                             </h3>
                             <p className="2xl:text-2xl xl:text-base lg:text-sm text-xs lg:justify-self-end lg:col-span-4 lg:w-full w-11/12">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
+                            The BridgeTM will integrate advanced AI powered analytics with on-chain
+tracking to ensure every data transaction is transparent, traceable, and
+trusted. By validating the quality of both the data and storage provider, we
+provide agnostic intelligence to empower participants to make educated and
+informed decisions.
                             </p>
                         </div>
                         <div id='send-investor' className='bg-black border-2 border-green rounded-lg xl:my-32 lg:my-28 md:my-16 my-8'>

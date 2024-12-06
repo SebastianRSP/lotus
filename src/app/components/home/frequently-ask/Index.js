@@ -6,16 +6,44 @@ import { useRef, useState } from "react";
 
 const faqData = [
     {
-        question: 'What is the Bridge™?',
-        answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
+        question: 'What is The Bridge?',
+        answer: 'The Bridge is the first global platform for interoperable data transfer. It connects Web2 and Web3 ecosystems, enabling seamless data movement, governance, and monetization across storage providers.'
     },
     {
-        question: 'How does the Bridge™ work?',
-        answer: 'Bridge™ works by connecting various points of data seamlessly to provide an integrated view of the entire process, allowing for better decision-making and operational efficiency.'
+        question: 'Who is Lotus Data Group?',
+        answer: 'Lotus Data Group is the creator of The Bridge, dedicated to developing interoperable data solutions. We empower enterprises and institutions to manage their data as an asset class with cutting-edge tools and governance frameworks."'
     },
     {
-        question: 'Why choose Bridge™?',
-        answer: 'Bridge™ offers unparalleled flexibility, scalability, and reliability, making it the top choice for businesses looking to innovate and streamline their operations.'
+        question: 'What problem does The Bridge solve?',
+        answer: 'Data today is stored in independent data storage providers (data banks), both centralized and decentralized, with no interoperability between them. Each platform operates under different protocols, creating barriers to data transfer and limiting its value. The Bridge introduces a unified protocol that enables seamless transfer, validation, and monetization of data across these banks.'
+    },
+    {
+        question: 'How does The Bridge ensure data integrity and compliance?',
+        answer: 'The Bridge uses a standardized on-chain protocol with Bridge ID for validation. This ensures that data remains consistent across platforms, meeting regulatory standards like HIPAA, ISO, and SOC2.'
+    },
+    {
+        question: 'What makes data a tradeable asset class?',
+        answer: 'The Bridge enables organizations to govern, rank, and monetize their data, similar to how financial markets handle assets. This allows companies to assign value to their data assets, paving the way for financial instruments like data-backed loans or securitized portfolios.'
+    },
+    {
+        question: 'What is the roadmap for The Bridge?',
+        answer: 'The Bridge aims to establish a global standardized protocol for seamless data transfer, validation, and settlement across centralized and decentralized platforms. A key component of this roadmap is our API, which will empower developers to build new applications and integrate existing solutions into The Bridge ecosystem. By leveraging our platform, organizations can address critical challenges in areas such as cybersecurity, data sovereignty, and advanced data management. Much like financial services use transfer and settlement protocols to power consumer-facing innovations, The Bridge’s API will unlock new opportunities, foster innovation, and drive the development of a dynamic marketplace for interoperable data management solutions.'
+    },
+    {
+        question: 'Will there be a token?',
+        answer: 'Yes, we plan to introduce a token that powers transactions within The Bridge ecosystem, rewards performance, and provides the necessary metrics for the creation of data-backed financial instruments in the future.'
+    },
+    {
+        question: 'How can enterprises benefit from The Bridge?',
+        answer: 'Enterprises can unify their data across platforms, manage it in compliance with governance frameworks, and unlock new revenue streams by treating data as a tradeable, monetizable asset.'
+    },
+    {
+        question: 'How does The Bridge handle data security?',
+        answer: 'The Bridge ensures data security by aligning with industry standards like ISO and SOC2, employing KYC-compliant trustees, and offering real-time validation through our single pane of glass interface.'
+    },
+    {
+        question: 'How do I get started with The Bridge?',
+        answer: 'You can book a consultation to discuss your data management strategy. Our team will guide you through unifying, governing, and monetizing your data assets.'
     }
 ];
 
