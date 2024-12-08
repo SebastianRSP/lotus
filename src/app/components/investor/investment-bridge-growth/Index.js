@@ -204,7 +204,7 @@ within <span className="font-bold">The Bridge<sup>TM</sup></span> ecosystem.
                     <div className="mt-5">
                         <h4 className="font-2xl font-bold tracking-space-346 leading-7 flex flex-col">
                             Total Supply
-                            <span className="font-normal text-green">2,000,000,000 $SEND</span>
+                            <span className="font-normal text-green">2,000,000,000 $BRIDGE</span>
                         </h4>
                     </div>
                     <div className="pt-16 lg:px-40 md:px-20 px-9 w-auto">

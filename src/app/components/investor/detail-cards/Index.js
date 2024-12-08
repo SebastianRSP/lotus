@@ -124,7 +124,7 @@ export const DetailCards = () => {
                                         <li className="flex lg:font-semibold gap-4">
                                             <Image
                                                 src={bullet.icon}
-                                                className="md:relative absolute md:left-0 -left-12 md:mt-0 -mt-2 fill-current"
+                                                className="md:relative md:left-0 md:mt-0 fill-current"
                                                 alt="icon"
                                                 width={20}
                                                 height={20}

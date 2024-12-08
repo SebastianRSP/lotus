@@ -119,6 +119,7 @@ export const InvestorFooter = () => {
                         </Link>
                     </div>
                 </div>
+                
             </div>
         </>
     )

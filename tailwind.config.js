@@ -89,7 +89,7 @@ module.exports = {
         'green': '#00FF00',
         'gray-border' : '#E6E6E6', /* For Gray Border */
         // For New Home Page
-        'gray-light': '#F2F5F2',
+        'gray-light': '#F5F5F5',
         'light-green': '#03FF00',
 
         // For blur-background

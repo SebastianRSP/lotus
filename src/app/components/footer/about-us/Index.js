@@ -29,6 +29,9 @@ const footerMenu3 = [
     { linkName: 'Technology', goTo: '#' },
     { linkName: 'Team', goTo: '#' }
 ]
+const footerMenu4 = [
+    { linkName: 'Privacy Policy', goTo: '/privacy' }
+]
 
 export const AboutUsFooter = () => {
     const pathname = usePathname();
@@ -126,6 +129,13 @@ export const AboutUsFooter = () => {
                         </div>
                     </div>
                 </div>
+                <div className='flex flex-col'>
+                                {footerMenu4.map((footerLink, index) => (
+                                    <p onClick={() => handleRouteClick(router, pathname, footerLink.goTo)} className={`${index == 0 ? 'font-extrabold' : 'hover:font-bold'} cursor-pointer 2xl:text-lg text-sm uppercase font-normal leading-normal m-auto`} href={footerLink.goTo} key={index}>
+                                        {footerLink.linkName}
+                                    </p>
+                                ))}
+                            </div>
             </footer>
             {/* <div className="flex flex-col gap-2 z-10 w-full">
                 <hr className="border-12 border-dark-gray" />

@@ -5,7 +5,6 @@ import Image from 'next/image';
 
 // Partners Import
 import FileCoin from '../../../../../public/new-home-assets/filecoin.svg';
-import Arweave from '../../../../../public/new-home-assets/arweave.svg';
 import Blocz from '../../../../../public/new-home-assets/blocz.svg';
 import Clearskye from '../../../../../public/new-home-assets/clearskye.svg';
 import Sia from '../../../../../public/new-home-assets/sia.svg';
@@ -37,16 +36,6 @@ const partners = [
         company: "Future Tech Holdings"
     },
     {
-        partnerName: 'TEST',
-        partnerIcon: Arweave,
-        width: 156,
-        height: 34,
-        testimonial: '“TEST”',
-        person: "TEST",
-        title: "TEST",
-        company: "TEST"
-    },
-    {
         partnerName: 'DCENT',
         partnerIcon: DCENT,
         face: '/new-home-assets/profiles/Face_DCENT.jpg',
@@ -60,7 +49,7 @@ const partners = [
     {
         partnerName: 'Clearskye',
         partnerIcon: Clearskye,
-        face: '/new-home-assets/profiles/ClearSkyFace.jpg',
+        face: '/new-home-assets/profiles/FTHFACE.jpg',
         width: 75,
         height: 53,
         testimonial: '“This bridge serves as a nexus for technology, community, and innovation, unlocking the full potential of blockchain technology for data protection, archiving, and recovery solutions.”',
@@ -223,7 +212,7 @@ export const PartnerReviews = () => {
                             </div>
                             <div className="w-full h-full flex flex-col justify-end">
                                 <div className="flex justify-end opacity-50">
-                                    <span className="text-xs font-extralight leading-5 tracking-space60">{`0${activeIndex + 1}/06`}</span>
+                                    <span className="text-xs font-extralight leading-5 tracking-space60">{`0${activeIndex + 1}/05`}</span>
                                 </div>
                                 <div className="relative w-full h-[2px] bg-gray-200 mt-2">
                                     <div

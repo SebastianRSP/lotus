@@ -21,7 +21,7 @@ export const PoweredBySend = () => {
                         <div className="md:text-xl text-md font-extralight md:col-span-2 sm:col-span-3 justify-self-center col-span-4">
                             Powered by
                             <span className="font-medium relative">
-                                {" "}Send
+                                {" "}BRIDGE
                                 <sup className="absolute -top-1 w-full">
                                     <Image
                                         src={sendataLogo}

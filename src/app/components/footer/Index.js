@@ -95,6 +95,7 @@ export const Footer = () => {
                         extras={'text-s uppercase !no-underline font-normal hover:font-bold leading-32'}
                     />
                 </div>
+                
             </div>
         </>
     )

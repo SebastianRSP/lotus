@@ -76,7 +76,7 @@ export const IndexHome = () => {
 {/* Second Video (Background) */}
 <video
                                 ref={secondVideoRef} // Reference to control playback
-                                src="/new-home-assets/video/spline_lottie.mp4"
+                                src="/new-home-assets/video/Loop_V3.mp4"
                                 muted
                                 playsInline
                                 loop
@@ -87,7 +87,7 @@ export const IndexHome = () => {
                             {/* First Video (Foreground) */}
                             <video
                                 ref={firstVideoRef} // Reference to control playback
-                                src="/new-home-assets/video/spline.mp4"
+                                src="/new-home-assets/video/Entry_v3.mp4"
                                 muted
                                 playsInline
                                 autoPlay
@@ -123,7 +123,7 @@ export const IndexHome = () => {
 {/* Second Video (Background) */}
 <video
                                 ref={secondVideoRef} // Reference to control playback
-                                src="/new-home-assets/video/spline_lottie.mp4"
+                                src="/new-home-assets/video/Loop_V3.mp4"
                                 muted
                                 playsInline
                                 loop
@@ -133,7 +133,7 @@ export const IndexHome = () => {
                             {/* First Video (Foreground) */}
                             <video
                                 ref={firstVideoRef} // Reference to control playback
-                                src="/new-home-assets/video/spline.mp4"
+                                src="/new-home-assets/video/Entry_v3.mp4"
                                 muted
                                 playsInline
                                 className={`absolute inset-0 h-full w-full object-contain z-10 transition-opacity duration-300 ${

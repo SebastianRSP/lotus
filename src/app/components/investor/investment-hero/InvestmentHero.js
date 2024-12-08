@@ -8,12 +8,10 @@ export const InvestmentHero = () => {
     return (
         <>
             <section id="home-hero-bg" className="investor-hero-bg relative">
-                {/* <WhiteStrap /> */}
-                {/* md:py-20 py-28 */}
-                {/* md:h-auto xl:py-40 md:py-28 py-10 xl:pb-20 md:pb-14 pb-10 */}
-                <div className="2xl:px-40 xl:px-20 px-9 h-screen text-white items-center grid md:grid-cols-2 grid-cols-1 justify-start">
-                    <div className="flex relative z-30 flex-col justify-between gap-6 h-fit md:pt-20">
-                        <h1 className="font-extralight 2xl:text-7xl xl:text-5xl lg:text-5xl md:text-4xl text-32 2xl:leading-74 xl:leading-56 lg:leading-50 md:leading-43 leading-40 xl:w-11/12 lg:w-10/12 w-11/12">
+                <div className="2xl:px-20 xl:px-20 px-9 h-screen text-white grid grid-cols-1 md:grid-cols-2 items-center max-w-screen-xl m-auto md:pt-0 pt-[120px] md:gap-10 gap-0">
+                    {/* Left Section: Text */}
+                    <div className="flex flex-col justify-center gap-6 z-30">
+                        <h1 className="font-extralight 2xl:text-5xl xl:text-5xl lg:text-5xl md:text-4xl text-32 2xl:leading-64 xl:leading-56 lg:leading-50 md:leading-43 leading-40 xl:w-11/12 lg:w-10/12 w-11/12">
                             The {" "}
                             <span className="bg-green box-border uppercase font-bold text-black">$BRIDGE</span>
                             {" "}token  <br /> is the lifeblood <br />of
@@ -22,17 +20,18 @@ export const InvestmentHero = () => {
                             </span><br />  ecosystem
                         </h1>
                         <p className="2xl:text-xl lg:text-lg md:text-md text-sm xl:font-light font-extralight 2xl:w-10/12 xl:w-full lg:w-10/12 md:w-full w-10/12 max-w-[390px]">
-                        Simplifying data transfers across web2 and web3 storage providers with top-tier analytics, fair pricing, and performance incentives. We empower informed decisions and active engagement for all participants.
+                            Simplifying data transfers across web2 and web3 storage providers with top-tier analytics, fair pricing, and performance incentives. We empower informed decisions and active engagement for all participants.
                         </p>
                         <DefaultBtnBlack
                             btnText={'LEARN MORE'}
                             btnType={'button'}
                         />
                     </div>
-                    {/* md:w-96 forced-full-width lg:h-auto md:h-96 */}
-                    <div className="flex justify-center md:items-center items-start justify-self-center md:absolute relative z-0 md:pt-20 md:h-screen h-60 md:w-screen forced-full-width order-first md:order-last">
-                        <div className="pointer-events-none relative md:left-0 -left-20 w-full h-full">
-                            <Spline scene="https://prod.spline.design/U6zfVaWNgMTaZLak/scene.splinecode" />
+
+                    {/* Right Section: Spline */}
+                    <div className="flex justify-center items-center">
+                        <div className="investorSpline w-[400px] h-[400px] md:w-[500px] md:h-[500px] lg:w-[600px] lg:h-[600px] pointer-events-none justify-center items-center">
+                            <Spline scene="https://prod.spline.design/kEtlKqJ1tYUNBplv/scene.splinecode" />
                         </div>
                     </div>
                 </div>
@@ -40,5 +39,5 @@ export const InvestmentHero = () => {
                 <div className='bg-black shadow-outer-light 2xl:h-18 h-14'></div>
             </section>
         </>
-    )
-}
+    );
+};

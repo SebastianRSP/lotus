@@ -134,6 +134,7 @@ export const HomeFooter = () => {
                         </Link>
                     </div>
                 </div> */}
+                
             </footer>
         </>
     )

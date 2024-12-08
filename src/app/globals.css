@@ -37,6 +37,11 @@ canvas {
   display: block;
 }
 
+.investorSpline canvas {
+max-width: 600px;
+max-height: 600px;
+}
+
 /* Navbar CSS */
 @keyframes scroll {
   0% {
@@ -978,6 +983,10 @@ canvas {
     width: 99%;
     /* Adjust the width for small screens */
   }
+  .investorSpline canvas {
+    max-width: 370px;
+    max-height: 370px;
+    }
 }
 
 .text-swap {
@@ -1264,11 +1273,5 @@ canvas {
 
 .border-line {
   border-left: solid black 2px;
-  height: 82%;
-}
-
-@media (max-width: 768px) {
-  .border-line {
-    height: 74%;
-  }
+  height: 100%;
 }
