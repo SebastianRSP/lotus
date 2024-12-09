@@ -50,7 +50,8 @@ export const IndexHome = () => {
             <HeroBackground bgColor={'bg-gray-light'}>
                 {/* White Strap */}
                 <WhiteStrap />
-                <div className=" grid grid-cols-12 h-full  justify-end items-end max-w-screen-xl mx-auto">
+                {/* max-w-screen-xl mx-auto */}
+                <div className=" grid grid-cols-12 h-full  justify-end items-end ">
                     {/* 2xl:gap-4.5 xl:gap-0 md:gap-12 gap-0 gap-[18rem] md:gap-[5rem] */}
                     <div className="pt-9 2xl:col-span-5 md:col-span-6 col-span-12 2xl:pl-20 xl:pl-14 lg:pl-5 pl-5 grid content-between h-full relative">
                         {/* self-end */}
