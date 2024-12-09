@@ -65,7 +65,7 @@ export const BridgeBelow = () => {
                         {cardDetails.map((cardDetail, index) => (
                             <BridgeCard key={index}>
                                 <div className="grid md:grid-cols-2 grid-cols-1 justify-center items-center 2xl:py-24 py-12 md:px-0 px-5">
-                                {(index % 2 === 0 || isMobile) ? (
+                                    {(index % 2 === 0 || isMobile) ? (
                                         <>
                                             {/* Image Left */}
                                             <div className="md:my-0 my-20">
@@ -78,18 +78,18 @@ export const BridgeBelow = () => {
                                             </div>
                                             {/* Text Right */}
                                             <div className="flex flex-col justify-between gap-3 text-left lg:w-1/1 md:w-11/12 w-full">
-                                            <div className="flex items-center gap-3">
-    <img 
-        src={cardDetail.smallIcon} 
-        alt={`${cardDetail.category} icon`}
-        width={20} 
-        height={20} 
-        className="flex-shrink-0"
-    />
-    <span className="2xl:text-lg text-base font-normal leading-42 text-green">
-        {cardDetail.category}
-    </span>
-    </div>
+                                                <div className="flex items-center gap-3">
+                                                    <img
+                                                        src={cardDetail.smallIcon}
+                                                        alt={`${cardDetail.category} icon`}
+                                                        width={20}
+                                                        height={20}
+                                                        className="flex-shrink-0"
+                                                    />
+                                                    <span className="2xl:text-lg text-base font-normal leading-42 text-green">
+                                                        {cardDetail.category}
+                                                    </span>
+                                                </div>
                                                 <h4 className="2xl:text-4xl lg:text-3xl text-2xl font-300 2xl:leading-42 lg:leading-9 leading-30 text-green 2xl:w-3/4 lg:w-4/5 w-5/6">
                                                     {cardDetail.heading}
                                                 </h4>
@@ -102,18 +102,18 @@ export const BridgeBelow = () => {
                                         <>
                                             {/* Text Left */}
                                             <div className="flex flex-col justify-between gap-3 text-left lg:w-1/1 md:w-11/12 w-full md:px-[50px]">
-                                            <div className="flex items-center gap-3">
-    <img 
-        src={cardDetail.smallIcon} 
-        alt={`${cardDetail.category} icon`}
-        width={20} 
-        height={20} 
-        className="flex-shrink-0"
-    />
-    <span className="2xl:text-lg text-base font-normal leading-42 text-green">
-        {cardDetail.category}
-    </span>
-</div>
+                                                <div className="flex items-center gap-3">
+                                                    <img
+                                                        src={cardDetail.smallIcon}
+                                                        alt={`${cardDetail.category} icon`}
+                                                        width={20}
+                                                        height={20}
+                                                        className="flex-shrink-0"
+                                                    />
+                                                    <span className="2xl:text-lg text-base font-normal leading-42 text-green">
+                                                        {cardDetail.category}
+                                                    </span>
+                                                </div>
 
                                                 <h4 className="2xl:text-4xl lg:text-3xl text-2xl font-300 2xl:leading-42 lg:leading-9 leading-30 text-green 2xl:w-3/4 lg:w-4/5 w-5/6">
                                                     {cardDetail.heading}
@@ -162,7 +162,7 @@ export const BridgeBelow = () => {
                             <span className="2xl:pl-1">%</span>
                         </p>
                         <p className="2xl:text-lg text-sm text-green 2xl:leading-6 leading-5 opacity-75">
-                        Enterprise data locked <br />in outdated, centralised systems
+                            Enterprise data locked <br />in outdated, centralised systems
                         </p>
                     </div>
                     <div className="2xl:py-24 py-12 lg:border-x border border-opacity-20 border-green flex flex-col gap-5 justify-center">
@@ -172,8 +172,8 @@ export const BridgeBelow = () => {
                             <span className="2xl:pl-1">trillion</span>
                         </p>
                         <p className="2xl:text-lg text-sm text-green 2xl:leading-6 leading-5 opacity-75">
-                        Forecasted enterprise spend on <br />data management, storage, <br />
-                        and analysis by 2025
+                            Forecasted enterprise spend on <br />data management, storage, <br />
+                            and analysis by 2025
                         </p>
                     </div>
                 </div>

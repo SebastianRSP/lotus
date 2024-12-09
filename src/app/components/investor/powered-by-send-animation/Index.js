@@ -7,11 +7,11 @@ import Image from "next/image";
 
 export const PoweredBySend = () => {
     return (
-        <div className="bg-black flex justify-center text-white xl:px-80 lg:px-40 md:px-20 px-9 xl:py-24 lg:py-20 md:py-12 py-11">
+        <div className="bg-black flex justify-center text-white xl:px-64 lg:px-40 md:px-20 px-9 xl:py-24 lg:py-20 md:py-12 py-11">
             <div className="w-fit">
                 <span className="bg-green text-black inline px-0.5 md:text-2xl text-lg tracking-space18">Join</span>
                 <div className="text-right w-full">
-                    <h3 className="2xl:text-325 xl:text-4xl md:text-2.61 sm:text-2xl text-32 font-extralight 2xl:!leading-45 md:!leading-50 !leading-8 md:text-center text-left">
+                    <h3 className="2xl:text-325 xl:text-2.68r md:text-2.61 sm:text-2xl text-32 font-extralight 2xl:!leading-45 xl:!leading-64 md:!leading-50 !leading-8 md:text-center text-left">
                         The largest data migration in history.
                     </h3>
                     <div className="grid md:grid-cols-7 sm:grid-cols-9 grid-cols-9 justify-end items-center gap-3 mt-2">
@@ -22,7 +22,7 @@ export const PoweredBySend = () => {
                             Powered by
                             <span className="font-medium relative">
                                 {" "}BRIDGE
-                                <sup className="absolute -top-1 w-full">
+                                <sup className="absolute -top-3 ml-1 w-full">
                                     <Image
                                         src={sendataLogo}
                                         layout="responsive"

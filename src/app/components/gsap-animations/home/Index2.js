@@ -42,6 +42,7 @@ export const newHomePageAnimation = () => {
             gsap.set("#home-hero-paragraph", { transformOrigin: "center center", opacity: 0 });
             gsap.set("#home-hero-button", { transformOrigin: "center center", opacity: 0 });
             gsap.set("#home-hero-bullets", { transformOrigin: "center center", opacity: 0 });
+            gsap.set("#home-hero-animation", { transformOrigin: "center center", opacity: 0 });
             gsap.set(".link-animation", { transformOrigin: "center center", y: -200, opacity: .5 });
         })
 
@@ -73,7 +74,8 @@ export const newHomePageAnimation = () => {
             .to("#home-hero-heading", { duration: 0.9, ease: "sine.inOut", opacity: 1 })
             .to("#home-hero-paragraph", { duration: 0.9, ease: "sine.inOut", opacity: 1 }, "<")
             .to("#home-hero-button", { duration: 0.9, ease: "sine.inOut", opacity: 1 }, "<")
-            .to("#home-hero-bullets", { duration: 0.9, ease: "sine.inOut", opacity: 1 }, "<");
+            .to("#home-hero-bullets", { duration: 0.9, ease: "sine.inOut", opacity: 1 }, "<")
+            .to("#home-hero-animation", { duration: 0.9, ease: "sine.inOut", opacity: 1 }, "<");
 
         // Initialize main animations
         const initMainAnimations = () => {
