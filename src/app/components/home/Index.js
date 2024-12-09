@@ -51,8 +51,8 @@ export const IndexHome = () => {
                 {/* White Strap */}
                 <WhiteStrap />
                 <div className=" grid grid-cols-12 h-full  justify-end items-end max-w-screen-xl mx-auto">
-                    {/* 2xl:gap-4.5 xl:gap-0 md:gap-12 gap-0 */}
-                    <div className="pt-12 2xl:col-span-5 md:col-span-6 col-span-12 2xl:pl-20 xl:pl-14 lg:pl-5 pl-5 grid content-center gap-[18rem] md:gap-[5rem] h-full relative">
+                    {/* 2xl:gap-4.5 xl:gap-0 md:gap-12 gap-0 gap-[18rem] md:gap-[5rem] */}
+                    <div className="pt-9 2xl:col-span-5 md:col-span-6 col-span-12 2xl:pl-20 xl:pl-14 lg:pl-5 pl-5 grid content-between h-full relative">
                         {/* self-end */}
                         <div className="flex flex-col gap-6 md:self-center self-center 2xl:row-span-5 xl:row-span-4 lg:row-span-4 md:row-span-4 row-span-2 z-50 ">
                             {/* 2xl:text-7xl xl:text-3.5r lg:text-5xl md:text-4xl text-3xl 2xl:leading-84 xl:leading-62 lg:leading-54 md:leading-42 leading-9  */}
@@ -96,8 +96,8 @@ export const IndexHome = () => {
                                 ></video>
                             </div>
                         </div>
-                        <div className="z-[99] flex flex-col xl:row-span-2 lg:row-span-1 md:row-span-2 row-span-2 2xl:pb-10 pb-5 w-fit">
-                            <div className="border-t-[0.2px] border-t-black border-opacity-20">
+                        <div className="z-[99] flex flex-col 2xl:row-span-1 xl:row-span-1 lg:row-span-1 md:row-span-1 row-span-1 2xl:pb-10 pb-5 w-fit">
+                            <div id="home-hero-bullets" className="border-t-[0.2px] border-t-black border-opacity-20">
                                 {bullets.map((bullet, index) => (
                                     <div key={index} className="flex items-center gap-3 border-b-[0.2px] border-b-black border-opacity-20 md:py-1 py-2">
                                         {/* 2xl:py-5 md:py-3 py-2 */}
