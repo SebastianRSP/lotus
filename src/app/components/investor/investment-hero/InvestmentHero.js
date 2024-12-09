@@ -8,10 +8,11 @@ export const InvestmentHero = () => {
     return (
         <>
             <section id="home-hero-bg" className="investor-hero-bg relative">
-                <div className="2xl:px-20 xl:px-20 px-9 h-screen text-white grid grid-cols-1 md:grid-cols-2 items-center max-w-screen-xl m-auto md:pt-0 pt-[120px] md:gap-10 gap-0">
+                {/* max-w-screen-xl m-auto */}
+                <div className="2xl:px-20 xl:px-20 px-9 h-screen text-white grid grid-cols-1 md:grid-cols-2 items-center md:pt-0 pt-7.3r md:gap-10 gap-0">
                     {/* Left Section: Text */}
                     <div className="flex flex-col justify-center gap-6 z-30">
-                        <h1 className="font-extralight 2xl:text-5xl xl:text-5xl lg:text-5xl md:text-4xl text-32 2xl:leading-64 xl:leading-56 lg:leading-50 md:leading-43 leading-40 xl:w-11/12 lg:w-10/12 w-11/12">
+                        <h1 className="font-extralight 2xl:text-5xl xl:text-5xl lg:text-5xl md:text-4xl text-32 2xl:leading-64 xl:leading-56 lg:leading-50 md:leading-43 leading-40 xl:w-12/12 lg:w-12/12 w-12/12">
                             The {" "}
                             <span className="bg-green box-border uppercase font-bold text-black">$BRIDGE</span>
                             {" "}token  <br /> is the lifeblood <br />of
