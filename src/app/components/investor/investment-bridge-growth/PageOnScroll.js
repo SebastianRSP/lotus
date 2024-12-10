@@ -263,7 +263,7 @@ export const InvertmentBridgeGrowth = () => {
                 onUpdate: (self) => {
                     const progressRanges = [0.11, 0.22, 0.33, 0.44, 0.55, 0.66, 0.77, 0.88, 0.99];
                     let currentIndex = -1;
-    
+                
                     // Determine the current index based on progress ranges
                     for (let i = 0; i < progressRanges.length; i++) {
                         if (self.progress >= progressRanges[i] && self.progress < (progressRanges[i + 1] || 10)) {
@@ -271,20 +271,14 @@ export const InvertmentBridgeGrowth = () => {
                             break;
                         }
                     }
-    
-                    // Handle tab and progress updates
+                
                     if (currentIndex !== previousIndex && currentIndex >= 0 && currentIndex <= 7) {
-                        const filteredItem = getObjectByIndex(currentIndex).percentage;
-                        const filteredItemTitle = getObjectByIndex(currentIndex).title;
-    
-                        setActiveTab(filteredItemTitle);
-                        setActivePercentage(filteredItem);
-                        setActiveTabIndex(currentIndex);
+                        setActiveTabIndex(currentIndex); // Update state for the active tab
                         setPreviousTabIndex(previousIndex);
-    
+                
                         previousIndex = currentIndex; // Update previous index
                     }
-                },
+                },                
             });
         }
 
@@ -346,7 +340,7 @@ informed decisions.                                </p>
                                                 <div className='flex justify-between items-center'>
                                                     <div>
                                                         <h6 className='md:text-32 text-2xl md:leading-64 leading-48 font-extrabold flex'>
-                                                            Send
+                                                            BRIDGE
                                                             <sup className='pl-2 mt-2'>
                                                                 <SenDataArrow extraClasses={'md:w-7 w-5 md:h-5 h-3'} iconColor={'lg:fill-black fill-green'} />
                                                             </sup>
@@ -404,7 +398,7 @@ informed decisions.                                </p>
                                                                 </div>
                                                             </div>
                                                             {tabData.map((data, index) => (
-                                                                <div key={index} className="border-y-2 h-full py-5 border-opacity-20 lg:border-black border-green">
+                                                                <div key={index} className="tabbed border-y-[2px] h-full py-5 border-opacity-20 lg:border-black border-green">
                                                                     <div className="grid grid-rows-2 gap-6 h-full">
                                                                         {data.detail.map((item, index) => (
                                                                             <div key={index} className="2xl:pr-10 xl:pr-8 lg:pr-4 md:pr-14 pr-0 md:pl-3 pl-0 flex flex-col lg:gap-2 gap-3 text-left">
@@ -426,7 +420,7 @@ informed decisions.                                </p>
                                                             {/*  onSlideChange={handleSlideChange} */}
                                                             <SlickSlider activeIndex={activeTabIndex}>
                                                                 {tabData.map((data, index) => (
-                                                                    <div key={index} className="border-y-2 h-full py-5 px-3 border-opacity-20 lg:border-black border-green">
+                                                                    <div key={index} className="tabbed border-y-[4px] h-full py-5 px-3 border-opacity-20 lg:border-black border-green">
                                                                         <div className="grid grid-rows-2 gap-3 h-full">
                                                                             {data.detail.map((item, index) => (
                                                                                 <div key={index} className="2xl:pr-20 xl:pr-12 lg:pr-8 md:pr-14 pr-0 md:pl-3 pl-0 flex flex-col lg:gap-2 gap-3 text-left">
@@ -460,7 +454,7 @@ informed decisions.                                </p>
                                                 <h4 className='2xl:text-lg text-sm pb-4 font-bold'>
                                                     <div ref={totalSupplyRef} className='opacity-0'>
                                                         Total Supply
-                                                        <span className='font-normal block'>2,000,000,000 $SEND</span>
+                                                        <span className='font-normal block'>2,000,000,000 $BRIDGE</span>
                                                     </div>
                                                 </h4>
                                                 <div className='relative 2xl:w-26 xl:w-80 lg:w-72 w-60 2xl:h-26 xl:h-80 lg:h-72 h-60'>
@@ -482,7 +476,7 @@ informed decisions.                                </p>
                                                                 className={`absolute top-0 right-0 opacity-0`}
                                                             >
                                                                 {activeTab.title}
-                                                                <span className='font-normal block'>400,000,000 $SEND</span>
+                                                                <span className='font-normal block'>400,000,000 $BRIDGE</span>
                                                             </span>
                                                         ))}
                                                     </div>

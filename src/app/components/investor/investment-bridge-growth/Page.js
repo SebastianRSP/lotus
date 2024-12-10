@@ -285,7 +285,7 @@ export const InvertmentBridgeGrowth = () => {
                     <div className='2xl:px-40 xl:px-20 px-9 xl:pt-72 lg:pt-64 md:pt-32 sm:pt-32 pt-16 2xl:pb-28 xl:pb-24 lg:pb-5.3r md:pb-4.3r sm:pb-14 pb-3.2r w-full relative'>
                         <div className='flex justify-start'>
                             <h3 className='2xl:text-123 lg:text-100 md:text-80 text-4xl font-bold flex text-green'>
-                                Send
+                                BRIDGE
                                 <sup className='pl-2 xl:-mt-10 lg:-mt-8 -mt-0'>
                                     <SenDataArrow extraClasses={'lg:w-3/12 md:w-1/6 sm:w-1/12 w-2/12'} iconColor={'fill-green'} />
                                 </sup>
@@ -311,7 +311,7 @@ informed decisions.
                                         <div className='flex justify-between items-center'>
                                             <div>
                                                 <h6 className='md:text-32 text-2xl md:leading-64 leading-48 font-extrabold flex'>
-                                                    Send
+                                                    BRIDGE
                                                     <sup className='pl-2 mt-2'>
                                                         <SenDataArrow extraClasses={'md:w-7 w-5 md:h-5 h-3'} iconColor={'lg:fill-black fill-green'} />
                                                     </sup>
@@ -447,7 +447,7 @@ informed decisions.
                                                         className={`absolute top-0 right-0 opacity-0`}
                                                     >
                                                         {activeTab.title}
-                                                        <span className='font-normal block'>400,000,000 $SEND</span>
+                                                        <span className='font-normal block'>400,000,000 $BRIDGE</span>
                                                     </span>
                                                 ))}
                                             </div>

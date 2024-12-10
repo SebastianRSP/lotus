@@ -1275,6 +1275,17 @@ max-height: 600px;
   border-left: solid black 2px;
   height: 88%;
 }
+.tabbed {
+  border-width: 1px;
+  transition: border-width 0.3s ease;
+}
+
+.tabbed-active {
+  border-width: 4px !important; /* Force consistent width */
+}
+
+
+
 
 @media screen and (min-width: 768px) {
   .border-line {
