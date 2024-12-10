@@ -19,7 +19,7 @@ const navLinksBefore = [
 
 const navLinksAfter = [
     { navLinkName: 'About Us', navLink: '#', extras: '' },
-    { navLinkName: 'Book a Demo', navLink: '#', extras: '' }
+    { navLinkName: 'Connect with us ', navLink: '#', extras: '' }
 ];
 
 const navIcons = [
@@ -39,7 +39,7 @@ const mobileMenu = [
     { navLinkName: 'Whitepaper', navLink: '#', extras: '' },
     { navLinkName: 'Investors', navLink: '/investors', extras: '' },
     { navLinkName: 'About Us', navLink: '#', extras: '' },
-    { navLinkName: 'Book a Demo', navLink: '#', extras: '' }
+    { navLinkName: 'Connect with us ', navLink: '#', extras: '' }
     
 ]
 

@@ -3,8 +3,8 @@ import Image from "next/image";
 export const CardShowCase = ({ id, heading, subHeading, description, defaultImage }) => {
     return (
         <div key={id} className="lg:px-0 px-3">
-            <div className="grid lg:grid-cols-5 grid-cols-1 gap-[8rem]">
-                <div className="lg:col-span-2 flex justify-self-center lg:py-0 py-20 rounded w-full justify-center">
+            <div className="grid lg:grid-cols-5 grid-cols-1 md:gap-[8rem] gap-[4rem]">
+                <div className="lg:col-span-2 flex justify-self-center lg:py-0 md:py-20 rounded w-full justify-center">
                     <img
                         src={defaultImage}
                         className="m-auto"

@@ -126,7 +126,7 @@ export const CardsSection = () => {
                             {cardDetails.map((card, index) => (
                                 <div
                                     key={index}
-                                    className="bg-black border-transparent rounded-lg w-full h-full text-black text-center relative lg:px-10 lg:pt-10 md:px-0 md:pt-0"
+                                    className="bg-black border-transparent rounded-lg w-full h-full text-black text-center relative lg:px-10 lg:pt-10 md:px-0 md:pt-0 aspect-[1/1] flex"
                                 // ref={el => cardRefs.current[index] = el}
                                 >
                                     <div className="rounded-tl-lg text-green flex justify-center items-center">
@@ -139,8 +139,8 @@ export const CardsSection = () => {
                                             />
                                         </div>
                                     </div>
-                                    <div className="grid grid-rows-2 items-center justify-center relative md:w-full w-4/6">
-                                        <div className="w-full 2xl:py-14 xl:py-12 md:py-9 py-14">
+                                    <div className="grid gap-4 m-auto items-center justify-center relative md:w-full w-4/6">
+                                        <div className="w-full 2xl:py-14 xl:py-12 md:py-9 md:py-14">
                                             <img
                                                 src={card.svgPath}
                                                 className="w-20 h-20"

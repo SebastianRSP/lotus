@@ -9,7 +9,7 @@ export const navLinksBefore = [
 
 export const navLinksAfter = [
     { navLinkName: 'About Us', navLink: '/about-us', extras: ``, bookDemo: false },
-    { navLinkName: 'Book a Demo', navLink: '#', extras: ``, bookDemo: true }
+    { navLinkName: 'Connect with us', navLink: '#', extras: ``, bookDemo: true }
 ];
 
 export const navIcons = [
@@ -27,5 +27,5 @@ export const mobileMenu = [
     { navLinkName: 'Whitepaper', navLink: '#', extras: '' },
     { navLinkName: 'Investors', navLink: '/investors', extras: '' },
     { navLinkName: 'About Us', navLink: '/about-us', extras: '' },
-    { navLinkName: 'Book a Demo', navLink: '#', extras: '' }
+    { navLinkName: 'Connect with us', navLink: '#', extras: '' }
 ];

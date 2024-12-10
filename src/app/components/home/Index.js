@@ -66,7 +66,7 @@ export const IndexHome = () => {
                             {/* 2xl:pt-6 pt-3 */}
                             <div id="home-hero-button" className="pt-3">
                                 <DefaultBtn
-                                    btnText={'Get Started'}
+                                    btnText={'Connect with us'}
                                 />
                             </div>
                         </div>

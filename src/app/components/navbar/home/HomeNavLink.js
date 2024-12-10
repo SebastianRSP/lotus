@@ -25,17 +25,17 @@ export const HomeNavLink = ({ navLinkName, navLink, extras, icon, iconImage, id,
     return (
         <>
             {isIncludeBookDemoBtn ? (
-                <div className="flex justify-end">
+                <div className="flex">
                     {isDark ? (
                         <DefaultBtnBlack
                             extras={'link-animation whitespace-nowrap'}
-                            btnText={'BOOK A DEMO'}
+                            btnText={'Connect with us'}
                             btnType={'button'}
                         />
                     ) : (
                         <DefaultBtn
                             extras={'link-animation whitespace-nowrap'}
-                            btnText={'BOOK A DEMO'}
+                            btnText={'Connect with us'}
                             btnType={'button'}
                         />
                     )}

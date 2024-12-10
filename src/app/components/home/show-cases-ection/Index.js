@@ -118,7 +118,7 @@ and empower companies to use their data more effectively.
                                 </div>
                             </div>
                         </div>
-                        <div className="w-full flex justify-center 2xl:pb-24 pb-12 lg:pt-0 pt-12">
+                        <div className="w-full flex justify-center 2xl:pb-24 pb-12 lg:pt-0 md:pt-12 pt-8">
                             <NewHomeSlider sliderRef={sliderRef} onSlideChange={handleSliderChange}>
                                 {showCases.map((showcase, index) => (
                                     <CardShowCase

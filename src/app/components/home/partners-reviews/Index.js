@@ -172,13 +172,14 @@ export const PartnerReviews = () => {
                                 {partners.map((currentPartner, index) => (
                                     <div key={index} style={{ maxWidth: containerWidth, height: containerHeight }} className={`grid grid-rows-6 justify-between xl:!h-26 lg:!h-19 !h-60 items-center`}>
                                         {/* h-available */}
-                                        <div className="2xl:row-span-1 row-span-1 2xl:w-40 xl:w-36 lg:w-28 md:w-32 w-28 h-full">
+                                        <div className="2xl:row-span-1 row-span-1 2xl:w-40 xl:w-36 lg:w-28 md:w-32 w-28 h-full max-h-[40px]">
                                             <Image
                                                 src={currentPartner?.partnerIcon}
                                                 alt={`${currentPartner?.partnerName} icon`}
                                                 width={104}
                                                 height={64}
                                                 layout='responsive'
+                                                className="max-h-[40px]"
                                             />
                                         </div>
                                         <p className="2xl:row-span-2 row-span-3 2xl:text-2xl xl:text-xl lg:text-lg md:text-md text-sm font-300 2xl:leading-7 leading-5 self-center 2xl:mt-5 ">

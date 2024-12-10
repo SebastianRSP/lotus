@@ -106,7 +106,10 @@ export const DetailCards = () => {
             </div>
             <div className="relative xl:px-40 lg:px-20 px-9 lg:pt-20 md:pt-28 pt-9 lg:pb-96 md:pb-30 pb-96 z-0">
                 {dataMigrations.map((dataMigration, index) => (
-                    <div className="grid md:grid-cols-2 grid-cols-1 lg:gap-10 gap-5 items-center md:py-20 py-10">
+                    <div
+                        className="grid md:grid-cols-2 grid-cols-1 lg:gap-10 gap-5 items-center md:py-20 py-10"
+                        key={`dataMigration-${index}`}
+                    >
                         <CardBackground>
                             <div className="flex md:w-28 w-20 md:h-28 h-20 m-auto relative justify-center items-end justify-self-center">
                                 <div className="absolute">
@@ -114,14 +117,27 @@ export const DetailCards = () => {
                                 </div>
                             </div>
                         </CardBackground>
-                        <div className={`md:bg-transparent bg-black md:rounded-none rounded-3xl md:p-0 p-4 ${index % 2 == 0 ? 'lg:order-2 md:order-1 order-1' : 'lg:order-1 md:order-1 order-1'}`}>
+                        <div
+                            className={`md:bg-transparent bg-black md:rounded-none rounded-3xl md:p-0 p-4 ${
+                                index % 2 === 0
+                                    ? 'lg:order-2 md:order-1 order-1'
+                                    : 'lg:order-1 md:order-1 order-1'
+                            }`}
+                        >
                             <div className="text-left flex flex-col md:gap-6 gap-3">
-                                <h4 class="text-green 2xl:text-2xl xl:text-xl 2xl:leading-42">{dataMigration.datamigration}</h4>
-                                <h3 className="2xl:text-5xl xl:text-4xl md:text-3xl text-2xl 2xl:leading-56 md:leading-normal leading-6 2xl:w-11/12 text-white font-normal">{dataMigration.migrationHeading}</h3>
+                                <h4 className="text-green 2xl:text-2xl xl:text-xl 2xl:leading-42">
+                                    {dataMigration.datamigration}
+                                </h4>
+                                <h3 className="2xl:text-5xl xl:text-4xl md:text-3xl text-2xl 2xl:leading-56 md:leading-normal leading-6 2xl:w-11/12 text-white font-normal">
+                                    {dataMigration.migrationHeading}
+                                </h3>
                                 <p className="text-base font-light">{dataMigration.migrationDescription}</p>
                                 <ul className="leading-8">
-                                    {dataMigration.bullets.map((bullet, index) => (
-                                        <li className="flex lg:font-semibold gap-4">
+                                    {dataMigration.bullets.map((bullet, bulletIndex) => (
+                                        <li
+                                            className="flex lg:font-semibold gap-4"
+                                            key={`bullet-${index}-${bulletIndex}`} // Updated variable name
+                                        >
                                             <Image
                                                 src={bullet.icon}
                                                 className="md:relative md:left-0 md:mt-0 fill-current"
@@ -139,5 +155,5 @@ export const DetailCards = () => {
                 ))}
             </div>
         </div>
-    )
-}
+    );
+};
