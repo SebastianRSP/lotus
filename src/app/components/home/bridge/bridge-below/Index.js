@@ -154,7 +154,7 @@ export const BridgeBelow = () => {
                             <span className="2xl:pl-1">%</span>
                         </p>
                         <p className="2xl:text-lg text-sm text-green 2xl:leading-6 leading-5 opacity-75">
-                        Enterprise data locked <br />in outdated, centralised systems
+                            Enterprise data locked <br />in outdated, centralised systems
                         </p>
                     </div>
                     <div className="2xl:py-24 py-12 lg:border-x border border-opacity-20 border-green flex flex-col gap-5 justify-center">
@@ -164,8 +164,8 @@ export const BridgeBelow = () => {
                             <span className="2xl:pl-1">trillion</span>
                         </p>
                         <p className="2xl:text-lg text-sm text-green 2xl:leading-6 leading-5 opacity-75">
-                        Forecasted enterprise spend on <br />data management, storage, <br />
-                        and analysis by 2025
+                            Forecasted enterprise spend on <br />data management, storage, <br />
+                            and analysis by 2025
                         </p>
                     </div>
                 </div>

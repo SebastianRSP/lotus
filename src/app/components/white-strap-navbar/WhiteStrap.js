@@ -8,7 +8,7 @@ export const WhiteStrap = () => {
     const isDark = pathname.startsWith('/investor');
 
     return (
-        <div className={`${isDark ? 'bg-transparent' : 'md:bg-white bg-gray-light'}  absolute grid grid-cols-12 md:flex justify-center w-full z-0`}>
+        <div className={`${isDark ? 'bg-transparent' : 'md:bg-white bg-gray-light'} z-10 absolute grid grid-cols-12 md:flex justify-center w-full`}>
             <div className={`${isDark ? 'bg-transparent rounded-tr-lg' : 'bg-white'}  col-span-8 order-2 md:order-1 md:col-span-full 2xl:h-18 lg:h-14 h-16 z-10 lg:w-35.75p md:w-40p relative`}>
                 <div className={`${isDark ? 'bg-transparent rounded-tr-lg' : 'bg-gray-light rounded-tr-lg rounded-tl-lg'}  h-full w-full`}></div>
             </div>

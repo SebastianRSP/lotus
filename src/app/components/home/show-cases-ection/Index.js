@@ -89,9 +89,9 @@ export const ShowCaseSection = () => {
                         <span className="font-normal">The Bridge<sup>TM</sup></span> houses cutting-edge AI enabled data management tools for enterprise clients
                     </h3>
                     <p className="2xl:text-2xl xl:text-base lg:text-sm text-xs lg:justify-self-end lg:col-span-4 lg:w-full w-11/12">
-                    We believe that effective data management is essential to staying ahead of
-the curve. Our powerful set of AI-driven tools make data sets more legible,
-and empower companies to use their data more effectively.
+                        We believe that effective data management is essential to staying ahead of
+                        the curve. Our powerful set of AI-driven tools make data sets more legible,
+                        and empower companies to use their data more effectively.
                     </p>
                 </div>
                 <div className="2xl:pt-100 xl:pt-20 md:pt-10">
@@ -131,7 +131,7 @@ and empower companies to use their data more effectively.
                                     />
                                 ))}
                             </NewHomeSlider>
-                            
+
                         </div>
                     </div>
                 </div>

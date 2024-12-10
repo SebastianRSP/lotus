@@ -189,13 +189,13 @@ export const PartnerReviews = () => {
                                             {/* lg:p-10 md:p-8 p-7 */}
                                             <div className="bg-green border border-black 2xl:w-28 xl:w-24 md:w-20 w-16 2xl:h-28 xl:h-24 md:h-20 h-16 relative rounded-4">
                                                 <div className="absolute inset-0 bg-gray-light border rounded-4 -translate-x-[2px] -translate-y-[2px]">
-                                                <Image
-                                                src={currentPartner?.face}
-                                                alt={`${currentPartner?.partnerName} icon`}
-                                                width={104}
-                                                height={64}
-                                                layout='responsive'
-                                            />
+                                                    <Image
+                                                        src={currentPartner?.face}
+                                                        alt={`${currentPartner?.partnerName} icon`}
+                                                        width={104}
+                                                        height={64}
+                                                        layout='responsive'
+                                                    />
                                                 </div>
                                             </div>
                                             <div >
@@ -203,7 +203,7 @@ export const PartnerReviews = () => {
                                                     {currentPartner?.person}
                                                 </span>
                                                 <p className="text-base font-normal leading-4 mt-2">
-                                                    {currentPartner?.title} 
+                                                    {currentPartner?.title}
                                                     <span className="text-xs font-extralight block">{currentPartner?.company}</span>
                                                 </p>
                                             </div>

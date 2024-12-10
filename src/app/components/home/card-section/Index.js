@@ -140,7 +140,7 @@ export const CardsSection = () => {
                                         </div>
                                     </div>
                                     <div className="grid gap-4 m-auto items-center justify-center relative md:w-full w-4/6">
-                                        <div className="w-full 2xl:py-14 xl:py-12 md:py-9 md:py-14">
+                                        <div className="w-full 2xl:py-9 xl:py-9 md:py-9 md:py-14">
                                             <img
                                                 src={card.svgPath}
                                                 className="w-20 h-20"

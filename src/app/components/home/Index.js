@@ -26,14 +26,14 @@ export const IndexHome = () => {
             if (firstVideoRef.current) {
                 firstVideoRef.current.play(); // Start the first video
             }
-        }, 3000);
+        }, 4000);
 
         // Delay the start of the second video slightly after the first
         const secondVideoTimer = setTimeout(() => {
             if (secondVideoRef.current) {
                 secondVideoRef.current.play(); // Start the second video
             }
-        }, 5350); // Adjust the delay as needed (e.g., 3s for simultaneous start)
+        }, 6350); // Adjust the delay as needed (e.g., 3s for simultaneous start)
 
         return () => {
             clearTimeout(firstVideoTimer);
@@ -50,10 +50,11 @@ export const IndexHome = () => {
             <HeroBackground bgColor={'bg-gray-light'}>
                 {/* White Strap */}
                 <WhiteStrap />
-                <div className=" grid grid-cols-12 h-full  justify-end items-end max-w-screen-xl mx-auto">
-                    {/* 2xl:gap-4.5 xl:gap-0 md:gap-12 gap-0 */}
-                    <div className="pt-12 2xl:col-span-5 md:col-span-6 col-span-12 2xl:pl-20 xl:pl-14 lg:pl-5 pl-5 grid content-center gap-[18rem] md:gap-[5rem] h-full relative">
-                    {/* self-end */}
+                {/* max-w-screen-xl mx-auto */}
+                <div className=" grid grid-cols-12 h-full  justify-end items-end ">
+                    {/* 2xl:gap-4.5 xl:gap-0 md:gap-12 gap-0 gap-[18rem] md:gap-[5rem] */}
+                    <div className="pt-9 2xl:col-span-5 md:col-span-6 col-span-12 2xl:pl-20 xl:pl-14 lg:pl-5 pl-5 grid content-between h-full relative">
+                        {/* self-end */}
                         <div className="flex flex-col gap-6 md:self-center self-center 2xl:row-span-5 xl:row-span-4 lg:row-span-4 md:row-span-4 row-span-2 z-50 ">
                             {/* 2xl:text-7xl xl:text-3.5r lg:text-5xl md:text-4xl text-3xl 2xl:leading-84 xl:leading-62 lg:leading-54 md:leading-42 leading-9  */}
                             <h2 id="home-hero-heading" className="2xl:font-300 font-extralight 2xl:text-5xl xl:text-325 lg:text-5xl md:text-4xl text-3xl 2xl:leading-54 xl:leading-62 lg:leading-54 md:leading-42 leading-9">
@@ -72,34 +73,32 @@ export const IndexHome = () => {
                         </div>
                         {/* absolute inset-0 col-span-12 md:hidden flex */}
                         <div className="absolute inset-0 col-span-12 md:hidden flex justify-center h-full w-full items-end row-span-4">
-                            <div className="flex 2xl:h-95p xl:h-90p lg:h-80p md:h-60p h-80p 2xl:w-95p lg:w-90p w-full">
-{/* Second Video (Background) */}
-<video
-                                ref={secondVideoRef} // Reference to control playback
-                                src="/new-home-assets/video/Loop_V3.mp4"
-                                muted
-                                playsInline
-                                loop
-                                autoPlay
-                                className="absolute inset-0 h-full w-full object-contain z-0"
-                            ></video>
+                            <div id="home-hero-animation" className="flex 2xl:h-95p xl:h-90p lg:h-80p md:h-60p h-80p 2xl:w-95p lg:w-90p w-full">
+                                {/* Second Video (Background) */}
+                                <video
+                                    ref={secondVideoRef} // Reference to control playback
+                                    src="/new-home-assets/video/Loop_V3.mp4"
+                                    muted
+                                    playsInline
+                                    loop
+                                    autoPlay
+                                    className="absolute inset-0 h-full w-full object-contain z-0"
+                                ></video>
 
-                            {/* First Video (Foreground) */}
-                            <video
-                                ref={firstVideoRef} // Reference to control playback
-                                src="/new-home-assets/video/Entry_v3.mp4"
-                                muted
-                                playsInline
-                                autoPlay
-                                className={`absolute inset-0 h-full w-full object-contain z-10 transition-opacity duration-300 ${
-                                    hideFirstVideo ? 'opacity-0' : 'opacity-100'
-                                }`}
-                                onEnded={handleFirstVideoEnd}
-                            ></video>
+                                {/* First Video (Foreground) */}
+                                <video
+                                    ref={firstVideoRef} // Reference to control playback
+                                    src="/new-home-assets/video/Entry_v3.mp4"
+                                    muted
+                                    playsInline
+                                    autoPlay
+                                    className={`absolute inset-0 h-full w-full object-contain z-10 transition-opacity duration-300 ${hideFirstVideo ? 'opacity-0' : 'opacity-100'}`}
+                                    onEnded={handleFirstVideoEnd}
+                                ></video>
                             </div>
                         </div>
-                        <div id="home-hero-bullets" className="z-[99] flex flex-col xl:row-span-2 lg:row-span-1 md:row-span-2 row-span-2 2xl:pb-10 pb-5 w-fit">
-                            <div className="border-t-[0.2px] border-t-black border-opacity-20">
+                        <div className="z-[99] flex flex-col 2xl:row-span-1 xl:row-span-1 lg:row-span-1 md:row-span-1 row-span-1 2xl:pb-10 pb-5 w-fit">
+                            <div id="home-hero-bullets" className="border-t-[0.2px] border-t-black border-opacity-20">
                                 {bullets.map((bullet, index) => (
                                     <div key={index} className="flex items-center gap-3 border-b-[0.2px] border-b-black border-opacity-20 md:py-1 py-2">
                                         {/* 2xl:py-5 md:py-3 py-2 */}
@@ -119,9 +118,9 @@ export const IndexHome = () => {
                     <div className="md:flex hidden 2xl:col-span-7 md:col-span-6 col-span-1 h-full  justify-center 2xl:items-end sm:items-center items-end">
                         {/*  lg:w-80p md:w-70p sm:w-60p w-50p */}
                         {/* <div className="2xl:h-70p xl:h-60p lg:h-54p md:h-40p h-50p 2xl:w-95p xl:w-90p w-full flex justify-center items-end"> */}
-                        <div className="-ml-32 relative 2xl:h-full xl:h-80p lg:h-full md:h-80p h-50p 2xl:w-80p w-full flex justify-center items-center">
-{/* Second Video (Background) */}
-<video
+                        <div id="home-hero-animation" className="-ml-32 relative 2xl:h-full xl:h-80p lg:h-full md:h-80p h-50p 2xl:w-80p w-full flex justify-center items-center">
+                            {/* Second Video (Background) */}
+                            <video
                                 ref={secondVideoRef} // Reference to control playback
                                 src="/new-home-assets/video/Loop_V3.mp4"
                                 muted
@@ -136,9 +135,8 @@ export const IndexHome = () => {
                                 src="/new-home-assets/video/Entry_v3.mp4"
                                 muted
                                 playsInline
-                                className={`absolute inset-0 h-full w-full object-contain z-10 transition-opacity duration-300 ${
-                                    hideFirstVideo ? 'opacity-0' : 'opacity-100'
-                                }`}
+                                className={`absolute inset-0 h-full w-full object-contain z-10 transition-opacity duration-300 ${hideFirstVideo ? 'opacity-0' : 'opacity-100'
+                                    }`}
                                 onEnded={handleFirstVideoEnd}
                             ></video>
                         </div>
