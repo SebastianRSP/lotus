@@ -332,7 +332,7 @@ informed decisions.                                </p>
                                     height={100}
                                 />
                             </div>
-                            <div className='w-full h-full'>
+                            <div className='max-w-screen-xl mx-auto h-full'>
                                 <div id='send-investor' className='2xl:mx-40 xl:mx-20 mx-9 xl:my-32 lg:my-28 md:my-16 my-8 relative z-20 bg-black border-2 border-green rounded-lg'>
                                     <div className='grid lg:grid-cols-2 grid-cols-1'>
                                         <div className='lg:bg-green bg-black lg:rounded-none rounded-lg sm:pl-9 pl-3 lg:pr-0 sm:pr-9 pr-3 py-10 text-black'>

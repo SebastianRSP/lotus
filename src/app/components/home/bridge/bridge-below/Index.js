@@ -16,7 +16,7 @@ const cardDetails = [
     },
     {
         category: 'An integrated approach',
-        description: 'The Bridge utilises validation proofs to ensure that debits and credits of data across storage providers is ensured. Clients can now ensure that their data sets can be tracked, traced, and validated across all platforms. This seamless integration enhances data quality and accessibility, giving businesses a complete view over their information assets.',
+        description: 'The Bridge utilizes validation proofs to ensure that debits and credits of data across storage providers is ensured. Clients can now ensure that their data sets can be tracked, traced, and validated across all platforms. This seamless integration enhances data quality and accessibility, giving businesses a complete view over their information assets.',
         svgPath: '/new-home-assets/SVG/IntegratedApproach.svg',
         smallIcon: '/icons/Bridge_icon_2.png'
     },

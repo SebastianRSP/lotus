@@ -47,7 +47,7 @@ const partners = [
         company: "DCent"
     },
     {
-        partnerName: 'Clearskye',
+        partnerName: 'Clearsky',
         partnerIcon: Clearskye,
         face: '/new-home-assets/profiles/FTHFACE.jpg',
         width: 75,
@@ -55,7 +55,7 @@ const partners = [
         testimonial: '“This bridge serves as a nexus for technology, community, and innovation, unlocking the full potential of blockchain technology for data protection, archiving, and recovery solutions.”',
         person: "Rich Van Duysen",
         title: "CEO",
-        company: "Clearskye"
+        company: "Clearsky"
     },
     {
         partnerName: 'Blocz',

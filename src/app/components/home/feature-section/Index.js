@@ -29,12 +29,11 @@ export const FeatureSection = () => {
                         <h4 className='lg:block hidden 2xl:-ml-96 lg:-ml-64 ml-0 bg-white relative z-30 2xl:pl-20 lg:pl-10 pl-0 2xl:pb-20 lg:pb-10 pb-0 font-extralight 2xl:text-6xl xl:text-5xl lg:text-2.5 md:text-4xl text-3xl 2xl:leading-60 xl:leading-54 lg:leading-46 md:leading-42 leading-9'>
                             Lotus powers the future of data storage by building superior rails for migration.
                         </h4>
-                        <p className='2xl:text-2xl md:text-base text-sm'>Governments, institutions, and enterprises are increasingly seeking decentralised storage solutions, but the process from Web2 to Web3 networks remains a barrier. Our solution facilitates worldwide adoption of decentralised storage solutions, and provides best-in-class data management tools for enterprise and institutional grade clients.</p>
+                        <p className='2xl:text-2xl md:text-base text-sm'>Governments, institutions, and enterprises are increasingly seeking decentralized storage solutions, but the process from Web2 to Web3 networks remains a barrier. Our solution facilitates worldwide adoption of decentralized storage solutions, and provides best-in-class data management tools for enterprise and institutional grade clients.</p>
                         <div className=''>
                             <p className='2xl:text-2xl md:text-base text-sm bg-green text-black inline px-0.2'>Lotus does for data transfer what SWIFT does for money
 transfer—a single protocol that abstracts away hundreds of complex
-interactions, enabling seamless interoperability between disparate network
-s.</p>
+interactions, enabling seamless interoperability between disparate networks.</p>
                         </div>
                     </div>
                 </div>
