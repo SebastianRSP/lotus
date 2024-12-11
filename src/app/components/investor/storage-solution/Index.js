@@ -4,17 +4,17 @@ const storageSolutions = [
     {
         count: '01',
         heading: 'LIQUIDITY',
-        description: 'okenization transforms data into a tradeable asset, enhancing liquidity by allowing seamless data exchange and creating new markets for data-driven assets, unlocking capital otherwise trapped in isolated datasets or disparate storage providers.'
+        description: 'Tokenization converts data into a tradeable asset, boosting liquidity by enabling seamless exchanges and creating new markets for data-driven assets. This unlocks capital otherwise trapped in isolated datasets or disparate storage systems.'
     },
     {
         count: '02',
         heading: 'SECURITY',
-        description: 'Tokenized data on The Bridge benefits from blockchain´s immutable ledger, ensuring data integrity and traceability, protecting against unauthorized access, and providing stakeholders with confidence in secure transactions.'
+        description: 'Tokenized data on The Bridge benefits from blockchain’s immutable ledger, ensuring data integrity and traceability. It protects against unauthorized access, providing stakeholders with confidence in the security of all transactions.'
     },
     {
         count: '03',
         heading: 'EFFICIENCY',
-        description: 'With tokenized data, The Bridge streamlines data transfer, reducing transactional overhead and enabling rapid, cost-effective cross-platform data sharing, significantly enhancing productivity and operational scalability through one token that abstracts away the complexities of multiple protocols.'
+        description: 'Tokenized data on The Bridge streamlines transfer, reducing transactional overhead and enabling fast, cost-effective cross-platform sharing. It improves productivity and scalability by abstracting complex protocols into one unified token.'
     }
 ]
 

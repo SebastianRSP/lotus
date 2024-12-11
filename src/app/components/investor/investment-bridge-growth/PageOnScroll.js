@@ -22,33 +22,29 @@ const growthTabs = [
     "COMMUNITY",
     "PARTNERSHIPS",
     "TEAM",
+    "LIQUIDITY"
 ];
 
 const tabData = [
     {
-        percentage: 20,
+        percentage: 21,
         title: "INVESTORS",
         detail: [
             {
-                title: "Private Placement",
-                percentage: "10%",
-                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-            },
-            {
-                title: "Public Offering",
-                percentage: "10%",
-                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-            },
+                title: "Investors",
+                percentage: "21%",
+                description: "The 'Investors' category encompasses both the Pre-Seed and Seed rounds, focusing on securing early strategic investment to support the project's growth. These tokens will attract early investors and provide the necessary funding to propel the platform forward, laying the foundation for future development and expansion."
+            }
         ]
     },
     {
-        percentage: 20,
+        percentage: 14,
         title: "RESEARCH",
         detail: [
             {
                 title: "Research & Development",
-                percentage: "20%",
-                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                percentage: "14%",
+                description: "Tokens allocated to Research & Development will drive platform innovation and future enhancements. This fund is dedicated to exploring new technologies, optimizing existing features, and continuously improving the platform to stay ahead of industry trends."
             }
         ]
     },
@@ -59,7 +55,7 @@ const tabData = [
             {
                 title: "Product Development",
                 percentage: "10%",
-                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                description: "Tokens will be dedicated to driving new feature development and marketplace growth. This allocation supports the continuous enhancement of the platform’s offerings, ensuring that users have access to new and exciting features that contribute to the overall growth of the ecosystem."
             }
         ]
     },
@@ -70,7 +66,7 @@ const tabData = [
             {
                 title: "Company Operations",
                 percentage: "10%",
-                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                description: "A portion of tokens will be reserved for operational expenses, including the development and implementation of key platform features. These tokens are specifically allocated to ensure the functionality of critical features within the platform, supporting ongoing costs for scaling and ensuring the platform’s sustainability."
             }
         ]
     },
@@ -81,7 +77,7 @@ const tabData = [
             {
                 title: "Marketing",
                 percentage: "10%",
-                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                description: "Marketing funds will be used to focus on ecosystem promotion, user acquisition, and exchange listings. By supporting advertising, public relations, outreach efforts, and exchange listings, this allocation will help raise awareness, attract users, and grow the project’s community."
             }
         ]
     },
@@ -90,9 +86,9 @@ const tabData = [
         title: "COMMUNITY",
         detail: [
             {
-                title: "Community",
+                title: "Community Incentives",
                 percentage: "10%",
-                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                description: "A significant portion of tokens will be reserved for community incentives, promoting user engagement and adoption. These tokens will be used to reward active participants, incentivizing them to engage with the platform, contribute to its growth, and become long-term supporters."
             }
         ]
     },
@@ -101,9 +97,9 @@ const tabData = [
         title: "PARTNERSHIPS",
         detail: [
             {
-                title: "Partnerships",
+                title: "Ecosystem & Partnerships",
                 percentage: "10%",
-                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                description: "This allocation focuses on fostering collaboration with storage providers and validators. It aims to build a strong network of partners, which is essential for expanding the ecosystem, ensuring the platform's reliability, and driving further adoption."
             }
         ]
     },
@@ -114,7 +110,18 @@ const tabData = [
             {
                 title: "Team",
                 percentage: "10%",
-                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                description: "Tokens will be set aside for the core team members to ensure the long-term health and success of the project as the team expands. This allocation is designed to provide incentives for team contributions over the years, supporting the platform's ongoing development and growth as it matures into a long-term, sustainable project."
+            }
+        ]
+    },
+    {
+        percentage: 5,
+        title: "LIQUIDITY",
+        detail: [
+            {
+                title: "Liquidity",
+                percentage: "5%",
+                description: "A portion of tokens will be reserved to ensure sufficient liquidity for trading activities. This liquidity fund will help maintain the token's market stability, enabling smooth trading and preventing major price fluctuations in the marketplace."
             }
         ]
     }
@@ -316,11 +323,7 @@ export const InvertmentBridgeGrowth = () => {
                                 within <br className='lg:block hidden' /><span className="font-bold">The Bridge<sup>TM</sup></span>  ecosystem.
                                 </h3>
                                 <p className="2xl:text-2xl xl:text-base lg:text-sm text-xs lg:justify-self-end lg:col-span-4 lg:w-full w-11/12">
-                                The BridgeTM will integrate advanced AI powered analytics with on-chain
-tracking to ensure every data transaction is transparent, traceable, and
-trusted. By validating the quality of both the data and storage provider, we
-provide agnostic intelligence to empower participants to make educated and
-informed decisions.                                </p>
+                                The Bridge™ integrates AI-powered analytics with on-chain tracking to ensure data transactions are transparent, traceable, and trusted. By validating data quality and storage providers, we offer unbiased intelligence to help participants make informed decisions.                    </p>
                             </div>
                         </div>
                         <div ref={sendInvestor} className='flex justify-center items-center relative '>

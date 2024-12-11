@@ -17,8 +17,8 @@ import { CardBackground } from './CardBackground';
 const dataMigrations = [
     {
         datamigration: 'Optimised Transactions',
-        migrationHeading: 'Seamless data exchanges with efficiency at scale',
-        migrationDescription: '$Bridge transforms data transactions by establishing a unified, cost-efficient ecosystem. Utilizing blockchain-based identifiers to track transactions and data sets, it eliminates bottlenecks, enabling faster, more affordable transfers across diverse storage platforms.',
+        migrationHeading: 'Seamless Data Transfers at Scale',
+        migrationDescription: '$BRIDGE revolutionizes data transactions by creating a unified, cost-effective ecosystem. With blockchain-powered identifiers to track data and transactions, it removes bottlenecks and enables faster, more affordable exchanges across multiple storage platforms.',
         lottieAnimation: puzzleAnimation,
         bullets: [
             {
@@ -37,8 +37,8 @@ const dataMigrations = [
     },
     {
         datamigration: 'Data Empowerment',
-        migrationHeading: 'Unlocking the potential of data as an asset',
-        migrationDescription: 'The Bridge paves the way for data to become a more liquid and portable asset, ensuring data owners retain control while unlocking its full potential. By leveraging advanced tools and frameworks, users can actively shape their role in the global data economy.',
+        migrationHeading: 'Transforming Data into a Tradeable Asset',
+        migrationDescription: '$BRIDGE unlocks the full potential of data by making it liquid and portable. Data owners retain control while gaining the flexibility to shape their role in the global data economy, using powerful tools to unlock new opportunities for their information assets.',
         lottieAnimation: boxesAnimation,
         bullets: [
             {
@@ -57,8 +57,8 @@ const dataMigrations = [
     },
     {
         datamigration: 'Rewarding Collaboration',
-        migrationHeading: 'Fostering an ecosystem of mutual growth',
-        migrationDescription: 'The $Bridge token powers a collaborative economy, incentivizing stakeholders to enhance data integrity, drive innovation, and expand the platform’s reach. Through a structured rewards system, The Bridge ensures active contributors receive fair recognition and value.',
+        migrationHeading: 'Building a Collaborative Growth Ecosystem',
+        migrationDescription: 'Through $BRIDGE, we foster a thriving, collaborative environment where stakeholders are incentivized to enhance data integrity, drive innovation, and expand the platform. With a reward system that ensures contributors are fairly recognized, everyone can actively participate in the platform’s growth.',
         lottieAnimation: mountainAnimation,
         bullets: [
             {
@@ -66,7 +66,7 @@ const dataMigrations = [
                 icon: icon1
             },
             {
-                heading: "Developer Empowerment: ",
+                heading: "Developer Empowerment",
                 icon: icon2
             },
             {
@@ -77,8 +77,8 @@ const dataMigrations = [
     },
     {
         datamigration: 'Exclusive Benefits',
-        migrationHeading: 'Unlock advanced tools and ecosystem privileges',
-        migrationDescription: 'The $Bridge token offers exclusive access to premium features and tools designed to maximize user engagement and value creation. From advanced analytics to tailored insights, these benefits empower participants to navigate and thrive in The Bridge ecosystem.',
+        migrationHeading: 'Access Exclusive Tools and Privileges',
+        migrationDescription: '$BRIDGE token holders gain access to premium features that maximize engagement and value. From advanced analytics to customized insights, these tools empower participants to navigate the ecosystem and create lasting impact.',
         lottieAnimation: premiumFeaturesAnimation,
         bullets: [
             {
@@ -111,8 +111,8 @@ export const DetailCards = () => {
                         key={`dataMigration-${index}`}
                     >
                         <CardBackground>
-                            <div className="flex md:w-28 w-20 md:h-28 h-20 m-auto relative justify-center items-end justify-self-center">
-                                <div className="absolute">
+                            <div className="flex w-20 h-20 m-auto relative justify-center items-end justify-self-center">
+                                <div className="absolute w-40 h-32">
                                     <Lottie animationData={dataMigration.lottieAnimation} loop={true} />
                                 </div>
                             </div>

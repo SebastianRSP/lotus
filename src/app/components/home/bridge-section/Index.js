@@ -60,7 +60,7 @@ export const BridgeBelow = () => {
                                         <h4 className="2xl:text-4xl lg:text-3xl text-2xl font-300 2xl:leading-42 lg:leading-9 leading-30 text-green 2xl:w-3/4 lg:w-4/5 w-5/6">
                                             {cardDetail.heading}
                                         </h4>
-                                        <p className="2xl:text-2xl lg:text-xl text-base text-white">
+                                        <p className="2xl:text-2xl lg:text-xl text-base text-white font-light">
                                             {cardDetail.description}
                                         </p>
                                     </div>

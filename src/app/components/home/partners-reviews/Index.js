@@ -6,7 +6,7 @@ import Image from 'next/image';
 // Partners Import
 import FileCoin from '../../../../../public/new-home-assets/filecoin.svg';
 import Blocz from '../../../../../public/new-home-assets/blocz.svg';
-import Clearskye from '../../../../../public/new-home-assets/clearskye.svg';
+import Clearskye from '../../../../../public/new-home-assets/ClearSky2.png';
 import Sia from '../../../../../public/new-home-assets/sia.svg';
 import Storj from '../../../../../public/new-home-assets/storj.svg';
 import FTH from '../../../../../public/new-home-assets/FTH.jpg';

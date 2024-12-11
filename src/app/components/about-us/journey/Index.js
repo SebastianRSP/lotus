@@ -18,7 +18,7 @@ const timelines = [
     {
         year: '2021',
         icon: flag,
-        description: 'Lotus data group was formed, the main mission became to study viability of decentralized storage networks. As part of the exploration process significant time was spend with Protocol Labs leadership to understand how to maximize the potential of Filecoin as the worlds largest decentralized storage network.'
+        description: 'Lotus data group was formed, the main mission became to study viability of decentralized storage networks. As part of the exploration process significant time was spent with Protocol Labs leadership to understand how to maximize the potential of Filecoin as the worlds largest decentralized storage network.'
     },
     {
         year: '2022',

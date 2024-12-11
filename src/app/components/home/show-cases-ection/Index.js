@@ -16,8 +16,8 @@ const growthTabs = [
 const showCases = [
     {
         heading: `DataVault<sup>TM</sup>`,
-        subHeading: 'Analyzing Data Intake for Compliance, Residency, and Optimization',
-        description: 'DataVault is being built to analyze the intake of data to provide actionable insights that align with regulatory frameworks such as HIPAA, ISO, and SOC2. It will ensure that data flows and residency requirements are optimized for compliance, security, and strategic value. Data Vault will ensure your data is tracked, traced, and validated across all platforms and regions',
+        subHeading: 'Data Intake Analysis',
+        description: 'DataVault is being built to analyze the intake of data to provide actionable insights that align with regulatory frameworks such as HIPAA, ISO, and SOC2. It will ensure that data flows and residency requirements are optimized for compliance, security, and strategic value.',
         svgPath: '/new-home-assets/SVG/DataVault.svg'
     },
     {

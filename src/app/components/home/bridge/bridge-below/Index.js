@@ -87,7 +87,7 @@ export const BridgeBelow = () => {
                                                 {cardDetail.category}
     </h4>
     </div>
-                                                <p className="2xl:text-2xl lg:text-xl text-base text-white">
+                                                <p className="2xl:text-2xl lg:text-xl text-base text-white font-light">
                                                     {cardDetail.description}
                                                 </p>
                                             </div>
@@ -110,7 +110,7 @@ export const BridgeBelow = () => {
 </div>
 
 
-                                                <p className="2xl:text-2xl lg:text-xl text-base text-white">
+                                                <p className="2xl:text-2xl lg:text-xl text-base text-white font-light">
                                                     {cardDetail.description}
                                                 </p>
                                             </div>

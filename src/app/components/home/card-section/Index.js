@@ -11,7 +11,7 @@ const cardDetails = [
         svgPath: '/new-home-assets/SVG/BookDemo.svg'
     },
     {
-        cardDesp: `Decentralize, analyse, and secure your data using The BridgeTM`,
+        cardDesp: `Decentralize, analyse, and secure your data using The Bridge™`,
         svgPath: '/new-home-assets/SVG/Decentralise.svg'
     },
     {
@@ -143,10 +143,10 @@ export const CardsSection = () => {
                                         <div className="w-full">
                                             <img
                                                 src={card.svgPath}
-                                                className="w-20 h-20"
+                                                className="w-22 h-22"
                                                 alt="default Image"
-                                                width={80}
-                                                height={80}
+                                                width={90}
+                                                height={90}
                                             />
                                         </div>
                                         <div className="h-full lg:p-0 px-3">
