@@ -53,12 +53,12 @@ export const IndexHome = () => {
                 {/* max-w-screen-xl mx-auto */}
                 <div className=" grid grid-cols-12 h-full  justify-end items-end max-w-screen-xl mx-auto">
                     {/* 2xl:gap-4.5 xl:gap-0 md:gap-12 gap-0 gap-[18rem] md:gap-[5rem] */}
-                    <div className="pt-9 2xl:col-span-5 md:col-span-6 col-span-12 2xl:pl-20 xl:pl-14 lg:pl-5 pl-5 grid content-between h-full relative md:grid md:mx-auto md:h-auto md:gap-20 gap-72">
+                    <div className="pt-9 2xl:col-span-5 md:col-span-6 col-span-12 grid content-between h-full relative md:grid md:mx-auto md:h-auto md:gap-20 gap-72 m-auto md:min-w-[500px]">
                         {/* self-end */}
                         <div className="flex flex-col gap-6 md:self-center self-center 2xl:row-span-5 xl:row-span-4 lg:row-span-4 md:row-span-4 row-span-2 z-50 ">
                             {/* 2xl:text-7xl xl:text-3.5r lg:text-5xl md:text-4xl text-3xl 2xl:leading-84 xl:leading-62 lg:leading-54 md:leading-42 leading-9  */}
                             <h2 id="home-hero-heading" className="2xl:font-300 font-extralight 2xl:text-5xl xl:text-325 lg:text-5xl md:text-4xl text-3xl 2xl:leading-54 xl:leading-62 lg:leading-54 md:leading-42 leading-9">
-                                Decentralized<br /> data infrastructure<br /> for{" "}
+                                Decentralized<br /> data infrastructure<br /> for {"  "}
                                 {/* <TextSwapper /> */}
                                 <TextTyping />
                             </h2>
