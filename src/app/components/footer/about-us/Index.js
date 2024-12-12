@@ -45,7 +45,7 @@ export const AboutUsFooter = () => {
                 <div className="grid xl:grid-cols-12 md:grid-cols-2 grid-cols-1 gap-5 mx-auto w-full relative text-black lg:pb-7 pb-5">
                     <div className="flex flex-col xl:col-span-4 justify-between">
                         <div className="hidden">
-                            <div className=''>
+                            <div className='relative'>
                                 <div className='absolute z-0 order-last inset-0 bg-gray-300 bg-green border border-black rounded-4 translate-x-[2px] translate-y-[2px]'></div>
                                 <div className="bg-white relative z-10 items-center flex sm:space-y-0 border rounded-4 border-black">
                                     <div className="relative z-10 w-full ">
@@ -69,6 +69,7 @@ export const AboutUsFooter = () => {
                                 Sign up to receive the latest in news about Lotus
                             </h4>
                         </div>
+                        {/* md:mt-14 mt-10 */}
                         <div className=''>
                             <h4 className='xl:text-2xl md:text-xl text-lg xl:leading-32 md:leading-7 leading-26 pb-2'>
                                 Join our Telegram
