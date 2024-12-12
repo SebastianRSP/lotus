@@ -11,7 +11,7 @@ export const Boxes = ({ activePercentage, tabIndex, previousTabIndex, tabData })
         // Calculate cumulative lines for each tab based on tabData percentages
         let cumulativeLines = 0;
         const cumulativeLineIndices = tabData.map((tab) => {
-            const linesForTab = Math.floor((tab.percentage / 100) * 10);
+            const linesForTab = (tab.percentage / 100) * 100;
             cumulativeLines += linesForTab;
             return cumulativeLines;
         });
@@ -20,42 +20,75 @@ export const Boxes = ({ activePercentage, tabIndex, previousTabIndex, tabData })
         const startLineIndex = tabIndex > 0 ? cumulativeLineIndices[tabIndex - 1] : 0;
         const endLineIndex = cumulativeLineIndices[tabIndex] - 1;
 
+        console.log(startLineIndex)
+        console.log(endLineIndex)
+
         // Find the previous tab's line index range
         const previousStartLineIndex = previousTabIndex > 0 ? cumulativeLineIndices[previousTabIndex - 1] : 0;
         const previousEndLineIndex = cumulativeLineIndices[previousTabIndex] - 1;
 
-        // Update rows according to active, previous, and next states
-        rowRefs.current.forEach((row, rowIndex) => {
-            if (rowIndex >= previousStartLineIndex && rowIndex <= previousEndLineIndex) {
-                // Determine fill color based on the position of the previous active line
-                const fillColor = (previousEndLineIndex < startLineIndex)
-                    ? '#7FFF8080' // Previous active line is before the current active line
-                    : 'none'; // Previous active line is after the current active line
+        console.log(previousStartLineIndex)
+        console.log(previousEndLineIndex)
 
-                row.current.childNodes.forEach((box) => {
-                    gsap.to(box, { fill: fillColor });
-                });
-                gsap.to(row.current, { x: 0, duration: 1, ease: 'power1.inOut' }); // Reset position
-            } else if (rowIndex < startLineIndex) {
-                // Previous lines (with opacity 0.5)
-                row.current.childNodes.forEach((box) => {
-                    gsap.to(box, { fill: '#7FFF8080' });
-                });
-                gsap.set(row.current, { x: 0 }); // Keep transformed
-            } else if (rowIndex >= startLineIndex && rowIndex <= endLineIndex) {
-                // Current active lines (full opacity)
-                row.current.childNodes.forEach((box) => {
-                    gsap.to(box, { fill: '#00FF03' });
-                });
-                gsap.to(row.current, { x: 44, duration: 1, ease: 'power1.inOut' });
-            } else {
-                // Next lines (no fill)
-                row.current.childNodes.forEach((box) => {
-                    gsap.to(box, { fill: 'none' });
-                });
-                gsap.set(row.current, { x: 0 }); // Reset transformation
-            }
+        // Update rows according to active, previous, and next states
+
+        rowRefs.current.forEach((row, rowIndex) => {
+            row.current.childNodes.forEach((box, boxIndex) => {
+                // Calculate the current box's index in the flattened grid
+                const boxIndexGlobal = rowIndex * 10 + boxIndex;
+        
+                if ( boxIndexGlobal >= previousStartLineIndex && boxIndexGlobal <= previousEndLineIndex ){
+                    // Determine fill color based on the position of the previous active line
+                    const fillColor =
+                        previousEndLineIndex < startLineIndex
+                            ? '#7FFF8080' // Previous active line is before the current active line
+                            : 'none'; // Previous active line is after the current active line
+        
+                    gsap.to(box, { fill: fillColor, duration: 0.5 });
+                } else if (boxIndexGlobal < startLineIndex) {
+                    // Previous boxes (with opacity 0.5)
+                    gsap.to(box, { fill: '#7FFF8080', duration: 0.5 });
+                } else if ( boxIndexGlobal >= startLineIndex && boxIndexGlobal <= endLineIndex ){
+                    // Current active boxes (full opacity)
+                    gsap.to(box, { fill: '#00FF03', duration: 0.5 });
+                } else {
+                    // Next boxes (no fill)
+                    gsap.to(box, { fill: 'none', duration: 0.5 });
+                }
+            });
         });
+
+        // rowRefs.current.forEach((row, rowIndex) => {
+        //     if (rowIndex >= previousStartLineIndex && rowIndex <= previousEndLineIndex) {
+        //         // Determine fill color based on the position of the previous active line
+        //         const fillColor = (previousEndLineIndex < startLineIndex)
+        //             ? '#7FFF8080' // Previous active line is before the current active line
+        //             : 'none'; // Previous active line is after the current active line
+
+        //         row.current.childNodes.forEach((box) => {
+        //             gsap.to(box, { fill: fillColor });
+        //         });
+        //         gsap.to(row.current, { x: 0, duration: 1, ease: 'power1.inOut' }); // Reset position
+        //     } else if (rowIndex < startLineIndex) {
+        //         // Previous lines (with opacity 0.5)
+        //         row.current.childNodes.forEach((box) => {
+        //             gsap.to(box, { fill: '#7FFF8080' });
+        //         });
+        //         gsap.set(row.current, { x: 0 }); // Keep transformed
+        //     } else if (rowIndex >= startLineIndex && rowIndex <= endLineIndex) {
+        //         // Current active lines (full opacity)
+        //         row.current.childNodes.forEach((box) => {
+        //             gsap.to(box, { fill: '#00FF03' });
+        //         });
+        //         gsap.to(row.current, { x: 44, duration: 1, ease: 'power1.inOut' });
+        //     } else {
+        //         // Next lines (no fill)
+        //         row.current.childNodes.forEach((box) => {
+        //             gsap.to(box, { fill: 'none' });
+        //         });
+        //         gsap.set(row.current, { x: 0 }); // Reset transformation
+        //     }
+        // });
     }, [activePercentage, tabIndex, previousTabIndex, tabData]);
 
     return (

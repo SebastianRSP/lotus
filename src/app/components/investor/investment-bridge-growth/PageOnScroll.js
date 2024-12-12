@@ -1,3 +1,5 @@
+'use client'
+
 import Image from 'next/image';
 import gridLines from '../../../../../public/investor-assets/investor-grid-lines.svg';
 import defaultImageIcon from '../../../../../public/investor-assets/default-img-icon.svg';
@@ -257,7 +259,7 @@ export const InvertmentBridgeGrowth = () => {
     useEffect(() => {
         let scrollTriggerInstance;
         let previousIndex = -1; // Initialize previousIndex to track state
-    
+
         if (sendInvestor.current) {
             scrollTriggerInstance = ScrollTrigger.create({
                 trigger: sendInvestor.current,
@@ -268,7 +270,7 @@ export const InvertmentBridgeGrowth = () => {
                 pinSpacing: true,
                 markers: false,
                 onUpdate: (self) => {
-                    const progressRanges = [0.11, 0.22, 0.33, 0.44, 0.55, 0.66, 0.77, 0.88, 0.99];
+                    const progressRanges = [0.11, 0.21, 0.32, 0.42, 0.53, 0.63, 0.74, 0.84, 0.95, 0.99];
                     let currentIndex = -1;
                 
                     // Determine the current index based on progress ranges
@@ -279,10 +281,10 @@ export const InvertmentBridgeGrowth = () => {
                         }
                     }
                 
-                    if (currentIndex !== previousIndex && currentIndex >= 0 && currentIndex <= 7) {
+                    if (currentIndex !== previousIndex && currentIndex >= 0 && currentIndex <= 8) {
                         setActiveTabIndex(currentIndex); // Update state for the active tab
                         setPreviousTabIndex(previousIndex);
-                
+                        handleSlideChange(previousIndex, currentIndex);
                         previousIndex = currentIndex; // Update previous index
                     }
                 },                
@@ -335,7 +337,7 @@ export const InvertmentBridgeGrowth = () => {
                                     height={100}
                                 />
                             </div>
-                            <div className='max-w-screen-xl mx-auto h-full'>
+                            <div className='h-full w-full'>
                                 <div id='send-investor' className='2xl:mx-40 xl:mx-20 mx-9 xl:my-32 lg:my-28 md:my-16 my-8 relative z-20 bg-black border-2 border-green rounded-lg'>
                                     <div className='grid lg:grid-cols-2 grid-cols-1'>
                                         <div className='lg:bg-green bg-black lg:rounded-none rounded-lg sm:pl-9 pl-3 lg:pr-0 sm:pr-9 pr-3 py-10 text-black'>
