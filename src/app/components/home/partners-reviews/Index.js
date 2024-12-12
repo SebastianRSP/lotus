@@ -50,7 +50,7 @@ const partners = [
         partnerName: 'Clearsky',
         partnerIcon: Clearskye,
         face: '/new-home-assets/profiles/FTHFACE.jpg',
-        width: 75,
+        width: 115,
         height: 53,
         testimonial: '“This bridge serves as a nexus for technology, community, and innovation, unlocking the full potential of blockchain technology for data protection, archiving, and recovery solutions.”',
         person: "Rich Van Duysen",

@@ -55,7 +55,7 @@ export const newHomePageAnimation = () => {
         timeline.fromTo(body, { opacity: 0 }, { opacity: 1, duration: .0625, ease: "power4.in" });
         timeline.delay(.25);
         timeline.set(loader, { background: '#fff', y: 0, opacity: 1 });
-        
+
         // Make the SVG visible before starting the animation
         timeline.set("#left-leaf, #middle-leaf, #right-leaf", { visibility: "visible" });
 
@@ -99,12 +99,20 @@ export const newHomePageAnimation = () => {
                 cards.forEach(card => {
                     gsap.fromTo(
                         card,
-                        { x: '-100%', opacity: 0 }, // Initial state
+                        // if you want to slide in from X axis
+                        // { x: '-100%', opacity: 0 }, // Initial state
+                        // if you want to just fade in
+                        { y: '15%' ,opacity: 0 }, // Initial state
                         {
-                            x: '0%',
+                            // if you want to slide in from X axis
+                            // opacity: 1,
+                            // duration: 1,
+                            // ease: 'power2.out',
+                            // if you want to just fade in
+                            y: '0%',
+                            duration: 0.7,
+                            ease: "sine.out",
                             opacity: 1,
-                            duration: 1,
-                            ease: 'power2.out',
                             scrollTrigger: {
                                 trigger: card,          // Trigger on each card
                                 start: 'top 70%',
@@ -380,26 +388,26 @@ const startBridgeAnimation = (bridgeSection) => {
 
             if (self.progress >= 0.025) {
                 const coverObjectProgress = gsap.utils.normalize(0.025, 0.5, self.progress);
-            
+
                 // Calculate initial width and height in pixels
                 const viewportWidth = window.innerWidth;
                 const initialSize = (8.3333 * 0.8333 * viewportWidth) / 100; // Calculate in pixels (convert from vw to px)
-            
+
                 // Gradually reduce width of vertical black layers
                 verticalBlackLayers.forEach((layer) => {
                     const newWidth = gsap.utils.interpolate(initialSize, 0, coverObjectProgress); // Interpolate from initial width to 0 based on progress
-            
+
                     // Use GSAP `to` with a tolerance to ensure smooth and accurate transformation
                     gsap.to(layer, {
                         width: newWidth < 1 ? 0 : newWidth, // If value is less than 1px, force it to 0
                         duration: 0.1, // Quick animation for smoother transition
                     });
                 });
-            
+
                 // Gradually reduce height of horizontal black layers
                 horizentalBlackLayers.forEach((layer) => {
                     const newHeight = gsap.utils.interpolate(initialSize, 0, coverObjectProgress); // Interpolate from initial height to 0 based on progress
-            
+
                     // Use GSAP `to` with a tolerance to ensure smooth and accurate transformation
                     gsap.to(layer, {
                         height: newHeight < 1 ? 0 : newHeight, // If value is less than 1px, force it to 0
@@ -410,14 +418,14 @@ const startBridgeAnimation = (bridgeSection) => {
                 // Reset the layers to their original size when progress is below the threshold
                 const viewportWidth = window.innerWidth;
                 const initialSize = (8.3333 * 0.8333 * viewportWidth) / 100; // Initial size in pixels
-            
+
                 verticalBlackLayers.forEach((layer) => {
                     gsap.to(layer, {
                         width: `${initialSize}px`,
                         duration: 0.1, // Quick reset animation
                     });
                 });
-            
+
                 horizentalBlackLayers.forEach((layer) => {
                     gsap.to(layer, {
                         height: `${initialSize}px`,
@@ -425,7 +433,7 @@ const startBridgeAnimation = (bridgeSection) => {
                     });
                 });
             }
-            
+
 
             if (self.progress >= 0.2) {
                 const colorChangeProgress = gsap.utils.normalize(0.2, .5, self.progress); // Normalize progress between 0.8 and 1

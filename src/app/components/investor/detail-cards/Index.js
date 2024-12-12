@@ -111,8 +111,8 @@ export const DetailCards = () => {
                         key={`dataMigration-${index}`}
                     >
                         <CardBackground>
-                            <div className="flex w-20 h-20 m-auto relative justify-center items-end justify-self-center">
-                                <div className="absolute w-40 h-32">
+                            <div className="flex w-40 h-[10rem] m-auto relative justify-center items-end">
+                                <div className="absolute">
                                     <Lottie animationData={dataMigration.lottieAnimation} loop={true} />
                                 </div>
                             </div>

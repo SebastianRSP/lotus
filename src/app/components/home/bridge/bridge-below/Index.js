@@ -62,7 +62,7 @@ export const BridgeBelow = () => {
                         {cardDetails.map((cardDetail, index) => (
                             <BridgeCard key={index}>
                                 <div className="grid md:grid-cols-2 grid-cols-1 justify-center items-center 2xl:py-24 md:py-12 py-8 md:px-0 px-5">
-                                {(index % 2 === 0 || isMobile) ? (
+                                    {(index % 2 === 0 || isMobile) ? (
                                         <>
                                             {/* Image Left */}
                                             <div className="md:my-0 my-10">
@@ -75,18 +75,18 @@ export const BridgeBelow = () => {
                                             </div>
                                             {/* Text Right */}
                                             <div className="flex flex-col justify-between gap-3 text-left lg:w-1/1 md:w-11/12 w-full">
-                                            <div className="flex items-center gap-3">
-    <img 
-        src={cardDetail.smallIcon} 
-        alt={`${cardDetail.category} icon`}
-        width={20} 
-        height={20} 
-        className="flex-shrink-0"
-    />
-                                                <h4 className="text-2xl font-300 2xl:leading-42 lg:leading-9 leading-30 text-green 2xl:w-3/4 lg:w-4/5 w-5/6">
-                                                {cardDetail.category}
-    </h4>
-    </div>
+                                                <div className="flex items-center gap-3">
+                                                    <img
+                                                        src={cardDetail.smallIcon}
+                                                        alt={`${cardDetail.category} icon`}
+                                                        width={20}
+                                                        height={20}
+                                                        className="flex-shrink-0"
+                                                    />
+                                                    <h4 className="text-2xl font-300 2xl:leading-42 lg:leading-9 leading-30 text-green 2xl:w-3/4 lg:w-4/5 w-5/6">
+                                                        {cardDetail.category}
+                                                    </h4>
+                                                </div>
                                                 <p className="2xl:text-2xl lg:text-xl text-base text-white font-light">
                                                     {cardDetail.description}
                                                 </p>
@@ -96,18 +96,18 @@ export const BridgeBelow = () => {
                                         <>
                                             {/* Text Left */}
                                             <div className="flex flex-col justify-between gap-3 text-left lg:w-1/1 md:w-11/12 w-full md:px-[50px]">
-                                            <div className="flex items-center gap-3">
-    <img 
-        src={cardDetail.smallIcon} 
-        alt={`${cardDetail.category} icon`}
-        width={20} 
-        height={20} 
-        className="flex-shrink-0"
-    />
-                                                <h4 className="text-2xl font-300 2xl:leading-42 lg:leading-9 leading-30 text-green 2xl:w-3/4 lg:w-4/5 w-5/6">
-                                                {cardDetail.category}
-    </h4>
-</div>
+                                                <div className="flex items-center gap-3">
+                                                    <img
+                                                        src={cardDetail.smallIcon}
+                                                        alt={`${cardDetail.category} icon`}
+                                                        width={20}
+                                                        height={20}
+                                                        className="flex-shrink-0"
+                                                    />
+                                                    <h4 className="text-2xl font-300 2xl:leading-42 lg:leading-9 leading-30 text-green 2xl:w-3/4 lg:w-4/5 w-5/6">
+                                                        {cardDetail.category}
+                                                    </h4>
+                                                </div>
 
 
                                                 <p className="2xl:text-2xl lg:text-xl text-base text-white font-light">

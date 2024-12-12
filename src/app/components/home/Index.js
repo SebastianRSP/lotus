@@ -51,7 +51,7 @@ export const IndexHome = () => {
                 {/* White Strap */}
                 <WhiteStrap />
                 {/* max-w-screen-xl mx-auto */}
-                <div className=" grid grid-cols-12 h-full  justify-end items-end max-w-screen-xl mx-auto">
+                <div className=" grid grid-cols-12 h-full  justify-end items-end 2xl:max-w-screen-2xl xl:max-w-screen-xl mx-auto">
                     {/* 2xl:gap-4.5 xl:gap-0 md:gap-12 gap-0 gap-[18rem] md:gap-[5rem] */}
                     <div className="pt-9 2xl:col-span-5 md:col-span-6 col-span-12 grid content-between h-full relative md:grid md:mx-auto md:h-auto md:gap-20 gap-72 m-auto md:min-w-[500px]">
                         {/* self-end */}
