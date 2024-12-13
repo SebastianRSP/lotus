@@ -12,7 +12,7 @@ import { SlickSlider } from '../../slick-slider/SlickSlider';
 import { SenDataArrow } from '../../svgs/SenDataArrow';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
-import { ScrollTrigger } from 'gsap/all';
+import { ScrollTrigger, ScrollToPlugin } from 'gsap/all';
 
 
 const growthTabs = [
@@ -132,11 +132,11 @@ const tabData = [
 
 export const InvertmentBridgeGrowth = () => {
 
-    gsap.registerPlugin(ScrollTrigger)
+    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 
     const [activeTab, setActiveTab] = useState(null); // Track active tab
     const [translateY, setTranslateY] = useState(0); // Track Y position for animation
-    const [isFirstClick, setIsFirstClick] = useState(true);
+    // const [isFirstClick, setIsFirstClick] = useState(true);
     const [activePercentage, setActivePercentage] = useState(0);
     const [activeTabIndex, setActiveTabIndex] = useState(0);
     const [previousTabIndex, setPreviousTabIndex] = useState(0);
@@ -145,6 +145,9 @@ export const InvertmentBridgeGrowth = () => {
     const activeSendTab = useRef([]);
     const autoSwitchTimeout = useRef(null);
     const sendInvestor = useRef(null);
+    const isFirstClickRef = useRef(true);
+    const previousIndexRef = useRef(-1);
+    const scrollTriggerRef = useRef(null);
 
     const animateTab = async (element, fromVars, toVars) => {
         return new Promise((resolve) => {
@@ -181,36 +184,58 @@ export const InvertmentBridgeGrowth = () => {
 
         setActiveTab(selectedTab);
 
-        const previousTabIndex = tabData.findIndex(tab => tab.title === activeTab);
+        const previousIndex = tabData.findIndex(tab => tab.title === activeTab);
         const itemIndex = tabData.findIndex(item => item.title === selectedTab);
         const filteredItem = tabData.filter(item => item.title === selectedTab);
 
         if (itemIndex !== -1 && boxLengthRef.current) {
-            const targetPosition = -(itemIndex + 1) * boxLengthRef.current.offsetHeight;
-            setTranslateY(targetPosition);
+            // const targetPosition = -(itemIndex + 1) * boxLengthRef.current.offsetHeight;
+            // setTranslateY(targetPosition);
+
+            // Update scroll position if scrollTriggerInstance is provided
+            if (scrollTriggerRef.current) {
+                const progressRanges = [0.11, 0.21, 0.32, 0.42, 0.53, 0.63, 0.74, 0.84, 0.95, 0.99];
+                const targetProgress = progressRanges[itemIndex + 1]; // Correctly index the desired tab
+
+                console.log(targetProgress, 'targetProgress')
+
+                if (targetProgress !== undefined) {
+                    const targetScroll = scrollTriggerRef.current.start + targetProgress * (scrollTriggerRef.current.end - scrollTriggerRef.current.start);
+
+                    console.log(targetScroll, 'targetScroll')
+
+                    // Smooth scroll to the exact position of the selected tab
+                    gsap.to(window, {
+                        scrollTo: { y: targetScroll },
+                        duration: 1.5
+                    });
+                }
+            }
+
+
             setActivePercentage(filteredItem[0].percentage);
             setActiveTabIndex(itemIndex);
-            setPreviousTabIndex(previousTabIndex);
+            setPreviousTabIndex(previousIndex);
 
             // Play the initial animation on first click
-            if (isFirstClick && totalSupplyRef.current) {
+            if (isFirstClickRef.current && totalSupplyRef.current) {
                 gsap.fromTo(
                     totalSupplyRef.current,
                     { opacity: 0 },
                     { opacity: 1, duration: 1 }
                 );
-                setIsFirstClick(false);
+                isFirstClickRef.current = false; // Update the ref
             }
 
             // Animate out the previous tab, then hide it completely to avoid duplication
-            if (previousTabIndex !== -1 && activeSendTab.current[previousTabIndex]) {
-                gsap.to(activeSendTab.current[previousTabIndex], {
+            if (previousIndex !== -1 && activeSendTab.current[previousIndex]) {
+                gsap.to(activeSendTab.current[previousIndex], {
                     opacity: 0,
                     x: -44, // Exit offset for the animation
                     duration: 1,
                     onComplete: () => {
                         // Set previous tab element to be fully hidden and reset position
-                        gsap.set(activeSendTab.current[previousTabIndex], { opacity: 0, x: 0 });
+                        gsap.set(activeSendTab.current[previousIndex], { opacity: 0, x: 0 });
                     }
                 });
             }
@@ -224,16 +249,55 @@ export const InvertmentBridgeGrowth = () => {
                     { opacity: 1, x: 44, duration: 1 }
                 );
             }
+
         }
     };
 
-    const handleSlideChange = async (oldIndex, newIndex) => {
-        const filteredItem = getObjectByIndex(newIndex).percentage;
+    const handleSlideChange = async (oldIndex, newIndex, previousIndexRef) => {
         const filteredItemTitle = getObjectByIndex(newIndex).title;
-        setActiveTab(filteredItemTitle);
+        if (filteredItemTitle === activeTab) return;
+
+        const filteredItem = getObjectByIndex(newIndex).percentage;
         setActivePercentage(filteredItem);
         setActiveTabIndex(newIndex);
         setPreviousTabIndex(oldIndex);
+        setActiveTab(filteredItemTitle);
+
+        previousIndexRef.current = oldIndex;
+
+        // Play the initial animation on first click
+        if (isFirstClickRef.current && totalSupplyRef.current) {
+            gsap.fromTo(
+                totalSupplyRef.current,
+                { opacity: 0 },
+                { opacity: 1, duration: 1 }
+            );
+            isFirstClickRef.current = false; // Update the ref
+        }
+
+        // Animate out the previous tab, then hide it completely to avoid duplication
+        if (previousIndexRef.current !== -1 && activeSendTab.current[previousIndexRef.current]) {
+            gsap.to(activeSendTab.current[previousIndexRef.current], {
+                opacity: 0,
+                x: -44, // Exit offset for the animation
+                duration: 1,
+                onComplete: () => {
+                    // Set previous tab element to be fully hidden and reset position
+                    gsap.set(activeSendTab.current[previousIndexRef], { opacity: 0, x: 0 });
+                }
+            });
+        }
+
+        // Wait for the current tab element to be available, then animate it
+        const element = await waitForElement(activeSendTab, newIndex);
+        if (element) {
+            await animateTab(
+                element,
+                { opacity: 0, x: 0 },
+                { opacity: 1, x: 44, duration: 1 }
+            );
+        }
+
     }
 
     useEffect(() => {
@@ -256,7 +320,7 @@ export const InvertmentBridgeGrowth = () => {
     }, [activeTab]);
 
 
-    useEffect(() => {
+    useGSAP(() => {
         let scrollTriggerInstance;
         let previousIndex = -1; // Initialize previousIndex to track state
 
@@ -264,7 +328,7 @@ export const InvertmentBridgeGrowth = () => {
             scrollTriggerInstance = ScrollTrigger.create({
                 trigger: sendInvestor.current,
                 start: "center center",
-                end: "+=5000", // Total scroll range
+                end: "+=8000", // Total scroll range
                 scrub: true, // Smooth animation linked to scrolling
                 pin: true,
                 pinSpacing: true,
@@ -272,7 +336,7 @@ export const InvertmentBridgeGrowth = () => {
                 onUpdate: (self) => {
                     const progressRanges = [0.11, 0.21, 0.32, 0.42, 0.53, 0.63, 0.74, 0.84, 0.95, 0.99];
                     let currentIndex = -1;
-                
+
                     // Determine the current index based on progress ranges
                     for (let i = 0; i < progressRanges.length; i++) {
                         if (self.progress >= progressRanges[i] && self.progress < (progressRanges[i + 1] || 10)) {
@@ -280,19 +344,20 @@ export const InvertmentBridgeGrowth = () => {
                             break;
                         }
                     }
-                
+
                     if (currentIndex !== previousIndex && currentIndex >= 0 && currentIndex <= 8) {
-                        setActiveTabIndex(currentIndex); // Update state for the active tab
-                        setPreviousTabIndex(previousIndex);
-                        handleSlideChange(previousIndex, currentIndex);
+                        // setActiveTabIndex(currentIndex); // Update state for the active tab
+                        // setPreviousTabIndex(previousIndex);
+                        handleSlideChange(previousIndex, currentIndex, previousIndexRef);
                         previousIndex = currentIndex; // Update previous index
                     }
-                },                
+                },
             });
+            scrollTriggerRef.current = scrollTriggerInstance;
         }
 
         ScrollTrigger.refresh();
-    
+
         // Cleanup to prevent multiple ScrollTrigger instances
         return () => {
             if (scrollTriggerInstance) {
@@ -300,7 +365,7 @@ export const InvertmentBridgeGrowth = () => {
             }
         };
     }, [sendInvestor]); // Re-run the effect if `sendInvestor` changes
-    
+
 
     return (
         <>
@@ -321,11 +386,11 @@ export const InvertmentBridgeGrowth = () => {
                             <div className="grid lg:grid-cols-12 grid-cols-1 lg:gap-0 md:gap-8 gap-4 lg:mt-16 sm:mt-8 mt-4">
                                 {/* <h3 className="2xl:text-5xl xl:text-4xl lg:text-3xl text-xl 2xl:leading-60 xl:leading-48 lg:leading-42 leading-8 font-extralight lg:col-span-8 lg:w-11/12 w-11/12"> */}
                                 <h3 className="2xl:text-5xl xl:text-4xl lg:text-3xl text-xl 2xl:leading-60 xl:leading-48 lg:leading-42 leading-8 font-extralight lg:col-span-8 lg:w-full md:w-11/12 w-full">
-                                Designed to drive engagement, rewards participation, and foster growth
-                                within <br className='lg:block hidden' /><span className="font-bold">The Bridge<sup>TM</sup></span>  ecosystem.
+                                    Designed to drive engagement, rewards participation, and foster growth
+                                    within <br className='lg:block hidden' /><span className="font-bold">The Bridge<sup>TM</sup></span>  ecosystem.
                                 </h3>
                                 <p className="2xl:text-2xl xl:text-base lg:text-sm text-xs lg:justify-self-end lg:col-span-4 lg:w-full w-11/12">
-                                The Bridge™ integrates AI-powered analytics with on-chain tracking to ensure data transactions are transparent, traceable, and trusted. By validating data quality and storage providers, we offer unbiased intelligence to help participants make informed decisions.                    </p>
+                                    The Bridge™ integrates AI-powered analytics with on-chain tracking to ensure data transactions are transparent, traceable, and trusted. By validating data quality and storage providers, we offer unbiased intelligence to help participants make informed decisions.                    </p>
                             </div>
                         </div>
                         <div ref={sendInvestor} className='flex justify-center items-center relative '>
@@ -368,10 +433,8 @@ export const InvertmentBridgeGrowth = () => {
                                                 <div className="2xl:col-span-3 sm:col-span-4 sm:block hidden border-send-bridge">
                                                     {growthTabs.map((tab, index) => (
                                                         <div key={index} className="flex gap-6 items-center">
-                                                            <span className={`${activeTab === tab ? 'lg:bg-black bg-green' : 'bg-[#00BE00]'} w-2 h-2 -ml-1`}></span>
-                                                            <span
-                                                                className={`${activeTab === tab ? 'opacity-100' : 'opacity-30'} 2xl:text-lg text-sm lg:text-black text-green 2xl:leading-60 leading-48`}
-                                                            >
+                                                            <span className={`${activeTab === tab ? 'lg:bg-black bg-green' : 'bg-[#00BE00]'} w-2 h-2 -ml-1 cursor-pointer`}></span>
+                                                            <span onClick={() => handleTabActive(tab)} className={`${activeTab === tab ? 'opacity-100' : 'opacity-30'} 2xl:text-lg text-sm lg:text-black text-green 2xl:leading-60 leading-48 cursor-pointer`}>
                                                                 {tab}
                                                             </span>
                                                         </div>

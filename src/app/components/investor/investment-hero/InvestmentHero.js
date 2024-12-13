@@ -7,7 +7,7 @@ import Spline from '@splinetool/react-spline';
 export const InvestmentHero = () => {
     return (
         <>
-            <section id="home-hero-bg" className="investor-hero-bg relative">
+            <section id="investor-hero-bg" className="investor-hero-bg relative">
                 {/* max-w-screen-xl m-auto */}
                 <div className="2xl:px-20 xl:px-20 px-9 h-screen text-white grid grid-cols-1 md:grid-cols-2 items-center md:pt-0 pt-7.3r md:gap-10 gap- max-w-screen-xl mx-auto">
                     {/* Left Section: Text */}

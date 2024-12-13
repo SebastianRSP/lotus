@@ -1276,7 +1276,8 @@ max-height: 600px;
   height: 88%;
 }
 .tabbed {
-  border-width: 1px;
+  border-top: 1.5px solid black;
+  border-bottom: 1.5px solid black;
   transition: border-width 0.3s ease;
 }
 

@@ -37,6 +37,7 @@ export const newHomePageAnimation = () => {
             gsap.set("#middle-leaf", { transformOrigin: "center center", rotate: -100, x: -20, y: 50, });
             gsap.set("#right-leaf", { transformOrigin: "center center", rotate: -100, x: -40, y: 50, });
             gsap.set("#home-hero-bg", { transformOrigin: "center center", y: '50%', opacity: 0 });
+            gsap.set("#investor-hero-bg", { transformOrigin: "center center", y: '3%', opacity: 0 });
             // x: '-200%', if we mode the hero text and buttom from right to left as per the XD file
             gsap.set("#home-hero-heading", { transformOrigin: "center center", opacity: 0 });
             gsap.set("#home-hero-paragraph", { transformOrigin: "center center", opacity: 0 });
@@ -70,6 +71,7 @@ export const newHomePageAnimation = () => {
             .to(loader, { y: '-100%', opacity: 0.5, duration: 0.8, ease: "power1.inOut" })
             .to("#left-leaf, #middle-leaf, #right-leaf", { opacity: 0, duration: 0.4, ease: "power1.inOut" }, "<")
             .to("#home-hero-bg", { y: '0%', opacity: 1, duration: 1, ease: "back.inOut" }, "<")
+            .to("#investor-hero-bg", { y: '0%', opacity: 1, duration: 1, ease: "back.inOut" }, "<")
             .to(".link-animation", { y: 0, duration: 1.2, ease: "back.inOut", opacity: 1 }, "<")
             .to("#home-hero-heading", { duration: 0.9, ease: "sine.inOut", opacity: 1 })
             .to("#home-hero-paragraph", { duration: 0.9, ease: "sine.inOut", opacity: 1 }, "<")
