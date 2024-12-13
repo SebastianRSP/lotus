@@ -31,7 +31,7 @@ export const InvestmentHero = () => {
                     {/* Right Section: Spline */}
                     <div className="flex justify-center items-center">
                         <div className="investorSpline w-[400px] h-[400px] md:w-[500px] md:h-[500px] lg:w-[600px] lg:h-[600px] pointer-events-none justify-center items-center">
-                            <Spline className="md:block hidden" scene="https://prod.spline.design/kEtlKqJ1tYUNBplv/scene.splinecode" />
+                            <Spline scene="https://prod.spline.design/kEtlKqJ1tYUNBplv/scene.splinecode" />
                         </div>
                     </div>
                 </div>
