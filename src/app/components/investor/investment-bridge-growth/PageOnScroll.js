@@ -320,7 +320,7 @@ export const InvertmentBridgeGrowth = () => {
     }, [activeTab]);
 
 
-    useGSAP(() => {
+    useEffect(() => {
         let scrollTriggerInstance;
         let previousIndex = -1; // Initialize previousIndex to track state
 
