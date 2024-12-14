@@ -62,6 +62,7 @@ export const newHomePageAnimation = () => {
 
         // Start the animation after a short delay
         timeline
+            .to('#leaf-logo', {autoAlpha: 1})
             .to("#left-leaf", { rotate: 0, x: 0, y: 0, opacity: 1, duration: .8, ease: "power2.out" })
             .to("#middle-leaf", { rotate: 0, x: 0, y: 0, opacity: 1, duration: .9, ease: "power2.out" }, "<")
             .to("#right-leaf", { rotate: 0, x: 0, y: 0, opacity: 1, duration: 1, ease: "power2.out" }, "<")
