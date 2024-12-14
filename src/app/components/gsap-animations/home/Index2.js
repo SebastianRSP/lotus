@@ -37,7 +37,7 @@ export const newHomePageAnimation = () => {
             gsap.set("#middle-leaf", { transformOrigin: "center center", rotate: -100, x: -20, y: 50, });
             gsap.set("#right-leaf", { transformOrigin: "center center", rotate: -100, x: -40, y: 50, });
             gsap.set("#home-hero-bg", { transformOrigin: "center center", y: '50%', opacity: 0 });
-            gsap.set("#investor-hero-bg", { transformOrigin: "center center", y: '3%', opacity: 0 });
+            gsap.set("#investor-hero-bg", { transformOrigin: "center center", y: '5%', opacity: 0 });
             // x: '-200%', if we mode the hero text and buttom from right to left as per the XD file
             gsap.set("#home-hero-heading", { transformOrigin: "center center", opacity: 0 });
             gsap.set("#home-hero-paragraph", { transformOrigin: "center center", opacity: 0 });
