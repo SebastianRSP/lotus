@@ -11,7 +11,7 @@ const faqData = [
     },
     {
         question: 'Who is Lotus Data Group?',
-        answer: 'Lotus Data Group is the creator of The Bridge, dedicated to developing interoperable data solutions. We empower enterprises and institutions to manage their data as an asset class with cutting-edge tools and governance frameworks."'
+        answer: 'Lotus Data Group is the creator of The Bridge, dedicated to developing interoperable data solutions. We empower enterprises and institutions to manage their data as an asset class with cutting-edge tools and governance frameworks.'
     },
     {
         question: 'What problem does The Bridge solve?',
@@ -19,11 +19,11 @@ const faqData = [
     },
     {
         question: 'How does The Bridge ensure data integrity and compliance?',
-        answer: 'The Bridge uses a standardized on-chain protocol with Bridge ID for validation. This ensures that data remains consistent “across platforms, helping validate storage providers are meeting regulatory standard like HIPAA, ISO, and SOC2.'
+        answer: 'The Bridge uses a standardized on-chain protocol with Bridge ID for validation. This ensures that data remains consistent across platforms, helping validate storage providers are meeting regulatory standard like HIPAA, ISO, and SOC2.'
     },
     {
         question: 'What makes data a tradeable asset class?',
-        answer: 'The Bridge enable organisations to transparantly govern, manage and rate their data storage quality. This allows companies to assign value to their data assets, paving the way for financial instruments like data-backed loans or securitized portfolios to emerge in the future.'
+        answer: 'The Bridge enables organisations to transparantly govern, manage, and rate their data storage quality. This allows companies to assign value to their data assets, paving the way for financial instruments like data-backed loans or securitized portfolios to emerge in the future.'
     },
     {
         question: 'What is the roadmap for The Bridge?',
@@ -43,7 +43,7 @@ const faqData = [
     },
     {
         question: 'How do I get started with The Bridge?',
-        answer: 'You can book a consultation to discuss your data management strategy. Our team will guide you through unifying, governing, and managing your data assets” or unifying, governing, and ensurign your data assets are ready to be monetized in the future.'
+        answer: 'You can book a consultation to discuss your data management strategy. Our team will guide you through unifying, governing, and managing your data assets.'
     }
 ];
 

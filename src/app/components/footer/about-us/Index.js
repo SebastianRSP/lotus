@@ -13,13 +13,13 @@ const footerMenu1 = [
     { linkName: 'Home', goTo: '/' },
     { linkName: 'The Bridge', goTo: '#' },
     { linkName: 'Testimonials', goTo: '#' },
-    { linkName: 'Al Tool', goTo: '#' },
+    { linkName: 'Al Tools', goTo: '#' },
     { linkName: 'Partners', goTo: '#' },
     { linkName: 'FAQs', goTo: '#faqs' }
 ]
 const footerMenu2 = [
     { linkName: 'Investors', goTo: '/investors' },
-    { linkName: '$Send Token', goTo: '#' },
+    { linkName: '$BRIDGE Token', goTo: '#' },
     { linkName: 'Why Tokenize', goTo: '#' },
     { linkName: 'Investors', goTo: '/investors' }
 ]
