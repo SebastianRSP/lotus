@@ -1,9 +1,20 @@
 import telegram from '../../../../public/icons/telegram.svg';
 import greenTelegram from '../../../../public/icons/green-telegram.svg';
 
+const whitepaper = '/PDF/Whitepaper.pdf';
+const litepaper = '/PDF/Litepaper.pdf';
+
 export const navLinksBefore = [
     { navLinkName: 'HOME', navLink: '/', extras: `` },
-    { navLinkName: 'LIGHTPAPER', navLink: '#', extras: `` },
+    {
+        navLinkName: 'DOCUMENTS',
+        navLink: '#',
+        extras: 'relative group',
+        dropdown: [
+            { name: 'Whitepaper', link: whitepaper },
+            { name: 'Litepaper', link: litepaper },
+        ],
+    },
     { navLinkName: 'INVESTORS', navLink: '/investors', extras: `` }
 ];
 
@@ -24,7 +35,8 @@ export const mobileNavIcons = [
 
 export const mobileMenu = [
     { navLinkName: 'HOME', navLink: '/', extras: '' },
-    { navLinkName: 'Whitepaper', navLink: '#', extras: '' },
+    { navLinkName: 'Whitepaper', navLink: whitepaper, extras: '', target: '_blank' },
+    { navLinkName: 'Litepaper', navLink: litepaper, extras: '', target: '_blank' },
     { navLinkName: 'Investors', navLink: '/investors', extras: '' },
     { navLinkName: 'About Us', navLink: '/about-us', extras: '' },
     { navLinkName: 'Connect with us', navLink: '#', extras: '' }

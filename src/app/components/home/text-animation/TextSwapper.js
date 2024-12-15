@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 const industryNames = [
     "Fintech",
-    "Pharmaceutical",
+    "Biotech",
     "Cybersecurity",
     "Retail",
     "Universities",

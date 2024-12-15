@@ -15,32 +15,36 @@ import { Lotus } from '../../svgs/Lotus';
 import { Telegram } from '../../svgs/Telegram';
 import { handleRouteClick } from '@/app/utils/navigationUtils';
 
-
 export const HomeNavbar = () => {
-
     const pathname = usePathname();
     const router = useRouter();
 
     // Determine the layout based on the current path
     const darkRoutes = ['/about-us', '/investors'];
     const isDark = darkRoutes.some(route => pathname.startsWith(route));
-
     const isDarkLogo = pathname.startsWith('/investors');
-
 
     const [isOpen, setIsOpen] = useState(false);
     const [scrollY, setScrollY] = useState(0);
-    const [showNavbar, setShowNavbar] = useState(true);
     const [navbarStyle, setNavbarStyle] = useState('original'); // 'original' | 'hidden' | 'new'
-
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
     const handleToggle = (navLink) => {
-        setIsOpen(!isOpen);
-        if(navLink){
+        setIsOpen(!isOpen); // Toggles the menu state
+        if (navLink) {
             setTimeout(() => {
-                handleRouteClick(router, pathname, navLink);
-            },450);
+                handleRouteClick(router, pathname, navLink); // Navigates after toggling
+            }, 450);
         }
+    };
+    
+
+    const handleMouseEnter = () => {
+        setIsDropdownOpen(true);
+    };
+
+    const handleMouseLeave = () => {
+        setIsDropdownOpen(false);
     };
 
     useEffect(() => {
@@ -65,28 +69,56 @@ export const HomeNavbar = () => {
     return (
         <>
             <nav className='fixed slide-up w-full'>
-                {/* Desktop Vesion */}
+                {/* Desktop Version */}
                 <div className={`hidden md:!block desktop-nav 2xl:px-20 lg:px-11 px-5 middle-scroll`}>
-                    {/* border border-black bg-yellowLight shadow-outer*/}
                     <div className={`absolute bg-white/70 2xl:h-36 xl:h-28 h-24 bg-no-repeat bg-origin-padding filter backdrop-blur-30 shadow-sm inset-0 origin-top z-10 desktop-nav-bg`}></div>
-                    <div className={`w-full grid lg:grid-cols-3 grid-cols-10 grid-flow-col items-center text-center 2xl:h-44 lg:h-36 h-28 relative z-50 overflow-hidden`}>
+                    <div className={`w-full grid lg:grid-cols-3 grid-cols-10 grid-flow-col items-center text-center 2xl:h-44 lg:h-36 h-28 relative z-50 overflow-visible`}>
                         <div className='lg:col-span-1 col-span-4'>
-                            <div className="grid grid-cols-3 items-center h-inherit w-available">
-                                {navLinksBefore.map((navLink, index) => (
-                                    <HomeNavLink
-                                        key={index}
-                                        id={index}
-                                        navLinkName={navLink.navLinkName}
-                                        navLink={navLink.navLink}
-                                        extras={navLink.extras}
-                                        isDark={isDark}
-                                    />
-                                ))}
-                            </div>
+                        <div className="grid grid-cols-3 items-center h-inherit w-available">
+    {navLinksBefore.map((navLink, index) => (
+        <div
+    key={index}
+    className={`relative ${navLink.extras}`} // Ensure relative positioning
+    onMouseEnter={() => navLink.dropdown && setIsDropdownOpen(true)}
+    onMouseLeave={() => navLink.dropdown && setIsDropdownOpen(false)}
+>
+    <HomeNavLink
+        id={index}
+        navLinkName={navLink.navLinkName}
+        navLink={navLink.navLink}
+        extras={navLink.extras}
+        isDark={isDark}
+    />
+    {/* Dropdown Menu */}
+    {navLink.dropdown && (
+        <div
+            className={`absolute top-full left-0 bg-white shadow-md rounded-md z-50 w-full
+            transition-opacity duration-300 ${isDropdownOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+        >
+            <ul className="flex flex-col">
+                {navLink.dropdown.map((dropdownItem, subIndex) => (
+                    <li key={subIndex} className="px-4 py-2 whitespace-nowrap">
+                        <a
+                            href={dropdownItem.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-black hover:text-green-500 transition-colors duration-300 link-home-hover"
+                        >
+                            {dropdownItem.name}
+                        </a>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    )}
+</div>
+
+    ))}
+</div>
+
+
                         </div>
-                        {/*  */}
                         <div className={`lg:col-span-1 col-span-2 isScroll-logo-middle -mt-18`}>
-                            {/* border border-y-0 border-x-black */}
                             <div className="flex items-center w-full justify-center h-inherit">
                                 <div className={`logo-container link-animation items-center`}>
                                     <Logo iconColor={`${isDarkLogo ? 'fill-white' : 'fill-black'} `} />
@@ -188,5 +220,5 @@ export const HomeNavbar = () => {
                 </div>
             </nav>
         </>
-    )
-}
+    );
+};

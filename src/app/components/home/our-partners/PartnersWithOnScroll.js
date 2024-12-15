@@ -12,7 +12,7 @@ import AWS from '../../../../../public/new-home-assets/icons/aws.svg';
 import Azure from '../../../../../public/new-home-assets/icons/azure.svg';
 import Sia from '../../../../../public/new-home-assets/icons/sia.svg';
 import Storj from '../../../../../public/new-home-assets/icons/storj.svg';
-import Cloudskye from '../../../../../public/new-home-assets/icons/cloudskye.svg';
+import Cloudsky from '../../../../../public/new-home-assets/icons/ClearSky2.png';
 import Bloczio from '../../../../../public/new-home-assets/icons/bloczio.svg';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -27,7 +27,7 @@ export const OurPartners = () => {
         { partnerName: 'Storj', partnerIcon: Storj, width: 103, height: 50 },
         { partnerName: 'AWS', partnerIcon: AWS, width: 41, height: 50 },
         { partnerName: 'Azure', partnerIcon: Azure, width: 100, height: 50 },
-        { partnerName: 'Cloudskye', partnerIcon: Cloudskye, width: 68, height: 50 },
+        { partnerName: 'Cloudsky', partnerIcon: Cloudskye, width: 68, height: 50 },
         { partnerName: 'Bloczio', partnerIcon: Bloczio, width: 120, height: 50 },
         { partnerName: 'FileCoin', partnerIcon: FileCoin, width: 120, height: 50 },
     ];

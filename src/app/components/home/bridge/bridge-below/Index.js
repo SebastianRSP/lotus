@@ -148,7 +148,7 @@ export const BridgeBelow = () => {
                             Annual cost of poor <br /> data management practices <br /> in the United States.
                         </p>
                     </div>
-                    <div className="2xl:py-24 py-12 lg:border-x border border-opacity-20 border-green flex flex-col gap-5 justify-center">
+                    <div className="2xl:py-24 py-12 lg:border-x border border-opacity-20 border-green flex flex-col gap-5 justify-center h-full">
                         <p className="2xl:text-5xl text-3xl 2xl:leading-84 leading-66 flex justify-center items-baseline text-white">
                             <span className="2xl:text-7xl text-5xl counter transition-all ease-out 2xl:w-20 w-16" data-number="90">0</span>
                             <span className="2xl:pl-1">%</span>
