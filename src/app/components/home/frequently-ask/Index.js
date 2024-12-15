@@ -68,7 +68,7 @@ export const FrequentlyAsked = () => {
             <div className="pt-14">
                 {faqData.map((faq, index) => (
                     <div className="border-y border-[#ADADAD]" key={index}>
-                        <div className={`flex justify-between py-8 items-center group new-home-faq ${activeIndex === index ? 'is-active' : ''}`}
+                        <div className={`flex justify-between py-8 items-center group cursor-pointer new-home-faq ${activeIndex === index ? 'is-active' : ''}`}
                             onClick={() => handleToggleBox(index)} >
                             <span className="2xl:text-2xl text-xl font-300 ">
                                 {faq.question}

@@ -15,7 +15,7 @@ const footerMenu1 = [
     { linkName: 'Testimonials', goTo: '#' },
     { linkName: 'Al Tools', goTo: '#' },
     { linkName: 'Partners', goTo: '#' },
-    { linkName: 'FAQs', goTo: '#faqs' }
+    { linkName: 'FAQs', goTo: '#' }
 ]
 const footerMenu2 = [
     { linkName: 'Investors', goTo: '/investors' },
