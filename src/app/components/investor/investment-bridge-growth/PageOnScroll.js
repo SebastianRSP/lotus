@@ -276,16 +276,18 @@ export const InvertmentBridgeGrowth = () => {
         }
 
         // Animate out the previous tab, then hide it completely to avoid duplication
-        if (previousIndexRef.current !== -1 && activeSendTab.current[previousIndexRef.current]) {
-            gsap.to(activeSendTab.current[previousIndexRef.current], {
-                opacity: 0,
-                x: -44, // Exit offset for the animation
-                duration: 1,
-                onComplete: () => {
-                    // Set previous tab element to be fully hidden and reset position
-                    gsap.set(activeSendTab.current[previousIndexRef], { opacity: 0, x: 0 });
-                }
-            });
+        if(previousIndexRef.current){
+            if (previousIndexRef.current !== -1 && activeSendTab.current[previousIndexRef.current]) {
+                gsap.to(activeSendTab.current[previousIndexRef.current], {
+                    opacity: 0,
+                    x: -44, // Exit offset for the animation
+                    duration: 1,
+                    onComplete: () => {
+                        // Set previous tab element to be fully hidden and reset position
+                        gsap.set(activeSendTab.current[previousIndexRef], { opacity: 0, x: 0 });
+                    }
+                });
+            }
         }
 
         // Wait for the current tab element to be available, then animate it
