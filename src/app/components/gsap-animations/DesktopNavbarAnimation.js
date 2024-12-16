@@ -4,8 +4,14 @@ gsap.registerPlugin(ScrollTrigger);
 
 export const desktopNavbarAnimation = () => {
 
+    // Ensure the code only runs in the client-side environment
+    if (typeof window === 'undefined') {
+        return; // Return early if not in the browser
+    }
+
     // Ensure navRef exists before proceeding
     const navRef = document?.querySelector('.desktop-nav');
+
     if (!navRef) {
         return
     }
