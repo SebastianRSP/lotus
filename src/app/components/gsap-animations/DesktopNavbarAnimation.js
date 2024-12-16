@@ -5,7 +5,7 @@ gsap.registerPlugin(ScrollTrigger);
 export const desktopNavbarAnimation = () => {
 
     // Ensure navRef exists before proceeding
-    const navRef = document.querySelector('.desktop-nav');
+    const navRef = document?.querySelector('.desktop-nav');
     if (!navRef) {
         return
     }

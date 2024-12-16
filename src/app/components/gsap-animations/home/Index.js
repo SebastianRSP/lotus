@@ -15,7 +15,7 @@ const industryNames = [
 ];
 
 export const newHomePageAnimation = () => {
-    const loader = document.querySelector('.loader');
+    const loader = document?.querySelector('.loader');
 
     if (loader) {
         // Initial collapsed state: Leaves rotated and positioned below
@@ -58,13 +58,13 @@ export const newHomePageAnimation = () => {
         const initMainAnimations = () => {
             // smoothScroolling();
 
-            const textTyping = document.getElementById('text-typing-animation');
+            const textTyping = document?.getElementById('text-typing-animation');
             if (textTyping) {
                 // Start text typing animation
                 startTextTypingAnimation(textTyping);
             }
 
-            const bridgeSection = document.getElementById('bridge');
+            const bridgeSection = document?.getElementById('bridge');
 
             if (bridgeSection) {
                 startBridgeAnimation(bridgeSection)
@@ -126,7 +126,7 @@ let hasAnimated = false;
 
 // Function to run counter animation
 const initCounterAnimation = () => {
-    const counterContainer = document.querySelector('.counter-container');
+    const counterContainer = document?.querySelector('.counter-container');
 
     // Create a ScrollTrigger for the counterContainer
     ScrollTrigger.create({
@@ -161,10 +161,10 @@ const initCounterAnimation = () => {
 };
 
 const startBridgeAnimation = (bridgeSection) => {
-    const bridgeBlackInitial = document.querySelector('.bridge-initial');
-    const bridgeInsideBlackBox = document.querySelector('.inside-black-box');
-    const bridgeBgBlur = document.querySelector('.bridge-bg-blur');
-    const bridgeHeroText = document.querySelectorAll('.bridge-hero-text');
+    const bridgeBlackInitial = document?.querySelector('.bridge-initial');
+    const bridgeInsideBlackBox = document?.querySelector('.inside-black-box');
+    const bridgeBgBlur = document?.querySelector('.bridge-bg-blur');
+    const bridgeHeroText = document?.querySelectorAll('.bridge-hero-text');
 
     // Get the current padding values
     const computedStyle = window.getComputedStyle(bridgeBlackInitial);
@@ -306,7 +306,7 @@ function animateGridLines() {
     ];
 
     gridLinesConfig.forEach(({ selector, initial, final }) => {
-        const lines = document.querySelectorAll(selector);
+        const lines = document?.querySelectorAll(selector);
         lines.forEach(line => {
             gsap.fromTo(line, initial, { ...final, ease: "power2.out", duration: 1 });
         });
@@ -324,7 +324,7 @@ function resetGridLines() {
     ];
 
     gridLinesConfig.forEach(({ selector, initial, final }) => {
-        const lines = document.querySelectorAll(selector);
+        const lines = document?.querySelectorAll(selector);
         lines.forEach(line => {
             gsap.fromTo(line, initial, { ...final, ease: "power2.out", duration: 1 });
         });

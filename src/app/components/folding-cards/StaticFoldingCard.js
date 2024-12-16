@@ -45,7 +45,7 @@ export const StaticFoldingCard = () => {
     };
 
     useGSAP(() => {
-        const foldingContainer = document.querySelector('.folding-container');
+        const foldingContainer = document?.querySelector('.folding-container');
         const cards = gsap.utils.toArray('.folding-card');
 
         // Ensure there are no duplicate elements

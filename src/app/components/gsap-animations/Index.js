@@ -6,8 +6,8 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
 export const initAnimations = () => {
 
     // Text Fade-in
-    const fadeInSections = document.querySelectorAll('.fade-in-out');
-    const loader = document.querySelector('.loader');
+    const fadeInSections = document?.querySelectorAll('.fade-in-out');
+    const loader = document?.querySelector('.loader');
 
     // Loading Animation Play Once
     const hasPlayed = sessionStorage.getItem("isLoaderPlayed");
@@ -17,8 +17,8 @@ export const initAnimations = () => {
             sessionStorage.setItem('isLoaderPlayed', true);
 
             // Loading animation
-            const notice = document.querySelector('.notice');
-            const noticeWrapper = document.querySelector('.notice__wrapper');
+            const notice = document?.querySelector('.notice');
+            const noticeWrapper = document?.querySelector('.notice__wrapper');
             const animLinePercentage = notice.querySelector('.anim-line-percentage');
 
             // Create a GSAP timeline for loading animation
@@ -125,8 +125,8 @@ export const initAnimations = () => {
         ///////////////////////////////////////////////////////////
         ///////////////Text Animations Starts//////////////////////
         ///////////////////////////////////////////////////////////
-        const animatedTexts = document.querySelectorAll('.text-animated');
-        const bridgeTextAnimation = document.querySelectorAll('.bridge-text-animated');
+        const animatedTexts = document?.querySelectorAll('.text-animated');
+        const bridgeTextAnimation = document?.querySelectorAll('.bridge-text-animated');
 
         if (animatedTexts) {
             animatedTexts.forEach(animatedText => {
@@ -227,10 +227,10 @@ export const initAnimations = () => {
         ///////////////Bridge Animations Starts////////////////////
         ///////////////////////////////////////////////////////////
 
-        const bridgeElement = document.querySelector('#bridge');
-        const bridgeHeading = document.querySelector('#bridge-heading');
-        const bridgeDonut = document.querySelector('#bridge-donut');
-        const bridgeDonutText = document.querySelector('#bridge-donut-text');
+        const bridgeElement = document?.querySelector('#bridge');
+        const bridgeHeading = document?.querySelector('#bridge-heading');
+        const bridgeDonut = document?.querySelector('#bridge-donut');
+        const bridgeDonutText = document?.querySelector('#bridge-donut-text');
 
         if (bridgeElement) {
 
@@ -388,8 +388,8 @@ export const initAnimations = () => {
         ///////////////CaseStudy Animations Starts/////////////////
         ///////////////////////////////////////////////////////////
 
-        const caseStudy = document.querySelector('#casestudy');
-        const caseStudyText = document.querySelector('.case-heading');
+        const caseStudy = document?.querySelector('#casestudy');
+        const caseStudyText = document?.querySelector('.case-heading');
 
         if (caseStudy) {
 

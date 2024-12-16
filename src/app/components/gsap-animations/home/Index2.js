@@ -15,7 +15,7 @@ const industryNames = [
 ];
 
 export const exitPageAnimation = () => {
-    const body = document.querySelector('body');
+    const body = document?.querySelector('body');
     const timelineForBackground = gsap.timeline();
 
     timelineForBackground.fromTo(body, { opacity: 1 }, { opacity: 0, duration: .8, ease: "power4.out" });
@@ -23,9 +23,9 @@ export const exitPageAnimation = () => {
 
 export const newHomePageAnimation = () => {
 
-    const loader = document.querySelector('.loader-container');
-    const nav = document.querySelector('nav');
-    const body = document.querySelector('body');
+    const loader = document?.querySelector('.loader-container');
+    const nav = document?.querySelector('nav');
+    const body = document?.querySelector('body');
 
     if (loader) {
         // gsap.set(loader , { width: '100vw', height: '100vh', y: 0, opacity: 1});
@@ -83,19 +83,19 @@ export const newHomePageAnimation = () => {
         // Initialize main animations
         const initMainAnimations = () => {
 
-            const textTyping = document.getElementById('text-typing-animation');
+            const textTyping = document?.getElementById('text-typing-animation');
             if (textTyping) {
                 // Start text typing animation
                 startTextTypingAnimation(textTyping);
             }
 
-            const bridgeSection = document.getElementById('bridge');
+            const bridgeSection = document?.getElementById('bridge');
 
             if (bridgeSection) {
                 startBridgeAnimation(bridgeSection)
             }
 
-            const cards = document.querySelectorAll('.bridge-card');
+            const cards = document?.querySelectorAll('.bridge-card');
 
             if (cards.length) {
                 // GSAP animation for each card
@@ -127,7 +127,7 @@ export const newHomePageAnimation = () => {
                 });
             }
 
-            const counterContainer = document.querySelector('.counter-container');
+            const counterContainer = document?.querySelector('.counter-container');
 
             if (counterContainer) {
                 initCounterAnimation(counterContainer);
@@ -221,13 +221,13 @@ const initCounterAnimation = (counterContainer) => {
 
 
 const startBridgeAnimation = (bridgeSection) => {
-    const bridgeInsideBlackBox = document.querySelector('.inside-black-box');
-    const verticalBlackLayers = document.querySelectorAll('.conver-object-vertical');
-    const horizentalBlackLayers = document.querySelectorAll('.conver-object-horizontal');
-    const bridgeBgBlur = document.querySelector('.bridge-bg-blur');
-    const bridgeHeroText = document.querySelectorAll('.bridge-text-split');
-    const bridgeHeroH2 = document.querySelectorAll('.bridge-hero-text');
-    const bridgeTM = document.querySelectorAll('.bridge-tm');
+    const bridgeInsideBlackBox = document?.querySelector('.inside-black-box');
+    const verticalBlackLayers = document?.querySelectorAll('.conver-object-vertical');
+    const horizentalBlackLayers = document?.querySelectorAll('.conver-object-horizontal');
+    const bridgeBgBlur = document?.querySelector('.bridge-bg-blur');
+    const bridgeHeroText = document?.querySelectorAll('.bridge-text-split');
+    const bridgeHeroH2 = document?.querySelectorAll('.bridge-hero-text');
+    const bridgeTM = document?.querySelectorAll('.bridge-tm');
     let hasAnimated = false; // Tracks if Text animation Shows
     let hasColored = false; // Tracks if the Text Color Changes
     let hasBridgeTM = false; // Tracks if the BridgeTM logo Shows 
@@ -265,7 +265,7 @@ const startBridgeAnimation = (bridgeSection) => {
 
     // Set initial states for the grid lines
     gridLinesConfig.forEach(({ selector, from }) => {
-        const lines = document.querySelectorAll(selector);
+        const lines = document?.querySelectorAll(selector);
         lines.forEach(line => {
             gsap.set(line, from);  // Set each line's initial attributes using 'attr'
         });
@@ -288,7 +288,7 @@ const startBridgeAnimation = (bridgeSection) => {
                     line.style.position = 'relative';
 
                     // Create the inner div with class 'single-line-inner'
-                    const innerDiv = document.createElement('div');
+                    const innerDiv = document?.createElement('div');
                     innerDiv.classList.add('single-line-inner');
 
                     // Apply the default transform property to the inner div
@@ -689,7 +689,7 @@ const startBridgeAnimation = (bridgeSection) => {
 function gridBackAnimation(gridLinesConfig, self) {
     // Animate the grid lines based on the scroll progress
     gridLinesConfig.forEach(({ selector, from, to }) => {
-        const lines = document.querySelectorAll(selector);
+        const lines = document?.querySelectorAll(selector);
         lines.forEach(line => {
             // Only interpolate attributes that exist in the configuration
             let newAttrs = {};
@@ -824,7 +824,7 @@ function animateGridLines() {
     ];
 
     gridLinesConfig.forEach(({ selector, initial, final }) => {
-        const lines = document.querySelectorAll(selector);
+        const lines = document?.querySelectorAll(selector);
         lines.forEach(line => {
             gsap.fromTo(line, initial, { ...final, ease: "power2.out", duration: 1 });
         });
@@ -842,7 +842,7 @@ function resetGridLines() {
     ];
 
     gridLinesConfig.forEach(({ selector, initial, final }) => {
-        const lines = document.querySelectorAll(selector);
+        const lines = document?.querySelectorAll(selector);
         lines.forEach(line => {
             gsap.fromTo(line, initial, { ...final, ease: "power2.out", duration: 1 });
         });

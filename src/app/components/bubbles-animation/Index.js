@@ -8,7 +8,7 @@ const ParticleComponent = () => {
 
     // Function to create a particle
     const createParticle = () => {
-        const particle = document.createElement('div');
+        const particle = document?.createElement('div');
         particle.classList.add('particle');
 
         // Get the container height dynamically

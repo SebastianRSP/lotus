@@ -39,16 +39,16 @@ const Cursor = () => {
         blendMode: 'difference',
       });
 
-      const circleCursor = document.createElement('div');
+      const circleCursor = document?.createElement('div');
       circleCursor.className = 'circle-cursor visible';
-      document.body.appendChild(circleCursor);
+      document?.body.appendChild(circleCursor);
 
       const handleMouseMove = (e) => {
         circleCursor.style.left = `${e.clientX}px`;
         circleCursor.style.top = `${e.clientY}px`;
       };
 
-      document.addEventListener('mousemove', handleMouseMove);
+      document?.addEventListener('mousemove', handleMouseMove);
 
       const handleHoverWrkCard = (e) => {
         if (e.target.closest('a.wrk-card')) {
@@ -66,15 +66,15 @@ const Cursor = () => {
         }
       };
 
-      document.addEventListener('mouseover', handleHoverWrkCard);
-      document.addEventListener('mouseover', handleHoverOther);
+      document?.addEventListener('mouseover', handleHoverWrkCard);
+      document?.addEventListener('mouseover', handleHoverOther);
 
       return () => {
-        document.removeEventListener('mousemove', handleMouseMove);
-        document.removeEventListener('mouseover', handleHoverWrkCard);
-        document.removeEventListener('mouseover', handleHoverOther);
-        if (circleCursor && document.body.contains(circleCursor)) {
-          document.body.removeChild(circleCursor);
+        document?.removeEventListener('mousemove', handleMouseMove);
+        document?.removeEventListener('mouseover', handleHoverWrkCard);
+        document?.removeEventListener('mouseover', handleHoverOther);
+        if (circleCursor && document?.body.contains(circleCursor)) {
+          document?.body.removeChild(circleCursor);
         }
       };
     }
