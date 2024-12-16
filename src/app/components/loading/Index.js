@@ -15,8 +15,8 @@ export const Loading = () => {
                         />
                     </div>
                     <span className="notice__label labor">
-                        <span class="text-splitter text-splitter--splitted">
-                            <div class="anim-line" style={{ display: 'block', textAlign: 'start', position: 'relative', transitionDelay: '1s' }}>
+                        <span className="text-splitter text-splitter--splitted">
+                            <div className="anim-line" style={{ display: 'block', textAlign: 'start', position: 'relative', transitionDelay: '1s' }}>
                                 Loading <span className="anim-line-percentage">0%</span>
                             </div>
                         </span>

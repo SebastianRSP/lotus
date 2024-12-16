@@ -37,7 +37,7 @@ export const HomeNavbar = () => {
             }, 450);
         }
     };
-    
+
 
     const handleMouseEnter = () => {
         setIsDropdownOpen(true);
@@ -74,47 +74,47 @@ export const HomeNavbar = () => {
                     <div className={`absolute bg-white/70 2xl:h-36 xl:h-28 h-24 bg-no-repeat bg-origin-padding filter backdrop-blur-30 shadow-sm inset-0 origin-top z-10 desktop-nav-bg`}></div>
                     <div className={`w-full grid lg:grid-cols-3 grid-cols-10 grid-flow-col items-center text-center 2xl:h-44 lg:h-36 h-28 relative z-50 overflow-visible`}>
                         <div className='lg:col-span-1 col-span-4'>
-                        <div className="grid grid-cols-3 items-center h-inherit w-available">
-    {navLinksBefore.map((navLink, index) => (
-        <div
-    key={index}
-    className={`relative ${navLink.extras}`} // Ensure relative positioning
-    onMouseEnter={() => navLink.dropdown && setIsDropdownOpen(true)}
-    onMouseLeave={() => navLink.dropdown && setIsDropdownOpen(false)}
->
-    <HomeNavLink
-        id={index}
-        navLinkName={navLink.navLinkName}
-        navLink={navLink.navLink}
-        extras={navLink.extras}
-        isDark={isDark}
-    />
-    {/* Dropdown Menu */}
-    {navLink.dropdown && (
-        <div
-            className={`absolute top-full left-0 bg-white shadow-md rounded-md z-50 w-full
+                            <div className="grid grid-cols-3 items-center h-inherit w-available">
+                                {navLinksBefore.map((navLink, index) => (
+                                    <div
+                                        key={index}
+                                        className={`relative ${navLink.extras}`} // Ensure relative positioning
+                                        onMouseEnter={() => navLink.dropdown && setIsDropdownOpen(true)}
+                                        onMouseLeave={() => navLink.dropdown && setIsDropdownOpen(false)}
+                                    >
+                                        <HomeNavLink
+                                            id={index}
+                                            navLinkName={navLink.navLinkName}
+                                            navLink={navLink.navLink}
+                                            extras={navLink.extras}
+                                            isDark={isDark}
+                                        />
+                                        {/* Dropdown Menu */}
+                                        {navLink.dropdown && (
+                                            <div
+                                                className={`absolute top-full left-0 bg-white shadow-md rounded-md z-50 w-full
             transition-opacity duration-300 ${isDropdownOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
-        >
-            <ul className="flex flex-col">
-                {navLink.dropdown.map((dropdownItem, subIndex) => (
-                    <li key={subIndex} className="px-4 py-2 whitespace-nowrap">
-                        <a
-                            href={dropdownItem.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-black hover:text-green-500 transition-colors duration-300 link-home-hover"
-                        >
-                            {dropdownItem.name}
-                        </a>
-                    </li>
-                ))}
-            </ul>
-        </div>
-    )}
-</div>
+                                            >
+                                                <ul className="flex flex-col">
+                                                    {navLink.dropdown.map((dropdownItem, subIndex) => (
+                                                        <li key={subIndex} className="px-4 py-2 whitespace-nowrap">
+                                                            <a
+                                                                href={dropdownItem.link}
+                                                                target="_blank"
+                                                                rel="noopener noreferrer"
+                                                                className="text-black hover:text-green-500 transition-colors duration-300 link-home-hover"
+                                                            >
+                                                                {dropdownItem.name}
+                                                            </a>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                        )}
+                                    </div>
 
-    ))}
-</div>
+                                ))}
+                            </div>
 
 
                         </div>
@@ -159,13 +159,12 @@ export const HomeNavbar = () => {
                 <div className='md:hidden relative block m-2'>
                     {/* <div className='absolute inset-0 backdrop-blur-30 rounded-2xl bg-black bg-opacity-50 shadow-mobile' /> */}
                     <div
-                        className={`flex justify-between items-center transition-all duration-300 ${
-                            navbarStyle === 'original'
+                        className={`flex justify-between items-center transition-all duration-300 ${navbarStyle === 'original'
                                 ? 'pt-7 md:px-8 px-10'
                                 : navbarStyle === 'hidden'
-                                ? '-mt-[80px] pt-7 px-10'
-                                : 'bg-[#ffffffad] my-[20px] pt-[12px] pb-[12px] px-10 rounded-[20px] shadow-[0px_3px_7px_#00000021]'
-                        }`}
+                                    ? '-mt-[80px] pt-7 px-10'
+                                    : 'bg-[#ffffffad] my-[20px] pt-[12px] pb-[12px] px-10 rounded-[20px] shadow-[0px_3px_7px_#00000021]'
+                            }`}
                     >                        <div className={`logo-container link-animation items-center`}>
                             <Logo iconColor={`${isDarkLogo ? 'fill-white' : 'fill-black'} `} />
                             <Lotus iconColor={`${isDarkLogo ? 'fill-white' : 'fill-black'} `} />
