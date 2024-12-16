@@ -31,14 +31,13 @@ export default function RootLayout({ children }) {
       </head>
       <body className={plusJakartaSans.variable}>
         <ScrollToTop>
-          {/* {isInvestorsPage ? (
+          {isInvestorsPage ? (
             <InvestorHomePage>{children}</InvestorHomePage>
           ) : isAboutUsPage ? (
             <AboutUsPage>{children}</AboutUsPage>
           ) : (
             <NewHomePage>{children}</NewHomePage>
-          )} */}
-          <NewHomePage>{children}</NewHomePage>
+          )}
         </ScrollToTop>
       </body>
     </html>
