@@ -23,11 +23,6 @@ export const exitPageAnimation = () => {
 
 export const newHomePageAnimation = () => {
 
-    // Ensure the code only runs in the client-side environment
-    if (typeof window === 'undefined') {
-        return; // Return early if not in the browser
-    }
-
     const loader = document?.querySelector('.loader-container');
     const nav = document?.querySelector('nav');
     const body = document?.querySelector('body');
