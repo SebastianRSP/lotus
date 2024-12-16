@@ -15,21 +15,21 @@ export const NewHomePage = ({ children }) => {
     const pathname = usePathname();
     const containerRef = useRef();
 
-    useEffect(() => {
-        if (typeof window !== 'undefined') {
-            try {
-                smoothScroolling();
-                newHomePageAnimation();
-                desktopNavbarAnimation();
-            } catch (error) {
-                console.error("Animation setup failed:", error);
-            }
+    // useEffect(() => {
+    //     if (typeof window !== 'undefined') {
+    //         try {
+    //             smoothScroolling();
+    //             newHomePageAnimation();
+    //             desktopNavbarAnimation();
+    //         } catch (error) {
+    //             console.error("Animation setup failed:", error);
+    //         }
     
-            return () => {
-                ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-            };
-        }
-    }, [pathname]);
+    //         return () => {
+    //             ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    //         };
+    //     }
+    // }, [pathname]);
     
 
     return (
