@@ -18,7 +18,7 @@ export const NewHomePage = ({ children }) => {
     useEffect(() => {
         if (typeof window !== 'undefined') {
             try {
-                smoothScrolling();
+                smoothScroolling();
                 newHomePageAnimation();
                 desktopNavbarAnimation();
             } catch (error) {
