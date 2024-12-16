@@ -1,5 +1,6 @@
 'use client'
-import Lottie from 'lottie-react';
+import dynamic from 'next/dynamic';
+const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
 import databasePricing from '../../../../../public/animations/database-pricing.json';
 
 export const InvesterBannerText = () => {

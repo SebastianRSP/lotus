@@ -6,7 +6,8 @@ import defaultImageIcon from '../../../../../public/investor-assets/default-img-
 import animatedBox from '../../../../../public/animations/animated-box.json';
 import lotusLogo from '../../../../../public/icons/logo.svg';
 import { Boxes } from './svgs/boxes';
-import Lottie from 'lottie-react';
+import dynamic from 'next/dynamic';
+const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
 import { useEffect, useRef, useState } from 'react';
 import { SlickSlider } from '../../slick-slider/SlickSlider';
 import { SenDataArrow } from '../../svgs/SenDataArrow';

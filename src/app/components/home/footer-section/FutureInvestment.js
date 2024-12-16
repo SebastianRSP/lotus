@@ -1,7 +1,8 @@
 'use client'
-import Lottie from 'lottie-react';
 import databasePricing from '../../../../../public/animations/database-pricing.json';
 import { DefaultBtnBlack } from '../../buttons/home/DefaultBtnBlack';
+import dynamic from 'next/dynamic';
+const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
 
 export const FutureInvestment = () => {
     return (

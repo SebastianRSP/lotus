@@ -1,6 +1,7 @@
 'use client'
 
-import Lottie from "lottie-react";
+import dynamic from 'next/dynamic';
+const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
 import LoadingBar from '../../../../../public/animations/loading-bar.json';
 import sendataLogo from '../../../../../public/investor-assets/sendata-logo.png';
 import Image from "next/image";

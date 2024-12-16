@@ -1,6 +1,7 @@
 'use client'
 
-import Lottie from "lottie-react";
+import dynamic from 'next/dynamic';
+const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
 import candleChart from "../../../../../public/animations/candle-chart.json";
 import { DefaultBtnBlack } from "../../buttons/home/DefaultBtnBlack";
 

@@ -1,10 +1,5 @@
 'use client'
 
-import Image from 'next/image';
-// import rails from '../../../../../public/animations/rails.lottie';
-import { DotLottieReact } from '@lottiefiles/dotlottie-react';
-import snip from '../../../../../public/new-home-assets/snip.png';
-
 export const FeatureSection = () => {
     return (
         <div className="2xl:px-20 lg:px-10 px-0 2xl:pb-28 xl:pb-24 pb-5 2xl:pt-12 xl:pt-10 pt-5">
@@ -15,13 +10,13 @@ export const FeatureSection = () => {
                             Lotus powers the future of data storage by building superior rails for migration.
                         </h4>
                         <video
-                                src="/new-home-assets/video/boxesAnimation.mp4"
-                                muted
-                                playsInline
-                                loop
-                                autoPlay
-                                className="absolute inset-0 h-full w-full top-[70px] object-contain lg:top-0 lg:object-cover z-0"
-                                ></video>
+                            src="/new-home-assets/video/boxesAnimation.mp4"
+                            muted
+                            playsInline
+                            loop
+                            autoPlay
+                            className="absolute inset-0 h-full w-full top-[70px] object-contain lg:top-0 lg:object-cover z-0"
+                        ></video>
                     </div>
                 </div>
                 <div className="lg:col-span-5 col-span-12 bg-white lg:pt-0 pt-8">
@@ -32,8 +27,8 @@ export const FeatureSection = () => {
                         <p className='2xl:text-2xl md:text-base text-sm'>Governments, institutions, and enterprises are increasingly seeking decentralized storage solutions, but the process from Web2 to Web3 networks remains a barrier. Our solution facilitates worldwide adoption of decentralized storage solutions, and provides best-in-class data management tools for enterprise and institutional grade clients.</p>
                         <div className=''>
                             <p className='2xl:text-2xl md:text-base text-sm bg-green text-black inline px-0.2'>Lotus does for data transfer what SWIFT does for money
-transfer—a single protocol that abstracts away hundreds of complex
-interactions, enabling seamless interoperability between disparate networks.</p>
+                                transfer—a single protocol that abstracts away hundreds of complex
+                                interactions, enabling seamless interoperability between disparate networks.</p>
                         </div>
                     </div>
                 </div>

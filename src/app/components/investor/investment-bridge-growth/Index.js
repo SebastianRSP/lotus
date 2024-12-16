@@ -1,6 +1,7 @@
 'use client'
 
-import Lottie from "lottie-react";
+import dynamic from 'next/dynamic';
+const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
 import Image from "next/image";
 import investerHero from '../../../../../public/animations/ethereum-crypto.json';
 import sendataLogo from '../../../../../public/investor-assets/sendata-logo.png';

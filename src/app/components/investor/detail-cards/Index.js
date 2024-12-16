@@ -5,7 +5,8 @@ import icon2 from '../../../../../public/icons/icon_02_investor.svg';
 import icon3 from '../../../../../public/icons/icon_03_investor.svg';
 import Image from "next/image";
 
-import Lottie from "lottie-react";
+import dynamic from 'next/dynamic';
+const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
 import puzzleAnimation from '../../../../../public/animations/puzzle.json';
 import boxesAnimation from '../../../../../public/animations/boxes.json';
 import mountainAnimation from '../../../../../public/animations/mountain.json';

@@ -5,7 +5,9 @@ import footerLogo from '../../../../../public/footer-logo.png';
 import Link from 'next/link';
 import telegram from '../../../../../public/animations/telegram.json';
 import sendMessageArrow from '../../../../../public/animations/send-message-arrow.json';
-import Lottie from 'lottie-react';
+// import Lottie from 'lottie-react';
+import dynamic from 'next/dynamic';
+const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
 import { usePathname, useRouter } from 'next/navigation';
 import { handleRouteClick } from '@/app/utils/navigationUtils';
 

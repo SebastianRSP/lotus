@@ -3,7 +3,8 @@ import footerLogo from '../../../../../public/footer-logo.png';
 import Link from 'next/link';
 import telegram from '../../../../../public/animations/telegram.json';
 import sendMessageArrow from '../../../../../public/animations/send-message-arrow.json';
-import Lottie from 'lottie-react';
+import dynamic from 'next/dynamic';
+const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
 import { DefaultBtn } from '../../buttons/home/DefaultBtn';
 
 const footerMenu1 = [
