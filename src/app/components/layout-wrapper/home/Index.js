@@ -1,9 +1,12 @@
+'use client'
+
 import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
-import { ScrollTrigger } from "gsap/all";
 import { HomeNavbar } from "../../navbar/home/HomeNavbar";
-import { desktopNavbarAnimation } from "../../gsap-animations/DesktopNavbarAnimation";
 import { NewHomeLoading } from "../../loading/home/Index";
+
+import { ScrollTrigger } from "gsap/all";
+import { desktopNavbarAnimation } from "../../gsap-animations/DesktopNavbarAnimation";
 import { newHomePageAnimation } from "../../gsap-animations/home/Index2";
 import { smoothScroolling } from "../../gsap-animations/smoothScroll";
 
