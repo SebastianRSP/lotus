@@ -5,10 +5,10 @@ import { useEffect, useRef } from "react";
 import { HomeNavbar } from "../../navbar/home/HomeNavbar";
 import { NewHomeLoading } from "../../loading/home/Index";
 
-import { ScrollTrigger } from "gsap/all";
-import { desktopNavbarAnimation } from "../../gsap-animations/DesktopNavbarAnimation";
-import { newHomePageAnimation } from "../../gsap-animations/home/Index2";
-import { smoothScroolling } from "../../gsap-animations/smoothScroll";
+// import { ScrollTrigger } from "gsap/all";
+// import { desktopNavbarAnimation } from "../../gsap-animations/DesktopNavbarAnimation";
+// import { newHomePageAnimation } from "../../gsap-animations/home/Index2";
+// import { smoothScroolling } from "../../gsap-animations/smoothScroll";
 
 export const NewHomePage = ({ children }) => {
 
