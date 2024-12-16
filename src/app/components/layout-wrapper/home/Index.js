@@ -17,15 +17,20 @@ export const NewHomePage = ({ children }) => {
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
-            smoothScroolling();
-            newHomePageAnimation();
-            desktopNavbarAnimation();
-            // Clean up ScrollTrigger instances on component unmount
+            try {
+                smoothScrolling();
+                newHomePageAnimation();
+                desktopNavbarAnimation();
+            } catch (error) {
+                console.error("Animation setup failed:", error);
+            }
+    
             return () => {
                 ScrollTrigger.getAll().forEach(trigger => trigger.kill());
             };
         }
     }, [pathname]);
+    
 
     return (
         <>
