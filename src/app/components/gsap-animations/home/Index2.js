@@ -6,7 +6,7 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText, TextPlugin);
 // Text Typing Animation List
 const industryNames = [
     "Fintech",
-    "Pharmaceutical",
+    "Biotech",
     "Cybersecurity",
     "Retail",
     "Universities",

@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charSet="UTF-8" />
         <meta name="description" content="Your website description" />
-        <title>Lotus Group of Companies</title>
+        <title>Lotus Data Group</title>
       </head>
       <body className={plusJakartaSans.variable}>
         <ScrollToTop>
