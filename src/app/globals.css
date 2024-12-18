@@ -40,6 +40,9 @@ canvas {
 .noan{
   transform: none !important;
 }
+.gb2{
+border: solid #00ff00 1px;
+}
 
 .investorSpline canvas {
 max-width: 600px;

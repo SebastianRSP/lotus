@@ -73,9 +73,9 @@ export const LeaderShipTeam = () => {
         {
             leaderName: 'BILL SCHRECKENSTEIN',
             leaderProfileImage: bill,
-            leaderDesignation: 'CEO',
-            leaderCompany: 'PEGASUS',
-            description: 'Bill Schreckenstein is the Chief Executive Officer at Pegasus Data Technologies, where he leads the company’s strategic direction while contributing technical knowledge to the development of the core Pegasus products. With over 24 years of experience in the industry Bill has had a large array of prestigious titles. ranging from software engineer, system administrator, integration engineer and team lead.',
+            leaderDesignation: 'CTO',
+            leaderCompany: 'Lotus Data Group',
+            description: 'Bill Schreckenstein is the Chief Executive Officer at Pegasus Data Technologies, where he leads the company´s strategic direction while contributing technical knowledge to the development of the core Pegasus products. With over 24 years of experience in the industry Bill has had a large array of prestigious titles.',
             linkedInProfileLink: 'https://www.linkedin.com/in/billschreckenstein'
         },
         {

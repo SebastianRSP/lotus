@@ -15,7 +15,7 @@ const footerMenu1 = [
     { linkName: 'Home', goTo: '/' },
     { linkName: 'The Bridge', goTo: '#' },
     { linkName: 'Testimonials', goTo: '#' },
-    { linkName: 'Al Tools', goTo: '#' },
+    { linkName: 'AI Tools', goTo: '#' },
     { linkName: 'Partners', goTo: '#' },
     { linkName: 'FAQs', goTo: '#' }
 ]

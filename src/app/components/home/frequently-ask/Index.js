@@ -7,7 +7,7 @@ import { useRef, useState } from "react";
 const faqData = [
     {
         question: 'What is The Bridge?',
-        answer: 'The Bridge is the first global platform for interoperable data transfer. It connects Web2 and Web3 ecosystems, enabling seamless data movement, governance, and monetization across storage providers.'
+        answer: 'The Bridge aims to be the leading global platform for interoperable data transfer. It connects Web2 and Web3 ecosystems, enabling seamless data movement, governance, and monetization across storage providers.'
     },
     {
         question: 'Who is Lotus Data Group?',
