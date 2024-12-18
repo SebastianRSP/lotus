@@ -37,6 +37,10 @@ canvas {
   display: block;
 }
 
+.noan{
+  transform: none !important;
+}
+
 .investorSpline canvas {
 max-width: 600px;
 max-height: 600px;
