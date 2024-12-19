@@ -36,7 +36,7 @@ const tabData = [
             {
                 title: "Investors",
                 percentage: "21%",
-                description: "The 'Investors' category encompasses both the Pre-Seed and Seed rounds, focusing on securing early strategic investment to support the project's growth. These tokens will attract early investors and provide the necessary funding to propel the platform forward, laying the foundation for future development and expansion."
+                description: "The 'Investors' category, focuses on securing early strategic investment to support the project's growth. These tokens will attract early investors and provide the necessary funding to propel the platform forward, laying the foundation for future development and expansion."
             }
         ]
     },
