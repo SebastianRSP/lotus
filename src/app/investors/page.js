@@ -1,3 +1,5 @@
+'use client'
+
 import { AboutUsFooter } from "../components/footer/about-us/Index";
 import { DetailCards } from "../components/investor/detail-cards/Index";
 import { InvestmentHero } from "../components/investor/investment-hero/InvestmentHero";

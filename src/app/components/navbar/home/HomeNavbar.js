@@ -92,9 +92,7 @@ export const HomeNavbar = () => {
                                         {/* Dropdown Menu */}
                                         {navLink.dropdown && (
                                             <div
-                                                className={`absolute top-full left-0 bg-white shadow-md rounded-md z-50 w-full
-            transition-opacity duration-300 ${isDropdownOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
-                                            >
+                                                className={`absolute top-full left-0 bg-white shadow-md rounded-md z-50 w-full transition-opacity duration-300 ${isDropdownOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} >
                                                 <ul className="flex flex-col">
                                                     {navLink.dropdown.map((dropdownItem, subIndex) => (
                                                         <li key={subIndex} className="px-4 py-2 whitespace-nowrap">
@@ -160,10 +158,10 @@ export const HomeNavbar = () => {
                     {/* <div className='absolute inset-0 backdrop-blur-30 rounded-2xl bg-black bg-opacity-50 shadow-mobile' /> */}
                     <div
                         className={`flex justify-between items-center transition-all duration-300 ${navbarStyle === 'original'
-                                ? 'pt-7 md:px-8 px-10'
-                                : navbarStyle === 'hidden'
-                                    ? '-mt-[80px] pt-7 px-10'
-                                    : 'bg-[#ffffffad] my-[20px] pt-[12px] pb-[12px] px-10 rounded-[20px] shadow-[0px_3px_7px_#00000021]'
+                            ? 'pt-7 md:px-8 px-10'
+                            : navbarStyle === 'hidden'
+                                ? '-mt-[80px] pt-7 px-10'
+                                : 'bg-[#ffffffad] my-[20px] pt-[12px] pb-[12px] px-10 rounded-[20px] shadow-[0px_3px_7px_#00000021]'
                             }`}
                     >                        <div className={`logo-container link-animation items-center`}>
                             <Logo iconColor={`${isDarkLogo ? 'fill-white' : 'fill-black'} `} />

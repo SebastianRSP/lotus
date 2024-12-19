@@ -41,7 +41,7 @@ canvas {
   transform: none !important;
 }
 .gb2{
-border: solid #00ff00 1px;
+  border: solid #00ff00 1px;
 }
 
 .investorSpline canvas {

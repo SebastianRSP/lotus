@@ -177,8 +177,6 @@ export const InvertmentBridgeGrowth = () => {
 
     const handleTabActive = async (selectedTab) => {
 
-        console.log(selectedTab, 'selectedTab')
-
         if (autoSwitchTimeout.current) {
             clearTimeout(autoSwitchTimeout.current);
         }
@@ -200,22 +198,14 @@ export const InvertmentBridgeGrowth = () => {
                 const progressRanges = [0.11, 0.21, 0.32, 0.42, 0.53, 0.63, 0.74, 0.84, 0.95, 0.99];
                 const targetProgress = progressRanges[itemIndex + 1]; // Correctly index the desired tab
 
-                console.log(itemIndex, 'itemIndex')
-                console.log(targetProgress, 'targetProgress')
-                console.log(scrollTriggerRef.current.start, 'scrollTriggerRef.current.start')
-                console.log(scrollTriggerRef.current.end, 'scrollTriggerRef.current.end')
-
                 const targetScroll = scrollTriggerRef.current.start + targetProgress * (scrollTriggerRef.current.end - scrollTriggerRef.current.start);
-
-                console.log(targetScroll, 'targetScroll')
 
                 // Smooth scroll to the exact position of the selected tab
                 gsap.to(window, {
                     scrollTo: { y: targetScroll },
-                    duration: 1.5
+                    duration: 2
                 });
             }
-
 
             setActivePercentage(filteredItem[0].percentage);
             setActiveTabIndex(itemIndex);
@@ -258,7 +248,9 @@ export const InvertmentBridgeGrowth = () => {
     };
 
     const handleSlideChange = async (oldIndex, newIndex, previousIndexRef) => {
+
         const filteredItemTitle = getObjectByIndex(newIndex).title;
+
         if (filteredItemTitle === activeTab) return;
 
         const filteredItem = getObjectByIndex(newIndex).percentage;
@@ -267,7 +259,7 @@ export const InvertmentBridgeGrowth = () => {
         setPreviousTabIndex(oldIndex);
         setActiveTab(filteredItemTitle);
 
-        previousIndexRef.current = oldIndex;
+        previousIndexRef.current = await oldIndex;
 
         // Play the initial animation on first click
         if (isFirstClickRef.current && totalSupplyRef.current) {
@@ -280,18 +272,16 @@ export const InvertmentBridgeGrowth = () => {
         }
 
         // Animate out the previous tab, then hide it completely to avoid duplication
-        if(previousIndexRef.current){
-            if (previousIndexRef.current !== -1 && activeSendTab.current[previousIndexRef.current]) {
-                gsap.to(activeSendTab.current[previousIndexRef.current], {
-                    opacity: 0,
-                    x: -44, // Exit offset for the animation
-                    duration: 1,
-                    onComplete: () => {
-                        // Set previous tab element to be fully hidden and reset position
-                        gsap.set(activeSendTab.current[previousIndexRef], { opacity: 0, x: 0 });
-                    }
-                });
-            }
+        if (previousIndexRef.current !== -1 && activeSendTab.current[previousIndexRef.current]) {
+            gsap.to(activeSendTab.current[previousIndexRef.current], {
+                opacity: 0,
+                x: -44, // Exit offset for the animation
+                duration: 1,
+                onComplete: () => {
+                    // Set previous tab element to be fully hidden and reset position
+                    gsap.set(activeSendTab.current[previousIndexRef], { opacity: 0, x: 0 });
+                }
+            });
         }
 
         // Wait for the current tab element to be available, then animate it
