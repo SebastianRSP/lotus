@@ -15,7 +15,7 @@ const footerMenu1 = [
     { linkName: 'Home', goTo: '/' },
     { linkName: 'The Bridge', goTo: '#' },
     { linkName: 'Testimonials', goTo: '#' },
-    { linkName: 'Al Tools', goTo: '#' },
+    { linkName: 'AI Tools', goTo: '#' },
     { linkName: 'Partners', goTo: '#' },
     { linkName: 'FAQs', goTo: '#' }
 ]
@@ -132,12 +132,15 @@ export const AboutUsFooter = () => {
                         </div>
                     </div>
                 </div>
-                <div className='flex flex-col'>
+                <div className='flex flex-col gap-1'>
                                 {footerMenu4.map((footerLink, index) => (
                                     <p onClick={() => handleRouteClick(router, pathname, footerLink.goTo)} className={`${index == 0 ? 'font-extrabold' : 'hover:font-bold'} cursor-pointer 2xl:text-lg text-sm uppercase font-normal leading-normal m-auto`} href={footerLink.goTo} key={index}>
                                         {footerLink.linkName}
                                     </p>
                                 ))}
+                                                <p class="text-[10px] text-center"
+                >FORWARD-LOOKING STATEMENTS DISCLAIMER: This website may contain certain forward-looking statements regarding Lotus Data Group., its future operations or its financial performance. Forward-looking statements involve known and unknown risks, uncertainties, and other factors which may cause the actual results, performance, or achievements of the Company to be materially different from any future results, performance, or achievements expressed or implied by the forward-looking statements. These statements are only predictions and reflect the Company’s current beliefs and expectations with respect to future events; they are based on assumptions and are subject to risk and uncertainties, and given these uncertainties, investors should not place undue reliance on these forward-looking statements. The Company disclaims any obligation to update or revise any forward-looking statements, whether as a result of new information, future events, or otherwise, except as required by law.</p>
+
                             </div>
             </footer>
             {/* <div className="flex flex-col gap-2 z-10 w-full">

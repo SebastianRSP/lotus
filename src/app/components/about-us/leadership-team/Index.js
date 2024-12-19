@@ -19,7 +19,7 @@ export const LeaderShipTeam = () => {
             leaderProfileImage: neil_sumaru,
             leaderDesignation: 'Chairman',
             leaderCompany: 'LOTUS DATA GROUP',
-            description: 'Neil Sumaru is Co-founder and Chairman of Lotus Data Group which is comprised of three subsidiaries, SenData Tech, Sen Pegasus, and Sen Whale AI (which collectively make up the SenD token ecosystem). Neil is a Founder of each of these companies and sits on the respective boards as Chairman.',
+            description: 'Neil Sumaru is Co-founder and Chairman of Lotus Data Group which is comprised of three subsidiaries, SenData Tech, Sen Pegasus, and Sen Whale AI (which collectively make up the BRDIGE token ecosystem). Neil is a Founder of each of these companies and sits on the respective boards as Chairman.',
             linkedInProfileLink: 'https://www.linkedin.com/in/neilsumaru'
         },
         {
@@ -67,15 +67,15 @@ export const LeaderShipTeam = () => {
             leaderProfileImage: ravi_rai,
             leaderDesignation: 'CSO',
             leaderCompany: 'SENDATA',
-            description: 'Neil Sumaru is Co-founder and Chairman of Lotus Data Group which is comprised of three subsidiaries, SenData Tech, Sen Pegasus, and Sen Whale AI (which collectively make up the SenD token ecosystem). Neil is a Founder of each of these companies and sits on the respective boards as Chairman.',
+            description: 'Neil Sumaru is Co-founder and Chairman of Lotus Data Group which is comprised of three subsidiaries, SenData Tech, Sen Pegasus, and Sen Whale AI (which collectively make up the BRIDGE token ecosystem). Neil is a Founder of each of these companies and sits on the respective boards as Chairman.',
             linkedInProfileLink: 'https://www.linkedin.com/in/ravikrao'
         },
         {
             leaderName: 'BILL SCHRECKENSTEIN',
             leaderProfileImage: bill,
-            leaderDesignation: 'CEO',
-            leaderCompany: 'PEGASUS',
-            description: 'Bill Schreckenstein is the Chief Executive Officer at Pegasus Data Technologies, where he leads the company’s strategic direction while contributing technical knowledge to the development of the core Pegasus products. With over 24 years of experience in the industry Bill has had a large array of prestigious titles. ranging from software engineer, system administrator, integration engineer and team lead.',
+            leaderDesignation: 'CTO',
+            leaderCompany: 'Lotus Data Group',
+            description: 'Bill Schreckenstein is the Chief Executive Officer at Pegasus Data Technologies, where he leads the company´s strategic direction while contributing technical knowledge to the development of the core Pegasus products. With over 24 years of experience in the industry Bill has had a large array of prestigious titles.',
             linkedInProfileLink: 'https://www.linkedin.com/in/billschreckenstein'
         },
         {
