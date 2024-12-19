@@ -19,7 +19,7 @@ export const LeaderShipTeam = () => {
             leaderProfileImage: neil_sumaru,
             leaderDesignation: 'Chairman',
             leaderCompany: 'LOTUS DATA GROUP',
-            description: 'Neil Sumaru is Co-founder and Chairman of Lotus Data Group which is comprised of three subsidiaries, SenData Tech, Sen Pegasus, and Sen Whale AI (which collectively make up the SenD token ecosystem). Neil is a Founder of each of these companies and sits on the respective boards as Chairman.',
+            description: 'Neil Sumaru is Co-founder and Chairman of Lotus Data Group which is comprised of three subsidiaries, SenData Tech, Sen Pegasus, and Sen Whale AI (which collectively make up the BRDIGE token ecosystem). Neil is a Founder of each of these companies and sits on the respective boards as Chairman.',
             linkedInProfileLink: 'https://www.linkedin.com/in/neilsumaru'
         },
         {
@@ -67,7 +67,7 @@ export const LeaderShipTeam = () => {
             leaderProfileImage: ravi_rai,
             leaderDesignation: 'CSO',
             leaderCompany: 'SENDATA',
-            description: 'Neil Sumaru is Co-founder and Chairman of Lotus Data Group which is comprised of three subsidiaries, SenData Tech, Sen Pegasus, and Sen Whale AI (which collectively make up the SenD token ecosystem). Neil is a Founder of each of these companies and sits on the respective boards as Chairman.',
+            description: 'Neil Sumaru is Co-founder and Chairman of Lotus Data Group which is comprised of three subsidiaries, SenData Tech, Sen Pegasus, and Sen Whale AI (which collectively make up the BRIDGE token ecosystem). Neil is a Founder of each of these companies and sits on the respective boards as Chairman.',
             linkedInProfileLink: 'https://www.linkedin.com/in/ravikrao'
         },
         {
