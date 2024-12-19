@@ -177,6 +177,8 @@ export const InvertmentBridgeGrowth = () => {
 
     const handleTabActive = async (selectedTab) => {
 
+        console.log(selectedTab, 'selectedTab')
+
         if (autoSwitchTimeout.current) {
             clearTimeout(autoSwitchTimeout.current);
         }
@@ -198,19 +200,20 @@ export const InvertmentBridgeGrowth = () => {
                 const progressRanges = [0.11, 0.21, 0.32, 0.42, 0.53, 0.63, 0.74, 0.84, 0.95, 0.99];
                 const targetProgress = progressRanges[itemIndex + 1]; // Correctly index the desired tab
 
+                console.log(itemIndex, 'itemIndex')
                 console.log(targetProgress, 'targetProgress')
+                console.log(scrollTriggerRef.current.start, 'scrollTriggerRef.current.start')
+                console.log(scrollTriggerRef.current.end, 'scrollTriggerRef.current.end')
 
-                if (targetProgress !== undefined) {
-                    const targetScroll = scrollTriggerRef.current.start + targetProgress * (scrollTriggerRef.current.end - scrollTriggerRef.current.start);
+                const targetScroll = scrollTriggerRef.current.start + targetProgress * (scrollTriggerRef.current.end - scrollTriggerRef.current.start);
 
-                    console.log(targetScroll, 'targetScroll')
+                console.log(targetScroll, 'targetScroll')
 
-                    // Smooth scroll to the exact position of the selected tab
-                    gsap.to(window, {
-                        scrollTo: { y: targetScroll },
-                        duration: 1.5
-                    });
-                }
+                // Smooth scroll to the exact position of the selected tab
+                gsap.to(window, {
+                    scrollTo: { y: targetScroll },
+                    duration: 1.5
+                });
             }
 
 

@@ -20,18 +20,11 @@ export const Boxes = ({ activePercentage, tabIndex, previousTabIndex, tabData })
         const startLineIndex = tabIndex > 0 ? cumulativeLineIndices[tabIndex - 1] : 0;
         const endLineIndex = cumulativeLineIndices[tabIndex] - 1;
 
-        console.log(startLineIndex)
-        console.log(endLineIndex)
-
         // Find the previous tab's line index range
         const previousStartLineIndex = previousTabIndex > 0 ? cumulativeLineIndices[previousTabIndex - 1] : 0;
         const previousEndLineIndex = cumulativeLineIndices[previousTabIndex] - 1;
 
-        console.log(previousStartLineIndex)
-        console.log(previousEndLineIndex)
-
         // Update rows according to active, previous, and next states
-
         rowRefs.current.forEach((row, rowIndex) => {
             row.current.childNodes.forEach((box, boxIndex) => {
                 // Calculate the current box's index in the flattened grid
