@@ -92,15 +92,19 @@ export const HomeNavbar = () => {
                                         {/* Dropdown Menu */}
                                         {navLink.dropdown && (
                                             <div
-                                                className={`absolute top-full left-0 bg-white shadow-md rounded-md z-50 w-full transition-opacity duration-300 ${isDropdownOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} >
-                                                <ul className="flex flex-col">
+                                            className={`absolute top-full left-0 rounded-md z-50 w-full transition-opacity duration-300 ${
+                                                isDropdownOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+                                            } ${isDark ? 'bg-black border-white' : 'bg-white border-gray-200'} border shadow-md`} // Conditional background and border color
+                                            >                                                <ul className="flex flex-col">
                                                     {navLink.dropdown.map((dropdownItem, subIndex) => (
-                                                        <li key={subIndex} className="px-4 py-2 whitespace-nowrap">
+                                                        <li key={subIndex} className="px-4 py-2 whitespace-nowrap text-xs">
                                                             <a
                                                                 href={dropdownItem.link}
                                                                 target="_blank"
                                                                 rel="noopener noreferrer"
-                                                                className="text-black hover:text-green-500 transition-colors duration-300 link-home-hover"
+                                                                className={`${
+                                                                    isDark ? 'text-white' : 'text-black'
+                                                                } hover:text-green-500 transition-colors duration-300 link-home-hover`}
                                                             >
                                                                 {dropdownItem.name}
                                                             </a>
