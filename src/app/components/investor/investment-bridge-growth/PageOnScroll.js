@@ -540,7 +540,7 @@ export const InvertmentBridgeGrowth = () => {
                                                                 className={`absolute top-0 right-0 opacity-0`}
                                                             >
                                                                 {activeTab.title}
-                                                                <span className='font-normal block'>400,000,000 $BRIDGE</span>
+                                                                <span className='font-normal block'>{((2_000_000_000 * activeTab.percentage) / 100).toLocaleString()} $BRIDGE</span>
                                                             </span>
                                                         ))}
                                                     </div>
