@@ -59,7 +59,7 @@ export const FrequentlyAsked = () => {
 
 
     return (
-        <section className="2xl:py-28 md:py-16 py-10 xl:px-28 md:px-5 px-0 ">
+        <section id="faqs" className="2xl:py-28 md:py-16 py-10 xl:px-28 md:px-5 px-0 ">
             <div className="flex justify-center text-center">
                 <h4 className="2xl:text-5xl text-4xl font-medium">
                     Frequently Asked Questions

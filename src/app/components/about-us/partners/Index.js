@@ -31,7 +31,7 @@ export const Partners = () => {
     ];
 
     return (
-        <section className="2xl:px-80 xl:px-72 lg:px-56 md:px-28 sm:px-14 px-5 sm:py-0 py-10">
+        <section id='technology' className="2xl:px-80 xl:px-72 lg:px-56 md:px-28 sm:px-14 px-5 sm:py-0 py-10">
             <div className="flex justify-center">
                 <h4 className="2xl:text-4xl xl:text-2xl md:text-xl 2xl:leading-42 text-lg bg-black text-green w-fit">
                     Backed by

@@ -114,11 +114,8 @@ export const HomeNavbar = () => {
                                             </div>
                                         )}
                                     </div>
-
                                 ))}
                             </div>
-
-
                         </div>
                         <div className={`lg:col-span-1 col-span-2 isScroll-logo-middle -mt-18`}>
                             <div className="flex items-center w-full justify-center h-inherit">

@@ -20,7 +20,7 @@ const storageSolutions = [
 
 export const StorageSolution = () => {
     return (
-        <div className="xl:px-20 lg:px-10 px-9 lg:py-28 py-9">
+        <div id="why-tokenize" className="xl:px-20 lg:px-10 px-9 lg:py-28 py-9">
             <div className="grid lg:grid-cols-4 grid-cols-none 2xl:gap-10 gap-8 lg:items-start items-center">
                 <div className="lg:text-left md:text-center text-left">
                     <h4 className="bg-green text-black text-2xl inline md:px-2 px-0">

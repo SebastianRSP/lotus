@@ -12,24 +12,25 @@ import { usePathname, useRouter } from 'next/navigation';
 import { handleRouteClick } from '@/app/utils/navigationUtils';
 
 const footerMenu1 = [
-    { linkName: 'Home', goTo: '/' },
-    { linkName: 'The Bridge', goTo: '#' },
-    { linkName: 'Testimonials', goTo: '#' },
-    { linkName: 'AI Tools', goTo: '#' },
-    { linkName: 'Partners', goTo: '#' },
-    { linkName: 'FAQs', goTo: '#' }
-]
+    { linkName: 'Home', goTo: '/', sectionId: null },
+    { linkName: 'Partners', goTo: '/', sectionId: 'partners' },
+    { linkName: 'The Bridge', goTo: '/', sectionId: 'bridge' },
+    { linkName: 'AI Tools', goTo: '/', sectionId: 'ai-tools' },
+    { linkName: 'Testimonials', goTo: '/', sectionId: 'testimonials' },
+    { linkName: 'FAQs', goTo: '/', sectionId: 'faqs' },
+];
+
 const footerMenu2 = [
-    { linkName: 'Investors', goTo: '/investors' },
-    { linkName: '$BRIDGE Token', goTo: '#' },
-    { linkName: 'Why Tokenize', goTo: '#' },
-    { linkName: 'Investors', goTo: '/investors' }
+    { linkName: 'Investors', goTo: '/investors', sectionId: null },
+    { linkName: '$BRIDGE Token', goTo: '/investors', sectionId: 'bridge-token' },
+    { linkName: 'Why Tokenize', goTo: '/investors', sectionId: 'why-tokenize' },
+    { linkName: 'Investors', goTo: '/investors', sectionId: 'large-data-migration' }
 ]
 const footerMenu3 = [
-    { linkName: 'About Us', goTo: '/about-us' },
-    { linkName: 'Company', goTo: '#' },
-    { linkName: 'Technology', goTo: '#' },
-    { linkName: 'Team', goTo: '#' }
+    { linkName: 'About Us', goTo: '/about-us', sectionId: null },
+    { linkName: 'Company', goTo: '/about-us', sectionId: 'company' },
+    { linkName: 'Team', goTo: '/about-us', sectionId: 'team' },
+    { linkName: 'Technology', goTo: '/about-us', sectionId: 'technology' }
 ]
 const footerMenu4 = [
     { linkName: 'Privacy Policy', goTo: '/privacy' }
@@ -83,9 +84,16 @@ export const AboutUsFooter = () => {
                     </div>
                     <div className='grid md:grid-cols-3 xl:col-span-5 md:gap-0 gap-5 grid-cols-2'>
                         <div className='md:px-5 md:flex justify-start flex-col'>
-                            <div className='flex flex-col'>
+                            <div className="flex flex-col">
                                 {footerMenu1.map((footerLink, index) => (
-                                    <p onClick={() => handleRouteClick(router, pathname, footerLink.goTo)} className={`${index == 0 ? 'font-extrabold' : 'hover:font-bold'} cursor-pointer 2xl:text-lg text-sm uppercase font-normal leading-normal`} href={footerLink.goTo} key={index}>
+                                    <p
+                                        onClick={() =>
+                                            handleRouteClick(router, pathname, footerLink.goTo, footerLink.sectionId)
+                                        }
+                                        className={`${index == 0 ? 'font-extrabold' : 'hover:font-bold'
+                                            } cursor-pointer 2xl:text-lg text-sm uppercase font-normal leading-normal`}
+                                        key={index}
+                                    >
                                         {footerLink.linkName}
                                     </p>
                                 ))}
@@ -94,7 +102,11 @@ export const AboutUsFooter = () => {
                         <div className='md:px-5 md:flex justify-start flex-col'>
                             <div className='flex flex-col'>
                                 {footerMenu2.map((footerLink, index) => (
-                                    <p onClick={() => handleRouteClick(router, pathname, footerLink.goTo)} className={`${index == 0 ? 'font-extrabold' : 'hover:font-bold'} cursor-pointer 2xl:text-lg text-sm uppercase font-normal leading-normal`} href={footerLink.goTo} key={index}>
+                                    <p
+                                        onClick={() =>
+                                            handleRouteClick(router, pathname, footerLink.goTo, footerLink.sectionId)
+                                        }
+                                        className={`${index == 0 ? 'font-extrabold' : 'hover:font-bold'} cursor-pointer 2xl:text-lg text-sm uppercase font-normal leading-normal`} href={footerLink.goTo} key={index}>
                                         {footerLink.linkName}
                                     </p>
                                 ))}
@@ -103,7 +115,11 @@ export const AboutUsFooter = () => {
                         <div className='md:px-5 md:flex justify-start flex-col'>
                             <div className='flex flex-col'>
                                 {footerMenu3.map((footerLink, index) => (
-                                    <p onClick={() => handleRouteClick(router, pathname, footerLink.goTo)} className={`${index == 0 ? 'font-extrabold' : 'hover:font-bold'} cursor-pointer 2xl:text-lg text-sm uppercase font-normal leading-normal`} href={footerLink.goTo} key={index}>
+                                    <p
+                                        onClick={() =>
+                                            handleRouteClick(router, pathname, footerLink.goTo, footerLink.sectionId)
+                                        } 
+                                        className={`${index == 0 ? 'font-extrabold' : 'hover:font-bold'} cursor-pointer 2xl:text-lg text-sm uppercase font-normal leading-normal`} href={footerLink.goTo} key={index}>
                                         {footerLink.linkName}
                                     </p>
                                 ))}
@@ -133,15 +149,15 @@ export const AboutUsFooter = () => {
                     </div>
                 </div>
                 <div className='flex flex-col gap-1'>
-                                {footerMenu4.map((footerLink, index) => (
-                                    <p onClick={() => handleRouteClick(router, pathname, footerLink.goTo)} className={`${index == 0 ? 'font-extrabold' : 'hover:font-bold'} cursor-pointer 2xl:text-lg text-sm uppercase font-normal leading-normal m-auto`} href={footerLink.goTo} key={index}>
-                                        {footerLink.linkName}
-                                    </p>
-                                ))}
-                                                <p class="text-[10px] text-center"
-                >FORWARD-LOOKING STATEMENTS DISCLAIMER: This website may contain certain forward-looking statements regarding Lotus Data Group., its future operations or its financial performance. Forward-looking statements involve known and unknown risks, uncertainties, and other factors which may cause the actual results, performance, or achievements of the Company to be materially different from any future results, performance, or achievements expressed or implied by the forward-looking statements. These statements are only predictions and reflect the Company’s current beliefs and expectations with respect to future events; they are based on assumptions and are subject to risk and uncertainties, and given these uncertainties, investors should not place undue reliance on these forward-looking statements. The Company disclaims any obligation to update or revise any forward-looking statements, whether as a result of new information, future events, or otherwise, except as required by law.</p>
+                    {footerMenu4.map((footerLink, index) => (
+                        <p onClick={() => handleRouteClick(router, pathname, footerLink.goTo)} className={`${index == 0 ? 'font-extrabold' : 'hover:font-bold'} cursor-pointer 2xl:text-lg text-sm uppercase font-normal leading-normal m-auto`} href={footerLink.goTo} key={index}>
+                            {footerLink.linkName}
+                        </p>
+                    ))}
+                    <p class="text-[10px] text-center"
+                    >FORWARD-LOOKING STATEMENTS DISCLAIMER: This website may contain certain forward-looking statements regarding Lotus Data Group., its future operations or its financial performance. Forward-looking statements involve known and unknown risks, uncertainties, and other factors which may cause the actual results, performance, or achievements of the Company to be materially different from any future results, performance, or achievements expressed or implied by the forward-looking statements. These statements are only predictions and reflect the Company’s current beliefs and expectations with respect to future events; they are based on assumptions and are subject to risk and uncertainties, and given these uncertainties, investors should not place undue reliance on these forward-looking statements. The Company disclaims any obligation to update or revise any forward-looking statements, whether as a result of new information, future events, or otherwise, except as required by law.</p>
 
-                            </div>
+                </div>
             </footer>
             {/* <div className="flex flex-col gap-2 z-10 w-full">
                 <hr className="border-12 border-dark-gray" />

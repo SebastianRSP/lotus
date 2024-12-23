@@ -54,7 +54,7 @@ export const OurPartners = () => {
     // }, [partners]);
 
     return (
-        <section className="2xl:px-10 md:px-5 px-0 2xl:py-16 py-12">
+        <section id='partners' className="2xl:px-10 md:px-5 px-0 2xl:py-16 py-12">
             <div className="lg:grid grid-cols-12 justify-center items-center">
                 <div className="xl:col-span-2 lg:col-span-3 lg:mb-0 md:mb-10 mb-5">
                     <h4 className="bg-green capitalize text-black xl:text-2xl md:text-xl text-lg xl:leading-5 md:leading-4 leading-4 inline px-0.2">

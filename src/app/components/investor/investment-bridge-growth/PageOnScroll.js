@@ -149,6 +149,7 @@ export const InvertmentBridgeGrowth = () => {
     const isFirstClickRef = useRef(true);
     const previousIndexRef = useRef(-1);
     const scrollTriggerRef = useRef(null);
+    const isTabClickRef = useRef(false); 
 
     const animateTab = async (element, fromVars, toVars) => {
         return new Promise((resolve) => {
@@ -195,6 +196,9 @@ export const InvertmentBridgeGrowth = () => {
 
             // Update scroll position if scrollTriggerInstance is provided
             if (scrollTriggerRef.current) {
+                // Flag is true representa that animation only works for onClick Tab 
+                isTabClickRef.current = true;
+
                 const progressRanges = [0.11, 0.21, 0.32, 0.42, 0.53, 0.63, 0.74, 0.84, 0.95, 0.99];
                 const targetProgress = progressRanges[itemIndex + 1]; // Correctly index the desired tab
 
@@ -203,7 +207,10 @@ export const InvertmentBridgeGrowth = () => {
                 // Smooth scroll to the exact position of the selected tab
                 gsap.to(window, {
                     scrollTo: { y: targetScroll },
-                    duration: 2
+                    duration: 2,
+                    onComplete: async () => {
+                        isTabClickRef.current = false; // Reset flag after animation
+                    },
                 });
             }
 
@@ -216,7 +223,7 @@ export const InvertmentBridgeGrowth = () => {
                 gsap.fromTo(
                     totalSupplyRef.current,
                     { opacity: 0 },
-                    { opacity: 1, duration: 1 }
+                    { opacity: 1, duration: 2 }
                 );
                 isFirstClickRef.current = false; // Update the ref
             }
@@ -226,7 +233,7 @@ export const InvertmentBridgeGrowth = () => {
                 gsap.to(activeSendTab.current[previousIndex], {
                     opacity: 0,
                     x: -44, // Exit offset for the animation
-                    duration: 1,
+                    duration: 2,
                     onComplete: () => {
                         // Set previous tab element to be fully hidden and reset position
                         gsap.set(activeSendTab.current[previousIndex], { opacity: 0, x: 0 });
@@ -240,7 +247,7 @@ export const InvertmentBridgeGrowth = () => {
                 await animateTab(
                     element,
                     { opacity: 0, x: 0 },
-                    { opacity: 1, x: 44, duration: 1 }
+                    { opacity: 1, x: 44, duration: 2 }
                 );
             }
 
@@ -266,7 +273,7 @@ export const InvertmentBridgeGrowth = () => {
             gsap.fromTo(
                 totalSupplyRef.current,
                 { opacity: 0 },
-                { opacity: 1, duration: 1 }
+                { opacity: 1, duration: 2 }
             );
             isFirstClickRef.current = false; // Update the ref
         }
@@ -276,7 +283,7 @@ export const InvertmentBridgeGrowth = () => {
             gsap.to(activeSendTab.current[previousIndexRef.current], {
                 opacity: 0,
                 x: -44, // Exit offset for the animation
-                duration: 1,
+                duration: 2,
                 onComplete: () => {
                     // Set previous tab element to be fully hidden and reset position
                     gsap.set(activeSendTab.current[previousIndexRef], { opacity: 0, x: 0 });
@@ -290,7 +297,7 @@ export const InvertmentBridgeGrowth = () => {
             await animateTab(
                 element,
                 { opacity: 0, x: 0 },
-                { opacity: 1, x: 44, duration: 1 }
+                { opacity: 1, x: 44, duration: 2 }
             );
         }
 
@@ -330,6 +337,9 @@ export const InvertmentBridgeGrowth = () => {
                 pinSpacing: true,
                 markers: false,
                 onUpdate: (self) => {
+                    // It will return if we click on any tab, if only works when we scroll down/up
+                    if (isTabClickRef.current) return;
+
                     const progressRanges = [0.11, 0.21, 0.32, 0.42, 0.53, 0.63, 0.74, 0.84, 0.95, 0.99];
                     let currentIndex = -1;
 
@@ -365,7 +375,7 @@ export const InvertmentBridgeGrowth = () => {
 
     return (
         <>
-            <div className="text-white mt-5 relative">
+            <div id='bridge-token' className="text-white mt-5 relative">
                 {/* absolute inset-0  */}
                 <div className='flex justify-center items-end'>
                     {/* <div className='2xl:px-40 xl:px-20 px-9 xl:pt-72 lg:pt-64 md:pt-32 sm:pt-32 pt-16 2xl:pb-28 xl:pb-24 lg:pb-5.3r md:pb-4.3r sm:pb-14 pb-3.2r w-full relative'> */}

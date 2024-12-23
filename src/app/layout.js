@@ -4,7 +4,7 @@ import { Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
 import './components/fontawsome';
 import { NewHomePage } from './components/layout-wrapper/home/Index';
-import { ScrollToTop } from './components/ScrollToTop';
+import { ScrollProvider } from './components/ScrollToTop';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { PopUp } from './components/investor/pop-up/Index';
@@ -48,9 +48,9 @@ export default function RootLayout({ children }) {
           isPopupVisible={isPopupVisible}
           closePopup={closePopup}
         />
-        <ScrollToTop>
+        <ScrollProvider>
           <NewHomePage>{children}</NewHomePage>
-        </ScrollToTop>
+        </ScrollProvider>
       </body>
     </html>
   );

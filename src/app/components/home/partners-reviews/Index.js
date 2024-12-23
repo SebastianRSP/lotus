@@ -151,7 +151,7 @@ export const PartnerReviews = () => {
     const { translateX, translateY } = getTranslation(activeIndex);
 
     return (
-        <section className="2xl:px-100 xl:px-90 lg:px-8 px-5">
+        <section id='testimonials' className="2xl:px-100 xl:px-90 lg:px-8 px-5">
             <h4 className="bg-green capitalize text-black 2xl:text-5xl xl:text-4xl lg:text-3xl md:text-2xl text-xl 2xl:leading-64 xl:leading-48 lg:leading-42 md:leading-34 leading-7 2xl:font-normal font-medium inline px-0.2">
                 What our partners <br /> have to say.
             </h4>
