@@ -1,17 +1,17 @@
 'use client';
 
-import { useEffect } from 'react';
-import { usePathname } from 'next/navigation';
+import { createContext, useContext, useState } from 'react';
 
-export const ScrollToTop = ({ children }) => {
-    const pathname = usePathname();
+const ScrollContext = createContext();
 
-    useEffect(() => {
-        if ('scrollRestoration' in window.history) {
-            window.history.scrollRestoration = 'manual';
-        }
-        window.scrollTo(0, 0); // Reset scroll position to the top
-    }, [pathname]); // Run when `pathname` changes
+export const ScrollProvider = ({ children }) => {
+  const [scrollTarget, setScrollTarget] = useState(null);
 
-    return <>{children}</>;
+  return (
+    <ScrollContext.Provider value={{ scrollTarget, setScrollTarget }}>
+      {children}
+    </ScrollContext.Provider>
+  );
 };
+
+export const useScroll = () => useContext(ScrollContext);

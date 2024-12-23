@@ -8,7 +8,7 @@ import Image from "next/image";
 
 export const PoweredBySend = () => {
     return (
-        <div className="bg-black flex justify-center text-white xl:px-64 lg:px-40 md:px-20 px-9 xl:py-24 lg:py-20 md:py-12 py-11">
+        <div id='large-data-migration' className="bg-black flex justify-center text-white xl:px-64 lg:px-40 md:px-20 px-9 xl:py-24 lg:py-20 md:py-12 py-11">
             <div className="w-fit">
                 <span className="bg-green text-black inline px-0.5 md:text-2xl text-lg tracking-space18">Join</span>
                 <div className="text-right w-full">

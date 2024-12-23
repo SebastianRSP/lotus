@@ -13,7 +13,7 @@ import { ShowCaseSection } from "./components/home/show-cases-ection/Index";
 export default function Home() {
     return (
         <>
-            <div className="2xl:px-60 xl:px-10 lg:px-9 px-5">
+            <div className="2xl:px-60 xl:px-10 lg:px-9 px-5 ">
                 <div className="2xl:py-12 lg:py-10 py-5 h-screen">
                     <IndexHome />
                 </div>

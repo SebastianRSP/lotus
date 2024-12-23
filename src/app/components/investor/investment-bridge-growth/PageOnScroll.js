@@ -375,7 +375,7 @@ export const InvertmentBridgeGrowth = () => {
 
     return (
         <>
-            <div className="text-white mt-5 relative">
+            <div id='bridge-token' className="text-white mt-5 relative">
                 {/* absolute inset-0  */}
                 <div className='flex justify-center items-end'>
                     {/* <div className='2xl:px-40 xl:px-20 px-9 xl:pt-72 lg:pt-64 md:pt-32 sm:pt-32 pt-16 2xl:pb-28 xl:pb-24 lg:pb-5.3r md:pb-4.3r sm:pb-14 pb-3.2r w-full relative'> */}

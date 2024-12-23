@@ -44,7 +44,7 @@ const timelines = [
 
 export const OurJourney = () => {
     return (
-        <section className="xl:py-32 md:py-16">
+        <section id="company" className="xl:py-32 md:py-16">
             <div className="flex justify-center">
                 <h4 className="2xl:text-4xl xl:text-2xl md:text-xl 2xl:leading-42 text-lg bg-black text-green w-fit">
                     Our Journey
