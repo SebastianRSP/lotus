@@ -67,7 +67,7 @@ export const LeaderShipTeam = () => {
             leaderProfileImage: ravi_rai,
             leaderDesignation: 'CSO',
             leaderCompany: 'SENDATA',
-            description: 'Neil Sumaru is Co-founder and Chairman of Lotus Data Group which is comprised of three subsidiaries, SenData Tech, Sen Pegasus, and Sen Whale AI (which collectively make up the BRIDGE token ecosystem). Neil is a Founder of each of these companies and sits on the respective boards as Chairman.',
+            description: 'Ravi Rao has over 30 years of executive management experience in the High-Tech industries covering the following markets: Information and Data Security (microchip technology –Smart Cards and multi-factor authentication), Redaction and Workflow Management, Bollywood Film and TV Animation, Healthcare, Aviation and Telecom.',
             linkedInProfileLink: 'https://www.linkedin.com/in/ravikrao'
         },
         {
